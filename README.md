@@ -16,7 +16,11 @@ Python >=3.6
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+```sh
+pip install apideck
+```
+
+or you can install directly using:
 
 ```sh
 pip install git+https://github.com/apideck-libraries/python-sdk.git
