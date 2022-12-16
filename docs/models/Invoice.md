@@ -1,0 +1,43 @@
+# Invoice
+
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] [readonly] 
+**downstream_id** | **str, none_type** | The third-party API ID of original entity | [optional] [readonly] 
+**type** | **str, none_type** | Invoice type | [optional] 
+**number** | **str, none_type** | Invoice number. | [optional] 
+**customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+**invoice_date** | **date, none_type** | Date invoice was issued - YYYY-MM-DD. | [optional] 
+**due_date** | **date, none_type** | The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD. | [optional] 
+**terms** | **str, none_type** | Terms of payment. | [optional] 
+**po_number** | **str, none_type** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
+**reference** | **str, none_type** | Optional invoice reference. | [optional] 
+**status** | **str, none_type** | Invoice status | [optional] 
+**invoice_sent** | **bool** | Invoice sent to contact/customer. | [optional] 
+**currency** | [**Currency**](Currency.md) |  | [optional] 
+**currency_rate** | **float, none_type** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
+**tax_inclusive** | **bool, none_type** | Amounts are including tax | [optional] 
+**sub_total** | **float, none_type** | Sub-total amount, normally before tax. | [optional] 
+**total_tax** | **float, none_type** | Total tax amount applied to this invoice. | [optional] 
+**tax_code** | **str, none_type** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
+**discount_percentage** | **float, none_type** | Discount percentage applied to this invoice. | [optional] 
+**total** | **float, none_type** | Total amount of invoice, including tax. | [optional] 
+**balance** | **float, none_type** | Balance of invoice due. | [optional] 
+**deposit** | **float, none_type** | Amount of deposit made to this invoice. | [optional] 
+**customer_memo** | **str, none_type** | Customer memo | [optional] 
+**line_items** | [**[InvoiceLineItem]**](InvoiceLineItem.md) |  | [optional] 
+**billing_address** | [**Address**](Address.md) |  | [optional] 
+**shipping_address** | [**Address**](Address.md) |  | [optional] 
+**template_id** | **str, none_type** | Optional invoice template | [optional] 
+**source_document_url** | **str, none_type** | URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero. | [optional] 
+**row_version** | **str, none_type** |  | [optional] 
+**updated_by** | **str, none_type** |  | [optional] [readonly] 
+**created_by** | **str, none_type** |  | [optional] [readonly] 
+**updated_at** | **datetime** |  | [optional] [readonly] 
+**created_at** | **datetime** |  | [optional] [readonly] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
+

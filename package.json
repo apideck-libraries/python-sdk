@@ -1,0 +1,13 @@
+{
+  "name": "@apideck/python",
+  "version": "0.0.1",
+  "description": "Apideck Python SDK",
+  "keywords": [
+    "apideck",
+    "api",
+    "unify",
+    "unified apis"
+  ],
+  "homepage": "https://apideck.com",
+  "author": "Apideck <support@apideck.com> (https://apideck.com/)"
+}

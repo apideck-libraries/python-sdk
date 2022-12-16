@@ -1,0 +1,60 @@
+# Activity
+
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**type** | **str** |  | 
+**id** | **str** |  | [optional] [readonly] 
+**downstream_id** | **str, none_type** | The third-party API ID of original entity | [optional] [readonly] 
+**activity_datetime** | **str, none_type** |  | [optional] 
+**duration_seconds** | **int, none_type** |  | [optional] 
+**user_id** | **str, none_type** |  | [optional] 
+**account_id** | **str, none_type** |  | [optional] 
+**contact_id** | **str, none_type** |  | [optional] 
+**company_id** | **str, none_type** |  | [optional] 
+**opportunity_id** | **str, none_type** |  | [optional] 
+**lead_id** | **str, none_type** |  | [optional] 
+**owner_id** | **str, none_type** |  | [optional] 
+**campaign_id** | **str, none_type** |  | [optional] 
+**case_id** | **str, none_type** |  | [optional] 
+**asset_id** | **str, none_type** |  | [optional] 
+**contract_id** | **str, none_type** |  | [optional] 
+**product_id** | **str, none_type** |  | [optional] 
+**solution_id** | **str, none_type** |  | [optional] 
+**custom_object_id** | **str, none_type** |  | [optional] 
+**title** | **str, none_type** |  | [optional] 
+**description** | **str, none_type** |  | [optional] 
+**note** | **str, none_type** |  | [optional] 
+**location** | **str, none_type** |  | [optional] 
+**location_address** | [**Address**](Address.md) |  | [optional] 
+**all_day_event** | **bool** |  | [optional] 
+**private** | **bool** |  | [optional] 
+**group_event** | **bool** |  | [optional] 
+**event_sub_type** | **str, none_type** |  | [optional] 
+**group_event_type** | **str, none_type** |  | [optional] 
+**child** | **bool** |  | [optional] 
+**archived** | **bool** |  | [optional] 
+**deleted** | **bool** |  | [optional] 
+**show_as** | **str** |  | [optional] 
+**done** | **bool** | Whether the Activity is done or not | [optional] 
+**start_datetime** | **str, none_type** |  | [optional] 
+**end_datetime** | **str, none_type** |  | [optional] 
+**duration_minutes** | **int, none_type** |  | [optional] [readonly] 
+**activity_date** | **str, none_type** |  | [optional] 
+**end_date** | **str, none_type** |  | [optional] 
+**recurrent** | **bool** |  | [optional] 
+**reminder_datetime** | **str, none_type** |  | [optional] 
+**reminder_set** | **bool, none_type** |  | [optional] 
+**video_conference_url** | **str** |  | [optional] 
+**video_conference_id** | **str** |  | [optional] 
+**custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
+**attendees** | [**[ActivityAttendee]**](ActivityAttendee.md) |  | [optional] 
+**updated_by** | **str, none_type** |  | [optional] [readonly] 
+**created_by** | **str, none_type** |  | [optional] [readonly] 
+**updated_at** | **str** |  | [optional] [readonly] 
+**created_at** | **str** |  | [optional] [readonly] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
+
