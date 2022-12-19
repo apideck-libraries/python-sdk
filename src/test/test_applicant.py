@@ -15,12 +15,14 @@ import apideck
 from apideck.model.address import Address
 from apideck.model.applicant_social_links import ApplicantSocialLinks
 from apideck.model.applicant_websites import ApplicantWebsites
+from apideck.model.custom_field import CustomField
 from apideck.model.email import Email
 from apideck.model.phone_number import PhoneNumber
 from apideck.model.tags import Tags
 globals()['Address'] = Address
 globals()['ApplicantSocialLinks'] = ApplicantSocialLinks
 globals()['ApplicantWebsites'] = ApplicantWebsites
+globals()['CustomField'] = CustomField
 globals()['Email'] = Email
 globals()['PhoneNumber'] = PhoneNumber
 globals()['Tags'] = Tags

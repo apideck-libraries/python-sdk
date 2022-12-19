@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **headline** | **str** | Typically a list of previous companies where the contact has worked or schools that the contact has attended | [optional] 
 **title** | **str, none_type** |  | [optional] 
 **emails** | [**[Email]**](Email.md) |  | [optional] 
+**custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **phone_numbers** | [**[PhoneNumber]**](PhoneNumber.md) |  | [optional] 
 **addresses** | [**[Address]**](Address.md) |  | [optional] 
 **websites** | [**[ApplicantWebsites]**](ApplicantWebsites.md) |  | [optional] 
