@@ -75,6 +75,14 @@ with apideck.ApiClient(configuration) as api_client:
                 type="primary",
             ),
         ],
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         phone_numbers=[
             PhoneNumber(
                 id="12345",

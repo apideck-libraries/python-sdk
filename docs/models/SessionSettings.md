@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unified_apis** | [**[UnifiedApiId]**](UnifiedApiId.md) | Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omiting this field will show all Unified APIs. | [optional] 
-**hide_resource_settings** | **bool** |  | [optional]  if omitted the server will use the default value of False
+**unified_apis** | [**[UnifiedApiId]**](UnifiedApiId.md) | Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omitting this field will show all Unified APIs. | [optional] 
+**hide_resource_settings** | **bool** | A boolean that controls the display of the configurable resources for an integration. When set to true, the resource configuration options will be hidden and not shown to the user. When set to false, the resource configuration options will be displayed to the user. | [optional]  if omitted the server will use the default value of False
 **sandbox_mode** | **bool** | Configure [Vault](/apis/vault/reference#section/Get-Started) to show a banner informing the logged in user is in a test environment. | [optional]  if omitted the server will use the default value of False
 **isolation_mode** | **bool** | Configure [Vault](/apis/vault/reference#section/Get-Started) to run in isolation mode, meaning it only shows the connection settings and hides the navigation items. | [optional]  if omitted the server will use the default value of False
 **session_length** | **str** | The duration of time the session is valid for (maximum 1 week). | [optional]  if omitted the server will use the default value of "1h"
