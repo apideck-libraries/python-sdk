@@ -66,7 +66,7 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "pipedrive" # str | Service ID of the resource to return
     resource = "leads" # str | Resource Name
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -193,7 +193,7 @@ with apideck.ApiClient(configuration) as api_client:
         ],
     ) # Connection | Fields that need to be updated on the resource
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -298,7 +298,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vault_api.VaultApi(api_client)
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     api = "crm" # str | Scope results to Unified API (optional)
     configured = True # bool | Scopes results to connections that have been configured or not (optional)
 
@@ -396,7 +396,7 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "pipedrive" # str | Service ID of the resource to return
     unified_api = "crm" # str | Unified API
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -510,7 +510,7 @@ with apideck.ApiClient(configuration) as api_client:
         metadata={},
     ) # ConnectionImportData | Fields that need to be persisted on the resource
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -616,7 +616,7 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "pipedrive" # str | Service ID of the resource to return
     unified_api = "crm" # str | Unified API
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -741,7 +741,7 @@ with apideck.ApiClient(configuration) as api_client:
         ],
     ) # Connection | Fields that need to be updated on the resource
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -847,7 +847,7 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "test_user_id" # str | ID of the consumer to return
     start_datetime = "2021-05-01T12:00:00.000Z" # str | Scopes results to requests that happened after datetime
     end_datetime = "2021-05-30T12:00:00.000Z" # str | Scopes results to requests that happened before datetime
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -949,7 +949,7 @@ configuration.api_key['apiKey'] = 'YOUR_API_KEY'
 with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vault_api.VaultApi(api_client)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
 
@@ -1045,7 +1045,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vault_api.VaultApi(api_client)
     consumer_id = "test_user_id" # str | ID of the consumer to return
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1146,7 +1146,7 @@ configuration.api_key['apiKey'] = 'YOUR_API_KEY'
 with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vault_api.VaultApi(api_client)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     filter = LogsFilter(
         connector_id="crm+salesforce",
@@ -1251,7 +1251,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vault_api.VaultApi(api_client)
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     session = Session(
         consumer_metadata=ConsumerMetadata(
             account_name="SpaceX",
