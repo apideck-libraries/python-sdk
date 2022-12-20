@@ -139,7 +139,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # HrisCompany | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -245,7 +245,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -346,7 +346,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -453,7 +453,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -620,7 +620,7 @@ with apideck.ApiClient(configuration) as api_client:
         debtor_id="12345",
     ) # HrisCompany | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -734,7 +734,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # Department | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -840,7 +840,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -941,7 +941,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1048,7 +1048,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1161,7 +1161,7 @@ with apideck.ApiClient(configuration) as api_client:
         description="R&D",
     ) # Department | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1271,7 +1271,7 @@ with apideck.ApiClient(configuration) as api_client:
     employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     filter = PayrollsFilter(
         start_date="2022-04-08",
@@ -1384,7 +1384,7 @@ with apideck.ApiClient(configuration) as api_client:
     employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1492,7 +1492,7 @@ with apideck.ApiClient(configuration) as api_client:
     employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1778,7 +1778,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # Employee | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1885,7 +1885,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -1997,7 +1997,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2104,7 +2104,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2391,7 +2391,7 @@ with apideck.ApiClient(configuration) as api_client:
         deleted=True,
     ) # Employee | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2500,7 +2500,7 @@ with apideck.ApiClient(configuration) as api_client:
     employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -2608,7 +2608,7 @@ with apideck.ApiClient(configuration) as api_client:
     employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -2716,7 +2716,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     filter = PayrollsFilter(
         start_date="2022-04-08",
@@ -2819,7 +2819,7 @@ with apideck.ApiClient(configuration) as api_client:
     payroll_id = "payroll_id_example" # str | ID of the payroll you are acting upon.
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -2943,7 +2943,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # TimeOffRequest | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -3050,7 +3050,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -3158,7 +3158,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -3265,7 +3265,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -3390,7 +3390,7 @@ with apideck.ApiClient(configuration) as api_client:
         ),
     ) # TimeOffRequest | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
