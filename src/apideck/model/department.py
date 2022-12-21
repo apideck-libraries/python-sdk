@@ -76,6 +76,7 @@ class Department(ModelNormal):
         """
         return {
             'id': (str,),  # noqa: E501
+            'parent_id': (str,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'code': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
@@ -92,6 +93,7 @@ class Department(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
+        'parent_id': 'parent_id',  # noqa: E501
         'name': 'name',  # noqa: E501
         'code': 'code',  # noqa: E501
         'description': 'description',  # noqa: E501
@@ -103,6 +105,7 @@ class Department(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
+        'parent_id',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -148,6 +151,7 @@ class Department(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
+            parent_id (str): Parent ID. [optional]  # noqa: E501
             name (str, none_type): Department name. [optional]  # noqa: E501
             code (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
@@ -237,6 +241,7 @@ class Department(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
+            parent_id (str): Parent ID. [optional]  # noqa: E501
             name (str, none_type): Department name. [optional]  # noqa: E501
             code (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
