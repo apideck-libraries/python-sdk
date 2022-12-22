@@ -1,5 +1,6 @@
 ../.github/workflows/publish.yml
 ../.github/workflows/release.yml
+../.github/workflows/sync.yml
 ../.github/workflows/test.yml
 ../.gitignore
 ../LICENSE
