@@ -87,7 +87,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # DriveGroup | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -194,7 +194,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -299,7 +299,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -406,7 +406,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -519,7 +519,7 @@ with apideck.ApiClient(configuration) as api_client:
         description="A description",
     ) # DriveGroup | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -632,7 +632,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # Drive | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -739,7 +739,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -844,7 +844,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -951,7 +951,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1063,7 +1063,7 @@ with apideck.ApiClient(configuration) as api_client:
         description="A description",
     ) # Drive | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1173,7 +1173,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -1285,7 +1285,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1391,7 +1391,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1496,7 +1496,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1607,7 +1607,7 @@ with apideck.ApiClient(configuration) as api_client:
         drive_id="1234",
     ) # FilesSearch | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1719,7 +1719,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # CreateFolderRequest | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1830,7 +1830,7 @@ with apideck.ApiClient(configuration) as api_client:
         parent_folder_id="1234",
     ) # CopyFolderRequest | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -1938,7 +1938,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2045,7 +2045,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2158,7 +2158,7 @@ with apideck.ApiClient(configuration) as api_client:
         parent_folder_id="1234",
     ) # UpdateFolderRequest | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2273,7 +2273,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # SharedLink | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -2379,7 +2379,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
@@ -2480,7 +2480,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2587,7 +2587,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2701,7 +2701,7 @@ with apideck.ApiClient(configuration) as api_client:
         password="password_example",
     ) # SharedLink | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2768,7 +2768,7 @@ Name | Type | Description  | Notes
 
 Start Upload Session
 
-Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 
 ### Example
 
@@ -2816,7 +2816,7 @@ with apideck.ApiClient(configuration) as api_client:
     ) # CreateUploadSessionRequest | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
     # example passing only required values which don't have defaults set
@@ -2881,7 +2881,7 @@ Name | Type | Description  | Notes
 
 Abort Upload Session
 
-Abort Upload Session
+Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 
 ### Example
 
@@ -2922,7 +2922,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
@@ -2988,7 +2988,7 @@ Name | Type | Description  | Notes
 
 Finish Upload Session
 
-Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 
 ### Example
 
@@ -3030,7 +3030,7 @@ with apideck.ApiClient(configuration) as api_client:
     id = "id_example" # str | ID of the record you are acting upon.
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     digest = "sha=fpRyg5eVQletdZqEKaFlqwBXJzM=" # str | The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)
     body = {} # dict |  (optional)
@@ -3099,7 +3099,7 @@ Name | Type | Description  | Notes
 
 Get Upload Session
 
-Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](/guides/file-upload).
 
 ### Example
 
@@ -3140,7 +3140,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = file_storage_api.FileStorageApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 

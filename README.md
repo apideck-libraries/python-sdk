@@ -16,7 +16,11 @@ Python >=3.6
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+```sh
+pip install apideck
+```
+
+or you can install directly using:
 
 ```sh
 pip install git+https://github.com/apideck-libraries/python-sdk.git
@@ -260,7 +264,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
     x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-x_apideck_app_id = "x-apideck-app-id_example" # str | The ID of your Unify application (optional)
+x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 x_apideck_service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 pass_through = Passthrough() # Passthrough | Optional unmapped key/values that will be passed through to downstream as query parameters (optional)
 filter = BalanceSheetFilter(

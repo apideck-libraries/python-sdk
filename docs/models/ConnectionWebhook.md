@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **events** | **[str]** | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | 
 **id** | **str** |  | [optional] [readonly] 
 **description** | **str, none_type** |  | [optional] 
+**disabled_reason** | **str** | Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it&#39;s plan. | [optional] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 
