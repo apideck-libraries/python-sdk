@@ -1,14 +1,12 @@
 name: Release
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - main
       
 jobs:
   release:
-    if: "github.event.pull_request.merged == true"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,3 +17,4 @@ jobs:
         with:
           commit: main
           tag: 0.0.2
+
