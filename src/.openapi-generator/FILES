@@ -435,6 +435,7 @@ apideck/model/profit_and_loss_record.py
 apideck/model/profit_and_loss_records.py
 apideck/model/profit_and_loss_section.py
 apideck/model/request_count_allocation.py
+apideck/model/request_rate.py
 apideck/model/resolve_webhook_event_request.py
 apideck/model/resolve_webhook_events_request.py
 apideck/model/resolve_webhook_response.py
@@ -519,6 +520,7 @@ apideck/model/upload_session.py
 apideck/model/url.py
 apideck/model/user.py
 apideck/model/vault_event_type.py
+apideck/model/virtual_webhooks.py
 apideck/model/wallet_details.py
 apideck/model/webhook.py
 apideck/model/webhook_event_log.py
@@ -947,6 +949,7 @@ docs/ProfitAndLossRecord.md
 docs/ProfitAndLossRecords.md
 docs/ProfitAndLossSection.md
 docs/RequestCountAllocation.md
+docs/RequestRate.md
 docs/ResolveWebhookEventRequest.md
 docs/ResolveWebhookEventsRequest.md
 docs/ResolveWebhookResponse.md
@@ -1033,6 +1036,7 @@ docs/Url.md
 docs/User.md
 docs/VaultApi.md
 docs/VaultEventType.md
+docs/VirtualWebhooks.md
 docs/WalletDetails.md
 docs/Webhook.md
 docs/WebhookApi.md
@@ -1465,6 +1469,7 @@ test/test_profit_and_loss_record.py
 test/test_profit_and_loss_records.py
 test/test_profit_and_loss_section.py
 test/test_request_count_allocation.py
+test/test_request_rate.py
 test/test_resolve_webhook_event_request.py
 test/test_resolve_webhook_events_request.py
 test/test_resolve_webhook_response.py
@@ -1551,6 +1556,7 @@ test/test_url.py
 test/test_user.py
 test/test_vault_api.py
 test/test_vault_event_type.py
+test/test_virtual_webhooks.py
 test/test_wallet_details.py
 test/test_webhook.py
 test/test_webhook_api.py

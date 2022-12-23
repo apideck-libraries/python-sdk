@@ -414,6 +414,7 @@ from apideck.model.profit_and_loss_record import ProfitAndLossRecord
 from apideck.model.profit_and_loss_records import ProfitAndLossRecords
 from apideck.model.profit_and_loss_section import ProfitAndLossSection
 from apideck.model.request_count_allocation import RequestCountAllocation
+from apideck.model.request_rate import RequestRate
 from apideck.model.resolve_webhook_event_request import ResolveWebhookEventRequest
 from apideck.model.resolve_webhook_events_request import ResolveWebhookEventsRequest
 from apideck.model.resolve_webhook_response import ResolveWebhookResponse
@@ -498,6 +499,7 @@ from apideck.model.upload_session import UploadSession
 from apideck.model.url import Url
 from apideck.model.user import User
 from apideck.model.vault_event_type import VaultEventType
+from apideck.model.virtual_webhooks import VirtualWebhooks
 from apideck.model.wallet_details import WalletDetails
 from apideck.model.webhook import Webhook
 from apideck.model.webhook_event_log import WebhookEventLog

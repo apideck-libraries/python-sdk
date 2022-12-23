@@ -12,13 +12,13 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.request_rate import RequestRate
+globals()['RequestRate'] = RequestRate
 from apideck.model.virtual_webhooks import VirtualWebhooks
-globals()['VirtualWebhooks'] = VirtualWebhooks
-from apideck.model.webhook_support import WebhookSupport
 
 
-class TestWebhookSupport(unittest.TestCase):
-    """WebhookSupport unit test stubs"""
+class TestVirtualWebhooks(unittest.TestCase):
+    """VirtualWebhooks unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,10 +26,10 @@ class TestWebhookSupport(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testWebhookSupport(self):
-        """Test WebhookSupport"""
+    def testVirtualWebhooks(self):
+        """Test VirtualWebhooks"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = WebhookSupport()  # noqa: E501
+        # model = VirtualWebhooks()  # noqa: E501
         pass
 
 
