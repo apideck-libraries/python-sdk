@@ -142,7 +142,7 @@ class Connector(ModelNormal):
             'supported_resources': ([LinkedConnectorResource],),  # noqa: E501
             'configurable_resources': ([str],),  # noqa: E501
             'supported_events': ([ConnectorEvent],),  # noqa: E501
-            'webhook_support': ([WebhookSupport],),  # noqa: E501
+            'webhook_support': (WebhookSupport,),  # noqa: E501
             'docs': ([ConnectorDoc],),  # noqa: E501
             'tls_support': (ConnectorTlsSupport,),  # noqa: E501
         }
@@ -252,7 +252,7 @@ class Connector(ModelNormal):
             supported_resources ([LinkedConnectorResource]): List of resources that are supported on the connector.. [optional]  # noqa: E501
             configurable_resources ([str]): List of resources that have settings that can be configured.. [optional]  # noqa: E501
             supported_events ([ConnectorEvent]): List of events that are supported on the connector across all Unified APIs.. [optional]  # noqa: E501
-            webhook_support ([WebhookSupport]): How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.. [optional]  # noqa: E501
+            webhook_support (WebhookSupport): [optional]  # noqa: E501
             docs ([ConnectorDoc]): [optional]  # noqa: E501
             tls_support (ConnectorTlsSupport): [optional]  # noqa: E501
         """
@@ -359,7 +359,7 @@ class Connector(ModelNormal):
             supported_resources ([LinkedConnectorResource]): List of resources that are supported on the connector.. [optional]  # noqa: E501
             configurable_resources ([str]): List of resources that have settings that can be configured.. [optional]  # noqa: E501
             supported_events ([ConnectorEvent]): List of events that are supported on the connector across all Unified APIs.. [optional]  # noqa: E501
-            webhook_support ([WebhookSupport]): How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.. [optional]  # noqa: E501
+            webhook_support (WebhookSupport): [optional]  # noqa: E501
             docs ([ConnectorDoc]): [optional]  # noqa: E501
             tls_support (ConnectorTlsSupport): [optional]  # noqa: E501
         """
