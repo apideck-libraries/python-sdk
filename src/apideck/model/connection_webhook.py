@@ -199,7 +199,7 @@ class ConnectionWebhook(ModelNormal):
             'id': (str,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'disabled_reason': (str,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
         }
 
@@ -276,7 +276,7 @@ class ConnectionWebhook(ModelNormal):
             id (str): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
             disabled_reason (str): Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it's plan.. [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
@@ -373,7 +373,7 @@ class ConnectionWebhook(ModelNormal):
             id (str): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
             disabled_reason (str): Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it's plan.. [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 

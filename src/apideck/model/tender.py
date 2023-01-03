@@ -85,7 +85,7 @@ class Tender(ModelNormal):
             'allows_tipping': (bool,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
         }
 
@@ -165,7 +165,7 @@ class Tender(ModelNormal):
             allows_tipping (bool): Allow tipping on payment from tender. [optional] if omitted the server will use the default value of True  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
@@ -258,7 +258,7 @@ class Tender(ModelNormal):
             allows_tipping (bool): Allow tipping on payment from tender. [optional] if omitted the server will use the default value of True  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 

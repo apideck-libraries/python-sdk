@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **status** | **str, none_type** | Customer status | [optional] 
 **updated_by** | **str, none_type** |  | [optional] [readonly] 
 **created_by** | **str, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime** |  | [optional] [readonly] 
+**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **row_version** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

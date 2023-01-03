@@ -98,7 +98,7 @@ class UnifiedFile(ModelNormal):
             'parent_folders_complete': (bool,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
         }
 
@@ -189,7 +189,7 @@ class UnifiedFile(ModelNormal):
             parent_folders_complete (bool): Whether the list of parent folder is complete. Some connectors only return the direct parent of a file. [optional]  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
@@ -289,7 +289,7 @@ class UnifiedFile(ModelNormal):
             parent_folders_complete (bool): Whether the list of parent folder is complete. Some connectors only return the direct parent of a file. [optional]  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 

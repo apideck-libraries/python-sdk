@@ -103,7 +103,7 @@ class BalanceSheet(ModelNormal):
             'end_date': (str,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
         }
 
@@ -183,7 +183,7 @@ class BalanceSheet(ModelNormal):
             end_date (str): The start date of the report. [optional]  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
@@ -282,7 +282,7 @@ class BalanceSheet(ModelNormal):
             end_date (str): The start date of the report. [optional]  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 

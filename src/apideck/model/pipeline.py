@@ -93,7 +93,7 @@ class Pipeline(ModelNormal):
             'display_order': (int,),  # noqa: E501
             'win_probability_enabled': (bool,),  # noqa: E501
             'stages': ([PipelineStages],),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
         }
 
@@ -168,7 +168,7 @@ class Pipeline(ModelNormal):
             display_order (int): [optional]  # noqa: E501
             win_probability_enabled (bool): [optional]  # noqa: E501
             stages ([PipelineStages]): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
@@ -262,7 +262,7 @@ class Pipeline(ModelNormal):
             display_order (int): [optional]  # noqa: E501
             win_probability_enabled (bool): [optional]  # noqa: E501
             stages ([PipelineStages]): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
