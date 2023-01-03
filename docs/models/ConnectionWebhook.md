@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] [readonly] 
 **description** | **str, none_type** |  | [optional] 
 **disabled_reason** | **str** | Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it&#39;s plan. | [optional] 
-**updated_at** | **datetime** |  | [optional] [readonly] 
+**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

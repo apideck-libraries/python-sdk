@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **password_protected** | **bool** | Indicated if the shared link is password protected. | [optional] [readonly] 
 **password** | **str, none_type** | Optional password for the shared link. | [optional] 
 **expires_at** | **datetime** |  | [optional] [readonly] 
-**updated_at** | **datetime** |  | [optional] [readonly] 
+**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

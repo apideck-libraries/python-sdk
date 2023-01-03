@@ -92,7 +92,7 @@ class SharedLink(ModelNormal):
             'password_protected': (bool,),  # noqa: E501
             'password': (str, none_type,),  # noqa: E501
             'expires_at': (datetime,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
         }
 
@@ -170,7 +170,7 @@ class SharedLink(ModelNormal):
             password_protected (bool): Indicated if the shared link is password protected.. [optional]  # noqa: E501
             password (str, none_type): Optional password for the shared link.. [optional]  # noqa: E501
             expires_at (datetime): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
@@ -264,7 +264,7 @@ class SharedLink(ModelNormal):
             password_protected (bool): Indicated if the shared link is password protected.. [optional]  # noqa: E501
             password (str, none_type): Optional password for the shared link.. [optional]  # noqa: E501
             expires_at (datetime): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 

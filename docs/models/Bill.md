@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **bill_number** | **str, none_type** |  | [optional] 
 **updated_by** | **str, none_type** |  | [optional] [readonly] 
 **created_by** | **str, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime** |  | [optional] [readonly] 
+**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **row_version** | **str, none_type** |  | [optional] 
 

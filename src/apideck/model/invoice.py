@@ -137,7 +137,7 @@ class Invoice(ModelNormal):
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
         }
 
@@ -260,7 +260,7 @@ class Invoice(ModelNormal):
             row_version (str, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
@@ -374,7 +374,7 @@ class Invoice(ModelNormal):
             row_version (str, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): [optional]  # noqa: E501
             created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
         """
 
