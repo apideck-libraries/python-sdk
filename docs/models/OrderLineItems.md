@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **name** | **str** |  | [optional] 
 **item** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **total_tax** | **int, none_type** |  | [optional] 

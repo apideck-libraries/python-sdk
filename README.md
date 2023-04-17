@@ -114,6 +114,10 @@ Read the full documentation of the CrmApi [here](./docs/apis/CrmApi.md).
 
 Read the full documentation of the CustomerSupportApi [here](./docs/apis/CustomerSupportApi.md).
 
+### EcommerceApi
+
+Read the full documentation of the EcommerceApi [here](./docs/apis/EcommerceApi.md).
+
 ### FileStorageApi
 
 Read the full documentation of the FileStorageApi [here](./docs/apis/FileStorageApi.md).
@@ -121,6 +125,10 @@ Read the full documentation of the FileStorageApi [here](./docs/apis/FileStorage
 ### HrisApi
 
 Read the full documentation of the HrisApi [here](./docs/apis/HrisApi.md).
+
+### IssueTrackingApi
+
+Read the full documentation of the IssueTrackingApi [here](./docs/apis/IssueTrackingApi.md).
 
 ### LeadApi
 
@@ -176,11 +184,13 @@ from apideck.model.accounting_customer import AccountingCustomer
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
+from apideck.model.bills_sort import BillsSort
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
 from apideck.model.create_invoice_item_response import CreateInvoiceItemResponse
 from apideck.model.create_invoice_response import CreateInvoiceResponse
+from apideck.model.create_journal_entry_response import CreateJournalEntryResponse
 from apideck.model.create_ledger_account_response import CreateLedgerAccountResponse
 from apideck.model.create_payment_response import CreatePaymentResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
@@ -191,6 +201,7 @@ from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
 from apideck.model.delete_invoice_response import DeleteInvoiceResponse
+from apideck.model.delete_journal_entry_response import DeleteJournalEntryResponse
 from apideck.model.delete_ledger_account_response import DeleteLedgerAccountResponse
 from apideck.model.delete_payment_response import DeletePaymentResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
@@ -207,6 +218,8 @@ from apideck.model.get_invoice_item_response import GetInvoiceItemResponse
 from apideck.model.get_invoice_items_response import GetInvoiceItemsResponse
 from apideck.model.get_invoice_response import GetInvoiceResponse
 from apideck.model.get_invoices_response import GetInvoicesResponse
+from apideck.model.get_journal_entries_response import GetJournalEntriesResponse
+from apideck.model.get_journal_entry_response import GetJournalEntryResponse
 from apideck.model.get_ledger_account_response import GetLedgerAccountResponse
 from apideck.model.get_ledger_accounts_response import GetLedgerAccountsResponse
 from apideck.model.get_payment_response import GetPaymentResponse
@@ -220,13 +233,15 @@ from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
 from apideck.model.invoices_sort import InvoicesSort
+from apideck.model.journal_entry import JournalEntry
 from apideck.model.ledger_account import LedgerAccount
 from apideck.model.not_found_response import NotFoundResponse
-from apideck.model.passthrough import Passthrough
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
 from apideck.model.supplier import Supplier
+from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.tax_rate import TaxRate
 from apideck.model.tax_rates_filter import TaxRatesFilter
 from apideck.model.unauthorized_response import UnauthorizedResponse
@@ -237,6 +252,7 @@ from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
 from apideck.model.update_invoice_items_response import UpdateInvoiceItemsResponse
 from apideck.model.update_invoice_response import UpdateInvoiceResponse
+from apideck.model.update_journal_entry_response import UpdateJournalEntryResponse
 from apideck.model.update_ledger_account_response import UpdateLedgerAccountResponse
 from apideck.model.update_payment_response import UpdatePaymentResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
@@ -266,7 +282,7 @@ with apideck.ApiClient(configuration) as api_client:
     x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
 x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 x_apideck_service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-pass_through = Passthrough() # Passthrough | Optional unmapped key/values that will be passed through to downstream as query parameters (optional)
+pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters (optional)
 filter = BalanceSheetFilter(
         start_date="2021-01-01",
         end_date="2021-12-31",
@@ -340,6 +356,16 @@ _AccountingApi_ | [**invoices_delete**](docs/apis/AccountingApi.md#invoices_dele
 _AccountingApi_ | [**invoices_one**](docs/apis/AccountingApi.md#invoices_one) | **GET** /accounting/invoices/{id} | Get Invoice |
 
 _AccountingApi_ | [**invoices_update**](docs/apis/AccountingApi.md#invoices_update) | **PATCH** /accounting/invoices/{id} | Update Invoice |
+
+_AccountingApi_ | [**journal_entries_add**](docs/apis/AccountingApi.md#journal_entries_add) | **POST** /accounting/journal-entries | Create Journal Entry |
+
+_AccountingApi_ | [**journal_entries_all**](docs/apis/AccountingApi.md#journal_entries_all) | **GET** /accounting/journal-entries | List Journal Entries |
+
+_AccountingApi_ | [**journal_entries_delete**](docs/apis/AccountingApi.md#journal_entries_delete) | **DELETE** /accounting/journal-entries/{id} | Delete Journal Entry |
+
+_AccountingApi_ | [**journal_entries_one**](docs/apis/AccountingApi.md#journal_entries_one) | **GET** /accounting/journal-entries/{id} | Get Journal Entry |
+
+_AccountingApi_ | [**journal_entries_update**](docs/apis/AccountingApi.md#journal_entries_update) | **PATCH** /accounting/journal-entries/{id} | Update Journal Entry |
 
 _AccountingApi_ | [**ledger_accounts_add**](docs/apis/AccountingApi.md#ledger_accounts_add) | **POST** /accounting/ledger-accounts | Create Ledger Account |
 
@@ -499,6 +525,20 @@ _CustomerSupportApi_ | [**customers_one**](docs/apis/CustomerSupportApi.md#custo
 
 _CustomerSupportApi_ | [**customers_update**](docs/apis/CustomerSupportApi.md#customers_update) | **PATCH** /customer-support/customers/{id} | Update Customer Support Customer |
 
+_EcommerceApi_ | [**customers_all2**](docs/apis/EcommerceApi.md#customers_all2) | **GET** /ecommerce/customers | List Customers |
+
+_EcommerceApi_ | [**customers_one2**](docs/apis/EcommerceApi.md#customers_one2) | **GET** /ecommerce/customers/{id} | Get Customer |
+
+_EcommerceApi_ | [**orders_all**](docs/apis/EcommerceApi.md#orders_all) | **GET** /ecommerce/orders | List Orders |
+
+_EcommerceApi_ | [**orders_one**](docs/apis/EcommerceApi.md#orders_one) | **GET** /ecommerce/orders/{id} | Get Order |
+
+_EcommerceApi_ | [**products_all**](docs/apis/EcommerceApi.md#products_all) | **GET** /ecommerce/products | List Products |
+
+_EcommerceApi_ | [**products_one**](docs/apis/EcommerceApi.md#products_one) | **GET** /ecommerce/products/{id} | Get Product |
+
+_EcommerceApi_ | [**stores_one**](docs/apis/EcommerceApi.md#stores_one) | **GET** /ecommerce/store | Get Store |
+
 _FileStorageApi_ | [**drive_groups_add**](docs/apis/FileStorageApi.md#drive_groups_add) | **POST** /file-storage/drive-groups | Create DriveGroup |
 
 _FileStorageApi_ | [**drive_groups_all**](docs/apis/FileStorageApi.md#drive_groups_all) | **GET** /file-storage/drive-groups | List DriveGroups |
@@ -528,6 +568,8 @@ _FileStorageApi_ | [**files_download**](docs/apis/FileStorageApi.md#files_downlo
 _FileStorageApi_ | [**files_one**](docs/apis/FileStorageApi.md#files_one) | **GET** /file-storage/files/{id} | Get File |
 
 _FileStorageApi_ | [**files_search**](docs/apis/FileStorageApi.md#files_search) | **POST** /file-storage/files/search | Search Files |
+
+_FileStorageApi_ | [**files_update**](docs/apis/FileStorageApi.md#files_update) | **PATCH** /file-storage/files/{id} | Rename or move File |
 
 _FileStorageApi_ | [**folders_add**](docs/apis/FileStorageApi.md#folders_add) | **POST** /file-storage/folders | Create Folder |
 
@@ -593,10 +635,6 @@ _HrisApi_ | [**employees_one**](docs/apis/HrisApi.md#employees_one) | **GET** /h
 
 _HrisApi_ | [**employees_update**](docs/apis/HrisApi.md#employees_update) | **PATCH** /hris/employees/{id} | Update Employee |
 
-_HrisApi_ | [**jobs_all**](docs/apis/HrisApi.md#jobs_all) | **GET** /hris/jobs/employees/{employee_id} | List Jobs |
-
-_HrisApi_ | [**jobs_one**](docs/apis/HrisApi.md#jobs_one) | **GET** /hris/jobs/employees/{employee_id}/jobs/{job_id} | One Job |
-
 _HrisApi_ | [**payrolls_all**](docs/apis/HrisApi.md#payrolls_all) | **GET** /hris/payrolls | List Payroll |
 
 _HrisApi_ | [**payrolls_one**](docs/apis/HrisApi.md#payrolls_one) | **GET** /hris/payrolls/{payroll_id} | Get Payroll |
@@ -610,6 +648,36 @@ _HrisApi_ | [**time_off_requests_delete**](docs/apis/HrisApi.md#time_off_request
 _HrisApi_ | [**time_off_requests_one**](docs/apis/HrisApi.md#time_off_requests_one) | **GET** /hris/time-off-requests/{id} | Get Time Off Request |
 
 _HrisApi_ | [**time_off_requests_update**](docs/apis/HrisApi.md#time_off_requests_update) | **PATCH** /hris/time-off-requests/{id} | Update Time Off Request |
+
+_IssueTrackingApi_ | [**collection_tags_all**](docs/apis/IssueTrackingApi.md#collection_tags_all) | **GET** /issue-tracking/collections/{collection_id}/tags | List Tags |
+
+_IssueTrackingApi_ | [**collection_ticket_comments_add**](docs/apis/IssueTrackingApi.md#collection_ticket_comments_add) | **POST** /issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments | Create Comment |
+
+_IssueTrackingApi_ | [**collection_ticket_comments_all**](docs/apis/IssueTrackingApi.md#collection_ticket_comments_all) | **GET** /issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments | List Comments |
+
+_IssueTrackingApi_ | [**collection_ticket_comments_delete**](docs/apis/IssueTrackingApi.md#collection_ticket_comments_delete) | **DELETE** /issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id} | Delete Comment |
+
+_IssueTrackingApi_ | [**collection_ticket_comments_one**](docs/apis/IssueTrackingApi.md#collection_ticket_comments_one) | **GET** /issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id} | Get Comment |
+
+_IssueTrackingApi_ | [**collection_ticket_comments_update**](docs/apis/IssueTrackingApi.md#collection_ticket_comments_update) | **PATCH** /issue-tracking/collections/{collection_id}/tickets/{ticket_id}/comments/{id} | Update Comment |
+
+_IssueTrackingApi_ | [**collection_tickets_add**](docs/apis/IssueTrackingApi.md#collection_tickets_add) | **POST** /issue-tracking/collections/{collection_id}/tickets | Create Ticket |
+
+_IssueTrackingApi_ | [**collection_tickets_all**](docs/apis/IssueTrackingApi.md#collection_tickets_all) | **GET** /issue-tracking/collections/{collection_id}/tickets | List Tickets |
+
+_IssueTrackingApi_ | [**collection_tickets_delete**](docs/apis/IssueTrackingApi.md#collection_tickets_delete) | **DELETE** /issue-tracking/collections/{collection_id}/tickets/{ticket_id} | Delete Ticket |
+
+_IssueTrackingApi_ | [**collection_tickets_one**](docs/apis/IssueTrackingApi.md#collection_tickets_one) | **GET** /issue-tracking/collections/{collection_id}/tickets/{ticket_id} | Get Ticket |
+
+_IssueTrackingApi_ | [**collection_tickets_update**](docs/apis/IssueTrackingApi.md#collection_tickets_update) | **PATCH** /issue-tracking/collections/{collection_id}/tickets/{ticket_id} | Update Ticket |
+
+_IssueTrackingApi_ | [**collection_users_all**](docs/apis/IssueTrackingApi.md#collection_users_all) | **GET** /issue-tracking/collections/{collection_id}/users | List Users |
+
+_IssueTrackingApi_ | [**collection_users_one**](docs/apis/IssueTrackingApi.md#collection_users_one) | **GET** /issue-tracking/collections/{collection_id}/users/{id} | Get user |
+
+_IssueTrackingApi_ | [**collections_all**](docs/apis/IssueTrackingApi.md#collections_all) | **GET** /issue-tracking/collections | List Collections |
+
+_IssueTrackingApi_ | [**collections_one**](docs/apis/IssueTrackingApi.md#collections_one) | **GET** /issue-tracking/collections/{collection_id} | Get Collection |
 
 _LeadApi_ | [**leads_add**](docs/apis/LeadApi.md#leads_add) | **POST** /lead/leads | Create lead |
 
@@ -739,9 +807,15 @@ _VaultApi_ | [**connections_update**](docs/apis/VaultApi.md#connections_update) 
 
 _VaultApi_ | [**consumer_request_counts_all**](docs/apis/VaultApi.md#consumer_request_counts_all) | **GET** /vault/consumers/{consumer_id}/stats | Consumer request counts |
 
+_VaultApi_ | [**consumers_add**](docs/apis/VaultApi.md#consumers_add) | **POST** /vault/consumers | Create consumer |
+
 _VaultApi_ | [**consumers_all**](docs/apis/VaultApi.md#consumers_all) | **GET** /vault/consumers | Get all consumers |
 
+_VaultApi_ | [**consumers_delete**](docs/apis/VaultApi.md#consumers_delete) | **DELETE** /vault/consumers/{consumer_id} | Delete consumer |
+
 _VaultApi_ | [**consumers_one**](docs/apis/VaultApi.md#consumers_one) | **GET** /vault/consumers/{consumer_id} | Get consumer |
+
+_VaultApi_ | [**consumers_update**](docs/apis/VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer |
 
 _VaultApi_ | [**logs_all**](docs/apis/VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs |
 
@@ -765,6 +839,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
 
  - [AccountingCustomer](docs/models/AccountingCustomer.md)
  - [AccountingEventType](docs/models/AccountingEventType.md)
+ - [ActivitiesFilter](docs/models/ActivitiesFilter.md)
  - [Activity](docs/models/Activity.md)
  - [ActivityAttendee](docs/models/ActivityAttendee.md)
  - [Address](docs/models/Address.md)
@@ -780,6 +855,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ApplicantSocialLinks](docs/models/ApplicantSocialLinks.md)
  - [ApplicantWebsites](docs/models/ApplicantWebsites.md)
  - [ApplicantsFilter](docs/models/ApplicantsFilter.md)
+ - [Assignee](docs/models/Assignee.md)
  - [AtsActivity](docs/models/AtsActivity.md)
  - [AtsEventType](docs/models/AtsEventType.md)
  - [AuthType](docs/models/AuthType.md)
@@ -799,8 +875,15 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Benefit](docs/models/Benefit.md)
  - [Bill](docs/models/Bill.md)
  - [BillLineItem](docs/models/BillLineItem.md)
+ - [BillsSort](docs/models/BillsSort.md)
  - [Branch](docs/models/Branch.md)
  - [CashDetails](docs/models/CashDetails.md)
+ - [Collection](docs/models/Collection.md)
+ - [CollectionTag](docs/models/CollectionTag.md)
+ - [CollectionTicketComment](docs/models/CollectionTicketComment.md)
+ - [CollectionUser](docs/models/CollectionUser.md)
+ - [CollectionsSort](docs/models/CollectionsSort.md)
+ - [CommentsSort](docs/models/CommentsSort.md)
  - [CompaniesFilter](docs/models/CompaniesFilter.md)
  - [CompaniesSort](docs/models/CompaniesSort.md)
  - [Company](docs/models/Company.md)
@@ -838,8 +921,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateActivityResponse](docs/models/CreateActivityResponse.md)
  - [CreateApplicantResponse](docs/models/CreateApplicantResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
+ - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
  - [CreateConnectionResponse](docs/models/CreateConnectionResponse.md)
+ - [CreateConsumerResponse](docs/models/CreateConsumerResponse.md)
  - [CreateContactResponse](docs/models/CreateContactResponse.md)
  - [CreateCreditNoteResponse](docs/models/CreateCreditNoteResponse.md)
  - [CreateCustomerResponse](docs/models/CreateCustomerResponse.md)
@@ -847,6 +932,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateDepartmentResponse](docs/models/CreateDepartmentResponse.md)
  - [CreateDriveGroupResponse](docs/models/CreateDriveGroupResponse.md)
  - [CreateDriveResponse](docs/models/CreateDriveResponse.md)
+ - [CreateEcommerceCustomerResponse](docs/models/CreateEcommerceCustomerResponse.md)
+ - [CreateEcommerceOrderResponse](docs/models/CreateEcommerceOrderResponse.md)
  - [CreateEmployeeResponse](docs/models/CreateEmployeeResponse.md)
  - [CreateFileRequest](docs/models/CreateFileRequest.md)
  - [CreateFileResponse](docs/models/CreateFileResponse.md)
@@ -857,6 +944,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateInvoiceResponse](docs/models/CreateInvoiceResponse.md)
  - [CreateItemResponse](docs/models/CreateItemResponse.md)
  - [CreateJobResponse](docs/models/CreateJobResponse.md)
+ - [CreateJournalEntryResponse](docs/models/CreateJournalEntryResponse.md)
  - [CreateLeadResponse](docs/models/CreateLeadResponse.md)
  - [CreateLedgerAccountResponse](docs/models/CreateLedgerAccountResponse.md)
  - [CreateLocationResponse](docs/models/CreateLocationResponse.md)
@@ -871,12 +959,14 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreatePaymentResponse](docs/models/CreatePaymentResponse.md)
  - [CreatePipelineResponse](docs/models/CreatePipelineResponse.md)
  - [CreatePosPaymentResponse](docs/models/CreatePosPaymentResponse.md)
+ - [CreateProductResponse](docs/models/CreateProductResponse.md)
  - [CreateSessionResponse](docs/models/CreateSessionResponse.md)
  - [CreateSessionResponseData](docs/models/CreateSessionResponseData.md)
  - [CreateSharedLinkResponse](docs/models/CreateSharedLinkResponse.md)
  - [CreateSupplierResponse](docs/models/CreateSupplierResponse.md)
  - [CreateTaxRateResponse](docs/models/CreateTaxRateResponse.md)
  - [CreateTenderResponse](docs/models/CreateTenderResponse.md)
+ - [CreateTicketResponse](docs/models/CreateTicketResponse.md)
  - [CreateTimeOffRequestResponse](docs/models/CreateTimeOffRequestResponse.md)
  - [CreateUploadSessionRequest](docs/models/CreateUploadSessionRequest.md)
  - [CreateUploadSessionResponse](docs/models/CreateUploadSessionResponse.md)
@@ -892,7 +982,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Deduction](docs/models/Deduction.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
+ - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
+ - [DeleteConsumerResponse](docs/models/DeleteConsumerResponse.md)
  - [DeleteContactResponse](docs/models/DeleteContactResponse.md)
  - [DeleteCreditNoteResponse](docs/models/DeleteCreditNoteResponse.md)
  - [DeleteCustomerResponse](docs/models/DeleteCustomerResponse.md)
@@ -900,6 +992,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteDepartmentResponse](docs/models/DeleteDepartmentResponse.md)
  - [DeleteDriveGroupResponse](docs/models/DeleteDriveGroupResponse.md)
  - [DeleteDriveResponse](docs/models/DeleteDriveResponse.md)
+ - [DeleteEcommerceCustomerResponse](docs/models/DeleteEcommerceCustomerResponse.md)
+ - [DeleteEcommerceOrderResponse](docs/models/DeleteEcommerceOrderResponse.md)
  - [DeleteEmployeeResponse](docs/models/DeleteEmployeeResponse.md)
  - [DeleteFileResponse](docs/models/DeleteFileResponse.md)
  - [DeleteFolderResponse](docs/models/DeleteFolderResponse.md)
@@ -908,6 +1002,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteInvoiceResponse](docs/models/DeleteInvoiceResponse.md)
  - [DeleteItemResponse](docs/models/DeleteItemResponse.md)
  - [DeleteJobResponse](docs/models/DeleteJobResponse.md)
+ - [DeleteJournalEntryResponse](docs/models/DeleteJournalEntryResponse.md)
  - [DeleteLeadResponse](docs/models/DeleteLeadResponse.md)
  - [DeleteLedgerAccountResponse](docs/models/DeleteLedgerAccountResponse.md)
  - [DeleteLocationResponse](docs/models/DeleteLocationResponse.md)
@@ -922,10 +1017,12 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeletePaymentResponse](docs/models/DeletePaymentResponse.md)
  - [DeletePipelineResponse](docs/models/DeletePipelineResponse.md)
  - [DeletePosPaymentResponse](docs/models/DeletePosPaymentResponse.md)
+ - [DeleteProductResponse](docs/models/DeleteProductResponse.md)
  - [DeleteSharedLinkResponse](docs/models/DeleteSharedLinkResponse.md)
  - [DeleteSupplierResponse](docs/models/DeleteSupplierResponse.md)
  - [DeleteTaxRateResponse](docs/models/DeleteTaxRateResponse.md)
  - [DeleteTenderResponse](docs/models/DeleteTenderResponse.md)
+ - [DeleteTicketResponse](docs/models/DeleteTicketResponse.md)
  - [DeleteTimeOffRequestResponse](docs/models/DeleteTimeOffRequestResponse.md)
  - [DeleteUploadSessionResponse](docs/models/DeleteUploadSessionResponse.md)
  - [DeleteUserResponse](docs/models/DeleteUserResponse.md)
@@ -936,18 +1033,36 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DriveGroup](docs/models/DriveGroup.md)
  - [DriveGroupsFilter](docs/models/DriveGroupsFilter.md)
  - [DrivesFilter](docs/models/DrivesFilter.md)
+ - [EcommerceAddress](docs/models/EcommerceAddress.md)
+ - [EcommerceCustomer](docs/models/EcommerceCustomer.md)
+ - [EcommerceCustomerAddresses](docs/models/EcommerceCustomerAddresses.md)
+ - [EcommerceCustomersFilter](docs/models/EcommerceCustomersFilter.md)
+ - [EcommerceDiscount](docs/models/EcommerceDiscount.md)
+ - [EcommerceOrder](docs/models/EcommerceOrder.md)
+ - [EcommerceOrderLineItem](docs/models/EcommerceOrderLineItem.md)
+ - [EcommerceOrderStatus](docs/models/EcommerceOrderStatus.md)
+ - [EcommerceOrdersFilter](docs/models/EcommerceOrdersFilter.md)
+ - [EcommerceProduct](docs/models/EcommerceProduct.md)
+ - [EcommerceProductCategories](docs/models/EcommerceProductCategories.md)
+ - [EcommerceProductImages](docs/models/EcommerceProductImages.md)
+ - [EcommerceProductImages1](docs/models/EcommerceProductImages1.md)
+ - [EcommerceProductOptions](docs/models/EcommerceProductOptions.md)
+ - [EcommerceProductOptions1](docs/models/EcommerceProductOptions1.md)
+ - [EcommerceProductVariants](docs/models/EcommerceProductVariants.md)
+ - [EcommerceStore](docs/models/EcommerceStore.md)
  - [Email](docs/models/Email.md)
  - [Employee](docs/models/Employee.md)
  - [EmployeeCompensations](docs/models/EmployeeCompensations.md)
  - [EmployeeEmploymentRole](docs/models/EmployeeEmploymentRole.md)
  - [EmployeeJobs](docs/models/EmployeeJobs.md)
  - [EmployeeManager](docs/models/EmployeeManager.md)
- - [EmployeePartner](docs/models/EmployeePartner.md)
  - [EmployeePayroll](docs/models/EmployeePayroll.md)
  - [EmployeePayrolls](docs/models/EmployeePayrolls.md)
  - [EmployeeSchedules](docs/models/EmployeeSchedules.md)
  - [EmployeeTeam](docs/models/EmployeeTeam.md)
  - [EmployeesFilter](docs/models/EmployeesFilter.md)
+ - [EmployeesSort](docs/models/EmployeesSort.md)
+ - [EmploymentStatus](docs/models/EmploymentStatus.md)
  - [Error](docs/models/Error.md)
  - [ExecuteBaseUrl](docs/models/ExecuteBaseUrl.md)
  - [ExecuteWebhookEventRequest](docs/models/ExecuteWebhookEventRequest.md)
@@ -974,6 +1089,13 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
  - [GetBillsResponse](docs/models/GetBillsResponse.md)
+ - [GetCollectionResponse](docs/models/GetCollectionResponse.md)
+ - [GetCollectionTagsResponse](docs/models/GetCollectionTagsResponse.md)
+ - [GetCollectionUserResponse](docs/models/GetCollectionUserResponse.md)
+ - [GetCollectionUsersResponse](docs/models/GetCollectionUsersResponse.md)
+ - [GetCollectionsResponse](docs/models/GetCollectionsResponse.md)
+ - [GetCommentResponse](docs/models/GetCommentResponse.md)
+ - [GetCommentsResponse](docs/models/GetCommentsResponse.md)
  - [GetCompaniesResponse](docs/models/GetCompaniesResponse.md)
  - [GetCompanyInfoResponse](docs/models/GetCompanyInfoResponse.md)
  - [GetCompanyResponse](docs/models/GetCompanyResponse.md)
@@ -999,6 +1121,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetDriveGroupsResponse](docs/models/GetDriveGroupsResponse.md)
  - [GetDriveResponse](docs/models/GetDriveResponse.md)
  - [GetDrivesResponse](docs/models/GetDrivesResponse.md)
+ - [GetEcommerceCustomerResponse](docs/models/GetEcommerceCustomerResponse.md)
+ - [GetEcommerceCustomersResponse](docs/models/GetEcommerceCustomersResponse.md)
+ - [GetEcommerceOrderResponse](docs/models/GetEcommerceOrderResponse.md)
+ - [GetEcommerceOrdersResponse](docs/models/GetEcommerceOrdersResponse.md)
  - [GetEmployeePayrollResponse](docs/models/GetEmployeePayrollResponse.md)
  - [GetEmployeePayrollsResponse](docs/models/GetEmployeePayrollsResponse.md)
  - [GetEmployeeResponse](docs/models/GetEmployeeResponse.md)
@@ -1020,6 +1146,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetItemsResponse](docs/models/GetItemsResponse.md)
  - [GetJobResponse](docs/models/GetJobResponse.md)
  - [GetJobsResponse](docs/models/GetJobsResponse.md)
+ - [GetJournalEntriesResponse](docs/models/GetJournalEntriesResponse.md)
+ - [GetJournalEntryResponse](docs/models/GetJournalEntryResponse.md)
  - [GetLeadResponse](docs/models/GetLeadResponse.md)
  - [GetLeadsResponse](docs/models/GetLeadsResponse.md)
  - [GetLedgerAccountResponse](docs/models/GetLedgerAccountResponse.md)
@@ -1051,15 +1179,21 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetPipelinesResponse](docs/models/GetPipelinesResponse.md)
  - [GetPosPaymentResponse](docs/models/GetPosPaymentResponse.md)
  - [GetPosPaymentsResponse](docs/models/GetPosPaymentsResponse.md)
+ - [GetProductResponse](docs/models/GetProductResponse.md)
+ - [GetProductsResponse](docs/models/GetProductsResponse.md)
  - [GetProfitAndLossResponse](docs/models/GetProfitAndLossResponse.md)
  - [GetSharedLinkResponse](docs/models/GetSharedLinkResponse.md)
  - [GetSharedLinksResponse](docs/models/GetSharedLinksResponse.md)
+ - [GetStoreResponse](docs/models/GetStoreResponse.md)
+ - [GetStoresResponse](docs/models/GetStoresResponse.md)
  - [GetSupplierResponse](docs/models/GetSupplierResponse.md)
  - [GetSuppliersResponse](docs/models/GetSuppliersResponse.md)
  - [GetTaxRateResponse](docs/models/GetTaxRateResponse.md)
  - [GetTaxRatesResponse](docs/models/GetTaxRatesResponse.md)
  - [GetTenderResponse](docs/models/GetTenderResponse.md)
  - [GetTendersResponse](docs/models/GetTendersResponse.md)
+ - [GetTicketResponse](docs/models/GetTicketResponse.md)
+ - [GetTicketsResponse](docs/models/GetTicketsResponse.md)
  - [GetTimeOffRequestResponse](docs/models/GetTimeOffRequestResponse.md)
  - [GetTimeOffRequestsResponse](docs/models/GetTimeOffRequestsResponse.md)
  - [GetUploadSessionResponse](docs/models/GetUploadSessionResponse.md)
@@ -1074,6 +1208,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [HrisJobLocation](docs/models/HrisJobLocation.md)
  - [HrisJobs](docs/models/HrisJobs.md)
  - [IdempotencyKey](docs/models/IdempotencyKey.md)
+ - [IntegrationState](docs/models/IntegrationState.md)
  - [Invoice](docs/models/Invoice.md)
  - [InvoiceItem](docs/models/InvoiceItem.md)
  - [InvoiceItemAssetAccount](docs/models/InvoiceItemAssetAccount.md)
@@ -1084,11 +1219,15 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [InvoiceLineItem](docs/models/InvoiceLineItem.md)
  - [InvoiceResponse](docs/models/InvoiceResponse.md)
  - [InvoicesSort](docs/models/InvoicesSort.md)
+ - [IssueTrackingEventType](docs/models/IssueTrackingEventType.md)
+ - [IssuesFilter](docs/models/IssuesFilter.md)
  - [Item](docs/models/Item.md)
  - [Job](docs/models/Job.md)
  - [JobSalary](docs/models/JobSalary.md)
  - [JobStatus](docs/models/JobStatus.md)
  - [JobsFilter](docs/models/JobsFilter.md)
+ - [JournalEntry](docs/models/JournalEntry.md)
+ - [JournalEntryLineItem](docs/models/JournalEntryLineItem.md)
  - [Lead](docs/models/Lead.md)
  - [LeadEventType](docs/models/LeadEventType.md)
  - [LeadsFilter](docs/models/LeadsFilter.md)
@@ -1099,11 +1238,15 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [LedgerAccounts](docs/models/LedgerAccounts.md)
  - [LinkedConnectorResource](docs/models/LinkedConnectorResource.md)
  - [LinkedCustomer](docs/models/LinkedCustomer.md)
+ - [LinkedEcommerceCustomer](docs/models/LinkedEcommerceCustomer.md)
+ - [LinkedEcommerceOrder](docs/models/LinkedEcommerceOrder.md)
  - [LinkedFolder](docs/models/LinkedFolder.md)
  - [LinkedInvoiceItem](docs/models/LinkedInvoiceItem.md)
  - [LinkedLedgerAccount](docs/models/LinkedLedgerAccount.md)
+ - [LinkedParentCustomer](docs/models/LinkedParentCustomer.md)
  - [LinkedSupplier](docs/models/LinkedSupplier.md)
  - [LinkedTaxRate](docs/models/LinkedTaxRate.md)
+ - [LinkedTrackingCategory](docs/models/LinkedTrackingCategory.md)
  - [Links](docs/models/Links.md)
  - [Location](docs/models/Location.md)
  - [Log](docs/models/Log.md)
@@ -1139,7 +1282,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [OrderType](docs/models/OrderType.md)
  - [Owner](docs/models/Owner.md)
  - [PaginationCoverage](docs/models/PaginationCoverage.md)
- - [Passthrough](docs/models/Passthrough.md)
+ - [PassThroughQuery](docs/models/PassThroughQuery.md)
  - [Payment](docs/models/Payment.md)
  - [PaymentAllocations](docs/models/PaymentAllocations.md)
  - [PaymentCard](docs/models/PaymentCard.md)
@@ -1148,6 +1291,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Payroll](docs/models/Payroll.md)
  - [PayrollTotals](docs/models/PayrollTotals.md)
  - [PayrollsFilter](docs/models/PayrollsFilter.md)
+ - [Person](docs/models/Person.md)
  - [PhoneNumber](docs/models/PhoneNumber.md)
  - [Pipeline](docs/models/Pipeline.md)
  - [PipelineStages](docs/models/PipelineStages.md)
@@ -1188,6 +1332,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [SortDirection](docs/models/SortDirection.md)
  - [Status](docs/models/Status.md)
  - [Supplier](docs/models/Supplier.md)
+ - [SuppliersFilter](docs/models/SuppliersFilter.md)
  - [SupportedProperty](docs/models/SupportedProperty.md)
  - [SupportedPropertyChildProperties](docs/models/SupportedPropertyChildProperties.md)
  - [Tags](docs/models/Tags.md)
@@ -1195,11 +1340,14 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [TaxRate](docs/models/TaxRate.md)
  - [TaxRatesFilter](docs/models/TaxRatesFilter.md)
  - [Tender](docs/models/Tender.md)
+ - [Ticket](docs/models/Ticket.md)
+ - [TicketsSort](docs/models/TicketsSort.md)
  - [TimeOffRequest](docs/models/TimeOffRequest.md)
  - [TimeOffRequestNotes](docs/models/TimeOffRequestNotes.md)
  - [TimeOffRequestsFilter](docs/models/TimeOffRequestsFilter.md)
  - [TooManyRequestsResponse](docs/models/TooManyRequestsResponse.md)
  - [TooManyRequestsResponseDetail](docs/models/TooManyRequestsResponseDetail.md)
+ - [TrackingItem](docs/models/TrackingItem.md)
  - [UnauthorizedResponse](docs/models/UnauthorizedResponse.md)
  - [UnexpectedErrorResponse](docs/models/UnexpectedErrorResponse.md)
  - [UnifiedApiId](docs/models/UnifiedApiId.md)
@@ -1208,8 +1356,11 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UnprocessableResponse](docs/models/UnprocessableResponse.md)
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
  - [UpdateBillResponse](docs/models/UpdateBillResponse.md)
+ - [UpdateCommentResponse](docs/models/UpdateCommentResponse.md)
  - [UpdateCompanyResponse](docs/models/UpdateCompanyResponse.md)
  - [UpdateConnectionResponse](docs/models/UpdateConnectionResponse.md)
+ - [UpdateConsumerRequest](docs/models/UpdateConsumerRequest.md)
+ - [UpdateConsumerResponse](docs/models/UpdateConsumerResponse.md)
  - [UpdateContactResponse](docs/models/UpdateContactResponse.md)
  - [UpdateCreditNoteResponse](docs/models/UpdateCreditNoteResponse.md)
  - [UpdateCustomerResponse](docs/models/UpdateCustomerResponse.md)
@@ -1217,7 +1368,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateDepartmentResponse](docs/models/UpdateDepartmentResponse.md)
  - [UpdateDriveGroupResponse](docs/models/UpdateDriveGroupResponse.md)
  - [UpdateDriveResponse](docs/models/UpdateDriveResponse.md)
+ - [UpdateEcommerceCustomerResponse](docs/models/UpdateEcommerceCustomerResponse.md)
+ - [UpdateEcommerceOrderResponse](docs/models/UpdateEcommerceOrderResponse.md)
  - [UpdateEmployeeResponse](docs/models/UpdateEmployeeResponse.md)
+ - [UpdateFileRequest](docs/models/UpdateFileRequest.md)
  - [UpdateFileResponse](docs/models/UpdateFileResponse.md)
  - [UpdateFolderRequest](docs/models/UpdateFolderRequest.md)
  - [UpdateFolderResponse](docs/models/UpdateFolderResponse.md)
@@ -1226,6 +1380,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateInvoiceResponse](docs/models/UpdateInvoiceResponse.md)
  - [UpdateItemResponse](docs/models/UpdateItemResponse.md)
  - [UpdateJobResponse](docs/models/UpdateJobResponse.md)
+ - [UpdateJournalEntryResponse](docs/models/UpdateJournalEntryResponse.md)
  - [UpdateLeadResponse](docs/models/UpdateLeadResponse.md)
  - [UpdateLedgerAccountResponse](docs/models/UpdateLedgerAccountResponse.md)
  - [UpdateLocationResponse](docs/models/UpdateLocationResponse.md)
@@ -1240,10 +1395,12 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdatePaymentResponse](docs/models/UpdatePaymentResponse.md)
  - [UpdatePipelineResponse](docs/models/UpdatePipelineResponse.md)
  - [UpdatePosPaymentResponse](docs/models/UpdatePosPaymentResponse.md)
+ - [UpdateProductResponse](docs/models/UpdateProductResponse.md)
  - [UpdateSharedLinkResponse](docs/models/UpdateSharedLinkResponse.md)
  - [UpdateSupplierResponse](docs/models/UpdateSupplierResponse.md)
  - [UpdateTaxRateResponse](docs/models/UpdateTaxRateResponse.md)
  - [UpdateTenderResponse](docs/models/UpdateTenderResponse.md)
+ - [UpdateTicketResponse](docs/models/UpdateTicketResponse.md)
  - [UpdateTimeOffRequestResponse](docs/models/UpdateTimeOffRequestResponse.md)
  - [UpdateUploadSessionResponse](docs/models/UpdateUploadSessionResponse.md)
  - [UpdateUserResponse](docs/models/UpdateUserResponse.md)

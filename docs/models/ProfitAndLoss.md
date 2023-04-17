@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **currency** | **str** |  | 
 **income** | [**ProfitAndLossIncome**](ProfitAndLossIncome.md) |  | 
 **expenses** | [**ProfitAndLossExpenses**](ProfitAndLossExpenses.md) |  | 
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **start_date** | **str** | The start date of the report | [optional] 
 **end_date** | **str** | The start date of the report | [optional] 
 **customer_id** | **str** | Customer id | [optional] 

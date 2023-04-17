@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**product_id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**product_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **name** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **amount** | **int** |  | [optional] 

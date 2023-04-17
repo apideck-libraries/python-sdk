@@ -22,8 +22,6 @@ Method | HTTP request | Description
 [**employees_delete**](HrisApi.md#employees_delete) | **DELETE** /hris/employees/{id} | Delete Employee
 [**employees_one**](HrisApi.md#employees_one) | **GET** /hris/employees/{id} | Get Employee
 [**employees_update**](HrisApi.md#employees_update) | **PATCH** /hris/employees/{id} | Update Employee
-[**jobs_all**](HrisApi.md#jobs_all) | **GET** /hris/jobs/employees/{employee_id} | List Jobs
-[**jobs_one**](HrisApi.md#jobs_one) | **GET** /hris/jobs/employees/{employee_id}/jobs/{job_id} | One Job
 [**payrolls_all**](HrisApi.md#payrolls_all) | **GET** /hris/payrolls | List Payroll
 [**payrolls_one**](HrisApi.md#payrolls_one) | **GET** /hris/payrolls/{payroll_id} | Get Payroll
 [**time_off_requests_add**](HrisApi.md#time_off_requests_add) | **POST** /hris/time-off-requests | Create Time Off Request
@@ -248,13 +246,14 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Companies
-        api_response = api_instance.companies_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit)
+        api_response = api_instance.companies_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->companies_all: %s\n" % e)
@@ -270,7 +269,8 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -456,6 +456,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -469,7 +470,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Company
-        api_response = api_instance.companies_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.companies_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->companies_one: %s\n" % e)
@@ -485,6 +486,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -843,13 +845,14 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Departments
-        api_response = api_instance.departments_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit)
+        api_response = api_instance.departments_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->departments_all: %s\n" % e)
@@ -865,7 +868,8 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1051,6 +1055,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1064,7 +1069,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Department
-        api_response = api_instance.departments_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.departments_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->departments_one: %s\n" % e)
@@ -1080,6 +1085,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1277,6 +1283,7 @@ with apideck.ApiClient(configuration) as api_client:
         start_date="2022-04-08",
         end_date="2022-04-21",
     ) # PayrollsFilter | Apply filters (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1290,7 +1297,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Employee Payrolls
-        api_response = api_instance.employee_payrolls_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter)
+        api_response = api_instance.employee_payrolls_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employee_payrolls_all: %s\n" % e)
@@ -1307,6 +1314,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **filter** | **PayrollsFilter**| Apply filters | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1386,6 +1394,7 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1399,7 +1408,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Employee Payroll
-        api_response = api_instance.employee_payrolls_one(payroll_id, employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        api_response = api_instance.employee_payrolls_one(payroll_id, employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employee_payrolls_one: %s\n" % e)
@@ -1416,6 +1425,7 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1494,6 +1504,7 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1507,7 +1518,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Employee Schedules
-        api_response = api_instance.employee_schedules_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        api_response = api_instance.employee_schedules_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employee_schedules_all: %s\n" % e)
@@ -1523,6 +1534,7 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1607,7 +1619,7 @@ with apideck.ApiClient(configuration) as api_client:
         salutation="Mr",
         title="CEO",
         marital_status="married",
-        partner=EmployeePartner(
+        partner=Person(
             first_name="Elon",
             last_name="Musk",
             middle_name="D.",
@@ -1630,7 +1642,7 @@ with apideck.ApiClient(configuration) as api_client:
         employment_end_date="2028-10-26",
         leaving_reason="resigned",
         employee_number="123456-AB",
-        employment_status="active",
+        employment_status=EmploymentStatus("active"),
         employment_role=EmployeeEmploymentRole(
             type="contractor",
             sub_type="full_time",
@@ -1640,6 +1652,7 @@ with apideck.ApiClient(configuration) as api_client:
             first_name="Elon",
             last_name="Musk",
             email="elon@musk.com",
+            employment_status=EmploymentStatus("active"),
         ),
         direct_reports=["a0d636c6-43b3-4bde-8c70-85b707d992f4","a98lfd96-43b3-4bde-8c70-85b707d992e6"],
         social_security_number="123456789",
@@ -1855,6 +1868,7 @@ import apideck
 from apideck.api import hris_api
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.get_employees_response import GetEmployeesResponse
+from apideck.model.employees_sort import EmployeesSort
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.employees_filter import EmployeesFilter
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
@@ -1888,7 +1902,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = EmployeesFilter(
         company_id="1234",
         email="elon@tesla.com",
@@ -1898,13 +1912,19 @@ with apideck.ApiClient(configuration) as api_client:
         manager_id="1234",
         employment_status="active",
         employee_number="123456-AB",
+        department_id="1234",
     ) # EmployeesFilter | Apply filters (optional)
+    sort = EmployeesSort(
+        by="created_at",
+        direction=SortDirection("asc"),
+    ) # EmployeesSort | Apply sorting (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Employees
-        api_response = api_instance.employees_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter)
+        api_response = api_instance.employees_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employees_all: %s\n" % e)
@@ -1920,8 +1940,10 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **EmployeesFilter**| Apply filters | [optional]
+ **sort** | **EmployeesSort**| Apply sorting | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -2107,6 +2129,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2120,7 +2143,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Employee
-        api_response = api_instance.employees_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.employees_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employees_one: %s\n" % e)
@@ -2136,6 +2159,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -2221,7 +2245,7 @@ with apideck.ApiClient(configuration) as api_client:
         salutation="Mr",
         title="CEO",
         marital_status="married",
-        partner=EmployeePartner(
+        partner=Person(
             first_name="Elon",
             last_name="Musk",
             middle_name="D.",
@@ -2244,7 +2268,7 @@ with apideck.ApiClient(configuration) as api_client:
         employment_end_date="2028-10-26",
         leaving_reason="resigned",
         employee_number="123456-AB",
-        employment_status="active",
+        employment_status=EmploymentStatus("active"),
         employment_role=EmployeeEmploymentRole(
             type="contractor",
             sub_type="full_time",
@@ -2254,6 +2278,7 @@ with apideck.ApiClient(configuration) as api_client:
             first_name="Elon",
             last_name="Musk",
             email="elon@musk.com",
+            employment_status=EmploymentStatus("active"),
         ),
         direct_reports=["a0d636c6-43b3-4bde-8c70-85b707d992f4","a98lfd96-43b3-4bde-8c70-85b707d992e6"],
         social_security_number="123456789",
@@ -2453,222 +2478,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **jobs_all**
-> GetHrisJobsResponse jobs_all(employee_id)
-
-List Jobs
-
-List Jobs for employee.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import time
-import apideck
-from apideck.api import hris_api
-from apideck.model.bad_request_response import BadRequestResponse
-from apideck.model.payment_required_response import PaymentRequiredResponse
-from apideck.model.get_hris_jobs_response import GetHrisJobsResponse
-from apideck.model.unexpected_error_response import UnexpectedErrorResponse
-from apideck.model.unauthorized_response import UnauthorizedResponse
-from apideck.model.unprocessable_response import UnprocessableResponse
-from apideck.model.not_found_response import NotFoundResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://unify.apideck.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = apideck.Configuration(
-    host = "https://unify.apideck.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with apideck.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hris_api.HrisApi(api_client)
-    employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
-    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
-    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
-    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # List Jobs
-        api_response = api_instance.jobs_all(employee_id)
-        pprint(api_response)
-    except apideck.ApiException as e:
-        print("Exception when calling HrisApi->jobs_all: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # List Jobs
-        api_response = api_instance.jobs_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
-        pprint(api_response)
-    except apideck.ApiException as e:
-        print("Exception when calling HrisApi->jobs_all: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **employee_id** | **str**| ID of the employee you are acting upon. |
- **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
- **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
- **app_id** | **str**| The ID of your Unify application | [optional]
- **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
-
-### Return type
-
-[**GetHrisJobsResponse**](GetHrisJobsResponse.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Jobs |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**404** | The specified resource was not found |  -  |
-**422** | Unprocessable |  -  |
-**0** | Unexpected error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **jobs_one**
-> GetHrisJobResponse jobs_one(job_id, employee_id)
-
-One Job
-
-A Job for employee.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import time
-import apideck
-from apideck.api import hris_api
-from apideck.model.bad_request_response import BadRequestResponse
-from apideck.model.get_hris_job_response import GetHrisJobResponse
-from apideck.model.payment_required_response import PaymentRequiredResponse
-from apideck.model.unexpected_error_response import UnexpectedErrorResponse
-from apideck.model.unauthorized_response import UnauthorizedResponse
-from apideck.model.unprocessable_response import UnprocessableResponse
-from apideck.model.not_found_response import NotFoundResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://unify.apideck.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = apideck.Configuration(
-    host = "https://unify.apideck.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with apideck.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hris_api.HrisApi(api_client)
-    job_id = "job_id_example" # str | ID of the job you are acting upon.
-    employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
-    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
-    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
-    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # One Job
-        api_response = api_instance.jobs_one(job_id, employee_id)
-        pprint(api_response)
-    except apideck.ApiException as e:
-        print("Exception when calling HrisApi->jobs_one: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # One Job
-        api_response = api_instance.jobs_one(job_id, employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
-        pprint(api_response)
-    except apideck.ApiException as e:
-        print("Exception when calling HrisApi->jobs_one: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **job_id** | **str**| ID of the job you are acting upon. |
- **employee_id** | **str**| ID of the employee you are acting upon. |
- **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
- **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
- **app_id** | **str**| The ID of your Unify application | [optional]
- **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
-
-### Return type
-
-[**GetHrisJobResponse**](GetHrisJobResponse.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Job |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**404** | The specified resource was not found |  -  |
-**422** | Unprocessable |  -  |
-**0** | Unexpected error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **payrolls_all**
 > GetPayrollsResponse payrolls_all()
 
@@ -2722,12 +2531,13 @@ with apideck.ApiClient(configuration) as api_client:
         start_date="2022-04-08",
         end_date="2022-04-21",
     ) # PayrollsFilter | Apply filters (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Payroll
-        api_response = api_instance.payrolls_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter)
+        api_response = api_instance.payrolls_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->payrolls_all: %s\n" % e)
@@ -2743,6 +2553,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **filter** | **PayrollsFilter**| Apply filters | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -2821,6 +2632,7 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2834,7 +2646,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Payroll
-        api_response = api_instance.payrolls_one(payroll_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        api_response = api_instance.payrolls_one(payroll_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->payrolls_one: %s\n" % e)
@@ -2850,6 +2662,7 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -3053,19 +2866,20 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = TimeOffRequestsFilter(
         start_date="2022-04-08",
         end_date="2022-04-21",
         employee_id="1234",
         time_off_request_status="",
     ) # TimeOffRequestsFilter | Apply filters (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Time Off Requests
-        api_response = api_instance.time_off_requests_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter)
+        api_response = api_instance.time_off_requests_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_all: %s\n" % e)
@@ -3081,8 +2895,9 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **TimeOffRequestsFilter**| Apply filters | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -3268,6 +3083,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -3281,7 +3097,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Time Off Request
-        api_response = api_instance.time_off_requests_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.time_off_requests_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_one: %s\n" % e)
@@ -3297,6 +3113,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 

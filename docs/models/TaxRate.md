@@ -17,11 +17,11 @@ Name | Type | Description | Notes
 **report_tax_type** | **str, none_type** | Report Tax type to aggregate tax collected or paid for reporting purposes | [optional] 
 **original_tax_rate_id** | **str, none_type** | ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities. | [optional] 
 **status** | **str, none_type** | Tax rate status | [optional] 
-**row_version** | **str, none_type** |  | [optional] 
-**updated_by** | **str, none_type** |  | [optional] [readonly] 
-**created_by** | **str, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
-**created_at** | **datetime** |  | [optional] [readonly] 
+**row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
+**created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
+**updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
+**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -4,15 +4,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **parent_id** | **str** | Parent ID | [optional] [readonly] 
 **name** | **str, none_type** | Department name | [optional] 
 **code** | **str, none_type** |  | [optional] 
 **description** | **str, none_type** |  | [optional] 
-**updated_by** | **str, none_type** |  | [optional] [readonly] 
-**created_by** | **str, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
-**created_at** | **datetime** |  | [optional] [readonly] 
+**updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
+**created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
+**updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
+**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **str** | ID of the connector. | [optional] [readonly] 
 **name** | **str** | Name of the connector. | [optional] 
 **status** | [**ConnectorStatus**](ConnectorStatus.md) |  | [optional] 
-**description** | **str, none_type** |  | [optional] 
+**description** | **str, none_type** | A description of the object. | [optional] 
 **icon_url** | **str** | Link to a small square icon for the connector. | [optional] 
 **logo_url** | **str** | Link to the full logo for the connector. | [optional] 
 **website_url** | **str** | Link to the connector&#39;s website. | [optional] 
