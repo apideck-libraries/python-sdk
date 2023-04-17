@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **downstream_id** | **str, none_type** | The third-party API ID of original entity | [optional] [readonly] 
 **type** | **str, none_type** | Invoice type | [optional] 
 **number** | **str, none_type** | Invoice number. | [optional] 
@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **total_tax** | **float, none_type** | Total tax amount applied to this invoice. | [optional] 
 **tax_code** | **str, none_type** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 **discount_percentage** | **float, none_type** | Discount percentage applied to this invoice. | [optional] 
+**discount_amount** | **float, none_type** | Discount amount applied to this invoice. | [optional] 
 **total** | **float, none_type** | Total amount of invoice, including tax. | [optional] 
 **balance** | **float, none_type** | Balance of invoice due. | [optional] 
 **deposit** | **float, none_type** | Amount of deposit made to this invoice. | [optional] 
@@ -32,11 +33,11 @@ Name | Type | Description | Notes
 **shipping_address** | [**Address**](Address.md) |  | [optional] 
 **template_id** | **str, none_type** | Optional invoice template | [optional] 
 **source_document_url** | **str, none_type** | URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero. | [optional] 
-**row_version** | **str, none_type** |  | [optional] 
-**updated_by** | **str, none_type** |  | [optional] [readonly] 
-**created_by** | **str, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
-**created_at** | **datetime** |  | [optional] [readonly] 
+**row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
+**created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
+**updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
+**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

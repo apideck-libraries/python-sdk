@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **tag_line** | **str** |  | [optional] [readonly] 
 **unified_api** | **str** | The unified API category where the connection belongs to. | [optional] [readonly] 
 **state** | [**ConnectionState**](ConnectionState.md) |  | [optional] 
+**integration_state** | [**IntegrationState**](IntegrationState.md) |  | [optional] 
 **auth_type** | [**AuthType**](AuthType.md) |  | [optional] 
 **oauth_grant_type** | [**OAuthGrantType**](OAuthGrantType.md) |  | [optional] 
 **status** | **str** | Status of the connection. | [optional] [readonly] 

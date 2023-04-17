@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **name** | **str** | Service charge name | [optional] 
 **amount** | **float** |  | [optional] 
 **percentage** | **float** | Service charge percentage. Use this field to calculate the amount of the service charge. Pass a percentage and amount at the same time. | [optional] 

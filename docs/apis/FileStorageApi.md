@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**files_download**](FileStorageApi.md#files_download) | **GET** /file-storage/files/{id}/download | Download File
 [**files_one**](FileStorageApi.md#files_one) | **GET** /file-storage/files/{id} | Get File
 [**files_search**](FileStorageApi.md#files_search) | **POST** /file-storage/files/search | Search Files
+[**files_update**](FileStorageApi.md#files_update) | **PATCH** /file-storage/files/{id} | Rename or move File
 [**folders_add**](FileStorageApi.md#folders_add) | **POST** /file-storage/folders | Create Folder
 [**folders_copy**](FileStorageApi.md#folders_copy) | **POST** /file-storage/folders/{id}/copy | Copy Folder
 [**folders_delete**](FileStorageApi.md#folders_delete) | **DELETE** /file-storage/folders/{id} | Delete Folder
@@ -197,16 +198,17 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = DriveGroupsFilter(
         parent_group_id="1234",
     ) # DriveGroupsFilter | Apply filters (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List DriveGroups
-        api_response = api_instance.drive_groups_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter)
+        api_response = api_instance.drive_groups_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->drive_groups_all: %s\n" % e)
@@ -222,8 +224,9 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **DriveGroupsFilter**| Apply filters | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -409,6 +412,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -422,7 +426,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get DriveGroup
-        api_response = api_instance.drive_groups_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.drive_groups_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->drive_groups_one: %s\n" % e)
@@ -438,6 +442,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -742,16 +747,17 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = DrivesFilter(
         group_id="1234",
     ) # DrivesFilter | Apply filters (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Drives
-        api_response = api_instance.drives_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter)
+        api_response = api_instance.drives_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->drives_all: %s\n" % e)
@@ -767,8 +773,9 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **DrivesFilter**| Apply filters | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -954,6 +961,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -967,7 +975,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Drive
-        api_response = api_instance.drives_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.drives_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->drives_one: %s\n" % e)
@@ -983,6 +991,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1140,6 +1149,7 @@ List Files
 import time
 import apideck
 from apideck.api import file_storage_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.files_sort import FilesSort
@@ -1176,7 +1186,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = FilesFilter(
         drive_id="1234",
         folder_id="root",
@@ -1186,12 +1196,14 @@ with apideck.ApiClient(configuration) as api_client:
         by="updated_at",
         direction=SortDirection("asc"),
     ) # FilesSort | Apply sorting (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Files
-        api_response = api_instance.files_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort)
+        api_response = api_instance.files_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->files_all: %s\n" % e)
@@ -1207,9 +1219,11 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **FilesFilter**| Apply filters | [optional]
  **sort** | **FilesSort**| Apply sorting | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1393,6 +1407,7 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1406,7 +1421,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Download File
-        api_response = api_instance.files_download(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        api_response = api_instance.files_download(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->files_download: %s\n" % e)
@@ -1421,6 +1436,7 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1499,6 +1515,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1512,7 +1529,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get File
-        api_response = api_instance.files_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.files_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->files_one: %s\n" % e)
@@ -1528,6 +1545,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1572,6 +1590,7 @@ Search Files
 import time
 import apideck
 from apideck.api import file_storage_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
@@ -1609,6 +1628,8 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1622,7 +1643,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Search Files
-        api_response = api_instance.files_search(files_search, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        api_response = api_instance.files_search(files_search, consumer_id=consumer_id, app_id=app_id, service_id=service_id, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->files_search: %s\n" % e)
@@ -1637,10 +1658,126 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
 [**GetFilesResponse**](GetFilesResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Files |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **files_update**
+> UpdateFileResponse files_update(id, update_file_request)
+
+Rename or move File
+
+Rename or move File
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import file_storage_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.update_file_response import UpdateFileResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.update_file_request import UpdateFileRequest
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = file_storage_api.FileStorageApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    update_file_request = UpdateFileRequest(
+        name="New Name.pdf",
+        description="Renamed PDF Document",
+        parent_folder_id="1234",
+    ) # UpdateFileRequest | 
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Rename or move File
+        api_response = api_instance.files_update(id, update_file_request)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling FileStorageApi->files_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Rename or move File
+        api_response = api_instance.files_update(id, update_file_request, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling FileStorageApi->files_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **update_file_request** | [**UpdateFileRequest**](UpdateFileRequest.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateFileResponse**](UpdateFileResponse.md)
 
 ### Authorization
 
@@ -1721,6 +1858,7 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1734,7 +1872,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Create Folder
-        api_response = api_instance.folders_add(create_folder_request, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        api_response = api_instance.folders_add(create_folder_request, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->folders_add: %s\n" % e)
@@ -1750,6 +1888,7 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -1833,6 +1972,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1846,7 +1986,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Copy Folder
-        api_response = api_instance.folders_copy(id, copy_folder_request, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.folders_copy(id, copy_folder_request, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->folders_copy: %s\n" % e)
@@ -1863,6 +2003,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -2048,6 +2189,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2061,7 +2203,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Folder
-        api_response = api_instance.folders_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.folders_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->folders_one: %s\n" % e)
@@ -2077,6 +2219,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -2382,13 +2525,14 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List SharedLinks
-        api_response = api_instance.shared_links_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit)
+        api_response = api_instance.shared_links_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->shared_links_all: %s\n" % e)
@@ -2404,7 +2548,8 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -2590,6 +2735,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2603,7 +2749,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Shared Link
-        api_response = api_instance.shared_links_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.shared_links_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->shared_links_one: %s\n" % e)
@@ -2619,6 +2765,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 
@@ -3143,6 +3290,7 @@ with apideck.ApiClient(configuration) as api_client:
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -3156,7 +3304,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Upload Session
-        api_response = api_instance.upload_sessions_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.upload_sessions_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->upload_sessions_one: %s\n" % e)
@@ -3172,6 +3320,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
 

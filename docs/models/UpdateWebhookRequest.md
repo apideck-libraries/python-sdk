@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **str, none_type** |  | [optional] 
+**description** | **str, none_type** | A description of the object. | [optional] 
 **status** | [**Status**](Status.md) |  | [optional] 
 **delivery_url** | [**DeliveryUrl**](DeliveryUrl.md) |  | [optional] 
 **events** | [**[WebhookEventType]**](WebhookEventType.md) | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | [optional] 

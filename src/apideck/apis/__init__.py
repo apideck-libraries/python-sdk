@@ -19,8 +19,10 @@ from apideck.api.ats_api import AtsApi
 from apideck.api.connector_api import ConnectorApi
 from apideck.api.crm_api import CrmApi
 from apideck.api.customer_support_api import CustomerSupportApi
+from apideck.api.ecommerce_api import EcommerceApi
 from apideck.api.file_storage_api import FileStorageApi
 from apideck.api.hris_api import HrisApi
+from apideck.api.issue_tracking_api import IssueTrackingApi
 from apideck.api.lead_api import LeadApi
 from apideck.api.pos_api import PosApi
 from apideck.api.sms_api import SmsApi

@@ -59,7 +59,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = webhook_api.WebhookApi(api_client)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = WebhookEventLogsFilter(
         exclude_apis="vault,proxy",
         service=WebhookEventLogsFilterService(
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **app_id** | **str**| The ID of your Unify application | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **WebhookEventLogsFilter**| Filter results | [optional]
 
 ### Return type
@@ -274,7 +274,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = webhook_api.WebhookApi(api_client)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **app_id** | **str**| The ID of your Unify application | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
 
 ### Return type
 

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **name** | **str** | Name of the doc. | [optional] 
 **audience** | **str** | Audience for the doc. | [optional] 
 **format** | **str** | Format of the doc. | [optional]  if omitted the server will use the default value of "markdown"

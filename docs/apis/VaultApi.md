@@ -12,8 +12,11 @@ Method | HTTP request | Description
 [**connections_one**](VaultApi.md#connections_one) | **GET** /vault/connections/{unified_api}/{service_id} | Get connection
 [**connections_update**](VaultApi.md#connections_update) | **PATCH** /vault/connections/{unified_api}/{service_id} | Update connection
 [**consumer_request_counts_all**](VaultApi.md#consumer_request_counts_all) | **GET** /vault/consumers/{consumer_id}/stats | Consumer request counts
+[**consumers_add**](VaultApi.md#consumers_add) | **POST** /vault/consumers | Create consumer
 [**consumers_all**](VaultApi.md#consumers_all) | **GET** /vault/consumers | Get all consumers
+[**consumers_delete**](VaultApi.md#consumers_delete) | **DELETE** /vault/consumers/{consumer_id} | Delete consumer
 [**consumers_one**](VaultApi.md#consumers_one) | **GET** /vault/consumers/{consumer_id} | Get consumer
+[**consumers_update**](VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer
 [**logs_all**](VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs
 [**sessions_create**](VaultApi.md#sessions_create) | **POST** /vault/sessions | Create Session
 
@@ -905,6 +908,116 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **consumers_add**
+> CreateConsumerResponse consumers_add(consumer)
+
+Create consumer
+
+Create a consumer
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import vault_api
+from apideck.model.create_consumer_response import CreateConsumerResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.consumer import Consumer
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vault_api.VaultApi(api_client)
+    consumer = Consumer(
+        consumer_id="test_consumer_id",
+        metadata=ConsumerMetadata(
+            account_name="SpaceX",
+            user_name="Elon Musk",
+            email="elon@musk.com",
+            image="https://www.spacex.com/static/images/share.jpg",
+        ),
+    ) # Consumer | 
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create consumer
+        api_response = api_instance.consumers_add(consumer)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->consumers_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create consumer
+        api_response = api_instance.consumers_add(consumer, app_id=app_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->consumers_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumer** | [**Consumer**](Consumer.md)|  |
+ **app_id** | **str**| The ID of your Unify application | [optional]
+
+### Return type
+
+[**CreateConsumerResponse**](CreateConsumerResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Consumer created |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **consumers_all**
 > GetConsumersResponse consumers_all()
 
@@ -951,7 +1064,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = vault_api.VaultApi(api_client)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -970,7 +1083,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **app_id** | **str**| The ID of your Unify application | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
 
 ### Return type
 
@@ -991,6 +1104,107 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Consumers |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **consumers_delete**
+> DeleteConsumerResponse consumers_delete(consumer_id)
+
+Delete consumer
+
+Delete consumer and all their connections, including credentials.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import vault_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.delete_consumer_response import DeleteConsumerResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vault_api.VaultApi(api_client)
+    consumer_id = "test_user_id" # str | ID of the consumer to return
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete consumer
+        api_response = api_instance.consumers_delete(consumer_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->consumers_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete consumer
+        api_response = api_instance.consumers_delete(consumer_id, app_id=app_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->consumers_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumer_id** | **str**| ID of the consumer to return |
+ **app_id** | **str**| The ID of your Unify application | [optional]
+
+### Return type
+
+[**DeleteConsumerResponse**](DeleteConsumerResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Consumer deleted |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |
@@ -1101,6 +1315,117 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **consumers_update**
+> UpdateConsumerResponse consumers_update(consumer_id, update_consumer_request)
+
+Update consumer
+
+Update consumer metadata such as name and email.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import vault_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.update_consumer_request import UpdateConsumerRequest
+from apideck.model.update_consumer_response import UpdateConsumerResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vault_api.VaultApi(api_client)
+    consumer_id = "test_user_id" # str | ID of the consumer to return
+    update_consumer_request = UpdateConsumerRequest(
+        metadata=ConsumerMetadata(
+            account_name="SpaceX",
+            user_name="Elon Musk",
+            email="elon@musk.com",
+            image="https://www.spacex.com/static/images/share.jpg",
+        ),
+    ) # UpdateConsumerRequest | 
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update consumer
+        api_response = api_instance.consumers_update(consumer_id, update_consumer_request)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->consumers_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update consumer
+        api_response = api_instance.consumers_update(consumer_id, update_consumer_request, app_id=app_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->consumers_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumer_id** | **str**| ID of the consumer to return |
+ **update_consumer_request** | [**UpdateConsumerRequest**](UpdateConsumerRequest.md)|  |
+ **app_id** | **str**| The ID of your Unify application | [optional]
+
+### Return type
+
+[**UpdateConsumerResponse**](UpdateConsumerResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Consumer updated |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **logs_all**
 > GetLogsResponse logs_all()
 
@@ -1154,7 +1479,7 @@ with apideck.ApiClient(configuration) as api_client:
         exclude_unified_apis="vault,proxy",
     ) # LogsFilter | Filter results (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-    limit = 20 # int | Number of records to return (optional) if omitted the server will use the default value of 20
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -1175,7 +1500,7 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **filter** | **LogsFilter**| Filter results | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
- **limit** | **int**| Number of records to return | [optional] if omitted the server will use the default value of 20
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
 
 ### Return type
 
@@ -1210,7 +1535,7 @@ Name | Type | Description  | Notes
 
 Create Session
 
-Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned url to allow temporary access to manage their integrations and settings.  Note: This is a short lived token that will expire after 1 hour (TTL: 3600). 
+Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned URL to allow temporary access to manage their integrations and settings.  Note: This is a short lived token that will expire after 1 hour (TTL: 3600). 
 
 ### Example
 
@@ -1259,7 +1584,6 @@ with apideck.ApiClient(configuration) as api_client:
             email="elon@musk.com",
             image="https://www.spacex.com/static/images/share.jpg",
         ),
-        custom_consumer_settings={},
         redirect_uri="https://mysaas.com/dashboard",
         settings=SessionSettings(
             unified_apis=[
@@ -1273,16 +1597,22 @@ with apideck.ApiClient(configuration) as api_client:
             show_suggestions=False,
             show_sidebar=True,
             auto_redirect=False,
+            hide_guides=False,
+            allow_actions=[
+                "delete",
+            ],
         ),
         theme=SessionTheme(
             favicon="https://res.cloudinary.com/apideck/icons/intercom",
+            logo="https://res.cloudinary.com/apideck/icons/intercom",
             primary_color="#286efa",
-            privacy_url="https://compliance.apideck.com/privacy-policy",
             sidepanel_background_color="#286efa",
             sidepanel_text_color="#FFFFFF",
-            terms_url="https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e",
             vault_name="Intercom",
+            privacy_url="https://compliance.apideck.com/privacy-policy",
+            terms_url="https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e",
         ),
+        custom_consumer_settings={},
     ) # Session | Additional redirect uri and/or consumer metadata (optional)
 
     # example passing only required values which don't have defaults set

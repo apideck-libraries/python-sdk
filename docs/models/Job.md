@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **slug** | **str, none_type** |  | [optional] 
-**title** | **str, none_type** |  | [optional] 
+**title** | **str, none_type** | The job title of the person. | [optional] 
 **sequence** | **int** | Sequence in relation to other jobs. | [optional] 
 **visibility** | **str** | The visibility of the job | [optional] 
 **status** | [**JobStatus**](JobStatus.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **recruiters** | **[str], none_type** | The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant | [optional] 
 **hiring_managers** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
 **followers** | **[str], none_type** |  | [optional] 
-**description** | **str, none_type** |  | [optional] 
+**description** | **str, none_type** | A description of the object. | [optional] 
 **description_html** | **str, none_type** | The job description in HTML format | [optional] 
 **blocks** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
 **closing** | **str, none_type** |  | [optional] 
@@ -38,10 +38,10 @@ Name | Type | Description | Notes
 **deleted** | **bool, none_type** |  | [optional] 
 **owner_id** | **str** |  | [optional] 
 **published_at** | **datetime** |  | [optional] [readonly] 
-**updated_by** | **str, none_type** |  | [optional] [readonly] 
-**created_by** | **str, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
-**created_at** | **datetime** |  | [optional] [readonly] 
+**updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
+**created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
+**updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
+**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

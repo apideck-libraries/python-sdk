@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** | Unique identifier representing the entity | [readonly] 
 **total_amount** | **float** | Amount of transaction | 
-**id** | **str** | Unique identifier representing the entity | [optional] [readonly] 
 **number** | **str, none_type** | Credit note number. | [optional] 
 **customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 **currency** | [**Currency**](Currency.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **tax_code** | **str, none_type** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 **balance** | **float, none_type** | The balance reflecting any payments made against the transaction. | [optional] 
 **remaining_credit** | **float, none_type** | Indicates the total credit amount still available to apply towards the payment. | [optional] 
-**status** | **str** | Status of payment | [optional] 
+**status** | **str** | Status of credit notes | [optional] 
 **reference** | **str, none_type** | Optional reference message ie: Debit remittance detail. | [optional] 
 **date_issued** | **datetime** | Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
 **date_paid** | **datetime, none_type** | Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
@@ -25,12 +25,12 @@ Name | Type | Description | Notes
 **line_items** | [**[InvoiceLineItem]**](InvoiceLineItem.md) |  | [optional] 
 **allocations** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
 **note** | **str, none_type** | Optional note to be associated with the credit note. | [optional] 
-**row_version** | **str, none_type** |  | [optional] 
-**updated_by** | **str, none_type** |  | [optional] [readonly] 
-**created_by** | **str, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
-**created_at** | **datetime** |  | [optional] [readonly] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**terms** | **str, none_type** | Optional terms to be associated with the credit note. | [optional] 
+**row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
+**created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
+**updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
+**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

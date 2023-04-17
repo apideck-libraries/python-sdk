@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [readonly] 
+**id** | **str** | A unique identifier for an object. | [readonly] 
 **name** | **str** | The name of the file | [optional] 
 **type** | [**FileType**](FileType.md) |  | [optional] 
 

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
+**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **success** | **bool** | Indicates if the upload session was completed successfully. | [optional] [readonly] 
 **part_size** | **float** | Size in bytes of each part of the file that you will upload. Uploaded parts need to be this size for the upload to be successful. | [optional] [readonly] 
 **parallel_upload_supported** | **bool** | Indicates if parts of the file can uploaded in parallel. | [optional] [readonly] 
