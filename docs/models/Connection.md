@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **configurable_resources** | **[str]** |  | [optional] [readonly] 
 **resource_schema_support** | **[str]** |  | [optional] [readonly] 
 **resource_settings_support** | **[str]** |  | [optional] [readonly] 
+**validation_support** | **bool** |  | [optional] [readonly] 
 **settings_required_for_authorization** | **[str]** | List of settings that are required to be configured on integration before authorization can occur | [optional] [readonly] 
 **subscriptions** | [**[WebhookSubscription]**](WebhookSubscription.md) |  | [optional] [readonly] 
 **has_guide** | **bool** | Whether the connector has a guide available in the developer docs or not (https://docs.apideck.com/connectors/{service_id}/docs/consumer+connection). | [optional] [readonly] 

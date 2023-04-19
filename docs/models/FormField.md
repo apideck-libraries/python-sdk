@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **disabled** | **bool, none_type** | Indicates if the form field is displayed in a “read-only” mode. | [optional] 
 **hidden** | **bool, none_type** | Indicates if the form field is not displayed but the value that is being stored on the connection. | [optional] 
 **sensitive** | **bool, none_type** | Indicates if the form field contains sensitive data, which will display the value as a masked input. | [optional] 
+**prefix** | **str, none_type** | Prefix to display in front of the form field. | [optional] 
+**suffix** | **str, none_type** | Suffix to display next to the form field. | [optional] 
 **options** | [**[FormFieldOption]**](FormFieldOption.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
