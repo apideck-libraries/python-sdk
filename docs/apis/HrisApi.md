@@ -1632,6 +1632,7 @@ with apideck.ApiClient(configuration) as api_client:
         division_id="12345",
         department="R&D",
         department_id="12345",
+        department_name="12345",
         team=EmployeeTeam(
             id="1234",
             name="Full Stack Engineers",
@@ -2258,6 +2259,7 @@ with apideck.ApiClient(configuration) as api_client:
         division_id="12345",
         department="R&D",
         department_id="12345",
+        department_name="12345",
         team=EmployeeTeam(
             id="1234",
             name="Full Stack Engineers",
