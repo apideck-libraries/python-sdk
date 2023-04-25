@@ -78,6 +78,7 @@ class UnifiedApiId(ModelSimple):
             'TIME-REGISTRATION': "time-registration",
             'TRANSACTIONAL-EMAIL': "transactional-email",
             'VAULT': "vault",
+            'DATA-WAREHOUSE': "data-warehouse",
         },
     }
 
@@ -129,10 +130,10 @@ class UnifiedApiId(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", ]  # noqa: E501
+            args[0] (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", "data-warehouse", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", ]  # noqa: E501
+            value (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", "data-warehouse", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -219,10 +220,10 @@ class UnifiedApiId(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", ]  # noqa: E501
+            args[0] (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", "data-warehouse", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", ]  # noqa: E501
+            value (str): Name of Apideck Unified API., must be one of ["accounting", "ats", "calendar", "crm", "csp", "customer-support", "ecommerce", "email", "email-marketing", "expense-management", "file-storage", "form", "hris", "lead", "payroll", "pos", "procurement", "project-management", "script", "sms", "spreadsheet", "team-messaging", "issue-tracking", "time-registration", "transactional-email", "vault", "data-warehouse", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
