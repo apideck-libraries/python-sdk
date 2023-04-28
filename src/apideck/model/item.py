@@ -103,6 +103,8 @@ class Item(ModelNormal):
             'price_currency': (Currency,),  # noqa: E501
             'cost': (float,),  # noqa: E501
             'tax_ids': ([str],),  # noqa: E501
+            'is_revenue': (bool,),  # noqa: E501
+            'use_default_tax_rates': (bool,),  # noqa: E501
             'absent_at_location_ids': ([str],),  # noqa: E501
             'present_at_all_locations': (bool,),  # noqa: E501
             'available_for_pickup': (bool,),  # noqa: E501
@@ -140,6 +142,8 @@ class Item(ModelNormal):
         'price_currency': 'price_currency',  # noqa: E501
         'cost': 'cost',  # noqa: E501
         'tax_ids': 'tax_ids',  # noqa: E501
+        'is_revenue': 'is_revenue',  # noqa: E501
+        'use_default_tax_rates': 'use_default_tax_rates',  # noqa: E501
         'absent_at_location_ids': 'absent_at_location_ids',  # noqa: E501
         'present_at_all_locations': 'present_at_all_locations',  # noqa: E501
         'available_for_pickup': 'available_for_pickup',  # noqa: E501
@@ -219,6 +223,8 @@ class Item(ModelNormal):
             price_currency (Currency): [optional]  # noqa: E501
             cost (float): [optional]  # noqa: E501
             tax_ids ([str]): A list of Tax IDs for the product.. [optional]  # noqa: E501
+            is_revenue (bool): True if this item should be counted as revenue. For example, gift cards and donations would not be counted as revenue.. [optional]  # noqa: E501
+            use_default_tax_rates (bool): [optional]  # noqa: E501
             absent_at_location_ids ([str]): A list of locations where the object is not present, even if present_at_all_locations is true. This can include locations that are deactivated.. [optional]  # noqa: E501
             present_at_all_locations (bool): [optional]  # noqa: E501
             available_for_pickup (bool): [optional]  # noqa: E501
@@ -332,6 +338,8 @@ class Item(ModelNormal):
             price_currency (Currency): [optional]  # noqa: E501
             cost (float): [optional]  # noqa: E501
             tax_ids ([str]): A list of Tax IDs for the product.. [optional]  # noqa: E501
+            is_revenue (bool): True if this item should be counted as revenue. For example, gift cards and donations would not be counted as revenue.. [optional]  # noqa: E501
+            use_default_tax_rates (bool): [optional]  # noqa: E501
             absent_at_location_ids ([str]): A list of locations where the object is not present, even if present_at_all_locations is true. This can include locations that are deactivated.. [optional]  # noqa: E501
             present_at_all_locations (bool): [optional]  # noqa: E501
             available_for_pickup (bool): [optional]  # noqa: E501
