@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**type** | **str** |  | 
 **id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **product_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **name** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
 **amount** | **int** |  | [optional] 
 **currency** | [**Currency**](Currency.md) |  | [optional] 
 **scope** | **str** |  | [optional] 

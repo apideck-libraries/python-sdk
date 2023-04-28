@@ -95,10 +95,10 @@ class OrderDiscounts(ModelNormal):
         """
         lazy_import()
         return {
+            'type': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'product_id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
             'amount': (int,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
             'scope': (str,),  # noqa: E501
@@ -110,10 +110,10 @@ class OrderDiscounts(ModelNormal):
 
 
     attribute_map = {
+        'type': 'type',  # noqa: E501
         'id': 'id',  # noqa: E501
         'product_id': 'product_id',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'type': 'type',  # noqa: E501
         'amount': 'amount',  # noqa: E501
         'currency': 'currency',  # noqa: E501
         'scope': 'scope',  # noqa: E501
@@ -128,8 +128,11 @@ class OrderDiscounts(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, *args, **kwargs):  # noqa: E501
         """OrderDiscounts - a model defined in OpenAPI
+
+        Args:
+            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -165,7 +168,6 @@ class OrderDiscounts(ModelNormal):
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             product_id (str): A unique identifier for an object.. [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
             amount (int): [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             scope (str): [optional]  # noqa: E501
@@ -196,6 +198,7 @@ class OrderDiscounts(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -216,8 +219,11 @@ class OrderDiscounts(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):  # noqa: E501
         """OrderDiscounts - a model defined in OpenAPI
+
+        Args:
+            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -253,7 +259,6 @@ class OrderDiscounts(ModelNormal):
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             product_id (str): A unique identifier for an object.. [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
             amount (int): [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             scope (str): [optional]  # noqa: E501
@@ -282,6 +287,7 @@ class OrderDiscounts(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
