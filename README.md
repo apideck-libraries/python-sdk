@@ -409,11 +409,15 @@ _AccountingApi_ | [**tax_rates_one**](docs/apis/AccountingApi.md#tax_rates_one) 
 
 _AccountingApi_ | [**tax_rates_update**](docs/apis/AccountingApi.md#tax_rates_update) | **PATCH** /accounting/tax-rates/{id} | Update Tax Rate |
 
-_AtsApi_ | [**applicants_add**](docs/apis/AtsApi.md#applicants_add) | **POST** /ats/applicants | Create applicant |
+_AtsApi_ | [**applicants_add**](docs/apis/AtsApi.md#applicants_add) | **POST** /ats/applicants | Create Applicant |
 
-_AtsApi_ | [**applicants_all**](docs/apis/AtsApi.md#applicants_all) | **GET** /ats/applicants | List applicants |
+_AtsApi_ | [**applicants_all**](docs/apis/AtsApi.md#applicants_all) | **GET** /ats/applicants | List Applicants |
 
-_AtsApi_ | [**applicants_one**](docs/apis/AtsApi.md#applicants_one) | **GET** /ats/applicants/{id} | Get applicant |
+_AtsApi_ | [**applicants_delete**](docs/apis/AtsApi.md#applicants_delete) | **DELETE** /ats/applicants/{id} | Delete Applicant |
+
+_AtsApi_ | [**applicants_one**](docs/apis/AtsApi.md#applicants_one) | **GET** /ats/applicants/{id} | Get Applicant |
+
+_AtsApi_ | [**applicants_update**](docs/apis/AtsApi.md#applicants_update) | **PATCH** /ats/applicants/{id} | Update Applicant |
 
 _AtsApi_ | [**jobs_all**](docs/apis/AtsApi.md#jobs_all) | **GET** /ats/jobs | List Jobs |
 
@@ -981,6 +985,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [Deduction](docs/models/Deduction.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
+ - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
@@ -1355,6 +1360,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UnifiedId](docs/models/UnifiedId.md)
  - [UnprocessableResponse](docs/models/UnprocessableResponse.md)
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
+ - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
  - [UpdateBillResponse](docs/models/UpdateBillResponse.md)
  - [UpdateCommentResponse](docs/models/UpdateCommentResponse.md)
  - [UpdateCompanyResponse](docs/models/UpdateCompanyResponse.md)

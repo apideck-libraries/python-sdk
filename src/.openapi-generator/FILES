@@ -176,6 +176,7 @@ apideck/model/customer_support_customer.py
 apideck/model/customers_filter.py
 apideck/model/deduction.py
 apideck/model/delete_activity_response.py
+apideck/model/delete_applicant_response.py
 apideck/model/delete_bill_response.py
 apideck/model/delete_comment_response.py
 apideck/model/delete_company_response.py
@@ -550,6 +551,7 @@ apideck/model/unified_file.py
 apideck/model/unified_id.py
 apideck/model/unprocessable_response.py
 apideck/model/update_activity_response.py
+apideck/model/update_applicant_response.py
 apideck/model/update_bill_response.py
 apideck/model/update_comment_response.py
 apideck/model/update_company_response.py
@@ -769,6 +771,7 @@ docs/CustomerSupportCustomer.md
 docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
+docs/DeleteApplicantResponse.md
 docs/DeleteBillResponse.md
 docs/DeleteCommentResponse.md
 docs/DeleteCompanyResponse.md
@@ -1150,6 +1153,7 @@ docs/UnifiedFile.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
+docs/UpdateApplicantResponse.md
 docs/UpdateBillResponse.md
 docs/UpdateCommentResponse.md
 docs/UpdateCompanyResponse.md
@@ -1374,6 +1378,7 @@ test/test_customer_support_customer.py
 test/test_customers_filter.py
 test/test_deduction.py
 test/test_delete_activity_response.py
+test/test_delete_applicant_response.py
 test/test_delete_bill_response.py
 test/test_delete_comment_response.py
 test/test_delete_company_response.py
@@ -1755,6 +1760,7 @@ test/test_unified_file.py
 test/test_unified_id.py
 test/test_unprocessable_response.py
 test/test_update_activity_response.py
+test/test_update_applicant_response.py
 test/test_update_bill_response.py
 test/test_update_comment_response.py
 test/test_update_company_response.py

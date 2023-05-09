@@ -153,6 +153,7 @@ from apideck.model.customer_support_customer import CustomerSupportCustomer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.deduction import Deduction
 from apideck.model.delete_activity_response import DeleteActivityResponse
+from apideck.model.delete_applicant_response import DeleteApplicantResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_comment_response import DeleteCommentResponse
 from apideck.model.delete_company_response import DeleteCompanyResponse
@@ -527,6 +528,7 @@ from apideck.model.unified_file import UnifiedFile
 from apideck.model.unified_id import UnifiedId
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.update_activity_response import UpdateActivityResponse
+from apideck.model.update_applicant_response import UpdateApplicantResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_comment_response import UpdateCommentResponse
 from apideck.model.update_company_response import UpdateCompanyResponse
