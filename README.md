@@ -239,6 +239,7 @@ from apideck.model.not_found_response import NotFoundResponse
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
@@ -1293,6 +1294,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [PaymentCard](docs/models/PaymentCard.md)
  - [PaymentRequiredResponse](docs/models/PaymentRequiredResponse.md)
  - [PaymentUnit](docs/models/PaymentUnit.md)
+ - [PaymentsFilter](docs/models/PaymentsFilter.md)
  - [Payroll](docs/models/Payroll.md)
  - [PayrollTotals](docs/models/PayrollTotals.md)
  - [PayrollsFilter](docs/models/PayrollsFilter.md)

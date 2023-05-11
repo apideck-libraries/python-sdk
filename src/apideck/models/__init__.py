@@ -461,6 +461,7 @@ from apideck.model.payment_allocations import PaymentAllocations
 from apideck.model.payment_card import PaymentCard
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payment_unit import PaymentUnit
+from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.payroll import Payroll
 from apideck.model.payroll_totals import PayrollTotals
 from apideck.model.payrolls_filter import PayrollsFilter

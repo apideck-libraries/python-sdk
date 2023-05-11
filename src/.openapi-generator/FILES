@@ -484,6 +484,7 @@ apideck/model/payment_allocations.py
 apideck/model/payment_card.py
 apideck/model/payment_required_response.py
 apideck/model/payment_unit.py
+apideck/model/payments_filter.py
 apideck/model/payroll.py
 apideck/model/payroll_totals.py
 apideck/model/payrolls_filter.py
@@ -1084,6 +1085,7 @@ docs/PaymentAllocations.md
 docs/PaymentCard.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
+docs/PaymentsFilter.md
 docs/Payroll.md
 docs/PayrollTotals.md
 docs/PayrollsFilter.md
@@ -1691,6 +1693,7 @@ test/test_payment_allocations.py
 test/test_payment_card.py
 test/test_payment_required_response.py
 test/test_payment_unit.py
+test/test_payments_filter.py
 test/test_payroll.py
 test/test_payroll_totals.py
 test/test_payrolls_filter.py
