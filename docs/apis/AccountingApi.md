@@ -262,18 +262,19 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_price=27500.5,
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
+                discount_amount=19.99,
                 location_id="1234",
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
                 ),
+                tax_rate=LinkedTaxRate(
+                    id="123456",
+                ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
                     code="453",
-                ),
-                tax_rate=LinkedTaxRate(
-                    id="123456",
                 ),
                 row_version="1-12345",
             ),
@@ -782,18 +783,19 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_price=27500.5,
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
+                discount_amount=19.99,
                 location_id="1234",
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
                 ),
+                tax_rate=LinkedTaxRate(
+                    id="123456",
+                ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
                     code="453",
-                ),
-                tax_rate=LinkedTaxRate(
-                    id="123456",
                 ),
                 row_version="1-12345",
             ),
