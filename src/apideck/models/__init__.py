@@ -27,6 +27,8 @@ from apideck.model.applicant import Applicant
 from apideck.model.applicant_social_links import ApplicantSocialLinks
 from apideck.model.applicant_websites import ApplicantWebsites
 from apideck.model.applicants_filter import ApplicantsFilter
+from apideck.model.application import Application
+from apideck.model.application_stage import ApplicationStage
 from apideck.model.assignee import Assignee
 from apideck.model.ats_activity import AtsActivity
 from apideck.model.ats_event_type import AtsEventType
@@ -92,6 +94,7 @@ from apideck.model.contacts_sort import ContactsSort
 from apideck.model.copy_folder_request import CopyFolderRequest
 from apideck.model.create_activity_response import CreateActivityResponse
 from apideck.model.create_applicant_response import CreateApplicantResponse
+from apideck.model.create_application_response import CreateApplicationResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_comment_response import CreateCommentResponse
 from apideck.model.create_company_response import CreateCompanyResponse
@@ -154,6 +157,7 @@ from apideck.model.customers_filter import CustomersFilter
 from apideck.model.deduction import Deduction
 from apideck.model.delete_activity_response import DeleteActivityResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
+from apideck.model.delete_application_response import DeleteApplicationResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_comment_response import DeleteCommentResponse
 from apideck.model.delete_company_response import DeleteCompanyResponse
@@ -259,6 +263,8 @@ from apideck.model.get_api_response import GetApiResponse
 from apideck.model.get_apis_response import GetApisResponse
 from apideck.model.get_applicant_response import GetApplicantResponse
 from apideck.model.get_applicants_response import GetApplicantsResponse
+from apideck.model.get_application_response import GetApplicationResponse
+from apideck.model.get_applications_response import GetApplicationsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
@@ -530,6 +536,7 @@ from apideck.model.unified_id import UnifiedId
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.update_activity_response import UpdateActivityResponse
 from apideck.model.update_applicant_response import UpdateApplicantResponse
+from apideck.model.update_application_response import UpdateApplicationResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_comment_response import UpdateCommentResponse
 from apideck.model.update_company_response import UpdateCompanyResponse

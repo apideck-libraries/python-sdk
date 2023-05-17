@@ -58,6 +58,41 @@ class TestAtsApi(unittest.TestCase):
         """
         pass
 
+    def test_applications_add(self):
+        """Test case for applications_add
+
+        Create Application  # noqa: E501
+        """
+        pass
+
+    def test_applications_all(self):
+        """Test case for applications_all
+
+        List Applications  # noqa: E501
+        """
+        pass
+
+    def test_applications_delete(self):
+        """Test case for applications_delete
+
+        Delete Application  # noqa: E501
+        """
+        pass
+
+    def test_applications_one(self):
+        """Test case for applications_one
+
+        Get Application  # noqa: E501
+        """
+        pass
+
+    def test_applications_update(self):
+        """Test case for applications_update
+
+        Update Application  # noqa: E501
+        """
+        pass
+
     def test_jobs_all(self):
         """Test case for jobs_all
 

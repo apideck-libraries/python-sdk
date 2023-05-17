@@ -114,6 +114,7 @@ class Applicant(ModelNormal):
             'stage_id': (str,),  # noqa: E501
             'recruiter_id': (str,),  # noqa: E501
             'coordinator_id': (str,),  # noqa: E501
+            'application_ids': ([str], none_type,),  # noqa: E501
             'applications': ([str], none_type,),  # noqa: E501
             'followers': ([str], none_type,),  # noqa: E501
             'sources': ([str], none_type,),  # noqa: E501
@@ -165,6 +166,7 @@ class Applicant(ModelNormal):
         'stage_id': 'stage_id',  # noqa: E501
         'recruiter_id': 'recruiter_id',  # noqa: E501
         'coordinator_id': 'coordinator_id',  # noqa: E501
+        'application_ids': 'application_ids',  # noqa: E501
         'applications': 'applications',  # noqa: E501
         'followers': 'followers',  # noqa: E501
         'sources': 'sources',  # noqa: E501
@@ -264,6 +266,7 @@ class Applicant(ModelNormal):
             stage_id (str): [optional]  # noqa: E501
             recruiter_id (str): [optional]  # noqa: E501
             coordinator_id (str): [optional]  # noqa: E501
+            application_ids ([str], none_type): [optional]  # noqa: E501
             applications ([str], none_type): [optional]  # noqa: E501
             followers ([str], none_type): [optional]  # noqa: E501
             sources ([str], none_type): [optional]  # noqa: E501
@@ -388,6 +391,7 @@ class Applicant(ModelNormal):
             stage_id (str): [optional]  # noqa: E501
             recruiter_id (str): [optional]  # noqa: E501
             coordinator_id (str): [optional]  # noqa: E501
+            application_ids ([str], none_type): [optional]  # noqa: E501
             applications ([str], none_type): [optional]  # noqa: E501
             followers ([str], none_type): [optional]  # noqa: E501
             sources ([str], none_type): [optional]  # noqa: E501

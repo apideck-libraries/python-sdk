@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **stage_id** | **str** |  | [optional] 
 **recruiter_id** | **str** |  | [optional] 
 **coordinator_id** | **str** |  | [optional] 
+**application_ids** | **[str], none_type** |  | [optional] 
 **applications** | **[str], none_type** |  | [optional] 
 **followers** | **[str], none_type** |  | [optional] 
 **sources** | **[str], none_type** |  | [optional] 

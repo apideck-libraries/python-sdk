@@ -158,6 +158,9 @@ class ConnectionWebhook(ModelNormal):
             'ISSUE-TRACKING.TICKET.CREATED': "issue-tracking.ticket.created",
             'ISSUE-TRACKING.TICKET.UPDATED': "issue-tracking.ticket.updated",
             'ISSUE-TRACKING.TICKET.DELETED': "issue-tracking.ticket.deleted",
+            'ATS.APPLICATION.CREATED': "ats.application.created",
+            'ATS.APPLICATION.UPDATED': "ats.application.updated",
+            'ATS.APPLICATION.DELETED': "ats.application.deleted",
         },
         ('disabled_reason',): {
             'NONE': "none",

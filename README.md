@@ -420,6 +420,16 @@ _AtsApi_ | [**applicants_one**](docs/apis/AtsApi.md#applicants_one) | **GET** /a
 
 _AtsApi_ | [**applicants_update**](docs/apis/AtsApi.md#applicants_update) | **PATCH** /ats/applicants/{id} | Update Applicant |
 
+_AtsApi_ | [**applications_add**](docs/apis/AtsApi.md#applications_add) | **POST** /ats/applications | Create Application |
+
+_AtsApi_ | [**applications_all**](docs/apis/AtsApi.md#applications_all) | **GET** /ats/applications | List Applications |
+
+_AtsApi_ | [**applications_delete**](docs/apis/AtsApi.md#applications_delete) | **DELETE** /ats/applications/{id} | Delete Application |
+
+_AtsApi_ | [**applications_one**](docs/apis/AtsApi.md#applications_one) | **GET** /ats/applications/{id} | Get Application |
+
+_AtsApi_ | [**applications_update**](docs/apis/AtsApi.md#applications_update) | **PATCH** /ats/applications/{id} | Update Application |
+
 _AtsApi_ | [**jobs_all**](docs/apis/AtsApi.md#jobs_all) | **GET** /ats/jobs | List Jobs |
 
 _AtsApi_ | [**jobs_one**](docs/apis/AtsApi.md#jobs_one) | **GET** /ats/jobs/{id} | Get Job |
@@ -860,6 +870,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ApplicantSocialLinks](docs/models/ApplicantSocialLinks.md)
  - [ApplicantWebsites](docs/models/ApplicantWebsites.md)
  - [ApplicantsFilter](docs/models/ApplicantsFilter.md)
+ - [Application](docs/models/Application.md)
+ - [ApplicationStage](docs/models/ApplicationStage.md)
  - [Assignee](docs/models/Assignee.md)
  - [AtsActivity](docs/models/AtsActivity.md)
  - [AtsEventType](docs/models/AtsEventType.md)
@@ -925,6 +937,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CopyFolderRequest](docs/models/CopyFolderRequest.md)
  - [CreateActivityResponse](docs/models/CreateActivityResponse.md)
  - [CreateApplicantResponse](docs/models/CreateApplicantResponse.md)
+ - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
@@ -987,6 +1000,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Deduction](docs/models/Deduction.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
+ - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
@@ -1092,6 +1106,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetApisResponse](docs/models/GetApisResponse.md)
  - [GetApplicantResponse](docs/models/GetApplicantResponse.md)
  - [GetApplicantsResponse](docs/models/GetApplicantsResponse.md)
+ - [GetApplicationResponse](docs/models/GetApplicationResponse.md)
+ - [GetApplicationsResponse](docs/models/GetApplicationsResponse.md)
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
  - [GetBillsResponse](docs/models/GetBillsResponse.md)
@@ -1363,6 +1379,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UnprocessableResponse](docs/models/UnprocessableResponse.md)
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
  - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
+ - [UpdateApplicationResponse](docs/models/UpdateApplicationResponse.md)
  - [UpdateBillResponse](docs/models/UpdateBillResponse.md)
  - [UpdateCommentResponse](docs/models/UpdateCommentResponse.md)
  - [UpdateCompanyResponse](docs/models/UpdateCompanyResponse.md)

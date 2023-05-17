@@ -22,11 +22,16 @@ from apideck.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from apideck.model.applicant import Applicant
+from apideck.model.application import Application
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.create_applicant_response import CreateApplicantResponse
+from apideck.model.create_application_response import CreateApplicationResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
+from apideck.model.delete_application_response import DeleteApplicationResponse
 from apideck.model.get_applicant_response import GetApplicantResponse
 from apideck.model.get_applicants_response import GetApplicantsResponse
+from apideck.model.get_application_response import GetApplicationResponse
+from apideck.model.get_applications_response import GetApplicationsResponse
 from apideck.model.get_job_response import GetJobResponse
 from apideck.model.get_jobs_response import GetJobsResponse
 from apideck.model.jobs_filter import JobsFilter
@@ -36,6 +41,7 @@ from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.update_applicant_response import UpdateApplicantResponse
+from apideck.model.update_application_response import UpdateApplicationResponse
 
 
 class AtsApi(object):
@@ -421,6 +427,379 @@ class AtsApi(object):
                 'location_map': {
                     'id': 'path',
                     'applicant': 'body',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'raw': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.applications_add_endpoint = _Endpoint(
+            settings={
+                'response_type': (CreateApplicationResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/ats/applications',
+                'operation_id': 'applications_add',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'application',
+                    'raw',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                ],
+                'required': [
+                    'application',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'application':
+                        (Application,),
+                    'raw':
+                        (bool,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'raw': 'raw',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                },
+                'location_map': {
+                    'application': 'body',
+                    'raw': 'query',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.applications_all_endpoint = _Endpoint(
+            settings={
+                'response_type': (GetApplicationsResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/ats/applications',
+                'operation_id': 'applications_all',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'raw',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'cursor',
+                    'limit',
+                ],
+                'required': [],
+                'nullable': [
+                    'cursor',
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 200,
+                        'inclusive_minimum': 1,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'raw':
+                        (bool,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'cursor':
+                        (str, none_type,),
+                    'limit':
+                        (int,),
+                },
+                'attribute_map': {
+                    'raw': 'raw',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'cursor': 'cursor',
+                    'limit': 'limit',
+                },
+                'location_map': {
+                    'raw': 'query',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'cursor': 'query',
+                    'limit': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.applications_delete_endpoint = _Endpoint(
+            settings={
+                'response_type': (DeleteApplicationResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/ats/applications/{id}',
+                'operation_id': 'applications_delete',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'raw',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'raw':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'raw': 'raw',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'raw': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.applications_one_endpoint = _Endpoint(
+            settings={
+                'response_type': (GetApplicationResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/ats/applications/{id}',
+                'operation_id': 'applications_one',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'raw',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'raw':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'raw': 'raw',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'raw': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.applications_update_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdateApplicationResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/ats/applications/{id}',
+                'operation_id': 'applications_update',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'application',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'raw',
+                ],
+                'required': [
+                    'id',
+                    'application',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'application':
+                        (Application,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'raw':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'raw': 'raw',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'application': 'body',
                     'consumer_id': 'header',
                     'app_id': 'header',
                     'service_id': 'header',
@@ -1017,6 +1396,417 @@ class AtsApi(object):
         kwargs['applicant'] = \
             applicant
         return self.applicants_update_endpoint.call_with_http_info(**kwargs)
+
+    def applications_add(
+        self,
+        application,
+        **kwargs
+    ):
+        """Create Application  # noqa: E501
+
+        Create Application  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.applications_add(application, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            application (Application):
+
+        Keyword Args:
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CreateApplicationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['application'] = \
+            application
+        return self.applications_add_endpoint.call_with_http_info(**kwargs)
+
+    def applications_all(
+        self,
+        **kwargs
+    ):
+        """List Applications  # noqa: E501
+
+        List Applications  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.applications_all(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
+            limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            GetApplicationsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.applications_all_endpoint.call_with_http_info(**kwargs)
+
+    def applications_delete(
+        self,
+        id,
+        **kwargs
+    ):
+        """Delete Application  # noqa: E501
+
+        Delete Application  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.applications_delete(id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str): ID of the record you are acting upon.
+
+        Keyword Args:
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            DeleteApplicationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        return self.applications_delete_endpoint.call_with_http_info(**kwargs)
+
+    def applications_one(
+        self,
+        id,
+        **kwargs
+    ):
+        """Get Application  # noqa: E501
+
+        Get Application  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.applications_one(id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str): ID of the record you are acting upon.
+
+        Keyword Args:
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            GetApplicationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        return self.applications_one_endpoint.call_with_http_info(**kwargs)
+
+    def applications_update(
+        self,
+        id,
+        application,
+        **kwargs
+    ):
+        """Update Application  # noqa: E501
+
+        Update Application  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.applications_update(id, application, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str): ID of the record you are acting upon.
+            application (Application):
+
+        Keyword Args:
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdateApplicationResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        kwargs['application'] = \
+            application
+        return self.applications_update_endpoint.call_with_http_info(**kwargs)
 
     def jobs_all(
         self,
