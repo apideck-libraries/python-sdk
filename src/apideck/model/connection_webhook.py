@@ -149,6 +149,7 @@ class ConnectionWebhook(ModelNormal):
             'HRIS.EMPLOYEE.CREATED': "hris.employee.created",
             'HRIS.EMPLOYEE.UPDATED': "hris.employee.updated",
             'HRIS.EMPLOYEE.DELETED': "hris.employee.deleted",
+            'HRIS.EMPLOYEE.TERMINATED': "hris.employee.terminated",
             'HRIS.COMPANY.CREATED': "hris.company.created",
             'HRIS.COMPANY.UPDATED': "hris.company.updated",
             'HRIS.COMPANY.DELETED': "hris.company.deleted",
