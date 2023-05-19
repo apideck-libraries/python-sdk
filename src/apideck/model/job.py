@@ -32,12 +32,14 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.address import Address
     from apideck.model.branch import Branch
+    from apideck.model.custom_field import CustomField
     from apideck.model.department import Department
     from apideck.model.job_salary import JobSalary
     from apideck.model.job_status import JobStatus
     from apideck.model.tags import Tags
     globals()['Address'] = Address
     globals()['Branch'] = Branch
+    globals()['CustomField'] = CustomField
     globals()['Department'] = Department
     globals()['JobSalary'] = JobSalary
     globals()['JobStatus'] = JobStatus
@@ -117,6 +119,7 @@ class Job(ModelNormal):
             'language': (str, none_type,),  # noqa: E501
             'employment_terms': (str, none_type,),  # noqa: E501
             'experience': (str,),  # noqa: E501
+            'location': (str, none_type,),  # noqa: E501
             'remote': (bool, none_type,),  # noqa: E501
             'requisition_id': (str,),  # noqa: E501
             'department': (Department,),  # noqa: E501
@@ -137,6 +140,7 @@ class Job(ModelNormal):
             'available_to_employees': (bool,),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
+            'custom_fields': ([CustomField],),  # noqa: E501
             'record_url': (str, none_type,),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
             'owner_id': (str,),  # noqa: E501
@@ -163,6 +167,7 @@ class Job(ModelNormal):
         'language': 'language',  # noqa: E501
         'employment_terms': 'employment_terms',  # noqa: E501
         'experience': 'experience',  # noqa: E501
+        'location': 'location',  # noqa: E501
         'remote': 'remote',  # noqa: E501
         'requisition_id': 'requisition_id',  # noqa: E501
         'department': 'department',  # noqa: E501
@@ -183,6 +188,7 @@ class Job(ModelNormal):
         'available_to_employees': 'available_to_employees',  # noqa: E501
         'tags': 'tags',  # noqa: E501
         'addresses': 'addresses',  # noqa: E501
+        'custom_fields': 'custom_fields',  # noqa: E501
         'record_url': 'record_url',  # noqa: E501
         'deleted': 'deleted',  # noqa: E501
         'owner_id': 'owner_id',  # noqa: E501
@@ -250,6 +256,7 @@ class Job(ModelNormal):
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             employment_terms (str, none_type): [optional]  # noqa: E501
             experience (str): Level of experience required for the job role.. [optional]  # noqa: E501
+            location (str, none_type): Specifies the location for the job posting.. [optional]  # noqa: E501
             remote (bool, none_type): Specifies whether the posting is for a remote job.. [optional]  # noqa: E501
             requisition_id (str): A job's Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company's internal processes.. [optional]  # noqa: E501
             department (Department): [optional]  # noqa: E501
@@ -270,6 +277,7 @@ class Job(ModelNormal):
             available_to_employees (bool): Specifies whether an employee of the organization can apply for the job.. [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
             owner_id (str): [optional]  # noqa: E501
@@ -369,6 +377,7 @@ class Job(ModelNormal):
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             employment_terms (str, none_type): [optional]  # noqa: E501
             experience (str): Level of experience required for the job role.. [optional]  # noqa: E501
+            location (str, none_type): Specifies the location for the job posting.. [optional]  # noqa: E501
             remote (bool, none_type): Specifies whether the posting is for a remote job.. [optional]  # noqa: E501
             requisition_id (str): A job's Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company's internal processes.. [optional]  # noqa: E501
             department (Department): [optional]  # noqa: E501
@@ -389,6 +398,7 @@ class Job(ModelNormal):
             available_to_employees (bool): Specifies whether an employee of the organization can apply for the job.. [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
             owner_id (str): [optional]  # noqa: E501
