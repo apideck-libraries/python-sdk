@@ -49,14 +49,14 @@ class EcommerceApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.customers_all2_endpoint = _Endpoint(
+        self.customers_all_endpoint = _Endpoint(
             settings={
                 'response_type': (GetEcommerceCustomersResponse,),
                 'auth': [
                     'apiKey'
                 ],
                 'endpoint_path': '/ecommerce/customers',
-                'operation_id': 'customers_all2',
+                'operation_id': 'customers_all',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -141,14 +141,14 @@ class EcommerceApi(object):
             },
             api_client=api_client
         )
-        self.customers_one2_endpoint = _Endpoint(
+        self.customers_one_endpoint = _Endpoint(
             settings={
                 'response_type': (GetEcommerceCustomerResponse,),
                 'auth': [
                     'apiKey'
                 ],
                 'endpoint_path': '/ecommerce/customers/{id}',
-                'operation_id': 'customers_one2',
+                'operation_id': 'customers_one',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -622,7 +622,7 @@ class EcommerceApi(object):
             api_client=api_client
         )
 
-    def customers_all2(
+    def customers_all(
         self,
         **kwargs
     ):
@@ -632,7 +632,7 @@ class EcommerceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.customers_all2(async_req=True)
+        >>> thread = api.customers_all(async_req=True)
         >>> result = thread.get()
 
 
@@ -701,9 +701,9 @@ class EcommerceApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.customers_all2_endpoint.call_with_http_info(**kwargs)
+        return self.customers_all_endpoint.call_with_http_info(**kwargs)
 
-    def customers_one2(
+    def customers_one(
         self,
         id,
         **kwargs
@@ -714,7 +714,7 @@ class EcommerceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.customers_one2(id, async_req=True)
+        >>> thread = api.customers_one(id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -784,7 +784,7 @@ class EcommerceApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
-        return self.customers_one2_endpoint.call_with_http_info(**kwargs)
+        return self.customers_one_endpoint.call_with_http_info(**kwargs)
 
     def orders_all(
         self,

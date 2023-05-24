@@ -23,15 +23,15 @@ class TestEcommerceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_customers_all2(self):
-        """Test case for customers_all2
+    def test_customers_all(self):
+        """Test case for customers_all
 
         List Customers  # noqa: E501
         """
         pass
 
-    def test_customers_one2(self):
-        """Test case for customers_one2
+    def test_customers_one(self):
+        """Test case for customers_one
 
         Get Customer  # noqa: E501
         """

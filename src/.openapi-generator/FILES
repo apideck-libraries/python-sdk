@@ -17,7 +17,6 @@ apideck/api/accounting_api.py
 apideck/api/ats_api.py
 apideck/api/connector_api.py
 apideck/api/crm_api.py
-apideck/api/customer_support_api.py
 apideck/api/ecommerce_api.py
 apideck/api/file_storage_api.py
 apideck/api/hris_api.py
@@ -126,7 +125,6 @@ apideck/model/create_consumer_response.py
 apideck/model/create_contact_response.py
 apideck/model/create_credit_note_response.py
 apideck/model/create_customer_response.py
-apideck/model/create_customer_support_customer_response.py
 apideck/model/create_department_response.py
 apideck/model/create_drive_group_response.py
 apideck/model/create_drive_response.py
@@ -175,7 +173,6 @@ apideck/model/credit_note.py
 apideck/model/crm_event_type.py
 apideck/model/currency.py
 apideck/model/custom_field.py
-apideck/model/customer_support_customer.py
 apideck/model/customers_filter.py
 apideck/model/deduction.py
 apideck/model/delete_activity_response.py
@@ -188,7 +185,6 @@ apideck/model/delete_consumer_response.py
 apideck/model/delete_contact_response.py
 apideck/model/delete_credit_note_response.py
 apideck/model/delete_customer_response.py
-apideck/model/delete_customer_support_customer_response.py
 apideck/model/delete_department_response.py
 apideck/model/delete_drive_group_response.py
 apideck/model/delete_drive_response.py
@@ -314,8 +310,6 @@ apideck/model/get_contacts_response.py
 apideck/model/get_credit_note_response.py
 apideck/model/get_credit_notes_response.py
 apideck/model/get_customer_response.py
-apideck/model/get_customer_support_customer_response.py
-apideck/model/get_customer_support_customers_response.py
 apideck/model/get_customers_response.py
 apideck/model/get_department_response.py
 apideck/model/get_departments_response.py
@@ -569,7 +563,6 @@ apideck/model/update_consumer_response.py
 apideck/model/update_contact_response.py
 apideck/model/update_credit_note_response.py
 apideck/model/update_customer_response.py
-apideck/model/update_customer_support_customer_response.py
 apideck/model/update_department_response.py
 apideck/model/update_drive_group_response.py
 apideck/model/update_drive_response.py
@@ -727,7 +720,6 @@ docs/CreateConsumerResponse.md
 docs/CreateContactResponse.md
 docs/CreateCreditNoteResponse.md
 docs/CreateCustomerResponse.md
-docs/CreateCustomerSupportCustomerResponse.md
 docs/CreateDepartmentResponse.md
 docs/CreateDriveGroupResponse.md
 docs/CreateDriveResponse.md
@@ -777,8 +769,6 @@ docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
 docs/CustomField.md
-docs/CustomerSupportApi.md
-docs/CustomerSupportCustomer.md
 docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
@@ -791,7 +781,6 @@ docs/DeleteConsumerResponse.md
 docs/DeleteContactResponse.md
 docs/DeleteCreditNoteResponse.md
 docs/DeleteCustomerResponse.md
-docs/DeleteCustomerSupportCustomerResponse.md
 docs/DeleteDepartmentResponse.md
 docs/DeleteDriveGroupResponse.md
 docs/DeleteDriveResponse.md
@@ -919,8 +908,6 @@ docs/GetContactsResponse.md
 docs/GetCreditNoteResponse.md
 docs/GetCreditNotesResponse.md
 docs/GetCustomerResponse.md
-docs/GetCustomerSupportCustomerResponse.md
-docs/GetCustomerSupportCustomersResponse.md
 docs/GetCustomersResponse.md
 docs/GetDepartmentResponse.md
 docs/GetDepartmentsResponse.md
@@ -1179,7 +1166,6 @@ docs/UpdateConsumerResponse.md
 docs/UpdateContactResponse.md
 docs/UpdateCreditNoteResponse.md
 docs/UpdateCustomerResponse.md
-docs/UpdateCustomerSupportCustomerResponse.md
 docs/UpdateDepartmentResponse.md
 docs/UpdateDriveGroupResponse.md
 docs/UpdateDriveResponse.md
@@ -1342,7 +1328,6 @@ test/test_create_consumer_response.py
 test/test_create_contact_response.py
 test/test_create_credit_note_response.py
 test/test_create_customer_response.py
-test/test_create_customer_support_customer_response.py
 test/test_create_department_response.py
 test/test_create_drive_group_response.py
 test/test_create_drive_response.py
@@ -1392,8 +1377,6 @@ test/test_crm_api.py
 test/test_crm_event_type.py
 test/test_currency.py
 test/test_custom_field.py
-test/test_customer_support_api.py
-test/test_customer_support_customer.py
 test/test_customers_filter.py
 test/test_deduction.py
 test/test_delete_activity_response.py
@@ -1406,7 +1389,6 @@ test/test_delete_consumer_response.py
 test/test_delete_contact_response.py
 test/test_delete_credit_note_response.py
 test/test_delete_customer_response.py
-test/test_delete_customer_support_customer_response.py
 test/test_delete_department_response.py
 test/test_delete_drive_group_response.py
 test/test_delete_drive_response.py
@@ -1534,8 +1516,6 @@ test/test_get_contacts_response.py
 test/test_get_credit_note_response.py
 test/test_get_credit_notes_response.py
 test/test_get_customer_response.py
-test/test_get_customer_support_customer_response.py
-test/test_get_customer_support_customers_response.py
 test/test_get_customers_response.py
 test/test_get_department_response.py
 test/test_get_departments_response.py
@@ -1794,7 +1774,6 @@ test/test_update_consumer_response.py
 test/test_update_contact_response.py
 test/test_update_credit_note_response.py
 test/test_update_customer_response.py
-test/test_update_customer_support_customer_response.py
 test/test_update_department_response.py
 test/test_update_drive_group_response.py
 test/test_update_drive_response.py

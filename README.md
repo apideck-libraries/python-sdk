@@ -110,10 +110,6 @@ Read the full documentation of the ConnectorApi [here](./docs/apis/ConnectorApi.
 
 Read the full documentation of the CrmApi [here](./docs/apis/CrmApi.md).
 
-### CustomerSupportApi
-
-Read the full documentation of the CustomerSupportApi [here](./docs/apis/CustomerSupportApi.md).
-
 ### EcommerceApi
 
 Read the full documentation of the EcommerceApi [here](./docs/apis/EcommerceApi.md).
@@ -530,19 +526,9 @@ _CrmApi_ | [**users_one**](docs/apis/CrmApi.md#users_one) | **GET** /crm/users/{
 
 _CrmApi_ | [**users_update**](docs/apis/CrmApi.md#users_update) | **PATCH** /crm/users/{id} | Update user |
 
-_CustomerSupportApi_ | [**customers_add**](docs/apis/CustomerSupportApi.md#customers_add) | **POST** /customer-support/customers | Create Customer Support Customer |
+_EcommerceApi_ | [**customers_all**](docs/apis/EcommerceApi.md#customers_all) | **GET** /ecommerce/customers | List Customers |
 
-_CustomerSupportApi_ | [**customers_all**](docs/apis/CustomerSupportApi.md#customers_all) | **GET** /customer-support/customers | List Customer Support Customers |
-
-_CustomerSupportApi_ | [**customers_delete**](docs/apis/CustomerSupportApi.md#customers_delete) | **DELETE** /customer-support/customers/{id} | Delete Customer Support Customer |
-
-_CustomerSupportApi_ | [**customers_one**](docs/apis/CustomerSupportApi.md#customers_one) | **GET** /customer-support/customers/{id} | Get Customer Support Customer |
-
-_CustomerSupportApi_ | [**customers_update**](docs/apis/CustomerSupportApi.md#customers_update) | **PATCH** /customer-support/customers/{id} | Update Customer Support Customer |
-
-_EcommerceApi_ | [**customers_all2**](docs/apis/EcommerceApi.md#customers_all2) | **GET** /ecommerce/customers | List Customers |
-
-_EcommerceApi_ | [**customers_one2**](docs/apis/EcommerceApi.md#customers_one2) | **GET** /ecommerce/customers/{id} | Get Customer |
+_EcommerceApi_ | [**customers_one**](docs/apis/EcommerceApi.md#customers_one) | **GET** /ecommerce/customers/{id} | Get Customer |
 
 _EcommerceApi_ | [**orders_all**](docs/apis/EcommerceApi.md#orders_all) | **GET** /ecommerce/orders | List Orders |
 
@@ -946,7 +932,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateContactResponse](docs/models/CreateContactResponse.md)
  - [CreateCreditNoteResponse](docs/models/CreateCreditNoteResponse.md)
  - [CreateCustomerResponse](docs/models/CreateCustomerResponse.md)
- - [CreateCustomerSupportCustomerResponse](docs/models/CreateCustomerSupportCustomerResponse.md)
  - [CreateDepartmentResponse](docs/models/CreateDepartmentResponse.md)
  - [CreateDriveGroupResponse](docs/models/CreateDriveGroupResponse.md)
  - [CreateDriveResponse](docs/models/CreateDriveResponse.md)
@@ -995,7 +980,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CrmEventType](docs/models/CrmEventType.md)
  - [Currency](docs/models/Currency.md)
  - [CustomField](docs/models/CustomField.md)
- - [CustomerSupportCustomer](docs/models/CustomerSupportCustomer.md)
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [Deduction](docs/models/Deduction.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
@@ -1008,7 +992,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteContactResponse](docs/models/DeleteContactResponse.md)
  - [DeleteCreditNoteResponse](docs/models/DeleteCreditNoteResponse.md)
  - [DeleteCustomerResponse](docs/models/DeleteCustomerResponse.md)
- - [DeleteCustomerSupportCustomerResponse](docs/models/DeleteCustomerSupportCustomerResponse.md)
  - [DeleteDepartmentResponse](docs/models/DeleteDepartmentResponse.md)
  - [DeleteDriveGroupResponse](docs/models/DeleteDriveGroupResponse.md)
  - [DeleteDriveResponse](docs/models/DeleteDriveResponse.md)
@@ -1134,8 +1117,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetCreditNoteResponse](docs/models/GetCreditNoteResponse.md)
  - [GetCreditNotesResponse](docs/models/GetCreditNotesResponse.md)
  - [GetCustomerResponse](docs/models/GetCustomerResponse.md)
- - [GetCustomerSupportCustomerResponse](docs/models/GetCustomerSupportCustomerResponse.md)
- - [GetCustomerSupportCustomersResponse](docs/models/GetCustomerSupportCustomersResponse.md)
  - [GetCustomersResponse](docs/models/GetCustomersResponse.md)
  - [GetDepartmentResponse](docs/models/GetDepartmentResponse.md)
  - [GetDepartmentsResponse](docs/models/GetDepartmentsResponse.md)
@@ -1389,7 +1370,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateContactResponse](docs/models/UpdateContactResponse.md)
  - [UpdateCreditNoteResponse](docs/models/UpdateCreditNoteResponse.md)
  - [UpdateCustomerResponse](docs/models/UpdateCustomerResponse.md)
- - [UpdateCustomerSupportCustomerResponse](docs/models/UpdateCustomerSupportCustomerResponse.md)
  - [UpdateDepartmentResponse](docs/models/UpdateDepartmentResponse.md)
  - [UpdateDriveGroupResponse](docs/models/UpdateDriveGroupResponse.md)
  - [UpdateDriveResponse](docs/models/UpdateDriveResponse.md)

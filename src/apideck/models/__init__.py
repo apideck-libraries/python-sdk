@@ -103,7 +103,6 @@ from apideck.model.create_consumer_response import CreateConsumerResponse
 from apideck.model.create_contact_response import CreateContactResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
-from apideck.model.create_customer_support_customer_response import CreateCustomerSupportCustomerResponse
 from apideck.model.create_department_response import CreateDepartmentResponse
 from apideck.model.create_drive_group_response import CreateDriveGroupResponse
 from apideck.model.create_drive_response import CreateDriveResponse
@@ -152,7 +151,6 @@ from apideck.model.credit_note import CreditNote
 from apideck.model.crm_event_type import CrmEventType
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
-from apideck.model.customer_support_customer import CustomerSupportCustomer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.deduction import Deduction
 from apideck.model.delete_activity_response import DeleteActivityResponse
@@ -165,7 +163,6 @@ from apideck.model.delete_consumer_response import DeleteConsumerResponse
 from apideck.model.delete_contact_response import DeleteContactResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
-from apideck.model.delete_customer_support_customer_response import DeleteCustomerSupportCustomerResponse
 from apideck.model.delete_department_response import DeleteDepartmentResponse
 from apideck.model.delete_drive_group_response import DeleteDriveGroupResponse
 from apideck.model.delete_drive_response import DeleteDriveResponse
@@ -291,8 +288,6 @@ from apideck.model.get_contacts_response import GetContactsResponse
 from apideck.model.get_credit_note_response import GetCreditNoteResponse
 from apideck.model.get_credit_notes_response import GetCreditNotesResponse
 from apideck.model.get_customer_response import GetCustomerResponse
-from apideck.model.get_customer_support_customer_response import GetCustomerSupportCustomerResponse
-from apideck.model.get_customer_support_customers_response import GetCustomerSupportCustomersResponse
 from apideck.model.get_customers_response import GetCustomersResponse
 from apideck.model.get_department_response import GetDepartmentResponse
 from apideck.model.get_departments_response import GetDepartmentsResponse
@@ -546,7 +541,6 @@ from apideck.model.update_consumer_response import UpdateConsumerResponse
 from apideck.model.update_contact_response import UpdateContactResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
-from apideck.model.update_customer_support_customer_response import UpdateCustomerSupportCustomerResponse
 from apideck.model.update_department_response import UpdateDepartmentResponse
 from apideck.model.update_drive_group_response import UpdateDriveGroupResponse
 from apideck.model.update_drive_response import UpdateDriveResponse
