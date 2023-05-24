@@ -324,6 +324,41 @@ class TestAccountingApi(unittest.TestCase):
         """
         pass
 
+    def test_purchase_orders_add(self):
+        """Test case for purchase_orders_add
+
+        Create Purchase Order  # noqa: E501
+        """
+        pass
+
+    def test_purchase_orders_all(self):
+        """Test case for purchase_orders_all
+
+        List Purchase Orders  # noqa: E501
+        """
+        pass
+
+    def test_purchase_orders_delete(self):
+        """Test case for purchase_orders_delete
+
+        Delete Purchase Order  # noqa: E501
+        """
+        pass
+
+    def test_purchase_orders_one(self):
+        """Test case for purchase_orders_one
+
+        Get Purchase Order  # noqa: E501
+        """
+        pass
+
+    def test_purchase_orders_update(self):
+        """Test case for purchase_orders_update
+
+        Update Purchase Order  # noqa: E501
+        """
+        pass
+
     def test_suppliers_add(self):
         """Test case for suppliers_add
 

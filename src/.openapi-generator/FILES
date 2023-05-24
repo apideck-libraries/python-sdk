@@ -156,6 +156,7 @@ apideck/model/create_payment_response.py
 apideck/model/create_pipeline_response.py
 apideck/model/create_pos_payment_response.py
 apideck/model/create_product_response.py
+apideck/model/create_purchase_order_response.py
 apideck/model/create_session_response.py
 apideck/model/create_session_response_data.py
 apideck/model/create_shared_link_response.py
@@ -214,6 +215,7 @@ apideck/model/delete_payment_response.py
 apideck/model/delete_pipeline_response.py
 apideck/model/delete_pos_payment_response.py
 apideck/model/delete_product_response.py
+apideck/model/delete_purchase_order_response.py
 apideck/model/delete_shared_link_response.py
 apideck/model/delete_supplier_response.py
 apideck/model/delete_tax_rate_response.py
@@ -378,6 +380,8 @@ apideck/model/get_pos_payments_response.py
 apideck/model/get_product_response.py
 apideck/model/get_products_response.py
 apideck/model/get_profit_and_loss_response.py
+apideck/model/get_purchase_order_response.py
+apideck/model/get_purchase_orders_response.py
 apideck/model/get_shared_link_response.py
 apideck/model/get_shared_links_response.py
 apideck/model/get_store_response.py
@@ -508,6 +512,7 @@ apideck/model/profit_and_loss_net_operating_income.py
 apideck/model/profit_and_loss_record.py
 apideck/model/profit_and_loss_records.py
 apideck/model/profit_and_loss_section.py
+apideck/model/purchase_order.py
 apideck/model/request_count_allocation.py
 apideck/model/request_rate.py
 apideck/model/resolve_webhook_event_request.py
@@ -594,6 +599,7 @@ apideck/model/update_payment_response.py
 apideck/model/update_pipeline_response.py
 apideck/model/update_pos_payment_response.py
 apideck/model/update_product_response.py
+apideck/model/update_purchase_order_response.py
 apideck/model/update_shared_link_response.py
 apideck/model/update_supplier_response.py
 apideck/model/update_tax_rate_response.py
@@ -751,6 +757,7 @@ docs/CreatePaymentResponse.md
 docs/CreatePipelineResponse.md
 docs/CreatePosPaymentResponse.md
 docs/CreateProductResponse.md
+docs/CreatePurchaseOrderResponse.md
 docs/CreateSessionResponse.md
 docs/CreateSessionResponseData.md
 docs/CreateSharedLinkResponse.md
@@ -810,6 +817,7 @@ docs/DeletePaymentResponse.md
 docs/DeletePipelineResponse.md
 docs/DeletePosPaymentResponse.md
 docs/DeleteProductResponse.md
+docs/DeletePurchaseOrderResponse.md
 docs/DeleteSharedLinkResponse.md
 docs/DeleteSupplierResponse.md
 docs/DeleteTaxRateResponse.md
@@ -976,6 +984,8 @@ docs/GetPosPaymentsResponse.md
 docs/GetProductResponse.md
 docs/GetProductsResponse.md
 docs/GetProfitAndLossResponse.md
+docs/GetPurchaseOrderResponse.md
+docs/GetPurchaseOrdersResponse.md
 docs/GetSharedLinkResponse.md
 docs/GetSharedLinksResponse.md
 docs/GetStoreResponse.md
@@ -1110,6 +1120,7 @@ docs/ProfitAndLossNetOperatingIncome.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossRecords.md
 docs/ProfitAndLossSection.md
+docs/PurchaseOrder.md
 docs/RequestCountAllocation.md
 docs/RequestRate.md
 docs/ResolveWebhookEventRequest.md
@@ -1197,6 +1208,7 @@ docs/UpdatePaymentResponse.md
 docs/UpdatePipelineResponse.md
 docs/UpdatePosPaymentResponse.md
 docs/UpdateProductResponse.md
+docs/UpdatePurchaseOrderResponse.md
 docs/UpdateSharedLinkResponse.md
 docs/UpdateSupplierResponse.md
 docs/UpdateTaxRateResponse.md
@@ -1359,6 +1371,7 @@ test/test_create_payment_response.py
 test/test_create_pipeline_response.py
 test/test_create_pos_payment_response.py
 test/test_create_product_response.py
+test/test_create_purchase_order_response.py
 test/test_create_session_response.py
 test/test_create_session_response_data.py
 test/test_create_shared_link_response.py
@@ -1418,6 +1431,7 @@ test/test_delete_payment_response.py
 test/test_delete_pipeline_response.py
 test/test_delete_pos_payment_response.py
 test/test_delete_product_response.py
+test/test_delete_purchase_order_response.py
 test/test_delete_shared_link_response.py
 test/test_delete_supplier_response.py
 test/test_delete_tax_rate_response.py
@@ -1584,6 +1598,8 @@ test/test_get_pos_payments_response.py
 test/test_get_product_response.py
 test/test_get_products_response.py
 test/test_get_profit_and_loss_response.py
+test/test_get_purchase_order_response.py
+test/test_get_purchase_orders_response.py
 test/test_get_shared_link_response.py
 test/test_get_shared_links_response.py
 test/test_get_store_response.py
@@ -1718,6 +1734,7 @@ test/test_profit_and_loss_net_operating_income.py
 test/test_profit_and_loss_record.py
 test/test_profit_and_loss_records.py
 test/test_profit_and_loss_section.py
+test/test_purchase_order.py
 test/test_request_count_allocation.py
 test/test_request_rate.py
 test/test_resolve_webhook_event_request.py
@@ -1805,6 +1822,7 @@ test/test_update_payment_response.py
 test/test_update_pipeline_response.py
 test/test_update_pos_payment_response.py
 test/test_update_product_response.py
+test/test_update_purchase_order_response.py
 test/test_update_shared_link_response.py
 test/test_update_supplier_response.py
 test/test_update_tax_rate_response.py

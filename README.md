@@ -189,6 +189,7 @@ from apideck.model.create_invoice_response import CreateInvoiceResponse
 from apideck.model.create_journal_entry_response import CreateJournalEntryResponse
 from apideck.model.create_ledger_account_response import CreateLedgerAccountResponse
 from apideck.model.create_payment_response import CreatePaymentResponse
+from apideck.model.create_purchase_order_response import CreatePurchaseOrderResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
@@ -200,6 +201,7 @@ from apideck.model.delete_invoice_response import DeleteInvoiceResponse
 from apideck.model.delete_journal_entry_response import DeleteJournalEntryResponse
 from apideck.model.delete_ledger_account_response import DeleteLedgerAccountResponse
 from apideck.model.delete_payment_response import DeletePaymentResponse
+from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
@@ -221,6 +223,8 @@ from apideck.model.get_ledger_accounts_response import GetLedgerAccountsResponse
 from apideck.model.get_payment_response import GetPaymentResponse
 from apideck.model.get_payments_response import GetPaymentsResponse
 from apideck.model.get_profit_and_loss_response import GetProfitAndLossResponse
+from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
+from apideck.model.get_purchase_orders_response import GetPurchaseOrdersResponse
 from apideck.model.get_supplier_response import GetSupplierResponse
 from apideck.model.get_suppliers_response import GetSuppliersResponse
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
@@ -237,6 +241,7 @@ from apideck.model.payment import Payment
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
+from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.tax_rate import TaxRate
@@ -252,6 +257,7 @@ from apideck.model.update_invoice_response import UpdateInvoiceResponse
 from apideck.model.update_journal_entry_response import UpdateJournalEntryResponse
 from apideck.model.update_ledger_account_response import UpdateLedgerAccountResponse
 from apideck.model.update_payment_response import UpdatePaymentResponse
+from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
 from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
 # Defining the host is optional and defaults to https://unify.apideck.com
@@ -385,6 +391,16 @@ _AccountingApi_ | [**payments_one**](docs/apis/AccountingApi.md#payments_one) | 
 _AccountingApi_ | [**payments_update**](docs/apis/AccountingApi.md#payments_update) | **PATCH** /accounting/payments/{id} | Update Payment |
 
 _AccountingApi_ | [**profit_and_loss_one**](docs/apis/AccountingApi.md#profit_and_loss_one) | **GET** /accounting/profit-and-loss | Get Profit and Loss |
+
+_AccountingApi_ | [**purchase_orders_add**](docs/apis/AccountingApi.md#purchase_orders_add) | **POST** /accounting/purchase-orders | Create Purchase Order |
+
+_AccountingApi_ | [**purchase_orders_all**](docs/apis/AccountingApi.md#purchase_orders_all) | **GET** /accounting/purchase-orders | List Purchase Orders |
+
+_AccountingApi_ | [**purchase_orders_delete**](docs/apis/AccountingApi.md#purchase_orders_delete) | **DELETE** /accounting/purchase-orders/{id} | Delete Purchase Order |
+
+_AccountingApi_ | [**purchase_orders_one**](docs/apis/AccountingApi.md#purchase_orders_one) | **GET** /accounting/purchase-orders/{id} | Get Purchase Order |
+
+_AccountingApi_ | [**purchase_orders_update**](docs/apis/AccountingApi.md#purchase_orders_update) | **PATCH** /accounting/purchase-orders/{id} | Update Purchase Order |
 
 _AccountingApi_ | [**suppliers_add**](docs/apis/AccountingApi.md#suppliers_add) | **POST** /accounting/suppliers | Create Supplier |
 
@@ -963,6 +979,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreatePipelineResponse](docs/models/CreatePipelineResponse.md)
  - [CreatePosPaymentResponse](docs/models/CreatePosPaymentResponse.md)
  - [CreateProductResponse](docs/models/CreateProductResponse.md)
+ - [CreatePurchaseOrderResponse](docs/models/CreatePurchaseOrderResponse.md)
  - [CreateSessionResponse](docs/models/CreateSessionResponse.md)
  - [CreateSessionResponseData](docs/models/CreateSessionResponseData.md)
  - [CreateSharedLinkResponse](docs/models/CreateSharedLinkResponse.md)
@@ -1021,6 +1038,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeletePipelineResponse](docs/models/DeletePipelineResponse.md)
  - [DeletePosPaymentResponse](docs/models/DeletePosPaymentResponse.md)
  - [DeleteProductResponse](docs/models/DeleteProductResponse.md)
+ - [DeletePurchaseOrderResponse](docs/models/DeletePurchaseOrderResponse.md)
  - [DeleteSharedLinkResponse](docs/models/DeleteSharedLinkResponse.md)
  - [DeleteSupplierResponse](docs/models/DeleteSupplierResponse.md)
  - [DeleteTaxRateResponse](docs/models/DeleteTaxRateResponse.md)
@@ -1185,6 +1203,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetProductResponse](docs/models/GetProductResponse.md)
  - [GetProductsResponse](docs/models/GetProductsResponse.md)
  - [GetProfitAndLossResponse](docs/models/GetProfitAndLossResponse.md)
+ - [GetPurchaseOrderResponse](docs/models/GetPurchaseOrderResponse.md)
+ - [GetPurchaseOrdersResponse](docs/models/GetPurchaseOrdersResponse.md)
  - [GetSharedLinkResponse](docs/models/GetSharedLinkResponse.md)
  - [GetSharedLinksResponse](docs/models/GetSharedLinksResponse.md)
  - [GetStoreResponse](docs/models/GetStoreResponse.md)
@@ -1315,6 +1335,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ProfitAndLossRecord](docs/models/ProfitAndLossRecord.md)
  - [ProfitAndLossRecords](docs/models/ProfitAndLossRecords.md)
  - [ProfitAndLossSection](docs/models/ProfitAndLossSection.md)
+ - [PurchaseOrder](docs/models/PurchaseOrder.md)
  - [RequestCountAllocation](docs/models/RequestCountAllocation.md)
  - [RequestRate](docs/models/RequestRate.md)
  - [ResolveWebhookEventRequest](docs/models/ResolveWebhookEventRequest.md)
@@ -1401,6 +1422,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdatePipelineResponse](docs/models/UpdatePipelineResponse.md)
  - [UpdatePosPaymentResponse](docs/models/UpdatePosPaymentResponse.md)
  - [UpdateProductResponse](docs/models/UpdateProductResponse.md)
+ - [UpdatePurchaseOrderResponse](docs/models/UpdatePurchaseOrderResponse.md)
  - [UpdateSharedLinkResponse](docs/models/UpdateSharedLinkResponse.md)
  - [UpdateSupplierResponse](docs/models/UpdateSupplierResponse.md)
  - [UpdateTaxRateResponse](docs/models/UpdateTaxRateResponse.md)

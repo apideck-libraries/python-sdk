@@ -47,6 +47,11 @@ Method | HTTP request | Description
 [**payments_one**](AccountingApi.md#payments_one) | **GET** /accounting/payments/{id} | Get Payment
 [**payments_update**](AccountingApi.md#payments_update) | **PATCH** /accounting/payments/{id} | Update Payment
 [**profit_and_loss_one**](AccountingApi.md#profit_and_loss_one) | **GET** /accounting/profit-and-loss | Get Profit and Loss
+[**purchase_orders_add**](AccountingApi.md#purchase_orders_add) | **POST** /accounting/purchase-orders | Create Purchase Order
+[**purchase_orders_all**](AccountingApi.md#purchase_orders_all) | **GET** /accounting/purchase-orders | List Purchase Orders
+[**purchase_orders_delete**](AccountingApi.md#purchase_orders_delete) | **DELETE** /accounting/purchase-orders/{id} | Delete Purchase Order
+[**purchase_orders_one**](AccountingApi.md#purchase_orders_one) | **GET** /accounting/purchase-orders/{id} | Get Purchase Order
+[**purchase_orders_update**](AccountingApi.md#purchase_orders_update) | **PATCH** /accounting/purchase-orders/{id} | Update Purchase Order
 [**suppliers_add**](AccountingApi.md#suppliers_add) | **POST** /accounting/suppliers | Create Supplier
 [**suppliers_all**](AccountingApi.md#suppliers_all) | **GET** /accounting/suppliers | List Suppliers
 [**suppliers_delete**](AccountingApi.md#suppliers_delete) | **DELETE** /accounting/suppliers/{id} | Delete Supplier
@@ -238,6 +243,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ),
@@ -759,6 +765,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ),
@@ -1722,6 +1729,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ],
@@ -2254,6 +2262,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ],
@@ -3135,6 +3144,7 @@ with apideck.ApiClient(configuration) as api_client:
             fax="122-111-1111",
             email="elon@musk.com",
             website="https://elonmusk.com",
+            notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
         shipping_address=Address(
@@ -3160,6 +3170,7 @@ with apideck.ApiClient(configuration) as api_client:
             fax="122-111-1111",
             email="elon@musk.com",
             website="https://elonmusk.com",
+            notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
         template_id="123456",
@@ -3682,6 +3693,7 @@ with apideck.ApiClient(configuration) as api_client:
             fax="122-111-1111",
             email="elon@musk.com",
             website="https://elonmusk.com",
+            notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
         shipping_address=Address(
@@ -3707,6 +3719,7 @@ with apideck.ApiClient(configuration) as api_client:
             fax="122-111-1111",
             email="elon@musk.com",
             website="https://elonmusk.com",
+            notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
         template_id="123456",
@@ -5004,6 +5017,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ),
@@ -5503,6 +5517,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ),
@@ -5692,6 +5707,751 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **purchase_orders_add**
+> CreatePurchaseOrderResponse purchase_orders_add(purchase_order)
+
+Create Purchase Order
+
+Create Purchase Order
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.create_purchase_order_response import CreatePurchaseOrderResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.purchase_order import PurchaseOrder
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    purchase_order = PurchaseOrder(
+        po_number="90000117",
+        reference="123456",
+        supplier=LinkedSupplier(
+            id="12345",
+            display_name="Windsurf Shop",
+            address=Address(
+                id="123",
+                type="primary",
+                string="25 Spring Street, Blackburn, VIC 3130",
+                name="HQ US",
+                line1="Main street",
+                line2="apt #",
+                line3="Suite #",
+                line4="delivery instructions",
+                street_number="25",
+                city="San Francisco",
+                state="CA",
+                postal_code="94104",
+                country="US",
+                latitude="40.759211",
+                longitude="-73.984638",
+                county="Santa Clara",
+                contact_name="Elon Musk",
+                salutation="Mr",
+                phone_number="111-111-1111",
+                fax="122-111-1111",
+                email="elon@musk.com",
+                website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
+                row_version="1-12345",
+            ),
+        ),
+        status="open",
+        issued_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        delivery_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        expected_arrival_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        currency=Currency("USD"),
+        currency_rate=0.69,
+        sub_total=27500,
+        total_tax=2500,
+        total=27500,
+        tax_inclusive=True,
+        line_items=[
+            InvoiceLineItem(
+                row_id="12345",
+                code="120-C",
+                line_number=1,
+                description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
+                type="sales_item",
+                tax_amount=27500,
+                total_amount=27500,
+                quantity=1,
+                unit_price=27500.5,
+                unit_of_measure="pc.",
+                discount_percentage=0.01,
+                discount_amount=19.99,
+                location_id="1234",
+                department_id="1234",
+                item=LinkedInvoiceItem(
+                    id="12344",
+                ),
+                tax_rate=LinkedTaxRate(
+                    id="123456",
+                ),
+                ledger_account=LinkedLedgerAccount(
+                    id="123456",
+                    nominal_code="N091",
+                    code="453",
+                ),
+                row_version="1-12345",
+            ),
+        ],
+        shipping_address=Address(
+            id="123",
+            type="primary",
+            string="25 Spring Street, Blackburn, VIC 3130",
+            name="HQ US",
+            line1="Main street",
+            line2="apt #",
+            line3="Suite #",
+            line4="delivery instructions",
+            street_number="25",
+            city="San Francisco",
+            state="CA",
+            postal_code="94104",
+            country="US",
+            latitude="40.759211",
+            longitude="-73.984638",
+            county="Santa Clara",
+            contact_name="Elon Musk",
+            salutation="Mr",
+            phone_number="111-111-1111",
+            fax="122-111-1111",
+            email="elon@musk.com",
+            website="https://elonmusk.com",
+            notes="Address notes or delivery instructions.",
+            row_version="1-12345",
+        ),
+        ledger_account=LinkedLedgerAccount(
+            id="123456",
+            nominal_code="N091",
+            code="453",
+        ),
+        template_id="123456",
+        row_version="1-12345",
+    ) # PurchaseOrder | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create Purchase Order
+        api_response = api_instance.purchase_orders_add(purchase_order)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create Purchase Order
+        api_response = api_instance.purchase_orders_add(purchase_order, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **purchase_order** | [**PurchaseOrder**](PurchaseOrder.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreatePurchaseOrderResponse**](CreatePurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | PurchaseOrders |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **purchase_orders_all**
+> GetPurchaseOrdersResponse purchase_orders_all()
+
+List Purchase Orders
+
+List Purchase Orders
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.get_purchase_orders_response import GetPurchaseOrdersResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List Purchase Orders
+        api_response = api_instance.purchase_orders_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+
+### Return type
+
+[**GetPurchaseOrdersResponse**](GetPurchaseOrdersResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | PurchaseOrders |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **purchase_orders_delete**
+> DeletePurchaseOrderResponse purchase_orders_delete(id)
+
+Delete Purchase Order
+
+Delete Purchase Order
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete Purchase Order
+        api_response = api_instance.purchase_orders_delete(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete Purchase Order
+        api_response = api_instance.purchase_orders_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeletePurchaseOrderResponse**](DeletePurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | PurchaseOrders |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **purchase_orders_one**
+> GetPurchaseOrderResponse purchase_orders_one(id)
+
+Get Purchase Order
+
+Get Purchase Order
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Purchase Order
+        api_response = api_instance.purchase_orders_one(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Purchase Order
+        api_response = api_instance.purchase_orders_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**GetPurchaseOrderResponse**](GetPurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | PurchaseOrders |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **purchase_orders_update**
+> UpdatePurchaseOrderResponse purchase_orders_update(id, purchase_order)
+
+Update Purchase Order
+
+Update Purchase Order
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.purchase_order import PurchaseOrder
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    purchase_order = PurchaseOrder(
+        po_number="90000117",
+        reference="123456",
+        supplier=LinkedSupplier(
+            id="12345",
+            display_name="Windsurf Shop",
+            address=Address(
+                id="123",
+                type="primary",
+                string="25 Spring Street, Blackburn, VIC 3130",
+                name="HQ US",
+                line1="Main street",
+                line2="apt #",
+                line3="Suite #",
+                line4="delivery instructions",
+                street_number="25",
+                city="San Francisco",
+                state="CA",
+                postal_code="94104",
+                country="US",
+                latitude="40.759211",
+                longitude="-73.984638",
+                county="Santa Clara",
+                contact_name="Elon Musk",
+                salutation="Mr",
+                phone_number="111-111-1111",
+                fax="122-111-1111",
+                email="elon@musk.com",
+                website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
+                row_version="1-12345",
+            ),
+        ),
+        status="open",
+        issued_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        delivery_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        expected_arrival_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        currency=Currency("USD"),
+        currency_rate=0.69,
+        sub_total=27500,
+        total_tax=2500,
+        total=27500,
+        tax_inclusive=True,
+        line_items=[
+            InvoiceLineItem(
+                row_id="12345",
+                code="120-C",
+                line_number=1,
+                description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
+                type="sales_item",
+                tax_amount=27500,
+                total_amount=27500,
+                quantity=1,
+                unit_price=27500.5,
+                unit_of_measure="pc.",
+                discount_percentage=0.01,
+                discount_amount=19.99,
+                location_id="1234",
+                department_id="1234",
+                item=LinkedInvoiceItem(
+                    id="12344",
+                ),
+                tax_rate=LinkedTaxRate(
+                    id="123456",
+                ),
+                ledger_account=LinkedLedgerAccount(
+                    id="123456",
+                    nominal_code="N091",
+                    code="453",
+                ),
+                row_version="1-12345",
+            ),
+        ],
+        shipping_address=Address(
+            id="123",
+            type="primary",
+            string="25 Spring Street, Blackburn, VIC 3130",
+            name="HQ US",
+            line1="Main street",
+            line2="apt #",
+            line3="Suite #",
+            line4="delivery instructions",
+            street_number="25",
+            city="San Francisco",
+            state="CA",
+            postal_code="94104",
+            country="US",
+            latitude="40.759211",
+            longitude="-73.984638",
+            county="Santa Clara",
+            contact_name="Elon Musk",
+            salutation="Mr",
+            phone_number="111-111-1111",
+            fax="122-111-1111",
+            email="elon@musk.com",
+            website="https://elonmusk.com",
+            notes="Address notes or delivery instructions.",
+            row_version="1-12345",
+        ),
+        ledger_account=LinkedLedgerAccount(
+            id="123456",
+            nominal_code="N091",
+            code="453",
+        ),
+        template_id="123456",
+        row_version="1-12345",
+    ) # PurchaseOrder | 
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update Purchase Order
+        api_response = api_instance.purchase_orders_update(id, purchase_order)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update Purchase Order
+        api_response = api_instance.purchase_orders_update(id, purchase_order, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->purchase_orders_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **purchase_order** | [**PurchaseOrder**](PurchaseOrder.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdatePurchaseOrderResponse**](UpdatePurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | PurchaseOrders |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **suppliers_add**
 > CreateSupplierResponse suppliers_add(supplier)
 
@@ -5771,6 +6531,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ],
@@ -6295,6 +7056,7 @@ with apideck.ApiClient(configuration) as api_client:
                 fax="122-111-1111",
                 email="elon@musk.com",
                 website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
                 row_version="1-12345",
             ),
         ],

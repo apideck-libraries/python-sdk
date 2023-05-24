@@ -34,6 +34,7 @@ from apideck.model.create_invoice_response import CreateInvoiceResponse
 from apideck.model.create_journal_entry_response import CreateJournalEntryResponse
 from apideck.model.create_ledger_account_response import CreateLedgerAccountResponse
 from apideck.model.create_payment_response import CreatePaymentResponse
+from apideck.model.create_purchase_order_response import CreatePurchaseOrderResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
@@ -45,6 +46,7 @@ from apideck.model.delete_invoice_response import DeleteInvoiceResponse
 from apideck.model.delete_journal_entry_response import DeleteJournalEntryResponse
 from apideck.model.delete_ledger_account_response import DeleteLedgerAccountResponse
 from apideck.model.delete_payment_response import DeletePaymentResponse
+from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
@@ -66,6 +68,8 @@ from apideck.model.get_ledger_accounts_response import GetLedgerAccountsResponse
 from apideck.model.get_payment_response import GetPaymentResponse
 from apideck.model.get_payments_response import GetPaymentsResponse
 from apideck.model.get_profit_and_loss_response import GetProfitAndLossResponse
+from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
+from apideck.model.get_purchase_orders_response import GetPurchaseOrdersResponse
 from apideck.model.get_supplier_response import GetSupplierResponse
 from apideck.model.get_suppliers_response import GetSuppliersResponse
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
@@ -82,6 +86,7 @@ from apideck.model.payment import Payment
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
+from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.tax_rate import TaxRate
@@ -97,6 +102,7 @@ from apideck.model.update_invoice_response import UpdateInvoiceResponse
 from apideck.model.update_journal_entry_response import UpdateJournalEntryResponse
 from apideck.model.update_ledger_account_response import UpdateLedgerAccountResponse
 from apideck.model.update_payment_response import UpdatePaymentResponse
+from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
 from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
 
@@ -3478,6 +3484,379 @@ class AccountingApi(object):
                     'application/json'
                 ],
                 'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.purchase_orders_add_endpoint = _Endpoint(
+            settings={
+                'response_type': (CreatePurchaseOrderResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/accounting/purchase-orders',
+                'operation_id': 'purchase_orders_add',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'purchase_order',
+                    'raw',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                ],
+                'required': [
+                    'purchase_order',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'purchase_order':
+                        (PurchaseOrder,),
+                    'raw':
+                        (bool,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'raw': 'raw',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                },
+                'location_map': {
+                    'purchase_order': 'body',
+                    'raw': 'query',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.purchase_orders_all_endpoint = _Endpoint(
+            settings={
+                'response_type': (GetPurchaseOrdersResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/accounting/purchase-orders',
+                'operation_id': 'purchase_orders_all',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'raw',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'cursor',
+                    'limit',
+                ],
+                'required': [],
+                'nullable': [
+                    'cursor',
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 200,
+                        'inclusive_minimum': 1,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'raw':
+                        (bool,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'cursor':
+                        (str, none_type,),
+                    'limit':
+                        (int,),
+                },
+                'attribute_map': {
+                    'raw': 'raw',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'cursor': 'cursor',
+                    'limit': 'limit',
+                },
+                'location_map': {
+                    'raw': 'query',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'cursor': 'query',
+                    'limit': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.purchase_orders_delete_endpoint = _Endpoint(
+            settings={
+                'response_type': (DeletePurchaseOrderResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/accounting/purchase-orders/{id}',
+                'operation_id': 'purchase_orders_delete',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'raw',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'raw':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'raw': 'raw',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'raw': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.purchase_orders_one_endpoint = _Endpoint(
+            settings={
+                'response_type': (GetPurchaseOrderResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/accounting/purchase-orders/{id}',
+                'operation_id': 'purchase_orders_one',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'raw',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'raw':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'raw': 'raw',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'raw': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.purchase_orders_update_endpoint = _Endpoint(
+            settings={
+                'response_type': (UpdatePurchaseOrderResponse,),
+                'auth': [
+                    'apiKey'
+                ],
+                'endpoint_path': '/accounting/purchase-orders/{id}',
+                'operation_id': 'purchase_orders_update',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'purchase_order',
+                    'consumer_id',
+                    'app_id',
+                    'service_id',
+                    'raw',
+                ],
+                'required': [
+                    'id',
+                    'purchase_order',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'purchase_order':
+                        (PurchaseOrder,),
+                    'consumer_id':
+                        (str,),
+                    'app_id':
+                        (str,),
+                    'service_id':
+                        (str,),
+                    'raw':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'consumer_id': 'x-apideck-consumer-id',
+                    'app_id': 'x-apideck-app-id',
+                    'service_id': 'x-apideck-service-id',
+                    'raw': 'raw',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'purchase_order': 'body',
+                    'consumer_id': 'header',
+                    'app_id': 'header',
+                    'service_id': 'header',
+                    'raw': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
@@ -7825,6 +8204,417 @@ class AccountingApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         return self.profit_and_loss_one_endpoint.call_with_http_info(**kwargs)
+
+    def purchase_orders_add(
+        self,
+        purchase_order,
+        **kwargs
+    ):
+        """Create Purchase Order  # noqa: E501
+
+        Create Purchase Order  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.purchase_orders_add(purchase_order, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            purchase_order (PurchaseOrder):
+
+        Keyword Args:
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CreatePurchaseOrderResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['purchase_order'] = \
+            purchase_order
+        return self.purchase_orders_add_endpoint.call_with_http_info(**kwargs)
+
+    def purchase_orders_all(
+        self,
+        **kwargs
+    ):
+        """List Purchase Orders  # noqa: E501
+
+        List Purchase Orders  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.purchase_orders_all(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
+            limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            GetPurchaseOrdersResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.purchase_orders_all_endpoint.call_with_http_info(**kwargs)
+
+    def purchase_orders_delete(
+        self,
+        id,
+        **kwargs
+    ):
+        """Delete Purchase Order  # noqa: E501
+
+        Delete Purchase Order  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.purchase_orders_delete(id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str): ID of the record you are acting upon.
+
+        Keyword Args:
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            DeletePurchaseOrderResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        return self.purchase_orders_delete_endpoint.call_with_http_info(**kwargs)
+
+    def purchase_orders_one(
+        self,
+        id,
+        **kwargs
+    ):
+        """Get Purchase Order  # noqa: E501
+
+        Get Purchase Order  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.purchase_orders_one(id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str): ID of the record you are acting upon.
+
+        Keyword Args:
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            GetPurchaseOrderResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        return self.purchase_orders_one_endpoint.call_with_http_info(**kwargs)
+
+    def purchase_orders_update(
+        self,
+        id,
+        purchase_order,
+        **kwargs
+    ):
+        """Update Purchase Order  # noqa: E501
+
+        Update Purchase Order  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.purchase_orders_update(id, purchase_order, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str): ID of the record you are acting upon.
+            purchase_order (PurchaseOrder):
+
+        Keyword Args:
+            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
+            app_id (str): The ID of your Unify application. [optional]
+            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
+            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            UpdatePurchaseOrderResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        kwargs['purchase_order'] = \
+            purchase_order
+        return self.purchase_orders_update_endpoint.call_with_http_info(**kwargs)
 
     def suppliers_add(
         self,
