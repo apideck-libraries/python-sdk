@@ -34,6 +34,7 @@ def lazy_import():
     from apideck.model.branch import Branch
     from apideck.model.custom_field import CustomField
     from apideck.model.department import Department
+    from apideck.model.job_links import JobLinks
     from apideck.model.job_salary import JobSalary
     from apideck.model.job_status import JobStatus
     from apideck.model.tags import Tags
@@ -41,6 +42,7 @@ def lazy_import():
     globals()['Branch'] = Branch
     globals()['CustomField'] = CustomField
     globals()['Department'] = Department
+    globals()['JobLinks'] = JobLinks
     globals()['JobSalary'] = JobSalary
     globals()['JobStatus'] = JobStatus
     globals()['Tags'] = Tags
@@ -91,6 +93,8 @@ class Job(ModelNormal):
     }
 
     validations = {
+        ('links',): {
+        },
     }
 
     additional_properties_type = None
@@ -136,12 +140,13 @@ class Job(ModelNormal):
             'salary': (JobSalary,),  # noqa: E501
             'url': (str, none_type,),  # noqa: E501
             'job_portal_url': (str, none_type,),  # noqa: E501
+            'record_url': (str, none_type,),  # noqa: E501
+            'links': ([JobLinks],),  # noqa: E501
             'confidential': (bool,),  # noqa: E501
             'available_to_employees': (bool,),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
-            'record_url': (str, none_type,),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
             'owner_id': (str,),  # noqa: E501
             'published_at': (datetime,),  # noqa: E501
@@ -184,12 +189,13 @@ class Job(ModelNormal):
         'salary': 'salary',  # noqa: E501
         'url': 'url',  # noqa: E501
         'job_portal_url': 'job_portal_url',  # noqa: E501
+        'record_url': 'record_url',  # noqa: E501
+        'links': 'links',  # noqa: E501
         'confidential': 'confidential',  # noqa: E501
         'available_to_employees': 'available_to_employees',  # noqa: E501
         'tags': 'tags',  # noqa: E501
         'addresses': 'addresses',  # noqa: E501
         'custom_fields': 'custom_fields',  # noqa: E501
-        'record_url': 'record_url',  # noqa: E501
         'deleted': 'deleted',  # noqa: E501
         'owner_id': 'owner_id',  # noqa: E501
         'published_at': 'published_at',  # noqa: E501
@@ -273,12 +279,13 @@ class Job(ModelNormal):
             salary (JobSalary): [optional]  # noqa: E501
             url (str, none_type): URL of the job description. [optional]  # noqa: E501
             job_portal_url (str, none_type): URL of the job portal. [optional]  # noqa: E501
+            record_url (str, none_type): [optional]  # noqa: E501
+            links ([JobLinks]): [optional]  # noqa: E501
             confidential (bool): [optional]  # noqa: E501
             available_to_employees (bool): Specifies whether an employee of the organization can apply for the job.. [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            record_url (str, none_type): [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
             owner_id (str): [optional]  # noqa: E501
             published_at (datetime): [optional]  # noqa: E501
@@ -394,12 +401,13 @@ class Job(ModelNormal):
             salary (JobSalary): [optional]  # noqa: E501
             url (str, none_type): URL of the job description. [optional]  # noqa: E501
             job_portal_url (str, none_type): URL of the job portal. [optional]  # noqa: E501
+            record_url (str, none_type): [optional]  # noqa: E501
+            links ([JobLinks]): [optional]  # noqa: E501
             confidential (bool): [optional]  # noqa: E501
             available_to_employees (bool): Specifies whether an employee of the organization can apply for the job.. [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            record_url (str, none_type): [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
             owner_id (str): [optional]  # noqa: E501
             published_at (datetime): [optional]  # noqa: E501

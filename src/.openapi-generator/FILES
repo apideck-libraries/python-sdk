@@ -423,6 +423,7 @@ apideck/model/issue_tracking_event_type.py
 apideck/model/issues_filter.py
 apideck/model/item.py
 apideck/model/job.py
+apideck/model/job_links.py
 apideck/model/job_salary.py
 apideck/model/job_status.py
 apideck/model/jobs_filter.py
@@ -1029,6 +1030,7 @@ docs/IssueTrackingEventType.md
 docs/IssuesFilter.md
 docs/Item.md
 docs/Job.md
+docs/JobLinks.md
 docs/JobSalary.md
 docs/JobStatus.md
 docs/JobsFilter.md
@@ -1643,6 +1645,7 @@ test/test_issue_tracking_event_type.py
 test/test_issues_filter.py
 test/test_item.py
 test/test_job.py
+test/test_job_links.py
 test/test_job_salary.py
 test/test_job_status.py
 test/test_jobs_filter.py

@@ -1246,6 +1246,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [IssuesFilter](docs/models/IssuesFilter.md)
  - [Item](docs/models/Item.md)
  - [Job](docs/models/Job.md)
+ - [JobLinks](docs/models/JobLinks.md)
  - [JobSalary](docs/models/JobSalary.md)
  - [JobStatus](docs/models/JobStatus.md)
  - [JobsFilter](docs/models/JobsFilter.md)

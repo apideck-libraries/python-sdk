@@ -16,6 +16,7 @@ from apideck.model.address import Address
 from apideck.model.branch import Branch
 from apideck.model.custom_field import CustomField
 from apideck.model.department import Department
+from apideck.model.job_links import JobLinks
 from apideck.model.job_salary import JobSalary
 from apideck.model.job_status import JobStatus
 from apideck.model.tags import Tags
@@ -23,6 +24,7 @@ globals()['Address'] = Address
 globals()['Branch'] = Branch
 globals()['CustomField'] = CustomField
 globals()['Department'] = Department
+globals()['JobLinks'] = JobLinks
 globals()['JobSalary'] = JobSalary
 globals()['JobStatus'] = JobStatus
 globals()['Tags'] = Tags

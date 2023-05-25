@@ -401,6 +401,7 @@ from apideck.model.issue_tracking_event_type import IssueTrackingEventType
 from apideck.model.issues_filter import IssuesFilter
 from apideck.model.item import Item
 from apideck.model.job import Job
+from apideck.model.job_links import JobLinks
 from apideck.model.job_salary import JobSalary
 from apideck.model.job_status import JobStatus
 from apideck.model.jobs_filter import JobsFilter
