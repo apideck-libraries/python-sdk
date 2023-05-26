@@ -90,6 +90,7 @@ class JobSalary(ModelNormal):
             'min': (int,),  # noqa: E501
             'max': (int,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
+            'interval': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,6 +102,7 @@ class JobSalary(ModelNormal):
         'min': 'min',  # noqa: E501
         'max': 'max',  # noqa: E501
         'currency': 'currency',  # noqa: E501
+        'interval': 'interval',  # noqa: E501
     }
 
     read_only_vars = {
@@ -147,6 +149,7 @@ class JobSalary(ModelNormal):
             min (int): Minimum salary payable for the job role.. [optional]  # noqa: E501
             max (int): Maximum salary payable for the job role.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
+            interval (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,6 +234,7 @@ class JobSalary(ModelNormal):
             min (int): Minimum salary payable for the job role.. [optional]  # noqa: E501
             max (int): Maximum salary payable for the job role.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
+            interval (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
