@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**UnifiedApiId**](UnifiedApiId.md) |  | [optional] 
 **name** | **str** | Name of the API. | [optional] 
+**auth_only** | **bool** | Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API | [optional] [readonly] 
 **oauth_scopes** | [**[ConnectorOauthScopes1]**](ConnectorOauthScopes1.md) |  | [optional] 
 **supported_resources** | [**[LinkedConnectorResource]**](LinkedConnectorResource.md) | List of resources that are supported on the connector. | [optional] 
 **downstream_unsupported_resources** | **[str]** | List of resources that are not supported on the downstream. | [optional] 

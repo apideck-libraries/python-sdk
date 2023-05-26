@@ -110,10 +110,6 @@ Read the full documentation of the ConnectorApi [here](./docs/apis/ConnectorApi.
 
 Read the full documentation of the CrmApi [here](./docs/apis/CrmApi.md).
 
-### CustomerSupportApi
-
-Read the full documentation of the CustomerSupportApi [here](./docs/apis/CustomerSupportApi.md).
-
 ### EcommerceApi
 
 Read the full documentation of the EcommerceApi [here](./docs/apis/EcommerceApi.md).
@@ -193,6 +189,7 @@ from apideck.model.create_invoice_response import CreateInvoiceResponse
 from apideck.model.create_journal_entry_response import CreateJournalEntryResponse
 from apideck.model.create_ledger_account_response import CreateLedgerAccountResponse
 from apideck.model.create_payment_response import CreatePaymentResponse
+from apideck.model.create_purchase_order_response import CreatePurchaseOrderResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
@@ -204,6 +201,7 @@ from apideck.model.delete_invoice_response import DeleteInvoiceResponse
 from apideck.model.delete_journal_entry_response import DeleteJournalEntryResponse
 from apideck.model.delete_ledger_account_response import DeleteLedgerAccountResponse
 from apideck.model.delete_payment_response import DeletePaymentResponse
+from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
@@ -225,6 +223,8 @@ from apideck.model.get_ledger_accounts_response import GetLedgerAccountsResponse
 from apideck.model.get_payment_response import GetPaymentResponse
 from apideck.model.get_payments_response import GetPaymentsResponse
 from apideck.model.get_profit_and_loss_response import GetProfitAndLossResponse
+from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
+from apideck.model.get_purchase_orders_response import GetPurchaseOrdersResponse
 from apideck.model.get_supplier_response import GetSupplierResponse
 from apideck.model.get_suppliers_response import GetSuppliersResponse
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
@@ -239,7 +239,9 @@ from apideck.model.not_found_response import NotFoundResponse
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
+from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.tax_rate import TaxRate
@@ -255,6 +257,7 @@ from apideck.model.update_invoice_response import UpdateInvoiceResponse
 from apideck.model.update_journal_entry_response import UpdateJournalEntryResponse
 from apideck.model.update_ledger_account_response import UpdateLedgerAccountResponse
 from apideck.model.update_payment_response import UpdatePaymentResponse
+from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
 from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
 # Defining the host is optional and defaults to https://unify.apideck.com
@@ -389,6 +392,16 @@ _AccountingApi_ | [**payments_update**](docs/apis/AccountingApi.md#payments_upda
 
 _AccountingApi_ | [**profit_and_loss_one**](docs/apis/AccountingApi.md#profit_and_loss_one) | **GET** /accounting/profit-and-loss | Get Profit and Loss |
 
+_AccountingApi_ | [**purchase_orders_add**](docs/apis/AccountingApi.md#purchase_orders_add) | **POST** /accounting/purchase-orders | Create Purchase Order |
+
+_AccountingApi_ | [**purchase_orders_all**](docs/apis/AccountingApi.md#purchase_orders_all) | **GET** /accounting/purchase-orders | List Purchase Orders |
+
+_AccountingApi_ | [**purchase_orders_delete**](docs/apis/AccountingApi.md#purchase_orders_delete) | **DELETE** /accounting/purchase-orders/{id} | Delete Purchase Order |
+
+_AccountingApi_ | [**purchase_orders_one**](docs/apis/AccountingApi.md#purchase_orders_one) | **GET** /accounting/purchase-orders/{id} | Get Purchase Order |
+
+_AccountingApi_ | [**purchase_orders_update**](docs/apis/AccountingApi.md#purchase_orders_update) | **PATCH** /accounting/purchase-orders/{id} | Update Purchase Order |
+
 _AccountingApi_ | [**suppliers_add**](docs/apis/AccountingApi.md#suppliers_add) | **POST** /accounting/suppliers | Create Supplier |
 
 _AccountingApi_ | [**suppliers_all**](docs/apis/AccountingApi.md#suppliers_all) | **GET** /accounting/suppliers | List Suppliers |
@@ -409,11 +422,25 @@ _AccountingApi_ | [**tax_rates_one**](docs/apis/AccountingApi.md#tax_rates_one) 
 
 _AccountingApi_ | [**tax_rates_update**](docs/apis/AccountingApi.md#tax_rates_update) | **PATCH** /accounting/tax-rates/{id} | Update Tax Rate |
 
-_AtsApi_ | [**applicants_add**](docs/apis/AtsApi.md#applicants_add) | **POST** /ats/applicants | Create applicant |
+_AtsApi_ | [**applicants_add**](docs/apis/AtsApi.md#applicants_add) | **POST** /ats/applicants | Create Applicant |
 
-_AtsApi_ | [**applicants_all**](docs/apis/AtsApi.md#applicants_all) | **GET** /ats/applicants | List applicants |
+_AtsApi_ | [**applicants_all**](docs/apis/AtsApi.md#applicants_all) | **GET** /ats/applicants | List Applicants |
 
-_AtsApi_ | [**applicants_one**](docs/apis/AtsApi.md#applicants_one) | **GET** /ats/applicants/{id} | Get applicant |
+_AtsApi_ | [**applicants_delete**](docs/apis/AtsApi.md#applicants_delete) | **DELETE** /ats/applicants/{id} | Delete Applicant |
+
+_AtsApi_ | [**applicants_one**](docs/apis/AtsApi.md#applicants_one) | **GET** /ats/applicants/{id} | Get Applicant |
+
+_AtsApi_ | [**applicants_update**](docs/apis/AtsApi.md#applicants_update) | **PATCH** /ats/applicants/{id} | Update Applicant |
+
+_AtsApi_ | [**applications_add**](docs/apis/AtsApi.md#applications_add) | **POST** /ats/applications | Create Application |
+
+_AtsApi_ | [**applications_all**](docs/apis/AtsApi.md#applications_all) | **GET** /ats/applications | List Applications |
+
+_AtsApi_ | [**applications_delete**](docs/apis/AtsApi.md#applications_delete) | **DELETE** /ats/applications/{id} | Delete Application |
+
+_AtsApi_ | [**applications_one**](docs/apis/AtsApi.md#applications_one) | **GET** /ats/applications/{id} | Get Application |
+
+_AtsApi_ | [**applications_update**](docs/apis/AtsApi.md#applications_update) | **PATCH** /ats/applications/{id} | Update Application |
 
 _AtsApi_ | [**jobs_all**](docs/apis/AtsApi.md#jobs_all) | **GET** /ats/jobs | List Jobs |
 
@@ -515,19 +542,9 @@ _CrmApi_ | [**users_one**](docs/apis/CrmApi.md#users_one) | **GET** /crm/users/{
 
 _CrmApi_ | [**users_update**](docs/apis/CrmApi.md#users_update) | **PATCH** /crm/users/{id} | Update user |
 
-_CustomerSupportApi_ | [**customers_add**](docs/apis/CustomerSupportApi.md#customers_add) | **POST** /customer-support/customers | Create Customer Support Customer |
+_EcommerceApi_ | [**customers_all**](docs/apis/EcommerceApi.md#customers_all) | **GET** /ecommerce/customers | List Customers |
 
-_CustomerSupportApi_ | [**customers_all**](docs/apis/CustomerSupportApi.md#customers_all) | **GET** /customer-support/customers | List Customer Support Customers |
-
-_CustomerSupportApi_ | [**customers_delete**](docs/apis/CustomerSupportApi.md#customers_delete) | **DELETE** /customer-support/customers/{id} | Delete Customer Support Customer |
-
-_CustomerSupportApi_ | [**customers_one**](docs/apis/CustomerSupportApi.md#customers_one) | **GET** /customer-support/customers/{id} | Get Customer Support Customer |
-
-_CustomerSupportApi_ | [**customers_update**](docs/apis/CustomerSupportApi.md#customers_update) | **PATCH** /customer-support/customers/{id} | Update Customer Support Customer |
-
-_EcommerceApi_ | [**customers_all2**](docs/apis/EcommerceApi.md#customers_all2) | **GET** /ecommerce/customers | List Customers |
-
-_EcommerceApi_ | [**customers_one2**](docs/apis/EcommerceApi.md#customers_one2) | **GET** /ecommerce/customers/{id} | Get Customer |
+_EcommerceApi_ | [**customers_one**](docs/apis/EcommerceApi.md#customers_one) | **GET** /ecommerce/customers/{id} | Get Customer |
 
 _EcommerceApi_ | [**orders_all**](docs/apis/EcommerceApi.md#orders_all) | **GET** /ecommerce/orders | List Orders |
 
@@ -855,6 +872,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ApplicantSocialLinks](docs/models/ApplicantSocialLinks.md)
  - [ApplicantWebsites](docs/models/ApplicantWebsites.md)
  - [ApplicantsFilter](docs/models/ApplicantsFilter.md)
+ - [Application](docs/models/Application.md)
+ - [ApplicationStage](docs/models/ApplicationStage.md)
  - [Assignee](docs/models/Assignee.md)
  - [AtsActivity](docs/models/AtsActivity.md)
  - [AtsEventType](docs/models/AtsEventType.md)
@@ -920,6 +939,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CopyFolderRequest](docs/models/CopyFolderRequest.md)
  - [CreateActivityResponse](docs/models/CreateActivityResponse.md)
  - [CreateApplicantResponse](docs/models/CreateApplicantResponse.md)
+ - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
@@ -928,7 +948,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateContactResponse](docs/models/CreateContactResponse.md)
  - [CreateCreditNoteResponse](docs/models/CreateCreditNoteResponse.md)
  - [CreateCustomerResponse](docs/models/CreateCustomerResponse.md)
- - [CreateCustomerSupportCustomerResponse](docs/models/CreateCustomerSupportCustomerResponse.md)
  - [CreateDepartmentResponse](docs/models/CreateDepartmentResponse.md)
  - [CreateDriveGroupResponse](docs/models/CreateDriveGroupResponse.md)
  - [CreateDriveResponse](docs/models/CreateDriveResponse.md)
@@ -960,6 +979,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreatePipelineResponse](docs/models/CreatePipelineResponse.md)
  - [CreatePosPaymentResponse](docs/models/CreatePosPaymentResponse.md)
  - [CreateProductResponse](docs/models/CreateProductResponse.md)
+ - [CreatePurchaseOrderResponse](docs/models/CreatePurchaseOrderResponse.md)
  - [CreateSessionResponse](docs/models/CreateSessionResponse.md)
  - [CreateSessionResponseData](docs/models/CreateSessionResponseData.md)
  - [CreateSharedLinkResponse](docs/models/CreateSharedLinkResponse.md)
@@ -977,10 +997,11 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CrmEventType](docs/models/CrmEventType.md)
  - [Currency](docs/models/Currency.md)
  - [CustomField](docs/models/CustomField.md)
- - [CustomerSupportCustomer](docs/models/CustomerSupportCustomer.md)
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [Deduction](docs/models/Deduction.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
+ - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
+ - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
@@ -988,7 +1009,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteContactResponse](docs/models/DeleteContactResponse.md)
  - [DeleteCreditNoteResponse](docs/models/DeleteCreditNoteResponse.md)
  - [DeleteCustomerResponse](docs/models/DeleteCustomerResponse.md)
- - [DeleteCustomerSupportCustomerResponse](docs/models/DeleteCustomerSupportCustomerResponse.md)
  - [DeleteDepartmentResponse](docs/models/DeleteDepartmentResponse.md)
  - [DeleteDriveGroupResponse](docs/models/DeleteDriveGroupResponse.md)
  - [DeleteDriveResponse](docs/models/DeleteDriveResponse.md)
@@ -1018,6 +1038,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeletePipelineResponse](docs/models/DeletePipelineResponse.md)
  - [DeletePosPaymentResponse](docs/models/DeletePosPaymentResponse.md)
  - [DeleteProductResponse](docs/models/DeleteProductResponse.md)
+ - [DeletePurchaseOrderResponse](docs/models/DeletePurchaseOrderResponse.md)
  - [DeleteSharedLinkResponse](docs/models/DeleteSharedLinkResponse.md)
  - [DeleteSupplierResponse](docs/models/DeleteSupplierResponse.md)
  - [DeleteTaxRateResponse](docs/models/DeleteTaxRateResponse.md)
@@ -1086,6 +1107,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetApisResponse](docs/models/GetApisResponse.md)
  - [GetApplicantResponse](docs/models/GetApplicantResponse.md)
  - [GetApplicantsResponse](docs/models/GetApplicantsResponse.md)
+ - [GetApplicationResponse](docs/models/GetApplicationResponse.md)
+ - [GetApplicationsResponse](docs/models/GetApplicationsResponse.md)
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
  - [GetBillsResponse](docs/models/GetBillsResponse.md)
@@ -1112,8 +1135,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetCreditNoteResponse](docs/models/GetCreditNoteResponse.md)
  - [GetCreditNotesResponse](docs/models/GetCreditNotesResponse.md)
  - [GetCustomerResponse](docs/models/GetCustomerResponse.md)
- - [GetCustomerSupportCustomerResponse](docs/models/GetCustomerSupportCustomerResponse.md)
- - [GetCustomerSupportCustomersResponse](docs/models/GetCustomerSupportCustomersResponse.md)
  - [GetCustomersResponse](docs/models/GetCustomersResponse.md)
  - [GetDepartmentResponse](docs/models/GetDepartmentResponse.md)
  - [GetDepartmentsResponse](docs/models/GetDepartmentsResponse.md)
@@ -1182,6 +1203,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetProductResponse](docs/models/GetProductResponse.md)
  - [GetProductsResponse](docs/models/GetProductsResponse.md)
  - [GetProfitAndLossResponse](docs/models/GetProfitAndLossResponse.md)
+ - [GetPurchaseOrderResponse](docs/models/GetPurchaseOrderResponse.md)
+ - [GetPurchaseOrdersResponse](docs/models/GetPurchaseOrdersResponse.md)
  - [GetSharedLinkResponse](docs/models/GetSharedLinkResponse.md)
  - [GetSharedLinksResponse](docs/models/GetSharedLinksResponse.md)
  - [GetStoreResponse](docs/models/GetStoreResponse.md)
@@ -1223,6 +1246,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [IssuesFilter](docs/models/IssuesFilter.md)
  - [Item](docs/models/Item.md)
  - [Job](docs/models/Job.md)
+ - [JobLinks](docs/models/JobLinks.md)
  - [JobSalary](docs/models/JobSalary.md)
  - [JobStatus](docs/models/JobStatus.md)
  - [JobsFilter](docs/models/JobsFilter.md)
@@ -1288,6 +1312,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [PaymentCard](docs/models/PaymentCard.md)
  - [PaymentRequiredResponse](docs/models/PaymentRequiredResponse.md)
  - [PaymentUnit](docs/models/PaymentUnit.md)
+ - [PaymentsFilter](docs/models/PaymentsFilter.md)
  - [Payroll](docs/models/Payroll.md)
  - [PayrollTotals](docs/models/PayrollTotals.md)
  - [PayrollsFilter](docs/models/PayrollsFilter.md)
@@ -1311,6 +1336,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ProfitAndLossRecord](docs/models/ProfitAndLossRecord.md)
  - [ProfitAndLossRecords](docs/models/ProfitAndLossRecords.md)
  - [ProfitAndLossSection](docs/models/ProfitAndLossSection.md)
+ - [PurchaseOrder](docs/models/PurchaseOrder.md)
  - [RequestCountAllocation](docs/models/RequestCountAllocation.md)
  - [RequestRate](docs/models/RequestRate.md)
  - [ResolveWebhookEventRequest](docs/models/ResolveWebhookEventRequest.md)
@@ -1355,6 +1381,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UnifiedId](docs/models/UnifiedId.md)
  - [UnprocessableResponse](docs/models/UnprocessableResponse.md)
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
+ - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
+ - [UpdateApplicationResponse](docs/models/UpdateApplicationResponse.md)
  - [UpdateBillResponse](docs/models/UpdateBillResponse.md)
  - [UpdateCommentResponse](docs/models/UpdateCommentResponse.md)
  - [UpdateCompanyResponse](docs/models/UpdateCompanyResponse.md)
@@ -1364,7 +1392,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateContactResponse](docs/models/UpdateContactResponse.md)
  - [UpdateCreditNoteResponse](docs/models/UpdateCreditNoteResponse.md)
  - [UpdateCustomerResponse](docs/models/UpdateCustomerResponse.md)
- - [UpdateCustomerSupportCustomerResponse](docs/models/UpdateCustomerSupportCustomerResponse.md)
  - [UpdateDepartmentResponse](docs/models/UpdateDepartmentResponse.md)
  - [UpdateDriveGroupResponse](docs/models/UpdateDriveGroupResponse.md)
  - [UpdateDriveResponse](docs/models/UpdateDriveResponse.md)
@@ -1396,6 +1423,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdatePipelineResponse](docs/models/UpdatePipelineResponse.md)
  - [UpdatePosPaymentResponse](docs/models/UpdatePosPaymentResponse.md)
  - [UpdateProductResponse](docs/models/UpdateProductResponse.md)
+ - [UpdatePurchaseOrderResponse](docs/models/UpdatePurchaseOrderResponse.md)
  - [UpdateSharedLinkResponse](docs/models/UpdateSharedLinkResponse.md)
  - [UpdateSupplierResponse](docs/models/UpdateSupplierResponse.md)
  - [UpdateTaxRateResponse](docs/models/UpdateTaxRateResponse.md)

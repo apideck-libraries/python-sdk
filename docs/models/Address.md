@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **fax** | **str, none_type** |  | [optional] 
 **email** | **str, none_type** |  | [optional] 
 **website** | **str, none_type** |  | [optional] 
+**notes** | **str, none_type** |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

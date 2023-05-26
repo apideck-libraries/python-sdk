@@ -4,8 +4,8 @@ All URIs are relative to *https://unify.apideck.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**customers_all2**](EcommerceApi.md#customers_all2) | **GET** /ecommerce/customers | List Customers
-[**customers_one2**](EcommerceApi.md#customers_one2) | **GET** /ecommerce/customers/{id} | Get Customer
+[**customers_all**](EcommerceApi.md#customers_all) | **GET** /ecommerce/customers | List Customers
+[**customers_one**](EcommerceApi.md#customers_one) | **GET** /ecommerce/customers/{id} | Get Customer
 [**orders_all**](EcommerceApi.md#orders_all) | **GET** /ecommerce/orders | List Orders
 [**orders_one**](EcommerceApi.md#orders_one) | **GET** /ecommerce/orders/{id} | Get Order
 [**products_all**](EcommerceApi.md#products_all) | **GET** /ecommerce/products | List Products
@@ -13,8 +13,8 @@ Method | HTTP request | Description
 [**stores_one**](EcommerceApi.md#stores_one) | **GET** /ecommerce/store | Get Store
 
 
-# **customers_all2**
-> GetEcommerceCustomersResponse customers_all2()
+# **customers_all**
+> GetEcommerceCustomersResponse customers_all()
 
 List Customers
 
@@ -74,10 +74,10 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Customers
-        api_response = api_instance.customers_all2(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
+        api_response = api_instance.customers_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
-        print("Exception when calling EcommerceApi->customers_all2: %s\n" % e)
+        print("Exception when calling EcommerceApi->customers_all: %s\n" % e)
 ```
 
 
@@ -122,8 +122,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customers_one2**
-> GetEcommerceCustomerResponse customers_one2(id)
+# **customers_one**
+> GetEcommerceCustomerResponse customers_one(id)
 
 Get Customer
 
@@ -176,19 +176,19 @@ with apideck.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Customer
-        api_response = api_instance.customers_one2(id)
+        api_response = api_instance.customers_one(id)
         pprint(api_response)
     except apideck.ApiException as e:
-        print("Exception when calling EcommerceApi->customers_one2: %s\n" % e)
+        print("Exception when calling EcommerceApi->customers_one: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Customer
-        api_response = api_instance.customers_one2(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
+        api_response = api_instance.customers_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
-        print("Exception when calling EcommerceApi->customers_one2: %s\n" % e)
+        print("Exception when calling EcommerceApi->customers_one: %s\n" % e)
 ```
 
 
