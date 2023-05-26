@@ -1326,6 +1326,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [PosPaymentCardDetails](docs/models/PosPaymentCardDetails.md)
  - [PosPaymentExternalDetails](docs/models/PosPaymentExternalDetails.md)
  - [Price](docs/models/Price.md)
+ - [ProbationPeriod](docs/models/ProbationPeriod.md)
  - [ProfitAndLoss](docs/models/ProfitAndLoss.md)
  - [ProfitAndLossExpenses](docs/models/ProfitAndLossExpenses.md)
  - [ProfitAndLossFilter](docs/models/ProfitAndLossFilter.md)

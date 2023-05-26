@@ -503,6 +503,7 @@ apideck/model/pos_payment.py
 apideck/model/pos_payment_card_details.py
 apideck/model/pos_payment_external_details.py
 apideck/model/price.py
+apideck/model/probation_period.py
 apideck/model/profit_and_loss.py
 apideck/model/profit_and_loss_expenses.py
 apideck/model/profit_and_loss_filter.py
@@ -1112,6 +1113,7 @@ docs/PosPayment.md
 docs/PosPaymentCardDetails.md
 docs/PosPaymentExternalDetails.md
 docs/Price.md
+docs/ProbationPeriod.md
 docs/ProfitAndLoss.md
 docs/ProfitAndLossExpenses.md
 docs/ProfitAndLossFilter.md
@@ -1727,6 +1729,7 @@ test/test_pos_payment.py
 test/test_pos_payment_card_details.py
 test/test_pos_payment_external_details.py
 test/test_price.py
+test/test_probation_period.py
 test/test_profit_and_loss.py
 test/test_profit_and_loss_expenses.py
 test/test_profit_and_loss_filter.py

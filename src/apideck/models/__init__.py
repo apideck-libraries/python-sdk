@@ -481,6 +481,7 @@ from apideck.model.pos_payment import PosPayment
 from apideck.model.pos_payment_card_details import PosPaymentCardDetails
 from apideck.model.pos_payment_external_details import PosPaymentExternalDetails
 from apideck.model.price import Price
+from apideck.model.probation_period import ProbationPeriod
 from apideck.model.profit_and_loss import ProfitAndLoss
 from apideck.model.profit_and_loss_expenses import ProfitAndLossExpenses
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter

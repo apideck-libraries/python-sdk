@@ -58,6 +58,7 @@ Name | Type | Description | Notes
 **tax_id** | **str, none_type** |  | [optional] 
 **dietary_preference** | **str, none_type** | Indicate the employee&#39;s dietary preference. | [optional] 
 **food_allergies** | **[str], none_type** | Indicate the employee&#39;s food allergies. | [optional] 
+**probation_period** | [**ProbationPeriod**](ProbationPeriod.md) |  | [optional] 
 **tags** | **[str]** |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **deleted** | **bool, none_type** |  | [optional] 
