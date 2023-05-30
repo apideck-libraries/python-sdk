@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **department** | [**Department**](Department.md) |  | [optional] 
 **branch** | [**Branch**](Branch.md) |  | [optional] 
 **recruiters** | **[str], none_type** | The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant | [optional] 
-**hiring_managers** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
+**hiring_managers** | **[str]** |  | [optional] 
 **followers** | **[str], none_type** |  | [optional] 
 **description** | **str, none_type** | A description of the object. | [optional] 
 **description_html** | **str, none_type** | The job description in HTML format | [optional] 

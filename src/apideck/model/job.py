@@ -74,6 +74,7 @@ class Job(ModelNormal):
 
     allowed_values = {
         ('visibility',): {
+            'DRAFT': "draft",
             'PUBLIC': "public",
             'INTERNAL': "internal",
         },
@@ -129,7 +130,7 @@ class Job(ModelNormal):
             'department': (Department,),  # noqa: E501
             'branch': (Branch,),  # noqa: E501
             'recruiters': ([str], none_type,),  # noqa: E501
-            'hiring_managers': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'hiring_managers': ([str],),  # noqa: E501
             'followers': ([str], none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'description_html': (str, none_type,),  # noqa: E501
@@ -268,7 +269,7 @@ class Job(ModelNormal):
             department (Department): [optional]  # noqa: E501
             branch (Branch): [optional]  # noqa: E501
             recruiters ([str], none_type): The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant. [optional]  # noqa: E501
-            hiring_managers ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            hiring_managers ([str]): [optional]  # noqa: E501
             followers ([str], none_type): [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             description_html (str, none_type): The job description in HTML format. [optional]  # noqa: E501
@@ -390,7 +391,7 @@ class Job(ModelNormal):
             department (Department): [optional]  # noqa: E501
             branch (Branch): [optional]  # noqa: E501
             recruiters ([str], none_type): The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant. [optional]  # noqa: E501
-            hiring_managers ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            hiring_managers ([str]): [optional]  # noqa: E501
             followers ([str], none_type): [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             description_html (str, none_type): The job description in HTML format. [optional]  # noqa: E501
