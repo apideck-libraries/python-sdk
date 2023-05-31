@@ -12,10 +12,10 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.accounting_customer import AccountingCustomer
+from apideck.model.customer import Customer
 from apideck.model.links import Links
 from apideck.model.meta import Meta
-globals()['AccountingCustomer'] = AccountingCustomer
+globals()['Customer'] = Customer
 globals()['Links'] = Links
 globals()['Meta'] = Meta
 from apideck.model.get_customers_response import GetCustomersResponse

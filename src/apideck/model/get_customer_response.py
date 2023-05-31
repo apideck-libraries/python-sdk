@@ -30,8 +30,8 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from apideck.model.accounting_customer import AccountingCustomer
-    globals()['AccountingCustomer'] = AccountingCustomer
+    from apideck.model.customer import Customer
+    globals()['Customer'] = Customer
 
 
 class GetCustomerResponse(ModelNormal):
@@ -92,7 +92,7 @@ class GetCustomerResponse(ModelNormal):
             'service': (str,),  # noqa: E501
             'resource': (str,),  # noqa: E501
             'operation': (str,),  # noqa: E501
-            'data': (AccountingCustomer,),  # noqa: E501
+            'data': (Customer,),  # noqa: E501
         }
 
     @cached_property
@@ -125,7 +125,7 @@ class GetCustomerResponse(ModelNormal):
             service (str): Apideck ID of service provider
             resource (str): Unified API resource name
             operation (str): Operation performed
-            data (AccountingCustomer):
+            data (Customer):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -220,7 +220,7 @@ class GetCustomerResponse(ModelNormal):
             service (str): Apideck ID of service provider
             resource (str): Unified API resource name
             operation (str): Operation performed
-            data (AccountingCustomer):
+            data (Customer):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

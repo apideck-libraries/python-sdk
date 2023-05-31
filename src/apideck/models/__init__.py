@@ -152,6 +152,7 @@ from apideck.model.credit_note import CreditNote
 from apideck.model.crm_event_type import CrmEventType
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.deduction import Deduction
 from apideck.model.delete_activity_response import DeleteActivityResponse

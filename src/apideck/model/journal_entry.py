@@ -93,6 +93,8 @@ class JournalEntry(ModelNormal):
             'memo': (str, none_type,),  # noqa: E501
             'posted_at': (datetime,),  # noqa: E501
             'journal_symbol': (str, none_type,),  # noqa: E501
+            'tax_type': (str, none_type,),  # noqa: E501
+            'tax_code': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -114,6 +116,8 @@ class JournalEntry(ModelNormal):
         'memo': 'memo',  # noqa: E501
         'posted_at': 'posted_at',  # noqa: E501
         'journal_symbol': 'journal_symbol',  # noqa: E501
+        'tax_type': 'tax_type',  # noqa: E501
+        'tax_code': 'tax_code',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -175,6 +179,8 @@ class JournalEntry(ModelNormal):
             memo (str, none_type): Reference for the journal entry.. [optional]  # noqa: E501
             posted_at (datetime): This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated.. [optional]  # noqa: E501
             journal_symbol (str, none_type): Journal symbol of the entry. For example IND for indirect costs. [optional]  # noqa: E501
+            tax_type (str, none_type): The specific category of tax associated with a transaction like sales or purchase. [optional]  # noqa: E501
+            tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -269,6 +275,8 @@ class JournalEntry(ModelNormal):
             memo (str, none_type): Reference for the journal entry.. [optional]  # noqa: E501
             posted_at (datetime): This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated.. [optional]  # noqa: E501
             journal_symbol (str, none_type): Journal symbol of the entry. For example IND for indirect costs. [optional]  # noqa: E501
+            tax_type (str, none_type): The specific category of tax associated with a transaction like sales or purchase. [optional]  # noqa: E501
+            tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

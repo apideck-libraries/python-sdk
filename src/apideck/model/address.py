@@ -185,7 +185,7 @@ class Address(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            string (str, none_type): [optional]  # noqa: E501
+            string (str, none_type): The address string. Some APIs don't provide structured address data.. [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             line1 (str, none_type): Line 1 of the address e.g. number, street, suite, apt #, etc.. [optional]  # noqa: E501
             line2 (str, none_type): Line 2 of the address. [optional]  # noqa: E501
@@ -290,7 +290,7 @@ class Address(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            string (str, none_type): [optional]  # noqa: E501
+            string (str, none_type): The address string. Some APIs don't provide structured address data.. [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             line1 (str, none_type): Line 1 of the address e.g. number, street, suite, apt #, etc.. [optional]  # noqa: E501
             line2 (str, none_type): Line 2 of the address. [optional]  # noqa: E501

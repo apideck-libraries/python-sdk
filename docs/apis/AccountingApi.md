@@ -273,9 +273,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -299,6 +302,22 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
+        payment_method="cash",
+        channel="email",
+        language="EN",
+        accounting_by_row=False,
+        bank_account=BankAccount(
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
+        discount_percentage=5.5,
         row_version="1-12345",
     ) # Bill | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -795,9 +814,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -821,6 +843,22 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
+        payment_method="cash",
+        channel="email",
+        language="EN",
+        accounting_by_row=False,
+        bank_account=BankAccount(
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
+        discount_percentage=5.5,
         row_version="1-12345",
     ) # Bill | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1074,9 +1112,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -1567,9 +1608,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -1650,7 +1694,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customers_add**
-> CreateCustomerResponse customers_add(accounting_customer)
+> CreateCustomerResponse customers_add(customer)
 
 Create Customer
 
@@ -1668,8 +1712,8 @@ from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
-from apideck.model.accounting_customer import AccountingCustomer
 from apideck.model.create_customer_response import CreateCustomerResponse
+from apideck.model.customer import Customer
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.not_found_response import NotFoundResponse
 from pprint import pprint
@@ -1694,7 +1738,7 @@ configuration.api_key['apiKey'] = 'YOUR_API_KEY'
 with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
-    accounting_customer = AccountingCustomer(
+    customer = Customer(
         display_id="EMP00101",
         display_name="Windsurf Shop",
         company_name="SpaceX",
@@ -1773,6 +1817,7 @@ with apideck.ApiClient(configuration) as api_client:
         notes="Some notes about this customer",
         tax_rate=LinkedTaxRate(
             id="123456",
+            rate=10,
         ),
         tax_number="US123945459",
         currency=Currency("USD"),
@@ -1786,8 +1831,10 @@ with apideck.ApiClient(configuration) as api_client:
             name="Windsurf Shop",
         ),
         status="active",
+        payment_method="cash",
+        channel="email",
         row_version="1-12345",
-    ) # AccountingCustomer | 
+    ) # Customer | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -1796,7 +1843,7 @@ with apideck.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Customer
-        api_response = api_instance.customers_add(accounting_customer)
+        api_response = api_instance.customers_add(customer)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->customers_add: %s\n" % e)
@@ -1805,7 +1852,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Create Customer
-        api_response = api_instance.customers_add(accounting_customer, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        api_response = api_instance.customers_add(customer, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->customers_add: %s\n" % e)
@@ -1816,7 +1863,7 @@ with apideck.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounting_customer** | [**AccountingCustomer**](AccountingCustomer.md)|  |
+ **customer** | [**Customer**](Customer.md)|  |
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
@@ -2182,7 +2229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customers_update**
-> UpdateCustomerResponse customers_update(id, accounting_customer)
+> UpdateCustomerResponse customers_update(id, customer)
 
 Update Customer
 
@@ -2200,8 +2247,8 @@ from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
-from apideck.model.accounting_customer import AccountingCustomer
 from apideck.model.update_customer_response import UpdateCustomerResponse
+from apideck.model.customer import Customer
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.not_found_response import NotFoundResponse
 from pprint import pprint
@@ -2227,7 +2274,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
-    accounting_customer = AccountingCustomer(
+    customer = Customer(
         display_id="EMP00101",
         display_name="Windsurf Shop",
         company_name="SpaceX",
@@ -2306,6 +2353,7 @@ with apideck.ApiClient(configuration) as api_client:
         notes="Some notes about this customer",
         tax_rate=LinkedTaxRate(
             id="123456",
+            rate=10,
         ),
         tax_number="US123945459",
         currency=Currency("USD"),
@@ -2319,8 +2367,10 @@ with apideck.ApiClient(configuration) as api_client:
             name="Windsurf Shop",
         ),
         status="active",
+        payment_method="cash",
+        channel="email",
         row_version="1-12345",
-    ) # AccountingCustomer | 
+    ) # Customer | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
@@ -2329,7 +2379,7 @@ with apideck.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Customer
-        api_response = api_instance.customers_update(id, accounting_customer)
+        api_response = api_instance.customers_update(id, customer)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->customers_update: %s\n" % e)
@@ -2338,7 +2388,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Update Customer
-        api_response = api_instance.customers_update(id, accounting_customer, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.customers_update(id, customer, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->customers_update: %s\n" % e)
@@ -2350,7 +2400,7 @@ with apideck.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of the record you are acting upon. |
- **accounting_customer** | [**AccountingCustomer**](AccountingCustomer.md)|  |
+ **customer** | [**Customer**](Customer.md)|  |
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
@@ -2445,6 +2495,7 @@ with apideck.ApiClient(configuration) as api_client:
             tax_inclusive=True,
             tax_rate=LinkedTaxRate(
                 id="123456",
+                rate=10,
             ),
         ),
         purchase_details=InvoiceItemSalesDetails(
@@ -2453,6 +2504,7 @@ with apideck.ApiClient(configuration) as api_client:
             tax_inclusive=True,
             tax_rate=LinkedTaxRate(
                 id="123456",
+                rate=10,
             ),
         ),
         quantity=1,
@@ -2926,6 +2978,7 @@ with apideck.ApiClient(configuration) as api_client:
             tax_inclusive=True,
             tax_rate=LinkedTaxRate(
                 id="123456",
+                rate=10,
             ),
         ),
         purchase_details=InvoiceItemSalesDetails(
@@ -2934,6 +2987,7 @@ with apideck.ApiClient(configuration) as api_client:
             tax_inclusive=True,
             tax_rate=LinkedTaxRate(
                 id="123456",
+                rate=10,
             ),
         ),
         quantity=1,
@@ -3109,9 +3163,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -3175,6 +3232,21 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         template_id="123456",
         source_document_url="https://www.invoicesolution.com/invoice/123456",
+        payment_method="cash",
+        channel="email",
+        language="EN",
+        accounting_by_row=False,
+        bank_account=BankAccount(
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
         row_version="1-12345",
     ) # Invoice | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -3658,9 +3730,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -3724,6 +3799,21 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         template_id="123456",
         source_document_url="https://www.invoicesolution.com/invoice/123456",
+        payment_method="cash",
+        channel="email",
+        language="EN",
+        accounting_by_row=False,
+        bank_account=BankAccount(
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
         row_version="1-12345",
     ) # Invoice | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -3842,10 +3932,12 @@ with apideck.ApiClient(configuration) as api_client:
             JournalEntryLineItem(
                 description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
                 tax_amount=27500,
+                sub_total=27500,
                 total_amount=27500,
                 type="debit",
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 tracking_category=LinkedTrackingCategory(
                     id="123456",
@@ -3861,6 +3953,8 @@ with apideck.ApiClient(configuration) as api_client:
         memo="Thank you for your business and have a great day!",
         posted_at=dateutil_parser('2020-09-30T07:43:32Z'),
         journal_symbol="IND",
+        tax_type="sales",
+        tax_code="1234",
         row_version="1-12345",
     ) # JournalEntry | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -4301,10 +4395,12 @@ with apideck.ApiClient(configuration) as api_client:
             JournalEntryLineItem(
                 description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
                 tax_amount=27500,
+                sub_total=27500,
                 total_amount=27500,
                 type="debit",
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 tracking_category=LinkedTrackingCategory(
                     id="123456",
@@ -4320,6 +4416,8 @@ with apideck.ApiClient(configuration) as api_client:
         memo="Thank you for your business and have a great day!",
         posted_at=dateutil_parser('2020-09-30T07:43:32Z'),
         journal_symbol="IND",
+        tax_type="sales",
+        tax_code="1234",
         row_version="1-12345",
     ) # JournalEntry | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -5813,9 +5911,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -5857,6 +5958,23 @@ with apideck.ApiClient(configuration) as api_client:
             code="453",
         ),
         template_id="123456",
+        discount_percentage=5.5,
+        bank_account=BankAccount(
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
+        accounting_by_row=False,
+        due_date=dateutil_parser('Fri Oct 30 00:00:00 UTC 2020').date(),
+        payment_method="cash",
+        tax_code="1234",
+        channel="email",
         row_version="1-12345",
     ) # PurchaseOrder | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -6343,9 +6461,12 @@ with apideck.ApiClient(configuration) as api_client:
                 department_id="1234",
                 item=LinkedInvoiceItem(
                     id="12344",
+                    code="120-C",
+                    name="Model Y",
                 ),
                 tax_rate=LinkedTaxRate(
                     id="123456",
+                    rate=10,
                 ),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
@@ -6387,6 +6508,23 @@ with apideck.ApiClient(configuration) as api_client:
             code="453",
         ),
         template_id="123456",
+        discount_percentage=5.5,
+        bank_account=BankAccount(
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
+        accounting_by_row=False,
+        due_date=dateutil_parser('Fri Oct 30 00:00:00 UTC 2020').date(),
+        payment_method="cash",
+        tax_code="1234",
+        channel="email",
         row_version="1-12345",
     ) # PurchaseOrder | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -6575,6 +6713,7 @@ with apideck.ApiClient(configuration) as api_client:
         notes="Some notes about this supplier",
         tax_rate=LinkedTaxRate(
             id="123456",
+            rate=10,
         ),
         tax_number="US123945459",
         currency=Currency("USD"),
@@ -6584,6 +6723,8 @@ with apideck.ApiClient(configuration) as api_client:
             code="453",
         ),
         status="active",
+        payment_method="cash",
+        channel="email",
         row_version="1-12345",
     ) # Supplier | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -6702,6 +6843,9 @@ with apideck.ApiClient(configuration) as api_client:
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = SuppliersFilter(
         company_name="SpaceX",
+        display_name="Techno King",
+        first_name="Elon",
+        last_name="Musk",
         email="elon@spacex.com",
     ) # SuppliersFilter | Apply filters (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters (optional)
@@ -7100,6 +7244,7 @@ with apideck.ApiClient(configuration) as api_client:
         notes="Some notes about this supplier",
         tax_rate=LinkedTaxRate(
             id="123456",
+            rate=10,
         ),
         tax_number="US123945459",
         currency=Currency("USD"),
@@ -7109,6 +7254,8 @@ with apideck.ApiClient(configuration) as api_client:
             code="453",
         ),
         status="active",
+        payment_method="cash",
+        channel="email",
         row_version="1-12345",
     ) # Supplier | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)

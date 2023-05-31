@@ -15,20 +15,26 @@ import apideck
 from apideck.model.address import Address
 from apideck.model.bank_account import BankAccount
 from apideck.model.currency import Currency
-from apideck.model.invoice_line_item import InvoiceLineItem
+from apideck.model.email import Email
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
-from apideck.model.linked_supplier import LinkedSupplier
+from apideck.model.linked_parent_customer import LinkedParentCustomer
+from apideck.model.linked_tax_rate import LinkedTaxRate
+from apideck.model.phone_number import PhoneNumber
+from apideck.model.website import Website
 globals()['Address'] = Address
 globals()['BankAccount'] = BankAccount
 globals()['Currency'] = Currency
-globals()['InvoiceLineItem'] = InvoiceLineItem
+globals()['Email'] = Email
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
-globals()['LinkedSupplier'] = LinkedSupplier
-from apideck.model.purchase_order import PurchaseOrder
+globals()['LinkedParentCustomer'] = LinkedParentCustomer
+globals()['LinkedTaxRate'] = LinkedTaxRate
+globals()['PhoneNumber'] = PhoneNumber
+globals()['Website'] = Website
+from apideck.model.customer import Customer
 
 
-class TestPurchaseOrder(unittest.TestCase):
-    """PurchaseOrder unit test stubs"""
+class TestCustomer(unittest.TestCase):
+    """Customer unit test stubs"""
 
     def setUp(self):
         pass
@@ -36,10 +42,10 @@ class TestPurchaseOrder(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPurchaseOrder(self):
-        """Test PurchaseOrder"""
+    def testCustomer(self):
+        """Test Customer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = PurchaseOrder()  # noqa: E501
+        # model = Customer()  # noqa: E501
         pass
 
 

@@ -98,8 +98,6 @@ class LinkedInvoiceItem(ModelNormal):
     }
 
     read_only_vars = {
-        'code',  # noqa: E501
-        'name',  # noqa: E501
     }
 
     _composed_schemas = {}

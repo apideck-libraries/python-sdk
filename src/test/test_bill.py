@@ -12,10 +12,12 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.bank_account import BankAccount
 from apideck.model.bill_line_item import BillLineItem
 from apideck.model.currency import Currency
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_supplier import LinkedSupplier
+globals()['BankAccount'] = BankAccount
 globals()['BillLineItem'] = BillLineItem
 globals()['Currency'] = Currency
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount

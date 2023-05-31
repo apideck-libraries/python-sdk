@@ -88,6 +88,7 @@ class LinkedSupplier(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
+            'display_id': (str, none_type,),  # noqa: E501
             'display_name': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'address': (Address,),  # noqa: E501
@@ -100,12 +101,14 @@ class LinkedSupplier(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
+        'display_id': 'display_id',  # noqa: E501
         'display_name': 'display_name',  # noqa: E501
         'company_name': 'company_name',  # noqa: E501
         'address': 'address',  # noqa: E501
     }
 
     read_only_vars = {
+        'display_id',  # noqa: E501
         'company_name',  # noqa: E501
     }
 
@@ -150,6 +153,7 @@ class LinkedSupplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            display_id (str, none_type): The display ID of the supplier.. [optional]  # noqa: E501
             display_name (str, none_type): The display name of the supplier.. [optional]  # noqa: E501
             company_name (str, none_type): The company name of the supplier.. [optional]  # noqa: E501
             address (Address): [optional]  # noqa: E501
@@ -238,6 +242,7 @@ class LinkedSupplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            display_id (str, none_type): The display ID of the supplier.. [optional]  # noqa: E501
             display_name (str, none_type): The display name of the supplier.. [optional]  # noqa: E501
             company_name (str, none_type): The company name of the supplier.. [optional]  # noqa: E501
             address (Address): [optional]  # noqa: E501

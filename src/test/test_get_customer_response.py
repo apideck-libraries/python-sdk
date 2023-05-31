@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.accounting_customer import AccountingCustomer
-globals()['AccountingCustomer'] = AccountingCustomer
+from apideck.model.customer import Customer
+globals()['Customer'] = Customer
 from apideck.model.get_customer_response import GetCustomerResponse
 
 
