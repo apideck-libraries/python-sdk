@@ -1790,6 +1790,10 @@ with apideck.ApiClient(configuration) as api_client:
         tax_id="234-32-0000",
         dietary_preference="Veggie",
         food_allergies=["No allergies"],
+        probation_period=ProbationPeriod(
+            start_date=dateutil_parser('Fri Oct 01 00:00:00 UTC 2021').date(),
+            end_date=dateutil_parser('Sun Nov 28 00:00:00 UTC 2021').date(),
+        ),
         tags=["New"],
         row_version="1-12345",
         deleted=True,
@@ -2419,6 +2423,10 @@ with apideck.ApiClient(configuration) as api_client:
         tax_id="234-32-0000",
         dietary_preference="Veggie",
         food_allergies=["No allergies"],
+        probation_period=ProbationPeriod(
+            start_date=dateutil_parser('Fri Oct 01 00:00:00 UTC 2021').date(),
+            end_date=dateutil_parser('Sun Nov 28 00:00:00 UTC 2021').date(),
+        ),
         tags=["New"],
         row_version="1-12345",
         deleted=True,

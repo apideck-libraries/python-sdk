@@ -176,7 +176,6 @@ import time
 import apideck
 from pprint import pprint
 from apideck.api import accounting_api
-from apideck.model.accounting_customer import AccountingCustomer
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
@@ -193,6 +192,7 @@ from apideck.model.create_purchase_order_response import CreatePurchaseOrderResp
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
+from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
@@ -997,6 +997,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CrmEventType](docs/models/CrmEventType.md)
  - [Currency](docs/models/Currency.md)
  - [CustomField](docs/models/CustomField.md)
+ - [Customer](docs/models/Customer.md)
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [Deduction](docs/models/Deduction.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
@@ -1326,6 +1327,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [PosPaymentCardDetails](docs/models/PosPaymentCardDetails.md)
  - [PosPaymentExternalDetails](docs/models/PosPaymentExternalDetails.md)
  - [Price](docs/models/Price.md)
+ - [ProbationPeriod](docs/models/ProbationPeriod.md)
  - [ProfitAndLoss](docs/models/ProfitAndLoss.md)
  - [ProfitAndLossExpenses](docs/models/ProfitAndLossExpenses.md)
  - [ProfitAndLossFilter](docs/models/ProfitAndLossFilter.md)

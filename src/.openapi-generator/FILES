@@ -174,6 +174,7 @@ apideck/model/credit_note.py
 apideck/model/crm_event_type.py
 apideck/model/currency.py
 apideck/model/custom_field.py
+apideck/model/customer.py
 apideck/model/customers_filter.py
 apideck/model/deduction.py
 apideck/model/delete_activity_response.py
@@ -503,6 +504,7 @@ apideck/model/pos_payment.py
 apideck/model/pos_payment_card_details.py
 apideck/model/pos_payment_external_details.py
 apideck/model/price.py
+apideck/model/probation_period.py
 apideck/model/profit_and_loss.py
 apideck/model/profit_and_loss_expenses.py
 apideck/model/profit_and_loss_filter.py
@@ -777,6 +779,7 @@ docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
 docs/CustomField.md
+docs/Customer.md
 docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
@@ -1112,6 +1115,7 @@ docs/PosPayment.md
 docs/PosPaymentCardDetails.md
 docs/PosPaymentExternalDetails.md
 docs/Price.md
+docs/ProbationPeriod.md
 docs/ProfitAndLoss.md
 docs/ProfitAndLossExpenses.md
 docs/ProfitAndLossFilter.md
@@ -1392,6 +1396,7 @@ test/test_crm_api.py
 test/test_crm_event_type.py
 test/test_currency.py
 test/test_custom_field.py
+test/test_customer.py
 test/test_customers_filter.py
 test/test_deduction.py
 test/test_delete_activity_response.py
@@ -1727,6 +1732,7 @@ test/test_pos_payment.py
 test/test_pos_payment_card_details.py
 test/test_pos_payment_external_details.py
 test/test_price.py
+test/test_probation_period.py
 test/test_profit_and_loss.py
 test/test_profit_and_loss_expenses.py
 test/test_profit_and_loss_filter.py

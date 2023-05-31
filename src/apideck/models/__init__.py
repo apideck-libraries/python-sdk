@@ -152,6 +152,7 @@ from apideck.model.credit_note import CreditNote
 from apideck.model.crm_event_type import CrmEventType
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.deduction import Deduction
 from apideck.model.delete_activity_response import DeleteActivityResponse
@@ -481,6 +482,7 @@ from apideck.model.pos_payment import PosPayment
 from apideck.model.pos_payment_card_details import PosPaymentCardDetails
 from apideck.model.pos_payment_external_details import PosPaymentExternalDetails
 from apideck.model.price import Price
+from apideck.model.probation_period import ProbationPeriod
 from apideck.model.profit_and_loss import ProfitAndLoss
 from apideck.model.profit_and_loss_expenses import ProfitAndLossExpenses
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
