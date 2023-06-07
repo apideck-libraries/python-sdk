@@ -405,7 +405,6 @@ from apideck.model.job import Job
 from apideck.model.job_links import JobLinks
 from apideck.model.job_salary import JobSalary
 from apideck.model.job_status import JobStatus
-from apideck.model.jobs_filter import JobsFilter
 from apideck.model.journal_entry import JournalEntry
 from apideck.model.journal_entry_line_item import JournalEntryLineItem
 from apideck.model.lead import Lead

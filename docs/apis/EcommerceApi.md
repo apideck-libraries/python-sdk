@@ -28,6 +28,7 @@ List Customers
 import time
 import apideck
 from apideck.api import ecommerce_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.get_ecommerce_customers_response import GetEcommerceCustomersResponse
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.ecommerce_customers_filter import EcommerceCustomersFilter
@@ -68,13 +69,14 @@ with apideck.ApiClient(configuration) as api_client:
         email="elon@musk.com",
         phone_number="111-111-1111",
     ) # EcommerceCustomersFilter | Apply filters (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Customers
-        api_response = api_instance.customers_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
+        api_response = api_instance.customers_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling EcommerceApi->customers_all: %s\n" % e)
@@ -92,6 +94,7 @@ Name | Type | Description  | Notes
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **EcommerceCustomersFilter**| Apply filters | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -246,6 +249,7 @@ List Orders
 import time
 import apideck
 from apideck.api import ecommerce_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.ecommerce_orders_filter import EcommerceOrdersFilter
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.get_ecommerce_orders_response import GetEcommerceOrdersResponse
@@ -285,13 +289,14 @@ with apideck.ApiClient(configuration) as api_client:
     filter = EcommerceOrdersFilter(
         email="elon@musk.com",
     ) # EcommerceOrdersFilter | Apply filters (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Orders
-        api_response = api_instance.orders_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
+        api_response = api_instance.orders_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling EcommerceApi->orders_all: %s\n" % e)
@@ -309,6 +314,7 @@ Name | Type | Description  | Notes
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **EcommerceOrdersFilter**| Apply filters | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -463,6 +469,7 @@ List Products
 import time
 import apideck
 from apideck.api import ecommerce_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.get_products_response import GetProductsResponse
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
@@ -498,13 +505,14 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Products
-        api_response = api_instance.products_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, fields=fields)
+        api_response = api_instance.products_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling EcommerceApi->products_all: %s\n" % e)
@@ -521,6 +529,7 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
