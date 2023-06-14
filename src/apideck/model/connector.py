@@ -127,6 +127,7 @@ class Connector(ModelNormal):
             'logo_url': (str,),  # noqa: E501
             'website_url': (str,),  # noqa: E501
             'signup_url': (str,),  # noqa: E501
+            'partner_signup_url': (str,),  # noqa: E501
             'free_trial_available': (bool,),  # noqa: E501
             'auth_type': (str,),  # noqa: E501
             'auth_only': (bool,),  # noqa: E501
@@ -161,6 +162,7 @@ class Connector(ModelNormal):
         'logo_url': 'logo_url',  # noqa: E501
         'website_url': 'website_url',  # noqa: E501
         'signup_url': 'signup_url',  # noqa: E501
+        'partner_signup_url': 'partner_signup_url',  # noqa: E501
         'free_trial_available': 'free_trial_available',  # noqa: E501
         'auth_type': 'auth_type',  # noqa: E501
         'auth_only': 'auth_only',  # noqa: E501
@@ -237,6 +239,7 @@ class Connector(ModelNormal):
             logo_url (str): Link to the full logo for the connector.. [optional]  # noqa: E501
             website_url (str): Link to the connector's website.. [optional]  # noqa: E501
             signup_url (str): Link to the connector's signup page.. [optional]  # noqa: E501
+            partner_signup_url (str): Link to the connector's partner program signup page.. [optional]  # noqa: E501
             free_trial_available (bool): Set to `true` when the connector offers a free trial. Use `signup_url` to sign up for a free trial. [optional]  # noqa: E501
             auth_type (str): Type of authorization used by the connector. [optional]  # noqa: E501
             auth_only (bool): Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API. [optional]  # noqa: E501
@@ -344,6 +347,7 @@ class Connector(ModelNormal):
             logo_url (str): Link to the full logo for the connector.. [optional]  # noqa: E501
             website_url (str): Link to the connector's website.. [optional]  # noqa: E501
             signup_url (str): Link to the connector's signup page.. [optional]  # noqa: E501
+            partner_signup_url (str): Link to the connector's partner program signup page.. [optional]  # noqa: E501
             free_trial_available (bool): Set to `true` when the connector offers a free trial. Use `signup_url` to sign up for a free trial. [optional]  # noqa: E501
             auth_type (str): Type of authorization used by the connector. [optional]  # noqa: E501
             auth_only (bool): Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API. [optional]  # noqa: E501
