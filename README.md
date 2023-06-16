@@ -285,7 +285,7 @@ with apideck.ApiClient(configuration) as api_client:
     x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
 x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 x_apideck_service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters (optional)
+pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
 filter = BalanceSheetFilter(
         start_date="2021-01-01",
         end_date="2021-12-31",
@@ -1250,7 +1250,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [JobLinks](docs/models/JobLinks.md)
  - [JobSalary](docs/models/JobSalary.md)
  - [JobStatus](docs/models/JobStatus.md)
- - [JobsFilter](docs/models/JobsFilter.md)
  - [JournalEntry](docs/models/JournalEntry.md)
  - [JournalEntryLineItem](docs/models/JournalEntryLineItem.md)
  - [Lead](docs/models/Lead.md)

@@ -427,7 +427,6 @@ apideck/model/job.py
 apideck/model/job_links.py
 apideck/model/job_salary.py
 apideck/model/job_status.py
-apideck/model/jobs_filter.py
 apideck/model/journal_entry.py
 apideck/model/journal_entry_line_item.py
 apideck/model/lead.py
@@ -1036,7 +1035,6 @@ docs/Job.md
 docs/JobLinks.md
 docs/JobSalary.md
 docs/JobStatus.md
-docs/JobsFilter.md
 docs/JournalEntry.md
 docs/JournalEntryLineItem.md
 docs/Lead.md
@@ -1653,7 +1651,6 @@ test/test_job.py
 test/test_job_links.py
 test/test_job_salary.py
 test/test_job_status.py
-test/test_jobs_filter.py
 test/test_journal_entry.py
 test/test_journal_entry_line_item.py
 test/test_lead.py

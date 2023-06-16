@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **first_name** | **str** | First name of customer to search for | [optional] 
 **last_name** | **str** | Last name of customer to search for | [optional] 
 **email** | **str** | Email of customer to search for | [optional] 
+**status** | **str, none_type** | Status of customer to filter on | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

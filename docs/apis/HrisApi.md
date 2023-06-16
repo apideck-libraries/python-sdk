@@ -213,6 +213,7 @@ List Companies
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.get_hris_companies_response import GetHrisCompaniesResponse
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
@@ -248,13 +249,14 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Companies
-        api_response = api_instance.companies_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, fields=fields)
+        api_response = api_instance.companies_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->companies_all: %s\n" % e)
@@ -271,6 +273,7 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -813,6 +816,7 @@ List Departments
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
@@ -848,13 +852,14 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Departments
-        api_response = api_instance.departments_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, fields=fields)
+        api_response = api_instance.departments_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->departments_all: %s\n" % e)
@@ -871,6 +876,7 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -1246,6 +1252,7 @@ List payrolls for employee
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payrolls_filter import PayrollsFilter
@@ -1285,6 +1292,7 @@ with apideck.ApiClient(configuration) as api_client:
         start_date="2022-04-08",
         end_date="2022-04-21",
     ) # PayrollsFilter | Apply filters (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1299,7 +1307,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Employee Payrolls
-        api_response = api_instance.employee_payrolls_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, fields=fields)
+        api_response = api_instance.employee_payrolls_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employee_payrolls_all: %s\n" % e)
@@ -1316,6 +1324,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **filter** | **PayrollsFilter**| Apply filters | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -1472,6 +1481,7 @@ List schedules for employee, a schedule is a work pattern, not the actual worked
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
@@ -1506,6 +1516,7 @@ with apideck.ApiClient(configuration) as api_client:
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
@@ -1520,7 +1531,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Employee Schedules
-        api_response = api_instance.employee_schedules_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, fields=fields)
+        api_response = api_instance.employee_schedules_all(employee_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employee_schedules_all: %s\n" % e)
@@ -1536,6 +1547,7 @@ Name | Type | Description  | Notes
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -1875,6 +1887,7 @@ List Employees
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.get_employees_response import GetEmployeesResponse
 from apideck.model.employees_sort import EmployeesSort
@@ -1927,13 +1940,14 @@ with apideck.ApiClient(configuration) as api_client:
         by="created_at",
         direction=SortDirection("asc"),
     ) # EmployeesSort | Apply sorting (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Employees
-        api_response = api_instance.employees_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, fields=fields)
+        api_response = api_instance.employees_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employees_all: %s\n" % e)
@@ -1952,6 +1966,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **EmployeesFilter**| Apply filters | [optional]
  **sort** | **EmployeesSort**| Apply sorting | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -2509,6 +2524,7 @@ List Payroll
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payrolls_filter import PayrollsFilter
@@ -2547,13 +2563,14 @@ with apideck.ApiClient(configuration) as api_client:
         start_date="2022-04-08",
         end_date="2022-04-21",
     ) # PayrollsFilter | Apply filters (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Payroll
-        api_response = api_instance.payrolls_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, fields=fields)
+        api_response = api_instance.payrolls_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->payrolls_all: %s\n" % e)
@@ -2569,6 +2586,7 @@ Name | Type | Description  | Notes
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **filter** | **PayrollsFilter**| Apply filters | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
@@ -2847,6 +2865,7 @@ List Time Off Requests
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.get_time_off_requests_response import GetTimeOffRequestsResponse
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
@@ -2889,13 +2908,14 @@ with apideck.ApiClient(configuration) as api_client:
         employee_id="1234",
         time_off_request_status="",
     ) # TimeOffRequestsFilter | Apply filters (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Time Off Requests
-        api_response = api_instance.time_off_requests_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, fields=fields)
+        api_response = api_instance.time_off_requests_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_all: %s\n" % e)
@@ -2913,6 +2933,7 @@ Name | Type | Description  | Notes
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **TimeOffRequestsFilter**| Apply filters | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
 ### Return type
