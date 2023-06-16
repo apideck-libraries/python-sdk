@@ -28,8 +28,8 @@ Name | Type | Description | Notes
 **emails** | [**[Email]**](Email.md) |  | [optional] 
 **custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **tags** | [**Tags**](Tags.md) |  | [optional] 
-**updated_at** | **str** |  | [optional] [readonly] 
-**created_at** | **str** |  | [optional] [readonly] 
+**updated_at** | **str** | Date updated in ISO 8601 format | [optional] [readonly] 
+**created_at** | **str** | Date created in ISO 8601 format | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
