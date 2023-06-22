@@ -12,12 +12,14 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.benefit import Benefit
-from apideck.model.deduction import Deduction
-from apideck.model.tax import Tax
-globals()['Benefit'] = Benefit
-globals()['Deduction'] = Deduction
-globals()['Tax'] = Tax
+from apideck.model.from_apideck_model_currency_import_currency import FromApideckModelCurrencyImportCurrency
+from apideck.model.from_apideck_model_payment_unit_import_payment_unit import FromApideckModelPaymentUnitImportPaymentUnit
+from apideck.model.globals_currency_currency import GlobalsCurrencyCurrency
+from apideck.model.globals_payment_unit_payment_unit import GlobalsPaymentUnitPaymentUnit
+globals()['from apideck.model.currency import Currency'] = from apideck.model.currency import Currency
+globals()['from apideck.model.payment_unit import PaymentUnit'] = from apideck.model.payment_unit import PaymentUnit
+globals()['globals()['Currency'] = Currency'] = globals()['Currency'] = Currency
+globals()['globals()['PaymentUnit'] = PaymentUnit'] = globals()['PaymentUnit'] = PaymentUnit
 from apideck.model.compensation import Compensation
 
 

@@ -12,22 +12,18 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.address import Address
-from apideck.model.branch import Branch
-from apideck.model.custom_field import CustomField
-from apideck.model.department import Department
-from apideck.model.job_links import JobLinks
-from apideck.model.job_salary import JobSalary
-from apideck.model.job_status import JobStatus
-from apideck.model.tags import Tags
-globals()['Address'] = Address
-globals()['Branch'] = Branch
-globals()['CustomField'] = CustomField
-globals()['Department'] = Department
-globals()['JobLinks'] = JobLinks
-globals()['JobSalary'] = JobSalary
-globals()['JobStatus'] = JobStatus
-globals()['Tags'] = Tags
+from apideck.model.from_apideck_model_address_import_address import FromApideckModelAddressImportAddress
+from apideck.model.from_apideck_model_currency_import_currency import FromApideckModelCurrencyImportCurrency
+from apideck.model.from_apideck_model_payment_unit_import_payment_unit import FromApideckModelPaymentUnitImportPaymentUnit
+from apideck.model.globals_address_address import GlobalsAddressAddress
+from apideck.model.globals_currency_currency import GlobalsCurrencyCurrency
+from apideck.model.globals_payment_unit_payment_unit import GlobalsPaymentUnitPaymentUnit
+globals()['from apideck.model.address import Address'] = from apideck.model.address import Address
+globals()['from apideck.model.currency import Currency'] = from apideck.model.currency import Currency
+globals()['from apideck.model.payment_unit import PaymentUnit'] = from apideck.model.payment_unit import PaymentUnit
+globals()['globals()['Address'] = Address'] = globals()['Address'] = Address
+globals()['globals()['Currency'] = Currency'] = globals()['Currency'] = Currency
+globals()['globals()['PaymentUnit'] = PaymentUnit'] = globals()['PaymentUnit'] = PaymentUnit
 from apideck.model.job import Job
 
 

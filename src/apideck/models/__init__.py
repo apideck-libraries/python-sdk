@@ -229,9 +229,7 @@ from apideck.model.ecommerce_product_variants import EcommerceProductVariants
 from apideck.model.ecommerce_store import EcommerceStore
 from apideck.model.email import Email
 from apideck.model.employee import Employee
-from apideck.model.employee_compensations import EmployeeCompensations
 from apideck.model.employee_employment_role import EmployeeEmploymentRole
-from apideck.model.employee_jobs import EmployeeJobs
 from apideck.model.employee_manager import EmployeeManager
 from apideck.model.employee_payroll import EmployeePayroll
 from apideck.model.employee_payrolls import EmployeePayrolls

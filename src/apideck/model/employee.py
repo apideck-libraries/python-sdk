@@ -32,29 +32,29 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.address import Address
     from apideck.model.applicant_social_links import ApplicantSocialLinks
+    from apideck.model.compensation import Compensation
     from apideck.model.custom_field import CustomField
     from apideck.model.email import Email
-    from apideck.model.employee_compensations import EmployeeCompensations
     from apideck.model.employee_employment_role import EmployeeEmploymentRole
-    from apideck.model.employee_jobs import EmployeeJobs
     from apideck.model.employee_manager import EmployeeManager
     from apideck.model.employee_team import EmployeeTeam
     from apideck.model.employment_status import EmploymentStatus
     from apideck.model.gender import Gender
+    from apideck.model.job import Job
     from apideck.model.person import Person
     from apideck.model.phone_number import PhoneNumber
     from apideck.model.probation_period import ProbationPeriod
     globals()['Address'] = Address
     globals()['ApplicantSocialLinks'] = ApplicantSocialLinks
+    globals()['Compensation'] = Compensation
     globals()['CustomField'] = CustomField
     globals()['Email'] = Email
-    globals()['EmployeeCompensations'] = EmployeeCompensations
     globals()['EmployeeEmploymentRole'] = EmployeeEmploymentRole
-    globals()['EmployeeJobs'] = EmployeeJobs
     globals()['EmployeeManager'] = EmployeeManager
     globals()['EmployeeTeam'] = EmployeeTeam
     globals()['EmploymentStatus'] = EmploymentStatus
     globals()['Gender'] = Gender
+    globals()['Job'] = Job
     globals()['Person'] = Person
     globals()['PhoneNumber'] = PhoneNumber
     globals()['ProbationPeriod'] = ProbationPeriod
@@ -159,8 +159,8 @@ class Employee(ModelNormal):
             'source': (str, none_type,),  # noqa: E501
             'source_id': (str, none_type,),  # noqa: E501
             'record_url': (str, none_type,),  # noqa: E501
-            'jobs': ([EmployeeJobs],),  # noqa: E501
-            'compensations': ([EmployeeCompensations],),  # noqa: E501
+            'jobs': ([Job],),  # noqa: E501
+            'compensations': ([Compensation],),  # noqa: E501
             'works_remote': (bool, none_type,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
@@ -341,8 +341,8 @@ class Employee(ModelNormal):
             source (str, none_type): When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.. [optional]  # noqa: E501
             source_id (str, none_type): Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).. [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
-            jobs ([EmployeeJobs]): [optional]  # noqa: E501
-            compensations ([EmployeeCompensations]): [optional]  # noqa: E501
+            jobs ([Job]): [optional]  # noqa: E501
+            compensations ([Compensation]): [optional]  # noqa: E501
             works_remote (bool, none_type): Indicates if the employee works from a remote location.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
@@ -484,8 +484,8 @@ class Employee(ModelNormal):
             source (str, none_type): When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.. [optional]  # noqa: E501
             source_id (str, none_type): Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).. [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
-            jobs ([EmployeeJobs]): [optional]  # noqa: E501
-            compensations ([EmployeeCompensations]): [optional]  # noqa: E501
+            jobs ([Job]): [optional]  # noqa: E501
+            compensations ([Compensation]): [optional]  # noqa: E501
             works_remote (bool, none_type): Indicates if the employee works from a remote location.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501

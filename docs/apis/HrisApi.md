@@ -1663,6 +1663,7 @@ with apideck.ApiClient(configuration) as api_client:
             sub_type="full_time",
         ),
         manager=EmployeeManager(
+            id="12345",
             name="Elon Musk",
             first_name="Elon",
             last_name="Musk",
@@ -1690,7 +1691,7 @@ with apideck.ApiClient(configuration) as api_client:
         source_id="12345",
         record_url="https://app.intercom.io/contacts/12345",
         jobs=[
-            EmployeeJobs(
+            Job(
                 title="CEO",
                 role="Sales",
                 start_date=dateutil_parser('Wed Aug 12 00:00:00 UTC 2020').date(),
@@ -1729,7 +1730,7 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         compensations=[
-            EmployeeCompensations(
+            Compensation(
                 rate=72000,
                 payment_unit=PaymentUnit("year"),
                 currency=Currency("USD"),
@@ -2299,6 +2300,7 @@ with apideck.ApiClient(configuration) as api_client:
             sub_type="full_time",
         ),
         manager=EmployeeManager(
+            id="12345",
             name="Elon Musk",
             first_name="Elon",
             last_name="Musk",
@@ -2326,7 +2328,7 @@ with apideck.ApiClient(configuration) as api_client:
         source_id="12345",
         record_url="https://app.intercom.io/contacts/12345",
         jobs=[
-            EmployeeJobs(
+            Job(
                 title="CEO",
                 role="Sales",
                 start_date=dateutil_parser('Wed Aug 12 00:00:00 UTC 2020').date(),
@@ -2365,7 +2367,7 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         compensations=[
-            EmployeeCompensations(
+            Compensation(
                 rate=72000,
                 payment_unit=PaymentUnit("year"),
                 currency=Currency("USD"),
