@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **currency** | [**Currency**](Currency.md) |  | [optional] 
 **flsa_status** | **str** | The FLSA status for this compensation. | [optional] 
 **effective_date** | **str** | The date on which a change to an employee&#39;s compensation takes effect. | [optional] 
+**payment_frequency** | **str** | Frequency of employee compensation. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
