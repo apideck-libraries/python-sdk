@@ -70,6 +70,7 @@ class Compensation(ModelNormal):
             'SALARIED-NONEXEMPT': "salaried-nonexempt",
             'NONEXEMPT': "nonexempt",
             'OWNER': "owner",
+            'OTHER': "other",
         },
         ('payment_frequency',): {
             'WEEKLY': "weekly",
