@@ -20,13 +20,13 @@ from apideck.model.email import Email
 from apideck.model.employee_bank_accounts import EmployeeBankAccounts
 from apideck.model.employee_employment_role import EmployeeEmploymentRole
 from apideck.model.employee_manager import EmployeeManager
-from apideck.model.employee_team import EmployeeTeam
 from apideck.model.employment_status import EmploymentStatus
 from apideck.model.gender import Gender
 from apideck.model.job import Job
 from apideck.model.person import Person
 from apideck.model.phone_number import PhoneNumber
 from apideck.model.probation_period import ProbationPeriod
+from apideck.model.team import Team
 globals()['Address'] = Address
 globals()['ApplicantSocialLinks'] = ApplicantSocialLinks
 globals()['Compensation'] = Compensation
@@ -35,13 +35,13 @@ globals()['Email'] = Email
 globals()['EmployeeBankAccounts'] = EmployeeBankAccounts
 globals()['EmployeeEmploymentRole'] = EmployeeEmploymentRole
 globals()['EmployeeManager'] = EmployeeManager
-globals()['EmployeeTeam'] = EmployeeTeam
 globals()['EmploymentStatus'] = EmploymentStatus
 globals()['Gender'] = Gender
 globals()['Job'] = Job
 globals()['Person'] = Person
 globals()['PhoneNumber'] = PhoneNumber
 globals()['ProbationPeriod'] = ProbationPeriod
+globals()['Team'] = Team
 from apideck.model.employee import Employee
 
 

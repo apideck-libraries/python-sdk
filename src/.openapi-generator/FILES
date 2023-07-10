@@ -257,7 +257,6 @@ apideck/model/employee_manager.py
 apideck/model/employee_payroll.py
 apideck/model/employee_payrolls.py
 apideck/model/employee_schedules.py
-apideck/model/employee_team.py
 apideck/model/employees_filter.py
 apideck/model/employees_sort.py
 apideck/model/employment_status.py
@@ -542,6 +541,7 @@ apideck/model/tags.py
 apideck/model/tax.py
 apideck/model/tax_rate.py
 apideck/model/tax_rates_filter.py
+apideck/model/team.py
 apideck/model/tender.py
 apideck/model/ticket.py
 apideck/model/tickets_sort.py
@@ -861,7 +861,6 @@ docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
 docs/EmployeeSchedules.md
-docs/EmployeeTeam.md
 docs/EmployeesFilter.md
 docs/EmployeesSort.md
 docs/EmploymentStatus.md
@@ -1152,6 +1151,7 @@ docs/Tags.md
 docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
+docs/Team.md
 docs/Tender.md
 docs/Ticket.md
 docs/TicketsSort.md
@@ -1476,7 +1476,6 @@ test/test_employee_manager.py
 test/test_employee_payroll.py
 test/test_employee_payrolls.py
 test/test_employee_schedules.py
-test/test_employee_team.py
 test/test_employees_filter.py
 test/test_employees_sort.py
 test/test_employment_status.py
@@ -1767,6 +1766,7 @@ test/test_tags.py
 test/test_tax.py
 test/test_tax_rate.py
 test/test_tax_rates_filter.py
+test/test_team.py
 test/test_tender.py
 test/test_ticket.py
 test/test_tickets_sort.py
