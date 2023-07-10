@@ -1647,16 +1647,10 @@ with apideck.ApiClient(configuration) as api_client:
         department="R&D",
         department_id="12345",
         department_name="12345",
-        team=Team(
+        team=EmployeeTeam(
             id="1234",
             name="Full Stack Engineers",
         ),
-        teams=[
-            Team(
-                id="1234",
-                name="Full Stack Engineers",
-            ),
-        ],
         company_id="23456",
         company_name="SpaceX",
         employment_start_date="2021-10-26",
@@ -2306,16 +2300,10 @@ with apideck.ApiClient(configuration) as api_client:
         department="R&D",
         department_id="12345",
         department_name="12345",
-        team=Team(
+        team=EmployeeTeam(
             id="1234",
             name="Full Stack Engineers",
         ),
-        teams=[
-            Team(
-                id="1234",
-                name="Full Stack Engineers",
-            ),
-        ],
         company_id="23456",
         company_name="SpaceX",
         employment_start_date="2021-10-26",

@@ -12,11 +12,11 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.team import Team
+from apideck.model.employee_team import EmployeeTeam
 
 
-class TestTeam(unittest.TestCase):
-    """Team unit test stubs"""
+class TestEmployeeTeam(unittest.TestCase):
+    """EmployeeTeam unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestTeam(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTeam(self):
-        """Test Team"""
+    def testEmployeeTeam(self):
+        """Test EmployeeTeam"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = Team()  # noqa: E501
+        # model = EmployeeTeam()  # noqa: E501
         pass
 
 

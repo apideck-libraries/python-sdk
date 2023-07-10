@@ -38,13 +38,13 @@ def lazy_import():
     from apideck.model.employee_bank_accounts import EmployeeBankAccounts
     from apideck.model.employee_employment_role import EmployeeEmploymentRole
     from apideck.model.employee_manager import EmployeeManager
+    from apideck.model.employee_team import EmployeeTeam
     from apideck.model.employment_status import EmploymentStatus
     from apideck.model.gender import Gender
     from apideck.model.job import Job
     from apideck.model.person import Person
     from apideck.model.phone_number import PhoneNumber
     from apideck.model.probation_period import ProbationPeriod
-    from apideck.model.team import Team
     globals()['Address'] = Address
     globals()['ApplicantSocialLinks'] = ApplicantSocialLinks
     globals()['Compensation'] = Compensation
@@ -53,13 +53,13 @@ def lazy_import():
     globals()['EmployeeBankAccounts'] = EmployeeBankAccounts
     globals()['EmployeeEmploymentRole'] = EmployeeEmploymentRole
     globals()['EmployeeManager'] = EmployeeManager
+    globals()['EmployeeTeam'] = EmployeeTeam
     globals()['EmploymentStatus'] = EmploymentStatus
     globals()['Gender'] = Gender
     globals()['Job'] = Job
     globals()['Person'] = Person
     globals()['PhoneNumber'] = PhoneNumber
     globals()['ProbationPeriod'] = ProbationPeriod
-    globals()['Team'] = Team
 
 
 class Employee(ModelNormal):
@@ -135,8 +135,7 @@ class Employee(ModelNormal):
             'department': (str, none_type,),  # noqa: E501
             'department_id': (str, none_type,),  # noqa: E501
             'department_name': (str, none_type,),  # noqa: E501
-            'team': (Team,),  # noqa: E501
-            'teams': ([Team],),  # noqa: E501
+            'team': (EmployeeTeam,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'employment_start_date': (str, none_type,),  # noqa: E501
@@ -208,7 +207,6 @@ class Employee(ModelNormal):
         'department_id': 'department_id',  # noqa: E501
         'department_name': 'department_name',  # noqa: E501
         'team': 'team',  # noqa: E501
-        'teams': 'teams',  # noqa: E501
         'company_id': 'company_id',  # noqa: E501
         'company_name': 'company_name',  # noqa: E501
         'employment_start_date': 'employment_start_date',  # noqa: E501
@@ -321,8 +319,7 @@ class Employee(ModelNormal):
             department (str, none_type): The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.. [optional]  # noqa: E501
             department_id (str, none_type): Unique identifier of the department ID this employee belongs to.. [optional]  # noqa: E501
             department_name (str, none_type): Name of the department this employee belongs to.. [optional]  # noqa: E501
-            team (Team): [optional]  # noqa: E501
-            teams ([Team]): [optional]  # noqa: E501
+            team (EmployeeTeam): [optional]  # noqa: E501
             company_id (str, none_type): The unique identifier of the company.. [optional]  # noqa: E501
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employment_start_date (str, none_type): A Start Date is the date that the employee started working at the company. [optional]  # noqa: E501
@@ -466,8 +463,7 @@ class Employee(ModelNormal):
             department (str, none_type): The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.. [optional]  # noqa: E501
             department_id (str, none_type): Unique identifier of the department ID this employee belongs to.. [optional]  # noqa: E501
             department_name (str, none_type): Name of the department this employee belongs to.. [optional]  # noqa: E501
-            team (Team): [optional]  # noqa: E501
-            teams ([Team]): [optional]  # noqa: E501
+            team (EmployeeTeam): [optional]  # noqa: E501
             company_id (str, none_type): The unique identifier of the company.. [optional]  # noqa: E501
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employment_start_date (str, none_type): A Start Date is the date that the employee started working at the company. [optional]  # noqa: E501

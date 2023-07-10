@@ -235,6 +235,7 @@ from apideck.model.employee_manager import EmployeeManager
 from apideck.model.employee_payroll import EmployeePayroll
 from apideck.model.employee_payrolls import EmployeePayrolls
 from apideck.model.employee_schedules import EmployeeSchedules
+from apideck.model.employee_team import EmployeeTeam
 from apideck.model.employees_filter import EmployeesFilter
 from apideck.model.employees_sort import EmployeesSort
 from apideck.model.employment_status import EmploymentStatus
@@ -519,7 +520,6 @@ from apideck.model.tags import Tags
 from apideck.model.tax import Tax
 from apideck.model.tax_rate import TaxRate
 from apideck.model.tax_rates_filter import TaxRatesFilter
-from apideck.model.team import Team
 from apideck.model.tender import Tender
 from apideck.model.ticket import Ticket
 from apideck.model.tickets_sort import TicketsSort
