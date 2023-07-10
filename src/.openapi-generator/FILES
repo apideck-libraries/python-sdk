@@ -251,6 +251,7 @@ apideck/model/ecommerce_product_variants.py
 apideck/model/ecommerce_store.py
 apideck/model/email.py
 apideck/model/employee.py
+apideck/model/employee_bank_accounts.py
 apideck/model/employee_employment_role.py
 apideck/model/employee_manager.py
 apideck/model/employee_payroll.py
@@ -854,6 +855,7 @@ docs/EcommerceProductVariants.md
 docs/EcommerceStore.md
 docs/Email.md
 docs/Employee.md
+docs/EmployeeBankAccounts.md
 docs/EmployeeEmploymentRole.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
@@ -1468,6 +1470,7 @@ test/test_ecommerce_product_variants.py
 test/test_ecommerce_store.py
 test/test_email.py
 test/test_employee.py
+test/test_employee_bank_accounts.py
 test/test_employee_employment_role.py
 test/test_employee_manager.py
 test/test_employee_payroll.py

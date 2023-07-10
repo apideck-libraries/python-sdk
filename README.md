@@ -1074,6 +1074,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [EcommerceStore](docs/models/EcommerceStore.md)
  - [Email](docs/models/Email.md)
  - [Employee](docs/models/Employee.md)
+ - [EmployeeBankAccounts](docs/models/EmployeeBankAccounts.md)
  - [EmployeeEmploymentRole](docs/models/EmployeeEmploymentRole.md)
  - [EmployeeManager](docs/models/EmployeeManager.md)
  - [EmployeePayroll](docs/models/EmployeePayroll.md)
