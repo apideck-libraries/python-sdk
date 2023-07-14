@@ -533,6 +533,7 @@ from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unified_api_id import UnifiedApiId
 from apideck.model.unified_file import UnifiedFile
+from apideck.model.unified_file_permissions import UnifiedFilePermissions
 from apideck.model.unified_id import UnifiedId
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.update_activity_response import UpdateActivityResponse

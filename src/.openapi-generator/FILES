@@ -555,6 +555,7 @@ apideck/model/unauthorized_response.py
 apideck/model/unexpected_error_response.py
 apideck/model/unified_api_id.py
 apideck/model/unified_file.py
+apideck/model/unified_file_permissions.py
 apideck/model/unified_id.py
 apideck/model/unprocessable_response.py
 apideck/model/update_activity_response.py
@@ -1165,6 +1166,7 @@ docs/UnauthorizedResponse.md
 docs/UnexpectedErrorResponse.md
 docs/UnifiedApiId.md
 docs/UnifiedFile.md
+docs/UnifiedFilePermissions.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
@@ -1780,6 +1782,7 @@ test/test_unauthorized_response.py
 test/test_unexpected_error_response.py
 test/test_unified_api_id.py
 test/test_unified_file.py
+test/test_unified_file_permissions.py
 test/test_unified_id.py
 test/test_unprocessable_response.py
 test/test_update_activity_response.py

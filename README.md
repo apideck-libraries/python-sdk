@@ -1378,6 +1378,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UnexpectedErrorResponse](docs/models/UnexpectedErrorResponse.md)
  - [UnifiedApiId](docs/models/UnifiedApiId.md)
  - [UnifiedFile](docs/models/UnifiedFile.md)
+ - [UnifiedFilePermissions](docs/models/UnifiedFilePermissions.md)
  - [UnifiedId](docs/models/UnifiedId.md)
  - [UnprocessableResponse](docs/models/UnprocessableResponse.md)
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)

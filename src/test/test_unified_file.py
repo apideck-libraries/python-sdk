@@ -15,9 +15,11 @@ import apideck
 from apideck.model.file_type import FileType
 from apideck.model.linked_folder import LinkedFolder
 from apideck.model.owner import Owner
+from apideck.model.unified_file_permissions import UnifiedFilePermissions
 globals()['FileType'] = FileType
 globals()['LinkedFolder'] = LinkedFolder
 globals()['Owner'] = Owner
+globals()['UnifiedFilePermissions'] = UnifiedFilePermissions
 from apideck.model.unified_file import UnifiedFile
 
 
