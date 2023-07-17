@@ -99,6 +99,7 @@ class LedgerAccount(ModelNormal):
             'CURRENT_LIABILITY': "current_liability",
             'NON_CURRENT_LIABILITY': "non_current_liability",
             'OTHER_LIABILITY': "other_liability",
+            'OTHER': "other",
         },
         ('status',): {
             'None': None,
