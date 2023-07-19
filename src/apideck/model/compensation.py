@@ -30,14 +30,12 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from apideck.model.from_apideck_model_currency_import_currency import FromApideckModelCurrencyImportCurrency
-    from apideck.model.from_apideck_model_payment_unit_import_payment_unit import FromApideckModelPaymentUnitImportPaymentUnit
-    from apideck.model.globals_currency_currency import GlobalsCurrencyCurrency
-    from apideck.model.globals_payment_unit_payment_unit import GlobalsPaymentUnitPaymentUnit
-    globals()['from apideck.model.currency import Currency'] = from apideck.model.currency import Currency
-    globals()['from apideck.model.payment_unit import PaymentUnit'] = from apideck.model.payment_unit import PaymentUnit
-    globals()['globals()['Currency'] = Currency'] = globals()['Currency'] = Currency
-    globals()['globals()['PaymentUnit'] = PaymentUnit'] = globals()['PaymentUnit'] = PaymentUnit
+    from apideck.model.benefit import Benefit
+    from apideck.model.deduction import Deduction
+    from apideck.model.tax import Tax
+    globals()['Benefit'] = Benefit
+    globals()['Deduction'] = Deduction
+    globals()['Tax'] = Tax
 
 
 class Compensation(ModelNormal):
@@ -65,33 +63,12 @@ class Compensation(ModelNormal):
     """
 
     allowed_values = {
-        ('flsa_status',): {
-            'EXEMPT': "exempt",
-            'SALARIED-NONEXEMPT': "salaried-nonexempt",
-            'NONEXEMPT': "nonexempt",
-            'OWNER': "owner",
-            'OTHER': "other",
-        },
-        ('payment_frequency',): {
-            'WEEKLY': "weekly",
-            'BIWEEKLY': "biweekly",
-            'MONTHLY': "monthly",
-            'PRO-RATA': "pro-rata",
-            'OTHER': "other",
-        },
     }
 
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -107,14 +84,12 @@ class Compensation(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
-            'job_id': (str,),  # noqa: E501
-            'rate': (float,),  # noqa: E501
-            'payment_unit': (PaymentUnit,),  # noqa: E501
-            'currency': (Currency,),  # noqa: E501
-            'flsa_status': (str,),  # noqa: E501
-            'effective_date': (str,),  # noqa: E501
-            'payment_frequency': (str,),  # noqa: E501
+            'employee_id': (str,),  # noqa: E501
+            'net_pay': (float,),  # noqa: E501
+            'gross_pay': (float,),  # noqa: E501
+            'taxes': ([Tax],),  # noqa: E501
+            'deductions': ([Deduction],),  # noqa: E501
+            'benefits': ([Benefit],),  # noqa: E501
         }
 
     @cached_property
@@ -123,27 +98,27 @@ class Compensation(ModelNormal):
 
 
     attribute_map = {
-        'id': 'id',  # noqa: E501
-        'job_id': 'job_id',  # noqa: E501
-        'rate': 'rate',  # noqa: E501
-        'payment_unit': 'payment_unit',  # noqa: E501
-        'currency': 'currency',  # noqa: E501
-        'flsa_status': 'flsa_status',  # noqa: E501
-        'effective_date': 'effective_date',  # noqa: E501
-        'payment_frequency': 'payment_frequency',  # noqa: E501
+        'employee_id': 'employee_id',  # noqa: E501
+        'net_pay': 'net_pay',  # noqa: E501
+        'gross_pay': 'gross_pay',  # noqa: E501
+        'taxes': 'taxes',  # noqa: E501
+        'deductions': 'deductions',  # noqa: E501
+        'benefits': 'benefits',  # noqa: E501
     }
 
     read_only_vars = {
-        'id',  # noqa: E501
-        'job_id',  # noqa: E501
+        'employee_id',  # noqa: E501
     }
 
     _composed_schemas = {}
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, employee_id, *args, **kwargs):  # noqa: E501
         """Compensation - a model defined in OpenAPI
+
+        Args:
+            employee_id (str): A unique identifier for an object.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -176,14 +151,11 @@ class Compensation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            job_id (str): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
-            rate (float): The amount paid per payment unit.. [optional]  # noqa: E501
-            payment_unit (PaymentUnit): [optional]  # noqa: E501
-            currency (Currency): [optional]  # noqa: E501
-            flsa_status (str): The FLSA status for this compensation.. [optional]  # noqa: E501
-            effective_date (str): The date on which a change to an employee's compensation takes effect.. [optional]  # noqa: E501
-            payment_frequency (str): Frequency of employee compensation.. [optional]  # noqa: E501
+            net_pay (float): The employee's net pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            gross_pay (float): The employee's gross pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            taxes ([Tax]): An array of employer and employee taxes for the pay period.. [optional]  # noqa: E501
+            deductions ([Deduction]): An array of employee deductions for the pay period.. [optional]  # noqa: E501
+            benefits ([Benefit]): An array of employee benefits for the pay period.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -211,6 +183,7 @@ class Compensation(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.employee_id = employee_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -265,14 +238,11 @@ class Compensation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            job_id (str): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
-            rate (float): The amount paid per payment unit.. [optional]  # noqa: E501
-            payment_unit (PaymentUnit): [optional]  # noqa: E501
-            currency (Currency): [optional]  # noqa: E501
-            flsa_status (str): The FLSA status for this compensation.. [optional]  # noqa: E501
-            effective_date (str): The date on which a change to an employee's compensation takes effect.. [optional]  # noqa: E501
-            payment_frequency (str): Frequency of employee compensation.. [optional]  # noqa: E501
+            net_pay (float): The employee's net pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            gross_pay (float): The employee's gross pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            taxes ([Tax]): An array of employer and employee taxes for the pay period.. [optional]  # noqa: E501
+            deductions ([Deduction]): An array of employee deductions for the pay period.. [optional]  # noqa: E501
+            benefits ([Benefit]): An array of employee benefits for the pay period.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

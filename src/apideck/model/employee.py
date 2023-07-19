@@ -31,35 +31,39 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.address import Address
-    from apideck.model.applicant_social_links import ApplicantSocialLinks
-    from apideck.model.compensation import Compensation
+    from apideck.model.bank_account import BankAccount
+    from apideck.model.country import Country
     from apideck.model.custom_field import CustomField
     from apideck.model.email import Email
-    from apideck.model.employee_bank_accounts import EmployeeBankAccounts
+    from apideck.model.employee_compensation import EmployeeCompensation
     from apideck.model.employee_employment_role import EmployeeEmploymentRole
+    from apideck.model.employee_job import EmployeeJob
     from apideck.model.employee_manager import EmployeeManager
-    from apideck.model.employee_team import EmployeeTeam
     from apideck.model.employment_status import EmploymentStatus
     from apideck.model.gender import Gender
-    from apideck.model.job import Job
     from apideck.model.person import Person
     from apideck.model.phone_number import PhoneNumber
     from apideck.model.probation_period import ProbationPeriod
+    from apideck.model.social_link import SocialLink
+    from apideck.model.tags import Tags
+    from apideck.model.team import Team
     globals()['Address'] = Address
-    globals()['ApplicantSocialLinks'] = ApplicantSocialLinks
-    globals()['Compensation'] = Compensation
+    globals()['BankAccount'] = BankAccount
+    globals()['Country'] = Country
     globals()['CustomField'] = CustomField
     globals()['Email'] = Email
-    globals()['EmployeeBankAccounts'] = EmployeeBankAccounts
+    globals()['EmployeeCompensation'] = EmployeeCompensation
     globals()['EmployeeEmploymentRole'] = EmployeeEmploymentRole
+    globals()['EmployeeJob'] = EmployeeJob
     globals()['EmployeeManager'] = EmployeeManager
-    globals()['EmployeeTeam'] = EmployeeTeam
     globals()['EmploymentStatus'] = EmploymentStatus
     globals()['Gender'] = Gender
-    globals()['Job'] = Job
     globals()['Person'] = Person
     globals()['PhoneNumber'] = PhoneNumber
     globals()['ProbationPeriod'] = ProbationPeriod
+    globals()['SocialLink'] = SocialLink
+    globals()['Tags'] = Tags
+    globals()['Team'] = Team
 
 
 class Employee(ModelNormal):
@@ -97,10 +101,6 @@ class Employee(ModelNormal):
     }
 
     validations = {
-        ('country_of_birth',): {
-            'max_length': 2,
-            'min_length': 2,
-        },
     }
 
     additional_properties_type = None
@@ -135,7 +135,7 @@ class Employee(ModelNormal):
             'department': (str, none_type,),  # noqa: E501
             'department_id': (str, none_type,),  # noqa: E501
             'department_name': (str, none_type,),  # noqa: E501
-            'team': (EmployeeTeam,),  # noqa: E501
+            'team': (Team,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'employment_start_date': (str, none_type,),  # noqa: E501
@@ -149,7 +149,7 @@ class Employee(ModelNormal):
             'social_security_number': (str, none_type,),  # noqa: E501
             'birthday': (date, none_type,),  # noqa: E501
             'deceased_on': (date, none_type,),  # noqa: E501
-            'country_of_birth': (str, none_type,),  # noqa: E501
+            'country_of_birth': (Country,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'gender': (Gender,),  # noqa: E501
             'pronouns': (str, none_type,),  # noqa: E501
@@ -161,21 +161,21 @@ class Employee(ModelNormal):
             'source': (str, none_type,),  # noqa: E501
             'source_id': (str, none_type,),  # noqa: E501
             'record_url': (str, none_type,),  # noqa: E501
-            'jobs': ([Job],),  # noqa: E501
-            'compensations': ([Compensation],),  # noqa: E501
+            'jobs': ([EmployeeJob],),  # noqa: E501
+            'compensations': ([EmployeeCompensation],),  # noqa: E501
             'works_remote': (bool, none_type,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
             'emails': ([Email],),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
-            'social_links': ([ApplicantSocialLinks],),  # noqa: E501
-            'bank_accounts': ([EmployeeBankAccounts],),  # noqa: E501
+            'social_links': ([SocialLink],),  # noqa: E501
+            'bank_accounts': ([BankAccount],),  # noqa: E501
             'tax_code': (str, none_type,),  # noqa: E501
             'tax_id': (str, none_type,),  # noqa: E501
             'dietary_preference': (str, none_type,),  # noqa: E501
             'food_allergies': ([str], none_type,),  # noqa: E501
             'probation_period': (ProbationPeriod,),  # noqa: E501
-            'tags': ([str],),  # noqa: E501
+            'tags': (Tags,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
@@ -319,7 +319,7 @@ class Employee(ModelNormal):
             department (str, none_type): The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.. [optional]  # noqa: E501
             department_id (str, none_type): Unique identifier of the department ID this employee belongs to.. [optional]  # noqa: E501
             department_name (str, none_type): Name of the department this employee belongs to.. [optional]  # noqa: E501
-            team (EmployeeTeam): [optional]  # noqa: E501
+            team (Team): [optional]  # noqa: E501
             company_id (str, none_type): The unique identifier of the company.. [optional]  # noqa: E501
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employment_start_date (str, none_type): A Start Date is the date that the employee started working at the company. [optional]  # noqa: E501
@@ -333,7 +333,7 @@ class Employee(ModelNormal):
             social_security_number (str, none_type): A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions.. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
             deceased_on (date, none_type): The date the person deceased.. [optional]  # noqa: E501
-            country_of_birth (str, none_type): Country code according to ISO 3166-1 alpha-2.. [optional]  # noqa: E501
+            country_of_birth (Country): [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             gender (Gender): [optional]  # noqa: E501
             pronouns (str, none_type): The preferred pronouns of the person.. [optional]  # noqa: E501
@@ -345,21 +345,21 @@ class Employee(ModelNormal):
             source (str, none_type): When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.. [optional]  # noqa: E501
             source_id (str, none_type): Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).. [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
-            jobs ([Job]): [optional]  # noqa: E501
-            compensations ([Compensation]): [optional]  # noqa: E501
+            jobs ([EmployeeJob]): [optional]  # noqa: E501
+            compensations ([EmployeeCompensation]): [optional]  # noqa: E501
             works_remote (bool, none_type): Indicates if the employee works from a remote location.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            social_links ([ApplicantSocialLinks]): [optional]  # noqa: E501
-            bank_accounts ([EmployeeBankAccounts]): [optional]  # noqa: E501
+            social_links ([SocialLink]): [optional]  # noqa: E501
+            bank_accounts ([BankAccount]): [optional]  # noqa: E501
             tax_code (str, none_type): [optional]  # noqa: E501
             tax_id (str, none_type): [optional]  # noqa: E501
             dietary_preference (str, none_type): Indicate the employee's dietary preference.. [optional]  # noqa: E501
             food_allergies ([str], none_type): Indicate the employee's food allergies.. [optional]  # noqa: E501
             probation_period (ProbationPeriod): [optional]  # noqa: E501
-            tags ([str]): [optional]  # noqa: E501
+            tags (Tags): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -463,7 +463,7 @@ class Employee(ModelNormal):
             department (str, none_type): The department the person is currently in. [Deprecated](https://developers.apideck.com/changelog) in favor of the dedicated department_id and department_name field.. [optional]  # noqa: E501
             department_id (str, none_type): Unique identifier of the department ID this employee belongs to.. [optional]  # noqa: E501
             department_name (str, none_type): Name of the department this employee belongs to.. [optional]  # noqa: E501
-            team (EmployeeTeam): [optional]  # noqa: E501
+            team (Team): [optional]  # noqa: E501
             company_id (str, none_type): The unique identifier of the company.. [optional]  # noqa: E501
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employment_start_date (str, none_type): A Start Date is the date that the employee started working at the company. [optional]  # noqa: E501
@@ -477,7 +477,7 @@ class Employee(ModelNormal):
             social_security_number (str, none_type): A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions.. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
             deceased_on (date, none_type): The date the person deceased.. [optional]  # noqa: E501
-            country_of_birth (str, none_type): Country code according to ISO 3166-1 alpha-2.. [optional]  # noqa: E501
+            country_of_birth (Country): [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             gender (Gender): [optional]  # noqa: E501
             pronouns (str, none_type): The preferred pronouns of the person.. [optional]  # noqa: E501
@@ -489,21 +489,21 @@ class Employee(ModelNormal):
             source (str, none_type): When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.. [optional]  # noqa: E501
             source_id (str, none_type): Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).. [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
-            jobs ([Job]): [optional]  # noqa: E501
-            compensations ([Compensation]): [optional]  # noqa: E501
+            jobs ([EmployeeJob]): [optional]  # noqa: E501
+            compensations ([EmployeeCompensation]): [optional]  # noqa: E501
             works_remote (bool, none_type): Indicates if the employee works from a remote location.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            social_links ([ApplicantSocialLinks]): [optional]  # noqa: E501
-            bank_accounts ([EmployeeBankAccounts]): [optional]  # noqa: E501
+            social_links ([SocialLink]): [optional]  # noqa: E501
+            bank_accounts ([BankAccount]): [optional]  # noqa: E501
             tax_code (str, none_type): [optional]  # noqa: E501
             tax_id (str, none_type): [optional]  # noqa: E501
             dietary_preference (str, none_type): Indicate the employee's dietary preference.. [optional]  # noqa: E501
             food_allergies ([str], none_type): Indicate the employee's food allergies.. [optional]  # noqa: E501
             probation_period (ProbationPeriod): [optional]  # noqa: E501
-            tags ([str]): [optional]  # noqa: E501
+            tags (Tags): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

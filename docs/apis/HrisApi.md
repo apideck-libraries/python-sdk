@@ -1647,7 +1647,7 @@ with apideck.ApiClient(configuration) as api_client:
         department="R&D",
         department_id="12345",
         department_name="12345",
-        team=EmployeeTeam(
+        team=Team(
             id="1234",
             name="Full Stack Engineers",
         ),
@@ -1674,7 +1674,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_security_number="123456789",
         birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
         deceased_on=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
-        country_of_birth="US",
+        country_of_birth=Country("US"),
         description="A description",
         gender=Gender("male"),
         pronouns="she,her",
@@ -1691,7 +1691,7 @@ with apideck.ApiClient(configuration) as api_client:
         source_id="12345",
         record_url="https://app.intercom.io/contacts/12345",
         jobs=[
-            Job(
+            EmployeeJob(
                 title="CEO",
                 role="Sales",
                 start_date=dateutil_parser('Wed Aug 12 00:00:00 UTC 2020').date(),
@@ -1730,13 +1730,13 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         compensations=[
-            Compensation(
+            EmployeeCompensation(
                 rate=72000,
                 payment_unit=PaymentUnit("year"),
                 currency=Currency("USD"),
                 flsa_status="exempt",
                 effective_date="2020-08-12",
-                payment_frequency="year",
+                payment_frequency=PaymentFrequency("year"),
             ),
         ],
         works_remote=True,
@@ -1794,14 +1794,14 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         social_links=[
-            ApplicantSocialLinks(
+            SocialLink(
                 id="12345",
                 url="https://www.twitter.com/apideck-io",
                 type="twitter",
             ),
         ],
         bank_accounts=[
-            EmployeeBankAccounts(
+            BankAccount(
                 bank_name="Monzo",
                 account_number="123465",
                 account_name="SPACEX LLC",
@@ -1823,7 +1823,7 @@ with apideck.ApiClient(configuration) as api_client:
             start_date=dateutil_parser('Fri Oct 01 00:00:00 UTC 2021').date(),
             end_date=dateutil_parser('Sun Nov 28 00:00:00 UTC 2021').date(),
         ),
-        tags=["New"],
+        tags=Tags(["New"]),
         row_version="1-12345",
         deleted=True,
     ) # Employee | 
@@ -2300,7 +2300,7 @@ with apideck.ApiClient(configuration) as api_client:
         department="R&D",
         department_id="12345",
         department_name="12345",
-        team=EmployeeTeam(
+        team=Team(
             id="1234",
             name="Full Stack Engineers",
         ),
@@ -2327,7 +2327,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_security_number="123456789",
         birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
         deceased_on=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
-        country_of_birth="US",
+        country_of_birth=Country("US"),
         description="A description",
         gender=Gender("male"),
         pronouns="she,her",
@@ -2344,7 +2344,7 @@ with apideck.ApiClient(configuration) as api_client:
         source_id="12345",
         record_url="https://app.intercom.io/contacts/12345",
         jobs=[
-            Job(
+            EmployeeJob(
                 title="CEO",
                 role="Sales",
                 start_date=dateutil_parser('Wed Aug 12 00:00:00 UTC 2020').date(),
@@ -2383,13 +2383,13 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         compensations=[
-            Compensation(
+            EmployeeCompensation(
                 rate=72000,
                 payment_unit=PaymentUnit("year"),
                 currency=Currency("USD"),
                 flsa_status="exempt",
                 effective_date="2020-08-12",
-                payment_frequency="year",
+                payment_frequency=PaymentFrequency("year"),
             ),
         ],
         works_remote=True,
@@ -2447,14 +2447,14 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         social_links=[
-            ApplicantSocialLinks(
+            SocialLink(
                 id="12345",
                 url="https://www.twitter.com/apideck-io",
                 type="twitter",
             ),
         ],
         bank_accounts=[
-            EmployeeBankAccounts(
+            BankAccount(
                 bank_name="Monzo",
                 account_number="123465",
                 account_name="SPACEX LLC",
@@ -2476,7 +2476,7 @@ with apideck.ApiClient(configuration) as api_client:
             start_date=dateutil_parser('Fri Oct 01 00:00:00 UTC 2021').date(),
             end_date=dateutil_parser('Sun Nov 28 00:00:00 UTC 2021').date(),
         ),
-        tags=["New"],
+        tags=Tags(["New"]),
         row_version="1-12345",
         deleted=True,
     ) # Employee | 

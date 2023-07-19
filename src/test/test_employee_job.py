@@ -12,13 +12,17 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.address import Address
 from apideck.model.currency import Currency
+from apideck.model.payment_unit import PaymentUnit
+globals()['Address'] = Address
 globals()['Currency'] = Currency
-from apideck.model.employee_bank_accounts import EmployeeBankAccounts
+globals()['PaymentUnit'] = PaymentUnit
+from apideck.model.employee_job import EmployeeJob
 
 
-class TestEmployeeBankAccounts(unittest.TestCase):
-    """EmployeeBankAccounts unit test stubs"""
+class TestEmployeeJob(unittest.TestCase):
+    """EmployeeJob unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,10 +30,10 @@ class TestEmployeeBankAccounts(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEmployeeBankAccounts(self):
-        """Test EmployeeBankAccounts"""
+    def testEmployeeJob(self):
+        """Test EmployeeJob"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = EmployeeBankAccounts()  # noqa: E501
+        # model = EmployeeJob()  # noqa: E501
         pass
 
 

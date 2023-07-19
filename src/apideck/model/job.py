@@ -30,18 +30,22 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from apideck.model.from_apideck_model_address_import_address import FromApideckModelAddressImportAddress
-    from apideck.model.from_apideck_model_currency_import_currency import FromApideckModelCurrencyImportCurrency
-    from apideck.model.from_apideck_model_payment_unit_import_payment_unit import FromApideckModelPaymentUnitImportPaymentUnit
-    from apideck.model.globals_address_address import GlobalsAddressAddress
-    from apideck.model.globals_currency_currency import GlobalsCurrencyCurrency
-    from apideck.model.globals_payment_unit_payment_unit import GlobalsPaymentUnitPaymentUnit
-    globals()['from apideck.model.address import Address'] = from apideck.model.address import Address
-    globals()['from apideck.model.currency import Currency'] = from apideck.model.currency import Currency
-    globals()['from apideck.model.payment_unit import PaymentUnit'] = from apideck.model.payment_unit import PaymentUnit
-    globals()['globals()['Address'] = Address'] = globals()['Address'] = Address
-    globals()['globals()['Currency'] = Currency'] = globals()['Currency'] = Currency
-    globals()['globals()['PaymentUnit'] = PaymentUnit'] = globals()['PaymentUnit'] = PaymentUnit
+    from apideck.model.address import Address
+    from apideck.model.branch import Branch
+    from apideck.model.custom_field import CustomField
+    from apideck.model.department import Department
+    from apideck.model.job_links import JobLinks
+    from apideck.model.job_salary import JobSalary
+    from apideck.model.job_status import JobStatus
+    from apideck.model.tags import Tags
+    globals()['Address'] = Address
+    globals()['Branch'] = Branch
+    globals()['CustomField'] = CustomField
+    globals()['Department'] = Department
+    globals()['JobLinks'] = JobLinks
+    globals()['JobSalary'] = JobSalary
+    globals()['JobStatus'] = JobStatus
+    globals()['Tags'] = Tags
 
 
 class Job(ModelNormal):
@@ -69,19 +73,32 @@ class Job(ModelNormal):
     """
 
     allowed_values = {
+        ('visibility',): {
+            'DRAFT': "draft",
+            'PUBLIC': "public",
+            'INTERNAL': "internal",
+        },
+        ('employment_terms',): {
+            'None': None,
+            'FULL-TIME': "full-time",
+            'PART-TIME': "part-time",
+            'INTERNSHIP': "internship",
+            'CONTRACTOR': "contractor",
+            'EMPLOYEE': "employee",
+            'FREELANCE': "freelance",
+            'TEMP': "temp",
+            'SEASONAL': "seasonal",
+            'VOLUNTEER': "volunteer",
+            'OTHER': "other",
+        },
     }
 
     validations = {
+        ('links',): {
+        },
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -98,17 +115,46 @@ class Job(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'employee_id': (str,),  # noqa: E501
+            'slug': (str, none_type,),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
-            'role': (str, none_type,),  # noqa: E501
-            'start_date': (date, none_type,),  # noqa: E501
-            'end_date': (date, none_type,),  # noqa: E501
-            'compensation_rate': (float,),  # noqa: E501
-            'currency': (Currency,),  # noqa: E501
-            'payment_unit': (PaymentUnit,),  # noqa: E501
-            'hired_at': (date, none_type,),  # noqa: E501
-            'is_primary': (bool, none_type,),  # noqa: E501
-            'location': (Address,),  # noqa: E501
+            'sequence': (int,),  # noqa: E501
+            'visibility': (str,),  # noqa: E501
+            'status': (JobStatus,),  # noqa: E501
+            'code': (str,),  # noqa: E501
+            'language': (str, none_type,),  # noqa: E501
+            'employment_terms': (str, none_type,),  # noqa: E501
+            'experience': (str,),  # noqa: E501
+            'location': (str, none_type,),  # noqa: E501
+            'remote': (bool, none_type,),  # noqa: E501
+            'requisition_id': (str,),  # noqa: E501
+            'department': (Department,),  # noqa: E501
+            'branch': (Branch,),  # noqa: E501
+            'recruiters': ([str], none_type,),  # noqa: E501
+            'hiring_managers': ([str],),  # noqa: E501
+            'followers': ([str], none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'description_html': (str, none_type,),  # noqa: E501
+            'blocks': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'closing': (str, none_type,),  # noqa: E501
+            'closing_html': (str, none_type,),  # noqa: E501
+            'closing_date': (date, none_type,),  # noqa: E501
+            'salary': (JobSalary,),  # noqa: E501
+            'url': (str, none_type,),  # noqa: E501
+            'job_portal_url': (str, none_type,),  # noqa: E501
+            'record_url': (str, none_type,),  # noqa: E501
+            'links': ([JobLinks],),  # noqa: E501
+            'confidential': (bool,),  # noqa: E501
+            'available_to_employees': (bool,),  # noqa: E501
+            'tags': (Tags,),  # noqa: E501
+            'addresses': ([Address],),  # noqa: E501
+            'custom_fields': ([CustomField],),  # noqa: E501
+            'deleted': (bool, none_type,),  # noqa: E501
+            'owner_id': (str,),  # noqa: E501
+            'published_at': (datetime,),  # noqa: E501
+            'updated_by': (str, none_type,),  # noqa: E501
+            'created_by': (str, none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_at': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -118,22 +164,55 @@ class Job(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
-        'employee_id': 'employee_id',  # noqa: E501
+        'slug': 'slug',  # noqa: E501
         'title': 'title',  # noqa: E501
-        'role': 'role',  # noqa: E501
-        'start_date': 'start_date',  # noqa: E501
-        'end_date': 'end_date',  # noqa: E501
-        'compensation_rate': 'compensation_rate',  # noqa: E501
-        'currency': 'currency',  # noqa: E501
-        'payment_unit': 'payment_unit',  # noqa: E501
-        'hired_at': 'hired_at',  # noqa: E501
-        'is_primary': 'is_primary',  # noqa: E501
+        'sequence': 'sequence',  # noqa: E501
+        'visibility': 'visibility',  # noqa: E501
+        'status': 'status',  # noqa: E501
+        'code': 'code',  # noqa: E501
+        'language': 'language',  # noqa: E501
+        'employment_terms': 'employment_terms',  # noqa: E501
+        'experience': 'experience',  # noqa: E501
         'location': 'location',  # noqa: E501
+        'remote': 'remote',  # noqa: E501
+        'requisition_id': 'requisition_id',  # noqa: E501
+        'department': 'department',  # noqa: E501
+        'branch': 'branch',  # noqa: E501
+        'recruiters': 'recruiters',  # noqa: E501
+        'hiring_managers': 'hiring_managers',  # noqa: E501
+        'followers': 'followers',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'description_html': 'description_html',  # noqa: E501
+        'blocks': 'blocks',  # noqa: E501
+        'closing': 'closing',  # noqa: E501
+        'closing_html': 'closing_html',  # noqa: E501
+        'closing_date': 'closing_date',  # noqa: E501
+        'salary': 'salary',  # noqa: E501
+        'url': 'url',  # noqa: E501
+        'job_portal_url': 'job_portal_url',  # noqa: E501
+        'record_url': 'record_url',  # noqa: E501
+        'links': 'links',  # noqa: E501
+        'confidential': 'confidential',  # noqa: E501
+        'available_to_employees': 'available_to_employees',  # noqa: E501
+        'tags': 'tags',  # noqa: E501
+        'addresses': 'addresses',  # noqa: E501
+        'custom_fields': 'custom_fields',  # noqa: E501
+        'deleted': 'deleted',  # noqa: E501
+        'owner_id': 'owner_id',  # noqa: E501
+        'published_at': 'published_at',  # noqa: E501
+        'updated_by': 'updated_by',  # noqa: E501
+        'created_by': 'created_by',  # noqa: E501
+        'updated_at': 'updated_at',  # noqa: E501
+        'created_at': 'created_at',  # noqa: E501
     }
 
     read_only_vars = {
         'id',  # noqa: E501
-        'employee_id',  # noqa: E501
+        'published_at',  # noqa: E501
+        'updated_by',  # noqa: E501
+        'created_by',  # noqa: E501
+        'updated_at',  # noqa: E501
+        'created_at',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -175,17 +254,46 @@ class Job(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            slug (str, none_type): [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
-            role (str, none_type): The position and responsibilities of the person within the organization.. [optional]  # noqa: E501
-            start_date (date, none_type): The date on which the employee starts working in their current job role.. [optional]  # noqa: E501
-            end_date (date, none_type): The date on which the employee leaves or is expected to leave their current job role.. [optional]  # noqa: E501
-            compensation_rate (float): The rate of pay for the employee in their current job role.. [optional]  # noqa: E501
-            currency (Currency): [optional]  # noqa: E501
-            payment_unit (PaymentUnit): [optional]  # noqa: E501
-            hired_at (date, none_type): The date on which the employee was hired by the organization. [optional]  # noqa: E501
-            is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
-            location (Address): [optional]  # noqa: E501
+            sequence (int): Sequence in relation to other jobs.. [optional]  # noqa: E501
+            visibility (str): The visibility of the job. [optional]  # noqa: E501
+            status (JobStatus): [optional]  # noqa: E501
+            code (str): The code of the job.. [optional]  # noqa: E501
+            language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
+            employment_terms (str, none_type): [optional]  # noqa: E501
+            experience (str): Level of experience required for the job role.. [optional]  # noqa: E501
+            location (str, none_type): Specifies the location for the job posting.. [optional]  # noqa: E501
+            remote (bool, none_type): Specifies whether the posting is for a remote job.. [optional]  # noqa: E501
+            requisition_id (str): A job's Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company's internal processes.. [optional]  # noqa: E501
+            department (Department): [optional]  # noqa: E501
+            branch (Branch): [optional]  # noqa: E501
+            recruiters ([str], none_type): The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant. [optional]  # noqa: E501
+            hiring_managers ([str]): [optional]  # noqa: E501
+            followers ([str], none_type): [optional]  # noqa: E501
+            description (str, none_type): A description of the object.. [optional]  # noqa: E501
+            description_html (str, none_type): The job description in HTML format. [optional]  # noqa: E501
+            blocks ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            closing (str, none_type): [optional]  # noqa: E501
+            closing_html (str, none_type): The closing section of the job description in HTML format. [optional]  # noqa: E501
+            closing_date (date, none_type): [optional]  # noqa: E501
+            salary (JobSalary): [optional]  # noqa: E501
+            url (str, none_type): URL of the job description. [optional]  # noqa: E501
+            job_portal_url (str, none_type): URL of the job portal. [optional]  # noqa: E501
+            record_url (str, none_type): [optional]  # noqa: E501
+            links ([JobLinks]): [optional]  # noqa: E501
+            confidential (bool): [optional]  # noqa: E501
+            available_to_employees (bool): Specifies whether an employee of the organization can apply for the job.. [optional]  # noqa: E501
+            tags (Tags): [optional]  # noqa: E501
+            addresses ([Address]): [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
+            deleted (bool, none_type): [optional]  # noqa: E501
+            owner_id (str): [optional]  # noqa: E501
+            published_at (datetime): [optional]  # noqa: E501
+            updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
+            created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
+            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -268,17 +376,46 @@ class Job(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            slug (str, none_type): [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
-            role (str, none_type): The position and responsibilities of the person within the organization.. [optional]  # noqa: E501
-            start_date (date, none_type): The date on which the employee starts working in their current job role.. [optional]  # noqa: E501
-            end_date (date, none_type): The date on which the employee leaves or is expected to leave their current job role.. [optional]  # noqa: E501
-            compensation_rate (float): The rate of pay for the employee in their current job role.. [optional]  # noqa: E501
-            currency (Currency): [optional]  # noqa: E501
-            payment_unit (PaymentUnit): [optional]  # noqa: E501
-            hired_at (date, none_type): The date on which the employee was hired by the organization. [optional]  # noqa: E501
-            is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
-            location (Address): [optional]  # noqa: E501
+            sequence (int): Sequence in relation to other jobs.. [optional]  # noqa: E501
+            visibility (str): The visibility of the job. [optional]  # noqa: E501
+            status (JobStatus): [optional]  # noqa: E501
+            code (str): The code of the job.. [optional]  # noqa: E501
+            language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
+            employment_terms (str, none_type): [optional]  # noqa: E501
+            experience (str): Level of experience required for the job role.. [optional]  # noqa: E501
+            location (str, none_type): Specifies the location for the job posting.. [optional]  # noqa: E501
+            remote (bool, none_type): Specifies whether the posting is for a remote job.. [optional]  # noqa: E501
+            requisition_id (str): A job's Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company's internal processes.. [optional]  # noqa: E501
+            department (Department): [optional]  # noqa: E501
+            branch (Branch): [optional]  # noqa: E501
+            recruiters ([str], none_type): The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant. [optional]  # noqa: E501
+            hiring_managers ([str]): [optional]  # noqa: E501
+            followers ([str], none_type): [optional]  # noqa: E501
+            description (str, none_type): A description of the object.. [optional]  # noqa: E501
+            description_html (str, none_type): The job description in HTML format. [optional]  # noqa: E501
+            blocks ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            closing (str, none_type): [optional]  # noqa: E501
+            closing_html (str, none_type): The closing section of the job description in HTML format. [optional]  # noqa: E501
+            closing_date (date, none_type): [optional]  # noqa: E501
+            salary (JobSalary): [optional]  # noqa: E501
+            url (str, none_type): URL of the job description. [optional]  # noqa: E501
+            job_portal_url (str, none_type): URL of the job portal. [optional]  # noqa: E501
+            record_url (str, none_type): [optional]  # noqa: E501
+            links ([JobLinks]): [optional]  # noqa: E501
+            confidential (bool): [optional]  # noqa: E501
+            available_to_employees (bool): Specifies whether an employee of the organization can apply for the job.. [optional]  # noqa: E501
+            tags (Tags): [optional]  # noqa: E501
+            addresses ([Address]): [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
+            deleted (bool, none_type): [optional]  # noqa: E501
+            owner_id (str): [optional]  # noqa: E501
+            published_at (datetime): [optional]  # noqa: E501
+            updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
+            created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
+            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

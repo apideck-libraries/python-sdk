@@ -92,6 +92,7 @@ from apideck.model.contact import Contact
 from apideck.model.contacts_filter import ContactsFilter
 from apideck.model.contacts_sort import ContactsSort
 from apideck.model.copy_folder_request import CopyFolderRequest
+from apideck.model.country import Country
 from apideck.model.create_activity_response import CreateActivityResponse
 from apideck.model.create_applicant_response import CreateApplicantResponse
 from apideck.model.create_application_response import CreateApplicationResponse
@@ -229,13 +230,13 @@ from apideck.model.ecommerce_product_variants import EcommerceProductVariants
 from apideck.model.ecommerce_store import EcommerceStore
 from apideck.model.email import Email
 from apideck.model.employee import Employee
-from apideck.model.employee_bank_accounts import EmployeeBankAccounts
+from apideck.model.employee_compensation import EmployeeCompensation
 from apideck.model.employee_employment_role import EmployeeEmploymentRole
+from apideck.model.employee_job import EmployeeJob
 from apideck.model.employee_manager import EmployeeManager
 from apideck.model.employee_payroll import EmployeePayroll
 from apideck.model.employee_payrolls import EmployeePayrolls
 from apideck.model.employee_schedules import EmployeeSchedules
-from apideck.model.employee_team import EmployeeTeam
 from apideck.model.employees_filter import EmployeesFilter
 from apideck.model.employees_sort import EmployeesSort
 from apideck.model.employment_status import EmploymentStatus
@@ -464,6 +465,7 @@ from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
 from apideck.model.payment_allocations import PaymentAllocations
 from apideck.model.payment_card import PaymentCard
+from apideck.model.payment_frequency import PaymentFrequency
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payment_unit import PaymentUnit
 from apideck.model.payments_filter import PaymentsFilter
@@ -520,6 +522,7 @@ from apideck.model.tags import Tags
 from apideck.model.tax import Tax
 from apideck.model.tax_rate import TaxRate
 from apideck.model.tax_rates_filter import TaxRatesFilter
+from apideck.model.team import Team
 from apideck.model.tender import Tender
 from apideck.model.ticket import Ticket
 from apideck.model.tickets_sort import TicketsSort
@@ -597,6 +600,7 @@ from apideck.model.vault_event_type import VaultEventType
 from apideck.model.virtual_webhooks import VirtualWebhooks
 from apideck.model.wallet_details import WalletDetails
 from apideck.model.webhook import Webhook
+from apideck.model.webhook_event import WebhookEvent
 from apideck.model.webhook_event_log import WebhookEventLog
 from apideck.model.webhook_event_log_attempts import WebhookEventLogAttempts
 from apideck.model.webhook_event_log_service import WebhookEventLogService
