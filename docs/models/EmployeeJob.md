@@ -1,4 +1,4 @@
-# EmployeeJobs
+# EmployeeJob
 
 
 ## Properties

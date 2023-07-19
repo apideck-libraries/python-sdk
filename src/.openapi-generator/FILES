@@ -114,6 +114,7 @@ apideck/model/contact.py
 apideck/model/contacts_filter.py
 apideck/model/contacts_sort.py
 apideck/model/copy_folder_request.py
+apideck/model/country.py
 apideck/model/create_activity_response.py
 apideck/model/create_applicant_response.py
 apideck/model/create_application_response.py
@@ -251,14 +252,13 @@ apideck/model/ecommerce_product_variants.py
 apideck/model/ecommerce_store.py
 apideck/model/email.py
 apideck/model/employee.py
-apideck/model/employee_compensations.py
+apideck/model/employee_compensation.py
 apideck/model/employee_employment_role.py
-apideck/model/employee_jobs.py
+apideck/model/employee_job.py
 apideck/model/employee_manager.py
 apideck/model/employee_payroll.py
 apideck/model/employee_payrolls.py
 apideck/model/employee_schedules.py
-apideck/model/employee_team.py
 apideck/model/employees_filter.py
 apideck/model/employees_sort.py
 apideck/model/employment_status.py
@@ -487,6 +487,7 @@ apideck/model/pass_through_query.py
 apideck/model/payment.py
 apideck/model/payment_allocations.py
 apideck/model/payment_card.py
+apideck/model/payment_frequency.py
 apideck/model/payment_required_response.py
 apideck/model/payment_unit.py
 apideck/model/payments_filter.py
@@ -543,6 +544,7 @@ apideck/model/tags.py
 apideck/model/tax.py
 apideck/model/tax_rate.py
 apideck/model/tax_rates_filter.py
+apideck/model/team.py
 apideck/model/tender.py
 apideck/model/ticket.py
 apideck/model/tickets_sort.py
@@ -556,6 +558,7 @@ apideck/model/unauthorized_response.py
 apideck/model/unexpected_error_response.py
 apideck/model/unified_api_id.py
 apideck/model/unified_file.py
+apideck/model/unified_file_permissions.py
 apideck/model/unified_id.py
 apideck/model/unprocessable_response.py
 apideck/model/update_activity_response.py
@@ -619,6 +622,7 @@ apideck/model/vault_event_type.py
 apideck/model/virtual_webhooks.py
 apideck/model/wallet_details.py
 apideck/model/webhook.py
+apideck/model/webhook_event.py
 apideck/model/webhook_event_log.py
 apideck/model/webhook_event_log_attempts.py
 apideck/model/webhook_event_log_service.py
@@ -717,6 +721,7 @@ docs/Contact.md
 docs/ContactsFilter.md
 docs/ContactsSort.md
 docs/CopyFolderRequest.md
+docs/Country.md
 docs/CreateActivityResponse.md
 docs/CreateApplicantResponse.md
 docs/CreateApplicationResponse.md
@@ -856,14 +861,13 @@ docs/EcommerceProductVariants.md
 docs/EcommerceStore.md
 docs/Email.md
 docs/Employee.md
-docs/EmployeeCompensations.md
+docs/EmployeeCompensation.md
 docs/EmployeeEmploymentRole.md
-docs/EmployeeJobs.md
+docs/EmployeeJob.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
 docs/EmployeeSchedules.md
-docs/EmployeeTeam.md
 docs/EmployeesFilter.md
 docs/EmployeesSort.md
 docs/EmploymentStatus.md
@@ -1096,6 +1100,7 @@ docs/PassThroughQuery.md
 docs/Payment.md
 docs/PaymentAllocations.md
 docs/PaymentCard.md
+docs/PaymentFrequency.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
 docs/PaymentsFilter.md
@@ -1154,6 +1159,7 @@ docs/Tags.md
 docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
+docs/Team.md
 docs/Tender.md
 docs/Ticket.md
 docs/TicketsSort.md
@@ -1167,6 +1173,7 @@ docs/UnauthorizedResponse.md
 docs/UnexpectedErrorResponse.md
 docs/UnifiedApiId.md
 docs/UnifiedFile.md
+docs/UnifiedFilePermissions.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
@@ -1232,6 +1239,7 @@ docs/VirtualWebhooks.md
 docs/WalletDetails.md
 docs/Webhook.md
 docs/WebhookApi.md
+docs/WebhookEvent.md
 docs/WebhookEventLog.md
 docs/WebhookEventLogAttempts.md
 docs/WebhookEventLogService.md
@@ -1333,6 +1341,7 @@ test/test_contact.py
 test/test_contacts_filter.py
 test/test_contacts_sort.py
 test/test_copy_folder_request.py
+test/test_country.py
 test/test_create_activity_response.py
 test/test_create_applicant_response.py
 test/test_create_application_response.py
@@ -1472,14 +1481,13 @@ test/test_ecommerce_product_variants.py
 test/test_ecommerce_store.py
 test/test_email.py
 test/test_employee.py
-test/test_employee_compensations.py
+test/test_employee_compensation.py
 test/test_employee_employment_role.py
-test/test_employee_jobs.py
+test/test_employee_job.py
 test/test_employee_manager.py
 test/test_employee_payroll.py
 test/test_employee_payrolls.py
 test/test_employee_schedules.py
-test/test_employee_team.py
 test/test_employees_filter.py
 test/test_employees_sort.py
 test/test_employment_status.py
@@ -1712,6 +1720,7 @@ test/test_pass_through_query.py
 test/test_payment.py
 test/test_payment_allocations.py
 test/test_payment_card.py
+test/test_payment_frequency.py
 test/test_payment_required_response.py
 test/test_payment_unit.py
 test/test_payments_filter.py
@@ -1770,6 +1779,7 @@ test/test_tags.py
 test/test_tax.py
 test/test_tax_rate.py
 test/test_tax_rates_filter.py
+test/test_team.py
 test/test_tender.py
 test/test_ticket.py
 test/test_tickets_sort.py
@@ -1783,6 +1793,7 @@ test/test_unauthorized_response.py
 test/test_unexpected_error_response.py
 test/test_unified_api_id.py
 test/test_unified_file.py
+test/test_unified_file_permissions.py
 test/test_unified_id.py
 test/test_unprocessable_response.py
 test/test_update_activity_response.py
@@ -1848,6 +1859,7 @@ test/test_virtual_webhooks.py
 test/test_wallet_details.py
 test/test_webhook.py
 test/test_webhook_api.py
+test/test_webhook_event.py
 test/test_webhook_event_log.py
 test/test_webhook_event_log_attempts.py
 test/test_webhook_event_log_service.py
