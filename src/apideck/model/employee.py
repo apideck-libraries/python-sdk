@@ -329,7 +329,7 @@ class Employee(ModelNormal):
             employment_status (EmploymentStatus): [optional]  # noqa: E501
             employment_role (EmployeeEmploymentRole): [optional]  # noqa: E501
             manager (EmployeeManager): [optional]  # noqa: E501
-            direct_reports ([str], none_type): The direct reports refer to the individuals who report directly to a person in the organizational hierarchy.. [optional]  # noqa: E501
+            direct_reports ([str], none_type): Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee.. [optional]  # noqa: E501
             social_security_number (str, none_type): A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions.. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
             deceased_on (date, none_type): The date the person deceased.. [optional]  # noqa: E501
@@ -473,7 +473,7 @@ class Employee(ModelNormal):
             employment_status (EmploymentStatus): [optional]  # noqa: E501
             employment_role (EmployeeEmploymentRole): [optional]  # noqa: E501
             manager (EmployeeManager): [optional]  # noqa: E501
-            direct_reports ([str], none_type): The direct reports refer to the individuals who report directly to a person in the organizational hierarchy.. [optional]  # noqa: E501
+            direct_reports ([str], none_type): Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee.. [optional]  # noqa: E501
             social_security_number (str, none_type): A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions.. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
             deceased_on (date, none_type): The date the person deceased.. [optional]  # noqa: E501
