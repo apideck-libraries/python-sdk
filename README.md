@@ -582,6 +582,8 @@ _FileStorageApi_ | [**files_delete**](docs/apis/FileStorageApi.md#files_delete) 
 
 _FileStorageApi_ | [**files_download**](docs/apis/FileStorageApi.md#files_download) | **GET** /file-storage/files/{id}/download | Download File |
 
+_FileStorageApi_ | [**files_export**](docs/apis/FileStorageApi.md#files_export) | **GET** /file-storage/files/{id}/export | Export File |
+
 _FileStorageApi_ | [**files_one**](docs/apis/FileStorageApi.md#files_one) | **GET** /file-storage/files/{id} | Get File |
 
 _FileStorageApi_ | [**files_search**](docs/apis/FileStorageApi.md#files_search) | **POST** /file-storage/files/search | Search Files |
