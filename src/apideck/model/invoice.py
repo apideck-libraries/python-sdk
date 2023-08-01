@@ -35,11 +35,13 @@ def lazy_import():
     from apideck.model.currency import Currency
     from apideck.model.invoice_line_item import InvoiceLineItem
     from apideck.model.linked_customer import LinkedCustomer
+    from apideck.model.linked_ledger_account import LinkedLedgerAccount
     globals()['Address'] = Address
     globals()['BankAccount'] = BankAccount
     globals()['Currency'] = Currency
     globals()['InvoiceLineItem'] = InvoiceLineItem
     globals()['LinkedCustomer'] = LinkedCustomer
+    globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
 
 
 class Invoice(ModelNormal):
@@ -142,6 +144,7 @@ class Invoice(ModelNormal):
             'language': (str, none_type,),  # noqa: E501
             'accounting_by_row': (bool, none_type,),  # noqa: E501
             'bank_account': (BankAccount,),  # noqa: E501
+            'ledger_account': (LinkedLedgerAccount,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -189,6 +192,7 @@ class Invoice(ModelNormal):
         'language': 'language',  # noqa: E501
         'accounting_by_row': 'accounting_by_row',  # noqa: E501
         'bank_account': 'bank_account',  # noqa: E501
+        'ledger_account': 'ledger_account',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -277,6 +281,7 @@ class Invoice(ModelNormal):
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
+            ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -397,6 +402,7 @@ class Invoice(ModelNormal):
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
+            ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

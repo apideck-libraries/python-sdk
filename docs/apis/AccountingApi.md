@@ -3258,6 +3258,11 @@ with apideck.ApiClient(configuration) as api_client:
             bank_code="BNH",
             currency=Currency("USD"),
         ),
+        ledger_account=LinkedLedgerAccount(
+            id="123456",
+            nominal_code="N091",
+            code="453",
+        ),
         row_version="1-12345",
     ) # Invoice | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -3826,6 +3831,11 @@ with apideck.ApiClient(configuration) as api_client:
             branch_identifier="001",
             bank_code="BNH",
             currency=Currency("USD"),
+        ),
+        ledger_account=LinkedLedgerAccount(
+            id="123456",
+            nominal_code="N091",
+            code="453",
         ),
         row_version="1-12345",
     ) # Invoice | 
