@@ -17,11 +17,13 @@ from apideck.model.bank_account import BankAccount
 from apideck.model.currency import Currency
 from apideck.model.invoice_line_item import InvoiceLineItem
 from apideck.model.linked_customer import LinkedCustomer
+from apideck.model.linked_ledger_account import LinkedLedgerAccount
 globals()['Address'] = Address
 globals()['BankAccount'] = BankAccount
 globals()['Currency'] = Currency
 globals()['InvoiceLineItem'] = InvoiceLineItem
 globals()['LinkedCustomer'] = LinkedCustomer
+globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
 from apideck.model.invoice import Invoice
 
 
