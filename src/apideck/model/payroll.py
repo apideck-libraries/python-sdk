@@ -103,10 +103,10 @@ class Payroll(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'processed': (bool,),  # noqa: E501
-            'check_date': (str,),  # noqa: E501
-            'start_date': (str,),  # noqa: E501
-            'end_date': (str,),  # noqa: E501
+            'processed': (bool, none_type,),  # noqa: E501
+            'check_date': (str, none_type,),  # noqa: E501
+            'start_date': (str, none_type,),  # noqa: E501
+            'end_date': (str, none_type,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
             'processed_date': (str, none_type,),  # noqa: E501
             'totals': (PayrollTotals,),  # noqa: E501
@@ -143,10 +143,10 @@ class Payroll(ModelNormal):
 
         Args:
             id (str): A unique identifier for an object.
-            processed (bool): Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
-            check_date (str): The date on which employees will be paid for the payroll.
-            start_date (str): The start date, inclusive, of the pay period.
-            end_date (str): The end date, inclusive, of the pay period.
+            processed (bool, none_type): Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
+            check_date (str, none_type): The date on which employees will be paid for the payroll.
+            start_date (str, none_type): The start date, inclusive, of the pay period.
+            end_date (str, none_type): The end date, inclusive, of the pay period.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -238,10 +238,10 @@ class Payroll(ModelNormal):
     def __init__(self, processed, check_date, start_date, end_date, *args, **kwargs):  # noqa: E501
         """Payroll - a model defined in OpenAPI
 
-            processed (bool): Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
-            check_date (str): The date on which employees will be paid for the payroll.
-            start_date (str): The start date, inclusive, of the pay period.
-            end_date (str): The end date, inclusive, of the pay period.
+            processed (bool, none_type): Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
+            check_date (str, none_type): The date on which employees will be paid for the payroll.
+            start_date (str, none_type): The start date, inclusive, of the pay period.
+            end_date (str, none_type): The end date, inclusive, of the pay period.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

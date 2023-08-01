@@ -81,15 +81,15 @@ class PayrollTotals(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'company_debit': (float,),  # noqa: E501
-            'tax_debit': (float,),  # noqa: E501
-            'check_amount': (float,),  # noqa: E501
-            'net_pay': (float,),  # noqa: E501
+            'company_debit': (float, none_type,),  # noqa: E501
+            'tax_debit': (float, none_type,),  # noqa: E501
+            'check_amount': (float, none_type,),  # noqa: E501
+            'net_pay': (float, none_type,),  # noqa: E501
             'gross_pay': (float,),  # noqa: E501
-            'employer_taxes': (float,),  # noqa: E501
-            'employee_taxes': (float,),  # noqa: E501
-            'employer_benefit_contributions': (float,),  # noqa: E501
-            'employee_benefit_deductions': (float,),  # noqa: E501
+            'employer_taxes': (float, none_type,),  # noqa: E501
+            'employee_taxes': (float, none_type,),  # noqa: E501
+            'employer_benefit_contributions': (float, none_type,),  # noqa: E501
+            'employee_benefit_deductions': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -150,15 +150,15 @@ class PayrollTotals(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            company_debit (float): The total company debit for the payroll.. [optional]  # noqa: E501
-            tax_debit (float): The total tax debit for the payroll.. [optional]  # noqa: E501
-            check_amount (float): The total check amount for the payroll.. [optional]  # noqa: E501
-            net_pay (float): The net pay amount for the payroll.. [optional]  # noqa: E501
+            company_debit (float, none_type): The total company debit for the payroll.. [optional]  # noqa: E501
+            tax_debit (float, none_type): The total tax debit for the payroll.. [optional]  # noqa: E501
+            check_amount (float, none_type): The total check amount for the payroll.. [optional]  # noqa: E501
+            net_pay (float, none_type): The net pay amount for the payroll.. [optional]  # noqa: E501
             gross_pay (float): The gross pay amount for the payroll.. [optional]  # noqa: E501
-            employer_taxes (float): The total amount of employer paid taxes for the payroll.. [optional]  # noqa: E501
-            employee_taxes (float): The total amount of employee paid taxes for the payroll.. [optional]  # noqa: E501
-            employer_benefit_contributions (float): The total amount of company contributed benefits for the payroll.. [optional]  # noqa: E501
-            employee_benefit_deductions (float): The total amount of employee deducted benefits for the payroll.. [optional]  # noqa: E501
+            employer_taxes (float, none_type): The total amount of employer paid taxes for the payroll.. [optional]  # noqa: E501
+            employee_taxes (float, none_type): The total amount of employee paid taxes for the payroll.. [optional]  # noqa: E501
+            employer_benefit_contributions (float, none_type): The total amount of company contributed benefits for the payroll.. [optional]  # noqa: E501
+            employee_benefit_deductions (float, none_type): The total amount of employee deducted benefits for the payroll.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -240,15 +240,15 @@ class PayrollTotals(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            company_debit (float): The total company debit for the payroll.. [optional]  # noqa: E501
-            tax_debit (float): The total tax debit for the payroll.. [optional]  # noqa: E501
-            check_amount (float): The total check amount for the payroll.. [optional]  # noqa: E501
-            net_pay (float): The net pay amount for the payroll.. [optional]  # noqa: E501
+            company_debit (float, none_type): The total company debit for the payroll.. [optional]  # noqa: E501
+            tax_debit (float, none_type): The total tax debit for the payroll.. [optional]  # noqa: E501
+            check_amount (float, none_type): The total check amount for the payroll.. [optional]  # noqa: E501
+            net_pay (float, none_type): The net pay amount for the payroll.. [optional]  # noqa: E501
             gross_pay (float): The gross pay amount for the payroll.. [optional]  # noqa: E501
-            employer_taxes (float): The total amount of employer paid taxes for the payroll.. [optional]  # noqa: E501
-            employee_taxes (float): The total amount of employee paid taxes for the payroll.. [optional]  # noqa: E501
-            employer_benefit_contributions (float): The total amount of company contributed benefits for the payroll.. [optional]  # noqa: E501
-            employee_benefit_deductions (float): The total amount of employee deducted benefits for the payroll.. [optional]  # noqa: E501
+            employer_taxes (float, none_type): The total amount of employer paid taxes for the payroll.. [optional]  # noqa: E501
+            employee_taxes (float, none_type): The total amount of employee paid taxes for the payroll.. [optional]  # noqa: E501
+            employer_benefit_contributions (float, none_type): The total amount of company contributed benefits for the payroll.. [optional]  # noqa: E501
+            employee_benefit_deductions (float, none_type): The total amount of employee deducted benefits for the payroll.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

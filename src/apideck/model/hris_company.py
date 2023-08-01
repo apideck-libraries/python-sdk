@@ -104,17 +104,17 @@ class HrisCompany(ModelNormal):
         """
         lazy_import()
         return {
-            'legal_name': (str,),  # noqa: E501
+            'legal_name': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
-            'display_name': (str,),  # noqa: E501
-            'subdomain': (str,),  # noqa: E501
+            'display_name': (str, none_type,),  # noqa: E501
+            'subdomain': (str, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'company_number': (str, none_type,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
             'emails': ([Email],),  # noqa: E501
             'websites': ([Website],),  # noqa: E501
-            'debtor_id': (str,),  # noqa: E501
+            'debtor_id': (str, none_type,),  # noqa: E501
             'deleted': (bool,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -163,7 +163,7 @@ class HrisCompany(ModelNormal):
         """HrisCompany - a model defined in OpenAPI
 
         Args:
-            legal_name (str):
+            legal_name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -197,15 +197,15 @@ class HrisCompany(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            display_name (str): [optional]  # noqa: E501
-            subdomain (str): [optional]  # noqa: E501
+            display_name (str, none_type): [optional]  # noqa: E501
+            subdomain (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             company_number (str, none_type): An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
-            debtor_id (str): [optional]  # noqa: E501
+            debtor_id (str, none_type): [optional]  # noqa: E501
             deleted (bool): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -263,7 +263,7 @@ class HrisCompany(ModelNormal):
         """HrisCompany - a model defined in OpenAPI
 
         Args:
-            legal_name (str):
+            legal_name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -297,15 +297,15 @@ class HrisCompany(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            display_name (str): [optional]  # noqa: E501
-            subdomain (str): [optional]  # noqa: E501
+            display_name (str, none_type): [optional]  # noqa: E501
+            subdomain (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             company_number (str, none_type): An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
-            debtor_id (str): [optional]  # noqa: E501
+            debtor_id (str, none_type): [optional]  # noqa: E501
             deleted (bool): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

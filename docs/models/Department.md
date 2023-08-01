@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**parent_id** | **str** | Parent ID | [optional] [readonly] 
+**parent_id** | **str, none_type** | Parent ID | [optional] [readonly] 
 **name** | **str, none_type** | Department name | [optional] 
 **code** | **str, none_type** |  | [optional] 
 **description** | **str, none_type** |  | [optional] 

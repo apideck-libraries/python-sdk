@@ -90,7 +90,7 @@ class HrisJob(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'employee_id': (str,),  # noqa: E501
+            'employee_id': (str, none_type,),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
             'start_date': (date, none_type,),  # noqa: E501
             'end_date': (date, none_type,),  # noqa: E501
@@ -160,7 +160,7 @@ class HrisJob(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): Id of the employee. [optional]  # noqa: E501
+            employee_id (str, none_type): Id of the employee. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
             start_date (date, none_type): [optional]  # noqa: E501
             end_date (date, none_type): [optional]  # noqa: E501
@@ -250,7 +250,7 @@ class HrisJob(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): Id of the employee. [optional]  # noqa: E501
+            employee_id (str, none_type): Id of the employee. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
             start_date (date, none_type): [optional]  # noqa: E501
             end_date (date, none_type): [optional]  # noqa: E501

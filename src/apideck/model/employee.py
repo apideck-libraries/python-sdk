@@ -161,8 +161,8 @@ class Employee(ModelNormal):
             'source': (str, none_type,),  # noqa: E501
             'source_id': (str, none_type,),  # noqa: E501
             'record_url': (str, none_type,),  # noqa: E501
-            'jobs': ([EmployeeJob],),  # noqa: E501
-            'compensations': ([EmployeeCompensation],),  # noqa: E501
+            'jobs': ([EmployeeJob], none_type,),  # noqa: E501
+            'compensations': ([EmployeeCompensation], none_type,),  # noqa: E501
             'works_remote': (bool, none_type,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
@@ -345,8 +345,8 @@ class Employee(ModelNormal):
             source (str, none_type): When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.. [optional]  # noqa: E501
             source_id (str, none_type): Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).. [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
-            jobs ([EmployeeJob]): [optional]  # noqa: E501
-            compensations ([EmployeeCompensation]): [optional]  # noqa: E501
+            jobs ([EmployeeJob], none_type): [optional]  # noqa: E501
+            compensations ([EmployeeCompensation], none_type): [optional]  # noqa: E501
             works_remote (bool, none_type): Indicates if the employee works from a remote location.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
@@ -489,8 +489,8 @@ class Employee(ModelNormal):
             source (str, none_type): When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from.. [optional]  # noqa: E501
             source_id (str, none_type): Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS).. [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
-            jobs ([EmployeeJob]): [optional]  # noqa: E501
-            compensations ([EmployeeCompensation]): [optional]  # noqa: E501
+            jobs ([EmployeeJob], none_type): [optional]  # noqa: E501
+            compensations ([EmployeeCompensation], none_type): [optional]  # noqa: E501
             works_remote (bool, none_type): Indicates if the employee works from a remote location.. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
