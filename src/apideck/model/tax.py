@@ -81,9 +81,9 @@ class Tax(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
-            'employer': (bool,),  # noqa: E501
-            'amount': (float,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'employer': (bool, none_type,),  # noqa: E501
+            'amount': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,9 +138,9 @@ class Tax(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the tax.. [optional]  # noqa: E501
-            employer (bool): Paid by employer.. [optional]  # noqa: E501
-            amount (float): The amount of the tax.. [optional]  # noqa: E501
+            name (str, none_type): The name of the tax.. [optional]  # noqa: E501
+            employer (bool, none_type): Paid by employer.. [optional]  # noqa: E501
+            amount (float, none_type): The amount of the tax.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,9 +222,9 @@ class Tax(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the tax.. [optional]  # noqa: E501
-            employer (bool): Paid by employer.. [optional]  # noqa: E501
-            amount (float): The amount of the tax.. [optional]  # noqa: E501
+            name (str, none_type): The name of the tax.. [optional]  # noqa: E501
+            employer (bool, none_type): Paid by employer.. [optional]  # noqa: E501
+            amount (float, none_type): The amount of the tax.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

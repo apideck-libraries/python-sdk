@@ -64,6 +64,7 @@ class EmployeeCompensation(ModelNormal):
 
     allowed_values = {
         ('flsa_status',): {
+            'None': None,
             'EXEMPT': "exempt",
             'SALARIED-NONEXEMPT': "salaried-nonexempt",
             'NONEXEMPT': "nonexempt",
@@ -99,12 +100,12 @@ class EmployeeCompensation(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'job_id': (str,),  # noqa: E501
-            'rate': (float,),  # noqa: E501
+            'job_id': (str, none_type,),  # noqa: E501
+            'rate': (float, none_type,),  # noqa: E501
             'payment_unit': (PaymentUnit,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
-            'flsa_status': (str,),  # noqa: E501
-            'effective_date': (str,),  # noqa: E501
+            'flsa_status': (str, none_type,),  # noqa: E501
+            'effective_date': (str, none_type,),  # noqa: E501
             'payment_frequency': (PaymentFrequency,),  # noqa: E501
         }
 
@@ -168,12 +169,12 @@ class EmployeeCompensation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            job_id (str): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
-            rate (float): The amount paid per payment unit.. [optional]  # noqa: E501
+            job_id (str, none_type): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
+            rate (float, none_type): The amount paid per payment unit.. [optional]  # noqa: E501
             payment_unit (PaymentUnit): [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            flsa_status (str): The FLSA status for this compensation.. [optional]  # noqa: E501
-            effective_date (str): The date on which a change to an employee's compensation takes effect.. [optional]  # noqa: E501
+            flsa_status (str, none_type): The FLSA status for this compensation.. [optional]  # noqa: E501
+            effective_date (str, none_type): The date on which a change to an employee's compensation takes effect.. [optional]  # noqa: E501
             payment_frequency (PaymentFrequency): [optional]  # noqa: E501
         """
 
@@ -257,12 +258,12 @@ class EmployeeCompensation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            job_id (str): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
-            rate (float): The amount paid per payment unit.. [optional]  # noqa: E501
+            job_id (str, none_type): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
+            rate (float, none_type): The amount paid per payment unit.. [optional]  # noqa: E501
             payment_unit (PaymentUnit): [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            flsa_status (str): The FLSA status for this compensation.. [optional]  # noqa: E501
-            effective_date (str): The date on which a change to an employee's compensation takes effect.. [optional]  # noqa: E501
+            flsa_status (str, none_type): The FLSA status for this compensation.. [optional]  # noqa: E501
+            effective_date (str, none_type): The date on which a change to an employee's compensation takes effect.. [optional]  # noqa: E501
             payment_frequency (PaymentFrequency): [optional]  # noqa: E501
         """
 

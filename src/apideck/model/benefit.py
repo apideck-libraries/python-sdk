@@ -81,9 +81,9 @@ class Benefit(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
-            'employee_deduction': (float,),  # noqa: E501
-            'employer_contribution': (float,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'employee_deduction': (float, none_type,),  # noqa: E501
+            'employer_contribution': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,9 +138,9 @@ class Benefit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the benefit.. [optional]  # noqa: E501
-            employee_deduction (float): The amount deducted for benefit.. [optional]  # noqa: E501
-            employer_contribution (float): The amount of employer contribution.. [optional]  # noqa: E501
+            name (str, none_type): The name of the benefit.. [optional]  # noqa: E501
+            employee_deduction (float, none_type): The amount deducted for benefit.. [optional]  # noqa: E501
+            employer_contribution (float, none_type): The amount of employer contribution.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,9 +222,9 @@ class Benefit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the benefit.. [optional]  # noqa: E501
-            employee_deduction (float): The amount deducted for benefit.. [optional]  # noqa: E501
-            employer_contribution (float): The amount of employer contribution.. [optional]  # noqa: E501
+            name (str, none_type): The name of the benefit.. [optional]  # noqa: E501
+            employee_deduction (float, none_type): The amount deducted for benefit.. [optional]  # noqa: E501
+            employer_contribution (float, none_type): The amount of employer contribution.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

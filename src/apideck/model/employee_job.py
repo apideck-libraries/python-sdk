@@ -97,7 +97,7 @@ class EmployeeJob(ModelNormal):
             'role': (str, none_type,),  # noqa: E501
             'start_date': (date, none_type,),  # noqa: E501
             'end_date': (date, none_type,),  # noqa: E501
-            'compensation_rate': (float,),  # noqa: E501
+            'compensation_rate': (float, none_type,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
             'payment_unit': (PaymentUnit,),  # noqa: E501
             'hired_at': (date, none_type,),  # noqa: E501
@@ -174,7 +174,7 @@ class EmployeeJob(ModelNormal):
             role (str, none_type): The position and responsibilities of the person within the organization.. [optional]  # noqa: E501
             start_date (date, none_type): The date on which the employee starts working in their current job role.. [optional]  # noqa: E501
             end_date (date, none_type): The date on which the employee leaves or is expected to leave their current job role.. [optional]  # noqa: E501
-            compensation_rate (float): The rate of pay for the employee in their current job role.. [optional]  # noqa: E501
+            compensation_rate (float, none_type): The rate of pay for the employee in their current job role.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             payment_unit (PaymentUnit): [optional]  # noqa: E501
             hired_at (date, none_type): The date on which the employee was hired by the organization. [optional]  # noqa: E501
@@ -267,7 +267,7 @@ class EmployeeJob(ModelNormal):
             role (str, none_type): The position and responsibilities of the person within the organization.. [optional]  # noqa: E501
             start_date (date, none_type): The date on which the employee starts working in their current job role.. [optional]  # noqa: E501
             end_date (date, none_type): The date on which the employee leaves or is expected to leave their current job role.. [optional]  # noqa: E501
-            compensation_rate (float): The rate of pay for the employee in their current job role.. [optional]  # noqa: E501
+            compensation_rate (float, none_type): The rate of pay for the employee in their current job role.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             payment_unit (PaymentUnit): [optional]  # noqa: E501
             hired_at (date, none_type): The date on which the employee was hired by the organization. [optional]  # noqa: E501

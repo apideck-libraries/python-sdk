@@ -90,7 +90,7 @@ class HrisJobs(ModelNormal):
         lazy_import()
         return {
             'employee': (Employee,),  # noqa: E501
-            'jobs': ([HrisJob],),  # noqa: E501
+            'jobs': ([HrisJob], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -145,7 +145,7 @@ class HrisJobs(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             employee (Employee): [optional]  # noqa: E501
-            jobs ([HrisJob]): [optional]  # noqa: E501
+            jobs ([HrisJob], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,7 +228,7 @@ class HrisJobs(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             employee (Employee): [optional]  # noqa: E501
-            jobs ([HrisJob]): [optional]  # noqa: E501
+            jobs ([HrisJob], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

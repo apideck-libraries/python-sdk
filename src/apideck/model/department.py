@@ -76,7 +76,7 @@ class Department(ModelNormal):
         """
         return {
             'id': (str,),  # noqa: E501
-            'parent_id': (str,),  # noqa: E501
+            'parent_id': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'code': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
@@ -151,7 +151,7 @@ class Department(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            parent_id (str): Parent ID. [optional]  # noqa: E501
+            parent_id (str, none_type): Parent ID. [optional]  # noqa: E501
             name (str, none_type): Department name. [optional]  # noqa: E501
             code (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
@@ -241,7 +241,7 @@ class Department(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            parent_id (str): Parent ID. [optional]  # noqa: E501
+            parent_id (str, none_type): Parent ID. [optional]  # noqa: E501
             name (str, none_type): Department name. [optional]  # noqa: E501
             code (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501

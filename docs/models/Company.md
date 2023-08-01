@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **acn** | **str, none_type** | The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank. | [optional] 
 **first_name** | **str, none_type** | The first name of the person. | [optional] 
 **last_name** | **str, none_type** | The last name of the person. | [optional] 
-**parent_id** | **str** | Parent ID | [optional] [readonly] 
+**parent_id** | **str, none_type** | Parent ID | [optional] [readonly] 
 **bank_accounts** | [**[BankAccount]**](BankAccount.md) |  | [optional] 
 **websites** | [**[Website]**](Website.md) |  | [optional] 
 **addresses** | [**[Address]**](Address.md) |  | [optional] 

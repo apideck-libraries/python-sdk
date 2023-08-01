@@ -122,7 +122,7 @@ class Company(ModelNormal):
             'acn': (str, none_type,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
-            'parent_id': (str,),  # noqa: E501
+            'parent_id': (str, none_type,),  # noqa: E501
             'bank_accounts': ([BankAccount],),  # noqa: E501
             'websites': ([Website],),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
@@ -264,7 +264,7 @@ class Company(ModelNormal):
             acn (str, none_type): The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
-            parent_id (str): Parent ID. [optional]  # noqa: E501
+            parent_id (str, none_type): Parent ID. [optional]  # noqa: E501
             bank_accounts ([BankAccount]): [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
@@ -388,7 +388,7 @@ class Company(ModelNormal):
             acn (str, none_type): The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
-            parent_id (str): Parent ID. [optional]  # noqa: E501
+            parent_id (str, none_type): Parent ID. [optional]  # noqa: E501
             bank_accounts ([BankAccount]): [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501

@@ -85,11 +85,11 @@ class Compensation(ModelNormal):
         lazy_import()
         return {
             'employee_id': (str,),  # noqa: E501
-            'net_pay': (float,),  # noqa: E501
-            'gross_pay': (float,),  # noqa: E501
-            'taxes': ([Tax],),  # noqa: E501
-            'deductions': ([Deduction],),  # noqa: E501
-            'benefits': ([Benefit],),  # noqa: E501
+            'net_pay': (float, none_type,),  # noqa: E501
+            'gross_pay': (float, none_type,),  # noqa: E501
+            'taxes': ([Tax], none_type,),  # noqa: E501
+            'deductions': ([Deduction], none_type,),  # noqa: E501
+            'benefits': ([Benefit], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -151,11 +151,11 @@ class Compensation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            net_pay (float): The employee's net pay. Only available when payroll has been processed. [optional]  # noqa: E501
-            gross_pay (float): The employee's gross pay. Only available when payroll has been processed. [optional]  # noqa: E501
-            taxes ([Tax]): An array of employer and employee taxes for the pay period.. [optional]  # noqa: E501
-            deductions ([Deduction]): An array of employee deductions for the pay period.. [optional]  # noqa: E501
-            benefits ([Benefit]): An array of employee benefits for the pay period.. [optional]  # noqa: E501
+            net_pay (float, none_type): The employee's net pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            gross_pay (float, none_type): The employee's gross pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            taxes ([Tax], none_type): An array of employer and employee taxes for the pay period.. [optional]  # noqa: E501
+            deductions ([Deduction], none_type): An array of employee deductions for the pay period.. [optional]  # noqa: E501
+            benefits ([Benefit], none_type): An array of employee benefits for the pay period.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,11 +238,11 @@ class Compensation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            net_pay (float): The employee's net pay. Only available when payroll has been processed. [optional]  # noqa: E501
-            gross_pay (float): The employee's gross pay. Only available when payroll has been processed. [optional]  # noqa: E501
-            taxes ([Tax]): An array of employer and employee taxes for the pay period.. [optional]  # noqa: E501
-            deductions ([Deduction]): An array of employee deductions for the pay period.. [optional]  # noqa: E501
-            benefits ([Benefit]): An array of employee benefits for the pay period.. [optional]  # noqa: E501
+            net_pay (float, none_type): The employee's net pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            gross_pay (float, none_type): The employee's gross pay. Only available when payroll has been processed. [optional]  # noqa: E501
+            taxes ([Tax], none_type): An array of employer and employee taxes for the pay period.. [optional]  # noqa: E501
+            deductions ([Deduction], none_type): An array of employee deductions for the pay period.. [optional]  # noqa: E501
+            benefits ([Benefit], none_type): An array of employee benefits for the pay period.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
