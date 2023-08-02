@@ -52,6 +52,7 @@ class PaymentUnit(ModelSimple):
 
     allowed_values = {
         ('value',): {
+            'None': None,
             'HOUR': "hour",
             'WEEK': "week",
             'MONTH': "month",
@@ -66,7 +67,7 @@ class PaymentUnit(ModelSimple):
 
     additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
