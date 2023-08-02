@@ -14,8 +14,10 @@ import unittest
 import apideck
 from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
+from apideck.model.linked_tracking_category import LinkedTrackingCategory
 globals()['InvoiceItemSalesDetails'] = InvoiceItemSalesDetails
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
+globals()['LinkedTrackingCategory'] = LinkedTrackingCategory
 from apideck.model.invoice_item import InvoiceItem
 
 

@@ -32,8 +32,10 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
+    from apideck.model.linked_tracking_category import LinkedTrackingCategory
     globals()['InvoiceItemSalesDetails'] = InvoiceItemSalesDetails
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
+    globals()['LinkedTrackingCategory'] = LinkedTrackingCategory
 
 
 class InvoiceItem(ModelNormal):
@@ -105,6 +107,7 @@ class InvoiceItem(ModelNormal):
             'asset_account': (LinkedLedgerAccount,),  # noqa: E501
             'income_account': (LinkedLedgerAccount,),  # noqa: E501
             'expense_account': (LinkedLedgerAccount,),  # noqa: E501
+            'tracking_category': (LinkedTrackingCategory,),  # noqa: E501
             'active': (bool, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
@@ -136,6 +139,7 @@ class InvoiceItem(ModelNormal):
         'asset_account': 'asset_account',  # noqa: E501
         'income_account': 'income_account',  # noqa: E501
         'expense_account': 'expense_account',  # noqa: E501
+        'tracking_category': 'tracking_category',  # noqa: E501
         'active': 'active',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
@@ -207,6 +211,7 @@ class InvoiceItem(ModelNormal):
             asset_account (LinkedLedgerAccount): [optional]  # noqa: E501
             income_account (LinkedLedgerAccount): [optional]  # noqa: E501
             expense_account (LinkedLedgerAccount): [optional]  # noqa: E501
+            tracking_category (LinkedTrackingCategory): [optional]  # noqa: E501
             active (bool, none_type): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -311,6 +316,7 @@ class InvoiceItem(ModelNormal):
             asset_account (LinkedLedgerAccount): [optional]  # noqa: E501
             income_account (LinkedLedgerAccount): [optional]  # noqa: E501
             expense_account (LinkedLedgerAccount): [optional]  # noqa: E501
+            tracking_category (LinkedTrackingCategory): [optional]  # noqa: E501
             active (bool, none_type): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
