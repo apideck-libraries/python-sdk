@@ -2533,6 +2533,10 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
+        tracking_category=LinkedTrackingCategory(
+            id="123456",
+            name="New York",
+        ),
         active=True,
         row_version="1-12345",
     ) # InvoiceItem | 
@@ -3016,6 +3020,10 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
+        tracking_category=LinkedTrackingCategory(
+            id="123456",
+            name="New York",
+        ),
         active=True,
         row_version="1-12345",
     ) # InvoiceItem | 
@@ -3154,6 +3162,10 @@ with apideck.ApiClient(configuration) as api_client:
         balance=27500,
         deposit=0,
         customer_memo="Thank you for your business and have a great day!",
+        tracking_category=LinkedTrackingCategory(
+            id="123456",
+            name="New York",
+        ),
         line_items=[
             InvoiceLineItem(
                 row_id="12345",
@@ -3728,6 +3740,10 @@ with apideck.ApiClient(configuration) as api_client:
         balance=27500,
         deposit=0,
         customer_memo="Thank you for your business and have a great day!",
+        tracking_category=LinkedTrackingCategory(
+            id="123456",
+            name="New York",
+        ),
         line_items=[
             InvoiceLineItem(
                 row_id="12345",

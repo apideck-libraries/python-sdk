@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **asset_account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **income_account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **expense_account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+**tracking_category** | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
 **active** | **bool, none_type** |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
