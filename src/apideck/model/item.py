@@ -238,7 +238,7 @@ class Item(ModelNormal):
             available (bool, none_type): [optional]  # noqa: E501
             hidden (bool, none_type): [optional]  # noqa: E501
             version (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
-            deleted (bool, none_type): [optional]  # noqa: E501
+            deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -353,7 +353,7 @@ class Item(ModelNormal):
             available (bool, none_type): [optional]  # noqa: E501
             hidden (bool, none_type): [optional]  # noqa: E501
             version (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
-            deleted (bool, none_type): [optional]  # noqa: E501
+            deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

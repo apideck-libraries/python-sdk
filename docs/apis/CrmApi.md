@@ -885,7 +885,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],
@@ -1437,7 +1437,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],
@@ -1646,7 +1646,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],
@@ -2186,7 +2186,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],
@@ -2331,7 +2331,7 @@ with apideck.ApiClient(configuration) as api_client:
         company_name="Spacex",
         owner_id="54321",
         company_id="2",
-        contact_id="2",
+        lead_id="2",
         lead_source="Cold Call",
         first_name="Elon",
         last_name="Musk",
@@ -2381,7 +2381,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],
@@ -2861,7 +2861,7 @@ with apideck.ApiClient(configuration) as api_client:
         company_name="Spacex",
         owner_id="54321",
         company_id="2",
-        contact_id="2",
+        lead_id="2",
         lead_source="Cold Call",
         first_name="Elon",
         last_name="Musk",
@@ -2911,7 +2911,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],

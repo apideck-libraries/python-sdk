@@ -76,10 +76,10 @@ class Collection(ModelNormal):
         """
         return {
             'id': (str,),  # noqa: E501
-            'parent_id': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'parent_id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
         }
@@ -146,10 +146,10 @@ class Collection(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_id (str): The collections's parent ID. [optional]  # noqa: E501
-            type (str): The collections's type. [optional]  # noqa: E501
-            name (str): Name of the collection. [optional]  # noqa: E501
-            description (str): Description of the collection. [optional]  # noqa: E501
+            parent_id (str, none_type): The collections's parent ID. [optional]  # noqa: E501
+            type (str, none_type): The collections's type. [optional]  # noqa: E501
+            name (str, none_type): Name of the collection. [optional]  # noqa: E501
+            description (str, none_type): Description of the collection. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
@@ -234,10 +234,10 @@ class Collection(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_id (str): The collections's parent ID. [optional]  # noqa: E501
-            type (str): The collections's type. [optional]  # noqa: E501
-            name (str): Name of the collection. [optional]  # noqa: E501
-            description (str): Description of the collection. [optional]  # noqa: E501
+            parent_id (str, none_type): The collections's parent ID. [optional]  # noqa: E501
+            type (str, none_type): The collections's type. [optional]  # noqa: E501
+            name (str, none_type): Name of the collection. [optional]  # noqa: E501
+            description (str, none_type): Description of the collection. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """

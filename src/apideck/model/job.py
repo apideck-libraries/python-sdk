@@ -287,7 +287,7 @@ class Job(ModelNormal):
             tags (Tags): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            deleted (bool, none_type): [optional]  # noqa: E501
+            deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             owner_id (str, none_type): [optional]  # noqa: E501
             published_at (datetime, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -409,7 +409,7 @@ class Job(ModelNormal):
             tags (Tags): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            deleted (bool, none_type): [optional]  # noqa: E501
+            deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             owner_id (str, none_type): [optional]  # noqa: E501
             published_at (datetime, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

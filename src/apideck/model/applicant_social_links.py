@@ -111,7 +111,7 @@ class ApplicantSocialLinks(ModelNormal):
         """ApplicantSocialLinks - a model defined in OpenAPI
 
         Args:
-            url (str):
+            url (str): URL of the social link, e.g. https://www.twitter.com/apideck
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -144,8 +144,8 @@ class ApplicantSocialLinks(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier of the social link. [optional]  # noqa: E501
+            type (str, none_type): Type of the social link, e.g. twitter. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -198,7 +198,7 @@ class ApplicantSocialLinks(ModelNormal):
         """ApplicantSocialLinks - a model defined in OpenAPI
 
         Args:
-            url (str):
+            url (str): URL of the social link, e.g. https://www.twitter.com/apideck
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -231,8 +231,8 @@ class ApplicantSocialLinks(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier of the social link. [optional]  # noqa: E501
+            type (str, none_type): Type of the social link, e.g. twitter. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

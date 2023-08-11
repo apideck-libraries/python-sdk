@@ -125,8 +125,8 @@ class Opportunity(ModelNormal):
             'date_lead_created': (datetime, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -270,8 +270,8 @@ class Opportunity(ModelNormal):
             date_lead_created (datetime, none_type): The date and time when the lead associated with the opportunity was created.. [optional]  # noqa: E501
             updated_by (str, none_type): The unique identifier of the user who last updated the opportunity.. [optional]  # noqa: E501
             created_by (str, none_type): The unique identifier of the user who created the opportunity.. [optional]  # noqa: E501
-            updated_at (datetime): The date and time when the opportunity was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the opportunity was created.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The date and time when the opportunity was last updated.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the opportunity was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -395,8 +395,8 @@ class Opportunity(ModelNormal):
             date_lead_created (datetime, none_type): The date and time when the lead associated with the opportunity was created.. [optional]  # noqa: E501
             updated_by (str, none_type): The unique identifier of the user who last updated the opportunity.. [optional]  # noqa: E501
             created_by (str, none_type): The unique identifier of the user who created the opportunity.. [optional]  # noqa: E501
-            updated_at (datetime): The date and time when the opportunity was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the opportunity was created.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The date and time when the opportunity was last updated.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the opportunity was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

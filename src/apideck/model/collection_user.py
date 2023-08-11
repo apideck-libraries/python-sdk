@@ -75,8 +75,8 @@ class CollectionUser(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
             'email': (str, none_type,),  # noqa: E501
@@ -145,11 +145,11 @@ class CollectionUser(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            email (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            name (str, none_type): Full name of the user. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the user. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the user. [optional]  # noqa: E501
+            email (str, none_type): Email address of the user. [optional]  # noqa: E501
             photo_url (str, none_type): The URL of the photo of a person.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
@@ -234,11 +234,11 @@ class CollectionUser(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            email (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            name (str, none_type): Full name of the user. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the user. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the user. [optional]  # noqa: E501
+            email (str, none_type): Email address of the user. [optional]  # noqa: E501
             photo_url (str, none_type): The URL of the photo of a person.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501

@@ -84,8 +84,8 @@ class ActivityAttendee(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'middle_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
@@ -94,10 +94,10 @@ class ActivityAttendee(ModelNormal):
             'email_address': (str, none_type,),  # noqa: E501
             'is_organizer': (bool, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
-            'user_id': (str,),  # noqa: E501
-            'contact_id': (str,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'user_id': (str, none_type,),  # noqa: E501
+            'contact_id': (str, none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -168,20 +168,20 @@ class ActivityAttendee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            middle_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            prefix (str, none_type): [optional]  # noqa: E501
-            suffix (str, none_type): [optional]  # noqa: E501
-            email_address (str, none_type): [optional]  # noqa: E501
-            is_organizer (bool, none_type): [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            user_id (str): [optional]  # noqa: E501
-            contact_id (str): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the attendee. [optional]  # noqa: E501
+            name (str, none_type): Full name of the attendee. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the attendee. [optional]  # noqa: E501
+            middle_name (str, none_type): Middle name of the attendee. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the attendee. [optional]  # noqa: E501
+            prefix (str, none_type): Prefix of the attendee. [optional]  # noqa: E501
+            suffix (str, none_type): Suffix of the attendee. [optional]  # noqa: E501
+            email_address (str, none_type): Email address of the attendee. [optional]  # noqa: E501
+            is_organizer (bool, none_type): Whether the attendee is the organizer of the activity. [optional]  # noqa: E501
+            status (str, none_type): Status of the attendee. [optional]  # noqa: E501
+            user_id (str, none_type): The identifier for a related user. [optional]  # noqa: E501
+            contact_id (str, none_type): The identifier for a related contact. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The last time the attendee was updated (ISO 8601). [optional]  # noqa: E501
+            created_at (datetime, none_type): The time the attendee was created (ISO 8601). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,20 +263,20 @@ class ActivityAttendee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            middle_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            prefix (str, none_type): [optional]  # noqa: E501
-            suffix (str, none_type): [optional]  # noqa: E501
-            email_address (str, none_type): [optional]  # noqa: E501
-            is_organizer (bool, none_type): [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            user_id (str): [optional]  # noqa: E501
-            contact_id (str): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the attendee. [optional]  # noqa: E501
+            name (str, none_type): Full name of the attendee. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the attendee. [optional]  # noqa: E501
+            middle_name (str, none_type): Middle name of the attendee. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the attendee. [optional]  # noqa: E501
+            prefix (str, none_type): Prefix of the attendee. [optional]  # noqa: E501
+            suffix (str, none_type): Suffix of the attendee. [optional]  # noqa: E501
+            email_address (str, none_type): Email address of the attendee. [optional]  # noqa: E501
+            is_organizer (bool, none_type): Whether the attendee is the organizer of the activity. [optional]  # noqa: E501
+            status (str, none_type): Status of the attendee. [optional]  # noqa: E501
+            user_id (str, none_type): The identifier for a related user. [optional]  # noqa: E501
+            contact_id (str, none_type): The identifier for a related contact. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The last time the attendee was updated (ISO 8601). [optional]  # noqa: E501
+            created_at (datetime, none_type): The time the attendee was created (ISO 8601). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

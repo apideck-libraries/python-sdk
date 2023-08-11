@@ -56,6 +56,7 @@ class Email(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'PRIMARY': "primary",
             'SECONDARY': "secondary",
             'WORK': "work",
@@ -88,7 +89,7 @@ class Email(ModelNormal):
         return {
             'email': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -147,7 +148,7 @@ class Email(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): Unique identifier for the email address. [optional]  # noqa: E501
-            type (str): Email type. [optional]  # noqa: E501
+            type (str, none_type): Email type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,7 +235,7 @@ class Email(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): Unique identifier for the email address. [optional]  # noqa: E501
-            type (str): Email type. [optional]  # noqa: E501
+            type (str, none_type): Email type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

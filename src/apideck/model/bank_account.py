@@ -163,8 +163,8 @@ class BankAccount(ModelNormal):
             account_number (str, none_type): A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number.. [optional]  # noqa: E501
             account_name (str, none_type): The name which you used in opening your bank account.. [optional]  # noqa: E501
             account_type (str, none_type): The type of bank account.. [optional]  # noqa: E501
-            iban (str, none_type): [optional]  # noqa: E501
-            bic (str, none_type): [optional]  # noqa: E501
+            iban (str, none_type): The International Bank Account Number (IBAN).. [optional]  # noqa: E501
+            bic (str, none_type): The Bank Identifier Code (BIC).. [optional]  # noqa: E501
             routing_number (str, none_type): A routing number is a nine-digit code used to identify a financial institution in the United States.. [optional]  # noqa: E501
             bsb_number (str, none_type): A BSB is a 6 digit numeric code used for identifying the branch of an Australian or New Zealand bank or financial institution.. [optional]  # noqa: E501
             branch_identifier (str, none_type): A branch identifier is a unique identifier for a branch of a bank or financial institution.. [optional]  # noqa: E501
@@ -255,8 +255,8 @@ class BankAccount(ModelNormal):
             account_number (str, none_type): A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number.. [optional]  # noqa: E501
             account_name (str, none_type): The name which you used in opening your bank account.. [optional]  # noqa: E501
             account_type (str, none_type): The type of bank account.. [optional]  # noqa: E501
-            iban (str, none_type): [optional]  # noqa: E501
-            bic (str, none_type): [optional]  # noqa: E501
+            iban (str, none_type): The International Bank Account Number (IBAN).. [optional]  # noqa: E501
+            bic (str, none_type): The Bank Identifier Code (BIC).. [optional]  # noqa: E501
             routing_number (str, none_type): A routing number is a nine-digit code used to identify a financial institution in the United States.. [optional]  # noqa: E501
             bsb_number (str, none_type): A BSB is a 6 digit numeric code used for identifying the branch of an Australian or New Zealand bank or financial institution.. [optional]  # noqa: E501
             branch_identifier (str, none_type): A branch identifier is a unique identifier for a branch of a bank or financial institution.. [optional]  # noqa: E501

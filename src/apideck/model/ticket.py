@@ -62,6 +62,7 @@ class Ticket(ModelNormal):
 
     allowed_values = {
         ('priority',): {
+            'None': None,
             'LOW': "low",
             'NORMAL': "normal",
             'HIGH': "high",
@@ -89,13 +90,13 @@ class Ticket(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'parent_id': (str,),  # noqa: E501
-            'collection_id': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
-            'subject': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'parent_id': (str, none_type,),  # noqa: E501
+            'collection_id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
+            'subject': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
-            'priority': (str,),  # noqa: E501
+            'priority': (str, none_type,),  # noqa: E501
             'assignees': ([Assignee],),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
@@ -178,13 +179,13 @@ class Ticket(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_id (str): The ticket's parent ID. [optional]  # noqa: E501
-            collection_id (str): The ticket's collection ID. [optional]  # noqa: E501
-            type (str): The ticket's type. [optional]  # noqa: E501
-            subject (str): Subject of the ticket. [optional]  # noqa: E501
-            description (str): The ticket's description. HTML version of description is mapped if supported by the third-party platform. [optional]  # noqa: E501
+            parent_id (str, none_type): The ticket's parent ID. [optional]  # noqa: E501
+            collection_id (str, none_type): The ticket's collection ID. [optional]  # noqa: E501
+            type (str, none_type): The ticket's type. [optional]  # noqa: E501
+            subject (str, none_type): Subject of the ticket. [optional]  # noqa: E501
+            description (str, none_type): The ticket's description. HTML version of description is mapped if supported by the third-party platform. [optional]  # noqa: E501
             status (str, none_type): The current status of the ticket. Possible values include: open, in_progress, closed, or - in cases where there is no clear mapping - the original value passed through.. [optional]  # noqa: E501
-            priority (str): Priority of the ticket. [optional]  # noqa: E501
+            priority (str, none_type): Priority of the ticket. [optional]  # noqa: E501
             assignees ([Assignee]): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
@@ -274,13 +275,13 @@ class Ticket(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_id (str): The ticket's parent ID. [optional]  # noqa: E501
-            collection_id (str): The ticket's collection ID. [optional]  # noqa: E501
-            type (str): The ticket's type. [optional]  # noqa: E501
-            subject (str): Subject of the ticket. [optional]  # noqa: E501
-            description (str): The ticket's description. HTML version of description is mapped if supported by the third-party platform. [optional]  # noqa: E501
+            parent_id (str, none_type): The ticket's parent ID. [optional]  # noqa: E501
+            collection_id (str, none_type): The ticket's collection ID. [optional]  # noqa: E501
+            type (str, none_type): The ticket's type. [optional]  # noqa: E501
+            subject (str, none_type): Subject of the ticket. [optional]  # noqa: E501
+            description (str, none_type): The ticket's description. HTML version of description is mapped if supported by the third-party platform. [optional]  # noqa: E501
             status (str, none_type): The current status of the ticket. Possible values include: open, in_progress, closed, or - in cases where there is no clear mapping - the original value passed through.. [optional]  # noqa: E501
-            priority (str): Priority of the ticket. [optional]  # noqa: E501
+            priority (str, none_type): Priority of the ticket. [optional]  # noqa: E501
             assignees ([Assignee]): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501

@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**name** | **str** |  | [optional] 
-**first_name** | **str, none_type** |  | [optional] 
-**last_name** | **str, none_type** |  | [optional] 
-**email** | **str, none_type** |  | [optional] 
+**id** | **str, none_type** | A unique identifier for an object. | [optional] [readonly] 
+**name** | **str, none_type** | Full name of the user | [optional] 
+**first_name** | **str, none_type** | First name of the user | [optional] 
+**last_name** | **str, none_type** | Last name of the user | [optional] 
+**email** | **str, none_type** | Email address of the user | [optional] 
 **photo_url** | **str, none_type** | The URL of the photo of a person. | [optional] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 

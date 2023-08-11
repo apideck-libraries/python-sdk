@@ -75,8 +75,8 @@ class CollectionTag(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,7 +101,7 @@ class CollectionTag(ModelNormal):
         """CollectionTag - a model defined in OpenAPI
 
         Args:
-            id (str): A unique identifier for an object.
+            id (str, none_type): A unique identifier for an object.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -134,7 +134,7 @@ class CollectionTag(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): [optional]  # noqa: E501
+            name (str, none_type): The name of the tag.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -187,7 +187,7 @@ class CollectionTag(ModelNormal):
         """CollectionTag - a model defined in OpenAPI
 
         Args:
-            id (str): A unique identifier for an object.
+            id (str, none_type): A unique identifier for an object.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -220,7 +220,7 @@ class CollectionTag(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): [optional]  # noqa: E501
+            name (str, none_type): The name of the tag.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

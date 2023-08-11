@@ -104,7 +104,7 @@ class Company(ModelNormal):
             'name': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'interaction_count': (int, none_type,),  # noqa: E501
-            'owner_id': (str,),  # noqa: E501
+            'owner_id': (str, none_type,),  # noqa: E501
             'image': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'vat_number': (str, none_type,),  # noqa: E501
@@ -139,8 +139,8 @@ class Company(ModelNormal):
             'birthday': (date, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -211,7 +211,7 @@ class Company(ModelNormal):
         """Company - a model defined in OpenAPI
 
         Args:
-            name (str):
+            name (str): Name of the company
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -244,21 +244,21 @@ class Company(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            interaction_count (int, none_type): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
-            image (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            vat_number (str, none_type): VAT number. [optional]  # noqa: E501
+            id (str): Unique identifier for the company. [optional]  # noqa: E501
+            interaction_count (int, none_type): Number of interactions. [optional]  # noqa: E501
+            owner_id (str, none_type): Owner ID. [optional]  # noqa: E501
+            image (str, none_type): The Image URL of the company. [optional]  # noqa: E501
+            description (str, none_type): A description of the company. [optional]  # noqa: E501
+            vat_number (str, none_type): The VAT number of the company. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
-            annual_revenue (str, none_type): Annual revenue. [optional]  # noqa: E501
+            status (str, none_type): The status of the company. [optional]  # noqa: E501
+            fax (str, none_type): The fax number of the company. [optional]  # noqa: E501
+            annual_revenue (str, none_type): The annual revenue of the company. [optional]  # noqa: E501
             number_of_employees (str, none_type): Number of employees. [optional]  # noqa: E501
-            industry (str, none_type): Industry. [optional]  # noqa: E501
-            ownership (str, none_type): Ownership. [optional]  # noqa: E501
-            sales_tax_number (str, none_type): [optional]  # noqa: E501
-            payee_number (str, none_type): [optional]  # noqa: E501
+            industry (str, none_type): The industry represents the type of business the company is in.. [optional]  # noqa: E501
+            ownership (str, none_type): The ownership indicates the type of ownership of the company.. [optional]  # noqa: E501
+            sales_tax_number (str, none_type): A sales tax number is a unique number that identifies a company for tax purposes.. [optional]  # noqa: E501
+            payee_number (str, none_type): A payee number is a unique number that identifies a payee for tax purposes.. [optional]  # noqa: E501
             abn_or_tfn (str, none_type): An ABN is necessary for operating a business, while a TFN (Tax File Number) is required for any person working in Australia.. [optional]  # noqa: E501
             abn_branch (str, none_type): An ABN Branch (also known as a GST Branch) is used if part of your business needs to account for GST separately from its parent entity.. [optional]  # noqa: E501
             acn (str, none_type): The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank.. [optional]  # noqa: E501
@@ -274,15 +274,15 @@ class Company(ModelNormal):
             row_type (CompanyRowType): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            read_only (bool, none_type): [optional]  # noqa: E501
-            last_activity_at (datetime, none_type): [optional]  # noqa: E501
-            deleted (bool): [optional]  # noqa: E501
+            read_only (bool, none_type): Whether the company is read-only or not. [optional]  # noqa: E501
+            last_activity_at (datetime, none_type): Last activity date. [optional]  # noqa: E501
+            deleted (bool): Whether the company is deleted or not. [optional]  # noqa: E501
             salutation (str, none_type): A formal salutation for the person. For example, 'Mr', 'Mrs'. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
-            updated_by (str, none_type): [optional]  # noqa: E501
-            created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            updated_by (str, none_type): Updated by user ID. [optional]  # noqa: E501
+            created_by (str, none_type): Created by user ID. [optional]  # noqa: E501
+            updated_at (datetime, none_type): Last updated date. [optional]  # noqa: E501
+            created_at (datetime, none_type): Creation date. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -335,7 +335,7 @@ class Company(ModelNormal):
         """Company - a model defined in OpenAPI
 
         Args:
-            name (str):
+            name (str): Name of the company
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -368,21 +368,21 @@ class Company(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            interaction_count (int, none_type): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
-            image (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            vat_number (str, none_type): VAT number. [optional]  # noqa: E501
+            id (str): Unique identifier for the company. [optional]  # noqa: E501
+            interaction_count (int, none_type): Number of interactions. [optional]  # noqa: E501
+            owner_id (str, none_type): Owner ID. [optional]  # noqa: E501
+            image (str, none_type): The Image URL of the company. [optional]  # noqa: E501
+            description (str, none_type): A description of the company. [optional]  # noqa: E501
+            vat_number (str, none_type): The VAT number of the company. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
-            annual_revenue (str, none_type): Annual revenue. [optional]  # noqa: E501
+            status (str, none_type): The status of the company. [optional]  # noqa: E501
+            fax (str, none_type): The fax number of the company. [optional]  # noqa: E501
+            annual_revenue (str, none_type): The annual revenue of the company. [optional]  # noqa: E501
             number_of_employees (str, none_type): Number of employees. [optional]  # noqa: E501
-            industry (str, none_type): Industry. [optional]  # noqa: E501
-            ownership (str, none_type): Ownership. [optional]  # noqa: E501
-            sales_tax_number (str, none_type): [optional]  # noqa: E501
-            payee_number (str, none_type): [optional]  # noqa: E501
+            industry (str, none_type): The industry represents the type of business the company is in.. [optional]  # noqa: E501
+            ownership (str, none_type): The ownership indicates the type of ownership of the company.. [optional]  # noqa: E501
+            sales_tax_number (str, none_type): A sales tax number is a unique number that identifies a company for tax purposes.. [optional]  # noqa: E501
+            payee_number (str, none_type): A payee number is a unique number that identifies a payee for tax purposes.. [optional]  # noqa: E501
             abn_or_tfn (str, none_type): An ABN is necessary for operating a business, while a TFN (Tax File Number) is required for any person working in Australia.. [optional]  # noqa: E501
             abn_branch (str, none_type): An ABN Branch (also known as a GST Branch) is used if part of your business needs to account for GST separately from its parent entity.. [optional]  # noqa: E501
             acn (str, none_type): The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank.. [optional]  # noqa: E501
@@ -398,15 +398,15 @@ class Company(ModelNormal):
             row_type (CompanyRowType): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            read_only (bool, none_type): [optional]  # noqa: E501
-            last_activity_at (datetime, none_type): [optional]  # noqa: E501
-            deleted (bool): [optional]  # noqa: E501
+            read_only (bool, none_type): Whether the company is read-only or not. [optional]  # noqa: E501
+            last_activity_at (datetime, none_type): Last activity date. [optional]  # noqa: E501
+            deleted (bool): Whether the company is deleted or not. [optional]  # noqa: E501
             salutation (str, none_type): A formal salutation for the person. For example, 'Mr', 'Mrs'. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
-            updated_by (str, none_type): [optional]  # noqa: E501
-            created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            updated_by (str, none_type): Updated by user ID. [optional]  # noqa: E501
+            created_by (str, none_type): Created by user ID. [optional]  # noqa: E501
+            updated_at (datetime, none_type): Last updated date. [optional]  # noqa: E501
+            created_at (datetime, none_type): Creation date. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

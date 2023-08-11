@@ -1795,7 +1795,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],
@@ -2447,7 +2447,7 @@ with apideck.ApiClient(configuration) as api_client:
         social_links=[
             SocialLink(
                 id="12345",
-                url="https://www.twitter.com/apideck-io",
+                url="https://www.twitter.com/apideck",
                 type="twitter",
             ),
         ],

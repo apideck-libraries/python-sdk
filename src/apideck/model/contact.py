@@ -211,7 +211,7 @@ class Contact(ModelNormal):
         """Contact - a model defined in OpenAPI
 
         Args:
-            name (str, none_type):
+            name (str, none_type): Full name of the contact.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -244,30 +244,30 @@ class Contact(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            owner_id (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            lead_id (str, none_type): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            middle_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            prefix (str, none_type): [optional]  # noqa: E501
-            suffix (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
-            department (str, none_type): [optional]  # noqa: E501
+            id (str): Unique identifier for the contact.. [optional]  # noqa: E501
+            owner_id (str, none_type): The owner of the contact.. [optional]  # noqa: E501
+            type (str, none_type): The type of the contact.. [optional]  # noqa: E501
+            company_id (str, none_type): The company the contact is associated with.. [optional]  # noqa: E501
+            company_name (str, none_type): The name of the company the contact is associated with.. [optional]  # noqa: E501
+            lead_id (str, none_type): The lead the contact is associated with.. [optional]  # noqa: E501
+            first_name (str, none_type): The first name of the contact.. [optional]  # noqa: E501
+            middle_name (str, none_type): The middle name of the contact.. [optional]  # noqa: E501
+            last_name (str, none_type): The last name of the contact.. [optional]  # noqa: E501
+            prefix (str, none_type): The prefix of the contact.. [optional]  # noqa: E501
+            suffix (str, none_type): The suffix of the contact.. [optional]  # noqa: E501
+            title (str, none_type): The job title of the contact.. [optional]  # noqa: E501
+            department (str, none_type): The department of the contact.. [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
-            gender (str, none_type): [optional]  # noqa: E501
-            birthday (str, none_type): [optional]  # noqa: E501
+            gender (str, none_type): The gender of the contact.. [optional]  # noqa: E501
+            birthday (str, none_type): The birthday of the contact.. [optional]  # noqa: E501
             image (str, none_type): [optional]  # noqa: E501
             photo_url (str, none_type): The URL of the photo of a person.. [optional]  # noqa: E501
-            lead_source (str, none_type): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            current_balance (float, none_type): [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            active (bool, none_type): [optional]  # noqa: E501
+            lead_source (str, none_type): The lead source of the contact.. [optional]  # noqa: E501
+            fax (str, none_type): The fax number of the contact.. [optional]  # noqa: E501
+            description (str, none_type): The description of the contact.. [optional]  # noqa: E501
+            current_balance (float, none_type): The current balance of the contact.. [optional]  # noqa: E501
+            status (str, none_type): The status of the contact.. [optional]  # noqa: E501
+            active (bool, none_type): The active status of the contact.. [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             social_links ([SocialLink]): [optional]  # noqa: E501
@@ -276,11 +276,11 @@ class Contact(ModelNormal):
             email_domain (str, none_type): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            first_call_at (datetime, none_type): [optional]  # noqa: E501
-            first_email_at (datetime, none_type): [optional]  # noqa: E501
-            last_activity_at (datetime, none_type): [optional]  # noqa: E501
-            updated_at (datetime, none_type): [optional]  # noqa: E501
-            created_at (datetime, none_type): [optional]  # noqa: E501
+            first_call_at (datetime, none_type): The first call date of the contact.. [optional]  # noqa: E501
+            first_email_at (datetime, none_type): The first email date of the contact.. [optional]  # noqa: E501
+            last_activity_at (datetime, none_type): The last activity date of the contact.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -333,7 +333,7 @@ class Contact(ModelNormal):
         """Contact - a model defined in OpenAPI
 
         Args:
-            name (str, none_type):
+            name (str, none_type): Full name of the contact.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -366,30 +366,30 @@ class Contact(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            owner_id (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            lead_id (str, none_type): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            middle_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            prefix (str, none_type): [optional]  # noqa: E501
-            suffix (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
-            department (str, none_type): [optional]  # noqa: E501
+            id (str): Unique identifier for the contact.. [optional]  # noqa: E501
+            owner_id (str, none_type): The owner of the contact.. [optional]  # noqa: E501
+            type (str, none_type): The type of the contact.. [optional]  # noqa: E501
+            company_id (str, none_type): The company the contact is associated with.. [optional]  # noqa: E501
+            company_name (str, none_type): The name of the company the contact is associated with.. [optional]  # noqa: E501
+            lead_id (str, none_type): The lead the contact is associated with.. [optional]  # noqa: E501
+            first_name (str, none_type): The first name of the contact.. [optional]  # noqa: E501
+            middle_name (str, none_type): The middle name of the contact.. [optional]  # noqa: E501
+            last_name (str, none_type): The last name of the contact.. [optional]  # noqa: E501
+            prefix (str, none_type): The prefix of the contact.. [optional]  # noqa: E501
+            suffix (str, none_type): The suffix of the contact.. [optional]  # noqa: E501
+            title (str, none_type): The job title of the contact.. [optional]  # noqa: E501
+            department (str, none_type): The department of the contact.. [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
-            gender (str, none_type): [optional]  # noqa: E501
-            birthday (str, none_type): [optional]  # noqa: E501
+            gender (str, none_type): The gender of the contact.. [optional]  # noqa: E501
+            birthday (str, none_type): The birthday of the contact.. [optional]  # noqa: E501
             image (str, none_type): [optional]  # noqa: E501
             photo_url (str, none_type): The URL of the photo of a person.. [optional]  # noqa: E501
-            lead_source (str, none_type): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            current_balance (float, none_type): [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            active (bool, none_type): [optional]  # noqa: E501
+            lead_source (str, none_type): The lead source of the contact.. [optional]  # noqa: E501
+            fax (str, none_type): The fax number of the contact.. [optional]  # noqa: E501
+            description (str, none_type): The description of the contact.. [optional]  # noqa: E501
+            current_balance (float, none_type): The current balance of the contact.. [optional]  # noqa: E501
+            status (str, none_type): The status of the contact.. [optional]  # noqa: E501
+            active (bool, none_type): The active status of the contact.. [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             social_links ([SocialLink]): [optional]  # noqa: E501
@@ -398,11 +398,11 @@ class Contact(ModelNormal):
             email_domain (str, none_type): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            first_call_at (datetime, none_type): [optional]  # noqa: E501
-            first_email_at (datetime, none_type): [optional]  # noqa: E501
-            last_activity_at (datetime, none_type): [optional]  # noqa: E501
-            updated_at (datetime, none_type): [optional]  # noqa: E501
-            created_at (datetime, none_type): [optional]  # noqa: E501
+            first_call_at (datetime, none_type): The first call date of the contact.. [optional]  # noqa: E501
+            first_email_at (datetime, none_type): The first email date of the contact.. [optional]  # noqa: E501
+            last_activity_at (datetime, none_type): The last activity date of the contact.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -81,7 +81,7 @@ class SharedLinkTarget(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'type': (FileType,),  # noqa: E501
         }
 
@@ -141,7 +141,7 @@ class SharedLinkTarget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the file. [optional]  # noqa: E501
+            name (str, none_type): The name of the file. [optional]  # noqa: E501
             type (FileType): [optional]  # noqa: E501
         """
 
@@ -225,7 +225,7 @@ class SharedLinkTarget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the file. [optional]  # noqa: E501
+            name (str, none_type): The name of the file. [optional]  # noqa: E501
             type (FileType): [optional]  # noqa: E501
         """
 

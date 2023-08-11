@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target_id** | **str** | The ID of the file or folder to link. | 
-**url** | **str** | The URL that can be used to view the file. | [optional] [readonly] 
-**download_url** | **str** | The URL that can be used to download the file. | [optional] 
+**target_id** | **str, none_type** | The ID of the file or folder to link. | 
+**url** | **str, none_type** | The URL that can be used to view the file. | [optional] [readonly] 
+**download_url** | **str, none_type** | The URL that can be used to download the file. | [optional] 
 **target** | [**SharedLinkTarget**](SharedLinkTarget.md) |  | [optional] 
-**scope** | **str** | The scope of the shared link. | [optional] 
-**password_protected** | **bool** | Indicated if the shared link is password protected. | [optional] [readonly] 
+**scope** | **str, none_type** | The scope of the shared link. | [optional] 
+**password_protected** | **bool, none_type** | Indicated if the shared link is password protected. | [optional] [readonly] 
 **password** | **str, none_type** | Optional password for the shared link. | [optional] 
 **expires_at** | **datetime, none_type** |  | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 

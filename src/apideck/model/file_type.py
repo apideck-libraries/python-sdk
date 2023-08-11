@@ -52,6 +52,7 @@ class FileType(ModelSimple):
 
     allowed_values = {
         ('value',): {
+            'None': None,
             'FILE': "file",
             'FOLDER': "folder",
             'URL': "url",
@@ -63,7 +64,7 @@ class FileType(ModelSimple):
 
     additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():

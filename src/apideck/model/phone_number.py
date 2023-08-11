@@ -56,6 +56,7 @@ class PhoneNumber(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'PRIMARY': "primary",
             'SECONDARY': "secondary",
             'HOME': "home",
@@ -96,7 +97,7 @@ class PhoneNumber(ModelNormal):
             'country_code': (str, none_type,),  # noqa: E501
             'area_code': (str, none_type,),  # noqa: E501
             'extension': (str, none_type,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -124,7 +125,7 @@ class PhoneNumber(ModelNormal):
         """PhoneNumber - a model defined in OpenAPI
 
         Args:
-            number (str):
+            number (str): The phone number
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -157,11 +158,11 @@ class PhoneNumber(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            country_code (str, none_type): [optional]  # noqa: E501
-            area_code (str, none_type): [optional]  # noqa: E501
-            extension (str, none_type): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier of the phone number. [optional]  # noqa: E501
+            country_code (str, none_type): The country code of the phone number, e.g. +1. [optional]  # noqa: E501
+            area_code (str, none_type): The area code of the phone number, e.g. 323. [optional]  # noqa: E501
+            extension (str, none_type): The extension of the phone number. [optional]  # noqa: E501
+            type (str, none_type): The type of phone number. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -214,7 +215,7 @@ class PhoneNumber(ModelNormal):
         """PhoneNumber - a model defined in OpenAPI
 
         Args:
-            number (str):
+            number (str): The phone number
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -247,11 +248,11 @@ class PhoneNumber(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            country_code (str, none_type): [optional]  # noqa: E501
-            area_code (str, none_type): [optional]  # noqa: E501
-            extension (str, none_type): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier of the phone number. [optional]  # noqa: E501
+            country_code (str, none_type): The country code of the phone number, e.g. +1. [optional]  # noqa: E501
+            area_code (str, none_type): The area code of the phone number, e.g. 323. [optional]  # noqa: E501
+            extension (str, none_type): The extension of the phone number. [optional]  # noqa: E501
+            type (str, none_type): The type of phone number. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

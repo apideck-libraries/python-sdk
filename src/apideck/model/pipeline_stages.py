@@ -81,11 +81,11 @@ class PipelineStages(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'value': (str,),  # noqa: E501
-            'win_probability': (int,),  # noqa: E501
-            'display_order': (int,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'value': (str, none_type,),  # noqa: E501
+            'win_probability': (int, none_type,),  # noqa: E501
+            'display_order': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -143,11 +143,11 @@ class PipelineStages(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            value (str): [optional]  # noqa: E501
-            win_probability (int): The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].. [optional]  # noqa: E501
-            display_order (int): [optional]  # noqa: E501
+            id (str, none_type): The unique identifier of the Pipeline Stage.. [optional]  # noqa: E501
+            name (str, none_type): The name of the Pipeline Stage.. [optional]  # noqa: E501
+            value (str, none_type): The value of the Pipeline Stage.. [optional]  # noqa: E501
+            win_probability (int, none_type): The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].. [optional]  # noqa: E501
+            display_order (int, none_type): The order in which the Pipeline Stage is displayed in the UI.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,11 +229,11 @@ class PipelineStages(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            value (str): [optional]  # noqa: E501
-            win_probability (int): The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].. [optional]  # noqa: E501
-            display_order (int): [optional]  # noqa: E501
+            id (str, none_type): The unique identifier of the Pipeline Stage.. [optional]  # noqa: E501
+            name (str, none_type): The name of the Pipeline Stage.. [optional]  # noqa: E501
+            value (str, none_type): The value of the Pipeline Stage.. [optional]  # noqa: E501
+            win_probability (int, none_type): The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].. [optional]  # noqa: E501
+            display_order (int, none_type): The order in which the Pipeline Stage is displayed in the UI.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
