@@ -66,6 +66,7 @@ class EcommerceProduct(ModelNormal):
 
     allowed_values = {
         ('status',): {
+            'None': None,
             'ACTIVE': "active",
             'ARCHIVED': "archived",
         },
@@ -91,20 +92,20 @@ class EcommerceProduct(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'status': (str,),  # noqa: E501
-            'price': (str,),  # noqa: E501
-            'sku': (str,),  # noqa: E501
-            'inventory_quantity': (str,),  # noqa: E501
-            'images': ([EcommerceProductImages],),  # noqa: E501
-            'weight': (str,),  # noqa: E501
-            'weight_unit': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'status': (str, none_type,),  # noqa: E501
+            'price': (str, none_type,),  # noqa: E501
+            'sku': (str, none_type,),  # noqa: E501
+            'inventory_quantity': (str, none_type,),  # noqa: E501
+            'images': ([EcommerceProductImages], none_type,),  # noqa: E501
+            'weight': (str, none_type,),  # noqa: E501
+            'weight_unit': (str, none_type,),  # noqa: E501
             'options': ([EcommerceProductOptions],),  # noqa: E501
             'variants': ([EcommerceProductVariants],),  # noqa: E501
-            'tags': ([str],),  # noqa: E501
+            'tags': ([str, none_type],),  # noqa: E501
             'categories': ([EcommerceProductCategories],),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
@@ -179,20 +180,20 @@ class EcommerceProduct(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the product as it should be displayed to customers.. [optional]  # noqa: E501
-            description (str): A detailed description of the product.. [optional]  # noqa: E501
-            status (str): The current status of the product (active or archived).. [optional]  # noqa: E501
-            price (str): The price of the product.. [optional]  # noqa: E501
-            sku (str): The stock keeping unit of the product.. [optional]  # noqa: E501
-            inventory_quantity (str): The quantity of the product in stock.. [optional]  # noqa: E501
-            images ([EcommerceProductImages]): An array of image URLs for the product.. [optional]  # noqa: E501
-            weight (str): The weight of the product.. [optional]  # noqa: E501
-            weight_unit (str): The unit of measurement for the weight of the product.. [optional]  # noqa: E501
+            name (str, none_type): The name of the product as it should be displayed to customers.. [optional]  # noqa: E501
+            description (str, none_type): A detailed description of the product.. [optional]  # noqa: E501
+            status (str, none_type): The current status of the product (active or archived).. [optional]  # noqa: E501
+            price (str, none_type): The price of the product.. [optional]  # noqa: E501
+            sku (str, none_type): The stock keeping unit of the product.. [optional]  # noqa: E501
+            inventory_quantity (str, none_type): The quantity of the product in stock.. [optional]  # noqa: E501
+            images ([EcommerceProductImages], none_type): An array of image URLs for the product.. [optional]  # noqa: E501
+            weight (str, none_type): The weight of the product.. [optional]  # noqa: E501
+            weight_unit (str, none_type): The unit of measurement for the weight of the product.. [optional]  # noqa: E501
             options ([EcommerceProductOptions]): An array of options for the product.. [optional]  # noqa: E501
             variants ([EcommerceProductVariants]): [optional]  # noqa: E501
-            tags ([str]): An array of tags for the product, used for organization and searching.. [optional]  # noqa: E501
+            tags ([str, none_type]): An array of tags for the product, used for organization and searching.. [optional]  # noqa: E501
             categories ([EcommerceProductCategories]): An array of categories for the product, used for organization and searching.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 
@@ -276,20 +277,20 @@ class EcommerceProduct(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the product as it should be displayed to customers.. [optional]  # noqa: E501
-            description (str): A detailed description of the product.. [optional]  # noqa: E501
-            status (str): The current status of the product (active or archived).. [optional]  # noqa: E501
-            price (str): The price of the product.. [optional]  # noqa: E501
-            sku (str): The stock keeping unit of the product.. [optional]  # noqa: E501
-            inventory_quantity (str): The quantity of the product in stock.. [optional]  # noqa: E501
-            images ([EcommerceProductImages]): An array of image URLs for the product.. [optional]  # noqa: E501
-            weight (str): The weight of the product.. [optional]  # noqa: E501
-            weight_unit (str): The unit of measurement for the weight of the product.. [optional]  # noqa: E501
+            name (str, none_type): The name of the product as it should be displayed to customers.. [optional]  # noqa: E501
+            description (str, none_type): A detailed description of the product.. [optional]  # noqa: E501
+            status (str, none_type): The current status of the product (active or archived).. [optional]  # noqa: E501
+            price (str, none_type): The price of the product.. [optional]  # noqa: E501
+            sku (str, none_type): The stock keeping unit of the product.. [optional]  # noqa: E501
+            inventory_quantity (str, none_type): The quantity of the product in stock.. [optional]  # noqa: E501
+            images ([EcommerceProductImages], none_type): An array of image URLs for the product.. [optional]  # noqa: E501
+            weight (str, none_type): The weight of the product.. [optional]  # noqa: E501
+            weight_unit (str, none_type): The unit of measurement for the weight of the product.. [optional]  # noqa: E501
             options ([EcommerceProductOptions]): An array of options for the product.. [optional]  # noqa: E501
             variants ([EcommerceProductVariants]): [optional]  # noqa: E501
-            tags ([str]): An array of tags for the product, used for organization and searching.. [optional]  # noqa: E501
+            tags ([str, none_type]): An array of tags for the product, used for organization and searching.. [optional]  # noqa: E501
             categories ([EcommerceProductCategories]): An array of categories for the product, used for organization and searching.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**id** | **str, none_type** | A unique identifier for an object. | [optional] [readonly] 
 **employee_id** | **str, none_type** | Id of the employee | [optional] 
 **title** | **str, none_type** | The job title of the person. | [optional] 
 **start_date** | **date, none_type** |  | [optional] 

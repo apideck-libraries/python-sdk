@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **tax_debit** | **float, none_type** | The total tax debit for the payroll. | [optional] 
 **check_amount** | **float, none_type** | The total check amount for the payroll. | [optional] 
 **net_pay** | **float, none_type** | The net pay amount for the payroll. | [optional] 
-**gross_pay** | **float** | The gross pay amount for the payroll. | [optional] 
+**gross_pay** | **float, none_type** | The gross pay amount for the payroll. | [optional] 
 **employer_taxes** | **float, none_type** | The total amount of employer paid taxes for the payroll. | [optional] 
 **employee_taxes** | **float, none_type** | The total amount of employee paid taxes for the payroll. | [optional] 
 **employer_benefit_contributions** | **float, none_type** | The total amount of company contributed benefits for the payroll. | [optional] 

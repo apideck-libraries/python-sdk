@@ -81,7 +81,7 @@ class LinkedEcommerceOrder(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'total': (str,),  # noqa: E501
+            'total': (str, none_type,),  # noqa: E501
             'status': (EcommerceOrderStatus,),  # noqa: E501
         }
 
@@ -139,7 +139,7 @@ class LinkedEcommerceOrder(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            total (str): The total amount of the order.. [optional]  # noqa: E501
+            total (str, none_type): The total amount of the order.. [optional]  # noqa: E501
             status (EcommerceOrderStatus): [optional]  # noqa: E501
         """
 
@@ -223,7 +223,7 @@ class LinkedEcommerceOrder(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            total (str): The total amount of the order.. [optional]  # noqa: E501
+            total (str, none_type): The total amount of the order.. [optional]  # noqa: E501
             status (EcommerceOrderStatus): [optional]  # noqa: E501
         """
 

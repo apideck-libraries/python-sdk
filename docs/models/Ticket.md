@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **priority** | **str** | Priority of the ticket | [optional] 
 **assignees** | [**[Assignee]**](Assignee.md) |  | [optional] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
-**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
+**created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **due_date** | **datetime, none_type** | Due date of the ticket | [optional] 
 **completed_at** | **datetime, none_type** | When the ticket was completed | [optional] [readonly] 

@@ -86,10 +86,10 @@ class EcommerceStore(ModelNormal):
         """
         return {
             'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'store_url': (str,),  # noqa: E501
-            'admin_url': (str,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'store_url': (str, none_type,),  # noqa: E501
+            'admin_url': (str, none_type,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
@@ -154,10 +154,10 @@ class EcommerceStore(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The store's name. [optional]  # noqa: E501
-            store_url (str): The store's website URL. [optional]  # noqa: E501
-            admin_url (str): The store's admin login URL. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            name (str, none_type): The store's name. [optional]  # noqa: E501
+            store_url (str, none_type): The store's website URL. [optional]  # noqa: E501
+            admin_url (str, none_type): The store's admin login URL. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 
@@ -241,10 +241,10 @@ class EcommerceStore(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The store's name. [optional]  # noqa: E501
-            store_url (str): The store's website URL. [optional]  # noqa: E501
-            admin_url (str): The store's admin login URL. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            name (str, none_type): The store's name. [optional]  # noqa: E501
+            store_url (str, none_type): The store's website URL. [optional]  # noqa: E501
+            admin_url (str, none_type): The store's admin login URL. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 

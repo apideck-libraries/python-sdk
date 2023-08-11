@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **email** | **str, none_type** |  | [optional] 
 **photo_url** | **str, none_type** | The URL of the photo of a person. | [optional] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
-**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
+**created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -86,8 +86,8 @@ class Email(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'email': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
+            'email': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -113,7 +113,7 @@ class Email(ModelNormal):
         """Email - a model defined in OpenAPI
 
         Args:
-            email (str):
+            email (str, none_type): Email address
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -146,8 +146,8 @@ class Email(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the email address. [optional]  # noqa: E501
+            type (str): Email type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -200,7 +200,7 @@ class Email(ModelNormal):
         """Email - a model defined in OpenAPI
 
         Args:
-            email (str):
+            email (str, none_type): Email address
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -233,8 +233,8 @@ class Email(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the email address. [optional]  # noqa: E501
+            type (str): Email type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

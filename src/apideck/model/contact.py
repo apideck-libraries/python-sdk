@@ -108,7 +108,7 @@ class Contact(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'owner_id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
@@ -144,8 +144,8 @@ class Contact(ModelNormal):
             'first_call_at': (datetime, none_type,),  # noqa: E501
             'first_email_at': (datetime, none_type,),  # noqa: E501
             'last_activity_at': (datetime, none_type,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -211,7 +211,7 @@ class Contact(ModelNormal):
         """Contact - a model defined in OpenAPI
 
         Args:
-            name (str):
+            name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -279,8 +279,8 @@ class Contact(ModelNormal):
             first_call_at (datetime, none_type): [optional]  # noqa: E501
             first_email_at (datetime, none_type): [optional]  # noqa: E501
             last_activity_at (datetime, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
+            created_at (datetime, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -333,7 +333,7 @@ class Contact(ModelNormal):
         """Contact - a model defined in OpenAPI
 
         Args:
-            name (str):
+            name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -401,8 +401,8 @@ class Contact(ModelNormal):
             first_call_at (datetime, none_type): [optional]  # noqa: E501
             first_email_at (datetime, none_type): [optional]  # noqa: E501
             last_activity_at (datetime, none_type): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
+            created_at (datetime, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

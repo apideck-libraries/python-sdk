@@ -81,9 +81,9 @@ class EcommerceDiscount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'code': (str,),  # noqa: E501
-            'amount': (str,),  # noqa: E501
-            'percentage': (str,),  # noqa: E501
+            'code': (str, none_type,),  # noqa: E501
+            'amount': (str, none_type,),  # noqa: E501
+            'percentage': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,9 +138,9 @@ class EcommerceDiscount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            code (str): The code used to apply the discount.. [optional]  # noqa: E501
-            amount (str): The fixed amount of the discount.. [optional]  # noqa: E501
-            percentage (str): The percentage of the discount.. [optional]  # noqa: E501
+            code (str, none_type): The code used to apply the discount.. [optional]  # noqa: E501
+            amount (str, none_type): The fixed amount of the discount.. [optional]  # noqa: E501
+            percentage (str, none_type): The percentage of the discount.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,9 +222,9 @@ class EcommerceDiscount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            code (str): The code used to apply the discount.. [optional]  # noqa: E501
-            amount (str): The fixed amount of the discount.. [optional]  # noqa: E501
-            percentage (str): The percentage of the discount.. [optional]  # noqa: E501
+            code (str, none_type): The code used to apply the discount.. [optional]  # noqa: E501
+            amount (str, none_type): The fixed amount of the discount.. [optional]  # noqa: E501
+            percentage (str, none_type): The percentage of the discount.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

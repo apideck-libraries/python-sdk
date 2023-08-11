@@ -102,7 +102,7 @@ class Webhook(ModelNormal):
             'description': (str, none_type,),  # noqa: E501
             'disabled_reason': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -178,7 +178,7 @@ class Webhook(ModelNormal):
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             disabled_reason (str): Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it's plan.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -276,7 +276,7 @@ class Webhook(ModelNormal):
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             disabled_reason (str): Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it's plan.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

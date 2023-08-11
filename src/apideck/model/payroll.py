@@ -102,7 +102,7 @@ class Payroll(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'processed': (bool, none_type,),  # noqa: E501
             'check_date': (str, none_type,),  # noqa: E501
             'start_date': (str, none_type,),  # noqa: E501
@@ -142,7 +142,7 @@ class Payroll(ModelNormal):
         """Payroll - a model defined in OpenAPI
 
         Args:
-            id (str): A unique identifier for an object.
+            id (str, none_type): A unique identifier for an object.
             processed (bool, none_type): Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
             check_date (str, none_type): The date on which employees will be paid for the payroll.
             start_date (str, none_type): The start date, inclusive, of the pay period.

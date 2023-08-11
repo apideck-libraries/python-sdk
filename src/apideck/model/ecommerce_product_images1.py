@@ -81,8 +81,8 @@ class EcommerceProductImages1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'url': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'url': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -137,8 +137,8 @@ class EcommerceProductImages1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            url (str): The URL of an image of the variant.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            url (str, none_type): The URL of an image of the variant.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,8 +220,8 @@ class EcommerceProductImages1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            url (str): The URL of an image of the variant.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            url (str, none_type): The URL of an image of the variant.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -77,12 +77,12 @@ class DriveGroup(ModelNormal):
         return {
             'id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'display_name': (str,),  # noqa: E501
+            'display_name': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -151,12 +151,12 @@ class DriveGroup(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_name (str): The display name of the drive group. [optional]  # noqa: E501
+            display_name (str, none_type): The display name of the drive group. [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,12 +242,12 @@ class DriveGroup(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_name (str): The display name of the drive group. [optional]  # noqa: E501
+            display_name (str, none_type): The display name of the drive group. [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

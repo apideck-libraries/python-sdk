@@ -81,7 +81,7 @@ class Collection(ModelNormal):
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -151,7 +151,7 @@ class Collection(ModelNormal):
             name (str): Name of the collection. [optional]  # noqa: E501
             description (str): Description of the collection. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,7 +239,7 @@ class Collection(ModelNormal):
             name (str): Name of the collection. [optional]  # noqa: E501
             description (str): Description of the collection. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

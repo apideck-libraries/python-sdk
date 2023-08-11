@@ -75,9 +75,9 @@ class CustomField(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'value': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
@@ -104,7 +104,7 @@ class CustomField(ModelNormal):
         """CustomField - a model defined in OpenAPI
 
         Args:
-            id (str):
+            id (str, none_type): Unique identifier for the custom field.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -137,8 +137,8 @@ class CustomField(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the custom field.. [optional]  # noqa: E501
-            description (str): More information about the custom field. [optional]  # noqa: E501
+            name (str, none_type): Name of the custom field.. [optional]  # noqa: E501
+            description (str, none_type): More information about the custom field. [optional]  # noqa: E501
             value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
@@ -192,7 +192,7 @@ class CustomField(ModelNormal):
         """CustomField - a model defined in OpenAPI
 
         Args:
-            id (str):
+            id (str, none_type): Unique identifier for the custom field.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -225,8 +225,8 @@ class CustomField(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the custom field.. [optional]  # noqa: E501
-            description (str): More information about the custom field. [optional]  # noqa: E501
+            name (str, none_type): Name of the custom field.. [optional]  # noqa: E501
+            description (str, none_type): More information about the custom field. [optional]  # noqa: E501
             value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 

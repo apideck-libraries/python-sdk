@@ -81,8 +81,8 @@ class TimeOffRequestNotes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'employee': (str,),  # noqa: E501
-            'manager': (str,),  # noqa: E501
+            'employee': (str, none_type,),  # noqa: E501
+            'manager': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -136,8 +136,8 @@ class TimeOffRequestNotes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            employee (str): [optional]  # noqa: E501
-            manager (str): [optional]  # noqa: E501
+            employee (str, none_type): [optional]  # noqa: E501
+            manager (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -219,8 +219,8 @@ class TimeOffRequestNotes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            employee (str): [optional]  # noqa: E501
-            manager (str): [optional]  # noqa: E501
+            employee (str, none_type): [optional]  # noqa: E501
+            manager (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

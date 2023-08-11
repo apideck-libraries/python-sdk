@@ -81,9 +81,9 @@ class EcommerceProductOptions1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'value': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'value': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,9 +138,9 @@ class EcommerceProductOptions1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for the option of the variant.. [optional]  # noqa: E501
-            name (str): The name of the option for the variant.. [optional]  # noqa: E501
-            value (str): The value of the option for the variant.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for the option of the variant.. [optional]  # noqa: E501
+            name (str, none_type): The name of the option for the variant.. [optional]  # noqa: E501
+            value (str, none_type): The value of the option for the variant.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,9 +222,9 @@ class EcommerceProductOptions1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for the option of the variant.. [optional]  # noqa: E501
-            name (str): The name of the option for the variant.. [optional]  # noqa: E501
-            value (str): The value of the option for the variant.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for the option of the variant.. [optional]  # noqa: E501
+            name (str, none_type): The name of the option for the variant.. [optional]  # noqa: E501
+            value (str, none_type): The value of the option for the variant.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

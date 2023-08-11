@@ -82,7 +82,7 @@ class LinkedFolder(ModelNormal):
         """
         return {
             'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class LinkedFolder(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the folder. [optional]  # noqa: E501
+            name (str, none_type): The name of the folder. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,7 +223,7 @@ class LinkedFolder(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): The name of the folder. [optional]  # noqa: E501
+            name (str, none_type): The name of the folder. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

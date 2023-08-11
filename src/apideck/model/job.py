@@ -149,12 +149,12 @@ class Job(ModelNormal):
             'addresses': ([Address],),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
-            'owner_id': (str,),  # noqa: E501
-            'published_at': (datetime,),  # noqa: E501
+            'owner_id': (str, none_type,),  # noqa: E501
+            'published_at': (datetime, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -288,12 +288,12 @@ class Job(ModelNormal):
             addresses ([Address]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
-            published_at (datetime): [optional]  # noqa: E501
+            owner_id (str, none_type): [optional]  # noqa: E501
+            published_at (datetime, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -410,12 +410,12 @@ class Job(ModelNormal):
             addresses ([Address]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             deleted (bool, none_type): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
-            published_at (datetime): [optional]  # noqa: E501
+            owner_id (str, none_type): [optional]  # noqa: E501
+            published_at (datetime, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

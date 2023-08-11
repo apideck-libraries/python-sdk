@@ -85,15 +85,15 @@ class Folder(ModelNormal):
             'name': (str,),  # noqa: E501
             'parent_folders': ([LinkedFolder],),  # noqa: E501
             'id': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'path': (str,),  # noqa: E501
-            'size': (int,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'path': (str, none_type,),  # noqa: E501
+            'size': (int, none_type,),  # noqa: E501
             'owner': (Owner,),  # noqa: E501
             'parent_folders_complete': (bool,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -170,15 +170,15 @@ class Folder(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            description (str): Optional description of the folder. [optional]  # noqa: E501
-            path (str): The full path of the folder (includes the folder name). [optional]  # noqa: E501
-            size (int): The size of the folder in bytes. [optional]  # noqa: E501
+            description (str, none_type): Optional description of the folder. [optional]  # noqa: E501
+            path (str, none_type): The full path of the folder (includes the folder name). [optional]  # noqa: E501
+            size (int, none_type): The size of the folder in bytes. [optional]  # noqa: E501
             owner (Owner): [optional]  # noqa: E501
             parent_folders_complete (bool): Whether the list of parent folder is complete. Some connectors only return the direct parent of a folder. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -267,15 +267,15 @@ class Folder(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            description (str): Optional description of the folder. [optional]  # noqa: E501
-            path (str): The full path of the folder (includes the folder name). [optional]  # noqa: E501
-            size (int): The size of the folder in bytes. [optional]  # noqa: E501
+            description (str, none_type): Optional description of the folder. [optional]  # noqa: E501
+            path (str, none_type): The full path of the folder (includes the folder name). [optional]  # noqa: E501
+            size (int, none_type): The size of the folder in bytes. [optional]  # noqa: E501
             owner (Owner): [optional]  # noqa: E501
             parent_folders_complete (bool): Whether the list of parent folder is complete. Some connectors only return the direct parent of a folder. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

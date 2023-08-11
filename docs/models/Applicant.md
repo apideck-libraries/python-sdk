@@ -35,8 +35,8 @@ Name | Type | Description | Notes
 **anonymized** | **bool** |  | [optional] 
 **tags** | [**Tags**](Tags.md) |  | [optional] 
 **archived** | **bool** |  | [optional] 
-**last_interaction_at** | **datetime** |  | [optional] [readonly] 
-**owner_id** | **str** |  | [optional] 
+**last_interaction_at** | **datetime, none_type** |  | [optional] [readonly] 
+**owner_id** | **str, none_type** |  | [optional] 
 **sourced_by** | **str, none_type** |  | [optional] [readonly] 
 **cv_url** | **str** |  | [optional] [readonly] 
 **record_url** | **str, none_type** |  | [optional] 
@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
-**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
+**created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

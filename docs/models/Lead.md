@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **company_name** | **str, none_type** |  | 
 **id** | **str** |  | [optional] [readonly] 
-**owner_id** | **str** |  | [optional] 
+**owner_id** | **str, none_type** |  | [optional] 
 **company_id** | **str, none_type** |  | [optional] 
 **contact_id** | **str, none_type** |  | [optional] 
 **lead_source** | **str, none_type** |  | [optional] 

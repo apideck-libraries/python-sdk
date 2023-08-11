@@ -110,7 +110,7 @@ class Lead(ModelNormal):
             'name': (str,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
-            'owner_id': (str,),  # noqa: E501
+            'owner_id': (str, none_type,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
             'contact_id': (str, none_type,),  # noqa: E501
             'lead_source': (str, none_type,),  # noqa: E501
@@ -218,7 +218,7 @@ class Lead(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
+            owner_id (str, none_type): [optional]  # noqa: E501
             company_id (str, none_type): [optional]  # noqa: E501
             contact_id (str, none_type): [optional]  # noqa: E501
             lead_source (str, none_type): [optional]  # noqa: E501
@@ -329,7 +329,7 @@ class Lead(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
+            owner_id (str, none_type): [optional]  # noqa: E501
             company_id (str, none_type): [optional]  # noqa: E501
             contact_id (str, none_type): [optional]  # noqa: E501
             lead_source (str, none_type): [optional]  # noqa: E501

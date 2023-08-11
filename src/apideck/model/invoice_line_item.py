@@ -112,7 +112,7 @@ class InvoiceLineItem(ModelNormal):
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
@@ -214,7 +214,7 @@ class InvoiceLineItem(ModelNormal):
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 
@@ -318,7 +318,7 @@ class InvoiceLineItem(ModelNormal):
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 

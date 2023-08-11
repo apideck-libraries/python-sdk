@@ -109,8 +109,8 @@ class User(ModelNormal):
             'password': (str,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
-            'updated_at': (str,),  # noqa: E501
-            'created_at': (str,),  # noqa: E501
+            'updated_at': (str, none_type,),  # noqa: E501
+            'created_at': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -205,8 +205,8 @@ class User(ModelNormal):
             password (str): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            updated_at (str): [optional]  # noqa: E501
-            created_at (str): [optional]  # noqa: E501
+            updated_at (str, none_type): [optional]  # noqa: E501
+            created_at (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -309,8 +309,8 @@ class User(ModelNormal):
             password (str): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            updated_at (str): [optional]  # noqa: E501
-            created_at (str): [optional]  # noqa: E501
+            updated_at (str, none_type): [optional]  # noqa: E501
+            created_at (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

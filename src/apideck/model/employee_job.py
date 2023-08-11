@@ -91,8 +91,8 @@ class EmployeeJob(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
-            'employee_id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'employee_id': (str, none_type,),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
             'role': (str, none_type,),  # noqa: E501
             'start_date': (date, none_type,),  # noqa: E501
@@ -168,8 +168,8 @@ class EmployeeJob(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            employee_id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
             role (str, none_type): The position and responsibilities of the person within the organization.. [optional]  # noqa: E501
             start_date (date, none_type): The date on which the employee starts working in their current job role.. [optional]  # noqa: E501
@@ -261,8 +261,8 @@ class EmployeeJob(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            employee_id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
             role (str, none_type): The position and responsibilities of the person within the organization.. [optional]  # noqa: E501
             start_date (date, none_type): The date on which the employee starts working in their current job role.. [optional]  # noqa: E501

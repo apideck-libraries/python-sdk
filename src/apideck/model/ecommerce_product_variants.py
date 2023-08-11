@@ -89,13 +89,13 @@ class EcommerceProductVariants(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'price': (str,),  # noqa: E501
-            'sku': (str,),  # noqa: E501
-            'inventory_quantity': (str,),  # noqa: E501
-            'weight': (str,),  # noqa: E501
-            'weight_unit': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'price': (str, none_type,),  # noqa: E501
+            'sku': (str, none_type,),  # noqa: E501
+            'inventory_quantity': (str, none_type,),  # noqa: E501
+            'weight': (str, none_type,),  # noqa: E501
+            'weight_unit': (str, none_type,),  # noqa: E501
             'options': ([EcommerceProductOptions1],),  # noqa: E501
             'images': ([EcommerceProductImages1],),  # noqa: E501
         }
@@ -158,13 +158,13 @@ class EcommerceProductVariants(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for the variant of the product.. [optional]  # noqa: E501
-            name (str): The name for the variant, used for displaying to customers.. [optional]  # noqa: E501
-            price (str): The price of the variant.. [optional]  # noqa: E501
-            sku (str): The stock keeping unit of the variant.. [optional]  # noqa: E501
-            inventory_quantity (str): The quantity of the variant in stock.. [optional]  # noqa: E501
-            weight (str): The weight of the variant.. [optional]  # noqa: E501
-            weight_unit (str): The unit of measurement for the weight of the variant.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for the variant of the product.. [optional]  # noqa: E501
+            name (str, none_type): The name for the variant, used for displaying to customers.. [optional]  # noqa: E501
+            price (str, none_type): The price of the variant.. [optional]  # noqa: E501
+            sku (str, none_type): The stock keeping unit of the variant.. [optional]  # noqa: E501
+            inventory_quantity (str, none_type): The quantity of the variant in stock.. [optional]  # noqa: E501
+            weight (str, none_type): The weight of the variant.. [optional]  # noqa: E501
+            weight_unit (str, none_type): The unit of measurement for the weight of the variant.. [optional]  # noqa: E501
             options ([EcommerceProductOptions1]): [optional]  # noqa: E501
             images ([EcommerceProductImages1]): [optional]  # noqa: E501
         """
@@ -248,13 +248,13 @@ class EcommerceProductVariants(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for the variant of the product.. [optional]  # noqa: E501
-            name (str): The name for the variant, used for displaying to customers.. [optional]  # noqa: E501
-            price (str): The price of the variant.. [optional]  # noqa: E501
-            sku (str): The stock keeping unit of the variant.. [optional]  # noqa: E501
-            inventory_quantity (str): The quantity of the variant in stock.. [optional]  # noqa: E501
-            weight (str): The weight of the variant.. [optional]  # noqa: E501
-            weight_unit (str): The unit of measurement for the weight of the variant.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for the variant of the product.. [optional]  # noqa: E501
+            name (str, none_type): The name for the variant, used for displaying to customers.. [optional]  # noqa: E501
+            price (str, none_type): The price of the variant.. [optional]  # noqa: E501
+            sku (str, none_type): The stock keeping unit of the variant.. [optional]  # noqa: E501
+            inventory_quantity (str, none_type): The quantity of the variant in stock.. [optional]  # noqa: E501
+            weight (str, none_type): The weight of the variant.. [optional]  # noqa: E501
+            weight_unit (str, none_type): The unit of measurement for the weight of the variant.. [optional]  # noqa: E501
             options ([EcommerceProductOptions1]): [optional]  # noqa: E501
             images ([EcommerceProductImages1]): [optional]  # noqa: E501
         """

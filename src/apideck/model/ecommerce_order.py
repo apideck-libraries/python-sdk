@@ -72,6 +72,7 @@ class EcommerceOrder(ModelNormal):
 
     allowed_values = {
         ('payment_status',): {
+            'None': None,
             'PENDING': "pending",
             'AUTHORIZED': "authorized",
             'PAID': "paid",
@@ -81,6 +82,7 @@ class EcommerceOrder(ModelNormal):
             'UNKNOWN': "unknown",
         },
         ('fulfillment_status',): {
+            'None': None,
             'PENDING': "pending",
             'SHIPPED': "shipped",
             'PARTIAL': "partial",
@@ -111,25 +113,25 @@ class EcommerceOrder(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'order_number': (str,),  # noqa: E501
+            'order_number': (str, none_type,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
             'discounts': ([EcommerceDiscount],),  # noqa: E501
-            'sub_total': (str,),  # noqa: E501
-            'shipping_cost': (str,),  # noqa: E501
-            'total_discount': (str,),  # noqa: E501
-            'total_tax': (str,),  # noqa: E501
-            'total_amount': (str,),  # noqa: E501
+            'sub_total': (str, none_type,),  # noqa: E501
+            'shipping_cost': (str, none_type,),  # noqa: E501
+            'total_discount': (str, none_type,),  # noqa: E501
+            'total_tax': (str, none_type,),  # noqa: E501
+            'total_amount': (str, none_type,),  # noqa: E501
             'status': (EcommerceOrderStatus,),  # noqa: E501
-            'payment_status': (str,),  # noqa: E501
-            'fulfillment_status': (str,),  # noqa: E501
-            'payment_method': (str,),  # noqa: E501
+            'payment_status': (str, none_type,),  # noqa: E501
+            'fulfillment_status': (str, none_type,),  # noqa: E501
+            'payment_method': (str, none_type,),  # noqa: E501
             'customer': (LinkedEcommerceCustomer,),  # noqa: E501
             'billing_address': (EcommerceAddress,),  # noqa: E501
             'shipping_address': (EcommerceAddress,),  # noqa: E501
             'tracking': ([TrackingItem],),  # noqa: E501
             'line_items': ([EcommerceOrderLineItem],),  # noqa: E501
-            'note': (str,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'note': (str, none_type,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
@@ -209,25 +211,25 @@ class EcommerceOrder(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            order_number (str): Order number, if any.. [optional]  # noqa: E501
+            order_number (str, none_type): Order number, if any.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
-            sub_total (str): Sub-total amount, normally before tax.. [optional]  # noqa: E501
-            shipping_cost (str): Shipping cost, if any.. [optional]  # noqa: E501
-            total_discount (str): Total discount, if any.. [optional]  # noqa: E501
-            total_tax (str): Total tax, if any.. [optional]  # noqa: E501
-            total_amount (str): Total amount due.. [optional]  # noqa: E501
+            sub_total (str, none_type): Sub-total amount, normally before tax.. [optional]  # noqa: E501
+            shipping_cost (str, none_type): Shipping cost, if any.. [optional]  # noqa: E501
+            total_discount (str, none_type): Total discount, if any.. [optional]  # noqa: E501
+            total_tax (str, none_type): Total tax, if any.. [optional]  # noqa: E501
+            total_amount (str, none_type): Total amount due.. [optional]  # noqa: E501
             status (EcommerceOrderStatus): [optional]  # noqa: E501
-            payment_status (str): Current payment status of the order.. [optional]  # noqa: E501
-            fulfillment_status (str): Current fulfillment status of the order.. [optional]  # noqa: E501
-            payment_method (str): Payment method used for this order.. [optional]  # noqa: E501
+            payment_status (str, none_type): Current payment status of the order.. [optional]  # noqa: E501
+            fulfillment_status (str, none_type): Current fulfillment status of the order.. [optional]  # noqa: E501
+            payment_method (str, none_type): Payment method used for this order.. [optional]  # noqa: E501
             customer (LinkedEcommerceCustomer): [optional]  # noqa: E501
             billing_address (EcommerceAddress): [optional]  # noqa: E501
             shipping_address (EcommerceAddress): [optional]  # noqa: E501
             tracking ([TrackingItem]): [optional]  # noqa: E501
             line_items ([EcommerceOrderLineItem]): [optional]  # noqa: E501
-            note (str): Note for the order.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            note (str, none_type): Note for the order.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 
@@ -311,25 +313,25 @@ class EcommerceOrder(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            order_number (str): Order number, if any.. [optional]  # noqa: E501
+            order_number (str, none_type): Order number, if any.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
-            sub_total (str): Sub-total amount, normally before tax.. [optional]  # noqa: E501
-            shipping_cost (str): Shipping cost, if any.. [optional]  # noqa: E501
-            total_discount (str): Total discount, if any.. [optional]  # noqa: E501
-            total_tax (str): Total tax, if any.. [optional]  # noqa: E501
-            total_amount (str): Total amount due.. [optional]  # noqa: E501
+            sub_total (str, none_type): Sub-total amount, normally before tax.. [optional]  # noqa: E501
+            shipping_cost (str, none_type): Shipping cost, if any.. [optional]  # noqa: E501
+            total_discount (str, none_type): Total discount, if any.. [optional]  # noqa: E501
+            total_tax (str, none_type): Total tax, if any.. [optional]  # noqa: E501
+            total_amount (str, none_type): Total amount due.. [optional]  # noqa: E501
             status (EcommerceOrderStatus): [optional]  # noqa: E501
-            payment_status (str): Current payment status of the order.. [optional]  # noqa: E501
-            fulfillment_status (str): Current fulfillment status of the order.. [optional]  # noqa: E501
-            payment_method (str): Payment method used for this order.. [optional]  # noqa: E501
+            payment_status (str, none_type): Current payment status of the order.. [optional]  # noqa: E501
+            fulfillment_status (str, none_type): Current fulfillment status of the order.. [optional]  # noqa: E501
+            payment_method (str, none_type): Payment method used for this order.. [optional]  # noqa: E501
             customer (LinkedEcommerceCustomer): [optional]  # noqa: E501
             billing_address (EcommerceAddress): [optional]  # noqa: E501
             shipping_address (EcommerceAddress): [optional]  # noqa: E501
             tracking ([TrackingItem]): [optional]  # noqa: E501
             line_items ([EcommerceOrderLineItem]): [optional]  # noqa: E501
-            note (str): Note for the order.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            note (str, none_type): Note for the order.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 

@@ -84,7 +84,7 @@ class Compensation(ModelNormal):
         """
         lazy_import()
         return {
-            'employee_id': (str,),  # noqa: E501
+            'employee_id': (str, none_type,),  # noqa: E501
             'net_pay': (float, none_type,),  # noqa: E501
             'gross_pay': (float, none_type,),  # noqa: E501
             'taxes': ([Tax], none_type,),  # noqa: E501
@@ -118,7 +118,7 @@ class Compensation(ModelNormal):
         """Compensation - a model defined in OpenAPI
 
         Args:
-            employee_id (str): A unique identifier for an object.
+            employee_id (str, none_type): A unique identifier for an object.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
