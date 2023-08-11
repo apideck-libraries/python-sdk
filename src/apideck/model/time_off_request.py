@@ -60,6 +60,7 @@ class TimeOffRequest(ModelNormal):
 
     allowed_values = {
         ('status',): {
+            'None': None,
             'REQUESTED': "requested",
             'APPROVED': "approved",
             'DECLINED': "declined",
@@ -68,6 +69,7 @@ class TimeOffRequest(ModelNormal):
             'OTHER': "other",
         },
         ('request_type',): {
+            'None': None,
             'VACATION': "vacation",
             'SICK': "sick",
             'PERSONAL': "personal",
@@ -77,6 +79,7 @@ class TimeOffRequest(ModelNormal):
             'OTHER': "other",
         },
         ('units',): {
+            'None': None,
             'DAYS': "days",
             'HOURS': "hours",
             'OTHER': "other",
@@ -123,22 +126,22 @@ class TimeOffRequest(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'employee_id': (str,),  # noqa: E501
-            'policy_id': (str,),  # noqa: E501
-            'status': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'start_date': (str,),  # noqa: E501
-            'end_date': (str,),  # noqa: E501
-            'request_date': (str,),  # noqa: E501
-            'request_type': (str,),  # noqa: E501
-            'approval_date': (str,),  # noqa: E501
-            'units': (str,),  # noqa: E501
-            'amount': (float,),  # noqa: E501
+            'employee_id': (str, none_type,),  # noqa: E501
+            'policy_id': (str, none_type,),  # noqa: E501
+            'status': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'start_date': (str, none_type,),  # noqa: E501
+            'end_date': (str, none_type,),  # noqa: E501
+            'request_date': (str, none_type,),  # noqa: E501
+            'request_type': (str, none_type,),  # noqa: E501
+            'approval_date': (str, none_type,),  # noqa: E501
+            'units': (str, none_type,),  # noqa: E501
+            'amount': (float, none_type,),  # noqa: E501
             'notes': (TimeOffRequestNotes,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -213,22 +216,22 @@ class TimeOffRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): ID of the employee. [optional]  # noqa: E501
-            policy_id (str): ID of the policy. [optional]  # noqa: E501
-            status (str): The status of the time off request.. [optional]  # noqa: E501
-            description (str): Description of the time off request.. [optional]  # noqa: E501
-            start_date (str): The start date of the time off request.. [optional]  # noqa: E501
-            end_date (str): The end date of the time off request.. [optional]  # noqa: E501
-            request_date (str): The date the request was made.. [optional]  # noqa: E501
-            request_type (str): The type of request. [optional]  # noqa: E501
-            approval_date (str): The date the request was approved. [optional]  # noqa: E501
-            units (str): The unit of time off requested. Possible values include: `hours`, `days`, or `other`.. [optional]  # noqa: E501
-            amount (float): The amount of time off requested.. [optional]  # noqa: E501
+            employee_id (str, none_type): ID of the employee. [optional]  # noqa: E501
+            policy_id (str, none_type): ID of the policy. [optional]  # noqa: E501
+            status (str, none_type): The status of the time off request.. [optional]  # noqa: E501
+            description (str, none_type): Description of the time off request.. [optional]  # noqa: E501
+            start_date (str, none_type): The start date of the time off request.. [optional]  # noqa: E501
+            end_date (str, none_type): The end date of the time off request.. [optional]  # noqa: E501
+            request_date (str, none_type): The date the request was made.. [optional]  # noqa: E501
+            request_type (str, none_type): The type of request. [optional]  # noqa: E501
+            approval_date (str, none_type): The date the request was approved. [optional]  # noqa: E501
+            units (str, none_type): The unit of time off requested. Possible values include: `hours`, `days`, or `other`.. [optional]  # noqa: E501
+            amount (float, none_type): The amount of time off requested.. [optional]  # noqa: E501
             notes (TimeOffRequestNotes): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -311,22 +314,22 @@ class TimeOffRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            employee_id (str): ID of the employee. [optional]  # noqa: E501
-            policy_id (str): ID of the policy. [optional]  # noqa: E501
-            status (str): The status of the time off request.. [optional]  # noqa: E501
-            description (str): Description of the time off request.. [optional]  # noqa: E501
-            start_date (str): The start date of the time off request.. [optional]  # noqa: E501
-            end_date (str): The end date of the time off request.. [optional]  # noqa: E501
-            request_date (str): The date the request was made.. [optional]  # noqa: E501
-            request_type (str): The type of request. [optional]  # noqa: E501
-            approval_date (str): The date the request was approved. [optional]  # noqa: E501
-            units (str): The unit of time off requested. Possible values include: `hours`, `days`, or `other`.. [optional]  # noqa: E501
-            amount (float): The amount of time off requested.. [optional]  # noqa: E501
+            employee_id (str, none_type): ID of the employee. [optional]  # noqa: E501
+            policy_id (str, none_type): ID of the policy. [optional]  # noqa: E501
+            status (str, none_type): The status of the time off request.. [optional]  # noqa: E501
+            description (str, none_type): Description of the time off request.. [optional]  # noqa: E501
+            start_date (str, none_type): The start date of the time off request.. [optional]  # noqa: E501
+            end_date (str, none_type): The end date of the time off request.. [optional]  # noqa: E501
+            request_date (str, none_type): The date the request was made.. [optional]  # noqa: E501
+            request_type (str, none_type): The type of request. [optional]  # noqa: E501
+            approval_date (str, none_type): The date the request was approved. [optional]  # noqa: E501
+            units (str, none_type): The unit of time off requested. Possible values include: `hours`, `days`, or `other`.. [optional]  # noqa: E501
+            amount (float, none_type): The amount of time off requested.. [optional]  # noqa: E501
             notes (TimeOffRequestNotes): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -123,8 +123,8 @@ class Applicant(ModelNormal):
             'anonymized': (bool,),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
             'archived': (bool,),  # noqa: E501
-            'last_interaction_at': (datetime,),  # noqa: E501
-            'owner_id': (str,),  # noqa: E501
+            'last_interaction_at': (datetime, none_type,),  # noqa: E501
+            'owner_id': (str, none_type,),  # noqa: E501
             'sourced_by': (str, none_type,),  # noqa: E501
             'cv_url': (str,),  # noqa: E501
             'record_url': (str, none_type,),  # noqa: E501
@@ -135,7 +135,7 @@ class Applicant(ModelNormal):
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -275,8 +275,8 @@ class Applicant(ModelNormal):
             anonymized (bool): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             archived (bool): [optional]  # noqa: E501
-            last_interaction_at (datetime): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
+            last_interaction_at (datetime, none_type): [optional]  # noqa: E501
+            owner_id (str, none_type): [optional]  # noqa: E501
             sourced_by (str, none_type): [optional]  # noqa: E501
             cv_url (str): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
@@ -287,7 +287,7 @@ class Applicant(ModelNormal):
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -400,8 +400,8 @@ class Applicant(ModelNormal):
             anonymized (bool): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             archived (bool): [optional]  # noqa: E501
-            last_interaction_at (datetime): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
+            last_interaction_at (datetime, none_type): [optional]  # noqa: E501
+            owner_id (str, none_type): [optional]  # noqa: E501
             sourced_by (str, none_type): [optional]  # noqa: E501
             cv_url (str): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
@@ -412,7 +412,7 @@ class Applicant(ModelNormal):
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

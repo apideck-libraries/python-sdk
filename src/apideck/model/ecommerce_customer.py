@@ -68,6 +68,7 @@ class EcommerceCustomer(ModelNormal):
 
     allowed_values = {
         ('status',): {
+            'None': None,
             'ACTIVE': "active",
             'ARCHIVED': "archived",
         },
@@ -93,17 +94,17 @@ class EcommerceCustomer(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'first_name': (str,),  # noqa: E501
-            'last_name': (str,),  # noqa: E501
-            'company_name': (str,),  # noqa: E501
-            'status': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'first_name': (str, none_type,),  # noqa: E501
+            'last_name': (str, none_type,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
+            'status': (str, none_type,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
-            'emails': ([Email],),  # noqa: E501
-            'phone_numbers': ([PhoneNumber],),  # noqa: E501
+            'emails': ([Email], none_type,),  # noqa: E501
+            'phone_numbers': ([PhoneNumber], none_type,),  # noqa: E501
             'addresses': ([EcommerceCustomerAddresses],),  # noqa: E501
             'orders': ([LinkedEcommerceOrder],),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
@@ -175,17 +176,17 @@ class EcommerceCustomer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Full name of the customer. [optional]  # noqa: E501
-            first_name (str): First name of the customer. [optional]  # noqa: E501
-            last_name (str): Last name of the customer. [optional]  # noqa: E501
-            company_name (str): Company name of the customer. [optional]  # noqa: E501
-            status (str): The current status of the customer. [optional]  # noqa: E501
+            name (str, none_type): Full name of the customer. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the customer. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the customer. [optional]  # noqa: E501
+            company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
+            status (str, none_type): The current status of the customer. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            emails ([Email]): An array of email addresses for the customer.. [optional]  # noqa: E501
-            phone_numbers ([PhoneNumber]): An array of phone numbers for the customer.. [optional]  # noqa: E501
+            emails ([Email], none_type): An array of email addresses for the customer.. [optional]  # noqa: E501
+            phone_numbers ([PhoneNumber], none_type): An array of phone numbers for the customer.. [optional]  # noqa: E501
             addresses ([EcommerceCustomerAddresses]): An array of addresses for the customer.. [optional]  # noqa: E501
             orders ([LinkedEcommerceOrder]): [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 
@@ -269,17 +270,17 @@ class EcommerceCustomer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Full name of the customer. [optional]  # noqa: E501
-            first_name (str): First name of the customer. [optional]  # noqa: E501
-            last_name (str): Last name of the customer. [optional]  # noqa: E501
-            company_name (str): Company name of the customer. [optional]  # noqa: E501
-            status (str): The current status of the customer. [optional]  # noqa: E501
+            name (str, none_type): Full name of the customer. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the customer. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the customer. [optional]  # noqa: E501
+            company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
+            status (str, none_type): The current status of the customer. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            emails ([Email]): An array of email addresses for the customer.. [optional]  # noqa: E501
-            phone_numbers ([PhoneNumber]): An array of phone numbers for the customer.. [optional]  # noqa: E501
+            emails ([Email], none_type): An array of email addresses for the customer.. [optional]  # noqa: E501
+            phone_numbers ([PhoneNumber], none_type): An array of phone numbers for the customer.. [optional]  # noqa: E501
             addresses ([EcommerceCustomerAddresses]): An array of addresses for the customer.. [optional]  # noqa: E501
             orders ([LinkedEcommerceOrder]): [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
 

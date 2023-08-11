@@ -90,11 +90,11 @@ class UnifiedFile(ModelNormal):
             'name': (str,),  # noqa: E501
             'type': (FileType,),  # noqa: E501
             'downstream_id': (str, none_type,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'path': (str,),  # noqa: E501
-            'mime_type': (str,),  # noqa: E501
+            'mime_type': (str, none_type,),  # noqa: E501
             'downloadable': (bool,),  # noqa: E501
-            'size': (int,),  # noqa: E501
+            'size': (int, none_type,),  # noqa: E501
             'owner': (Owner,),  # noqa: E501
             'parent_folders': ([LinkedFolder],),  # noqa: E501
             'parent_folders_complete': (bool,),  # noqa: E501
@@ -104,7 +104,7 @@ class UnifiedFile(ModelNormal):
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -187,11 +187,11 @@ class UnifiedFile(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
-            description (str): Optional description of the file. [optional]  # noqa: E501
+            description (str, none_type): Optional description of the file. [optional]  # noqa: E501
             path (str): The full path of the file or folder (includes the file name). [optional]  # noqa: E501
-            mime_type (str): The MIME type of the file.. [optional]  # noqa: E501
+            mime_type (str, none_type): The MIME type of the file.. [optional]  # noqa: E501
             downloadable (bool): Whether the current user can download this file. [optional]  # noqa: E501
-            size (int): The size of the file in bytes. [optional]  # noqa: E501
+            size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
             owner (Owner): [optional]  # noqa: E501
             parent_folders ([LinkedFolder]): The parent folders of the file, starting from the root. [optional]  # noqa: E501
             parent_folders_complete (bool): Whether the list of parent folders is complete. Some connectors only return the direct parent of a file. [optional]  # noqa: E501
@@ -201,7 +201,7 @@ class UnifiedFile(ModelNormal):
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -290,11 +290,11 @@ class UnifiedFile(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
-            description (str): Optional description of the file. [optional]  # noqa: E501
+            description (str, none_type): Optional description of the file. [optional]  # noqa: E501
             path (str): The full path of the file or folder (includes the file name). [optional]  # noqa: E501
-            mime_type (str): The MIME type of the file.. [optional]  # noqa: E501
+            mime_type (str, none_type): The MIME type of the file.. [optional]  # noqa: E501
             downloadable (bool): Whether the current user can download this file. [optional]  # noqa: E501
-            size (int): The size of the file in bytes. [optional]  # noqa: E501
+            size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
             owner (Owner): [optional]  # noqa: E501
             parent_folders ([LinkedFolder]): The parent folders of the file, starting from the root. [optional]  # noqa: E501
             parent_folders_complete (bool): Whether the list of parent folders is complete. Some connectors only return the direct parent of a file. [optional]  # noqa: E501
@@ -304,7 +304,7 @@ class UnifiedFile(ModelNormal):
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

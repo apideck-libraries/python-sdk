@@ -5,18 +5,18 @@ A single line item of an ecommerce order, representing a product or variant with
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | The name of the product or variant associated with the line item. | 
-**quantity** | **str** | The quantity of the product or variant associated with the line item. | 
-**total_amount** | **str** | The total amount for the product(s) or variant associated with the line item, including taxes and discounts. | 
-**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**product_id** | **str** | A unique identifier for the product associated with the line item. | [optional] 
-**variant_id** | **str** | A unique identifier for the variant of the product associated with the line item, if applicable. | [optional] 
-**sku** | **str** | The SKU of the product or variant associated with the line item. | [optional] 
-**description** | **str** | The description of the product or variant associated with the line item. | [optional] 
+**name** | **str, none_type** | The name of the product or variant associated with the line item. | 
+**quantity** | **str, none_type** | The quantity of the product or variant associated with the line item. | 
+**total_amount** | **str, none_type** | The total amount for the product(s) or variant associated with the line item, including taxes and discounts. | 
+**id** | **str, none_type** | A unique identifier for an object. | [optional] [readonly] 
+**product_id** | **str, none_type** | A unique identifier for the product associated with the line item. | [optional] 
+**variant_id** | **str, none_type** | A unique identifier for the variant of the product associated with the line item, if applicable. | [optional] 
+**sku** | **str, none_type** | The SKU of the product or variant associated with the line item. | [optional] 
+**description** | **str, none_type** | The description of the product or variant associated with the line item. | [optional] 
 **options** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
-**unit_price** | **str** | The unit price of the product or variant associated with the line item. | [optional] 
-**tax_rate** | **str** | The tax rate applied to the product or variant associated with the line item. | [optional] 
-**tax_amount** | **str** | The total tax amount applied to the product or variant associated with the line item. | [optional] 
+**unit_price** | **str, none_type** | The unit price of the product or variant associated with the line item. | [optional] 
+**tax_rate** | **str, none_type** | The tax rate applied to the product or variant associated with the line item. | [optional] 
+**tax_amount** | **str, none_type** | The total tax amount applied to the product or variant associated with the line item. | [optional] 
 **discounts** | [**[EcommerceDiscount]**](EcommerceDiscount.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

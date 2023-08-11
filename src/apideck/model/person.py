@@ -80,7 +80,7 @@ class Person(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
             'middle_name': (str, none_type,),  # noqa: E501
@@ -148,14 +148,14 @@ class Person(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
             middle_name (str, none_type): Middle name of the person.. [optional]  # noqa: E501
             gender (Gender): [optional]  # noqa: E501
-            initials (str, none_type): [optional]  # noqa: E501
-            birthday (date, none_type): [optional]  # noqa: E501
-            deceased_on (date, none_type): [optional]  # noqa: E501
+            initials (str, none_type): Initials of the person. [optional]  # noqa: E501
+            birthday (date, none_type): Date of birth. [optional]  # noqa: E501
+            deceased_on (date, none_type): Date of death. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,14 +237,14 @@ class Person(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
             middle_name (str, none_type): Middle name of the person.. [optional]  # noqa: E501
             gender (Gender): [optional]  # noqa: E501
-            initials (str, none_type): [optional]  # noqa: E501
-            birthday (date, none_type): [optional]  # noqa: E501
-            deceased_on (date, none_type): [optional]  # noqa: E501
+            initials (str, none_type): Initials of the person. [optional]  # noqa: E501
+            birthday (date, none_type): Date of birth. [optional]  # noqa: E501
+            deceased_on (date, none_type): Date of death. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -90,11 +90,11 @@ class Pipeline(ModelNormal):
             'currency': (Currency,),  # noqa: E501
             'archived': (bool,),  # noqa: E501
             'active': (bool,),  # noqa: E501
-            'display_order': (int,),  # noqa: E501
+            'display_order': (int, none_type,),  # noqa: E501
             'win_probability_enabled': (bool,),  # noqa: E501
             'stages': ([PipelineStages],),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -165,11 +165,11 @@ class Pipeline(ModelNormal):
             currency (Currency): [optional]  # noqa: E501
             archived (bool): [optional]  # noqa: E501
             active (bool): [optional]  # noqa: E501
-            display_order (int): [optional]  # noqa: E501
+            display_order (int, none_type): [optional]  # noqa: E501
             win_probability_enabled (bool): [optional]  # noqa: E501
             stages ([PipelineStages]): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -259,11 +259,11 @@ class Pipeline(ModelNormal):
             currency (Currency): [optional]  # noqa: E501
             archived (bool): [optional]  # noqa: E501
             active (bool): [optional]  # noqa: E501
-            display_order (int): [optional]  # noqa: E501
+            display_order (int, none_type): [optional]  # noqa: E501
             win_probability_enabled (bool): [optional]  # noqa: E501
             stages ([PipelineStages]): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

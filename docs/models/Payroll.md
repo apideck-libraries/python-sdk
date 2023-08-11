@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | A unique identifier for an object. | [readonly] 
+**id** | **str, none_type** | A unique identifier for an object. | [readonly] 
 **processed** | **bool, none_type** | Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated. | 
 **check_date** | **str, none_type** | The date on which employees will be paid for the payroll. | 
 **start_date** | **str, none_type** | The start date, inclusive, of the pay period. | 

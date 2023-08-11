@@ -80,7 +80,7 @@ class UploadSession(ModelNormal):
             'part_size': (float,),  # noqa: E501
             'parallel_upload_supported': (bool,),  # noqa: E501
             'uploaded_byte_range': (str,),  # noqa: E501
-            'expires_at': (datetime,),  # noqa: E501
+            'expires_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,7 +149,7 @@ class UploadSession(ModelNormal):
             part_size (float): Size in bytes of each part of the file that you will upload. Uploaded parts need to be this size for the upload to be successful.. [optional]  # noqa: E501
             parallel_upload_supported (bool): Indicates if parts of the file can uploaded in parallel.. [optional]  # noqa: E501
             uploaded_byte_range (str): The range of bytes that was successfully uploaded.. [optional]  # noqa: E501
-            expires_at (datetime): [optional]  # noqa: E501
+            expires_at (datetime, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,7 +236,7 @@ class UploadSession(ModelNormal):
             part_size (float): Size in bytes of each part of the file that you will upload. Uploaded parts need to be this size for the upload to be successful.. [optional]  # noqa: E501
             parallel_upload_supported (bool): Indicates if parts of the file can uploaded in parallel.. [optional]  # noqa: E501
             uploaded_byte_range (str): The range of bytes that was successfully uploaded.. [optional]  # noqa: E501
-            expires_at (datetime): [optional]  # noqa: E501
+            expires_at (datetime, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

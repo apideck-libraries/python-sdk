@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **password** | **str** |  | [optional] 
 **addresses** | [**[Address]**](Address.md) |  | [optional] 
 **phone_numbers** | [**[PhoneNumber]**](PhoneNumber.md) |  | [optional] 
-**updated_at** | **str** |  | [optional] [readonly] 
-**created_at** | **str** |  | [optional] [readonly] 
+**updated_at** | **str, none_type** |  | [optional] [readonly] 
+**created_at** | **str, none_type** |  | [optional] [readonly] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

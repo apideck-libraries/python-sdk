@@ -82,11 +82,11 @@ class LinkedEcommerceCustomer(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'first_name': (str,),  # noqa: E501
-            'last_name': (str,),  # noqa: E501
-            'company_name': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'first_name': (str, none_type,),  # noqa: E501
+            'last_name': (str, none_type,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
             'emails': ([Email],),  # noqa: E501
         }
@@ -117,7 +117,7 @@ class LinkedEcommerceCustomer(ModelNormal):
         """LinkedEcommerceCustomer - a model defined in OpenAPI
 
         Args:
-            id (str): The ID of the customer this entity is linked to.
+            id (str, none_type): The ID of the customer this entity is linked to.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -150,10 +150,10 @@ class LinkedEcommerceCustomer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Full name of the customer. [optional]  # noqa: E501
-            first_name (str): First name of the customer. [optional]  # noqa: E501
-            last_name (str): Last name of the customer. [optional]  # noqa: E501
-            company_name (str): Company name of the customer. [optional]  # noqa: E501
+            name (str, none_type): Full name of the customer. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the customer. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the customer. [optional]  # noqa: E501
+            company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
         """
@@ -208,7 +208,7 @@ class LinkedEcommerceCustomer(ModelNormal):
         """LinkedEcommerceCustomer - a model defined in OpenAPI
 
         Args:
-            id (str): The ID of the customer this entity is linked to.
+            id (str, none_type): The ID of the customer this entity is linked to.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -241,10 +241,10 @@ class LinkedEcommerceCustomer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Full name of the customer. [optional]  # noqa: E501
-            first_name (str): First name of the customer. [optional]  # noqa: E501
-            last_name (str): Last name of the customer. [optional]  # noqa: E501
-            company_name (str): Company name of the customer. [optional]  # noqa: E501
+            name (str, none_type): Full name of the customer. [optional]  # noqa: E501
+            first_name (str, none_type): First name of the customer. [optional]  # noqa: E501
+            last_name (str, none_type): Last name of the customer. [optional]  # noqa: E501
+            company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
         """

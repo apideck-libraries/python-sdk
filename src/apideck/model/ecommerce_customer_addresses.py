@@ -87,13 +87,13 @@ class EcommerceCustomerAddresses(ModelNormal):
         """
         return {
             'type': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'line1': (str,),  # noqa: E501
-            'line2': (str,),  # noqa: E501
-            'city': (str,),  # noqa: E501
-            'state': (str,),  # noqa: E501
-            'postal_code': (str,),  # noqa: E501
-            'country': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'line1': (str, none_type,),  # noqa: E501
+            'line2': (str, none_type,),  # noqa: E501
+            'city': (str, none_type,),  # noqa: E501
+            'state': (str, none_type,),  # noqa: E501
+            'postal_code': (str, none_type,),  # noqa: E501
+            'country': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -155,13 +155,13 @@ class EcommerceCustomerAddresses(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str): [optional]  # noqa: E501
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            line1 (str): First line of the street address of the customer. [optional]  # noqa: E501
-            line2 (str): Second line of the street address of the customer. [optional]  # noqa: E501
-            city (str): City of the customer. [optional]  # noqa: E501
-            state (str): State of the customer. [optional]  # noqa: E501
-            postal_code (str): Postal code of the customer. [optional]  # noqa: E501
-            country (str): Country of the customer. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            line1 (str, none_type): First line of the street address of the customer. [optional]  # noqa: E501
+            line2 (str, none_type): Second line of the street address of the customer. [optional]  # noqa: E501
+            city (str, none_type): City of the customer. [optional]  # noqa: E501
+            state (str, none_type): State of the customer. [optional]  # noqa: E501
+            postal_code (str, none_type): Postal code of the customer. [optional]  # noqa: E501
+            country (str, none_type): Country of the customer. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,13 +244,13 @@ class EcommerceCustomerAddresses(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str): [optional]  # noqa: E501
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            line1 (str): First line of the street address of the customer. [optional]  # noqa: E501
-            line2 (str): Second line of the street address of the customer. [optional]  # noqa: E501
-            city (str): City of the customer. [optional]  # noqa: E501
-            state (str): State of the customer. [optional]  # noqa: E501
-            postal_code (str): Postal code of the customer. [optional]  # noqa: E501
-            country (str): Country of the customer. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            line1 (str, none_type): First line of the street address of the customer. [optional]  # noqa: E501
+            line2 (str, none_type): Second line of the street address of the customer. [optional]  # noqa: E501
+            city (str, none_type): City of the customer. [optional]  # noqa: E501
+            state (str, none_type): State of the customer. [optional]  # noqa: E501
+            postal_code (str, none_type): Postal code of the customer. [optional]  # noqa: E501
+            country (str, none_type): Country of the customer. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

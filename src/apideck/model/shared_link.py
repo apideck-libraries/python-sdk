@@ -91,9 +91,9 @@ class SharedLink(ModelNormal):
             'scope': (str,),  # noqa: E501
             'password_protected': (bool,),  # noqa: E501
             'password': (str, none_type,),  # noqa: E501
-            'expires_at': (datetime,),  # noqa: E501
+            'expires_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -169,9 +169,9 @@ class SharedLink(ModelNormal):
             scope (str): The scope of the shared link.. [optional]  # noqa: E501
             password_protected (bool): Indicated if the shared link is password protected.. [optional]  # noqa: E501
             password (str, none_type): Optional password for the shared link.. [optional]  # noqa: E501
-            expires_at (datetime): [optional]  # noqa: E501
+            expires_at (datetime, none_type): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,9 +263,9 @@ class SharedLink(ModelNormal):
             scope (str): The scope of the shared link.. [optional]  # noqa: E501
             password_protected (bool): Indicated if the shared link is password protected.. [optional]  # noqa: E501
             password (str, none_type): Optional password for the shared link.. [optional]  # noqa: E501
-            expires_at (datetime): [optional]  # noqa: E501
+            expires_at (datetime, none_type): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime): The date and time when the object was created.. [optional]  # noqa: E501
+            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -82,8 +82,8 @@ class Owner(ModelNormal):
         """
         return {
             'id': (str,),  # noqa: E501
-            'email': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'email': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,8 +142,8 @@ class Owner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): ID of the owner. [optional]  # noqa: E501
-            email (str): Email of the owner. [optional]  # noqa: E501
-            name (str): Name of the owner. [optional]  # noqa: E501
+            email (str, none_type): Email of the owner. [optional]  # noqa: E501
+            name (str, none_type): Name of the owner. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,8 +226,8 @@ class Owner(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): ID of the owner. [optional]  # noqa: E501
-            email (str): Email of the owner. [optional]  # noqa: E501
-            name (str): Name of the owner. [optional]  # noqa: E501
+            email (str, none_type): Email of the owner. [optional]  # noqa: E501
+            name (str, none_type): Name of the owner. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

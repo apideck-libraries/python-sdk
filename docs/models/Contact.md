@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | 
+**name** | **str, none_type** |  | 
 **id** | **str** |  | [optional] [readonly] 
 **owner_id** | **str, none_type** |  | [optional] 
 **type** | **str, none_type** |  | [optional] 
@@ -40,8 +40,8 @@ Name | Type | Description | Notes
 **first_call_at** | **datetime, none_type** |  | [optional] [readonly] 
 **first_email_at** | **datetime, none_type** |  | [optional] [readonly] 
 **last_activity_at** | **datetime, none_type** |  | [optional] [readonly] 
-**updated_at** | **datetime** |  | [optional] [readonly] 
-**created_at** | **datetime** |  | [optional] [readonly] 
+**updated_at** | **datetime, none_type** |  | [optional] [readonly] 
+**created_at** | **datetime, none_type** |  | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**id** | **str, none_type** | A unique identifier for an object. | [optional] [readonly] 
 **job_id** | **str, none_type** | The ID of the job to which the compensation belongs. | [optional] [readonly] 
 **rate** | **float, none_type** | The amount paid per payment unit. | [optional] 
 **payment_unit** | [**PaymentUnit**](PaymentUnit.md) |  | [optional] 

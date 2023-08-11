@@ -99,7 +99,7 @@ class EmployeeCompensation(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'job_id': (str, none_type,),  # noqa: E501
             'rate': (float, none_type,),  # noqa: E501
             'payment_unit': (PaymentUnit,),  # noqa: E501
@@ -168,7 +168,7 @@ class EmployeeCompensation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             job_id (str, none_type): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
             rate (float, none_type): The amount paid per payment unit.. [optional]  # noqa: E501
             payment_unit (PaymentUnit): [optional]  # noqa: E501
@@ -257,7 +257,7 @@ class EmployeeCompensation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             job_id (str, none_type): The ID of the job to which the compensation belongs.. [optional]  # noqa: E501
             rate (float, none_type): The amount paid per payment unit.. [optional]  # noqa: E501
             payment_unit (PaymentUnit): [optional]  # noqa: E501

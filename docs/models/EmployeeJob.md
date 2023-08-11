@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**employee_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**id** | **str, none_type** | A unique identifier for an object. | [optional] [readonly] 
+**employee_id** | **str, none_type** | A unique identifier for an object. | [optional] [readonly] 
 **title** | **str, none_type** | The job title of the person. | [optional] 
 **role** | **str, none_type** | The position and responsibilities of the person within the organization. | [optional] 
 **start_date** | **date, none_type** | The date on which the employee starts working in their current job role. | [optional] 

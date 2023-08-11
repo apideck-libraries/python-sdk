@@ -87,18 +87,18 @@ class EcommerceOrderLineItem(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'quantity': (str,),  # noqa: E501
-            'total_amount': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'product_id': (str,),  # noqa: E501
-            'variant_id': (str,),  # noqa: E501
-            'sku': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'quantity': (str, none_type,),  # noqa: E501
+            'total_amount': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'product_id': (str, none_type,),  # noqa: E501
+            'variant_id': (str, none_type,),  # noqa: E501
+            'sku': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'options': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'unit_price': (str,),  # noqa: E501
-            'tax_rate': (str,),  # noqa: E501
-            'tax_amount': (str,),  # noqa: E501
+            'unit_price': (str, none_type,),  # noqa: E501
+            'tax_rate': (str, none_type,),  # noqa: E501
+            'tax_amount': (str, none_type,),  # noqa: E501
             'discounts': ([EcommerceDiscount],),  # noqa: E501
         }
 
@@ -135,9 +135,9 @@ class EcommerceOrderLineItem(ModelNormal):
         """EcommerceOrderLineItem - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the product or variant associated with the line item.
-            quantity (str): The quantity of the product or variant associated with the line item.
-            total_amount (str): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
+            name (str, none_type): The name of the product or variant associated with the line item.
+            quantity (str, none_type): The quantity of the product or variant associated with the line item.
+            total_amount (str, none_type): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -170,15 +170,15 @@ class EcommerceOrderLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            product_id (str): A unique identifier for the product associated with the line item.. [optional]  # noqa: E501
-            variant_id (str): A unique identifier for the variant of the product associated with the line item, if applicable.. [optional]  # noqa: E501
-            sku (str): The SKU of the product or variant associated with the line item.. [optional]  # noqa: E501
-            description (str): The description of the product or variant associated with the line item.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            product_id (str, none_type): A unique identifier for the product associated with the line item.. [optional]  # noqa: E501
+            variant_id (str, none_type): A unique identifier for the variant of the product associated with the line item, if applicable.. [optional]  # noqa: E501
+            sku (str, none_type): The SKU of the product or variant associated with the line item.. [optional]  # noqa: E501
+            description (str, none_type): The description of the product or variant associated with the line item.. [optional]  # noqa: E501
             options ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
-            unit_price (str): The unit price of the product or variant associated with the line item.. [optional]  # noqa: E501
-            tax_rate (str): The tax rate applied to the product or variant associated with the line item.. [optional]  # noqa: E501
-            tax_amount (str): The total tax amount applied to the product or variant associated with the line item.. [optional]  # noqa: E501
+            unit_price (str, none_type): The unit price of the product or variant associated with the line item.. [optional]  # noqa: E501
+            tax_rate (str, none_type): The tax rate applied to the product or variant associated with the line item.. [optional]  # noqa: E501
+            tax_amount (str, none_type): The total tax amount applied to the product or variant associated with the line item.. [optional]  # noqa: E501
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
         """
 
@@ -234,9 +234,9 @@ class EcommerceOrderLineItem(ModelNormal):
         """EcommerceOrderLineItem - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the product or variant associated with the line item.
-            quantity (str): The quantity of the product or variant associated with the line item.
-            total_amount (str): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
+            name (str, none_type): The name of the product or variant associated with the line item.
+            quantity (str, none_type): The quantity of the product or variant associated with the line item.
+            total_amount (str, none_type): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -269,15 +269,15 @@ class EcommerceOrderLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            product_id (str): A unique identifier for the product associated with the line item.. [optional]  # noqa: E501
-            variant_id (str): A unique identifier for the variant of the product associated with the line item, if applicable.. [optional]  # noqa: E501
-            sku (str): The SKU of the product or variant associated with the line item.. [optional]  # noqa: E501
-            description (str): The description of the product or variant associated with the line item.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
+            product_id (str, none_type): A unique identifier for the product associated with the line item.. [optional]  # noqa: E501
+            variant_id (str, none_type): A unique identifier for the variant of the product associated with the line item, if applicable.. [optional]  # noqa: E501
+            sku (str, none_type): The SKU of the product or variant associated with the line item.. [optional]  # noqa: E501
+            description (str, none_type): The description of the product or variant associated with the line item.. [optional]  # noqa: E501
             options ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
-            unit_price (str): The unit price of the product or variant associated with the line item.. [optional]  # noqa: E501
-            tax_rate (str): The tax rate applied to the product or variant associated with the line item.. [optional]  # noqa: E501
-            tax_amount (str): The total tax amount applied to the product or variant associated with the line item.. [optional]  # noqa: E501
+            unit_price (str, none_type): The unit price of the product or variant associated with the line item.. [optional]  # noqa: E501
+            tax_rate (str, none_type): The tax rate applied to the product or variant associated with the line item.. [optional]  # noqa: E501
+            tax_amount (str, none_type): The total tax amount applied to the product or variant associated with the line item.. [optional]  # noqa: E501
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
         """
 

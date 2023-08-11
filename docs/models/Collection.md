@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the collection | [optional] 
 **description** | **str** | Description of the collection | [optional] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
-**created_at** | **datetime** | The date and time when the object was created. | [optional] [readonly] 
+**created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -77,7 +77,7 @@ class CreateUploadSessionRequest(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'parent_folder_id': (str,),  # noqa: E501
-            'size': (int,),  # noqa: E501
+            'size': (int, none_type,),  # noqa: E501
             'drive_id': (str,),  # noqa: E501
         }
 
@@ -106,7 +106,7 @@ class CreateUploadSessionRequest(ModelNormal):
         Args:
             name (str): The name of the file.
             parent_folder_id (str): The parent folder to create the new file within.
-            size (int): The size of the file in bytes
+            size (int, none_type): The size of the file in bytes
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -196,7 +196,7 @@ class CreateUploadSessionRequest(ModelNormal):
         Args:
             name (str): The name of the file.
             parent_folder_id (str): The parent folder to create the new file within.
-            size (int): The size of the file in bytes
+            size (int, none_type): The size of the file in bytes
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

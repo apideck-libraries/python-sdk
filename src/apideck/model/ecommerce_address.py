@@ -84,13 +84,13 @@ class EcommerceAddress(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'line1': (str,),  # noqa: E501
-            'line2': (str,),  # noqa: E501
-            'company_name': (str,),  # noqa: E501
-            'city': (str,),  # noqa: E501
-            'state': (str,),  # noqa: E501
-            'postal_code': (str,),  # noqa: E501
-            'country': (str,),  # noqa: E501
+            'line1': (str, none_type,),  # noqa: E501
+            'line2': (str, none_type,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
+            'city': (str, none_type,),  # noqa: E501
+            'state': (str, none_type,),  # noqa: E501
+            'postal_code': (str, none_type,),  # noqa: E501
+            'country': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,13 +149,13 @@ class EcommerceAddress(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            line1 (str): Address line 1 of the billing address.. [optional]  # noqa: E501
-            line2 (str): Address line 2 of the billing address.. [optional]  # noqa: E501
-            company_name (str): Company name of the customer. [optional]  # noqa: E501
-            city (str): City of the billing address.. [optional]  # noqa: E501
-            state (str): State/province of the billing address.. [optional]  # noqa: E501
-            postal_code (str): Postal/ZIP code of the billing address.. [optional]  # noqa: E501
-            country (str): Country of the billing address.. [optional]  # noqa: E501
+            line1 (str, none_type): Address line 1 of the billing address.. [optional]  # noqa: E501
+            line2 (str, none_type): Address line 2 of the billing address.. [optional]  # noqa: E501
+            company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
+            city (str, none_type): City of the billing address.. [optional]  # noqa: E501
+            state (str, none_type): State/province of the billing address.. [optional]  # noqa: E501
+            postal_code (str, none_type): Postal/ZIP code of the billing address.. [optional]  # noqa: E501
+            country (str, none_type): Country of the billing address.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,13 +237,13 @@ class EcommerceAddress(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            line1 (str): Address line 1 of the billing address.. [optional]  # noqa: E501
-            line2 (str): Address line 2 of the billing address.. [optional]  # noqa: E501
-            company_name (str): Company name of the customer. [optional]  # noqa: E501
-            city (str): City of the billing address.. [optional]  # noqa: E501
-            state (str): State/province of the billing address.. [optional]  # noqa: E501
-            postal_code (str): Postal/ZIP code of the billing address.. [optional]  # noqa: E501
-            country (str): Country of the billing address.. [optional]  # noqa: E501
+            line1 (str, none_type): Address line 1 of the billing address.. [optional]  # noqa: E501
+            line2 (str, none_type): Address line 2 of the billing address.. [optional]  # noqa: E501
+            company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
+            city (str, none_type): City of the billing address.. [optional]  # noqa: E501
+            state (str, none_type): State/province of the billing address.. [optional]  # noqa: E501
+            postal_code (str, none_type): Postal/ZIP code of the billing address.. [optional]  # noqa: E501
+            country (str, none_type): Country of the billing address.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
