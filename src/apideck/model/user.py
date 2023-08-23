@@ -106,7 +106,7 @@ class User(ModelNormal):
             'image': (str, none_type,),  # noqa: E501
             'language': (str, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
-            'password': (str,),  # noqa: E501
+            'password': (str, none_type,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
@@ -188,9 +188,9 @@ class User(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            parent_id (str, none_type): [optional]  # noqa: E501
-            username (str, none_type): [optional]  # noqa: E501
+            id (str): The unique identifier for the user. [optional]  # noqa: E501
+            parent_id (str, none_type): The parent user id. [optional]  # noqa: E501
+            username (str, none_type): The username of the user. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
@@ -199,14 +199,14 @@ class User(ModelNormal):
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employee_number (str, none_type): An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.. [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
-            image (str, none_type): [optional]  # noqa: E501
+            image (str, none_type): The URL of the user's avatar. [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            password (str): [optional]  # noqa: E501
+            status (str, none_type): The status of the user. [optional]  # noqa: E501
+            password (str, none_type): The password of the user. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            updated_at (str, none_type): [optional]  # noqa: E501
-            created_at (str, none_type): [optional]  # noqa: E501
+            updated_at (str, none_type): The date and time when the user was last updated.. [optional]  # noqa: E501
+            created_at (str, none_type): The date and time when the user was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -292,9 +292,9 @@ class User(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            parent_id (str, none_type): [optional]  # noqa: E501
-            username (str, none_type): [optional]  # noqa: E501
+            id (str): The unique identifier for the user. [optional]  # noqa: E501
+            parent_id (str, none_type): The parent user id. [optional]  # noqa: E501
+            username (str, none_type): The username of the user. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
@@ -303,14 +303,14 @@ class User(ModelNormal):
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employee_number (str, none_type): An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.. [optional]  # noqa: E501
             description (str, none_type): A description of the object.. [optional]  # noqa: E501
-            image (str, none_type): [optional]  # noqa: E501
+            image (str, none_type): The URL of the user's avatar. [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
-            status (str, none_type): [optional]  # noqa: E501
-            password (str): [optional]  # noqa: E501
+            status (str, none_type): The status of the user. [optional]  # noqa: E501
+            password (str, none_type): The password of the user. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            updated_at (str, none_type): [optional]  # noqa: E501
-            created_at (str, none_type): [optional]  # noqa: E501
+            updated_at (str, none_type): The date and time when the user was last updated.. [optional]  # noqa: E501
+            created_at (str, none_type): The date and time when the user was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

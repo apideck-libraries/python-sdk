@@ -122,7 +122,7 @@ class Applicant(ModelNormal):
             'confidential': (bool,),  # noqa: E501
             'anonymized': (bool,),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
-            'archived': (bool,),  # noqa: E501
+            'archived': (bool, none_type,),  # noqa: E501
             'last_interaction_at': (datetime, none_type,),  # noqa: E501
             'owner_id': (str, none_type,),  # noqa: E501
             'sourced_by': (str, none_type,),  # noqa: E501
@@ -274,14 +274,14 @@ class Applicant(ModelNormal):
             confidential (bool): [optional]  # noqa: E501
             anonymized (bool): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            archived (bool): [optional]  # noqa: E501
+            archived (bool, none_type): [optional]  # noqa: E501
             last_interaction_at (datetime, none_type): [optional]  # noqa: E501
             owner_id (str, none_type): [optional]  # noqa: E501
             sourced_by (str, none_type): [optional]  # noqa: E501
             cv_url (str): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
             rejected_at (datetime, none_type): [optional]  # noqa: E501
-            deleted (bool, none_type): [optional]  # noqa: E501
+            deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             deleted_by (str, none_type): The user who deleted the object.. [optional]  # noqa: E501
             deleted_at (datetime, none_type): The time at which the object was deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -399,14 +399,14 @@ class Applicant(ModelNormal):
             confidential (bool): [optional]  # noqa: E501
             anonymized (bool): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            archived (bool): [optional]  # noqa: E501
+            archived (bool, none_type): [optional]  # noqa: E501
             last_interaction_at (datetime, none_type): [optional]  # noqa: E501
             owner_id (str, none_type): [optional]  # noqa: E501
             sourced_by (str, none_type): [optional]  # noqa: E501
             cv_url (str): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
             rejected_at (datetime, none_type): [optional]  # noqa: E501
-            deleted (bool, none_type): [optional]  # noqa: E501
+            deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             deleted_by (str, none_type): The user who deleted the object.. [optional]  # noqa: E501
             deleted_at (datetime, none_type): The time at which the object was deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**body** | **str** | Body of the comment | [optional] 
+**body** | **str, none_type** | Body of the comment | [optional] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 

@@ -64,6 +64,7 @@ class Activity(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'CALL': "call",
             'MEETING': "meeting",
             'EMAIL': "email",
@@ -75,6 +76,7 @@ class Activity(ModelNormal):
             'OTHER': "other",
         },
         ('show_as',): {
+            'None': None,
             'FREE': "free",
             'BUSY': "busy",
         },
@@ -102,7 +104,7 @@ class Activity(ModelNormal):
         """
         lazy_import()
         return {
-            'type': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'downstream_id': (str, none_type,),  # noqa: E501
             'activity_datetime': (str, none_type,),  # noqa: E501
@@ -126,16 +128,16 @@ class Activity(ModelNormal):
             'note': (str, none_type,),  # noqa: E501
             'location': (str, none_type,),  # noqa: E501
             'location_address': (Address,),  # noqa: E501
-            'all_day_event': (bool,),  # noqa: E501
-            'private': (bool,),  # noqa: E501
-            'group_event': (bool,),  # noqa: E501
+            'all_day_event': (bool, none_type,),  # noqa: E501
+            'private': (bool, none_type,),  # noqa: E501
+            'group_event': (bool, none_type,),  # noqa: E501
             'event_sub_type': (str, none_type,),  # noqa: E501
             'group_event_type': (str, none_type,),  # noqa: E501
-            'child': (bool,),  # noqa: E501
-            'archived': (bool,),  # noqa: E501
-            'deleted': (bool,),  # noqa: E501
-            'show_as': (str,),  # noqa: E501
-            'done': (bool,),  # noqa: E501
+            'child': (bool, none_type,),  # noqa: E501
+            'archived': (bool, none_type,),  # noqa: E501
+            'deleted': (bool, none_type,),  # noqa: E501
+            'show_as': (str, none_type,),  # noqa: E501
+            'done': (bool, none_type,),  # noqa: E501
             'start_datetime': (str, none_type,),  # noqa: E501
             'end_datetime': (str, none_type,),  # noqa: E501
             'duration_minutes': (int, none_type,),  # noqa: E501
@@ -144,14 +146,14 @@ class Activity(ModelNormal):
             'recurrent': (bool,),  # noqa: E501
             'reminder_datetime': (str, none_type,),  # noqa: E501
             'reminder_set': (bool, none_type,),  # noqa: E501
-            'video_conference_url': (str,),  # noqa: E501
-            'video_conference_id': (str,),  # noqa: E501
+            'video_conference_url': (str, none_type,),  # noqa: E501
+            'video_conference_id': (str, none_type,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'attendees': ([ActivityAttendee],),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (str,),  # noqa: E501
-            'created_at': (str,),  # noqa: E501
+            'updated_at': (str, none_type,),  # noqa: E501
+            'created_at': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -230,7 +232,7 @@ class Activity(ModelNormal):
         """Activity - a model defined in OpenAPI
 
         Args:
-            type (str):
+            type (str, none_type): The type of the activity
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -263,55 +265,55 @@ class Activity(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            id (str): The unique identifier of the activity. [optional]  # noqa: E501
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
-            activity_datetime (str, none_type): [optional]  # noqa: E501
-            duration_seconds (int, none_type): [optional]  # noqa: E501
-            user_id (str, none_type): [optional]  # noqa: E501
-            account_id (str, none_type): [optional]  # noqa: E501
-            contact_id (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            opportunity_id (str, none_type): [optional]  # noqa: E501
-            lead_id (str, none_type): [optional]  # noqa: E501
-            owner_id (str, none_type): [optional]  # noqa: E501
-            campaign_id (str, none_type): [optional]  # noqa: E501
-            case_id (str, none_type): [optional]  # noqa: E501
-            asset_id (str, none_type): [optional]  # noqa: E501
-            contract_id (str, none_type): [optional]  # noqa: E501
-            product_id (str, none_type): [optional]  # noqa: E501
-            solution_id (str, none_type): [optional]  # noqa: E501
-            custom_object_id (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            note (str, none_type): [optional]  # noqa: E501
-            location (str, none_type): [optional]  # noqa: E501
+            activity_datetime (str, none_type): The date and time of the activity. [optional]  # noqa: E501
+            duration_seconds (int, none_type): The duration of the activity in seconds. [optional]  # noqa: E501
+            user_id (str, none_type): The user related to the activity. [optional]  # noqa: E501
+            account_id (str, none_type): The account related to the activity. [optional]  # noqa: E501
+            contact_id (str, none_type): The contact related to the activity. [optional]  # noqa: E501
+            company_id (str, none_type): The company related to the activity. [optional]  # noqa: E501
+            opportunity_id (str, none_type): The opportunity related to the activity. [optional]  # noqa: E501
+            lead_id (str, none_type): The lead related to the activity. [optional]  # noqa: E501
+            owner_id (str, none_type): The owner of the activity. [optional]  # noqa: E501
+            campaign_id (str, none_type): The campaign related to the activity. [optional]  # noqa: E501
+            case_id (str, none_type): The case related to the activity. [optional]  # noqa: E501
+            asset_id (str, none_type): The asset related to the activity. [optional]  # noqa: E501
+            contract_id (str, none_type): The contract related to the activity. [optional]  # noqa: E501
+            product_id (str, none_type): The product related to the activity. [optional]  # noqa: E501
+            solution_id (str, none_type): The solution related to the activity. [optional]  # noqa: E501
+            custom_object_id (str, none_type): The custom object related to the activity. [optional]  # noqa: E501
+            title (str, none_type): The title of the activity. [optional]  # noqa: E501
+            description (str, none_type): A description of the activity. [optional]  # noqa: E501
+            note (str, none_type): An internal note about the activity. [optional]  # noqa: E501
+            location (str, none_type): The location of the activity. [optional]  # noqa: E501
             location_address (Address): [optional]  # noqa: E501
-            all_day_event (bool): [optional]  # noqa: E501
-            private (bool): [optional]  # noqa: E501
-            group_event (bool): [optional]  # noqa: E501
-            event_sub_type (str, none_type): [optional]  # noqa: E501
-            group_event_type (str, none_type): [optional]  # noqa: E501
-            child (bool): [optional]  # noqa: E501
-            archived (bool): [optional]  # noqa: E501
-            deleted (bool): [optional]  # noqa: E501
-            show_as (str): [optional]  # noqa: E501
-            done (bool): Whether the Activity is done or not. [optional]  # noqa: E501
-            start_datetime (str, none_type): [optional]  # noqa: E501
-            end_datetime (str, none_type): [optional]  # noqa: E501
-            duration_minutes (int, none_type): [optional]  # noqa: E501
-            activity_date (str, none_type): [optional]  # noqa: E501
-            end_date (str, none_type): [optional]  # noqa: E501
-            recurrent (bool): [optional]  # noqa: E501
-            reminder_datetime (str, none_type): [optional]  # noqa: E501
-            reminder_set (bool, none_type): [optional]  # noqa: E501
-            video_conference_url (str): [optional]  # noqa: E501
-            video_conference_id (str): [optional]  # noqa: E501
-            custom_fields ([CustomField]): [optional]  # noqa: E501
+            all_day_event (bool, none_type): Whether the Activity is an all day event or not. [optional]  # noqa: E501
+            private (bool, none_type): Whether the Activity is private or not. [optional]  # noqa: E501
+            group_event (bool, none_type): Whether the Activity is a group event or not. [optional]  # noqa: E501
+            event_sub_type (str, none_type): The sub type of the group event. [optional]  # noqa: E501
+            group_event_type (str, none_type): The type of the group event. [optional]  # noqa: E501
+            child (bool, none_type): Whether the activity is a child of another activity or not. [optional]  # noqa: E501
+            archived (bool, none_type): Whether the activity is archived or not. [optional]  # noqa: E501
+            deleted (bool, none_type): Whether the activity is deleted or not. [optional]  # noqa: E501
+            show_as (str, none_type): [optional]  # noqa: E501
+            done (bool, none_type): Whether the Activity is done or not. [optional]  # noqa: E501
+            start_datetime (str, none_type): The start date and time of the activity. [optional]  # noqa: E501
+            end_datetime (str, none_type): The end date and time of the activity. [optional]  # noqa: E501
+            duration_minutes (int, none_type): The duration of the activity in minutes. [optional]  # noqa: E501
+            activity_date (str, none_type): The date of the activity. [optional]  # noqa: E501
+            end_date (str, none_type): The end date of the activity. [optional]  # noqa: E501
+            recurrent (bool): Whether the activity is recurrent or not. [optional]  # noqa: E501
+            reminder_datetime (str, none_type): The date and time of the reminder. [optional]  # noqa: E501
+            reminder_set (bool, none_type): Whether the reminder is set or not. [optional]  # noqa: E501
+            video_conference_url (str, none_type): The URL of the video conference. [optional]  # noqa: E501
+            video_conference_id (str, none_type): The ID of the video conference. [optional]  # noqa: E501
+            custom_fields ([CustomField]): Custom fields of the activity. [optional]  # noqa: E501
             attendees ([ActivityAttendee]): [optional]  # noqa: E501
-            updated_by (str, none_type): [optional]  # noqa: E501
-            created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (str): [optional]  # noqa: E501
-            created_at (str): [optional]  # noqa: E501
+            updated_by (str, none_type): The user who last updated the activity. [optional]  # noqa: E501
+            created_by (str, none_type): The user who created the activity. [optional]  # noqa: E501
+            updated_at (str, none_type): The date and time when the activity was last updated. [optional]  # noqa: E501
+            created_at (str, none_type): The date and time when the activity was created. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -364,7 +366,7 @@ class Activity(ModelNormal):
         """Activity - a model defined in OpenAPI
 
         Args:
-            type (str):
+            type (str, none_type): The type of the activity
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -397,55 +399,55 @@ class Activity(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            id (str): The unique identifier of the activity. [optional]  # noqa: E501
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
-            activity_datetime (str, none_type): [optional]  # noqa: E501
-            duration_seconds (int, none_type): [optional]  # noqa: E501
-            user_id (str, none_type): [optional]  # noqa: E501
-            account_id (str, none_type): [optional]  # noqa: E501
-            contact_id (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            opportunity_id (str, none_type): [optional]  # noqa: E501
-            lead_id (str, none_type): [optional]  # noqa: E501
-            owner_id (str, none_type): [optional]  # noqa: E501
-            campaign_id (str, none_type): [optional]  # noqa: E501
-            case_id (str, none_type): [optional]  # noqa: E501
-            asset_id (str, none_type): [optional]  # noqa: E501
-            contract_id (str, none_type): [optional]  # noqa: E501
-            product_id (str, none_type): [optional]  # noqa: E501
-            solution_id (str, none_type): [optional]  # noqa: E501
-            custom_object_id (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            note (str, none_type): [optional]  # noqa: E501
-            location (str, none_type): [optional]  # noqa: E501
+            activity_datetime (str, none_type): The date and time of the activity. [optional]  # noqa: E501
+            duration_seconds (int, none_type): The duration of the activity in seconds. [optional]  # noqa: E501
+            user_id (str, none_type): The user related to the activity. [optional]  # noqa: E501
+            account_id (str, none_type): The account related to the activity. [optional]  # noqa: E501
+            contact_id (str, none_type): The contact related to the activity. [optional]  # noqa: E501
+            company_id (str, none_type): The company related to the activity. [optional]  # noqa: E501
+            opportunity_id (str, none_type): The opportunity related to the activity. [optional]  # noqa: E501
+            lead_id (str, none_type): The lead related to the activity. [optional]  # noqa: E501
+            owner_id (str, none_type): The owner of the activity. [optional]  # noqa: E501
+            campaign_id (str, none_type): The campaign related to the activity. [optional]  # noqa: E501
+            case_id (str, none_type): The case related to the activity. [optional]  # noqa: E501
+            asset_id (str, none_type): The asset related to the activity. [optional]  # noqa: E501
+            contract_id (str, none_type): The contract related to the activity. [optional]  # noqa: E501
+            product_id (str, none_type): The product related to the activity. [optional]  # noqa: E501
+            solution_id (str, none_type): The solution related to the activity. [optional]  # noqa: E501
+            custom_object_id (str, none_type): The custom object related to the activity. [optional]  # noqa: E501
+            title (str, none_type): The title of the activity. [optional]  # noqa: E501
+            description (str, none_type): A description of the activity. [optional]  # noqa: E501
+            note (str, none_type): An internal note about the activity. [optional]  # noqa: E501
+            location (str, none_type): The location of the activity. [optional]  # noqa: E501
             location_address (Address): [optional]  # noqa: E501
-            all_day_event (bool): [optional]  # noqa: E501
-            private (bool): [optional]  # noqa: E501
-            group_event (bool): [optional]  # noqa: E501
-            event_sub_type (str, none_type): [optional]  # noqa: E501
-            group_event_type (str, none_type): [optional]  # noqa: E501
-            child (bool): [optional]  # noqa: E501
-            archived (bool): [optional]  # noqa: E501
-            deleted (bool): [optional]  # noqa: E501
-            show_as (str): [optional]  # noqa: E501
-            done (bool): Whether the Activity is done or not. [optional]  # noqa: E501
-            start_datetime (str, none_type): [optional]  # noqa: E501
-            end_datetime (str, none_type): [optional]  # noqa: E501
-            duration_minutes (int, none_type): [optional]  # noqa: E501
-            activity_date (str, none_type): [optional]  # noqa: E501
-            end_date (str, none_type): [optional]  # noqa: E501
-            recurrent (bool): [optional]  # noqa: E501
-            reminder_datetime (str, none_type): [optional]  # noqa: E501
-            reminder_set (bool, none_type): [optional]  # noqa: E501
-            video_conference_url (str): [optional]  # noqa: E501
-            video_conference_id (str): [optional]  # noqa: E501
-            custom_fields ([CustomField]): [optional]  # noqa: E501
+            all_day_event (bool, none_type): Whether the Activity is an all day event or not. [optional]  # noqa: E501
+            private (bool, none_type): Whether the Activity is private or not. [optional]  # noqa: E501
+            group_event (bool, none_type): Whether the Activity is a group event or not. [optional]  # noqa: E501
+            event_sub_type (str, none_type): The sub type of the group event. [optional]  # noqa: E501
+            group_event_type (str, none_type): The type of the group event. [optional]  # noqa: E501
+            child (bool, none_type): Whether the activity is a child of another activity or not. [optional]  # noqa: E501
+            archived (bool, none_type): Whether the activity is archived or not. [optional]  # noqa: E501
+            deleted (bool, none_type): Whether the activity is deleted or not. [optional]  # noqa: E501
+            show_as (str, none_type): [optional]  # noqa: E501
+            done (bool, none_type): Whether the Activity is done or not. [optional]  # noqa: E501
+            start_datetime (str, none_type): The start date and time of the activity. [optional]  # noqa: E501
+            end_datetime (str, none_type): The end date and time of the activity. [optional]  # noqa: E501
+            duration_minutes (int, none_type): The duration of the activity in minutes. [optional]  # noqa: E501
+            activity_date (str, none_type): The date of the activity. [optional]  # noqa: E501
+            end_date (str, none_type): The end date of the activity. [optional]  # noqa: E501
+            recurrent (bool): Whether the activity is recurrent or not. [optional]  # noqa: E501
+            reminder_datetime (str, none_type): The date and time of the reminder. [optional]  # noqa: E501
+            reminder_set (bool, none_type): Whether the reminder is set or not. [optional]  # noqa: E501
+            video_conference_url (str, none_type): The URL of the video conference. [optional]  # noqa: E501
+            video_conference_id (str, none_type): The ID of the video conference. [optional]  # noqa: E501
+            custom_fields ([CustomField]): Custom fields of the activity. [optional]  # noqa: E501
             attendees ([ActivityAttendee]): [optional]  # noqa: E501
-            updated_by (str, none_type): [optional]  # noqa: E501
-            created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (str): [optional]  # noqa: E501
-            created_at (str): [optional]  # noqa: E501
+            updated_by (str, none_type): The user who last updated the activity. [optional]  # noqa: E501
+            created_by (str, none_type): The user who created the activity. [optional]  # noqa: E501
+            updated_at (str, none_type): The date and time when the activity was last updated. [optional]  # noqa: E501
+            created_at (str, none_type): The date and time when the activity was created. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

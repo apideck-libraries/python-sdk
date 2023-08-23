@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **available** | **bool, none_type** |  | [optional] 
 **hidden** | **bool, none_type** |  | [optional] 
 **version** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
-**deleted** | **bool, none_type** |  | [optional] 
+**deleted** | **bool, none_type** | Flag to indicate if the object is deleted. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 

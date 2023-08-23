@@ -4,23 +4,23 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | 
-**company_name** | **str, none_type** |  | 
-**id** | **str** |  | [optional] [readonly] 
-**owner_id** | **str, none_type** |  | [optional] 
-**company_id** | **str, none_type** |  | [optional] 
-**contact_id** | **str, none_type** |  | [optional] 
-**lead_source** | **str, none_type** |  | [optional] 
-**first_name** | **str, none_type** |  | [optional] 
-**last_name** | **str, none_type** |  | [optional] 
-**description** | **str, none_type** |  | [optional] 
-**prefix** | **str, none_type** |  | [optional] 
-**title** | **str, none_type** |  | [optional] 
+**name** | **str** | Full name of the lead. | 
+**company_name** | **str, none_type** | The name of the company the lead is associated with. | 
+**id** | **str** | Unique identifier for the contact. | [optional] [readonly] 
+**owner_id** | **str, none_type** | The owner of the lead. | [optional] 
+**company_id** | **str, none_type** | The company the lead is associated with. | [optional] 
+**lead_id** | **str, none_type** | The identifier of the lead. | [optional] 
+**lead_source** | **str, none_type** | The source of the lead. | [optional] 
+**first_name** | **str, none_type** | The first name of the lead. | [optional] 
+**last_name** | **str, none_type** | The last name of the lead. | [optional] 
+**description** | **str, none_type** | The description of the lead. | [optional] 
+**prefix** | **str, none_type** | The prefix of the lead. | [optional] 
+**title** | **str, none_type** | The job title of the lead. | [optional] 
 **language** | **str, none_type** | language code according to ISO 639-1. For the United States - EN | [optional] 
 **status** | **str, none_type** |  | [optional] 
-**monetary_amount** | **float, none_type** |  | [optional] 
+**monetary_amount** | **float, none_type** | The monetary amount of the lead. | [optional] 
 **currency** | [**Currency**](Currency.md) |  | [optional] 
-**fax** | **str, none_type** |  | [optional] 
+**fax** | **str, none_type** | The fax number of the lead. | [optional] 
 **websites** | [**[Website]**](Website.md) |  | [optional] 
 **addresses** | [**[Address]**](Address.md) |  | [optional] 
 **social_links** | [**[SocialLink]**](SocialLink.md) |  | [optional] 
@@ -28,8 +28,8 @@ Name | Type | Description | Notes
 **emails** | [**[Email]**](Email.md) |  | [optional] 
 **custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **tags** | [**Tags**](Tags.md) |  | [optional] 
-**updated_at** | **str** | Date updated in ISO 8601 format | [optional] [readonly] 
-**created_at** | **str** | Date created in ISO 8601 format | [optional] [readonly] 
+**updated_at** | **str, none_type** | Date updated in ISO 8601 format | [optional] [readonly] 
+**created_at** | **str, none_type** | Date created in ISO 8601 format | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -60,6 +60,7 @@ class SharedLink(ModelNormal):
 
     allowed_values = {
         ('scope',): {
+            'None': None,
             'PUBLIC': "public",
             'COMPANY': "company",
         },
@@ -84,12 +85,12 @@ class SharedLink(ModelNormal):
         """
         lazy_import()
         return {
-            'target_id': (str,),  # noqa: E501
-            'url': (str,),  # noqa: E501
-            'download_url': (str,),  # noqa: E501
+            'target_id': (str, none_type,),  # noqa: E501
+            'url': (str, none_type,),  # noqa: E501
+            'download_url': (str, none_type,),  # noqa: E501
             'target': (SharedLinkTarget,),  # noqa: E501
-            'scope': (str,),  # noqa: E501
-            'password_protected': (bool,),  # noqa: E501
+            'scope': (str, none_type,),  # noqa: E501
+            'password_protected': (bool, none_type,),  # noqa: E501
             'password': (str, none_type,),  # noqa: E501
             'expires_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -130,7 +131,7 @@ class SharedLink(ModelNormal):
         """SharedLink - a model defined in OpenAPI
 
         Args:
-            target_id (str): The ID of the file or folder to link.
+            target_id (str, none_type): The ID of the file or folder to link.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -163,11 +164,11 @@ class SharedLink(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            url (str): The URL that can be used to view the file.. [optional]  # noqa: E501
-            download_url (str): The URL that can be used to download the file.. [optional]  # noqa: E501
+            url (str, none_type): The URL that can be used to view the file.. [optional]  # noqa: E501
+            download_url (str, none_type): The URL that can be used to download the file.. [optional]  # noqa: E501
             target (SharedLinkTarget): [optional]  # noqa: E501
-            scope (str): The scope of the shared link.. [optional]  # noqa: E501
-            password_protected (bool): Indicated if the shared link is password protected.. [optional]  # noqa: E501
+            scope (str, none_type): The scope of the shared link.. [optional]  # noqa: E501
+            password_protected (bool, none_type): Indicated if the shared link is password protected.. [optional]  # noqa: E501
             password (str, none_type): Optional password for the shared link.. [optional]  # noqa: E501
             expires_at (datetime, none_type): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -224,7 +225,7 @@ class SharedLink(ModelNormal):
         """SharedLink - a model defined in OpenAPI
 
         Args:
-            target_id (str): The ID of the file or folder to link.
+            target_id (str, none_type): The ID of the file or folder to link.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -257,11 +258,11 @@ class SharedLink(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            url (str): The URL that can be used to view the file.. [optional]  # noqa: E501
-            download_url (str): The URL that can be used to download the file.. [optional]  # noqa: E501
+            url (str, none_type): The URL that can be used to view the file.. [optional]  # noqa: E501
+            download_url (str, none_type): The URL that can be used to download the file.. [optional]  # noqa: E501
             target (SharedLinkTarget): [optional]  # noqa: E501
-            scope (str): The scope of the shared link.. [optional]  # noqa: E501
-            password_protected (bool): Indicated if the shared link is password protected.. [optional]  # noqa: E501
+            scope (str, none_type): The scope of the shared link.. [optional]  # noqa: E501
+            password_protected (bool, none_type): Indicated if the shared link is password protected.. [optional]  # noqa: E501
             password (str, none_type): Optional password for the shared link.. [optional]  # noqa: E501
             expires_at (datetime, none_type): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

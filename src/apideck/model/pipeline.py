@@ -128,7 +128,7 @@ class Pipeline(ModelNormal):
         """Pipeline - a model defined in OpenAPI
 
         Args:
-            name (str):
+            name (str): The name of the Pipeline.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -161,13 +161,13 @@ class Pipeline(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            id (str): The unique identifier of the Pipeline.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            archived (bool): [optional]  # noqa: E501
-            active (bool): [optional]  # noqa: E501
-            display_order (int, none_type): [optional]  # noqa: E501
-            win_probability_enabled (bool): [optional]  # noqa: E501
-            stages ([PipelineStages]): [optional]  # noqa: E501
+            archived (bool): Whether the Pipeline is archived or not.. [optional]  # noqa: E501
+            active (bool): Whether the Pipeline is active or not.. [optional]  # noqa: E501
+            display_order (int, none_type): The order in which the Pipeline is displayed in the UI.. [optional]  # noqa: E501
+            win_probability_enabled (bool): Whether the Pipeline has win probability enabled or not.. [optional]  # noqa: E501
+            stages ([PipelineStages]): The Pipeline Stages.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
@@ -222,7 +222,7 @@ class Pipeline(ModelNormal):
         """Pipeline - a model defined in OpenAPI
 
         Args:
-            name (str):
+            name (str): The name of the Pipeline.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -255,13 +255,13 @@ class Pipeline(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            id (str): The unique identifier of the Pipeline.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            archived (bool): [optional]  # noqa: E501
-            active (bool): [optional]  # noqa: E501
-            display_order (int, none_type): [optional]  # noqa: E501
-            win_probability_enabled (bool): [optional]  # noqa: E501
-            stages ([PipelineStages]): [optional]  # noqa: E501
+            archived (bool): Whether the Pipeline is archived or not.. [optional]  # noqa: E501
+            active (bool): Whether the Pipeline is active or not.. [optional]  # noqa: E501
+            display_order (int, none_type): The order in which the Pipeline is displayed in the UI.. [optional]  # noqa: E501
+            win_probability_enabled (bool): Whether the Pipeline has win probability enabled or not.. [optional]  # noqa: E501
+            stages ([PipelineStages]): The Pipeline Stages.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """

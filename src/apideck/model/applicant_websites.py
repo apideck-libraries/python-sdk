@@ -56,6 +56,7 @@ class ApplicantWebsites(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'PRIMARY': "primary",
             'SECONDARY': "secondary",
             'WORK': "work",
@@ -93,7 +94,7 @@ class ApplicantWebsites(ModelNormal):
         return {
             'url': (str,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -118,7 +119,7 @@ class ApplicantWebsites(ModelNormal):
         """ApplicantWebsites - a model defined in OpenAPI
 
         Args:
-            url (str):
+            url (str): The website URL
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -151,8 +152,8 @@ class ApplicantWebsites(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the website. [optional]  # noqa: E501
+            type (str, none_type): The type of website. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -205,7 +206,7 @@ class ApplicantWebsites(ModelNormal):
         """ApplicantWebsites - a model defined in OpenAPI
 
         Args:
-            url (str):
+            url (str): The website URL
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -238,8 +239,8 @@ class ApplicantWebsites(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the website. [optional]  # noqa: E501
+            type (str, none_type): The type of website. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

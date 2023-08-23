@@ -87,11 +87,11 @@ class UnifiedFile(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'type': (FileType,),  # noqa: E501
             'downstream_id': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
-            'path': (str,),  # noqa: E501
+            'path': (str, none_type,),  # noqa: E501
             'mime_type': (str, none_type,),  # noqa: E501
             'downloadable': (bool,),  # noqa: E501
             'size': (int, none_type,),  # noqa: E501
@@ -100,7 +100,7 @@ class UnifiedFile(ModelNormal):
             'parent_folders_complete': (bool,),  # noqa: E501
             'permissions': (UnifiedFilePermissions,),  # noqa: E501
             'exportable': (bool,),  # noqa: E501
-            'export_formats': ([str],),  # noqa: E501
+            'export_formats': ([str], none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -152,7 +152,7 @@ class UnifiedFile(ModelNormal):
 
         Args:
             id (str): A unique identifier for an object.
-            name (str): The name of the file
+            name (str, none_type): The name of the file
             type (FileType):
 
         Keyword Args:
@@ -188,7 +188,7 @@ class UnifiedFile(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
             description (str, none_type): Optional description of the file. [optional]  # noqa: E501
-            path (str): The full path of the file or folder (includes the file name). [optional]  # noqa: E501
+            path (str, none_type): The full path of the file or folder (includes the file name). [optional]  # noqa: E501
             mime_type (str, none_type): The MIME type of the file.. [optional]  # noqa: E501
             downloadable (bool): Whether the current user can download this file. [optional]  # noqa: E501
             size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
@@ -197,7 +197,7 @@ class UnifiedFile(ModelNormal):
             parent_folders_complete (bool): Whether the list of parent folders is complete. Some connectors only return the direct parent of a file. [optional]  # noqa: E501
             permissions (UnifiedFilePermissions): [optional]  # noqa: E501
             exportable (bool): Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper.. [optional]  # noqa: E501
-            export_formats ([str]): The available file formats when exporting this file.. [optional]  # noqa: E501
+            export_formats ([str], none_type): The available file formats when exporting this file.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -255,7 +255,7 @@ class UnifiedFile(ModelNormal):
     def __init__(self, name, type, *args, **kwargs):  # noqa: E501
         """UnifiedFile - a model defined in OpenAPI
 
-            name (str): The name of the file
+            name (str, none_type): The name of the file
             type (FileType):
 
         Keyword Args:
@@ -291,7 +291,7 @@ class UnifiedFile(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
             description (str, none_type): Optional description of the file. [optional]  # noqa: E501
-            path (str): The full path of the file or folder (includes the file name). [optional]  # noqa: E501
+            path (str, none_type): The full path of the file or folder (includes the file name). [optional]  # noqa: E501
             mime_type (str, none_type): The MIME type of the file.. [optional]  # noqa: E501
             downloadable (bool): Whether the current user can download this file. [optional]  # noqa: E501
             size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
@@ -300,7 +300,7 @@ class UnifiedFile(ModelNormal):
             parent_folders_complete (bool): Whether the list of parent folders is complete. Some connectors only return the direct parent of a file. [optional]  # noqa: E501
             permissions (UnifiedFilePermissions): [optional]  # noqa: E501
             exportable (bool): Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper.. [optional]  # noqa: E501
-            export_formats ([str]): The available file formats when exporting this file.. [optional]  # noqa: E501
+            export_formats ([str], none_type): The available file formats when exporting this file.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

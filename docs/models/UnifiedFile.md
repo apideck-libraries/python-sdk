@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | A unique identifier for an object. | [readonly] 
-**name** | **str** | The name of the file | 
+**name** | **str, none_type** | The name of the file | 
 **type** | [**FileType**](FileType.md) |  | 
 **downstream_id** | **str, none_type** | The third-party API ID of original entity | [optional] [readonly] 
 **description** | **str, none_type** | Optional description of the file | [optional] 
-**path** | **str** | The full path of the file or folder (includes the file name) | [optional] 
+**path** | **str, none_type** | The full path of the file or folder (includes the file name) | [optional] 
 **mime_type** | **str, none_type** | The MIME type of the file. | [optional] 
 **downloadable** | **bool** | Whether the current user can download this file | [optional] 
 **size** | **int, none_type** | The size of the file in bytes | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **parent_folders_complete** | **bool** | Whether the list of parent folders is complete. Some connectors only return the direct parent of a file | [optional] 
 **permissions** | [**UnifiedFilePermissions**](UnifiedFilePermissions.md) |  | [optional] 
 **exportable** | **bool** | Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper. | [optional] 
-**export_formats** | **[str]** | The available file formats when exporting this file. | [optional] 
+**export_formats** | **[str], none_type** | The available file formats when exporting this file. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 

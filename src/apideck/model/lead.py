@@ -112,7 +112,7 @@ class Lead(ModelNormal):
             'id': (str,),  # noqa: E501
             'owner_id': (str, none_type,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
-            'contact_id': (str, none_type,),  # noqa: E501
+            'lead_id': (str, none_type,),  # noqa: E501
             'lead_source': (str, none_type,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
@@ -131,8 +131,8 @@ class Lead(ModelNormal):
             'emails': ([Email],),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
-            'updated_at': (str,),  # noqa: E501
-            'created_at': (str,),  # noqa: E501
+            'updated_at': (str, none_type,),  # noqa: E501
+            'created_at': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -146,7 +146,7 @@ class Lead(ModelNormal):
         'id': 'id',  # noqa: E501
         'owner_id': 'owner_id',  # noqa: E501
         'company_id': 'company_id',  # noqa: E501
-        'contact_id': 'contact_id',  # noqa: E501
+        'lead_id': 'lead_id',  # noqa: E501
         'lead_source': 'lead_source',  # noqa: E501
         'first_name': 'first_name',  # noqa: E501
         'last_name': 'last_name',  # noqa: E501
@@ -183,8 +183,8 @@ class Lead(ModelNormal):
         """Lead - a model defined in OpenAPI
 
         Args:
-            name (str):
-            company_name (str, none_type):
+            name (str): Full name of the lead.
+            company_name (str, none_type): The name of the company the lead is associated with.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -217,21 +217,21 @@ class Lead(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            owner_id (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            contact_id (str, none_type): [optional]  # noqa: E501
-            lead_source (str, none_type): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            prefix (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
+            id (str): Unique identifier for the contact.. [optional]  # noqa: E501
+            owner_id (str, none_type): The owner of the lead.. [optional]  # noqa: E501
+            company_id (str, none_type): The company the lead is associated with.. [optional]  # noqa: E501
+            lead_id (str, none_type): The identifier of the lead.. [optional]  # noqa: E501
+            lead_source (str, none_type): The source of the lead.. [optional]  # noqa: E501
+            first_name (str, none_type): The first name of the lead.. [optional]  # noqa: E501
+            last_name (str, none_type): The last name of the lead.. [optional]  # noqa: E501
+            description (str, none_type): The description of the lead.. [optional]  # noqa: E501
+            prefix (str, none_type): The prefix of the lead.. [optional]  # noqa: E501
+            title (str, none_type): The job title of the lead.. [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             status (str, none_type): [optional]  # noqa: E501
-            monetary_amount (float, none_type): [optional]  # noqa: E501
+            monetary_amount (float, none_type): The monetary amount of the lead.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
+            fax (str, none_type): The fax number of the lead.. [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             social_links ([SocialLink]): [optional]  # noqa: E501
@@ -239,8 +239,8 @@ class Lead(ModelNormal):
             emails ([Email]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            updated_at (str): Date updated in ISO 8601 format. [optional]  # noqa: E501
-            created_at (str): Date created in ISO 8601 format. [optional]  # noqa: E501
+            updated_at (str, none_type): Date updated in ISO 8601 format. [optional]  # noqa: E501
+            created_at (str, none_type): Date created in ISO 8601 format. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -294,8 +294,8 @@ class Lead(ModelNormal):
         """Lead - a model defined in OpenAPI
 
         Args:
-            name (str):
-            company_name (str, none_type):
+            name (str): Full name of the lead.
+            company_name (str, none_type): The name of the company the lead is associated with.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -328,21 +328,21 @@ class Lead(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            owner_id (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            contact_id (str, none_type): [optional]  # noqa: E501
-            lead_source (str, none_type): [optional]  # noqa: E501
-            first_name (str, none_type): [optional]  # noqa: E501
-            last_name (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
-            prefix (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
+            id (str): Unique identifier for the contact.. [optional]  # noqa: E501
+            owner_id (str, none_type): The owner of the lead.. [optional]  # noqa: E501
+            company_id (str, none_type): The company the lead is associated with.. [optional]  # noqa: E501
+            lead_id (str, none_type): The identifier of the lead.. [optional]  # noqa: E501
+            lead_source (str, none_type): The source of the lead.. [optional]  # noqa: E501
+            first_name (str, none_type): The first name of the lead.. [optional]  # noqa: E501
+            last_name (str, none_type): The last name of the lead.. [optional]  # noqa: E501
+            description (str, none_type): The description of the lead.. [optional]  # noqa: E501
+            prefix (str, none_type): The prefix of the lead.. [optional]  # noqa: E501
+            title (str, none_type): The job title of the lead.. [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             status (str, none_type): [optional]  # noqa: E501
-            monetary_amount (float, none_type): [optional]  # noqa: E501
+            monetary_amount (float, none_type): The monetary amount of the lead.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
+            fax (str, none_type): The fax number of the lead.. [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             social_links ([SocialLink]): [optional]  # noqa: E501
@@ -350,8 +350,8 @@ class Lead(ModelNormal):
             emails ([Email]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            updated_at (str): Date updated in ISO 8601 format. [optional]  # noqa: E501
-            created_at (str): Date created in ISO 8601 format. [optional]  # noqa: E501
+            updated_at (str, none_type): Date updated in ISO 8601 format. [optional]  # noqa: E501
+            created_at (str, none_type): Date created in ISO 8601 format. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

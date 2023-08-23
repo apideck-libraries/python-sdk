@@ -56,6 +56,7 @@ class Address(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'PRIMARY': "primary",
             'SECONDARY': "secondary",
             'HOME': "home",
@@ -85,7 +86,7 @@ class Address(ModelNormal):
         """
         return {
             'id': (str, none_type,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
             'string': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'line1': (str, none_type,),  # noqa: E501
@@ -183,10 +184,10 @@ class Address(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the address.. [optional]  # noqa: E501
+            type (str, none_type): The type of address.. [optional]  # noqa: E501
             string (str, none_type): The address string. Some APIs don't provide structured address data.. [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): The name of the address.. [optional]  # noqa: E501
             line1 (str, none_type): Line 1 of the address e.g. number, street, suite, apt #, etc.. [optional]  # noqa: E501
             line2 (str, none_type): Line 2 of the address. [optional]  # noqa: E501
             line3 (str, none_type): Line 3 of the address. [optional]  # noqa: E501
@@ -196,16 +197,16 @@ class Address(ModelNormal):
             state (str, none_type): Name of state. [optional]  # noqa: E501
             postal_code (str, none_type): Zip code or equivalent.. [optional]  # noqa: E501
             country (str, none_type): country code according to ISO 3166-1 alpha-2.. [optional]  # noqa: E501
-            latitude (str, none_type): [optional]  # noqa: E501
-            longitude (str, none_type): [optional]  # noqa: E501
+            latitude (str, none_type): Latitude of the address. [optional]  # noqa: E501
+            longitude (str, none_type): Longitude of the address. [optional]  # noqa: E501
             county (str, none_type): Address field that holds a sublocality, such as a county. [optional]  # noqa: E501
-            contact_name (str, none_type): [optional]  # noqa: E501
-            salutation (str, none_type): [optional]  # noqa: E501
-            phone_number (str, none_type): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
-            email (str, none_type): [optional]  # noqa: E501
-            website (str, none_type): [optional]  # noqa: E501
-            notes (str, none_type): [optional]  # noqa: E501
+            contact_name (str, none_type): Name of the contact person at the address. [optional]  # noqa: E501
+            salutation (str, none_type): Salutation of the contact person at the address. [optional]  # noqa: E501
+            phone_number (str, none_type): Phone number of the address. [optional]  # noqa: E501
+            fax (str, none_type): Fax number of the address. [optional]  # noqa: E501
+            email (str, none_type): Email address of the address. [optional]  # noqa: E501
+            website (str, none_type): Website of the address. [optional]  # noqa: E501
+            notes (str, none_type): Additional notes. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
         """
 
@@ -288,10 +289,10 @@ class Address(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier for the address.. [optional]  # noqa: E501
+            type (str, none_type): The type of address.. [optional]  # noqa: E501
             string (str, none_type): The address string. Some APIs don't provide structured address data.. [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): The name of the address.. [optional]  # noqa: E501
             line1 (str, none_type): Line 1 of the address e.g. number, street, suite, apt #, etc.. [optional]  # noqa: E501
             line2 (str, none_type): Line 2 of the address. [optional]  # noqa: E501
             line3 (str, none_type): Line 3 of the address. [optional]  # noqa: E501
@@ -301,16 +302,16 @@ class Address(ModelNormal):
             state (str, none_type): Name of state. [optional]  # noqa: E501
             postal_code (str, none_type): Zip code or equivalent.. [optional]  # noqa: E501
             country (str, none_type): country code according to ISO 3166-1 alpha-2.. [optional]  # noqa: E501
-            latitude (str, none_type): [optional]  # noqa: E501
-            longitude (str, none_type): [optional]  # noqa: E501
+            latitude (str, none_type): Latitude of the address. [optional]  # noqa: E501
+            longitude (str, none_type): Longitude of the address. [optional]  # noqa: E501
             county (str, none_type): Address field that holds a sublocality, such as a county. [optional]  # noqa: E501
-            contact_name (str, none_type): [optional]  # noqa: E501
-            salutation (str, none_type): [optional]  # noqa: E501
-            phone_number (str, none_type): [optional]  # noqa: E501
-            fax (str, none_type): [optional]  # noqa: E501
-            email (str, none_type): [optional]  # noqa: E501
-            website (str, none_type): [optional]  # noqa: E501
-            notes (str, none_type): [optional]  # noqa: E501
+            contact_name (str, none_type): Name of the contact person at the address. [optional]  # noqa: E501
+            salutation (str, none_type): Salutation of the contact person at the address. [optional]  # noqa: E501
+            phone_number (str, none_type): Phone number of the address. [optional]  # noqa: E501
+            fax (str, none_type): Fax number of the address. [optional]  # noqa: E501
+            email (str, none_type): Email address of the address. [optional]  # noqa: E501
+            website (str, none_type): Website of the address. [optional]  # noqa: E501
+            notes (str, none_type): Additional notes. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
         """
 

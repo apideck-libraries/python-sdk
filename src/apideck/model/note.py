@@ -76,9 +76,9 @@ class Note(ModelNormal):
         """
         return {
             'id': (str,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'content': (str,),  # noqa: E501
-            'owner_id': (str,),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
+            'content': (str, none_type,),  # noqa: E501
+            'owner_id': (str, none_type,),  # noqa: E501
             'contact_id': (str, none_type,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
             'opportunity_id': (str, none_type,),  # noqa: E501
@@ -86,8 +86,8 @@ class Note(ModelNormal):
             'active': (bool, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (str,),  # noqa: E501
-            'created_at': (str,),  # noqa: E501
+            'updated_at': (str, none_type,),  # noqa: E501
+            'created_at': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -157,19 +157,19 @@ class Note(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            title (str): [optional]  # noqa: E501
-            content (str): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
-            contact_id (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            opportunity_id (str, none_type): [optional]  # noqa: E501
-            lead_id (str, none_type): [optional]  # noqa: E501
-            active (bool, none_type): [optional]  # noqa: E501
-            updated_by (str, none_type): [optional]  # noqa: E501
-            created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (str): [optional]  # noqa: E501
-            created_at (str): [optional]  # noqa: E501
+            id (str): The unique identifier of the note. [optional]  # noqa: E501
+            title (str, none_type): The title of the note. [optional]  # noqa: E501
+            content (str, none_type): The content of the note.. [optional]  # noqa: E501
+            owner_id (str, none_type): The user that owns the note.. [optional]  # noqa: E501
+            contact_id (str, none_type): The contact that is related to the note.. [optional]  # noqa: E501
+            company_id (str, none_type): The company that is related to the note.. [optional]  # noqa: E501
+            opportunity_id (str, none_type): The opportunity that is related to the note.. [optional]  # noqa: E501
+            lead_id (str, none_type): The lead that is related to the note.. [optional]  # noqa: E501
+            active (bool, none_type): Whether the Note is active or not.. [optional]  # noqa: E501
+            updated_by (str, none_type): The user that last updated the note.. [optional]  # noqa: E501
+            created_by (str, none_type): The user that created the note.. [optional]  # noqa: E501
+            updated_at (str, none_type): The timestamp when the note was last updated. [optional]  # noqa: E501
+            created_at (str, none_type): The timestamp when the note was created. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,19 +251,19 @@ class Note(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            title (str): [optional]  # noqa: E501
-            content (str): [optional]  # noqa: E501
-            owner_id (str): [optional]  # noqa: E501
-            contact_id (str, none_type): [optional]  # noqa: E501
-            company_id (str, none_type): [optional]  # noqa: E501
-            opportunity_id (str, none_type): [optional]  # noqa: E501
-            lead_id (str, none_type): [optional]  # noqa: E501
-            active (bool, none_type): [optional]  # noqa: E501
-            updated_by (str, none_type): [optional]  # noqa: E501
-            created_by (str, none_type): [optional]  # noqa: E501
-            updated_at (str): [optional]  # noqa: E501
-            created_at (str): [optional]  # noqa: E501
+            id (str): The unique identifier of the note. [optional]  # noqa: E501
+            title (str, none_type): The title of the note. [optional]  # noqa: E501
+            content (str, none_type): The content of the note.. [optional]  # noqa: E501
+            owner_id (str, none_type): The user that owns the note.. [optional]  # noqa: E501
+            contact_id (str, none_type): The contact that is related to the note.. [optional]  # noqa: E501
+            company_id (str, none_type): The company that is related to the note.. [optional]  # noqa: E501
+            opportunity_id (str, none_type): The opportunity that is related to the note.. [optional]  # noqa: E501
+            lead_id (str, none_type): The lead that is related to the note.. [optional]  # noqa: E501
+            active (bool, none_type): Whether the Note is active or not.. [optional]  # noqa: E501
+            updated_by (str, none_type): The user that last updated the note.. [optional]  # noqa: E501
+            created_by (str, none_type): The user that created the note.. [optional]  # noqa: E501
+            updated_at (str, none_type): The timestamp when the note was last updated. [optional]  # noqa: E501
+            created_at (str, none_type): The timestamp when the note was created. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
