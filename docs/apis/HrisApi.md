@@ -1663,6 +1663,7 @@ with apideck.ApiClient(configuration) as api_client:
             sub_type="full_time",
         ),
         manager=EmployeeManager(
+            id="12345",
             name="Elon Musk",
             first_name="Elon",
             last_name="Musk",
@@ -2315,6 +2316,7 @@ with apideck.ApiClient(configuration) as api_client:
             sub_type="full_time",
         ),
         manager=EmployeeManager(
+            id="12345",
             name="Elon Musk",
             first_name="Elon",
             last_name="Musk",

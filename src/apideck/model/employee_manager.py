@@ -110,7 +110,6 @@ class EmployeeManager(ModelNormal):
     }
 
     read_only_vars = {
-        'id',  # noqa: E501
     }
 
     _composed_schemas = {}
