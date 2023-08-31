@@ -6016,6 +6016,7 @@ with apideck.ApiClient(configuration) as api_client:
         payment_method="cash",
         tax_code="1234",
         channel="email",
+        memo="Thank you for the partnership and have a great day!",
         row_version="1-12345",
     ) # PurchaseOrder | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -6571,6 +6572,7 @@ with apideck.ApiClient(configuration) as api_client:
         payment_method="cash",
         tax_code="1234",
         channel="email",
+        memo="Thank you for the partnership and have a great day!",
         row_version="1-12345",
     ) # PurchaseOrder | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
