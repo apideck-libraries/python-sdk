@@ -125,6 +125,7 @@ class PurchaseOrder(ModelNormal):
             'payment_method': (str, none_type,),  # noqa: E501
             'tax_code': (str, none_type,),  # noqa: E501
             'channel': (str, none_type,),  # noqa: E501
+            'memo': (str, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -164,6 +165,7 @@ class PurchaseOrder(ModelNormal):
         'payment_method': 'payment_method',  # noqa: E501
         'tax_code': 'tax_code',  # noqa: E501
         'channel': 'channel',  # noqa: E501
+        'memo': 'memo',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -244,6 +246,7 @@ class PurchaseOrder(ModelNormal):
             payment_method (str, none_type): Payment method used for the transaction, such as cash, credit card, bank transfer, or check. [optional]  # noqa: E501
             tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             channel (str, none_type): The channel through which the transaction is processed.. [optional]  # noqa: E501
+            memo (str, none_type): Message for the supplier. This text appears on the Purchase Order.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -356,6 +359,7 @@ class PurchaseOrder(ModelNormal):
             payment_method (str, none_type): Payment method used for the transaction, such as cash, credit card, bank transfer, or check. [optional]  # noqa: E501
             tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             channel (str, none_type): The channel through which the transaction is processed.. [optional]  # noqa: E501
+            memo (str, none_type): Message for the supplier. This text appears on the Purchase Order.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

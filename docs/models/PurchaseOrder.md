@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **payment_method** | **str, none_type** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 **tax_code** | **str, none_type** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 **channel** | **str, none_type** | The channel through which the transaction is processed. | [optional] 
+**memo** | **str, none_type** | Message for the supplier. This text appears on the Purchase Order. | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
