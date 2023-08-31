@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str, none_type** | A unique identifier for an object. | [optional] [readonly] 
+**id** | **str, none_type** | A unique identifier for an object. | [optional] 
 **name** | **str, none_type** | The name of the manager, often a combination of their first and last names. | [optional] 
 **first_name** | **str, none_type** | The first name of the person. | [optional] 
 **last_name** | **str, none_type** | The last name of the person. | [optional] 
