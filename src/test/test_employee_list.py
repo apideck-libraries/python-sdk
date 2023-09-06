@@ -13,16 +13,10 @@ import unittest
 
 import apideck
 from apideck.model.employee_list import EmployeeList
-from apideck.model.links import Links
-from apideck.model.meta import Meta
-globals()['EmployeeList'] = EmployeeList
-globals()['Links'] = Links
-globals()['Meta'] = Meta
-from apideck.model.get_employees_response import GetEmployeesResponse
 
 
-class TestGetEmployeesResponse(unittest.TestCase):
-    """GetEmployeesResponse unit test stubs"""
+class TestEmployeeList(unittest.TestCase):
+    """EmployeeList unit test stubs"""
 
     def setUp(self):
         pass
@@ -30,10 +24,10 @@ class TestGetEmployeesResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testGetEmployeesResponse(self):
-        """Test GetEmployeesResponse"""
+    def testEmployeeList(self):
+        """Test EmployeeList"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = GetEmployeesResponse()  # noqa: E501
+        # model = EmployeeList()  # noqa: E501
         pass
 
 
