@@ -255,6 +255,7 @@ apideck/model/employee.py
 apideck/model/employee_compensation.py
 apideck/model/employee_employment_role.py
 apideck/model/employee_job.py
+apideck/model/employee_list.py
 apideck/model/employee_manager.py
 apideck/model/employee_payroll.py
 apideck/model/employee_payrolls.py
@@ -864,6 +865,7 @@ docs/Employee.md
 docs/EmployeeCompensation.md
 docs/EmployeeEmploymentRole.md
 docs/EmployeeJob.md
+docs/EmployeeList.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
@@ -1484,6 +1486,7 @@ test/test_employee.py
 test/test_employee_compensation.py
 test/test_employee_employment_role.py
 test/test_employee_job.py
+test/test_employee_list.py
 test/test_employee_manager.py
 test/test_employee_payroll.py
 test/test_employee_payrolls.py

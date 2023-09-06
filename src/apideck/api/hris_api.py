@@ -3231,7 +3231,7 @@ class HrisApi(object):
     ):
         """List Employees  # noqa: E501
 
-        List Employees  # noqa: E501
+        Apideck operates as a stateless Unified API, which means that the list endpoint only provides a portion of the employee model. This is due to the fact that most HRIS systems do not readily provide all data in every call. However, you can access the complete employee model through an employee detail call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -233,6 +233,7 @@ from apideck.model.employee import Employee
 from apideck.model.employee_compensation import EmployeeCompensation
 from apideck.model.employee_employment_role import EmployeeEmploymentRole
 from apideck.model.employee_job import EmployeeJob
+from apideck.model.employee_list import EmployeeList
 from apideck.model.employee_manager import EmployeeManager
 from apideck.model.employee_payroll import EmployeePayroll
 from apideck.model.employee_payrolls import EmployeePayrolls
