@@ -31,10 +31,12 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.address import Address
+    from apideck.model.currency import Currency
     from apideck.model.email import Email
     from apideck.model.phone_number import PhoneNumber
     from apideck.model.website import Website
     globals()['Address'] = Address
+    globals()['Currency'] = Currency
     globals()['Email'] = Email
     globals()['PhoneNumber'] = PhoneNumber
     globals()['Website'] = Website
@@ -110,6 +112,7 @@ class HrisCompany(ModelNormal):
             'subdomain': (str, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'company_number': (str, none_type,),  # noqa: E501
+            'currency': (Currency,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
             'emails': ([Email],),  # noqa: E501
@@ -134,6 +137,7 @@ class HrisCompany(ModelNormal):
         'subdomain': 'subdomain',  # noqa: E501
         'status': 'status',  # noqa: E501
         'company_number': 'company_number',  # noqa: E501
+        'currency': 'currency',  # noqa: E501
         'addresses': 'addresses',  # noqa: E501
         'phone_numbers': 'phone_numbers',  # noqa: E501
         'emails': 'emails',  # noqa: E501
@@ -201,6 +205,7 @@ class HrisCompany(ModelNormal):
             subdomain (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             company_number (str, none_type): An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.. [optional]  # noqa: E501
+            currency (Currency): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
@@ -301,6 +306,7 @@ class HrisCompany(ModelNormal):
             subdomain (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             company_number (str, none_type): An Company Number, Company ID or Company Code, is a unique number that has been assigned to each company.. [optional]  # noqa: E501
+            currency (Currency): [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501

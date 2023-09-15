@@ -82,6 +82,7 @@ with apideck.ApiClient(configuration) as api_client:
         subdomain="company",
         status="active",
         company_number="123456-AB",
+        currency=Currency("USD"),
         addresses=[
             Address(
                 id="123",
@@ -572,6 +573,7 @@ with apideck.ApiClient(configuration) as api_client:
         subdomain="company",
         status="active",
         company_number="123456-AB",
+        currency=Currency("USD"),
         addresses=[
             Address(
                 id="123",
