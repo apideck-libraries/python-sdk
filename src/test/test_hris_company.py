@@ -13,10 +13,12 @@ import unittest
 
 import apideck
 from apideck.model.address import Address
+from apideck.model.currency import Currency
 from apideck.model.email import Email
 from apideck.model.phone_number import PhoneNumber
 from apideck.model.website import Website
 globals()['Address'] = Address
+globals()['Currency'] = Currency
 globals()['Email'] = Email
 globals()['PhoneNumber'] = PhoneNumber
 globals()['Website'] = Website
