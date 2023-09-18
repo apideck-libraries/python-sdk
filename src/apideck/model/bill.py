@@ -226,7 +226,7 @@ class Bill(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
-            bill_number (str, none_type): [optional]  # noqa: E501
+            bill_number (str, none_type): Reference to supplier bill number. [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
@@ -341,7 +341,7 @@ class Bill(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
-            bill_number (str, none_type): [optional]  # noqa: E501
+            bill_number (str, none_type): Reference to supplier bill number. [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
