@@ -30,10 +30,10 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from apideck.model.employee import Employee
-    from apideck.model.payroll import Payroll
-    globals()['Employee'] = Employee
-    globals()['Payroll'] = Payroll
+    from apideck.model.compensation import Compensation
+    from apideck.model.payroll_totals import PayrollTotals
+    globals()['Compensation'] = Compensation
+    globals()['PayrollTotals'] = PayrollTotals
 
 
 class EmployeePayroll(ModelNormal):
@@ -64,16 +64,29 @@ class EmployeePayroll(ModelNormal):
     }
 
     validations = {
+        ('check_date',): {
+            'regex': {
+                'pattern': r'^\d{4}-\d{2}-\d{2}$',  # noqa: E501
+            },
+        },
+        ('start_date',): {
+            'regex': {
+                'pattern': r'^\d{4}-\d{2}-\d{2}$',  # noqa: E501
+            },
+        },
+        ('end_date',): {
+            'regex': {
+                'pattern': r'^\d{4}-\d{2}-\d{2}$',  # noqa: E501
+            },
+        },
+        ('processed_date',): {
+            'regex': {
+                'pattern': r'^\d{4}-\d{2}-\d{2}$',  # noqa: E501
+            },
+        },
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -89,8 +102,16 @@ class EmployeePayroll(ModelNormal):
         """
         lazy_import()
         return {
-            'employee': (Employee,),  # noqa: E501
-            'payroll': (Payroll,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'processed': (bool, none_type,),  # noqa: E501
+            'check_date': (str, none_type,),  # noqa: E501
+            'start_date': (str, none_type,),  # noqa: E501
+            'end_date': (str, none_type,),  # noqa: E501
+            'employee_id': (str, none_type,),  # noqa: E501
+            'company_id': (str, none_type,),  # noqa: E501
+            'processed_date': (str, none_type,),  # noqa: E501
+            'totals': (PayrollTotals,),  # noqa: E501
+            'compensations': ([Compensation],),  # noqa: E501
         }
 
     @cached_property
@@ -99,19 +120,35 @@ class EmployeePayroll(ModelNormal):
 
 
     attribute_map = {
-        'employee': 'employee',  # noqa: E501
-        'payroll': 'payroll',  # noqa: E501
+        'id': 'id',  # noqa: E501
+        'processed': 'processed',  # noqa: E501
+        'check_date': 'check_date',  # noqa: E501
+        'start_date': 'start_date',  # noqa: E501
+        'end_date': 'end_date',  # noqa: E501
+        'employee_id': 'employee_id',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
+        'processed_date': 'processed_date',  # noqa: E501
+        'totals': 'totals',  # noqa: E501
+        'compensations': 'compensations',  # noqa: E501
     }
 
     read_only_vars = {
+        'id',  # noqa: E501
     }
 
     _composed_schemas = {}
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, id, processed, check_date, start_date, end_date, *args, **kwargs):  # noqa: E501
         """EmployeePayroll - a model defined in OpenAPI
+
+        Args:
+            id (str, none_type): A unique identifier for an object.
+            processed (bool, none_type): Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
+            check_date (str, none_type): The date on which employees will be paid for the payroll.
+            start_date (str, none_type): The start date, inclusive, of the pay period.
+            end_date (str, none_type): The end date, inclusive, of the pay period.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -144,8 +181,11 @@ class EmployeePayroll(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            employee (Employee): [optional]  # noqa: E501
-            payroll (Payroll): [optional]  # noqa: E501
+            employee_id (str, none_type): ID of the employee. [optional]  # noqa: E501
+            company_id (str, none_type): The unique identifier of the company.. [optional]  # noqa: E501
+            processed_date (str, none_type): The date the payroll was processed.. [optional]  # noqa: E501
+            totals (PayrollTotals): [optional]  # noqa: E501
+            compensations ([Compensation]): An array of compensations for the payroll.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -173,6 +213,11 @@ class EmployeePayroll(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
+        self.processed = processed
+        self.check_date = check_date
+        self.start_date = start_date
+        self.end_date = end_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -193,8 +238,13 @@ class EmployeePayroll(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, processed, check_date, start_date, end_date, *args, **kwargs):  # noqa: E501
         """EmployeePayroll - a model defined in OpenAPI
+
+            processed (bool, none_type): Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated.
+            check_date (str, none_type): The date on which employees will be paid for the payroll.
+            start_date (str, none_type): The start date, inclusive, of the pay period.
+            end_date (str, none_type): The end date, inclusive, of the pay period.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -227,8 +277,11 @@ class EmployeePayroll(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            employee (Employee): [optional]  # noqa: E501
-            payroll (Payroll): [optional]  # noqa: E501
+            employee_id (str, none_type): ID of the employee. [optional]  # noqa: E501
+            company_id (str, none_type): The unique identifier of the company.. [optional]  # noqa: E501
+            processed_date (str, none_type): The date the payroll was processed.. [optional]  # noqa: E501
+            totals (PayrollTotals): [optional]  # noqa: E501
+            compensations ([Compensation]): An array of compensations for the payroll.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,6 +307,10 @@ class EmployeePayroll(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.processed = processed
+        self.check_date = check_date
+        self.start_date = start_date
+        self.end_date = end_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

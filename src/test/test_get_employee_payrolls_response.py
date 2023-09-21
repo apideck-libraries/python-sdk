@@ -12,8 +12,8 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.employee_payrolls import EmployeePayrolls
-globals()['EmployeePayrolls'] = EmployeePayrolls
+from apideck.model.employee_payroll import EmployeePayroll
+globals()['EmployeePayroll'] = EmployeePayroll
 from apideck.model.get_employee_payrolls_response import GetEmployeePayrollsResponse
 
 

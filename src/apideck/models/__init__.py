@@ -236,7 +236,6 @@ from apideck.model.employee_job import EmployeeJob
 from apideck.model.employee_list import EmployeeList
 from apideck.model.employee_manager import EmployeeManager
 from apideck.model.employee_payroll import EmployeePayroll
-from apideck.model.employee_payrolls import EmployeePayrolls
 from apideck.model.employee_schedules import EmployeeSchedules
 from apideck.model.employees_filter import EmployeesFilter
 from apideck.model.employees_sort import EmployeesSort

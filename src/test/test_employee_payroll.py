@@ -12,10 +12,10 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.employee import Employee
-from apideck.model.payroll import Payroll
-globals()['Employee'] = Employee
-globals()['Payroll'] = Payroll
+from apideck.model.compensation import Compensation
+from apideck.model.payroll_totals import PayrollTotals
+globals()['Compensation'] = Compensation
+globals()['PayrollTotals'] = PayrollTotals
 from apideck.model.employee_payroll import EmployeePayroll
 
 
