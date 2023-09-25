@@ -4,9 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**employee** | [**Employee**](Employee.md) |  | [optional] 
-**payroll** | [**Payroll**](Payroll.md) |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**id** | **str, none_type** | A unique identifier for an object. | [readonly] 
+**processed** | **bool, none_type** | Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated. | 
+**check_date** | **str, none_type** | The date on which employees will be paid for the payroll. | 
+**start_date** | **str, none_type** | The start date, inclusive, of the pay period. | 
+**end_date** | **str, none_type** | The end date, inclusive, of the pay period. | 
+**employee_id** | **str, none_type** | ID of the employee | [optional] 
+**company_id** | **str, none_type** | The unique identifier of the company. | [optional] 
+**processed_date** | **str, none_type** | The date the payroll was processed. | [optional] 
+**totals** | **PayrollTotals** |  | [optional] 
+**compensations** | [**[Compensation]**](Compensation.md) | An array of compensations for the payroll. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
