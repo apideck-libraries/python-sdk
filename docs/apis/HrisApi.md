@@ -1664,6 +1664,7 @@ with apideck.ApiClient(configuration) as api_client:
             type="contractor",
             sub_type="full_time",
         ),
+        ethnicity="African American",
         manager=EmployeeManager(
             id="12345",
             name="Elon Musk",
@@ -2317,6 +2318,7 @@ with apideck.ApiClient(configuration) as api_client:
             type="contractor",
             sub_type="full_time",
         ),
+        ethnicity="African American",
         manager=EmployeeManager(
             id="12345",
             name="Elon Musk",
