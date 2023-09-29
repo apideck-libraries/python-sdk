@@ -3994,6 +3994,7 @@ with apideck.ApiClient(configuration) as api_client:
         journal_symbol="IND",
         tax_type="sales",
         tax_code="1234",
+        number="OIT00546",
         row_version="1-12345",
     ) # JournalEntry | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -4457,6 +4458,7 @@ with apideck.ApiClient(configuration) as api_client:
         journal_symbol="IND",
         tax_type="sales",
         tax_code="1234",
+        number="OIT00546",
         row_version="1-12345",
     ) # JournalEntry | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
