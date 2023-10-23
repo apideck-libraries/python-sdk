@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **total_amount** | **float, none_type** | Debit entries are considered positive, and credit entries are considered negative. | [optional] 
 **tax_rate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **tracking_category** | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
+**customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+**supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 **department_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **location_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 
