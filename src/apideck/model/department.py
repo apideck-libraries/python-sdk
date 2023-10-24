@@ -80,6 +80,7 @@ class Department(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'code': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -97,6 +98,7 @@ class Department(ModelNormal):
         'name': 'name',  # noqa: E501
         'code': 'code',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -155,6 +157,7 @@ class Department(ModelNormal):
             name (str, none_type): Department name. [optional]  # noqa: E501
             code (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -245,6 +248,7 @@ class Department(ModelNormal):
             name (str, none_type): Department name. [optional]  # noqa: E501
             code (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

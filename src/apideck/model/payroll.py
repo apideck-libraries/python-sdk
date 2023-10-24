@@ -111,6 +111,7 @@ class Payroll(ModelNormal):
             'processed_date': (str, none_type,),  # noqa: E501
             'totals': (PayrollTotals,),  # noqa: E501
             'compensations': ([Compensation],),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -128,6 +129,7 @@ class Payroll(ModelNormal):
         'processed_date': 'processed_date',  # noqa: E501
         'totals': 'totals',  # noqa: E501
         'compensations': 'compensations',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
     }
 
     read_only_vars = {
@@ -183,6 +185,7 @@ class Payroll(ModelNormal):
             processed_date (str, none_type): The date the payroll was processed.. [optional]  # noqa: E501
             totals (PayrollTotals): [optional]  # noqa: E501
             compensations ([Compensation]): An array of compensations for the payroll.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -278,6 +281,7 @@ class Payroll(ModelNormal):
             processed_date (str, none_type): The date the payroll was processed.. [optional]  # noqa: E501
             totals (PayrollTotals): [optional]  # noqa: E501
             compensations ([Compensation]): An array of compensations for the payroll.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

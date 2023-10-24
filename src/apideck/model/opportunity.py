@@ -123,6 +123,7 @@ class Opportunity(ModelNormal):
             'date_stage_changed': (datetime, none_type,),  # noqa: E501
             'date_last_contacted': (datetime, none_type,),  # noqa: E501
             'date_lead_created': (datetime, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -171,6 +172,7 @@ class Opportunity(ModelNormal):
         'date_stage_changed': 'date_stage_changed',  # noqa: E501
         'date_last_contacted': 'date_last_contacted',  # noqa: E501
         'date_lead_created': 'date_lead_created',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -268,6 +270,7 @@ class Opportunity(ModelNormal):
             date_stage_changed (datetime, none_type): The date and time when the stage of the opportunity was last changed.. [optional]  # noqa: E501
             date_last_contacted (datetime, none_type): The date and time when the opportunity was last contacted.. [optional]  # noqa: E501
             date_lead_created (datetime, none_type): The date and time when the lead associated with the opportunity was created.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The unique identifier of the user who last updated the opportunity.. [optional]  # noqa: E501
             created_by (str, none_type): The unique identifier of the user who created the opportunity.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the opportunity was last updated.. [optional]  # noqa: E501
@@ -393,6 +396,7 @@ class Opportunity(ModelNormal):
             date_stage_changed (datetime, none_type): The date and time when the stage of the opportunity was last changed.. [optional]  # noqa: E501
             date_last_contacted (datetime, none_type): The date and time when the opportunity was last contacted.. [optional]  # noqa: E501
             date_lead_created (datetime, none_type): The date and time when the lead associated with the opportunity was created.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The unique identifier of the user who last updated the opportunity.. [optional]  # noqa: E501
             created_by (str, none_type): The unique identifier of the user who created the opportunity.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the opportunity was last updated.. [optional]  # noqa: E501

@@ -98,6 +98,7 @@ class HrisJob(ModelNormal):
             'department': (str, none_type,),  # noqa: E501
             'is_primary': (bool, none_type,),  # noqa: E501
             'location': (HrisJobLocation,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -115,6 +116,7 @@ class HrisJob(ModelNormal):
         'department': 'department',  # noqa: E501
         'is_primary': 'is_primary',  # noqa: E501
         'location': 'location',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
     }
 
     read_only_vars = {
@@ -168,6 +170,7 @@ class HrisJob(ModelNormal):
             department (str, none_type): Department name. [optional]  # noqa: E501
             is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
             location (HrisJobLocation): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -258,6 +261,7 @@ class HrisJob(ModelNormal):
             department (str, none_type): Department name. [optional]  # noqa: E501
             is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
             location (HrisJobLocation): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

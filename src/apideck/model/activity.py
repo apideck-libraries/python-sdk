@@ -150,6 +150,7 @@ class Activity(ModelNormal):
             'video_conference_id': (str, none_type,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'attendees': ([ActivityAttendee],),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
@@ -208,6 +209,7 @@ class Activity(ModelNormal):
         'video_conference_id': 'video_conference_id',  # noqa: E501
         'custom_fields': 'custom_fields',  # noqa: E501
         'attendees': 'attendees',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -310,6 +312,7 @@ class Activity(ModelNormal):
             video_conference_id (str, none_type): The ID of the video conference. [optional]  # noqa: E501
             custom_fields ([CustomField]): Custom fields of the activity. [optional]  # noqa: E501
             attendees ([ActivityAttendee]): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the activity. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the activity. [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the activity was last updated. [optional]  # noqa: E501
@@ -444,6 +447,7 @@ class Activity(ModelNormal):
             video_conference_id (str, none_type): The ID of the video conference. [optional]  # noqa: E501
             custom_fields ([CustomField]): Custom fields of the activity. [optional]  # noqa: E501
             attendees ([ActivityAttendee]): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the activity. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the activity. [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the activity was last updated. [optional]  # noqa: E501

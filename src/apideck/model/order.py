@@ -164,6 +164,7 @@ class Order(ModelNormal):
             'source': (str, none_type,),  # noqa: E501
             'voided': (bool,),  # noqa: E501
             'voided_at': (datetime,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -214,6 +215,7 @@ class Order(ModelNormal):
         'source': 'source',  # noqa: E501
         'voided': 'voided',  # noqa: E501
         'voided_at': 'voided_at',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'version': 'version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -308,6 +310,7 @@ class Order(ModelNormal):
             source (str, none_type): Source of order. Indicates the way that the order was placed.. [optional]  # noqa: E501
             voided (bool): [optional]  # noqa: E501
             voided_at (datetime): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             version (str, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -435,6 +438,7 @@ class Order(ModelNormal):
             source (str, none_type): Source of order. Indicates the way that the order was placed.. [optional]  # noqa: E501
             voided (bool): [optional]  # noqa: E501
             voided_at (datetime): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             version (str, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

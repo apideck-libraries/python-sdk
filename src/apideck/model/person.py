@@ -88,6 +88,7 @@ class Person(ModelNormal):
             'initials': (str, none_type,),  # noqa: E501
             'birthday': (date, none_type,),  # noqa: E501
             'deceased_on': (date, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -104,6 +105,7 @@ class Person(ModelNormal):
         'initials': 'initials',  # noqa: E501
         'birthday': 'birthday',  # noqa: E501
         'deceased_on': 'deceased_on',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
     }
 
     read_only_vars = {
@@ -156,6 +158,7 @@ class Person(ModelNormal):
             initials (str, none_type): Initials of the person. [optional]  # noqa: E501
             birthday (date, none_type): Date of birth. [optional]  # noqa: E501
             deceased_on (date, none_type): Date of death. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,6 +248,7 @@ class Person(ModelNormal):
             initials (str, none_type): Initials of the person. [optional]  # noqa: E501
             birthday (date, none_type): Date of birth. [optional]  # noqa: E501
             deceased_on (date, none_type): Date of death. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

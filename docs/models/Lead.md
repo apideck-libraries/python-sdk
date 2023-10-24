@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **emails** | [**[Email]**](Email.md) |  | [optional] 
 **custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **tags** | [**Tags**](Tags.md) |  | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **updated_at** | **str, none_type** | Date updated in ISO 8601 format | [optional] [readonly] 
 **created_at** | **str, none_type** | Date created in ISO 8601 format | [optional] [readonly] 
 

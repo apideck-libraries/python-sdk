@@ -131,6 +131,7 @@ class Lead(ModelNormal):
             'emails': ([Email],),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
         }
@@ -165,6 +166,7 @@ class Lead(ModelNormal):
         'emails': 'emails',  # noqa: E501
         'custom_fields': 'custom_fields',  # noqa: E501
         'tags': 'tags',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
     }
@@ -239,6 +241,7 @@ class Lead(ModelNormal):
             emails ([Email]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (str, none_type): Date updated in ISO 8601 format. [optional]  # noqa: E501
             created_at (str, none_type): Date created in ISO 8601 format. [optional]  # noqa: E501
         """
@@ -350,6 +353,7 @@ class Lead(ModelNormal):
             emails ([Email]): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (str, none_type): Date updated in ISO 8601 format. [optional]  # noqa: E501
             created_at (str, none_type): Date created in ISO 8601 format. [optional]  # noqa: E501
         """

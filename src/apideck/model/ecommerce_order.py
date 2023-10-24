@@ -131,6 +131,7 @@ class EcommerceOrder(ModelNormal):
             'tracking': ([TrackingItem],),  # noqa: E501
             'line_items': ([EcommerceOrderLineItem],),  # noqa: E501
             'note': (str, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
@@ -160,6 +161,7 @@ class EcommerceOrder(ModelNormal):
         'tracking': 'tracking',  # noqa: E501
         'line_items': 'line_items',  # noqa: E501
         'note': 'note',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
     }
@@ -229,6 +231,7 @@ class EcommerceOrder(ModelNormal):
             tracking ([TrackingItem]): [optional]  # noqa: E501
             line_items ([EcommerceOrderLineItem]): [optional]  # noqa: E501
             note (str, none_type): Note for the order.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
@@ -331,6 +334,7 @@ class EcommerceOrder(ModelNormal):
             tracking ([TrackingItem]): [optional]  # noqa: E501
             line_items ([EcommerceOrderLineItem]): [optional]  # noqa: E501
             note (str, none_type): Note for the order.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """

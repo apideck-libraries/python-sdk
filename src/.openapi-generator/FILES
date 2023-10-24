@@ -125,6 +125,8 @@ apideck/model/create_connection_response.py
 apideck/model/create_consumer_response.py
 apideck/model/create_contact_response.py
 apideck/model/create_credit_note_response.py
+apideck/model/create_custom_mapping_request.py
+apideck/model/create_custom_mapping_response.py
 apideck/model/create_customer_response.py
 apideck/model/create_department_response.py
 apideck/model/create_drive_group_response.py
@@ -175,6 +177,8 @@ apideck/model/credit_note.py
 apideck/model/crm_event_type.py
 apideck/model/currency.py
 apideck/model/custom_field.py
+apideck/model/custom_field_finder.py
+apideck/model/custom_mapping.py
 apideck/model/customer.py
 apideck/model/customers_filter.py
 apideck/model/deduction.py
@@ -302,7 +306,10 @@ apideck/model/get_company_info_response.py
 apideck/model/get_company_response.py
 apideck/model/get_connection_response.py
 apideck/model/get_connections_response.py
+apideck/model/get_connector_resource_example_response.py
+apideck/model/get_connector_resource_example_response_data.py
 apideck/model/get_connector_resource_response.py
+apideck/model/get_connector_resource_schema_response.py
 apideck/model/get_connector_response.py
 apideck/model/get_connectors_response.py
 apideck/model/get_consumer_response.py
@@ -312,6 +319,8 @@ apideck/model/get_contact_response.py
 apideck/model/get_contacts_response.py
 apideck/model/get_credit_note_response.py
 apideck/model/get_credit_notes_response.py
+apideck/model/get_custom_fields_response.py
+apideck/model/get_custom_mapping_response.py
 apideck/model/get_customer_response.py
 apideck/model/get_customers_response.py
 apideck/model/get_department_response.py
@@ -383,6 +392,8 @@ apideck/model/get_products_response.py
 apideck/model/get_profit_and_loss_response.py
 apideck/model/get_purchase_order_response.py
 apideck/model/get_purchase_orders_response.py
+apideck/model/get_resource_example_response.py
+apideck/model/get_resource_schema_response.py
 apideck/model/get_shared_link_response.py
 apideck/model/get_shared_links_response.py
 apideck/model/get_store_response.py
@@ -521,10 +532,12 @@ apideck/model/request_rate.py
 apideck/model/resolve_webhook_event_request.py
 apideck/model/resolve_webhook_events_request.py
 apideck/model/resolve_webhook_response.py
+apideck/model/resource_example.py
 apideck/model/resource_status.py
 apideck/model/schedule.py
 apideck/model/schedule_work_pattern.py
 apideck/model/schedule_work_pattern_odd_weeks.py
+apideck/model/schema_support.py
 apideck/model/service_charge.py
 apideck/model/service_charges.py
 apideck/model/session.py
@@ -572,6 +585,8 @@ apideck/model/update_consumer_request.py
 apideck/model/update_consumer_response.py
 apideck/model/update_contact_response.py
 apideck/model/update_credit_note_response.py
+apideck/model/update_custom_mapping_request.py
+apideck/model/update_custom_mapping_response.py
 apideck/model/update_customer_response.py
 apideck/model/update_department_response.py
 apideck/model/update_drive_group_response.py
@@ -732,6 +747,8 @@ docs/CreateConnectionResponse.md
 docs/CreateConsumerResponse.md
 docs/CreateContactResponse.md
 docs/CreateCreditNoteResponse.md
+docs/CreateCustomMappingRequest.md
+docs/CreateCustomMappingResponse.md
 docs/CreateCustomerResponse.md
 docs/CreateDepartmentResponse.md
 docs/CreateDriveGroupResponse.md
@@ -783,6 +800,8 @@ docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
 docs/CustomField.md
+docs/CustomFieldFinder.md
+docs/CustomMapping.md
 docs/Customer.md
 docs/CustomersFilter.md
 docs/Deduction.md
@@ -912,7 +931,10 @@ docs/GetCompanyInfoResponse.md
 docs/GetCompanyResponse.md
 docs/GetConnectionResponse.md
 docs/GetConnectionsResponse.md
+docs/GetConnectorResourceExampleResponse.md
+docs/GetConnectorResourceExampleResponseData.md
 docs/GetConnectorResourceResponse.md
+docs/GetConnectorResourceSchemaResponse.md
 docs/GetConnectorResponse.md
 docs/GetConnectorsResponse.md
 docs/GetConsumerResponse.md
@@ -922,6 +944,8 @@ docs/GetContactResponse.md
 docs/GetContactsResponse.md
 docs/GetCreditNoteResponse.md
 docs/GetCreditNotesResponse.md
+docs/GetCustomFieldsResponse.md
+docs/GetCustomMappingResponse.md
 docs/GetCustomerResponse.md
 docs/GetCustomersResponse.md
 docs/GetDepartmentResponse.md
@@ -993,6 +1017,8 @@ docs/GetProductsResponse.md
 docs/GetProfitAndLossResponse.md
 docs/GetPurchaseOrderResponse.md
 docs/GetPurchaseOrdersResponse.md
+docs/GetResourceExampleResponse.md
+docs/GetResourceSchemaResponse.md
 docs/GetSharedLinkResponse.md
 docs/GetSharedLinksResponse.md
 docs/GetStoreResponse.md
@@ -1135,10 +1161,12 @@ docs/RequestRate.md
 docs/ResolveWebhookEventRequest.md
 docs/ResolveWebhookEventsRequest.md
 docs/ResolveWebhookResponse.md
+docs/ResourceExample.md
 docs/ResourceStatus.md
 docs/Schedule.md
 docs/ScheduleWorkPattern.md
 docs/ScheduleWorkPatternOddWeeks.md
+docs/SchemaSupport.md
 docs/ServiceCharge.md
 docs/ServiceCharges.md
 docs/Session.md
@@ -1187,6 +1215,8 @@ docs/UpdateConsumerRequest.md
 docs/UpdateConsumerResponse.md
 docs/UpdateContactResponse.md
 docs/UpdateCreditNoteResponse.md
+docs/UpdateCustomMappingRequest.md
+docs/UpdateCustomMappingResponse.md
 docs/UpdateCustomerResponse.md
 docs/UpdateDepartmentResponse.md
 docs/UpdateDriveGroupResponse.md
@@ -1352,6 +1382,8 @@ test/test_create_connection_response.py
 test/test_create_consumer_response.py
 test/test_create_contact_response.py
 test/test_create_credit_note_response.py
+test/test_create_custom_mapping_request.py
+test/test_create_custom_mapping_response.py
 test/test_create_customer_response.py
 test/test_create_department_response.py
 test/test_create_drive_group_response.py
@@ -1403,6 +1435,8 @@ test/test_crm_api.py
 test/test_crm_event_type.py
 test/test_currency.py
 test/test_custom_field.py
+test/test_custom_field_finder.py
+test/test_custom_mapping.py
 test/test_customer.py
 test/test_customers_filter.py
 test/test_deduction.py
@@ -1532,7 +1566,10 @@ test/test_get_company_info_response.py
 test/test_get_company_response.py
 test/test_get_connection_response.py
 test/test_get_connections_response.py
+test/test_get_connector_resource_example_response.py
+test/test_get_connector_resource_example_response_data.py
 test/test_get_connector_resource_response.py
+test/test_get_connector_resource_schema_response.py
 test/test_get_connector_response.py
 test/test_get_connectors_response.py
 test/test_get_consumer_response.py
@@ -1542,6 +1579,8 @@ test/test_get_contact_response.py
 test/test_get_contacts_response.py
 test/test_get_credit_note_response.py
 test/test_get_credit_notes_response.py
+test/test_get_custom_fields_response.py
+test/test_get_custom_mapping_response.py
 test/test_get_customer_response.py
 test/test_get_customers_response.py
 test/test_get_department_response.py
@@ -1613,6 +1652,8 @@ test/test_get_products_response.py
 test/test_get_profit_and_loss_response.py
 test/test_get_purchase_order_response.py
 test/test_get_purchase_orders_response.py
+test/test_get_resource_example_response.py
+test/test_get_resource_schema_response.py
 test/test_get_shared_link_response.py
 test/test_get_shared_links_response.py
 test/test_get_store_response.py
@@ -1755,10 +1796,12 @@ test/test_request_rate.py
 test/test_resolve_webhook_event_request.py
 test/test_resolve_webhook_events_request.py
 test/test_resolve_webhook_response.py
+test/test_resource_example.py
 test/test_resource_status.py
 test/test_schedule.py
 test/test_schedule_work_pattern.py
 test/test_schedule_work_pattern_odd_weeks.py
+test/test_schema_support.py
 test/test_service_charge.py
 test/test_service_charges.py
 test/test_session.py
@@ -1807,6 +1850,8 @@ test/test_update_consumer_request.py
 test/test_update_consumer_response.py
 test/test_update_contact_response.py
 test/test_update_credit_note_response.py
+test/test_update_custom_mapping_request.py
+test/test_update_custom_mapping_response.py
 test/test_update_customer_response.py
 test/test_update_department_response.py
 test/test_update_drive_group_response.py

@@ -99,6 +99,7 @@ class Merchant(ModelNormal):
             'service_charges': ([ServiceCharge],),  # noqa: E501
             'language': (str, none_type,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -120,6 +121,7 @@ class Merchant(ModelNormal):
         'service_charges': 'service_charges',  # noqa: E501
         'language': 'language',  # noqa: E501
         'currency': 'currency',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -181,6 +183,7 @@ class Merchant(ModelNormal):
             service_charges ([ServiceCharge]): [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -275,6 +278,7 @@ class Merchant(ModelNormal):
             service_charges ([ServiceCharge]): [optional]  # noqa: E501
             language (str, none_type): language code according to ISO 639-1. For the United States - EN. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

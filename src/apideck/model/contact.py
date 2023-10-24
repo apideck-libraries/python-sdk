@@ -144,6 +144,7 @@ class Contact(ModelNormal):
             'first_call_at': (datetime, none_type,),  # noqa: E501
             'first_email_at': (datetime, none_type,),  # noqa: E501
             'last_activity_at': (datetime, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
         }
@@ -190,6 +191,7 @@ class Contact(ModelNormal):
         'first_call_at': 'first_call_at',  # noqa: E501
         'first_email_at': 'first_email_at',  # noqa: E501
         'last_activity_at': 'last_activity_at',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
     }
@@ -279,6 +281,7 @@ class Contact(ModelNormal):
             first_call_at (datetime, none_type): The first call date of the contact.. [optional]  # noqa: E501
             first_email_at (datetime, none_type): The first email date of the contact.. [optional]  # noqa: E501
             last_activity_at (datetime, none_type): The last activity date of the contact.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
             created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
         """
@@ -401,6 +404,7 @@ class Contact(ModelNormal):
             first_call_at (datetime, none_type): The first call date of the contact.. [optional]  # noqa: E501
             first_email_at (datetime, none_type): The first email date of the contact.. [optional]  # noqa: E501
             last_activity_at (datetime, none_type): The last activity date of the contact.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
             created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
         """

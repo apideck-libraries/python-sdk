@@ -321,6 +321,7 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         discount_percentage=5.5,
         row_version="1-12345",
+        custom_mappings={},
     ) # Bill | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -864,6 +865,7 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         discount_percentage=5.5,
         row_version="1-12345",
+        custom_mappings={},
     ) # Bill | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -1128,6 +1130,7 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_mappings={},
                 row_version="1-12345",
             ),
         ],
@@ -1136,6 +1139,7 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         note="Some notes about this credit note",
         terms="Some terms about this credit note",
+        custom_mappings={},
         row_version="1-12345",
     ) # CreditNote | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -1624,6 +1628,7 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_mappings={},
                 row_version="1-12345",
             ),
         ],
@@ -1632,6 +1637,7 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         note="Some notes about this credit note",
         terms="Some terms about this credit note",
+        custom_mappings={},
         row_version="1-12345",
     ) # CreditNote | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1839,6 +1845,7 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_mappings={},
         row_version="1-12345",
     ) # Customer | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -2378,6 +2385,7 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_mappings={},
         row_version="1-12345",
     ) # Customer | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -2538,6 +2546,7 @@ with apideck.ApiClient(configuration) as api_client:
             name="New York",
         ),
         active=True,
+        custom_mappings={},
         row_version="1-12345",
     ) # InvoiceItem | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -3025,6 +3034,7 @@ with apideck.ApiClient(configuration) as api_client:
             name="New York",
         ),
         active=True,
+        custom_mappings={},
         row_version="1-12345",
     ) # InvoiceItem | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -3196,6 +3206,7 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_mappings={},
                 row_version="1-12345",
             ),
         ],
@@ -3275,6 +3286,7 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
+        custom_mappings={},
         row_version="1-12345",
     ) # Invoice | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -3774,6 +3786,7 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_mappings={},
                 row_version="1-12345",
             ),
         ],
@@ -3853,6 +3866,7 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
+        custom_mappings={},
         row_version="1-12345",
     ) # Invoice | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -4030,6 +4044,7 @@ with apideck.ApiClient(configuration) as api_client:
         tax_type="sales",
         tax_code="1234",
         number="OIT00546",
+        custom_mappings={},
         row_version="1-12345",
     ) # JournalEntry | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -4529,6 +4544,7 @@ with apideck.ApiClient(configuration) as api_client:
         tax_type="sales",
         tax_code="1234",
         number="OIT00546",
+        custom_mappings={},
         row_version="1-12345",
     ) # JournalEntry | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -5243,6 +5259,7 @@ with apideck.ApiClient(configuration) as api_client:
         note="Some notes about this payment",
         row_version="1-12345",
         display_id="123456",
+        custom_mappings={},
     ) # Payment | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -5743,6 +5760,7 @@ with apideck.ApiClient(configuration) as api_client:
         note="Some notes about this payment",
         row_version="1-12345",
         display_id="123456",
+        custom_mappings={},
     ) # Payment | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -6034,6 +6052,7 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_mappings={},
                 row_version="1-12345",
             ),
         ],
@@ -6089,6 +6108,7 @@ with apideck.ApiClient(configuration) as api_client:
         tax_code="1234",
         channel="email",
         memo="Thank you for the partnership and have a great day!",
+        custom_mappings={},
         row_version="1-12345",
     ) # PurchaseOrder | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -6590,6 +6610,7 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_mappings={},
                 row_version="1-12345",
             ),
         ],
@@ -6645,6 +6666,7 @@ with apideck.ApiClient(configuration) as api_client:
         tax_code="1234",
         channel="email",
         memo="Thank you for the partnership and have a great day!",
+        custom_mappings={},
         row_version="1-12345",
     ) # PurchaseOrder | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -6847,6 +6869,7 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_mappings={},
         row_version="1-12345",
     ) # Supplier | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -7380,6 +7403,7 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_mappings={},
         row_version="1-12345",
     ) # Supplier | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -7506,6 +7530,7 @@ with apideck.ApiClient(configuration) as api_client:
         report_tax_type="NONE",
         original_tax_rate_id="12345",
         status="active",
+        custom_mappings={},
         row_version="1-12345",
     ) # TaxRate | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -7963,6 +7988,7 @@ with apideck.ApiClient(configuration) as api_client:
         report_tax_type="NONE",
         original_tax_rate_id="12345",
         status="active",
+        custom_mappings={},
         row_version="1-12345",
     ) # TaxRate | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)

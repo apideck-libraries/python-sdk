@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **opportunity_id** | **str, none_type** | The opportunity that is related to the note. | [optional] 
 **lead_id** | **str, none_type** | The lead that is related to the note. | [optional] 
 **active** | **bool, none_type** | Whether the Note is active or not. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **updated_by** | **str, none_type** | The user that last updated the note. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user that created the note. | [optional] [readonly] 
 **updated_at** | **str, none_type** | The timestamp when the note was last updated | [optional] [readonly] 

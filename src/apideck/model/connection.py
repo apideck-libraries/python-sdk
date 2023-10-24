@@ -33,6 +33,7 @@ def lazy_import():
     from apideck.model.auth_type import AuthType
     from apideck.model.connection_configuration import ConnectionConfiguration
     from apideck.model.connection_state import ConnectionState
+    from apideck.model.custom_mapping import CustomMapping
     from apideck.model.form_field import FormField
     from apideck.model.integration_state import IntegrationState
     from apideck.model.o_auth_grant_type import OAuthGrantType
@@ -40,6 +41,7 @@ def lazy_import():
     globals()['AuthType'] = AuthType
     globals()['ConnectionConfiguration'] = ConnectionConfiguration
     globals()['ConnectionState'] = ConnectionState
+    globals()['CustomMapping'] = CustomMapping
     globals()['FormField'] = FormField
     globals()['IntegrationState'] = IntegrationState
     globals()['OAuthGrantType'] = OAuthGrantType
@@ -128,10 +130,12 @@ class Connection(ModelNormal):
             'resource_schema_support': ([str],),  # noqa: E501
             'resource_settings_support': ([str],),  # noqa: E501
             'validation_support': (bool,),  # noqa: E501
+            'schema_support': (bool,),  # noqa: E501
             'settings_required_for_authorization': ([str],),  # noqa: E501
             'subscriptions': ([WebhookSubscription],),  # noqa: E501
             'has_guide': (bool,),  # noqa: E501
             'created_at': (float,),  # noqa: E501
+            'custom_mappings': ([CustomMapping],),  # noqa: E501
             'updated_at': (float, none_type,),  # noqa: E501
         }
 
@@ -165,10 +169,12 @@ class Connection(ModelNormal):
         'resource_schema_support': 'resource_schema_support',  # noqa: E501
         'resource_settings_support': 'resource_settings_support',  # noqa: E501
         'validation_support': 'validation_support',  # noqa: E501
+        'schema_support': 'schema_support',  # noqa: E501
         'settings_required_for_authorization': 'settings_required_for_authorization',  # noqa: E501
         'subscriptions': 'subscriptions',  # noqa: E501
         'has_guide': 'has_guide',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
     }
 
@@ -189,6 +195,7 @@ class Connection(ModelNormal):
         'resource_schema_support',  # noqa: E501
         'resource_settings_support',  # noqa: E501
         'validation_support',  # noqa: E501
+        'schema_support',  # noqa: E501
         'settings_required_for_authorization',  # noqa: E501
         'subscriptions',  # noqa: E501
         'has_guide',  # noqa: E501
@@ -258,10 +265,12 @@ class Connection(ModelNormal):
             resource_schema_support ([str]): [optional]  # noqa: E501
             resource_settings_support ([str]): [optional]  # noqa: E501
             validation_support (bool): [optional]  # noqa: E501
+            schema_support (bool): [optional]  # noqa: E501
             settings_required_for_authorization ([str]): List of settings that are required to be configured on integration before authorization can occur. [optional]  # noqa: E501
             subscriptions ([WebhookSubscription]): [optional]  # noqa: E501
             has_guide (bool): Whether the connector has a guide available in the developer docs or not (https://docs.apideck.com/connectors/{service_id}/docs/consumer+connection).. [optional]  # noqa: E501
             created_at (float): [optional]  # noqa: E501
+            custom_mappings ([CustomMapping]): List of custom mappings configured for this connection. [optional]  # noqa: E501
             updated_at (float, none_type): [optional]  # noqa: E501
         """
 
@@ -368,10 +377,12 @@ class Connection(ModelNormal):
             resource_schema_support ([str]): [optional]  # noqa: E501
             resource_settings_support ([str]): [optional]  # noqa: E501
             validation_support (bool): [optional]  # noqa: E501
+            schema_support (bool): [optional]  # noqa: E501
             settings_required_for_authorization ([str]): List of settings that are required to be configured on integration before authorization can occur. [optional]  # noqa: E501
             subscriptions ([WebhookSubscription]): [optional]  # noqa: E501
             has_guide (bool): Whether the connector has a guide available in the developer docs or not (https://docs.apideck.com/connectors/{service_id}/docs/consumer+connection).. [optional]  # noqa: E501
             created_at (float): [optional]  # noqa: E501
+            custom_mappings ([CustomMapping]): List of custom mappings configured for this connection. [optional]  # noqa: E501
             updated_at (float, none_type): [optional]  # noqa: E501
         """
 

@@ -38,6 +38,7 @@ def lazy_import():
     from apideck.model.connector_tls_support import ConnectorTlsSupport
     from apideck.model.connector_unified_apis import ConnectorUnifiedApis
     from apideck.model.linked_connector_resource import LinkedConnectorResource
+    from apideck.model.schema_support import SchemaSupport
     from apideck.model.webhook_support import WebhookSupport
     globals()['ConnectorDoc'] = ConnectorDoc
     globals()['ConnectorEvent'] = ConnectorEvent
@@ -47,6 +48,7 @@ def lazy_import():
     globals()['ConnectorTlsSupport'] = ConnectorTlsSupport
     globals()['ConnectorUnifiedApis'] = ConnectorUnifiedApis
     globals()['LinkedConnectorResource'] = LinkedConnectorResource
+    globals()['SchemaSupport'] = SchemaSupport
     globals()['WebhookSupport'] = WebhookSupport
 
 
@@ -144,6 +146,7 @@ class Connector(ModelNormal):
             'configurable_resources': ([str],),  # noqa: E501
             'supported_events': ([ConnectorEvent],),  # noqa: E501
             'webhook_support': (WebhookSupport,),  # noqa: E501
+            'schema_support': (SchemaSupport,),  # noqa: E501
             'docs': ([ConnectorDoc],),  # noqa: E501
             'tls_support': (ConnectorTlsSupport,),  # noqa: E501
         }
@@ -179,6 +182,7 @@ class Connector(ModelNormal):
         'configurable_resources': 'configurable_resources',  # noqa: E501
         'supported_events': 'supported_events',  # noqa: E501
         'webhook_support': 'webhook_support',  # noqa: E501
+        'schema_support': 'schema_support',  # noqa: E501
         'docs': 'docs',  # noqa: E501
         'tls_support': 'tls_support',  # noqa: E501
     }
@@ -256,6 +260,7 @@ class Connector(ModelNormal):
             configurable_resources ([str]): List of resources that have settings that can be configured.. [optional]  # noqa: E501
             supported_events ([ConnectorEvent]): List of events that are supported on the connector across all Unified APIs.. [optional]  # noqa: E501
             webhook_support (WebhookSupport): [optional]  # noqa: E501
+            schema_support (SchemaSupport): [optional]  # noqa: E501
             docs ([ConnectorDoc]): [optional]  # noqa: E501
             tls_support (ConnectorTlsSupport): [optional]  # noqa: E501
         """
@@ -364,6 +369,7 @@ class Connector(ModelNormal):
             configurable_resources ([str]): List of resources that have settings that can be configured.. [optional]  # noqa: E501
             supported_events ([ConnectorEvent]): List of events that are supported on the connector across all Unified APIs.. [optional]  # noqa: E501
             webhook_support (WebhookSupport): [optional]  # noqa: E501
+            schema_support (SchemaSupport): [optional]  # noqa: E501
             docs ([ConnectorDoc]): [optional]  # noqa: E501
             tls_support (ConnectorTlsSupport): [optional]  # noqa: E501
         """

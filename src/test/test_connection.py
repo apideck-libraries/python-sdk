@@ -15,6 +15,7 @@ import apideck
 from apideck.model.auth_type import AuthType
 from apideck.model.connection_configuration import ConnectionConfiguration
 from apideck.model.connection_state import ConnectionState
+from apideck.model.custom_mapping import CustomMapping
 from apideck.model.form_field import FormField
 from apideck.model.integration_state import IntegrationState
 from apideck.model.o_auth_grant_type import OAuthGrantType
@@ -22,6 +23,7 @@ from apideck.model.webhook_subscription import WebhookSubscription
 globals()['AuthType'] = AuthType
 globals()['ConnectionConfiguration'] = ConnectionConfiguration
 globals()['ConnectionState'] = ConnectionState
+globals()['CustomMapping'] = CustomMapping
 globals()['FormField'] = FormField
 globals()['IntegrationState'] = IntegrationState
 globals()['OAuthGrantType'] = OAuthGrantType

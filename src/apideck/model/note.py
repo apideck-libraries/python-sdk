@@ -84,6 +84,7 @@ class Note(ModelNormal):
             'opportunity_id': (str, none_type,),  # noqa: E501
             'lead_id': (str, none_type,),  # noqa: E501
             'active': (bool, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
@@ -105,6 +106,7 @@ class Note(ModelNormal):
         'opportunity_id': 'opportunity_id',  # noqa: E501
         'lead_id': 'lead_id',  # noqa: E501
         'active': 'active',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -166,6 +168,7 @@ class Note(ModelNormal):
             opportunity_id (str, none_type): The opportunity that is related to the note.. [optional]  # noqa: E501
             lead_id (str, none_type): The lead that is related to the note.. [optional]  # noqa: E501
             active (bool, none_type): Whether the Note is active or not.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user that last updated the note.. [optional]  # noqa: E501
             created_by (str, none_type): The user that created the note.. [optional]  # noqa: E501
             updated_at (str, none_type): The timestamp when the note was last updated. [optional]  # noqa: E501
@@ -260,6 +263,7 @@ class Note(ModelNormal):
             opportunity_id (str, none_type): The opportunity that is related to the note.. [optional]  # noqa: E501
             lead_id (str, none_type): The lead that is related to the note.. [optional]  # noqa: E501
             active (bool, none_type): Whether the Note is active or not.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user that last updated the note.. [optional]  # noqa: E501
             created_by (str, none_type): The user that created the note.. [optional]  # noqa: E501
             updated_at (str, none_type): The timestamp when the note was last updated. [optional]  # noqa: E501
