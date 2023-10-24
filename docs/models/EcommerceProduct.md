@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **variants** | [**[EcommerceProductVariants]**](EcommerceProductVariants.md) |  | [optional] 
 **tags** | **[str, none_type]** | An array of tags for the product, used for organization and searching. | [optional] 
 **categories** | [**[EcommerceProductCategories]**](EcommerceProductCategories.md) | An array of categories for the product, used for organization and searching. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 

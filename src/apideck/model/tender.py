@@ -83,6 +83,7 @@ class Tender(ModelNormal):
             'editable': (bool, none_type,),  # noqa: E501
             'opens_cash_drawer': (bool,),  # noqa: E501
             'allows_tipping': (bool,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -103,6 +104,7 @@ class Tender(ModelNormal):
         'editable': 'editable',  # noqa: E501
         'opens_cash_drawer': 'opens_cash_drawer',  # noqa: E501
         'allows_tipping': 'allows_tipping',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -163,6 +165,7 @@ class Tender(ModelNormal):
             editable (bool, none_type): [optional]  # noqa: E501
             opens_cash_drawer (bool): If this tender opens the cash drawer. [optional] if omitted the server will use the default value of True  # noqa: E501
             allows_tipping (bool): Allow tipping on payment from tender. [optional] if omitted the server will use the default value of True  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -256,6 +259,7 @@ class Tender(ModelNormal):
             editable (bool, none_type): [optional]  # noqa: E501
             opens_cash_drawer (bool): If this tender opens the cash drawer. [optional] if omitted the server will use the default value of True  # noqa: E501
             allows_tipping (bool): Allow tipping on payment from tender. [optional] if omitted the server will use the default value of True  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

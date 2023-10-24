@@ -114,6 +114,13 @@ class TestVaultApi(unittest.TestCase):
         """
         pass
 
+    def test_custom_fields_all(self):
+        """Test case for custom_fields_all
+
+        Get resource custom fields  # noqa: E501
+        """
+        pass
+
     def test_logs_all(self):
         """Test case for logs_all
 

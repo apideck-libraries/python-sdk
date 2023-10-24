@@ -80,6 +80,7 @@ class Collection(ModelNormal):
             'type': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
         }
@@ -95,6 +96,7 @@ class Collection(ModelNormal):
         'type': 'type',  # noqa: E501
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
     }
@@ -150,6 +152,7 @@ class Collection(ModelNormal):
             type (str, none_type): The collections's type. [optional]  # noqa: E501
             name (str, none_type): Name of the collection. [optional]  # noqa: E501
             description (str, none_type): Description of the collection. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
@@ -238,6 +241,7 @@ class Collection(ModelNormal):
             type (str, none_type): The collections's type. [optional]  # noqa: E501
             name (str, none_type): Name of the collection. [optional]  # noqa: E501
             description (str, none_type): Description of the collection. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **phone_numbers** | [**[PhoneNumber], none_type**](PhoneNumber.md) | An array of phone numbers for the customer. | [optional] 
 **addresses** | [**[EcommerceCustomerAddresses]**](EcommerceCustomerAddresses.md) | An array of addresses for the customer. | [optional] 
 **orders** | [**[LinkedEcommerceOrder]**](LinkedEcommerceOrder.md) |  | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 

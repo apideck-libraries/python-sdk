@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **due_date** | **datetime, none_type** | Due date of the ticket | [optional] 
 **completed_at** | **datetime, none_type** | When the ticket was completed | [optional] [readonly] 
 **tags** | [**[CollectionTag]**](CollectionTag.md) |  | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

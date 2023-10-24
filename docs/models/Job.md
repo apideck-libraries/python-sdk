@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **deleted** | **bool, none_type** | Flag to indicate if the object is deleted. | [optional] 
 **owner_id** | **str, none_type** |  | [optional] 
 **published_at** | **datetime, none_type** |  | [optional] [readonly] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 

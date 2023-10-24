@@ -109,6 +109,7 @@ class ProfitAndLoss(ModelNormal):
             'net_income': (ProfitAndLossNetIncome,),  # noqa: E501
             'net_operating_income': (ProfitAndLossNetOperatingIncome,),  # noqa: E501
             'gross_profit': (ProfitAndLossGrossProfit,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -128,6 +129,7 @@ class ProfitAndLoss(ModelNormal):
         'net_income': 'net_income',  # noqa: E501
         'net_operating_income': 'net_operating_income',  # noqa: E501
         'gross_profit': 'gross_profit',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
     }
 
     read_only_vars = {
@@ -185,6 +187,7 @@ class ProfitAndLoss(ModelNormal):
             net_income (ProfitAndLossNetIncome): [optional]  # noqa: E501
             net_operating_income (ProfitAndLossNetOperatingIncome): [optional]  # noqa: E501
             gross_profit (ProfitAndLossGrossProfit): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -283,6 +286,7 @@ class ProfitAndLoss(ModelNormal):
             net_income (ProfitAndLossNetIncome): [optional]  # noqa: E501
             net_operating_income (ProfitAndLossNetOperatingIncome): [optional]  # noqa: E501
             gross_profit (ProfitAndLossGrossProfit): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

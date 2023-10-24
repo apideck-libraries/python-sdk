@@ -836,6 +836,8 @@ _VaultApi_ | [**consumers_one**](docs/apis/VaultApi.md#consumers_one) | **GET** 
 
 _VaultApi_ | [**consumers_update**](docs/apis/VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer |
 
+_VaultApi_ | [**custom_fields_all**](docs/apis/VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields |
+
 _VaultApi_ | [**logs_all**](docs/apis/VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs |
 
 _VaultApi_ | [**sessions_create**](docs/apis/VaultApi.md#sessions_create) | **POST** /vault/sessions | Create Session |
@@ -950,6 +952,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateConsumerResponse](docs/models/CreateConsumerResponse.md)
  - [CreateContactResponse](docs/models/CreateContactResponse.md)
  - [CreateCreditNoteResponse](docs/models/CreateCreditNoteResponse.md)
+ - [CreateCustomMappingRequest](docs/models/CreateCustomMappingRequest.md)
+ - [CreateCustomMappingResponse](docs/models/CreateCustomMappingResponse.md)
  - [CreateCustomerResponse](docs/models/CreateCustomerResponse.md)
  - [CreateDepartmentResponse](docs/models/CreateDepartmentResponse.md)
  - [CreateDriveGroupResponse](docs/models/CreateDriveGroupResponse.md)
@@ -1000,6 +1004,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CrmEventType](docs/models/CrmEventType.md)
  - [Currency](docs/models/Currency.md)
  - [CustomField](docs/models/CustomField.md)
+ - [CustomFieldFinder](docs/models/CustomFieldFinder.md)
+ - [CustomMapping](docs/models/CustomMapping.md)
  - [Customer](docs/models/Customer.md)
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [Deduction](docs/models/Deduction.md)
@@ -1127,7 +1133,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetCompanyResponse](docs/models/GetCompanyResponse.md)
  - [GetConnectionResponse](docs/models/GetConnectionResponse.md)
  - [GetConnectionsResponse](docs/models/GetConnectionsResponse.md)
+ - [GetConnectorResourceExampleResponse](docs/models/GetConnectorResourceExampleResponse.md)
+ - [GetConnectorResourceExampleResponseData](docs/models/GetConnectorResourceExampleResponseData.md)
  - [GetConnectorResourceResponse](docs/models/GetConnectorResourceResponse.md)
+ - [GetConnectorResourceSchemaResponse](docs/models/GetConnectorResourceSchemaResponse.md)
  - [GetConnectorResponse](docs/models/GetConnectorResponse.md)
  - [GetConnectorsResponse](docs/models/GetConnectorsResponse.md)
  - [GetConsumerResponse](docs/models/GetConsumerResponse.md)
@@ -1137,6 +1146,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetContactsResponse](docs/models/GetContactsResponse.md)
  - [GetCreditNoteResponse](docs/models/GetCreditNoteResponse.md)
  - [GetCreditNotesResponse](docs/models/GetCreditNotesResponse.md)
+ - [GetCustomFieldsResponse](docs/models/GetCustomFieldsResponse.md)
+ - [GetCustomMappingResponse](docs/models/GetCustomMappingResponse.md)
  - [GetCustomerResponse](docs/models/GetCustomerResponse.md)
  - [GetCustomersResponse](docs/models/GetCustomersResponse.md)
  - [GetDepartmentResponse](docs/models/GetDepartmentResponse.md)
@@ -1208,6 +1219,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetProfitAndLossResponse](docs/models/GetProfitAndLossResponse.md)
  - [GetPurchaseOrderResponse](docs/models/GetPurchaseOrderResponse.md)
  - [GetPurchaseOrdersResponse](docs/models/GetPurchaseOrdersResponse.md)
+ - [GetResourceExampleResponse](docs/models/GetResourceExampleResponse.md)
+ - [GetResourceSchemaResponse](docs/models/GetResourceSchemaResponse.md)
  - [GetSharedLinkResponse](docs/models/GetSharedLinkResponse.md)
  - [GetSharedLinksResponse](docs/models/GetSharedLinksResponse.md)
  - [GetStoreResponse](docs/models/GetStoreResponse.md)
@@ -1346,10 +1359,12 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ResolveWebhookEventRequest](docs/models/ResolveWebhookEventRequest.md)
  - [ResolveWebhookEventsRequest](docs/models/ResolveWebhookEventsRequest.md)
  - [ResolveWebhookResponse](docs/models/ResolveWebhookResponse.md)
+ - [ResourceExample](docs/models/ResourceExample.md)
  - [ResourceStatus](docs/models/ResourceStatus.md)
  - [Schedule](docs/models/Schedule.md)
  - [ScheduleWorkPattern](docs/models/ScheduleWorkPattern.md)
  - [ScheduleWorkPatternOddWeeks](docs/models/ScheduleWorkPatternOddWeeks.md)
+ - [SchemaSupport](docs/models/SchemaSupport.md)
  - [ServiceCharge](docs/models/ServiceCharge.md)
  - [ServiceCharges](docs/models/ServiceCharges.md)
  - [Session](docs/models/Session.md)
@@ -1397,6 +1412,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateConsumerResponse](docs/models/UpdateConsumerResponse.md)
  - [UpdateContactResponse](docs/models/UpdateContactResponse.md)
  - [UpdateCreditNoteResponse](docs/models/UpdateCreditNoteResponse.md)
+ - [UpdateCustomMappingRequest](docs/models/UpdateCustomMappingRequest.md)
+ - [UpdateCustomMappingResponse](docs/models/UpdateCustomMappingResponse.md)
  - [UpdateCustomerResponse](docs/models/UpdateCustomerResponse.md)
  - [UpdateDepartmentResponse](docs/models/UpdateDepartmentResponse.md)
  - [UpdateDriveGroupResponse](docs/models/UpdateDriveGroupResponse.md)

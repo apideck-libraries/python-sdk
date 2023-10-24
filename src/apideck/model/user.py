@@ -109,6 +109,7 @@ class User(ModelNormal):
             'password': (str, none_type,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
         }
@@ -137,6 +138,7 @@ class User(ModelNormal):
         'password': 'password',  # noqa: E501
         'addresses': 'addresses',  # noqa: E501
         'phone_numbers': 'phone_numbers',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
     }
@@ -205,6 +207,7 @@ class User(ModelNormal):
             password (str, none_type): The password of the user. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the user was last updated.. [optional]  # noqa: E501
             created_at (str, none_type): The date and time when the user was created.. [optional]  # noqa: E501
         """
@@ -309,6 +312,7 @@ class User(ModelNormal):
             password (str, none_type): The password of the user. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the user was last updated.. [optional]  # noqa: E501
             created_at (str, none_type): The date and time when the user was created.. [optional]  # noqa: E501
         """

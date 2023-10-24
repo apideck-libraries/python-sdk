@@ -97,6 +97,7 @@ class TaxRate(ModelNormal):
             'report_tax_type': (str, none_type,),  # noqa: E501
             'original_tax_rate_id': (str, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -123,6 +124,7 @@ class TaxRate(ModelNormal):
         'report_tax_type': 'report_tax_type',  # noqa: E501
         'original_tax_rate_id': 'original_tax_rate_id',  # noqa: E501
         'status': 'status',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -188,6 +190,7 @@ class TaxRate(ModelNormal):
             report_tax_type (str, none_type): Report Tax type to aggregate tax collected or paid for reporting purposes. [optional]  # noqa: E501
             original_tax_rate_id (str, none_type): ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities.. [optional]  # noqa: E501
             status (str, none_type): Tax rate status. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -287,6 +290,7 @@ class TaxRate(ModelNormal):
             report_tax_type (str, none_type): Report Tax type to aggregate tax collected or paid for reporting purposes. [optional]  # noqa: E501
             original_tax_rate_id (str, none_type): ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities.. [optional]  # noqa: E501
             status (str, none_type): Tax rate status. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

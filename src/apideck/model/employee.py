@@ -177,6 +177,7 @@ class Employee(ModelNormal):
             'food_allergies': ([str], none_type,),  # noqa: E501
             'probation_period': (ProbationPeriod,),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
@@ -249,6 +250,7 @@ class Employee(ModelNormal):
         'food_allergies': 'food_allergies',  # noqa: E501
         'probation_period': 'probation_period',  # noqa: E501
         'tags': 'tags',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'deleted': 'deleted',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
@@ -363,6 +365,7 @@ class Employee(ModelNormal):
             food_allergies ([str], none_type): Indicate the employee's food allergies.. [optional]  # noqa: E501
             probation_period (ProbationPeriod): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -508,6 +511,7 @@ class Employee(ModelNormal):
             food_allergies ([str], none_type): Indicate the employee's food allergies.. [optional]  # noqa: E501
             probation_period (ProbationPeriod): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

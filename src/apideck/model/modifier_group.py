@@ -88,6 +88,7 @@ class ModifierGroup(ModelNormal):
             'present_at_all_locations': (bool,),  # noqa: E501
             'modifiers': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -110,6 +111,7 @@ class ModifierGroup(ModelNormal):
         'present_at_all_locations': 'present_at_all_locations',  # noqa: E501
         'modifiers': 'modifiers',  # noqa: E501
         'deleted': 'deleted',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -172,6 +174,7 @@ class ModifierGroup(ModelNormal):
             present_at_all_locations (bool): [optional]  # noqa: E501
             modifiers ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -267,6 +270,7 @@ class ModifierGroup(ModelNormal):
             present_at_all_locations (bool): [optional]  # noqa: E501
             modifiers ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

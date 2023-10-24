@@ -89,6 +89,7 @@ class EcommerceStore(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'store_url': (str, none_type,),  # noqa: E501
             'admin_url': (str, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
@@ -103,6 +104,7 @@ class EcommerceStore(ModelNormal):
         'name': 'name',  # noqa: E501
         'store_url': 'store_url',  # noqa: E501
         'admin_url': 'admin_url',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
     }
@@ -157,6 +159,7 @@ class EcommerceStore(ModelNormal):
             name (str, none_type): The store's name. [optional]  # noqa: E501
             store_url (str, none_type): The store's website URL. [optional]  # noqa: E501
             admin_url (str, none_type): The store's admin login URL. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
@@ -244,6 +247,7 @@ class EcommerceStore(ModelNormal):
             name (str, none_type): The store's name. [optional]  # noqa: E501
             store_url (str, none_type): The store's website URL. [optional]  # noqa: E501
             admin_url (str, none_type): The store's admin login URL. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """

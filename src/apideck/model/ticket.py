@@ -104,6 +104,7 @@ class Ticket(ModelNormal):
             'due_date': (datetime, none_type,),  # noqa: E501
             'completed_at': (datetime, none_type,),  # noqa: E501
             'tags': ([CollectionTag],),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -127,6 +128,7 @@ class Ticket(ModelNormal):
         'due_date': 'due_date',  # noqa: E501
         'completed_at': 'completed_at',  # noqa: E501
         'tags': 'tags',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
     }
 
     read_only_vars = {
@@ -193,6 +195,7 @@ class Ticket(ModelNormal):
             due_date (datetime, none_type): Due date of the ticket. [optional]  # noqa: E501
             completed_at (datetime, none_type): When the ticket was completed. [optional]  # noqa: E501
             tags ([CollectionTag]): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -289,6 +292,7 @@ class Ticket(ModelNormal):
             due_date (datetime, none_type): Due date of the ticket. [optional]  # noqa: E501
             completed_at (datetime, none_type): When the ticket was completed. [optional]  # noqa: E501
             tags ([CollectionTag]): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

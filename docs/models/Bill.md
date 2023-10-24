@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

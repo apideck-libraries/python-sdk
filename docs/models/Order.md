@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **source** | **str, none_type** | Source of order. Indicates the way that the order was placed. | [optional] [readonly] 
 **voided** | **bool** |  | [optional] 
 **voided_at** | **datetime** |  | [optional] [readonly] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **version** | **str, none_type** |  | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 

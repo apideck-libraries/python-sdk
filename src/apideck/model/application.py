@@ -93,6 +93,7 @@ class Application(ModelNormal):
             'id': (str,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
             'stage': (ApplicationStage,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -110,6 +111,7 @@ class Application(ModelNormal):
         'id': 'id',  # noqa: E501
         'status': 'status',  # noqa: E501
         'stage': 'stage',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -169,6 +171,7 @@ class Application(ModelNormal):
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             status (str, none_type): [optional]  # noqa: E501
             stage (ApplicationStage): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -263,6 +266,7 @@ class Application(ModelNormal):
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             status (str, none_type): [optional]  # noqa: E501
             stage (ApplicationStage): [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

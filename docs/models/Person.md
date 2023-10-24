@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **initials** | **str, none_type** | Initials of the person | [optional] 
 **birthday** | **date, none_type** | Date of birth | [optional] 
 **deceased_on** | **date, none_type** | Date of death | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

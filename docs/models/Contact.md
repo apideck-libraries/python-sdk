@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **first_call_at** | **datetime, none_type** | The first call date of the contact. | [optional] [readonly] 
 **first_email_at** | **datetime, none_type** | The first email date of the contact. | [optional] [readonly] 
 **last_activity_at** | **datetime, none_type** | The last activity date of the contact. | [optional] [readonly] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **updated_at** | **datetime, none_type** | The last update date of the contact. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The creation date of the contact. | [optional] [readonly] 
 

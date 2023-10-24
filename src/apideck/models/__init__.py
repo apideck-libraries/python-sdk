@@ -103,6 +103,8 @@ from apideck.model.create_connection_response import CreateConnectionResponse
 from apideck.model.create_consumer_response import CreateConsumerResponse
 from apideck.model.create_contact_response import CreateContactResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
+from apideck.model.create_custom_mapping_request import CreateCustomMappingRequest
+from apideck.model.create_custom_mapping_response import CreateCustomMappingResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
 from apideck.model.create_department_response import CreateDepartmentResponse
 from apideck.model.create_drive_group_response import CreateDriveGroupResponse
@@ -153,6 +155,8 @@ from apideck.model.credit_note import CreditNote
 from apideck.model.crm_event_type import CrmEventType
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_field_finder import CustomFieldFinder
+from apideck.model.custom_mapping import CustomMapping
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.deduction import Deduction
@@ -280,7 +284,10 @@ from apideck.model.get_company_info_response import GetCompanyInfoResponse
 from apideck.model.get_company_response import GetCompanyResponse
 from apideck.model.get_connection_response import GetConnectionResponse
 from apideck.model.get_connections_response import GetConnectionsResponse
+from apideck.model.get_connector_resource_example_response import GetConnectorResourceExampleResponse
+from apideck.model.get_connector_resource_example_response_data import GetConnectorResourceExampleResponseData
 from apideck.model.get_connector_resource_response import GetConnectorResourceResponse
+from apideck.model.get_connector_resource_schema_response import GetConnectorResourceSchemaResponse
 from apideck.model.get_connector_response import GetConnectorResponse
 from apideck.model.get_connectors_response import GetConnectorsResponse
 from apideck.model.get_consumer_response import GetConsumerResponse
@@ -290,6 +297,8 @@ from apideck.model.get_contact_response import GetContactResponse
 from apideck.model.get_contacts_response import GetContactsResponse
 from apideck.model.get_credit_note_response import GetCreditNoteResponse
 from apideck.model.get_credit_notes_response import GetCreditNotesResponse
+from apideck.model.get_custom_fields_response import GetCustomFieldsResponse
+from apideck.model.get_custom_mapping_response import GetCustomMappingResponse
 from apideck.model.get_customer_response import GetCustomerResponse
 from apideck.model.get_customers_response import GetCustomersResponse
 from apideck.model.get_department_response import GetDepartmentResponse
@@ -361,6 +370,8 @@ from apideck.model.get_products_response import GetProductsResponse
 from apideck.model.get_profit_and_loss_response import GetProfitAndLossResponse
 from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
 from apideck.model.get_purchase_orders_response import GetPurchaseOrdersResponse
+from apideck.model.get_resource_example_response import GetResourceExampleResponse
+from apideck.model.get_resource_schema_response import GetResourceSchemaResponse
 from apideck.model.get_shared_link_response import GetSharedLinkResponse
 from apideck.model.get_shared_links_response import GetSharedLinksResponse
 from apideck.model.get_store_response import GetStoreResponse
@@ -499,10 +510,12 @@ from apideck.model.request_rate import RequestRate
 from apideck.model.resolve_webhook_event_request import ResolveWebhookEventRequest
 from apideck.model.resolve_webhook_events_request import ResolveWebhookEventsRequest
 from apideck.model.resolve_webhook_response import ResolveWebhookResponse
+from apideck.model.resource_example import ResourceExample
 from apideck.model.resource_status import ResourceStatus
 from apideck.model.schedule import Schedule
 from apideck.model.schedule_work_pattern import ScheduleWorkPattern
 from apideck.model.schedule_work_pattern_odd_weeks import ScheduleWorkPatternOddWeeks
+from apideck.model.schema_support import SchemaSupport
 from apideck.model.service_charge import ServiceCharge
 from apideck.model.service_charges import ServiceCharges
 from apideck.model.session import Session
@@ -550,6 +563,8 @@ from apideck.model.update_consumer_request import UpdateConsumerRequest
 from apideck.model.update_consumer_response import UpdateConsumerResponse
 from apideck.model.update_contact_response import UpdateContactResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
+from apideck.model.update_custom_mapping_request import UpdateCustomMappingRequest
+from apideck.model.update_custom_mapping_response import UpdateCustomMappingResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
 from apideck.model.update_department_response import UpdateDepartmentResponse
 from apideck.model.update_drive_group_response import UpdateDriveGroupResponse

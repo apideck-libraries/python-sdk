@@ -447,7 +447,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connector_api.ConnectorApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
-    doc_id = "doc_id_example" # str | ID of the Doc
+    doc_id = "application_owner+oauth_credentials" # str | ID of the Doc
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set

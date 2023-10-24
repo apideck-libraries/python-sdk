@@ -160,6 +160,7 @@ class LedgerAccount(ModelNormal):
             'sub_account': (bool, none_type,),  # noqa: E501
             'sub_accounts': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'last_reconciliation_date': (date, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -198,6 +199,7 @@ class LedgerAccount(ModelNormal):
         'sub_account': 'sub_account',  # noqa: E501
         'sub_accounts': 'sub_accounts',  # noqa: E501
         'last_reconciliation_date': 'last_reconciliation_date',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -278,6 +280,7 @@ class LedgerAccount(ModelNormal):
             sub_account (bool, none_type): Whether the account is a sub account or not.. [optional]  # noqa: E501
             sub_accounts ([bool, date, datetime, dict, float, int, list, str, none_type]): The sub accounts of the account.. [optional]  # noqa: E501
             last_reconciliation_date (date, none_type): Reconciliation Date means the last calendar day of each Reconciliation Period.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -389,6 +392,7 @@ class LedgerAccount(ModelNormal):
             sub_account (bool, none_type): Whether the account is a sub account or not.. [optional]  # noqa: E501
             sub_accounts ([bool, date, datetime, dict, float, int, list, str, none_type]): The sub accounts of the account.. [optional]  # noqa: E501
             last_reconciliation_date (date, none_type): Reconciliation Date means the last calendar day of each Reconciliation Period.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

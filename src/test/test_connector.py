@@ -20,6 +20,7 @@ from apideck.model.connector_status import ConnectorStatus
 from apideck.model.connector_tls_support import ConnectorTlsSupport
 from apideck.model.connector_unified_apis import ConnectorUnifiedApis
 from apideck.model.linked_connector_resource import LinkedConnectorResource
+from apideck.model.schema_support import SchemaSupport
 from apideck.model.webhook_support import WebhookSupport
 globals()['ConnectorDoc'] = ConnectorDoc
 globals()['ConnectorEvent'] = ConnectorEvent
@@ -29,6 +30,7 @@ globals()['ConnectorStatus'] = ConnectorStatus
 globals()['ConnectorTlsSupport'] = ConnectorTlsSupport
 globals()['ConnectorUnifiedApis'] = ConnectorUnifiedApis
 globals()['LinkedConnectorResource'] = LinkedConnectorResource
+globals()['SchemaSupport'] = SchemaSupport
 globals()['WebhookSupport'] = WebhookSupport
 from apideck.model.connector import Connector
 

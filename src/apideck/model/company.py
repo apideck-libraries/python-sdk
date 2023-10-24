@@ -137,6 +137,7 @@ class Company(ModelNormal):
             'deleted': (bool,),  # noqa: E501
             'salutation': (str, none_type,),  # noqa: E501
             'birthday': (date, none_type,),  # noqa: E501
+            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -185,6 +186,7 @@ class Company(ModelNormal):
         'deleted': 'deleted',  # noqa: E501
         'salutation': 'salutation',  # noqa: E501
         'birthday': 'birthday',  # noqa: E501
+        'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -279,6 +281,7 @@ class Company(ModelNormal):
             deleted (bool): Whether the company is deleted or not. [optional]  # noqa: E501
             salutation (str, none_type): A formal salutation for the person. For example, 'Mr', 'Mrs'. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): Updated by user ID. [optional]  # noqa: E501
             created_by (str, none_type): Created by user ID. [optional]  # noqa: E501
             updated_at (datetime, none_type): Last updated date. [optional]  # noqa: E501
@@ -403,6 +406,7 @@ class Company(ModelNormal):
             deleted (bool): Whether the company is deleted or not. [optional]  # noqa: E501
             salutation (str, none_type): A formal salutation for the person. For example, 'Mr', 'Mrs'. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
+            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): Updated by user ID. [optional]  # noqa: E501
             created_by (str, none_type): Created by user ID. [optional]  # noqa: E501
             updated_at (datetime, none_type): Last updated date. [optional]  # noqa: E501
