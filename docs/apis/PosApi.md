@@ -125,7 +125,6 @@ with apideck.ApiClient(configuration) as api_client:
         modifier_groups=[{"id":"12345"}],
         available=True,
         hidden=True,
-        custom_mappings={},
         deleted=True,
     ) # Item | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -583,7 +582,6 @@ with apideck.ApiClient(configuration) as api_client:
         modifier_groups=[{"id":"12345"}],
         available=True,
         hidden=True,
-        custom_mappings={},
         deleted=True,
     ) # Item | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -726,7 +724,6 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         merchant_id="12345",
         currency=Currency("USD"),
-        custom_mappings={},
     ) # Location | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1187,7 +1184,6 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         merchant_id="12345",
         currency=Currency("USD"),
-        custom_mappings={},
     ) # Location | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -1340,7 +1336,6 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         language="EN",
         currency=Currency("USD"),
-        custom_mappings={},
     ) # Merchant | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1812,7 +1807,6 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         language="EN",
         currency=Currency("USD"),
-        custom_mappings={},
     ) # Merchant | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -1933,7 +1927,6 @@ with apideck.ApiClient(configuration) as api_client:
             None,
         ],
         deleted=True,
-        custom_mappings={},
         row_version="1-12345",
     ) # ModifierGroup | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -2374,7 +2367,6 @@ with apideck.ApiClient(configuration) as api_client:
             None,
         ],
         deleted=True,
-        custom_mappings={},
         row_version="1-12345",
     ) # ModifierGroup | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -2493,7 +2485,6 @@ with apideck.ApiClient(configuration) as api_client:
         currency=Currency("USD"),
         modifier_group_id="123",
         available=True,
-        custom_mappings={},
     ) # Modifier | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -2940,7 +2931,6 @@ with apideck.ApiClient(configuration) as api_client:
         currency=Currency("USD"),
         modifier_group_id="123",
         available=True,
-        custom_mappings={},
     ) # Modifier | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -3835,7 +3825,6 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         voided=False,
-        custom_mappings={},
         version="230320320320",
     ) # Order | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -4509,7 +4498,6 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         voided=False,
-        custom_mappings={},
         version="230320320320",
     ) # Order | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -4865,7 +4853,6 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         voided=False,
-        custom_mappings={},
         version="230320320320",
     ) # Order | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -5079,7 +5066,6 @@ with apideck.ApiClient(configuration) as api_client:
                 type="auto_gratuity",
             ),
         ]),
-        custom_mappings={},
     ) # PosPayment | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -5611,7 +5597,6 @@ with apideck.ApiClient(configuration) as api_client:
                 type="auto_gratuity",
             ),
         ]),
-        custom_mappings={},
     ) # PosPayment | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -5729,7 +5714,6 @@ with apideck.ApiClient(configuration) as api_client:
         editable=True,
         opens_cash_drawer=True,
         allows_tipping=True,
-        custom_mappings={},
     ) # Tender | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -6166,7 +6150,6 @@ with apideck.ApiClient(configuration) as api_client:
         editable=True,
         opens_cash_drawer=True,
         allows_tipping=True,
-        custom_mappings={},
     ) # Tender | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)

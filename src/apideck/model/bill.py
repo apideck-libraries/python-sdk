@@ -186,6 +186,7 @@ class Bill(ModelNormal):
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
+        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}

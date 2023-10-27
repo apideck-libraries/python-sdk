@@ -188,6 +188,7 @@ class Opportunity(ModelNormal):
         'date_stage_changed',  # noqa: E501
         'date_last_contacted',  # noqa: E501
         'date_lead_created',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501

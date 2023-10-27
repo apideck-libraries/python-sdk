@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **available** | **bool, none_type** |  | [optional] 
 **hidden** | **bool, none_type** |  | [optional] 
 **version** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **deleted** | **bool, none_type** | Flag to indicate if the object is deleted. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 

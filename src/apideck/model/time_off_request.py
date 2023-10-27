@@ -173,6 +173,7 @@ class TimeOffRequest(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501

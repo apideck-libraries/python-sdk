@@ -201,6 +201,7 @@ class Contact(ModelNormal):
         'first_call_at',  # noqa: E501
         'first_email_at',  # noqa: E501
         'last_activity_at',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
     }

@@ -138,6 +138,7 @@ class Ticket(ModelNormal):
         'created_at',  # noqa: E501
         'created_by',  # noqa: E501
         'completed_at',  # noqa: E501
+        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}

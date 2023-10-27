@@ -200,6 +200,7 @@ class Applicant(ModelNormal):
         'sourced_by',  # noqa: E501
         'cv_url',  # noqa: E501
         'rejected_at',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'deleted_by',  # noqa: E501
         'deleted_at',  # noqa: E501
         'updated_by',  # noqa: E501

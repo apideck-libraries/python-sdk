@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **password** | **str, none_type** | The password of the user | [optional] 
 **addresses** | [**[Address]**](Address.md) |  | [optional] 
 **phone_numbers** | [**[PhoneNumber]**](PhoneNumber.md) |  | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **updated_at** | **str, none_type** | The date and time when the user was last updated. | [optional] [readonly] 
 **created_at** | **str, none_type** | The date and time when the user was created. | [optional] [readonly] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

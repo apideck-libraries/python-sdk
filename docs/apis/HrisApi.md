@@ -136,7 +136,6 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         debtor_id="12345",
-        custom_mappings={},
     ) # HrisCompany | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -628,7 +627,6 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         debtor_id="12345",
-        custom_mappings={},
     ) # HrisCompany | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -742,7 +740,6 @@ with apideck.ApiClient(configuration) as api_client:
         name="R&D",
         code="2",
         description="R&D",
-        custom_mappings={},
     ) # Department | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1178,7 +1175,6 @@ with apideck.ApiClient(configuration) as api_client:
         name="R&D",
         code="2",
         description="R&D",
-        custom_mappings={},
     ) # Department | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -1647,7 +1643,6 @@ with apideck.ApiClient(configuration) as api_client:
             initials="EM",
             birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
             deceased_on=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
-            custom_mappings={},
         ),
         division="Europe",
         division_id="12345",
@@ -1832,7 +1827,6 @@ with apideck.ApiClient(configuration) as api_client:
             end_date=dateutil_parser('Sun Nov 28 00:00:00 UTC 2021').date(),
         ),
         tags=Tags(["New"]),
-        custom_mappings={},
         row_version="1-12345",
         deleted=True,
     ) # Employee | 
@@ -2303,7 +2297,6 @@ with apideck.ApiClient(configuration) as api_client:
             initials="EM",
             birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
             deceased_on=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
-            custom_mappings={},
         ),
         division="Europe",
         division_id="12345",
@@ -2488,7 +2481,6 @@ with apideck.ApiClient(configuration) as api_client:
             end_date=dateutil_parser('Sun Nov 28 00:00:00 UTC 2021').date(),
         ),
         tags=Tags(["New"]),
-        custom_mappings={},
         row_version="1-12345",
         deleted=True,
     ) # Employee | 
@@ -2833,7 +2825,6 @@ with apideck.ApiClient(configuration) as api_client:
             employee="Relaxing on the beach for a few hours.",
             manager="Enjoy!",
         ),
-        custom_mappings={},
     ) # TimeOffRequest | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -3289,7 +3280,6 @@ with apideck.ApiClient(configuration) as api_client:
             employee="Relaxing on the beach for a few hours.",
             manager="Enjoy!",
         ),
-        custom_mappings={},
     ) # TimeOffRequest | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)

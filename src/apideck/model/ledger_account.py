@@ -211,6 +211,7 @@ class LedgerAccount(ModelNormal):
         'id',  # noqa: E501
         'categories',  # noqa: E501
         'sub_accounts',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
