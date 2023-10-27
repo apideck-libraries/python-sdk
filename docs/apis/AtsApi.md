@@ -155,7 +155,6 @@ with apideck.ApiClient(configuration) as api_client:
         archived=False,
         owner_id="54321",
         record_url="https://app.intercom.io/contacts/12345",
-        custom_mappings={},
         deleted=True,
     ) # Applicant | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -685,7 +684,6 @@ with apideck.ApiClient(configuration) as api_client:
         archived=False,
         owner_id="54321",
         record_url="https://app.intercom.io/contacts/12345",
-        custom_mappings={},
         deleted=True,
     ) # Applicant | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -804,7 +802,6 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             name="12345",
         ),
-        custom_mappings={},
     ) # Application | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1240,7 +1237,6 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             name="12345",
         ),
-        custom_mappings={},
     ) # Application | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)

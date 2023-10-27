@@ -227,6 +227,7 @@ class Order(ModelNormal):
         'id',  # noqa: E501
         'source',  # noqa: E501
         'voided_at',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501

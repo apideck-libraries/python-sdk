@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 **video_conference_id** | **str, none_type** | The ID of the video conference | [optional] 
 **custom_fields** | [**[CustomField]**](CustomField.md) | Custom fields of the activity | [optional] 
 **attendees** | [**[ActivityAttendee]**](ActivityAttendee.md) |  | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **updated_by** | **str, none_type** | The user who last updated the activity | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the activity | [optional] [readonly] 
 **updated_at** | **str, none_type** | The date and time when the activity was last updated | [optional] [readonly] 

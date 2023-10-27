@@ -123,6 +123,7 @@ class Folder(ModelNormal):
         'path',  # noqa: E501
         'size',  # noqa: E501
         'parent_folders_complete',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501

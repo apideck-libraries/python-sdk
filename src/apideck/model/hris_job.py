@@ -121,6 +121,7 @@ class HrisJob(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
+        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}

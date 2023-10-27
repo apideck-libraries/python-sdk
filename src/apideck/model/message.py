@@ -171,6 +171,7 @@ class Message(ModelNormal):
         'direction',  # noqa: E501
         'status',  # noqa: E501
         'sent_at',  # noqa: E501
+        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501

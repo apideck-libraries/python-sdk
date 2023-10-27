@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str, none_type** | The store&#39;s name | [optional] 
 **store_url** | **str, none_type** | The store&#39;s website URL | [optional] 
 **admin_url** | **str, none_type** | The store&#39;s admin login URL | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 

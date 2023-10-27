@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **date_stage_changed** | **datetime, none_type** | The date and time when the stage of the opportunity was last changed. | [optional] [readonly] 
 **date_last_contacted** | **datetime, none_type** | The date and time when the opportunity was last contacted. | [optional] [readonly] 
 **date_lead_created** | **datetime, none_type** | The date and time when the lead associated with the opportunity was created. | [optional] [readonly] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **updated_by** | **str, none_type** | The unique identifier of the user who last updated the opportunity. | [optional] [readonly] 
 **created_by** | **str, none_type** | The unique identifier of the user who created the opportunity. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the opportunity was last updated. | [optional] [readonly] 

@@ -86,7 +86,6 @@ with apideck.ApiClient(configuration) as api_client:
         name="accounting",
         display_name="accounting",
         description="A description",
-        custom_mappings={},
     ) # DriveGroup | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -527,7 +526,6 @@ with apideck.ApiClient(configuration) as api_client:
         name="accounting",
         display_name="accounting",
         description="A description",
-        custom_mappings={},
     ) # DriveGroup | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -640,7 +638,6 @@ with apideck.ApiClient(configuration) as api_client:
     drive = Drive(
         name="Project Resources",
         description="A description",
-        custom_mappings={},
     ) # Drive | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1077,7 +1074,6 @@ with apideck.ApiClient(configuration) as api_client:
     drive = Drive(
         name="Project Resources",
         description="A description",
-        custom_mappings={},
     ) # Drive | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)

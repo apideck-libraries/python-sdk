@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **tracking** | [**[TrackingItem]**](TrackingItem.md) |  | [optional] 
 **line_items** | [**[EcommerceOrderLineItem]**](EcommerceOrderLineItem.md) |  | [optional] 
 **note** | **str, none_type** | Note for the order. | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 

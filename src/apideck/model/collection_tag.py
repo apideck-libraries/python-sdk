@@ -93,6 +93,7 @@ class CollectionTag(ModelNormal):
 
     read_only_vars = {
         'name',  # noqa: E501
+        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}
