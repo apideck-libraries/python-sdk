@@ -112,6 +112,7 @@ class FormField(ModelNormal):
             'allow_custom_values': (bool,),  # noqa: E501
             'disabled': (bool, none_type,),  # noqa: E501
             'hidden': (bool, none_type,),  # noqa: E501
+            'deprecated': (bool, none_type,),  # noqa: E501
             'sensitive': (bool, none_type,),  # noqa: E501
             'prefix': (str, none_type,),  # noqa: E501
             'suffix': (str, none_type,),  # noqa: E501
@@ -134,6 +135,7 @@ class FormField(ModelNormal):
         'allow_custom_values': 'allow_custom_values',  # noqa: E501
         'disabled': 'disabled',  # noqa: E501
         'hidden': 'hidden',  # noqa: E501
+        'deprecated': 'deprecated',  # noqa: E501
         'sensitive': 'sensitive',  # noqa: E501
         'prefix': 'prefix',  # noqa: E501
         'suffix': 'suffix',  # noqa: E501
@@ -191,6 +193,7 @@ class FormField(ModelNormal):
             allow_custom_values (bool): Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list.. [optional] if omitted the server will use the default value of False  # noqa: E501
             disabled (bool, none_type): Indicates if the form field is displayed in a “read-only” mode.. [optional]  # noqa: E501
             hidden (bool, none_type): Indicates if the form field is not displayed but the value that is being stored on the connection.. [optional]  # noqa: E501
+            deprecated (bool, none_type): When the setting is deprecated, it should be hidden from the user interface. The value will still be stored on the connection for the sake of backwards compatibility.. [optional]  # noqa: E501
             sensitive (bool, none_type): Indicates if the form field contains sensitive data, which will display the value as a masked input.. [optional]  # noqa: E501
             prefix (str, none_type): Prefix to display in front of the form field.. [optional]  # noqa: E501
             suffix (str, none_type): Suffix to display next to the form field.. [optional]  # noqa: E501
@@ -286,6 +289,7 @@ class FormField(ModelNormal):
             allow_custom_values (bool): Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list.. [optional] if omitted the server will use the default value of False  # noqa: E501
             disabled (bool, none_type): Indicates if the form field is displayed in a “read-only” mode.. [optional]  # noqa: E501
             hidden (bool, none_type): Indicates if the form field is not displayed but the value that is being stored on the connection.. [optional]  # noqa: E501
+            deprecated (bool, none_type): When the setting is deprecated, it should be hidden from the user interface. The value will still be stored on the connection for the sake of backwards compatibility.. [optional]  # noqa: E501
             sensitive (bool, none_type): Indicates if the form field contains sensitive data, which will display the value as a masked input.. [optional]  # noqa: E501
             prefix (str, none_type): Prefix to display in front of the form field.. [optional]  # noqa: E501
             suffix (str, none_type): Suffix to display next to the form field.. [optional]  # noqa: E501
