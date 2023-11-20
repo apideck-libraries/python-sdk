@@ -402,6 +402,7 @@ from apideck.api import accounting_api
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.get_bills_response import GetBillsResponse
 from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.bills_filter import BillsFilter
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.bills_sort import BillsSort
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
@@ -436,6 +437,9 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    filter = BillsFilter(
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+    ) # BillsFilter | Apply filters (optional)
     sort = BillsSort(
         by="updated_at",
         direction=SortDirection("asc"),
@@ -447,7 +451,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Bills
-        api_response = api_instance.bills_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, sort=sort, pass_through=pass_through, fields=fields)
+        api_response = api_instance.bills_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->bills_all: %s\n" % e)
@@ -464,6 +468,7 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **filter** | **BillsFilter**| Apply filters | [optional]
  **sort** | **BillsSort**| Apply sorting | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
@@ -1218,7 +1223,9 @@ from apideck.api import accounting_api
 from apideck.model.get_credit_notes_response import GetCreditNotesResponse
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.credit_notes_sort import CreditNotesSort
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.credit_notes_filter import CreditNotesFilter
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
@@ -1251,6 +1258,13 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    filter = CreditNotesFilter(
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+    ) # CreditNotesFilter | Apply filters (optional)
+    sort = CreditNotesSort(
+        by="updated_at",
+        direction=SortDirection("asc"),
+    ) # CreditNotesSort | Apply sorting (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
@@ -1258,7 +1272,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Credit Notes
-        api_response = api_instance.credit_notes_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
+        api_response = api_instance.credit_notes_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->credit_notes_all: %s\n" % e)
@@ -1275,6 +1289,8 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **filter** | **CreditNotesFilter**| Apply filters | [optional]
+ **sort** | **CreditNotesSort**| Apply sorting | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
@@ -1918,6 +1934,7 @@ List Customers
 import time
 import apideck
 from apideck.api import accounting_api
+from apideck.model.customers_sort import CustomersSort
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
@@ -1962,7 +1979,12 @@ with apideck.ApiClient(configuration) as api_client:
         last_name="Musk",
         email="elon@spacex.com",
         status="active",
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
     ) # CustomersFilter | Apply filters (optional)
+    sort = CustomersSort(
+        by="updated_at",
+        direction=SortDirection("asc"),
+    ) # CustomersSort | Apply sorting (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
@@ -1970,7 +1992,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Customers
-        api_response = api_instance.customers_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, pass_through=pass_through, fields=fields)
+        api_response = api_instance.customers_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->customers_all: %s\n" % e)
@@ -1988,6 +2010,7 @@ Name | Type | Description  | Notes
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **CustomersFilter**| Apply filters | [optional]
+ **sort** | **CustomersSort**| Apply sorting | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
@@ -3358,6 +3381,7 @@ from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.invoices_sort import InvoicesSort
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.get_invoices_response import GetInvoicesResponse
@@ -3391,6 +3415,9 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    filter = InvoicesFilter(
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+    ) # InvoicesFilter | Apply filters (optional)
     sort = InvoicesSort(
         by="updated_at",
         direction=SortDirection("asc"),
@@ -3402,7 +3429,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Invoices
-        api_response = api_instance.invoices_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, sort=sort, pass_through=pass_through, fields=fields)
+        api_response = api_instance.invoices_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->invoices_all: %s\n" % e)
@@ -3419,6 +3446,7 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **filter** | **InvoicesFilter**| Apply filters | [optional]
  **sort** | **InvoicesSort**| Apply sorting | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
@@ -4721,8 +4749,10 @@ from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.ledger_accounts_sort import LedgerAccountsSort
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.get_ledger_accounts_response import GetLedgerAccountsResponse
+from apideck.model.ledger_accounts_filter import LedgerAccountsFilter
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.not_found_response import NotFoundResponse
 from pprint import pprint
@@ -4753,6 +4783,13 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    filter = LedgerAccountsFilter(
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+    ) # LedgerAccountsFilter | Apply filters (optional)
+    sort = LedgerAccountsSort(
+        by="updated_at",
+        direction=SortDirection("asc"),
+    ) # LedgerAccountsSort | Apply sorting (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
@@ -4760,7 +4797,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Ledger Accounts
-        api_response = api_instance.ledger_accounts_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
+        api_response = api_instance.ledger_accounts_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->ledger_accounts_all: %s\n" % e)
@@ -4777,6 +4814,8 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **filter** | **LedgerAccountsFilter**| Apply filters | [optional]
+ **sort** | **LedgerAccountsSort**| Apply sorting | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 
@@ -6169,6 +6208,8 @@ import time
 import apideck
 from apideck.api import accounting_api
 from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
+from apideck.model.purchase_orders_sort import PurchaseOrdersSort
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
@@ -6205,12 +6246,19 @@ with apideck.ApiClient(configuration) as api_client:
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    filter = PurchaseOrdersFilter(
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+    ) # PurchaseOrdersFilter | Apply filters (optional)
+    sort = PurchaseOrdersSort(
+        by="updated_at",
+        direction=SortDirection("asc"),
+    ) # PurchaseOrdersSort | Apply sorting (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # List Purchase Orders
-        api_response = api_instance.purchase_orders_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, pass_through=pass_through, limit=limit)
+        api_response = api_instance.purchase_orders_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, pass_through=pass_through, limit=limit, filter=filter, sort=sort)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->purchase_orders_all: %s\n" % e)
@@ -6228,6 +6276,8 @@ Name | Type | Description  | Notes
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **filter** | **PurchaseOrdersFilter**| Apply filters | [optional]
+ **sort** | **PurchaseOrdersSort**| Apply sorting | [optional]
 
 ### Return type
 
@@ -6929,6 +6979,7 @@ from apideck.api import accounting_api
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.suppliers_filter import SuppliersFilter
+from apideck.model.suppliers_sort import SuppliersSort
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
@@ -6969,7 +7020,12 @@ with apideck.ApiClient(configuration) as api_client:
         first_name="Elon",
         last_name="Musk",
         email="elon@spacex.com",
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
     ) # SuppliersFilter | Apply filters (optional)
+    sort = SuppliersSort(
+        by="updated_at",
+        direction=SortDirection("asc"),
+    ) # SuppliersSort | Apply sorting (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
@@ -6977,7 +7033,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Suppliers
-        api_response = api_instance.suppliers_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, pass_through=pass_through, fields=fields)
+        api_response = api_instance.suppliers_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->suppliers_all: %s\n" % e)
@@ -6995,6 +7051,7 @@ Name | Type | Description  | Notes
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **SuppliersFilter**| Apply filters | [optional]
+ **sort** | **SuppliersSort**| Apply sorting | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 

@@ -71,6 +71,7 @@ apideck/model/bank_account.py
 apideck/model/benefit.py
 apideck/model/bill.py
 apideck/model/bill_line_item.py
+apideck/model/bills_filter.py
 apideck/model/bills_sort.py
 apideck/model/branch.py
 apideck/model/cash_details.py
@@ -174,6 +175,8 @@ apideck/model/create_user_response.py
 apideck/model/create_webhook_request.py
 apideck/model/create_webhook_response.py
 apideck/model/credit_note.py
+apideck/model/credit_notes_filter.py
+apideck/model/credit_notes_sort.py
 apideck/model/crm_event_type.py
 apideck/model/currency.py
 apideck/model/custom_field.py
@@ -181,6 +184,7 @@ apideck/model/custom_field_finder.py
 apideck/model/custom_mapping.py
 apideck/model/customer.py
 apideck/model/customers_filter.py
+apideck/model/customers_sort.py
 apideck/model/deduction.py
 apideck/model/delete_activity_response.py
 apideck/model/delete_applicant_response.py
@@ -430,6 +434,7 @@ apideck/model/invoice_item_sales_details.py
 apideck/model/invoice_items_filter.py
 apideck/model/invoice_line_item.py
 apideck/model/invoice_response.py
+apideck/model/invoices_filter.py
 apideck/model/invoices_sort.py
 apideck/model/issue_tracking_event_type.py
 apideck/model/issues_filter.py
@@ -448,6 +453,8 @@ apideck/model/ledger_account.py
 apideck/model/ledger_account_categories.py
 apideck/model/ledger_account_parent_account.py
 apideck/model/ledger_accounts.py
+apideck/model/ledger_accounts_filter.py
+apideck/model/ledger_accounts_sort.py
 apideck/model/linked_connector_resource.py
 apideck/model/linked_customer.py
 apideck/model/linked_ecommerce_customer.py
@@ -527,6 +534,8 @@ apideck/model/profit_and_loss_record.py
 apideck/model/profit_and_loss_records.py
 apideck/model/profit_and_loss_section.py
 apideck/model/purchase_order.py
+apideck/model/purchase_orders_filter.py
+apideck/model/purchase_orders_sort.py
 apideck/model/request_count_allocation.py
 apideck/model/request_rate.py
 apideck/model/resolve_webhook_event_request.py
@@ -551,6 +560,7 @@ apideck/model/sort_direction.py
 apideck/model/status.py
 apideck/model/supplier.py
 apideck/model/suppliers_filter.py
+apideck/model/suppliers_sort.py
 apideck/model/supported_property.py
 apideck/model/supported_property_child_properties.py
 apideck/model/tags.py
@@ -692,6 +702,7 @@ docs/BankAccount.md
 docs/Benefit.md
 docs/Bill.md
 docs/BillLineItem.md
+docs/BillsFilter.md
 docs/BillsSort.md
 docs/Branch.md
 docs/CashDetails.md
@@ -796,6 +807,8 @@ docs/CreateUserResponse.md
 docs/CreateWebhookRequest.md
 docs/CreateWebhookResponse.md
 docs/CreditNote.md
+docs/CreditNotesFilter.md
+docs/CreditNotesSort.md
 docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
@@ -804,6 +817,7 @@ docs/CustomFieldFinder.md
 docs/CustomMapping.md
 docs/Customer.md
 docs/CustomersFilter.md
+docs/CustomersSort.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
 docs/DeleteApplicantResponse.md
@@ -1056,6 +1070,7 @@ docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
 docs/InvoiceLineItem.md
 docs/InvoiceResponse.md
+docs/InvoicesFilter.md
 docs/InvoicesSort.md
 docs/IssueTrackingApi.md
 docs/IssueTrackingEventType.md
@@ -1076,6 +1091,8 @@ docs/LedgerAccount.md
 docs/LedgerAccountCategories.md
 docs/LedgerAccountParentAccount.md
 docs/LedgerAccounts.md
+docs/LedgerAccountsFilter.md
+docs/LedgerAccountsSort.md
 docs/LinkedConnectorResource.md
 docs/LinkedCustomer.md
 docs/LinkedEcommerceCustomer.md
@@ -1156,6 +1173,8 @@ docs/ProfitAndLossRecord.md
 docs/ProfitAndLossRecords.md
 docs/ProfitAndLossSection.md
 docs/PurchaseOrder.md
+docs/PurchaseOrdersFilter.md
+docs/PurchaseOrdersSort.md
 docs/RequestCountAllocation.md
 docs/RequestRate.md
 docs/ResolveWebhookEventRequest.md
@@ -1181,6 +1200,7 @@ docs/SortDirection.md
 docs/Status.md
 docs/Supplier.md
 docs/SuppliersFilter.md
+docs/SuppliersSort.md
 docs/SupportedProperty.md
 docs/SupportedPropertyChildProperties.md
 docs/Tags.md
@@ -1327,6 +1347,7 @@ test/test_bank_account.py
 test/test_benefit.py
 test/test_bill.py
 test/test_bill_line_item.py
+test/test_bills_filter.py
 test/test_bills_sort.py
 test/test_branch.py
 test/test_cash_details.py
@@ -1431,6 +1452,8 @@ test/test_create_user_response.py
 test/test_create_webhook_request.py
 test/test_create_webhook_response.py
 test/test_credit_note.py
+test/test_credit_notes_filter.py
+test/test_credit_notes_sort.py
 test/test_crm_api.py
 test/test_crm_event_type.py
 test/test_currency.py
@@ -1439,6 +1462,7 @@ test/test_custom_field_finder.py
 test/test_custom_mapping.py
 test/test_customer.py
 test/test_customers_filter.py
+test/test_customers_sort.py
 test/test_deduction.py
 test/test_delete_activity_response.py
 test/test_delete_applicant_response.py
@@ -1691,6 +1715,7 @@ test/test_invoice_item_sales_details.py
 test/test_invoice_items_filter.py
 test/test_invoice_line_item.py
 test/test_invoice_response.py
+test/test_invoices_filter.py
 test/test_invoices_sort.py
 test/test_issue_tracking_api.py
 test/test_issue_tracking_event_type.py
@@ -1711,6 +1736,8 @@ test/test_ledger_account.py
 test/test_ledger_account_categories.py
 test/test_ledger_account_parent_account.py
 test/test_ledger_accounts.py
+test/test_ledger_accounts_filter.py
+test/test_ledger_accounts_sort.py
 test/test_linked_connector_resource.py
 test/test_linked_customer.py
 test/test_linked_ecommerce_customer.py
@@ -1791,6 +1818,8 @@ test/test_profit_and_loss_record.py
 test/test_profit_and_loss_records.py
 test/test_profit_and_loss_section.py
 test/test_purchase_order.py
+test/test_purchase_orders_filter.py
+test/test_purchase_orders_sort.py
 test/test_request_count_allocation.py
 test/test_request_rate.py
 test/test_resolve_webhook_event_request.py
@@ -1816,6 +1845,7 @@ test/test_sort_direction.py
 test/test_status.py
 test/test_supplier.py
 test/test_suppliers_filter.py
+test/test_suppliers_sort.py
 test/test_supported_property.py
 test/test_supported_property_child_properties.py
 test/test_tags.py

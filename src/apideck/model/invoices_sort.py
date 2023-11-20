@@ -60,6 +60,7 @@ class InvoicesSort(ModelNormal):
 
     allowed_values = {
         ('by',): {
+            'CREATED_AT': "created_at",
             'UPDATED_AT': "updated_at",
         },
     }
@@ -138,7 +139,7 @@ class InvoicesSort(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            by (str): The field on which to sort the Invoices. [optional] if omitted the server will use the default value of "updated_at"  # noqa: E501
+            by (str): The field on which to sort the Invoices. [optional]  # noqa: E501
             direction (SortDirection): [optional]  # noqa: E501
         """
 
@@ -221,7 +222,7 @@ class InvoicesSort(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            by (str): The field on which to sort the Invoices. [optional] if omitted the server will use the default value of "updated_at"  # noqa: E501
+            by (str): The field on which to sort the Invoices. [optional]  # noqa: E501
             direction (SortDirection): [optional]  # noqa: E501
         """
 
