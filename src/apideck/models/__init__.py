@@ -49,6 +49,7 @@ from apideck.model.bank_account import BankAccount
 from apideck.model.benefit import Benefit
 from apideck.model.bill import Bill
 from apideck.model.bill_line_item import BillLineItem
+from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.branch import Branch
 from apideck.model.cash_details import CashDetails
@@ -152,6 +153,8 @@ from apideck.model.create_user_response import CreateUserResponse
 from apideck.model.create_webhook_request import CreateWebhookRequest
 from apideck.model.create_webhook_response import CreateWebhookResponse
 from apideck.model.credit_note import CreditNote
+from apideck.model.credit_notes_filter import CreditNotesFilter
+from apideck.model.credit_notes_sort import CreditNotesSort
 from apideck.model.crm_event_type import CrmEventType
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
@@ -159,6 +162,7 @@ from apideck.model.custom_field_finder import CustomFieldFinder
 from apideck.model.custom_mapping import CustomMapping
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
+from apideck.model.customers_sort import CustomersSort
 from apideck.model.deduction import Deduction
 from apideck.model.delete_activity_response import DeleteActivityResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
@@ -408,6 +412,7 @@ from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
 from apideck.model.invoice_line_item import InvoiceLineItem
 from apideck.model.invoice_response import InvoiceResponse
+from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
 from apideck.model.issue_tracking_event_type import IssueTrackingEventType
 from apideck.model.issues_filter import IssuesFilter
@@ -426,6 +431,8 @@ from apideck.model.ledger_account import LedgerAccount
 from apideck.model.ledger_account_categories import LedgerAccountCategories
 from apideck.model.ledger_account_parent_account import LedgerAccountParentAccount
 from apideck.model.ledger_accounts import LedgerAccounts
+from apideck.model.ledger_accounts_filter import LedgerAccountsFilter
+from apideck.model.ledger_accounts_sort import LedgerAccountsSort
 from apideck.model.linked_connector_resource import LinkedConnectorResource
 from apideck.model.linked_customer import LinkedCustomer
 from apideck.model.linked_ecommerce_customer import LinkedEcommerceCustomer
@@ -505,6 +512,8 @@ from apideck.model.profit_and_loss_record import ProfitAndLossRecord
 from apideck.model.profit_and_loss_records import ProfitAndLossRecords
 from apideck.model.profit_and_loss_section import ProfitAndLossSection
 from apideck.model.purchase_order import PurchaseOrder
+from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
+from apideck.model.purchase_orders_sort import PurchaseOrdersSort
 from apideck.model.request_count_allocation import RequestCountAllocation
 from apideck.model.request_rate import RequestRate
 from apideck.model.resolve_webhook_event_request import ResolveWebhookEventRequest
@@ -529,6 +538,7 @@ from apideck.model.sort_direction import SortDirection
 from apideck.model.status import Status
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
+from apideck.model.suppliers_sort import SuppliersSort
 from apideck.model.supported_property import SupportedProperty
 from apideck.model.supported_property_child_properties import SupportedPropertyChildProperties
 from apideck.model.tags import Tags

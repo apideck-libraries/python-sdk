@@ -24,6 +24,7 @@ from apideck.model_utils import (  # noqa: F401
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
+from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
@@ -37,8 +38,11 @@ from apideck.model.create_purchase_order_response import CreatePurchaseOrderResp
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
+from apideck.model.credit_notes_filter import CreditNotesFilter
+from apideck.model.credit_notes_sort import CreditNotesSort
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
+from apideck.model.customers_sort import CustomersSort
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
@@ -77,9 +81,12 @@ from apideck.model.get_tax_rates_response import GetTaxRatesResponse
 from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
+from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
 from apideck.model.journal_entry import JournalEntry
 from apideck.model.ledger_account import LedgerAccount
+from apideck.model.ledger_accounts_filter import LedgerAccountsFilter
+from apideck.model.ledger_accounts_sort import LedgerAccountsSort
 from apideck.model.not_found_response import NotFoundResponse
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
@@ -87,8 +94,11 @@ from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
 from apideck.model.purchase_order import PurchaseOrder
+from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
+from apideck.model.purchase_orders_sort import PurchaseOrdersSort
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
+from apideck.model.suppliers_sort import SuppliersSort
 from apideck.model.tax_rate import TaxRate
 from apideck.model.tax_rates_filter import TaxRatesFilter
 from apideck.model.unauthorized_response import UnauthorizedResponse
@@ -283,6 +293,7 @@ class AccountingApi(object):
                     'service_id',
                     'cursor',
                     'limit',
+                    'filter',
                     'sort',
                     'pass_through',
                     'fields',
@@ -321,6 +332,8 @@ class AccountingApi(object):
                         (str, none_type,),
                     'limit':
                         (int,),
+                    'filter':
+                        (BillsFilter,),
                     'sort':
                         (BillsSort,),
                     'pass_through':
@@ -335,6 +348,7 @@ class AccountingApi(object):
                     'service_id': 'x-apideck-service-id',
                     'cursor': 'cursor',
                     'limit': 'limit',
+                    'filter': 'filter',
                     'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
@@ -346,6 +360,7 @@ class AccountingApi(object):
                     'service_id': 'header',
                     'cursor': 'query',
                     'limit': 'query',
+                    'filter': 'query',
                     'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
@@ -748,6 +763,8 @@ class AccountingApi(object):
                     'service_id',
                     'cursor',
                     'limit',
+                    'filter',
+                    'sort',
                     'pass_through',
                     'fields',
                 ],
@@ -785,6 +802,10 @@ class AccountingApi(object):
                         (str, none_type,),
                     'limit':
                         (int,),
+                    'filter':
+                        (CreditNotesFilter,),
+                    'sort':
+                        (CreditNotesSort,),
                     'pass_through':
                         (PassThroughQuery,),
                     'fields':
@@ -797,6 +818,8 @@ class AccountingApi(object):
                     'service_id': 'x-apideck-service-id',
                     'cursor': 'cursor',
                     'limit': 'limit',
+                    'filter': 'filter',
+                    'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
                 },
@@ -807,6 +830,8 @@ class AccountingApi(object):
                     'service_id': 'header',
                     'cursor': 'query',
                     'limit': 'query',
+                    'filter': 'query',
+                    'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
                 },
@@ -1139,6 +1164,7 @@ class AccountingApi(object):
                     'cursor',
                     'limit',
                     'filter',
+                    'sort',
                     'pass_through',
                     'fields',
                 ],
@@ -1178,6 +1204,8 @@ class AccountingApi(object):
                         (int,),
                     'filter':
                         (CustomersFilter,),
+                    'sort':
+                        (CustomersSort,),
                     'pass_through':
                         (PassThroughQuery,),
                     'fields':
@@ -1191,6 +1219,7 @@ class AccountingApi(object):
                     'cursor': 'cursor',
                     'limit': 'limit',
                     'filter': 'filter',
+                    'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
                 },
@@ -1202,6 +1231,7 @@ class AccountingApi(object):
                     'cursor': 'query',
                     'limit': 'query',
                     'filter': 'query',
+                    'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
                 },
@@ -1928,6 +1958,7 @@ class AccountingApi(object):
                     'service_id',
                     'cursor',
                     'limit',
+                    'filter',
                     'sort',
                     'pass_through',
                     'fields',
@@ -1966,6 +1997,8 @@ class AccountingApi(object):
                         (str, none_type,),
                     'limit':
                         (int,),
+                    'filter':
+                        (InvoicesFilter,),
                     'sort':
                         (InvoicesSort,),
                     'pass_through':
@@ -1980,6 +2013,7 @@ class AccountingApi(object):
                     'service_id': 'x-apideck-service-id',
                     'cursor': 'cursor',
                     'limit': 'limit',
+                    'filter': 'filter',
                     'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
@@ -1991,6 +2025,7 @@ class AccountingApi(object):
                     'service_id': 'header',
                     'cursor': 'query',
                     'limit': 'query',
+                    'filter': 'query',
                     'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
@@ -2713,6 +2748,8 @@ class AccountingApi(object):
                     'service_id',
                     'cursor',
                     'limit',
+                    'filter',
+                    'sort',
                     'pass_through',
                     'fields',
                 ],
@@ -2750,6 +2787,10 @@ class AccountingApi(object):
                         (str, none_type,),
                     'limit':
                         (int,),
+                    'filter':
+                        (LedgerAccountsFilter,),
+                    'sort':
+                        (LedgerAccountsSort,),
                     'pass_through':
                         (PassThroughQuery,),
                     'fields':
@@ -2762,6 +2803,8 @@ class AccountingApi(object):
                     'service_id': 'x-apideck-service-id',
                     'cursor': 'cursor',
                     'limit': 'limit',
+                    'filter': 'filter',
+                    'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
                 },
@@ -2772,6 +2815,8 @@ class AccountingApi(object):
                     'service_id': 'header',
                     'cursor': 'query',
                     'limit': 'query',
+                    'filter': 'query',
+                    'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
                 },
@@ -3579,6 +3624,8 @@ class AccountingApi(object):
                     'cursor',
                     'pass_through',
                     'limit',
+                    'filter',
+                    'sort',
                 ],
                 'required': [],
                 'nullable': [
@@ -3615,6 +3662,10 @@ class AccountingApi(object):
                         (PassThroughQuery,),
                     'limit':
                         (int,),
+                    'filter':
+                        (PurchaseOrdersFilter,),
+                    'sort':
+                        (PurchaseOrdersSort,),
                 },
                 'attribute_map': {
                     'raw': 'raw',
@@ -3624,6 +3675,8 @@ class AccountingApi(object):
                     'cursor': 'cursor',
                     'pass_through': 'pass_through',
                     'limit': 'limit',
+                    'filter': 'filter',
+                    'sort': 'sort',
                 },
                 'location_map': {
                     'raw': 'query',
@@ -3633,6 +3686,8 @@ class AccountingApi(object):
                     'cursor': 'query',
                     'pass_through': 'query',
                     'limit': 'query',
+                    'filter': 'query',
+                    'sort': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -3957,6 +4012,7 @@ class AccountingApi(object):
                     'cursor',
                     'limit',
                     'filter',
+                    'sort',
                     'pass_through',
                     'fields',
                 ],
@@ -3996,6 +4052,8 @@ class AccountingApi(object):
                         (int,),
                     'filter':
                         (SuppliersFilter,),
+                    'sort':
+                        (SuppliersSort,),
                     'pass_through':
                         (PassThroughQuery,),
                     'fields':
@@ -4009,6 +4067,7 @@ class AccountingApi(object):
                     'cursor': 'cursor',
                     'limit': 'limit',
                     'filter': 'filter',
+                    'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
                 },
@@ -4020,6 +4079,7 @@ class AccountingApi(object):
                     'cursor': 'query',
                     'limit': 'query',
                     'filter': 'query',
+                    'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
                 },
@@ -4838,6 +4898,7 @@ class AccountingApi(object):
             service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
+            filter (BillsFilter): Apply filters. [optional]
             sort (BillsSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
@@ -5331,6 +5392,8 @@ class AccountingApi(object):
             service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
+            filter (CreditNotesFilter): Apply filters. [optional]
+            sort (CreditNotesSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
             _return_http_data_only (bool): response data without head status
@@ -5746,6 +5809,7 @@ class AccountingApi(object):
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
             filter (CustomersFilter): Apply filters. [optional]
+            sort (CustomersSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
             _return_http_data_only (bool): response data without head status
@@ -6575,6 +6639,7 @@ class AccountingApi(object):
             service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
+            filter (InvoicesFilter): Apply filters. [optional]
             sort (InvoicesSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
@@ -7404,6 +7469,8 @@ class AccountingApi(object):
             service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
+            filter (LedgerAccountsFilter): Apply filters. [optional]
+            sort (LedgerAccountsSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
             _return_http_data_only (bool): response data without head status
@@ -8314,6 +8381,8 @@ class AccountingApi(object):
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
+            filter (PurchaseOrdersFilter): Apply filters. [optional]
+            sort (PurchaseOrdersSort): Apply sorting. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -8726,6 +8795,7 @@ class AccountingApi(object):
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
             filter (SuppliersFilter): Apply filters. [optional]
+            sort (SuppliersSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
             _return_http_data_only (bool): response data without head status

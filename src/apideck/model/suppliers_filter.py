@@ -80,6 +80,7 @@ class SuppliersFilter(ModelNormal):
             'first_name': (str,),  # noqa: E501
             'last_name': (str,),  # noqa: E501
             'email': (str,),  # noqa: E501
+            'updated_since': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -93,6 +94,7 @@ class SuppliersFilter(ModelNormal):
         'first_name': 'first_name',  # noqa: E501
         'last_name': 'last_name',  # noqa: E501
         'email': 'email',  # noqa: E501
+        'updated_since': 'updated_since',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,6 +143,7 @@ class SuppliersFilter(ModelNormal):
             first_name (str): First name of supplier to search for. [optional]  # noqa: E501
             last_name (str): Last name of supplier to search for. [optional]  # noqa: E501
             email (str): Email of supplier to search for. [optional]  # noqa: E501
+            updated_since (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,6 +230,7 @@ class SuppliersFilter(ModelNormal):
             first_name (str): First name of supplier to search for. [optional]  # noqa: E501
             last_name (str): Last name of supplier to search for. [optional]  # noqa: E501
             email (str): Email of supplier to search for. [optional]  # noqa: E501
+            updated_since (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

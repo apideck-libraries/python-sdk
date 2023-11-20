@@ -1,11 +1,10 @@
-# InvoicesSort
+# CreditNotesFilter
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**by** | **str** | The field on which to sort the Invoices | [optional] 
-**direction** | [**SortDirection**](SortDirection.md) |  | [optional] 
+**updated_since** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

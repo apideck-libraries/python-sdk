@@ -179,6 +179,7 @@ from apideck.api import accounting_api
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
+from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
@@ -192,8 +193,11 @@ from apideck.model.create_purchase_order_response import CreatePurchaseOrderResp
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
+from apideck.model.credit_notes_filter import CreditNotesFilter
+from apideck.model.credit_notes_sort import CreditNotesSort
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
+from apideck.model.customers_sort import CustomersSort
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
@@ -232,9 +236,12 @@ from apideck.model.get_tax_rates_response import GetTaxRatesResponse
 from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
+from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
 from apideck.model.journal_entry import JournalEntry
 from apideck.model.ledger_account import LedgerAccount
+from apideck.model.ledger_accounts_filter import LedgerAccountsFilter
+from apideck.model.ledger_accounts_sort import LedgerAccountsSort
 from apideck.model.not_found_response import NotFoundResponse
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
@@ -242,8 +249,11 @@ from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
 from apideck.model.purchase_order import PurchaseOrder
+from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
+from apideck.model.purchase_orders_sort import PurchaseOrdersSort
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
+from apideck.model.suppliers_sort import SuppliersSort
 from apideck.model.tax_rate import TaxRate
 from apideck.model.tax_rates_filter import TaxRatesFilter
 from apideck.model.unauthorized_response import UnauthorizedResponse
@@ -898,6 +908,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Benefit](docs/models/Benefit.md)
  - [Bill](docs/models/Bill.md)
  - [BillLineItem](docs/models/BillLineItem.md)
+ - [BillsFilter](docs/models/BillsFilter.md)
  - [BillsSort](docs/models/BillsSort.md)
  - [Branch](docs/models/Branch.md)
  - [CashDetails](docs/models/CashDetails.md)
@@ -1001,6 +1012,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateWebhookRequest](docs/models/CreateWebhookRequest.md)
  - [CreateWebhookResponse](docs/models/CreateWebhookResponse.md)
  - [CreditNote](docs/models/CreditNote.md)
+ - [CreditNotesFilter](docs/models/CreditNotesFilter.md)
+ - [CreditNotesSort](docs/models/CreditNotesSort.md)
  - [CrmEventType](docs/models/CrmEventType.md)
  - [Currency](docs/models/Currency.md)
  - [CustomField](docs/models/CustomField.md)
@@ -1008,6 +1021,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CustomMapping](docs/models/CustomMapping.md)
  - [Customer](docs/models/Customer.md)
  - [CustomersFilter](docs/models/CustomersFilter.md)
+ - [CustomersSort](docs/models/CustomersSort.md)
  - [Deduction](docs/models/Deduction.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
@@ -1257,6 +1271,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [InvoiceItemsFilter](docs/models/InvoiceItemsFilter.md)
  - [InvoiceLineItem](docs/models/InvoiceLineItem.md)
  - [InvoiceResponse](docs/models/InvoiceResponse.md)
+ - [InvoicesFilter](docs/models/InvoicesFilter.md)
  - [InvoicesSort](docs/models/InvoicesSort.md)
  - [IssueTrackingEventType](docs/models/IssueTrackingEventType.md)
  - [IssuesFilter](docs/models/IssuesFilter.md)
@@ -1275,6 +1290,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [LedgerAccountCategories](docs/models/LedgerAccountCategories.md)
  - [LedgerAccountParentAccount](docs/models/LedgerAccountParentAccount.md)
  - [LedgerAccounts](docs/models/LedgerAccounts.md)
+ - [LedgerAccountsFilter](docs/models/LedgerAccountsFilter.md)
+ - [LedgerAccountsSort](docs/models/LedgerAccountsSort.md)
  - [LinkedConnectorResource](docs/models/LinkedConnectorResource.md)
  - [LinkedCustomer](docs/models/LinkedCustomer.md)
  - [LinkedEcommerceCustomer](docs/models/LinkedEcommerceCustomer.md)
@@ -1354,6 +1371,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ProfitAndLossRecords](docs/models/ProfitAndLossRecords.md)
  - [ProfitAndLossSection](docs/models/ProfitAndLossSection.md)
  - [PurchaseOrder](docs/models/PurchaseOrder.md)
+ - [PurchaseOrdersFilter](docs/models/PurchaseOrdersFilter.md)
+ - [PurchaseOrdersSort](docs/models/PurchaseOrdersSort.md)
  - [RequestCountAllocation](docs/models/RequestCountAllocation.md)
  - [RequestRate](docs/models/RequestRate.md)
  - [ResolveWebhookEventRequest](docs/models/ResolveWebhookEventRequest.md)
@@ -1378,6 +1397,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Status](docs/models/Status.md)
  - [Supplier](docs/models/Supplier.md)
  - [SuppliersFilter](docs/models/SuppliersFilter.md)
+ - [SuppliersSort](docs/models/SuppliersSort.md)
  - [SupportedProperty](docs/models/SupportedProperty.md)
  - [SupportedPropertyChildProperties](docs/models/SupportedPropertyChildProperties.md)
  - [Tags](docs/models/Tags.md)
