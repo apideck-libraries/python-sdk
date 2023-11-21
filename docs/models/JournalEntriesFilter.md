@@ -1,4 +1,4 @@
-# PaymentsFilter
+# JournalEntriesFilter
 
 
 ## Properties
