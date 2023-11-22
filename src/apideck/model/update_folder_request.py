@@ -138,7 +138,7 @@ class UpdateFolderRequest(ModelNormal):
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             name (str): The name of the folder.. [optional]  # noqa: E501
             description (str): Optional description of the folder.. [optional]  # noqa: E501
-            parent_folder_id (str): The parent folder to create the new file within.. [optional]  # noqa: E501
+            parent_folder_id (str): The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,7 +223,7 @@ class UpdateFolderRequest(ModelNormal):
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             name (str): The name of the folder.. [optional]  # noqa: E501
             description (str): Optional description of the folder.. [optional]  # noqa: E501
-            parent_folder_id (str): The parent folder to create the new file within.. [optional]  # noqa: E501
+            parent_folder_id (str): The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

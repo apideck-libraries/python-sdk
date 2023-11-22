@@ -134,7 +134,7 @@ class UpdateFileRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): The name of the file.. [optional]  # noqa: E501
             description (str): Optional description of the file.. [optional]  # noqa: E501
-            parent_folder_id (str): The parent folder to create the new file within.. [optional]  # noqa: E501
+            parent_folder_id (str): The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -218,7 +218,7 @@ class UpdateFileRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): The name of the file.. [optional]  # noqa: E501
             description (str): Optional description of the file.. [optional]  # noqa: E501
-            parent_folder_id (str): The parent folder to create the new file within.. [optional]  # noqa: E501
+            parent_folder_id (str): The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

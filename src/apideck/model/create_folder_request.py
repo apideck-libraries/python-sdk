@@ -108,7 +108,7 @@ class CreateFolderRequest(ModelNormal):
 
         Args:
             name (str): The name of the folder.
-            parent_folder_id (str): The parent folder to create the new file within.
+            parent_folder_id (str): The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -198,7 +198,7 @@ class CreateFolderRequest(ModelNormal):
 
         Args:
             name (str): The name of the folder.
-            parent_folder_id (str): The parent folder to create the new file within.
+            parent_folder_id (str): The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
