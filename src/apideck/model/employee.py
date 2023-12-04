@@ -91,13 +91,6 @@ class Employee(ModelNormal):
     """
 
     allowed_values = {
-        ('leaving_reason',): {
-            'None': None,
-            'DISMISSED': "dismissed",
-            'RESIGNED': "resigned",
-            'REDUNDANCY': "redundancy",
-            'OTHER': "other",
-        },
     }
 
     validations = {
@@ -140,7 +133,7 @@ class Employee(ModelNormal):
             'company_name': (str, none_type,),  # noqa: E501
             'employment_start_date': (str, none_type,),  # noqa: E501
             'employment_end_date': (str, none_type,),  # noqa: E501
-            'leaving_reason': (str, none_type,),  # noqa: E501
+            'leaving_reason': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'employee_number': (str, none_type,),  # noqa: E501
             'employment_status': (EmploymentStatus,),  # noqa: E501
             'employment_role': (EmployeeEmploymentRole,),  # noqa: E501
@@ -329,7 +322,7 @@ class Employee(ModelNormal):
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employment_start_date (str, none_type): A Start Date is the date that the employee started working at the company. [optional]  # noqa: E501
             employment_end_date (str, none_type): An End Date is the date that the employee ended working at the company. [optional]  # noqa: E501
-            leaving_reason (str, none_type): The reason because the employment ended.. [optional]  # noqa: E501
+            leaving_reason (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             employee_number (str, none_type): An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.. [optional]  # noqa: E501
             employment_status (EmploymentStatus): [optional]  # noqa: E501
             employment_role (EmployeeEmploymentRole): [optional]  # noqa: E501
@@ -475,7 +468,7 @@ class Employee(ModelNormal):
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
             employment_start_date (str, none_type): A Start Date is the date that the employee started working at the company. [optional]  # noqa: E501
             employment_end_date (str, none_type): An End Date is the date that the employee ended working at the company. [optional]  # noqa: E501
-            leaving_reason (str, none_type): The reason because the employment ended.. [optional]  # noqa: E501
+            leaving_reason (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             employee_number (str, none_type): An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.. [optional]  # noqa: E501
             employment_status (EmploymentStatus): [optional]  # noqa: E501
             employment_role (EmployeeEmploymentRole): [optional]  # noqa: E501

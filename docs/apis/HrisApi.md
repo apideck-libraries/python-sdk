@@ -1657,7 +1657,7 @@ with apideck.ApiClient(configuration) as api_client:
         company_name="SpaceX",
         employment_start_date="2021-10-26",
         employment_end_date="2028-10-26",
-        leaving_reason="resigned",
+        leaving_reason=None,
         employee_number="123456-AB",
         employment_status=EmploymentStatus("active"),
         employment_role=EmployeeEmploymentRole(
@@ -2311,7 +2311,7 @@ with apideck.ApiClient(configuration) as api_client:
         company_name="SpaceX",
         employment_start_date="2021-10-26",
         employment_end_date="2028-10-26",
-        leaving_reason="resigned",
+        leaving_reason=None,
         employee_number="123456-AB",
         employment_status=EmploymentStatus("active"),
         employment_role=EmployeeEmploymentRole(

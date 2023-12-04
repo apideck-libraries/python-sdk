@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **company_name** | **str, none_type** | The name of the company. | [optional] 
 **employment_start_date** | **str, none_type** | A Start Date is the date that the employee started working at the company | [optional] 
 **employment_end_date** | **str, none_type** | An End Date is the date that the employee ended working at the company | [optional] 
-**leaving_reason** | **str, none_type** | The reason because the employment ended. | [optional] 
+**leaving_reason** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **employee_number** | **str, none_type** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 **employment_status** | [**EmploymentStatus**](EmploymentStatus.md) |  | [optional] 
 **employment_role** | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
