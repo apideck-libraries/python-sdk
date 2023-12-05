@@ -34,6 +34,7 @@ apideck/model/__init__.py
 apideck/model/accounting_customer.py
 apideck/model/accounting_event_type.py
 apideck/model/activities_filter.py
+apideck/model/activities_sort.py
 apideck/model/activity.py
 apideck/model/activity_attendee.py
 apideck/model/address.py
@@ -667,6 +668,7 @@ docs/AccountingApi.md
 docs/AccountingCustomer.md
 docs/AccountingEventType.md
 docs/ActivitiesFilter.md
+docs/ActivitiesSort.md
 docs/Activity.md
 docs/ActivityAttendee.md
 docs/Address.md
@@ -1315,6 +1317,7 @@ test/test_accounting_api.py
 test/test_accounting_customer.py
 test/test_accounting_event_type.py
 test/test_activities_filter.py
+test/test_activities_sort.py
 test/test_activity.py
 test/test_activity_attendee.py
 test/test_address.py

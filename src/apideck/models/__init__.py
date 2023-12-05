@@ -12,6 +12,7 @@
 from apideck.model.accounting_customer import AccountingCustomer
 from apideck.model.accounting_event_type import AccountingEventType
 from apideck.model.activities_filter import ActivitiesFilter
+from apideck.model.activities_sort import ActivitiesSort
 from apideck.model.activity import Activity
 from apideck.model.activity_attendee import ActivityAttendee
 from apideck.model.address import Address

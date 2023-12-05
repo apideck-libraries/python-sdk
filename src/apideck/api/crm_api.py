@@ -22,6 +22,7 @@ from apideck.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from apideck.model.activities_filter import ActivitiesFilter
+from apideck.model.activities_sort import ActivitiesSort
 from apideck.model.activity import Activity
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.companies_filter import CompaniesFilter
@@ -190,6 +191,7 @@ class CrmApi(object):
                     'cursor',
                     'limit',
                     'filter',
+                    'sort',
                     'pass_through',
                     'fields',
                 ],
@@ -229,6 +231,8 @@ class CrmApi(object):
                         (int,),
                     'filter':
                         (ActivitiesFilter,),
+                    'sort':
+                        (ActivitiesSort,),
                     'pass_through':
                         (PassThroughQuery,),
                     'fields':
@@ -242,6 +246,7 @@ class CrmApi(object):
                     'cursor': 'cursor',
                     'limit': 'limit',
                     'filter': 'filter',
+                    'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
                 },
@@ -253,6 +258,7 @@ class CrmApi(object):
                     'cursor': 'query',
                     'limit': 'query',
                     'filter': 'query',
+                    'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
                 },
@@ -3368,6 +3374,7 @@ class CrmApi(object):
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
             filter (ActivitiesFilter): Apply filters. [optional]
+            sort (ActivitiesSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
             _return_http_data_only (bool): response data without head status
