@@ -238,6 +238,8 @@ from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
 from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
+from apideck.model.journal_entries_filter import JournalEntriesFilter
+from apideck.model.journal_entries_sort import JournalEntriesSort
 from apideck.model.journal_entry import JournalEntry
 from apideck.model.ledger_account import LedgerAccount
 from apideck.model.ledger_accounts_filter import LedgerAccountsFilter
@@ -247,6 +249,7 @@ from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payments_filter import PaymentsFilter
+from apideck.model.payments_sort import PaymentsSort
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
 from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
@@ -871,6 +874,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [AccountingCustomer](docs/models/AccountingCustomer.md)
  - [AccountingEventType](docs/models/AccountingEventType.md)
  - [ActivitiesFilter](docs/models/ActivitiesFilter.md)
+ - [ActivitiesSort](docs/models/ActivitiesSort.md)
  - [Activity](docs/models/Activity.md)
  - [ActivityAttendee](docs/models/ActivityAttendee.md)
  - [Address](docs/models/Address.md)
@@ -1280,6 +1284,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [JobLinks](docs/models/JobLinks.md)
  - [JobSalary](docs/models/JobSalary.md)
  - [JobStatus](docs/models/JobStatus.md)
+ - [JournalEntriesFilter](docs/models/JournalEntriesFilter.md)
+ - [JournalEntriesSort](docs/models/JournalEntriesSort.md)
  - [JournalEntry](docs/models/JournalEntry.md)
  - [JournalEntryLineItem](docs/models/JournalEntryLineItem.md)
  - [Lead](docs/models/Lead.md)
@@ -1346,6 +1352,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [PaymentRequiredResponse](docs/models/PaymentRequiredResponse.md)
  - [PaymentUnit](docs/models/PaymentUnit.md)
  - [PaymentsFilter](docs/models/PaymentsFilter.md)
+ - [PaymentsSort](docs/models/PaymentsSort.md)
  - [Payroll](docs/models/Payroll.md)
  - [PayrollTotals](docs/models/PayrollTotals.md)
  - [PayrollsFilter](docs/models/PayrollsFilter.md)

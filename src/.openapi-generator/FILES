@@ -34,6 +34,7 @@ apideck/model/__init__.py
 apideck/model/accounting_customer.py
 apideck/model/accounting_event_type.py
 apideck/model/activities_filter.py
+apideck/model/activities_sort.py
 apideck/model/activity.py
 apideck/model/activity_attendee.py
 apideck/model/address.py
@@ -443,6 +444,8 @@ apideck/model/job.py
 apideck/model/job_links.py
 apideck/model/job_salary.py
 apideck/model/job_status.py
+apideck/model/journal_entries_filter.py
+apideck/model/journal_entries_sort.py
 apideck/model/journal_entry.py
 apideck/model/journal_entry_line_item.py
 apideck/model/lead.py
@@ -509,6 +512,7 @@ apideck/model/payment_frequency.py
 apideck/model/payment_required_response.py
 apideck/model/payment_unit.py
 apideck/model/payments_filter.py
+apideck/model/payments_sort.py
 apideck/model/payroll.py
 apideck/model/payroll_totals.py
 apideck/model/payrolls_filter.py
@@ -664,6 +668,7 @@ docs/AccountingApi.md
 docs/AccountingCustomer.md
 docs/AccountingEventType.md
 docs/ActivitiesFilter.md
+docs/ActivitiesSort.md
 docs/Activity.md
 docs/ActivityAttendee.md
 docs/Address.md
@@ -1080,6 +1085,8 @@ docs/Job.md
 docs/JobLinks.md
 docs/JobSalary.md
 docs/JobStatus.md
+docs/JournalEntriesFilter.md
+docs/JournalEntriesSort.md
 docs/JournalEntry.md
 docs/JournalEntryLineItem.md
 docs/Lead.md
@@ -1147,6 +1154,7 @@ docs/PaymentFrequency.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
 docs/PaymentsFilter.md
+docs/PaymentsSort.md
 docs/Payroll.md
 docs/PayrollTotals.md
 docs/PayrollsFilter.md
@@ -1309,6 +1317,7 @@ test/test_accounting_api.py
 test/test_accounting_customer.py
 test/test_accounting_event_type.py
 test/test_activities_filter.py
+test/test_activities_sort.py
 test/test_activity.py
 test/test_activity_attendee.py
 test/test_address.py
@@ -1725,6 +1734,8 @@ test/test_job.py
 test/test_job_links.py
 test/test_job_salary.py
 test/test_job_status.py
+test/test_journal_entries_filter.py
+test/test_journal_entries_sort.py
 test/test_journal_entry.py
 test/test_journal_entry_line_item.py
 test/test_lead.py
@@ -1792,6 +1803,7 @@ test/test_payment_frequency.py
 test/test_payment_required_response.py
 test/test_payment_unit.py
 test/test_payments_filter.py
+test/test_payments_sort.py
 test/test_payroll.py
 test/test_payroll_totals.py
 test/test_payrolls_filter.py

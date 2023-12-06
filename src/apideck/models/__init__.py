@@ -12,6 +12,7 @@
 from apideck.model.accounting_customer import AccountingCustomer
 from apideck.model.accounting_event_type import AccountingEventType
 from apideck.model.activities_filter import ActivitiesFilter
+from apideck.model.activities_sort import ActivitiesSort
 from apideck.model.activity import Activity
 from apideck.model.activity_attendee import ActivityAttendee
 from apideck.model.address import Address
@@ -421,6 +422,8 @@ from apideck.model.job import Job
 from apideck.model.job_links import JobLinks
 from apideck.model.job_salary import JobSalary
 from apideck.model.job_status import JobStatus
+from apideck.model.journal_entries_filter import JournalEntriesFilter
+from apideck.model.journal_entries_sort import JournalEntriesSort
 from apideck.model.journal_entry import JournalEntry
 from apideck.model.journal_entry_line_item import JournalEntryLineItem
 from apideck.model.lead import Lead
@@ -487,6 +490,7 @@ from apideck.model.payment_frequency import PaymentFrequency
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.payment_unit import PaymentUnit
 from apideck.model.payments_filter import PaymentsFilter
+from apideck.model.payments_sort import PaymentsSort
 from apideck.model.payroll import Payroll
 from apideck.model.payroll_totals import PayrollTotals
 from apideck.model.payrolls_filter import PayrollsFilter
