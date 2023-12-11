@@ -1807,6 +1807,7 @@ with apideck.ApiClient(configuration) as api_client:
         first_name="Elon",
         last_name="Musk",
         email="elon@tesla.com",
+        phone_number="111-111-1111",
         company_id="12345",
     ) # ContactsFilter | Apply filters (optional)
     sort = ContactsSort(
