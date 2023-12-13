@@ -3995,6 +3995,7 @@ with apideck.ApiClient(configuration) as api_client:
         title="Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry",
         currency_rate=0.69,
         currency=Currency("USD"),
+        company_id="12345",
         line_items=[
             JournalEntryLineItem(
                 description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
@@ -4505,6 +4506,7 @@ with apideck.ApiClient(configuration) as api_client:
         title="Purchase Invoice-Inventory (USD): 2019/02/01 Batch Summary Entry",
         currency_rate=0.69,
         currency=Currency("USD"),
+        company_id="12345",
         line_items=[
             JournalEntryLineItem(
                 description="Model Y is a fully electric, mid-size SUV, with seating for up to seven, dual motor AWD and unparalleled protection.",
