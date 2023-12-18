@@ -544,7 +544,6 @@ from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.suppliers_sort import SuppliersSort
 from apideck.model.supported_property import SupportedProperty
-from apideck.model.supported_property_child_properties import SupportedPropertyChildProperties
 from apideck.model.tags import Tags
 from apideck.model.tax import Tax
 from apideck.model.tax_rate import TaxRate
