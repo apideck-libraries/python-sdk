@@ -1406,7 +1406,6 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [SuppliersFilter](docs/models/SuppliersFilter.md)
  - [SuppliersSort](docs/models/SuppliersSort.md)
  - [SupportedProperty](docs/models/SupportedProperty.md)
- - [SupportedPropertyChildProperties](docs/models/SupportedPropertyChildProperties.md)
  - [Tags](docs/models/Tags.md)
  - [Tax](docs/models/Tax.md)
  - [TaxRate](docs/models/TaxRate.md)

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **title** | **str, none_type** | Journal entry title | [optional] 
 **currency_rate** | **float, none_type** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **currency** | [**Currency**](Currency.md) |  | [optional] 
+**company_id** | **str, none_type** | The company or subsidiary the journal entry belongs to | [optional] 
 **line_items** | [**[JournalEntryLineItem]**](JournalEntryLineItem.md) | Requires a minimum of 2 line items that sum to 0 | [optional] 
 **memo** | **str, none_type** | Reference for the journal entry. | [optional] 
 **posted_at** | **datetime** | This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated. | [optional] 

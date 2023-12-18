@@ -566,7 +566,6 @@ apideck/model/supplier.py
 apideck/model/suppliers_filter.py
 apideck/model/suppliers_sort.py
 apideck/model/supported_property.py
-apideck/model/supported_property_child_properties.py
 apideck/model/tags.py
 apideck/model/tax.py
 apideck/model/tax_rate.py
@@ -1210,7 +1209,6 @@ docs/Supplier.md
 docs/SuppliersFilter.md
 docs/SuppliersSort.md
 docs/SupportedProperty.md
-docs/SupportedPropertyChildProperties.md
 docs/Tags.md
 docs/Tax.md
 docs/TaxRate.md
@@ -1859,7 +1857,6 @@ test/test_supplier.py
 test/test_suppliers_filter.py
 test/test_suppliers_sort.py
 test/test_supported_property.py
-test/test_supported_property_child_properties.py
 test/test_tags.py
 test/test_tax.py
 test/test_tax_rate.py
