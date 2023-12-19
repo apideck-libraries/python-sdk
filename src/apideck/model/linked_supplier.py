@@ -116,11 +116,8 @@ class LinkedSupplier(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """LinkedSupplier - a model defined in OpenAPI
-
-        Args:
-            id (str): The ID of the supplier this entity is linked to.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -153,6 +150,7 @@ class LinkedSupplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str): The ID of the supplier this entity is linked to.. [optional]  # noqa: E501
             display_id (str, none_type): The display ID of the supplier.. [optional]  # noqa: E501
             display_name (str, none_type): The display name of the supplier.. [optional]  # noqa: E501
             company_name (str, none_type): The company name of the supplier.. [optional]  # noqa: E501
@@ -184,7 +182,6 @@ class LinkedSupplier(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -205,11 +202,8 @@ class LinkedSupplier(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """LinkedSupplier - a model defined in OpenAPI
-
-        Args:
-            id (str): The ID of the supplier this entity is linked to.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -242,6 +236,7 @@ class LinkedSupplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str): The ID of the supplier this entity is linked to.. [optional]  # noqa: E501
             display_id (str, none_type): The display ID of the supplier.. [optional]  # noqa: E501
             display_name (str, none_type): The display name of the supplier.. [optional]  # noqa: E501
             company_name (str, none_type): The company name of the supplier.. [optional]  # noqa: E501
@@ -271,7 +266,6 @@ class LinkedSupplier(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
