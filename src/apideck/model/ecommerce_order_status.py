@@ -58,6 +58,7 @@ class EcommerceOrderStatus(ModelSimple):
             'CANCELLED': "cancelled",
             'ARCHIVED': "archived",
             'UNKNOWN': "unknown",
+            'OTHER': "other",
         },
     }
 
@@ -109,10 +110,10 @@ class EcommerceOrderStatus(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", ]  # noqa: E501
+            args[0] (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", "other", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", ]  # noqa: E501
+            value (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", "other", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -199,10 +200,10 @@ class EcommerceOrderStatus(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", ]  # noqa: E501
+            args[0] (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", "other", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", ]  # noqa: E501
+            value (str): Current status of the order.., must be one of ["active", "completed", "cancelled", "archived", "unknown", "other", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
