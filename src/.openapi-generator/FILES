@@ -403,6 +403,8 @@ apideck/model/get_shared_link_response.py
 apideck/model/get_shared_links_response.py
 apideck/model/get_store_response.py
 apideck/model/get_stores_response.py
+apideck/model/get_subsidiaries_response.py
+apideck/model/get_subsidiary_response.py
 apideck/model/get_supplier_response.py
 apideck/model/get_suppliers_response.py
 apideck/model/get_tax_rate_response.py
@@ -562,6 +564,7 @@ apideck/model/simple_form_field_option.py
 apideck/model/social_link.py
 apideck/model/sort_direction.py
 apideck/model/status.py
+apideck/model/subsidiary.py
 apideck/model/supplier.py
 apideck/model/suppliers_filter.py
 apideck/model/suppliers_sort.py
@@ -1041,6 +1044,8 @@ docs/GetSharedLinkResponse.md
 docs/GetSharedLinksResponse.md
 docs/GetStoreResponse.md
 docs/GetStoresResponse.md
+docs/GetSubsidiariesResponse.md
+docs/GetSubsidiaryResponse.md
 docs/GetSupplierResponse.md
 docs/GetSuppliersResponse.md
 docs/GetTaxRateResponse.md
@@ -1205,6 +1210,7 @@ docs/SmsApi.md
 docs/SocialLink.md
 docs/SortDirection.md
 docs/Status.md
+docs/Subsidiary.md
 docs/Supplier.md
 docs/SuppliersFilter.md
 docs/SuppliersSort.md
@@ -1689,6 +1695,8 @@ test/test_get_shared_link_response.py
 test/test_get_shared_links_response.py
 test/test_get_store_response.py
 test/test_get_stores_response.py
+test/test_get_subsidiaries_response.py
+test/test_get_subsidiary_response.py
 test/test_get_supplier_response.py
 test/test_get_suppliers_response.py
 test/test_get_tax_rate_response.py
@@ -1853,6 +1861,7 @@ test/test_sms_api.py
 test/test_social_link.py
 test/test_sort_direction.py
 test/test_status.py
+test/test_subsidiary.py
 test/test_supplier.py
 test/test_suppliers_filter.py
 test/test_suppliers_sort.py

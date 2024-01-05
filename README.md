@@ -229,6 +229,8 @@ from apideck.model.get_payments_response import GetPaymentsResponse
 from apideck.model.get_profit_and_loss_response import GetProfitAndLossResponse
 from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
 from apideck.model.get_purchase_orders_response import GetPurchaseOrdersResponse
+from apideck.model.get_subsidiaries_response import GetSubsidiariesResponse
+from apideck.model.get_subsidiary_response import GetSubsidiaryResponse
 from apideck.model.get_supplier_response import GetSupplierResponse
 from apideck.model.get_suppliers_response import GetSuppliersResponse
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
@@ -414,6 +416,10 @@ _AccountingApi_ | [**purchase_orders_delete**](docs/apis/AccountingApi.md#purcha
 _AccountingApi_ | [**purchase_orders_one**](docs/apis/AccountingApi.md#purchase_orders_one) | **GET** /accounting/purchase-orders/{id} | Get Purchase Order |
 
 _AccountingApi_ | [**purchase_orders_update**](docs/apis/AccountingApi.md#purchase_orders_update) | **PATCH** /accounting/purchase-orders/{id} | Update Purchase Order |
+
+_AccountingApi_ | [**subsidiaries_all**](docs/apis/AccountingApi.md#subsidiaries_all) | **GET** /accounting/subsidiaries | List Subsidiaries |
+
+_AccountingApi_ | [**subsidiaries_one**](docs/apis/AccountingApi.md#subsidiaries_one) | **GET** /accounting/subsidiaries/{id} | Get Subsidiary |
 
 _AccountingApi_ | [**suppliers_add**](docs/apis/AccountingApi.md#suppliers_add) | **POST** /accounting/suppliers | Create Supplier |
 
@@ -1243,6 +1249,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetSharedLinksResponse](docs/models/GetSharedLinksResponse.md)
  - [GetStoreResponse](docs/models/GetStoreResponse.md)
  - [GetStoresResponse](docs/models/GetStoresResponse.md)
+ - [GetSubsidiariesResponse](docs/models/GetSubsidiariesResponse.md)
+ - [GetSubsidiaryResponse](docs/models/GetSubsidiaryResponse.md)
  - [GetSupplierResponse](docs/models/GetSupplierResponse.md)
  - [GetSuppliersResponse](docs/models/GetSuppliersResponse.md)
  - [GetTaxRateResponse](docs/models/GetTaxRateResponse.md)
@@ -1402,6 +1410,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [SocialLink](docs/models/SocialLink.md)
  - [SortDirection](docs/models/SortDirection.md)
  - [Status](docs/models/Status.md)
+ - [Subsidiary](docs/models/Subsidiary.md)
  - [Supplier](docs/models/Supplier.md)
  - [SuppliersFilter](docs/models/SuppliersFilter.md)
  - [SuppliersSort](docs/models/SuppliersSort.md)

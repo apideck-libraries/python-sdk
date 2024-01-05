@@ -381,6 +381,8 @@ from apideck.model.get_shared_link_response import GetSharedLinkResponse
 from apideck.model.get_shared_links_response import GetSharedLinksResponse
 from apideck.model.get_store_response import GetStoreResponse
 from apideck.model.get_stores_response import GetStoresResponse
+from apideck.model.get_subsidiaries_response import GetSubsidiariesResponse
+from apideck.model.get_subsidiary_response import GetSubsidiaryResponse
 from apideck.model.get_supplier_response import GetSupplierResponse
 from apideck.model.get_suppliers_response import GetSuppliersResponse
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
@@ -540,6 +542,7 @@ from apideck.model.simple_form_field_option import SimpleFormFieldOption
 from apideck.model.social_link import SocialLink
 from apideck.model.sort_direction import SortDirection
 from apideck.model.status import Status
+from apideck.model.subsidiary import Subsidiary
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.suppliers_sort import SuppliersSort
