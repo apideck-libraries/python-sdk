@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**parent_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**parent_id** | **str, none_type** | A unique identifier for an object. | [optional] 
 **name** | **str, none_type** | The name of the company. | [optional] 
 **status** | **str** | Based on the status some functionality is enabled or disabled. | [optional] 
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 

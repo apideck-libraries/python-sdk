@@ -143,6 +143,7 @@ from apideck.model.create_purchase_order_response import CreatePurchaseOrderResp
 from apideck.model.create_session_response import CreateSessionResponse
 from apideck.model.create_session_response_data import CreateSessionResponseData
 from apideck.model.create_shared_link_response import CreateSharedLinkResponse
+from apideck.model.create_subsidiary_response import CreateSubsidiaryResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.create_tender_response import CreateTenderResponse
@@ -206,6 +207,7 @@ from apideck.model.delete_pos_payment_response import DeletePosPaymentResponse
 from apideck.model.delete_product_response import DeleteProductResponse
 from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResponse
 from apideck.model.delete_shared_link_response import DeleteSharedLinkResponse
+from apideck.model.delete_subsidiary_response import DeleteSubsidiaryResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
 from apideck.model.delete_tender_response import DeleteTenderResponse
@@ -615,6 +617,7 @@ from apideck.model.update_pos_payment_response import UpdatePosPaymentResponse
 from apideck.model.update_product_response import UpdateProductResponse
 from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResponse
 from apideck.model.update_shared_link_response import UpdateSharedLinkResponse
+from apideck.model.update_subsidiary_response import UpdateSubsidiaryResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
 from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
 from apideck.model.update_tender_response import UpdateTenderResponse

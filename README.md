@@ -190,6 +190,7 @@ from apideck.model.create_journal_entry_response import CreateJournalEntryRespon
 from apideck.model.create_ledger_account_response import CreateLedgerAccountResponse
 from apideck.model.create_payment_response import CreatePaymentResponse
 from apideck.model.create_purchase_order_response import CreatePurchaseOrderResponse
+from apideck.model.create_subsidiary_response import CreateSubsidiaryResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
@@ -206,6 +207,7 @@ from apideck.model.delete_journal_entry_response import DeleteJournalEntryRespon
 from apideck.model.delete_ledger_account_response import DeleteLedgerAccountResponse
 from apideck.model.delete_payment_response import DeletePaymentResponse
 from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResponse
+from apideck.model.delete_subsidiary_response import DeleteSubsidiaryResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
@@ -256,6 +258,7 @@ from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
 from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
 from apideck.model.purchase_orders_sort import PurchaseOrdersSort
+from apideck.model.subsidiary import Subsidiary
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.suppliers_sort import SuppliersSort
@@ -273,6 +276,7 @@ from apideck.model.update_journal_entry_response import UpdateJournalEntryRespon
 from apideck.model.update_ledger_account_response import UpdateLedgerAccountResponse
 from apideck.model.update_payment_response import UpdatePaymentResponse
 from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResponse
+from apideck.model.update_subsidiary_response import UpdateSubsidiaryResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
 from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
 # Defining the host is optional and defaults to https://unify.apideck.com
@@ -417,9 +421,15 @@ _AccountingApi_ | [**purchase_orders_one**](docs/apis/AccountingApi.md#purchase_
 
 _AccountingApi_ | [**purchase_orders_update**](docs/apis/AccountingApi.md#purchase_orders_update) | **PATCH** /accounting/purchase-orders/{id} | Update Purchase Order |
 
+_AccountingApi_ | [**subsidiaries_add**](docs/apis/AccountingApi.md#subsidiaries_add) | **POST** /accounting/subsidiaries | Create Subsidiary |
+
 _AccountingApi_ | [**subsidiaries_all**](docs/apis/AccountingApi.md#subsidiaries_all) | **GET** /accounting/subsidiaries | List Subsidiaries |
 
+_AccountingApi_ | [**subsidiaries_delete**](docs/apis/AccountingApi.md#subsidiaries_delete) | **DELETE** /accounting/subsidiaries/{id} | Delete Subsidiary |
+
 _AccountingApi_ | [**subsidiaries_one**](docs/apis/AccountingApi.md#subsidiaries_one) | **GET** /accounting/subsidiaries/{id} | Get Subsidiary |
+
+_AccountingApi_ | [**subsidiaries_update**](docs/apis/AccountingApi.md#subsidiaries_update) | **PATCH** /accounting/subsidiaries/{id} | Update Subsidiary |
 
 _AccountingApi_ | [**suppliers_add**](docs/apis/AccountingApi.md#suppliers_add) | **POST** /accounting/suppliers | Create Supplier |
 
@@ -1011,6 +1021,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateSessionResponse](docs/models/CreateSessionResponse.md)
  - [CreateSessionResponseData](docs/models/CreateSessionResponseData.md)
  - [CreateSharedLinkResponse](docs/models/CreateSharedLinkResponse.md)
+ - [CreateSubsidiaryResponse](docs/models/CreateSubsidiaryResponse.md)
  - [CreateSupplierResponse](docs/models/CreateSupplierResponse.md)
  - [CreateTaxRateResponse](docs/models/CreateTaxRateResponse.md)
  - [CreateTenderResponse](docs/models/CreateTenderResponse.md)
@@ -1074,6 +1085,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteProductResponse](docs/models/DeleteProductResponse.md)
  - [DeletePurchaseOrderResponse](docs/models/DeletePurchaseOrderResponse.md)
  - [DeleteSharedLinkResponse](docs/models/DeleteSharedLinkResponse.md)
+ - [DeleteSubsidiaryResponse](docs/models/DeleteSubsidiaryResponse.md)
  - [DeleteSupplierResponse](docs/models/DeleteSupplierResponse.md)
  - [DeleteTaxRateResponse](docs/models/DeleteTaxRateResponse.md)
  - [DeleteTenderResponse](docs/models/DeleteTenderResponse.md)
@@ -1483,6 +1495,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateProductResponse](docs/models/UpdateProductResponse.md)
  - [UpdatePurchaseOrderResponse](docs/models/UpdatePurchaseOrderResponse.md)
  - [UpdateSharedLinkResponse](docs/models/UpdateSharedLinkResponse.md)
+ - [UpdateSubsidiaryResponse](docs/models/UpdateSubsidiaryResponse.md)
  - [UpdateSupplierResponse](docs/models/UpdateSupplierResponse.md)
  - [UpdateTaxRateResponse](docs/models/UpdateTaxRateResponse.md)
  - [UpdateTenderResponse](docs/models/UpdateTenderResponse.md)
