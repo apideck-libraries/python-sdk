@@ -176,11 +176,17 @@ import time
 import apideck
 from pprint import pprint
 from apideck.api import accounting_api
+from apideck.model.accounting_department import AccountingDepartment
+from apideck.model.accounting_departments_filter import AccountingDepartmentsFilter
+from apideck.model.accounting_location import AccountingLocation
+from apideck.model.accounting_locations_filter import AccountingLocationsFilter
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
+from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
+from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
@@ -199,6 +205,8 @@ from apideck.model.credit_notes_sort import CreditNotesSort
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.customers_sort import CustomersSort
+from apideck.model.delete_accounting_department_response import DeleteAccountingDepartmentResponse
+from apideck.model.delete_accounting_location_response import DeleteAccountingLocationResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
@@ -210,6 +218,10 @@ from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResp
 from apideck.model.delete_subsidiary_response import DeleteSubsidiaryResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
+from apideck.model.get_accounting_department_response import GetAccountingDepartmentResponse
+from apideck.model.get_accounting_departments_response import GetAccountingDepartmentsResponse
+from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
+from apideck.model.get_accounting_locations_response import GetAccountingLocationsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
@@ -267,6 +279,8 @@ from apideck.model.tax_rates_filter import TaxRatesFilter
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.update_accounting_department_response import UpdateAccountingDepartmentResponse
+from apideck.model.update_accounting_location_response import UpdateAccountingLocationResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
@@ -359,6 +373,16 @@ _AccountingApi_ | [**customers_one**](docs/apis/AccountingApi.md#customers_one) 
 
 _AccountingApi_ | [**customers_update**](docs/apis/AccountingApi.md#customers_update) | **PATCH** /accounting/customers/{id} | Update Customer |
 
+_AccountingApi_ | [**departments_add**](docs/apis/AccountingApi.md#departments_add) | **POST** /accounting/departments | Create Department |
+
+_AccountingApi_ | [**departments_all**](docs/apis/AccountingApi.md#departments_all) | **GET** /accounting/departments | List Departments |
+
+_AccountingApi_ | [**departments_delete**](docs/apis/AccountingApi.md#departments_delete) | **DELETE** /accounting/departments/{id} | Delete Department |
+
+_AccountingApi_ | [**departments_one**](docs/apis/AccountingApi.md#departments_one) | **GET** /accounting/departments/{id} | Get Department |
+
+_AccountingApi_ | [**departments_update**](docs/apis/AccountingApi.md#departments_update) | **PATCH** /accounting/departments/{id} | Update Department |
+
 _AccountingApi_ | [**invoice_items_add**](docs/apis/AccountingApi.md#invoice_items_add) | **POST** /accounting/invoice-items | Create Invoice Item |
 
 _AccountingApi_ | [**invoice_items_all**](docs/apis/AccountingApi.md#invoice_items_all) | **GET** /accounting/invoice-items | List Invoice Items |
@@ -398,6 +422,16 @@ _AccountingApi_ | [**ledger_accounts_delete**](docs/apis/AccountingApi.md#ledger
 _AccountingApi_ | [**ledger_accounts_one**](docs/apis/AccountingApi.md#ledger_accounts_one) | **GET** /accounting/ledger-accounts/{id} | Get Ledger Account |
 
 _AccountingApi_ | [**ledger_accounts_update**](docs/apis/AccountingApi.md#ledger_accounts_update) | **PATCH** /accounting/ledger-accounts/{id} | Update Ledger Account |
+
+_AccountingApi_ | [**locations_add**](docs/apis/AccountingApi.md#locations_add) | **POST** /accounting/locations | Create Location |
+
+_AccountingApi_ | [**locations_all**](docs/apis/AccountingApi.md#locations_all) | **GET** /accounting/locations | List Locations |
+
+_AccountingApi_ | [**locations_delete**](docs/apis/AccountingApi.md#locations_delete) | **DELETE** /accounting/locations/{id} | Delete Location |
+
+_AccountingApi_ | [**locations_one**](docs/apis/AccountingApi.md#locations_one) | **GET** /accounting/locations/{id} | Get Location |
+
+_AccountingApi_ | [**locations_update**](docs/apis/AccountingApi.md#locations_update) | **PATCH** /accounting/locations/{id} | Update Location |
 
 _AccountingApi_ | [**payments_add**](docs/apis/AccountingApi.md#payments_add) | **POST** /accounting/payments | Create Payment |
 
@@ -888,7 +922,11 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
 ## Documentation For Models
 
  - [AccountingCustomer](docs/models/AccountingCustomer.md)
+ - [AccountingDepartment](docs/models/AccountingDepartment.md)
+ - [AccountingDepartmentsFilter](docs/models/AccountingDepartmentsFilter.md)
  - [AccountingEventType](docs/models/AccountingEventType.md)
+ - [AccountingLocation](docs/models/AccountingLocation.md)
+ - [AccountingLocationsFilter](docs/models/AccountingLocationsFilter.md)
  - [ActivitiesFilter](docs/models/ActivitiesFilter.md)
  - [ActivitiesSort](docs/models/ActivitiesSort.md)
  - [Activity](docs/models/Activity.md)
@@ -973,6 +1011,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ContactsSort](docs/models/ContactsSort.md)
  - [CopyFolderRequest](docs/models/CopyFolderRequest.md)
  - [Country](docs/models/Country.md)
+ - [CreateAccountingDepartmentResponse](docs/models/CreateAccountingDepartmentResponse.md)
+ - [CreateAccountingLocationResponse](docs/models/CreateAccountingLocationResponse.md)
  - [CreateActivityResponse](docs/models/CreateActivityResponse.md)
  - [CreateApplicantResponse](docs/models/CreateApplicantResponse.md)
  - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
@@ -1044,6 +1084,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [CustomersSort](docs/models/CustomersSort.md)
  - [Deduction](docs/models/Deduction.md)
+ - [DeleteAccountingDepartmentResponse](docs/models/DeleteAccountingDepartmentResponse.md)
+ - [DeleteAccountingLocationResponse](docs/models/DeleteAccountingLocationResponse.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
  - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
@@ -1144,6 +1186,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [FormFieldOption](docs/models/FormFieldOption.md)
  - [FormFieldOptionGroup](docs/models/FormFieldOptionGroup.md)
  - [Gender](docs/models/Gender.md)
+ - [GetAccountingDepartmentResponse](docs/models/GetAccountingDepartmentResponse.md)
+ - [GetAccountingDepartmentsResponse](docs/models/GetAccountingDepartmentsResponse.md)
+ - [GetAccountingLocationResponse](docs/models/GetAccountingLocationResponse.md)
+ - [GetAccountingLocationsResponse](docs/models/GetAccountingLocationsResponse.md)
  - [GetActivitiesResponse](docs/models/GetActivitiesResponse.md)
  - [GetActivityResponse](docs/models/GetActivityResponse.md)
  - [GetApiResourceCoverageResponse](docs/models/GetApiResourceCoverageResponse.md)
@@ -1423,6 +1469,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [SortDirection](docs/models/SortDirection.md)
  - [Status](docs/models/Status.md)
  - [Subsidiary](docs/models/Subsidiary.md)
+ - [SubsidiaryReference](docs/models/SubsidiaryReference.md)
  - [Supplier](docs/models/Supplier.md)
  - [SuppliersFilter](docs/models/SuppliersFilter.md)
  - [SuppliersSort](docs/models/SuppliersSort.md)
@@ -1448,6 +1495,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UnifiedFilePermissions](docs/models/UnifiedFilePermissions.md)
  - [UnifiedId](docs/models/UnifiedId.md)
  - [UnprocessableResponse](docs/models/UnprocessableResponse.md)
+ - [UpdateAccountingDepartmentResponse](docs/models/UpdateAccountingDepartmentResponse.md)
+ - [UpdateAccountingLocationResponse](docs/models/UpdateAccountingLocationResponse.md)
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
  - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
  - [UpdateApplicationResponse](docs/models/UpdateApplicationResponse.md)

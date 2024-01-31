@@ -32,7 +32,11 @@ apideck/configuration.py
 apideck/exceptions.py
 apideck/model/__init__.py
 apideck/model/accounting_customer.py
+apideck/model/accounting_department.py
+apideck/model/accounting_departments_filter.py
 apideck/model/accounting_event_type.py
+apideck/model/accounting_location.py
+apideck/model/accounting_locations_filter.py
 apideck/model/activities_filter.py
 apideck/model/activities_sort.py
 apideck/model/activity.py
@@ -117,6 +121,8 @@ apideck/model/contacts_filter.py
 apideck/model/contacts_sort.py
 apideck/model/copy_folder_request.py
 apideck/model/country.py
+apideck/model/create_accounting_department_response.py
+apideck/model/create_accounting_location_response.py
 apideck/model/create_activity_response.py
 apideck/model/create_applicant_response.py
 apideck/model/create_application_response.py
@@ -188,6 +194,8 @@ apideck/model/customer.py
 apideck/model/customers_filter.py
 apideck/model/customers_sort.py
 apideck/model/deduction.py
+apideck/model/delete_accounting_department_response.py
+apideck/model/delete_accounting_location_response.py
 apideck/model/delete_activity_response.py
 apideck/model/delete_applicant_response.py
 apideck/model/delete_application_response.py
@@ -288,6 +296,10 @@ apideck/model/form_field.py
 apideck/model/form_field_option.py
 apideck/model/form_field_option_group.py
 apideck/model/gender.py
+apideck/model/get_accounting_department_response.py
+apideck/model/get_accounting_departments_response.py
+apideck/model/get_accounting_location_response.py
+apideck/model/get_accounting_locations_response.py
 apideck/model/get_activities_response.py
 apideck/model/get_activity_response.py
 apideck/model/get_api_resource_coverage_response.py
@@ -567,6 +579,7 @@ apideck/model/social_link.py
 apideck/model/sort_direction.py
 apideck/model/status.py
 apideck/model/subsidiary.py
+apideck/model/subsidiary_reference.py
 apideck/model/supplier.py
 apideck/model/suppliers_filter.py
 apideck/model/suppliers_sort.py
@@ -592,6 +605,8 @@ apideck/model/unified_file.py
 apideck/model/unified_file_permissions.py
 apideck/model/unified_id.py
 apideck/model/unprocessable_response.py
+apideck/model/update_accounting_department_response.py
+apideck/model/update_accounting_location_response.py
 apideck/model/update_activity_response.py
 apideck/model/update_applicant_response.py
 apideck/model/update_application_response.py
@@ -671,7 +686,11 @@ apideck/models/__init__.py
 apideck/rest.py
 docs/AccountingApi.md
 docs/AccountingCustomer.md
+docs/AccountingDepartment.md
+docs/AccountingDepartmentsFilter.md
 docs/AccountingEventType.md
+docs/AccountingLocation.md
+docs/AccountingLocationsFilter.md
 docs/ActivitiesFilter.md
 docs/ActivitiesSort.md
 docs/Activity.md
@@ -758,6 +777,8 @@ docs/ContactsFilter.md
 docs/ContactsSort.md
 docs/CopyFolderRequest.md
 docs/Country.md
+docs/CreateAccountingDepartmentResponse.md
+docs/CreateAccountingLocationResponse.md
 docs/CreateActivityResponse.md
 docs/CreateApplicantResponse.md
 docs/CreateApplicationResponse.md
@@ -830,6 +851,8 @@ docs/Customer.md
 docs/CustomersFilter.md
 docs/CustomersSort.md
 docs/Deduction.md
+docs/DeleteAccountingDepartmentResponse.md
+docs/DeleteAccountingLocationResponse.md
 docs/DeleteActivityResponse.md
 docs/DeleteApplicantResponse.md
 docs/DeleteApplicationResponse.md
@@ -932,6 +955,10 @@ docs/FormField.md
 docs/FormFieldOption.md
 docs/FormFieldOptionGroup.md
 docs/Gender.md
+docs/GetAccountingDepartmentResponse.md
+docs/GetAccountingDepartmentsResponse.md
+docs/GetAccountingLocationResponse.md
+docs/GetAccountingLocationsResponse.md
 docs/GetActivitiesResponse.md
 docs/GetActivityResponse.md
 docs/GetApiResourceCoverageResponse.md
@@ -1216,6 +1243,7 @@ docs/SocialLink.md
 docs/SortDirection.md
 docs/Status.md
 docs/Subsidiary.md
+docs/SubsidiaryReference.md
 docs/Supplier.md
 docs/SuppliersFilter.md
 docs/SuppliersSort.md
@@ -1241,6 +1269,8 @@ docs/UnifiedFile.md
 docs/UnifiedFilePermissions.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
+docs/UpdateAccountingDepartmentResponse.md
+docs/UpdateAccountingLocationResponse.md
 docs/UpdateActivityResponse.md
 docs/UpdateApplicantResponse.md
 docs/UpdateApplicationResponse.md
@@ -1325,7 +1355,11 @@ test-requirements.txt
 test/__init__.py
 test/test_accounting_api.py
 test/test_accounting_customer.py
+test/test_accounting_department.py
+test/test_accounting_departments_filter.py
 test/test_accounting_event_type.py
+test/test_accounting_location.py
+test/test_accounting_locations_filter.py
 test/test_activities_filter.py
 test/test_activities_sort.py
 test/test_activity.py
@@ -1412,6 +1446,8 @@ test/test_contacts_filter.py
 test/test_contacts_sort.py
 test/test_copy_folder_request.py
 test/test_country.py
+test/test_create_accounting_department_response.py
+test/test_create_accounting_location_response.py
 test/test_create_activity_response.py
 test/test_create_applicant_response.py
 test/test_create_application_response.py
@@ -1484,6 +1520,8 @@ test/test_customer.py
 test/test_customers_filter.py
 test/test_customers_sort.py
 test/test_deduction.py
+test/test_delete_accounting_department_response.py
+test/test_delete_accounting_location_response.py
 test/test_delete_activity_response.py
 test/test_delete_applicant_response.py
 test/test_delete_application_response.py
@@ -1586,6 +1624,10 @@ test/test_form_field.py
 test/test_form_field_option.py
 test/test_form_field_option_group.py
 test/test_gender.py
+test/test_get_accounting_department_response.py
+test/test_get_accounting_departments_response.py
+test/test_get_accounting_location_response.py
+test/test_get_accounting_locations_response.py
 test/test_get_activities_response.py
 test/test_get_activity_response.py
 test/test_get_api_resource_coverage_response.py
@@ -1870,6 +1912,7 @@ test/test_social_link.py
 test/test_sort_direction.py
 test/test_status.py
 test/test_subsidiary.py
+test/test_subsidiary_reference.py
 test/test_supplier.py
 test/test_suppliers_filter.py
 test/test_suppliers_sort.py
@@ -1895,6 +1938,8 @@ test/test_unified_file.py
 test/test_unified_file_permissions.py
 test/test_unified_id.py
 test/test_unprocessable_response.py
+test/test_update_accounting_department_response.py
+test/test_update_accounting_location_response.py
 test/test_update_activity_response.py
 test/test_update_applicant_response.py
 test/test_update_application_response.py

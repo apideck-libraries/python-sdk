@@ -10,7 +10,11 @@
 # sys.setrecursionlimit(n)
 
 from apideck.model.accounting_customer import AccountingCustomer
+from apideck.model.accounting_department import AccountingDepartment
+from apideck.model.accounting_departments_filter import AccountingDepartmentsFilter
 from apideck.model.accounting_event_type import AccountingEventType
+from apideck.model.accounting_location import AccountingLocation
+from apideck.model.accounting_locations_filter import AccountingLocationsFilter
 from apideck.model.activities_filter import ActivitiesFilter
 from apideck.model.activities_sort import ActivitiesSort
 from apideck.model.activity import Activity
@@ -95,6 +99,8 @@ from apideck.model.contacts_filter import ContactsFilter
 from apideck.model.contacts_sort import ContactsSort
 from apideck.model.copy_folder_request import CopyFolderRequest
 from apideck.model.country import Country
+from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
+from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
 from apideck.model.create_activity_response import CreateActivityResponse
 from apideck.model.create_applicant_response import CreateApplicantResponse
 from apideck.model.create_application_response import CreateApplicationResponse
@@ -166,6 +172,8 @@ from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.customers_sort import CustomersSort
 from apideck.model.deduction import Deduction
+from apideck.model.delete_accounting_department_response import DeleteAccountingDepartmentResponse
+from apideck.model.delete_accounting_location_response import DeleteAccountingLocationResponse
 from apideck.model.delete_activity_response import DeleteActivityResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
 from apideck.model.delete_application_response import DeleteApplicationResponse
@@ -266,6 +274,10 @@ from apideck.model.form_field import FormField
 from apideck.model.form_field_option import FormFieldOption
 from apideck.model.form_field_option_group import FormFieldOptionGroup
 from apideck.model.gender import Gender
+from apideck.model.get_accounting_department_response import GetAccountingDepartmentResponse
+from apideck.model.get_accounting_departments_response import GetAccountingDepartmentsResponse
+from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
+from apideck.model.get_accounting_locations_response import GetAccountingLocationsResponse
 from apideck.model.get_activities_response import GetActivitiesResponse
 from apideck.model.get_activity_response import GetActivityResponse
 from apideck.model.get_api_resource_coverage_response import GetApiResourceCoverageResponse
@@ -545,6 +557,7 @@ from apideck.model.social_link import SocialLink
 from apideck.model.sort_direction import SortDirection
 from apideck.model.status import Status
 from apideck.model.subsidiary import Subsidiary
+from apideck.model.subsidiary_reference import SubsidiaryReference
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.suppliers_sort import SuppliersSort
@@ -570,6 +583,8 @@ from apideck.model.unified_file import UnifiedFile
 from apideck.model.unified_file_permissions import UnifiedFilePermissions
 from apideck.model.unified_id import UnifiedId
 from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.update_accounting_department_response import UpdateAccountingDepartmentResponse
+from apideck.model.update_accounting_location_response import UpdateAccountingLocationResponse
 from apideck.model.update_activity_response import UpdateActivityResponse
 from apideck.model.update_applicant_response import UpdateApplicantResponse
 from apideck.model.update_application_response import UpdateApplicationResponse
