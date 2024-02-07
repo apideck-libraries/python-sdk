@@ -65,8 +65,9 @@ class BillLineItem(ModelNormal):
     allowed_values = {
         ('type',): {
             'None': None,
-            'ITEM': "expense_item",
-            'ACCOUNT': "expense_account",
+            'EXPENSE_ITEM': "expense_item",
+            'EXPENSE_ACCOUNT': "expense_account",
+            'OTHER': "other",
         },
     }
 

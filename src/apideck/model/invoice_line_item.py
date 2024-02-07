@@ -69,6 +69,7 @@ class InvoiceLineItem(ModelNormal):
             'DISCOUNT': "discount",
             'INFO': "info",
             'SUB_TOTAL': "sub_total",
+            'OTHER': "other",
         },
     }
 
