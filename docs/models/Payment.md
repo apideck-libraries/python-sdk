@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 **supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
+**company_id** | **str, none_type** | The company or subsidiary id the transaction belongs to | [optional] 
 **reconciled** | **bool** | Payment has been reconciled | [optional] 
 **status** | **str** | Status of payment | [optional] 
 **type** | **str** | Type of payment | [optional] 

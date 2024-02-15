@@ -109,6 +109,7 @@ class Customer(ModelNormal):
             'display_id': (str, none_type,),  # noqa: E501
             'display_name': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
+            'company_id': (str, none_type,),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'middle_name': (str, none_type,),  # noqa: E501
@@ -149,6 +150,7 @@ class Customer(ModelNormal):
         'display_id': 'display_id',  # noqa: E501
         'display_name': 'display_name',  # noqa: E501
         'company_name': 'company_name',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
         'title': 'title',  # noqa: E501
         'first_name': 'first_name',  # noqa: E501
         'middle_name': 'middle_name',  # noqa: E501
@@ -233,6 +235,7 @@ class Customer(ModelNormal):
             display_id (str, none_type): Display ID. [optional]  # noqa: E501
             display_name (str, none_type): Display name. [optional]  # noqa: E501
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             middle_name (str, none_type): Middle name of the person.. [optional]  # noqa: E501
@@ -346,6 +349,7 @@ class Customer(ModelNormal):
             display_id (str, none_type): Display ID. [optional]  # noqa: E501
             display_name (str, none_type): Display name. [optional]  # noqa: E501
             company_name (str, none_type): The name of the company.. [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             title (str, none_type): The job title of the person.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             middle_name (str, none_type): Middle name of the person.. [optional]  # noqa: E501

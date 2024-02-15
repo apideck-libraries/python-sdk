@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **type** | **str, none_type** | Invoice type | [optional] 
 **number** | **str, none_type** | Invoice number. | [optional] 
 **customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+**company_id** | **str, none_type** | The company or subsidiary id the transaction belongs to | [optional] 
 **invoice_date** | **date, none_type** | Date invoice was issued - YYYY-MM-DD. | [optional] 
 **due_date** | **date, none_type** | The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD. | [optional] 
 **terms** | **str, none_type** | Terms of payment. | [optional] 

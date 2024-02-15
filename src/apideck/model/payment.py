@@ -119,6 +119,7 @@ class Payment(ModelNormal):
             'account': (LinkedLedgerAccount,),  # noqa: E501
             'customer': (LinkedCustomer,),  # noqa: E501
             'supplier': (LinkedSupplier,),  # noqa: E501
+            'company_id': (str, none_type,),  # noqa: E501
             'reconciled': (bool,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
@@ -154,6 +155,7 @@ class Payment(ModelNormal):
         'account': 'account',  # noqa: E501
         'customer': 'customer',  # noqa: E501
         'supplier': 'supplier',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
         'reconciled': 'reconciled',  # noqa: E501
         'status': 'status',  # noqa: E501
         'type': 'type',  # noqa: E501
@@ -233,6 +235,7 @@ class Payment(ModelNormal):
             account (LinkedLedgerAccount): [optional]  # noqa: E501
             customer (LinkedCustomer): [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             reconciled (bool): Payment has been reconciled. [optional]  # noqa: E501
             status (str): Status of payment. [optional]  # noqa: E501
             type (str): Type of payment. [optional]  # noqa: E501
@@ -344,6 +347,7 @@ class Payment(ModelNormal):
             account (LinkedLedgerAccount): [optional]  # noqa: E501
             customer (LinkedCustomer): [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             reconciled (bool): Payment has been reconciled. [optional]  # noqa: E501
             status (str): Status of payment. [optional]  # noqa: E501
             type (str): Type of payment. [optional]  # noqa: E501

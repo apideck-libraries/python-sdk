@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **total_amount** | **float** | Amount of transaction | 
 **number** | **str, none_type** | Credit note number. | [optional] 
 **customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+**company_id** | **str, none_type** | The company or subsidiary id the transaction belongs to | [optional] 
 **currency** | [**Currency**](Currency.md) |  | [optional] 
 **currency_rate** | **float, none_type** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **tax_inclusive** | **bool, none_type** | Amounts are including tax | [optional] 

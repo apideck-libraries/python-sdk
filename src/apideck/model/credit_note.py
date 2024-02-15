@@ -101,6 +101,7 @@ class CreditNote(ModelNormal):
             'total_amount': (float,),  # noqa: E501
             'number': (str, none_type,),  # noqa: E501
             'customer': (LinkedCustomer,),  # noqa: E501
+            'company_id': (str, none_type,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
             'currency_rate': (float, none_type,),  # noqa: E501
             'tax_inclusive': (bool, none_type,),  # noqa: E501
@@ -137,6 +138,7 @@ class CreditNote(ModelNormal):
         'total_amount': 'total_amount',  # noqa: E501
         'number': 'number',  # noqa: E501
         'customer': 'customer',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
         'currency': 'currency',  # noqa: E501
         'currency_rate': 'currency_rate',  # noqa: E501
         'tax_inclusive': 'tax_inclusive',  # noqa: E501
@@ -216,6 +218,7 @@ class CreditNote(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             number (str, none_type): Credit note number.. [optional]  # noqa: E501
             customer (LinkedCustomer): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             tax_inclusive (bool, none_type): Amounts are including tax. [optional]  # noqa: E501
@@ -327,6 +330,7 @@ class CreditNote(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             number (str, none_type): Credit note number.. [optional]  # noqa: E501
             customer (LinkedCustomer): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             tax_inclusive (bool, none_type): Amounts are including tax. [optional]  # noqa: E501

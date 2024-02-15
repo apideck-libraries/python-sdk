@@ -103,6 +103,7 @@ class Bill(ModelNormal):
             'downstream_id': (str, none_type,),  # noqa: E501
             'bill_number': (str, none_type,),  # noqa: E501
             'supplier': (LinkedSupplier,),  # noqa: E501
+            'company_id': (str, none_type,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
             'currency_rate': (float, none_type,),  # noqa: E501
             'tax_inclusive': (bool, none_type,),  # noqa: E501
@@ -146,6 +147,7 @@ class Bill(ModelNormal):
         'downstream_id': 'downstream_id',  # noqa: E501
         'bill_number': 'bill_number',  # noqa: E501
         'supplier': 'supplier',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
         'currency': 'currency',  # noqa: E501
         'currency_rate': 'currency_rate',  # noqa: E501
         'tax_inclusive': 'tax_inclusive',  # noqa: E501
@@ -231,6 +233,7 @@ class Bill(ModelNormal):
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
             bill_number (str, none_type): Reference to supplier bill number. [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             tax_inclusive (bool, none_type): Amounts are including tax. [optional]  # noqa: E501
@@ -347,6 +350,7 @@ class Bill(ModelNormal):
             downstream_id (str, none_type): The third-party API ID of original entity. [optional]  # noqa: E501
             bill_number (str, none_type): Reference to supplier bill number. [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             tax_inclusive (bool, none_type): Amounts are including tax. [optional]  # noqa: E501

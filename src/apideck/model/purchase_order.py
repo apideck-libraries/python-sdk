@@ -104,6 +104,7 @@ class PurchaseOrder(ModelNormal):
             'po_number': (str, none_type,),  # noqa: E501
             'reference': (str, none_type,),  # noqa: E501
             'supplier': (LinkedSupplier,),  # noqa: E501
+            'company_id': (str, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
             'issued_date': (date, none_type,),  # noqa: E501
             'delivery_date': (date, none_type,),  # noqa: E501
@@ -145,6 +146,7 @@ class PurchaseOrder(ModelNormal):
         'po_number': 'po_number',  # noqa: E501
         'reference': 'reference',  # noqa: E501
         'supplier': 'supplier',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
         'status': 'status',  # noqa: E501
         'issued_date': 'issued_date',  # noqa: E501
         'delivery_date': 'delivery_date',  # noqa: E501
@@ -228,6 +230,7 @@ class PurchaseOrder(ModelNormal):
             po_number (str, none_type): A PO Number uniquely identifies a purchase order and is generally defined by the buyer.. [optional]  # noqa: E501
             reference (str, none_type): Optional purchase order reference.. [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             status (str, none_type): [optional]  # noqa: E501
             issued_date (date, none_type): Date purchase order was issued - YYYY-MM-DD.. [optional]  # noqa: E501
             delivery_date (date, none_type): The date on which the purchase order is to be delivered - YYYY-MM-DD.. [optional]  # noqa: E501
@@ -342,6 +345,7 @@ class PurchaseOrder(ModelNormal):
             po_number (str, none_type): A PO Number uniquely identifies a purchase order and is generally defined by the buyer.. [optional]  # noqa: E501
             reference (str, none_type): Optional purchase order reference.. [optional]  # noqa: E501
             supplier (LinkedSupplier): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             status (str, none_type): [optional]  # noqa: E501
             issued_date (date, none_type): Date purchase order was issued - YYYY-MM-DD.. [optional]  # noqa: E501
             delivery_date (date, none_type): The date on which the purchase order is to be delivered - YYYY-MM-DD.. [optional]  # noqa: E501

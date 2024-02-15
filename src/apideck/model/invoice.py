@@ -117,6 +117,7 @@ class Invoice(ModelNormal):
             'type': (str, none_type,),  # noqa: E501
             'number': (str, none_type,),  # noqa: E501
             'customer': (LinkedCustomer,),  # noqa: E501
+            'company_id': (str, none_type,),  # noqa: E501
             'invoice_date': (date, none_type,),  # noqa: E501
             'due_date': (date, none_type,),  # noqa: E501
             'terms': (str, none_type,),  # noqa: E501
@@ -167,6 +168,7 @@ class Invoice(ModelNormal):
         'type': 'type',  # noqa: E501
         'number': 'number',  # noqa: E501
         'customer': 'customer',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
         'invoice_date': 'invoice_date',  # noqa: E501
         'due_date': 'due_date',  # noqa: E501
         'terms': 'terms',  # noqa: E501
@@ -259,6 +261,7 @@ class Invoice(ModelNormal):
             type (str, none_type): Invoice type. [optional]  # noqa: E501
             number (str, none_type): Invoice number.. [optional]  # noqa: E501
             customer (LinkedCustomer): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             invoice_date (date, none_type): Date invoice was issued - YYYY-MM-DD.. [optional]  # noqa: E501
             due_date (date, none_type): The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD.. [optional]  # noqa: E501
             terms (str, none_type): Terms of payment.. [optional]  # noqa: E501
@@ -382,6 +385,7 @@ class Invoice(ModelNormal):
             type (str, none_type): Invoice type. [optional]  # noqa: E501
             number (str, none_type): Invoice number.. [optional]  # noqa: E501
             customer (LinkedCustomer): [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             invoice_date (date, none_type): Date invoice was issued - YYYY-MM-DD.. [optional]  # noqa: E501
             due_date (date, none_type): The invoice due date is the date on which a payment or invoice is scheduled to be received by the seller - YYYY-MM-DD.. [optional]  # noqa: E501
             terms (str, none_type): Terms of payment.. [optional]  # noqa: E501

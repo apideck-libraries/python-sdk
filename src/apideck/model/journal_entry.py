@@ -182,7 +182,7 @@ class JournalEntry(ModelNormal):
             title (str, none_type): Journal entry title. [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            company_id (str, none_type): The company or subsidiary the journal entry belongs to. [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             line_items ([JournalEntryLineItem]): Requires a minimum of 2 line items that sum to 0. [optional]  # noqa: E501
             memo (str, none_type): Reference for the journal entry.. [optional]  # noqa: E501
             posted_at (datetime): This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated.. [optional]  # noqa: E501
@@ -281,7 +281,7 @@ class JournalEntry(ModelNormal):
             title (str, none_type): Journal entry title. [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
-            company_id (str, none_type): The company or subsidiary the journal entry belongs to. [optional]  # noqa: E501
+            company_id (str, none_type): The company or subsidiary id the transaction belongs to. [optional]  # noqa: E501
             line_items ([JournalEntryLineItem]): Requires a minimum of 2 line items that sum to 0. [optional]  # noqa: E501
             memo (str, none_type): Reference for the journal entry.. [optional]  # noqa: E501
             posted_at (datetime): This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated.. [optional]  # noqa: E501
