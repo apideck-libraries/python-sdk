@@ -885,6 +885,8 @@ _VaultApi_ | [**connections_import**](docs/apis/VaultApi.md#connections_import) 
 
 _VaultApi_ | [**connections_one**](docs/apis/VaultApi.md#connections_one) | **GET** /vault/connections/{unified_api}/{service_id} | Get connection |
 
+_VaultApi_ | [**connections_token**](docs/apis/VaultApi.md#connections_token) | **POST** /vault/connections/{unified_api}/{service_id}/token | Authorize Access Token |
+
 _VaultApi_ | [**connections_update**](docs/apis/VaultApi.md#connections_update) | **PATCH** /vault/connections/{unified_api}/{service_id} | Update connection |
 
 _VaultApi_ | [**consumer_request_counts_all**](docs/apis/VaultApi.md#consumer_request_counts_all) | **GET** /vault/consumers/{consumer_id}/stats | Consumer request counts |
