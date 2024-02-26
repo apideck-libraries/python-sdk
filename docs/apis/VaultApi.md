@@ -1594,6 +1594,7 @@ with apideck.ApiClient(configuration) as api_client:
     resource = "leads" # str | Name of the resource (plural)
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    resource_id = "1234" # str | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1607,7 +1608,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get resource custom fields
-        api_response = api_instance.custom_fields_all(unified_api, service_id, resource, consumer_id=consumer_id, app_id=app_id)
+        api_response = api_instance.custom_fields_all(unified_api, service_id, resource, consumer_id=consumer_id, app_id=app_id, resource_id=resource_id)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling VaultApi->custom_fields_all: %s\n" % e)
@@ -1623,6 +1624,7 @@ Name | Type | Description  | Notes
  **resource** | **str**| Name of the resource (plural) |
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
+ **resource_id** | **str**| This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. | [optional]
 
 ### Return type
 

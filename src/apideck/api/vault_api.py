@@ -1015,6 +1015,7 @@ class VaultApi(object):
                     'resource',
                     'consumer_id',
                     'app_id',
+                    'resource_id',
                 ],
                 'required': [
                     'unified_api',
@@ -1044,6 +1045,8 @@ class VaultApi(object):
                         (str,),
                     'app_id':
                         (str,),
+                    'resource_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'unified_api': 'unified_api',
@@ -1051,6 +1054,7 @@ class VaultApi(object):
                     'resource': 'resource',
                     'consumer_id': 'x-apideck-consumer-id',
                     'app_id': 'x-apideck-app-id',
+                    'resource_id': 'resource_id',
                 },
                 'location_map': {
                     'unified_api': 'path',
@@ -1058,6 +1062,7 @@ class VaultApi(object):
                     'resource': 'path',
                     'consumer_id': 'header',
                     'app_id': 'header',
+                    'resource_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2400,6 +2405,7 @@ class VaultApi(object):
         Keyword Args:
             consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
             app_id (str): The ID of your Unify application. [optional]
+            resource_id (str): This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
