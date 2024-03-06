@@ -257,6 +257,7 @@ from apideck.model.employee_manager import EmployeeManager
 from apideck.model.employee_payroll import EmployeePayroll
 from apideck.model.employee_schedules import EmployeeSchedules
 from apideck.model.employees_filter import EmployeesFilter
+from apideck.model.employees_one_filter import EmployeesOneFilter
 from apideck.model.employees_sort import EmployeesSort
 from apideck.model.employment_status import EmploymentStatus
 from apideck.model.error import Error

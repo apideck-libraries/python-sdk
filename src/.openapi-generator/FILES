@@ -279,6 +279,7 @@ apideck/model/employee_manager.py
 apideck/model/employee_payroll.py
 apideck/model/employee_schedules.py
 apideck/model/employees_filter.py
+apideck/model/employees_one_filter.py
 apideck/model/employees_sort.py
 apideck/model/employment_status.py
 apideck/model/error.py
@@ -937,6 +938,7 @@ docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeeSchedules.md
 docs/EmployeesFilter.md
+docs/EmployeesOneFilter.md
 docs/EmployeesSort.md
 docs/EmploymentStatus.md
 docs/Error.md
@@ -1606,6 +1608,7 @@ test/test_employee_manager.py
 test/test_employee_payroll.py
 test/test_employee_schedules.py
 test/test_employees_filter.py
+test/test_employees_one_filter.py
 test/test_employees_sort.py
 test/test_employment_status.py
 test/test_error.py

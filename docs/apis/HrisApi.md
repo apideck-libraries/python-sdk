@@ -2140,6 +2140,7 @@ Get Employee
 import time
 import apideck
 from apideck.api import hris_api
+from apideck.model.employees_one_filter import EmployeesOneFilter
 from apideck.model.get_employee_response import GetEmployeeResponse
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
@@ -2175,6 +2176,9 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+    filter = EmployeesOneFilter(
+        company_id="1234",
+    ) # EmployeesOneFilter | Apply filters (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -2188,7 +2192,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Employee
-        api_response = api_instance.employees_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
+        api_response = api_instance.employees_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields, filter=filter)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->employees_one: %s\n" % e)
@@ -2205,6 +2209,7 @@ Name | Type | Description  | Notes
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
  **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+ **filter** | **EmployeesOneFilter**| Apply filters | [optional]
 
 ### Return type
 
