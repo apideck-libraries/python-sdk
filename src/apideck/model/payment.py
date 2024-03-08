@@ -31,11 +31,13 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.currency import Currency
+    from apideck.model.custom_field import CustomField
     from apideck.model.linked_customer import LinkedCustomer
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
     from apideck.model.linked_supplier import LinkedSupplier
     from apideck.model.payment_allocations import PaymentAllocations
     globals()['Currency'] = Currency
+    globals()['CustomField'] = CustomField
     globals()['LinkedCustomer'] = LinkedCustomer
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
     globals()['LinkedSupplier'] = LinkedSupplier
@@ -125,6 +127,8 @@ class Payment(ModelNormal):
             'type': (str,),  # noqa: E501
             'allocations': ([PaymentAllocations],),  # noqa: E501
             'note': (str, none_type,),  # noqa: E501
+            'number': (str, none_type,),  # noqa: E501
+            'custom_fields': ([CustomField],),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'display_id': (str, none_type,),  # noqa: E501
             'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
@@ -161,6 +165,8 @@ class Payment(ModelNormal):
         'type': 'type',  # noqa: E501
         'allocations': 'allocations',  # noqa: E501
         'note': 'note',  # noqa: E501
+        'number': 'number',  # noqa: E501
+        'custom_fields': 'custom_fields',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'display_id': 'display_id',  # noqa: E501
         'custom_mappings': 'custom_mappings',  # noqa: E501
@@ -241,6 +247,8 @@ class Payment(ModelNormal):
             type (str): Type of payment. [optional]  # noqa: E501
             allocations ([PaymentAllocations]): [optional]  # noqa: E501
             note (str, none_type): Optional note to be associated with the payment.. [optional]  # noqa: E501
+            number (str, none_type): Payment number.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             display_id (str, none_type): Payment id to be displayed.. [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
@@ -353,6 +361,8 @@ class Payment(ModelNormal):
             type (str): Type of payment. [optional]  # noqa: E501
             allocations ([PaymentAllocations]): [optional]  # noqa: E501
             note (str, none_type): Optional note to be associated with the payment.. [optional]  # noqa: E501
+            number (str, none_type): Payment number.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             display_id (str, none_type): Payment id to be displayed.. [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501

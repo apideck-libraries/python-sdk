@@ -13,11 +13,13 @@ import unittest
 
 import apideck
 from apideck.model.currency import Currency
+from apideck.model.custom_field import CustomField
 from apideck.model.linked_customer import LinkedCustomer
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_supplier import LinkedSupplier
 from apideck.model.payment_allocations import PaymentAllocations
 globals()['Currency'] = Currency
+globals()['CustomField'] = CustomField
 globals()['LinkedCustomer'] = LinkedCustomer
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
 globals()['LinkedSupplier'] = LinkedSupplier

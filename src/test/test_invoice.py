@@ -15,6 +15,7 @@ import apideck
 from apideck.model.address import Address
 from apideck.model.bank_account import BankAccount
 from apideck.model.currency import Currency
+from apideck.model.custom_field import CustomField
 from apideck.model.invoice_line_item import InvoiceLineItem
 from apideck.model.linked_customer import LinkedCustomer
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
@@ -22,6 +23,7 @@ from apideck.model.linked_tracking_category import LinkedTrackingCategory
 globals()['Address'] = Address
 globals()['BankAccount'] = BankAccount
 globals()['Currency'] = Currency
+globals()['CustomField'] = CustomField
 globals()['InvoiceLineItem'] = InvoiceLineItem
 globals()['LinkedCustomer'] = LinkedCustomer
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount

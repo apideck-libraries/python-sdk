@@ -33,6 +33,7 @@ def lazy_import():
     from apideck.model.address import Address
     from apideck.model.bank_account import BankAccount
     from apideck.model.currency import Currency
+    from apideck.model.custom_field import CustomField
     from apideck.model.invoice_line_item import InvoiceLineItem
     from apideck.model.linked_customer import LinkedCustomer
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
@@ -40,6 +41,7 @@ def lazy_import():
     globals()['Address'] = Address
     globals()['BankAccount'] = BankAccount
     globals()['Currency'] = Currency
+    globals()['CustomField'] = CustomField
     globals()['InvoiceLineItem'] = InvoiceLineItem
     globals()['LinkedCustomer'] = LinkedCustomer
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
@@ -150,6 +152,7 @@ class Invoice(ModelNormal):
             'bank_account': (BankAccount,),  # noqa: E501
             'ledger_account': (LinkedLedgerAccount,),  # noqa: E501
             'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_fields': ([CustomField],),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -201,6 +204,7 @@ class Invoice(ModelNormal):
         'bank_account': 'bank_account',  # noqa: E501
         'ledger_account': 'ledger_account',  # noqa: E501
         'custom_mappings': 'custom_mappings',  # noqa: E501
+        'custom_fields': 'custom_fields',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -294,6 +298,7 @@ class Invoice(ModelNormal):
             bank_account (BankAccount): [optional]  # noqa: E501
             ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -418,6 +423,7 @@ class Invoice(ModelNormal):
             bank_account (BankAccount): [optional]  # noqa: E501
             ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
