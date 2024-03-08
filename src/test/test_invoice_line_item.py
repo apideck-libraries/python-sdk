@@ -12,9 +12,11 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_field import CustomField
 from apideck.model.linked_invoice_item import LinkedInvoiceItem
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_tax_rate import LinkedTaxRate
+globals()['CustomField'] = CustomField
 globals()['LinkedInvoiceItem'] = LinkedInvoiceItem
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
 globals()['LinkedTaxRate'] = LinkedTaxRate

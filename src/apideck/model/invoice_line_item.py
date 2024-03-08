@@ -30,9 +30,11 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.custom_field import CustomField
     from apideck.model.linked_invoice_item import LinkedInvoiceItem
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
     from apideck.model.linked_tax_rate import LinkedTaxRate
+    globals()['CustomField'] = CustomField
     globals()['LinkedInvoiceItem'] = LinkedInvoiceItem
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
     globals()['LinkedTaxRate'] = LinkedTaxRate
@@ -110,6 +112,7 @@ class InvoiceLineItem(ModelNormal):
             'item': (LinkedInvoiceItem,),  # noqa: E501
             'tax_rate': (LinkedTaxRate,),  # noqa: E501
             'ledger_account': (LinkedLedgerAccount,),  # noqa: E501
+            'custom_fields': ([CustomField],),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -141,6 +144,7 @@ class InvoiceLineItem(ModelNormal):
         'item': 'item',  # noqa: E501
         'tax_rate': 'tax_rate',  # noqa: E501
         'ledger_account': 'ledger_account',  # noqa: E501
+        'custom_fields': 'custom_fields',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -212,6 +216,7 @@ class InvoiceLineItem(ModelNormal):
             item (LinkedInvoiceItem): [optional]  # noqa: E501
             tax_rate (LinkedTaxRate): [optional]  # noqa: E501
             ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -316,6 +321,7 @@ class InvoiceLineItem(ModelNormal):
             item (LinkedInvoiceItem): [optional]  # noqa: E501
             tax_rate (LinkedTaxRate): [optional]  # noqa: E501
             ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

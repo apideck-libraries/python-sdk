@@ -1151,6 +1151,14 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_fields=[
+                    CustomField(
+                        id="2389328923893298",
+                        name="employee_level",
+                        description="Employee Level",
+                        value=None,
+                    ),
+                ],
                 row_version="1-12345",
             ),
         ],
@@ -1211,6 +1219,14 @@ with apideck.ApiClient(configuration) as api_client:
             notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
     ) # CreditNote | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
@@ -1711,6 +1727,14 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_fields=[
+                    CustomField(
+                        id="2389328923893298",
+                        name="employee_level",
+                        description="Employee Level",
+                        value=None,
+                    ),
+                ],
                 row_version="1-12345",
             ),
         ],
@@ -1771,6 +1795,14 @@ with apideck.ApiClient(configuration) as api_client:
             notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
     ) # CreditNote | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -3907,6 +3939,14 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_fields=[
+                    CustomField(
+                        id="2389328923893298",
+                        name="employee_level",
+                        description="Employee Level",
+                        value=None,
+                    ),
+                ],
                 row_version="1-12345",
             ),
         ],
@@ -4499,6 +4539,14 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_fields=[
+                    CustomField(
+                        id="2389328923893298",
+                        name="employee_level",
+                        description="Employee Level",
+                        value=None,
+                    ),
+                ],
                 row_version="1-12345",
             ),
         ],
@@ -7438,6 +7486,14 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_fields=[
+                    CustomField(
+                        id="2389328923893298",
+                        name="employee_level",
+                        description="Employee Level",
+                        value=None,
+                    ),
+                ],
                 row_version="1-12345",
             ),
         ],
@@ -8006,6 +8062,14 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                custom_fields=[
+                    CustomField(
+                        id="2389328923893298",
+                        name="employee_level",
+                        description="Employee Level",
+                        value=None,
+                    ),
+                ],
                 row_version="1-12345",
             ),
         ],
