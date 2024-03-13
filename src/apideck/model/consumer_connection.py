@@ -31,7 +31,9 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.auth_type import AuthType
+    from apideck.model.connection_state import ConnectionState
     globals()['AuthType'] = AuthType
+    globals()['ConnectionState'] = ConnectionState
 
 
 class ConsumerConnection(ModelNormal):
@@ -59,13 +61,6 @@ class ConsumerConnection(ModelNormal):
     """
 
     allowed_values = {
-        ('state',): {
-            'AVAILABLE': "available",
-            'CALLABLE': "callable",
-            'ADDED': "added",
-            'CONFIGURED': "configured",
-            'AUTHORIZED': "authorized",
-        },
     }
 
     validations = {
@@ -109,7 +104,7 @@ class ConsumerConnection(ModelNormal):
             'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'created_at': (str,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
-            'state': (str,),  # noqa: E501
+            'state': (ConnectionState,),  # noqa: E501
         }
 
     @cached_property
@@ -195,7 +190,7 @@ class ConsumerConnection(ModelNormal):
             metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): Attach your own consumer specific metadata. [optional]  # noqa: E501
             created_at (str): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            state (str): [optional]  # noqa: E501
+            state (ConnectionState): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -292,7 +287,7 @@ class ConsumerConnection(ModelNormal):
             metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): Attach your own consumer specific metadata. [optional]  # noqa: E501
             created_at (str): [optional]  # noqa: E501
             updated_at (str, none_type): [optional]  # noqa: E501
-            state (str): [optional]  # noqa: E501
+            state (ConnectionState): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

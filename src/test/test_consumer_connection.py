@@ -13,7 +13,9 @@ import unittest
 
 import apideck
 from apideck.model.auth_type import AuthType
+from apideck.model.connection_state import ConnectionState
 globals()['AuthType'] = AuthType
+globals()['ConnectionState'] = ConnectionState
 from apideck.model.consumer_connection import ConsumerConnection
 
 
