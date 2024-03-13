@@ -5433,7 +5433,50 @@ configuration.api_key['apiKey'] = 'YOUR_API_KEY'
 with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
-    ledger_account = LedgerAccount() # LedgerAccount | 
+    ledger_account = LedgerAccount(
+        display_id="1-12345",
+        nominal_code="N091",
+        code="453",
+        classification="asset",
+        type="bank",
+        sub_type="CHECKING_ACCOUNT",
+        name="Bank account",
+        fully_qualified_name="Asset.Bank.Checking_Account",
+        description="Main checking account",
+        opening_balance=75000,
+        current_balance=20000,
+        currency=Currency("USD"),
+        tax_type="NONE",
+        tax_rate=LinkedTaxRate(
+            id="123456",
+            rate=10,
+        ),
+        level=1,
+        active=True,
+        status="active",
+        header=True,
+        bank_account=BankAccount(
+            bank_name="Monzo",
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            routing_number="012345678",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
+        parent_account=LedgerAccountParentAccount(
+            id="12345",
+            name="Bank Accounts",
+            display_id="1-1100",
+        ),
+        sub_account=False,
+        last_reconciliation_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        row_version="1-12345",
+    ) # LedgerAccount | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -5875,7 +5918,50 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
-    ledger_account = LedgerAccount() # LedgerAccount | 
+    ledger_account = LedgerAccount(
+        display_id="1-12345",
+        nominal_code="N091",
+        code="453",
+        classification="asset",
+        type="bank",
+        sub_type="CHECKING_ACCOUNT",
+        name="Bank account",
+        fully_qualified_name="Asset.Bank.Checking_Account",
+        description="Main checking account",
+        opening_balance=75000,
+        current_balance=20000,
+        currency=Currency("USD"),
+        tax_type="NONE",
+        tax_rate=LinkedTaxRate(
+            id="123456",
+            rate=10,
+        ),
+        level=1,
+        active=True,
+        status="active",
+        header=True,
+        bank_account=BankAccount(
+            bank_name="Monzo",
+            account_number="123465",
+            account_name="SPACEX LLC",
+            account_type="credit_card",
+            iban="CH2989144532982975332",
+            bic="AUDSCHGGXXX",
+            routing_number="012345678",
+            bsb_number="062-001",
+            branch_identifier="001",
+            bank_code="BNH",
+            currency=Currency("USD"),
+        ),
+        parent_account=LedgerAccountParentAccount(
+            id="12345",
+            name="Bank Accounts",
+            display_id="1-1100",
+        ),
+        sub_account=False,
+        last_reconciliation_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        row_version="1-12345",
+    ) # LedgerAccount | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
