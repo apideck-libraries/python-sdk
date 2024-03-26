@@ -808,10 +808,10 @@ class Endpoint(object):
         Example:
 
         api_instance = AccountingApi()
-        api_instance.balance_sheet_one  # this is an instance of the class Endpoint
-        api_instance.balance_sheet_one()  # this invokes api_instance.balance_sheet_one.__call__()
+        api_instance.attachments_all  # this is an instance of the class Endpoint
+        api_instance.attachments_all()  # this invokes api_instance.attachments_all.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.balance_sheet_one.callable or self.callable in this class
+        api_instance.attachments_all.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

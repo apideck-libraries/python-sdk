@@ -23,6 +23,41 @@ class TestAccountingApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_attachments_all(self):
+        """Test case for attachments_all
+
+        List Attachments  # noqa: E501
+        """
+        pass
+
+    def test_attachments_delete(self):
+        """Test case for attachments_delete
+
+        Delete Attachment  # noqa: E501
+        """
+        pass
+
+    def test_attachments_download(self):
+        """Test case for attachments_download
+
+        Download Attachment  # noqa: E501
+        """
+        pass
+
+    def test_attachments_one(self):
+        """Test case for attachments_one
+
+        Get Attachment  # noqa: E501
+        """
+        pass
+
+    def test_attachments_upload(self):
+        """Test case for attachments_upload
+
+        Upload attachment  # noqa: E501
+        """
+        pass
+
     def test_balance_sheet_one(self):
         """Test case for balance_sheet_one
 

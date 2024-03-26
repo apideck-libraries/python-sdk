@@ -180,6 +180,7 @@ from apideck.model.accounting_department import AccountingDepartment
 from apideck.model.accounting_departments_filter import AccountingDepartmentsFilter
 from apideck.model.accounting_location import AccountingLocation
 from apideck.model.accounting_locations_filter import AccountingLocationsFilter
+from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
@@ -187,6 +188,8 @@ from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
 from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
+from apideck.model.create_attachment_request import CreateAttachmentRequest
+from apideck.model.create_attachment_response import CreateAttachmentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
@@ -207,6 +210,7 @@ from apideck.model.customers_filter import CustomersFilter
 from apideck.model.customers_sort import CustomersSort
 from apideck.model.delete_accounting_department_response import DeleteAccountingDepartmentResponse
 from apideck.model.delete_accounting_location_response import DeleteAccountingLocationResponse
+from apideck.model.delete_attachment_response import DeleteAttachmentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
@@ -222,6 +226,8 @@ from apideck.model.get_accounting_department_response import GetAccountingDepart
 from apideck.model.get_accounting_departments_response import GetAccountingDepartmentsResponse
 from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
 from apideck.model.get_accounting_locations_response import GetAccountingLocationsResponse
+from apideck.model.get_attachment_response import GetAttachmentResponse
+from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
@@ -315,22 +321,22 @@ configuration.api_key['apiKey'] = 'YOUR_API_KEY'
 with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
-    x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    reference_type = AttachmentReferenceType("invoice") # AttachmentReferenceType | The reference type of the document.
+reference_id = "123456" # str | The reference id of the object to retrieve.
+raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) (default to False)
+x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
 x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 x_apideck_service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
-filter = BalanceSheetFilter(
-        start_date="2021-01-01",
-        end_date="2021-12-31",
-    ) # BalanceSheetFilter | Apply filters (optional)
-raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) (default to False)
+cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) (default to 20)
+fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     try:
-        # Get BalanceSheet
-        api_response = api_instance.balance_sheet_one(x_apideck_consumer_id=x_apideck_consumer_id, x_apideck_app_id=x_apideck_app_id, x_apideck_service_id=x_apideck_service_id, pass_through=pass_through, filter=filter, raw=raw)
+        # List Attachments
+        api_response = api_instance.attachments_all(reference_type, reference_id, raw=raw, x_apideck_consumer_id=x_apideck_consumer_id, x_apideck_app_id=x_apideck_app_id, x_apideck_service_id=x_apideck_service_id, cursor=cursor, limit=limit, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
-        print("Exception when calling AccountingApi->balance_sheet_one: %s\n" % e)
+        print("Exception when calling AccountingApi->attachments_all: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -339,7 +345,17 @@ All URIs are relative to _https://unify.apideck.com_
 
 | Class                                                             | Method                                                                         | HTTP request                | Description |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------- | ----------- |
-| _AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
+| _AccountingApi_ | [**attachments_all**](docs/apis/AccountingApi.md#attachments_all) | **GET** /accounting/attachments/{reference_type}/{reference_id} | List Attachments |
+
+_AccountingApi_ | [**attachments_delete**](docs/apis/AccountingApi.md#attachments_delete) | **DELETE** /accounting/attachments/{reference_type}/{reference_id}/{id} | Delete Attachment |
+
+_AccountingApi_ | [**attachments_download**](docs/apis/AccountingApi.md#attachments_download) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment |
+
+_AccountingApi_ | [**attachments_one**](docs/apis/AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment |
+
+_AccountingApi_ | [**attachments_upload**](docs/apis/AccountingApi.md#attachments_upload) | **POST** /accounting/attachments/{reference_type}/{reference_id} | Upload attachment |
+
+_AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
 
 _AccountingApi_ | [**bills_add**](docs/apis/AccountingApi.md#bills_add) | **POST** /accounting/bills | Create Bill |
 
@@ -951,6 +967,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Assignee](docs/models/Assignee.md)
  - [AtsActivity](docs/models/AtsActivity.md)
  - [AtsEventType](docs/models/AtsEventType.md)
+ - [Attachment](docs/models/Attachment.md)
+ - [AttachmentReference](docs/models/AttachmentReference.md)
+ - [AttachmentReferenceType](docs/models/AttachmentReferenceType.md)
  - [AuthType](docs/models/AuthType.md)
  - [BadRequestResponse](docs/models/BadRequestResponse.md)
  - [BalanceSheet](docs/models/BalanceSheet.md)
@@ -1018,6 +1037,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateActivityResponse](docs/models/CreateActivityResponse.md)
  - [CreateApplicantResponse](docs/models/CreateApplicantResponse.md)
  - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
+ - [CreateAttachmentRequest](docs/models/CreateAttachmentRequest.md)
+ - [CreateAttachmentResponse](docs/models/CreateAttachmentResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
@@ -1091,6 +1112,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
  - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
+ - [DeleteAttachmentResponse](docs/models/DeleteAttachmentResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
@@ -1203,6 +1225,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetApplicantsResponse](docs/models/GetApplicantsResponse.md)
  - [GetApplicationResponse](docs/models/GetApplicationResponse.md)
  - [GetApplicationsResponse](docs/models/GetApplicationsResponse.md)
+ - [GetAttachmentResponse](docs/models/GetAttachmentResponse.md)
+ - [GetAttachmentsResponse](docs/models/GetAttachmentsResponse.md)
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
  - [GetBillsResponse](docs/models/GetBillsResponse.md)

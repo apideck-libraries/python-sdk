@@ -37,6 +37,9 @@ from apideck.model.application_stage import ApplicationStage
 from apideck.model.assignee import Assignee
 from apideck.model.ats_activity import AtsActivity
 from apideck.model.ats_event_type import AtsEventType
+from apideck.model.attachment import Attachment
+from apideck.model.attachment_reference import AttachmentReference
+from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.auth_type import AuthType
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet import BalanceSheet
@@ -104,6 +107,8 @@ from apideck.model.create_accounting_location_response import CreateAccountingLo
 from apideck.model.create_activity_response import CreateActivityResponse
 from apideck.model.create_applicant_response import CreateApplicantResponse
 from apideck.model.create_application_response import CreateApplicationResponse
+from apideck.model.create_attachment_request import CreateAttachmentRequest
+from apideck.model.create_attachment_response import CreateAttachmentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_comment_response import CreateCommentResponse
 from apideck.model.create_company_response import CreateCompanyResponse
@@ -177,6 +182,7 @@ from apideck.model.delete_accounting_location_response import DeleteAccountingLo
 from apideck.model.delete_activity_response import DeleteActivityResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
 from apideck.model.delete_application_response import DeleteApplicationResponse
+from apideck.model.delete_attachment_response import DeleteAttachmentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_comment_response import DeleteCommentResponse
 from apideck.model.delete_company_response import DeleteCompanyResponse
@@ -289,6 +295,8 @@ from apideck.model.get_applicant_response import GetApplicantResponse
 from apideck.model.get_applicants_response import GetApplicantsResponse
 from apideck.model.get_application_response import GetApplicationResponse
 from apideck.model.get_applications_response import GetApplicationsResponse
+from apideck.model.get_attachment_response import GetAttachmentResponse
+from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
