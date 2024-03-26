@@ -176,11 +176,20 @@ import time
 import apideck
 from pprint import pprint
 from apideck.api import accounting_api
+from apideck.model.accounting_department import AccountingDepartment
+from apideck.model.accounting_departments_filter import AccountingDepartmentsFilter
+from apideck.model.accounting_location import AccountingLocation
+from apideck.model.accounting_locations_filter import AccountingLocationsFilter
+from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
+from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
+from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
+from apideck.model.create_attachment_request import CreateAttachmentRequest
+from apideck.model.create_attachment_response import CreateAttachmentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
@@ -190,6 +199,7 @@ from apideck.model.create_journal_entry_response import CreateJournalEntryRespon
 from apideck.model.create_ledger_account_response import CreateLedgerAccountResponse
 from apideck.model.create_payment_response import CreatePaymentResponse
 from apideck.model.create_purchase_order_response import CreatePurchaseOrderResponse
+from apideck.model.create_subsidiary_response import CreateSubsidiaryResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.credit_note import CreditNote
@@ -198,6 +208,9 @@ from apideck.model.credit_notes_sort import CreditNotesSort
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.customers_sort import CustomersSort
+from apideck.model.delete_accounting_department_response import DeleteAccountingDepartmentResponse
+from apideck.model.delete_accounting_location_response import DeleteAccountingLocationResponse
+from apideck.model.delete_attachment_response import DeleteAttachmentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
@@ -206,8 +219,15 @@ from apideck.model.delete_journal_entry_response import DeleteJournalEntryRespon
 from apideck.model.delete_ledger_account_response import DeleteLedgerAccountResponse
 from apideck.model.delete_payment_response import DeletePaymentResponse
 from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResponse
+from apideck.model.delete_subsidiary_response import DeleteSubsidiaryResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
+from apideck.model.get_accounting_department_response import GetAccountingDepartmentResponse
+from apideck.model.get_accounting_departments_response import GetAccountingDepartmentsResponse
+from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
+from apideck.model.get_accounting_locations_response import GetAccountingLocationsResponse
+from apideck.model.get_attachment_response import GetAttachmentResponse
+from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
@@ -229,6 +249,8 @@ from apideck.model.get_payments_response import GetPaymentsResponse
 from apideck.model.get_profit_and_loss_response import GetProfitAndLossResponse
 from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
 from apideck.model.get_purchase_orders_response import GetPurchaseOrdersResponse
+from apideck.model.get_subsidiaries_response import GetSubsidiariesResponse
+from apideck.model.get_subsidiary_response import GetSubsidiaryResponse
 from apideck.model.get_supplier_response import GetSupplierResponse
 from apideck.model.get_suppliers_response import GetSuppliersResponse
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
@@ -254,6 +276,7 @@ from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
 from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
 from apideck.model.purchase_orders_sort import PurchaseOrdersSort
+from apideck.model.subsidiary import Subsidiary
 from apideck.model.supplier import Supplier
 from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.suppliers_sort import SuppliersSort
@@ -262,6 +285,8 @@ from apideck.model.tax_rates_filter import TaxRatesFilter
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.update_accounting_department_response import UpdateAccountingDepartmentResponse
+from apideck.model.update_accounting_location_response import UpdateAccountingLocationResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
@@ -271,6 +296,7 @@ from apideck.model.update_journal_entry_response import UpdateJournalEntryRespon
 from apideck.model.update_ledger_account_response import UpdateLedgerAccountResponse
 from apideck.model.update_payment_response import UpdatePaymentResponse
 from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResponse
+from apideck.model.update_subsidiary_response import UpdateSubsidiaryResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
 from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
 # Defining the host is optional and defaults to https://unify.apideck.com
@@ -295,22 +321,22 @@ configuration.api_key['apiKey'] = 'YOUR_API_KEY'
 with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
-    x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    reference_type = AttachmentReferenceType("invoice") # AttachmentReferenceType | The reference type of the document.
+reference_id = "123456" # str | The reference id of the object to retrieve.
+raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) (default to False)
+x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
 x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 x_apideck_service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
-filter = BalanceSheetFilter(
-        start_date="2021-01-01",
-        end_date="2021-12-31",
-    ) # BalanceSheetFilter | Apply filters (optional)
-raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) (default to False)
+cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) (default to 20)
+fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     try:
-        # Get BalanceSheet
-        api_response = api_instance.balance_sheet_one(x_apideck_consumer_id=x_apideck_consumer_id, x_apideck_app_id=x_apideck_app_id, x_apideck_service_id=x_apideck_service_id, pass_through=pass_through, filter=filter, raw=raw)
+        # List Attachments
+        api_response = api_instance.attachments_all(reference_type, reference_id, raw=raw, x_apideck_consumer_id=x_apideck_consumer_id, x_apideck_app_id=x_apideck_app_id, x_apideck_service_id=x_apideck_service_id, cursor=cursor, limit=limit, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
-        print("Exception when calling AccountingApi->balance_sheet_one: %s\n" % e)
+        print("Exception when calling AccountingApi->attachments_all: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -319,7 +345,17 @@ All URIs are relative to _https://unify.apideck.com_
 
 | Class                                                             | Method                                                                         | HTTP request                | Description |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------- | ----------- |
-| _AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
+| _AccountingApi_ | [**attachments_all**](docs/apis/AccountingApi.md#attachments_all) | **GET** /accounting/attachments/{reference_type}/{reference_id} | List Attachments |
+
+_AccountingApi_ | [**attachments_delete**](docs/apis/AccountingApi.md#attachments_delete) | **DELETE** /accounting/attachments/{reference_type}/{reference_id}/{id} | Delete Attachment |
+
+_AccountingApi_ | [**attachments_download**](docs/apis/AccountingApi.md#attachments_download) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment |
+
+_AccountingApi_ | [**attachments_one**](docs/apis/AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment |
+
+_AccountingApi_ | [**attachments_upload**](docs/apis/AccountingApi.md#attachments_upload) | **POST** /accounting/attachments/{reference_type}/{reference_id} | Upload attachment |
+
+_AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
 
 _AccountingApi_ | [**bills_add**](docs/apis/AccountingApi.md#bills_add) | **POST** /accounting/bills | Create Bill |
 
@@ -352,6 +388,16 @@ _AccountingApi_ | [**customers_delete**](docs/apis/AccountingApi.md#customers_de
 _AccountingApi_ | [**customers_one**](docs/apis/AccountingApi.md#customers_one) | **GET** /accounting/customers/{id} | Get Customer |
 
 _AccountingApi_ | [**customers_update**](docs/apis/AccountingApi.md#customers_update) | **PATCH** /accounting/customers/{id} | Update Customer |
+
+_AccountingApi_ | [**departments_add**](docs/apis/AccountingApi.md#departments_add) | **POST** /accounting/departments | Create Department |
+
+_AccountingApi_ | [**departments_all**](docs/apis/AccountingApi.md#departments_all) | **GET** /accounting/departments | List Departments |
+
+_AccountingApi_ | [**departments_delete**](docs/apis/AccountingApi.md#departments_delete) | **DELETE** /accounting/departments/{id} | Delete Department |
+
+_AccountingApi_ | [**departments_one**](docs/apis/AccountingApi.md#departments_one) | **GET** /accounting/departments/{id} | Get Department |
+
+_AccountingApi_ | [**departments_update**](docs/apis/AccountingApi.md#departments_update) | **PATCH** /accounting/departments/{id} | Update Department |
 
 _AccountingApi_ | [**invoice_items_add**](docs/apis/AccountingApi.md#invoice_items_add) | **POST** /accounting/invoice-items | Create Invoice Item |
 
@@ -393,6 +439,16 @@ _AccountingApi_ | [**ledger_accounts_one**](docs/apis/AccountingApi.md#ledger_ac
 
 _AccountingApi_ | [**ledger_accounts_update**](docs/apis/AccountingApi.md#ledger_accounts_update) | **PATCH** /accounting/ledger-accounts/{id} | Update Ledger Account |
 
+_AccountingApi_ | [**locations_add**](docs/apis/AccountingApi.md#locations_add) | **POST** /accounting/locations | Create Location |
+
+_AccountingApi_ | [**locations_all**](docs/apis/AccountingApi.md#locations_all) | **GET** /accounting/locations | List Locations |
+
+_AccountingApi_ | [**locations_delete**](docs/apis/AccountingApi.md#locations_delete) | **DELETE** /accounting/locations/{id} | Delete Location |
+
+_AccountingApi_ | [**locations_one**](docs/apis/AccountingApi.md#locations_one) | **GET** /accounting/locations/{id} | Get Location |
+
+_AccountingApi_ | [**locations_update**](docs/apis/AccountingApi.md#locations_update) | **PATCH** /accounting/locations/{id} | Update Location |
+
 _AccountingApi_ | [**payments_add**](docs/apis/AccountingApi.md#payments_add) | **POST** /accounting/payments | Create Payment |
 
 _AccountingApi_ | [**payments_all**](docs/apis/AccountingApi.md#payments_all) | **GET** /accounting/payments | List Payments |
@@ -414,6 +470,16 @@ _AccountingApi_ | [**purchase_orders_delete**](docs/apis/AccountingApi.md#purcha
 _AccountingApi_ | [**purchase_orders_one**](docs/apis/AccountingApi.md#purchase_orders_one) | **GET** /accounting/purchase-orders/{id} | Get Purchase Order |
 
 _AccountingApi_ | [**purchase_orders_update**](docs/apis/AccountingApi.md#purchase_orders_update) | **PATCH** /accounting/purchase-orders/{id} | Update Purchase Order |
+
+_AccountingApi_ | [**subsidiaries_add**](docs/apis/AccountingApi.md#subsidiaries_add) | **POST** /accounting/subsidiaries | Create Subsidiary |
+
+_AccountingApi_ | [**subsidiaries_all**](docs/apis/AccountingApi.md#subsidiaries_all) | **GET** /accounting/subsidiaries | List Subsidiaries |
+
+_AccountingApi_ | [**subsidiaries_delete**](docs/apis/AccountingApi.md#subsidiaries_delete) | **DELETE** /accounting/subsidiaries/{id} | Delete Subsidiary |
+
+_AccountingApi_ | [**subsidiaries_one**](docs/apis/AccountingApi.md#subsidiaries_one) | **GET** /accounting/subsidiaries/{id} | Get Subsidiary |
+
+_AccountingApi_ | [**subsidiaries_update**](docs/apis/AccountingApi.md#subsidiaries_update) | **PATCH** /accounting/subsidiaries/{id} | Update Subsidiary |
 
 _AccountingApi_ | [**suppliers_add**](docs/apis/AccountingApi.md#suppliers_add) | **POST** /accounting/suppliers | Create Supplier |
 
@@ -835,6 +901,8 @@ _VaultApi_ | [**connections_import**](docs/apis/VaultApi.md#connections_import) 
 
 _VaultApi_ | [**connections_one**](docs/apis/VaultApi.md#connections_one) | **GET** /vault/connections/{unified_api}/{service_id} | Get connection |
 
+_VaultApi_ | [**connections_token**](docs/apis/VaultApi.md#connections_token) | **POST** /vault/connections/{unified_api}/{service_id}/token | Authorize Access Token |
+
 _VaultApi_ | [**connections_update**](docs/apis/VaultApi.md#connections_update) | **PATCH** /vault/connections/{unified_api}/{service_id} | Update connection |
 
 _VaultApi_ | [**consumer_request_counts_all**](docs/apis/VaultApi.md#consumer_request_counts_all) | **GET** /vault/consumers/{consumer_id}/stats | Consumer request counts |
@@ -872,7 +940,11 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
 ## Documentation For Models
 
  - [AccountingCustomer](docs/models/AccountingCustomer.md)
+ - [AccountingDepartment](docs/models/AccountingDepartment.md)
+ - [AccountingDepartmentsFilter](docs/models/AccountingDepartmentsFilter.md)
  - [AccountingEventType](docs/models/AccountingEventType.md)
+ - [AccountingLocation](docs/models/AccountingLocation.md)
+ - [AccountingLocationsFilter](docs/models/AccountingLocationsFilter.md)
  - [ActivitiesFilter](docs/models/ActivitiesFilter.md)
  - [ActivitiesSort](docs/models/ActivitiesSort.md)
  - [Activity](docs/models/Activity.md)
@@ -895,6 +967,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Assignee](docs/models/Assignee.md)
  - [AtsActivity](docs/models/AtsActivity.md)
  - [AtsEventType](docs/models/AtsEventType.md)
+ - [Attachment](docs/models/Attachment.md)
+ - [AttachmentReference](docs/models/AttachmentReference.md)
+ - [AttachmentReferenceType](docs/models/AttachmentReferenceType.md)
  - [AuthType](docs/models/AuthType.md)
  - [BadRequestResponse](docs/models/BadRequestResponse.md)
  - [BalanceSheet](docs/models/BalanceSheet.md)
@@ -957,9 +1032,13 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ContactsSort](docs/models/ContactsSort.md)
  - [CopyFolderRequest](docs/models/CopyFolderRequest.md)
  - [Country](docs/models/Country.md)
+ - [CreateAccountingDepartmentResponse](docs/models/CreateAccountingDepartmentResponse.md)
+ - [CreateAccountingLocationResponse](docs/models/CreateAccountingLocationResponse.md)
  - [CreateActivityResponse](docs/models/CreateActivityResponse.md)
  - [CreateApplicantResponse](docs/models/CreateApplicantResponse.md)
  - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
+ - [CreateAttachmentRequest](docs/models/CreateAttachmentRequest.md)
+ - [CreateAttachmentResponse](docs/models/CreateAttachmentResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
@@ -1005,6 +1084,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateSessionResponse](docs/models/CreateSessionResponse.md)
  - [CreateSessionResponseData](docs/models/CreateSessionResponseData.md)
  - [CreateSharedLinkResponse](docs/models/CreateSharedLinkResponse.md)
+ - [CreateSubsidiaryResponse](docs/models/CreateSubsidiaryResponse.md)
  - [CreateSupplierResponse](docs/models/CreateSupplierResponse.md)
  - [CreateTaxRateResponse](docs/models/CreateTaxRateResponse.md)
  - [CreateTenderResponse](docs/models/CreateTenderResponse.md)
@@ -1027,9 +1107,12 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [CustomersSort](docs/models/CustomersSort.md)
  - [Deduction](docs/models/Deduction.md)
+ - [DeleteAccountingDepartmentResponse](docs/models/DeleteAccountingDepartmentResponse.md)
+ - [DeleteAccountingLocationResponse](docs/models/DeleteAccountingLocationResponse.md)
  - [DeleteActivityResponse](docs/models/DeleteActivityResponse.md)
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
  - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
+ - [DeleteAttachmentResponse](docs/models/DeleteAttachmentResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
@@ -1068,6 +1151,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteProductResponse](docs/models/DeleteProductResponse.md)
  - [DeletePurchaseOrderResponse](docs/models/DeletePurchaseOrderResponse.md)
  - [DeleteSharedLinkResponse](docs/models/DeleteSharedLinkResponse.md)
+ - [DeleteSubsidiaryResponse](docs/models/DeleteSubsidiaryResponse.md)
  - [DeleteSupplierResponse](docs/models/DeleteSupplierResponse.md)
  - [DeleteTaxRateResponse](docs/models/DeleteTaxRateResponse.md)
  - [DeleteTenderResponse](docs/models/DeleteTenderResponse.md)
@@ -1109,6 +1193,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [EmployeePayroll](docs/models/EmployeePayroll.md)
  - [EmployeeSchedules](docs/models/EmployeeSchedules.md)
  - [EmployeesFilter](docs/models/EmployeesFilter.md)
+ - [EmployeesOneFilter](docs/models/EmployeesOneFilter.md)
  - [EmployeesSort](docs/models/EmployeesSort.md)
  - [EmploymentStatus](docs/models/EmploymentStatus.md)
  - [Error](docs/models/Error.md)
@@ -1126,6 +1211,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [FormFieldOption](docs/models/FormFieldOption.md)
  - [FormFieldOptionGroup](docs/models/FormFieldOptionGroup.md)
  - [Gender](docs/models/Gender.md)
+ - [GetAccountingDepartmentResponse](docs/models/GetAccountingDepartmentResponse.md)
+ - [GetAccountingDepartmentsResponse](docs/models/GetAccountingDepartmentsResponse.md)
+ - [GetAccountingLocationResponse](docs/models/GetAccountingLocationResponse.md)
+ - [GetAccountingLocationsResponse](docs/models/GetAccountingLocationsResponse.md)
  - [GetActivitiesResponse](docs/models/GetActivitiesResponse.md)
  - [GetActivityResponse](docs/models/GetActivityResponse.md)
  - [GetApiResourceCoverageResponse](docs/models/GetApiResourceCoverageResponse.md)
@@ -1136,6 +1225,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetApplicantsResponse](docs/models/GetApplicantsResponse.md)
  - [GetApplicationResponse](docs/models/GetApplicationResponse.md)
  - [GetApplicationsResponse](docs/models/GetApplicationsResponse.md)
+ - [GetAttachmentResponse](docs/models/GetAttachmentResponse.md)
+ - [GetAttachmentsResponse](docs/models/GetAttachmentsResponse.md)
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
  - [GetBillsResponse](docs/models/GetBillsResponse.md)
@@ -1243,6 +1334,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetSharedLinksResponse](docs/models/GetSharedLinksResponse.md)
  - [GetStoreResponse](docs/models/GetStoreResponse.md)
  - [GetStoresResponse](docs/models/GetStoresResponse.md)
+ - [GetSubsidiariesResponse](docs/models/GetSubsidiariesResponse.md)
+ - [GetSubsidiaryResponse](docs/models/GetSubsidiaryResponse.md)
  - [GetSupplierResponse](docs/models/GetSupplierResponse.md)
  - [GetSuppliersResponse](docs/models/GetSuppliersResponse.md)
  - [GetTaxRateResponse](docs/models/GetTaxRateResponse.md)
@@ -1402,6 +1495,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [SocialLink](docs/models/SocialLink.md)
  - [SortDirection](docs/models/SortDirection.md)
  - [Status](docs/models/Status.md)
+ - [Subsidiary](docs/models/Subsidiary.md)
+ - [SubsidiaryReference](docs/models/SubsidiaryReference.md)
  - [Supplier](docs/models/Supplier.md)
  - [SuppliersFilter](docs/models/SuppliersFilter.md)
  - [SuppliersSort](docs/models/SuppliersSort.md)
@@ -1427,6 +1522,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UnifiedFilePermissions](docs/models/UnifiedFilePermissions.md)
  - [UnifiedId](docs/models/UnifiedId.md)
  - [UnprocessableResponse](docs/models/UnprocessableResponse.md)
+ - [UpdateAccountingDepartmentResponse](docs/models/UpdateAccountingDepartmentResponse.md)
+ - [UpdateAccountingLocationResponse](docs/models/UpdateAccountingLocationResponse.md)
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
  - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
  - [UpdateApplicationResponse](docs/models/UpdateApplicationResponse.md)
@@ -1474,6 +1571,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateProductResponse](docs/models/UpdateProductResponse.md)
  - [UpdatePurchaseOrderResponse](docs/models/UpdatePurchaseOrderResponse.md)
  - [UpdateSharedLinkResponse](docs/models/UpdateSharedLinkResponse.md)
+ - [UpdateSubsidiaryResponse](docs/models/UpdateSubsidiaryResponse.md)
  - [UpdateSupplierResponse](docs/models/UpdateSupplierResponse.md)
  - [UpdateTaxRateResponse](docs/models/UpdateTaxRateResponse.md)
  - [UpdateTenderResponse](docs/models/UpdateTenderResponse.md)

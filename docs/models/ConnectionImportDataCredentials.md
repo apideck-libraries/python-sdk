@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**refresh_token** | **str** | The refresh token can be used to obtain a new access token. | 
+**refresh_token** | **str, none_type** | The refresh token can be used to obtain a new access token. | [optional] 
 **access_token** | **str** | Access token | [optional] 
 **issued_at** | **datetime, none_type** | The datetime at which the token was issued. If omitted the token will be queued for refresh. | [optional] 
 **expires_in** | **int, none_type** | The number of seconds until the token expires. If omitted the token will be queued for refresh. | [optional] 

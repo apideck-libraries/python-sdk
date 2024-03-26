@@ -5,7 +5,7 @@ The supplier this entity is linked to.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | The ID of the supplier this entity is linked to. | 
+**id** | **str** | The ID of the supplier this entity is linked to. | [optional] 
 **display_id** | **str, none_type** | The display ID of the supplier. | [optional] [readonly] 
 **display_name** | **str, none_type** | The display name of the supplier. | [optional] 
 **company_name** | **str, none_type** | The company name of the supplier. | [optional] [readonly] 

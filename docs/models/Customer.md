@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **display_id** | **str, none_type** | Display ID | [optional] 
 **display_name** | **str, none_type** | Display name | [optional] 
 **company_name** | **str, none_type** | The name of the company. | [optional] 
+**company_id** | **str, none_type** | The company or subsidiary id the transaction belongs to | [optional] 
 **title** | **str, none_type** | The job title of the person. | [optional] 
 **first_name** | **str, none_type** | The first name of the person. | [optional] 
 **middle_name** | **str, none_type** | Middle name of the person. | [optional] 
