@@ -33,8 +33,6 @@ from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
 from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
-from apideck.model.create_attachment_request import CreateAttachmentRequest
-from apideck.model.create_attachment_response import CreateAttachmentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
@@ -502,92 +500,6 @@ class AccountingApi(object):
                     'service_id': 'header',
                     'raw': 'query',
                     'fields': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.attachments_upload_endpoint = _Endpoint(
-            settings={
-                'response_type': (CreateAttachmentResponse,),
-                'auth': [
-                    'apiKey'
-                ],
-                'endpoint_path': '/accounting/attachments/{reference_type}/{reference_id}',
-                'operation_id': 'attachments_upload',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'reference_type',
-                    'reference_id',
-                    'raw',
-                    'x_apideck_metadata',
-                    'consumer_id',
-                    'app_id',
-                    'service_id',
-                    'body',
-                ],
-                'required': [
-                    'reference_type',
-                    'reference_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'reference_type':
-                        (AttachmentReferenceType,),
-                    'reference_id':
-                        (str,),
-                    'raw':
-                        (bool,),
-                    'x_apideck_metadata':
-                        (CreateAttachmentRequest,),
-                    'consumer_id':
-                        (str,),
-                    'app_id':
-                        (str,),
-                    'service_id':
-                        (str,),
-                    'body':
-                        (file_type,),
-                },
-                'attribute_map': {
-                    'reference_type': 'reference_type',
-                    'reference_id': 'reference_id',
-                    'raw': 'raw',
-                    'x_apideck_metadata': 'x-apideck-metadata',
-                    'consumer_id': 'x-apideck-consumer-id',
-                    'app_id': 'x-apideck-app-id',
-                    'service_id': 'x-apideck-service-id',
-                },
-                'location_map': {
-                    'reference_type': 'path',
-                    'reference_id': 'path',
-                    'raw': 'query',
-                    'x_apideck_metadata': 'header',
-                    'consumer_id': 'header',
-                    'app_id': 'header',
-                    'service_id': 'header',
-                    'body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -6727,94 +6639,6 @@ class AccountingApi(object):
         kwargs['id'] = \
             id
         return self.attachments_one_endpoint.call_with_http_info(**kwargs)
-
-    def attachments_upload(
-        self,
-        reference_type,
-        reference_id,
-        **kwargs
-    ):
-        """Upload attachment  # noqa: E501
-
-        Upload attachment  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.attachments_upload(reference_type, reference_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            reference_type (AttachmentReferenceType): The reference type of the document.
-            reference_id (str): The reference id of the object to retrieve.
-
-        Keyword Args:
-            raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
-            x_apideck_metadata (CreateAttachmentRequest): Metadata to attach to the attachment file. [optional]
-            consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
-            app_id (str): The ID of your Unify application. [optional]
-            service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
-            body (file_type): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            CreateAttachmentResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['reference_type'] = \
-            reference_type
-        kwargs['reference_id'] = \
-            reference_id
-        return self.attachments_upload_endpoint.call_with_http_info(**kwargs)
 
     def balance_sheet_one(
         self,

@@ -51,13 +51,6 @@ class TestAccountingApi(unittest.TestCase):
         """
         pass
 
-    def test_attachments_upload(self):
-        """Test case for attachments_upload
-
-        Upload attachment  # noqa: E501
-        """
-        pass
-
     def test_balance_sheet_one(self):
         """Test case for balance_sheet_one
 

@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**attachments_delete**](AccountingApi.md#attachments_delete) | **DELETE** /accounting/attachments/{reference_type}/{reference_id}/{id} | Delete Attachment
 [**attachments_download**](AccountingApi.md#attachments_download) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment
 [**attachments_one**](AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment
-[**attachments_upload**](AccountingApi.md#attachments_upload) | **POST** /accounting/attachments/{reference_type}/{reference_id} | Upload attachment
 [**balance_sheet_one**](AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet
 [**bills_add**](AccountingApi.md#bills_add) | **POST** /accounting/bills | Create Bill
 [**bills_all**](AccountingApi.md#bills_all) | **GET** /accounting/bills | List Bills
@@ -528,121 +527,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Attachments |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**404** | The specified resource was not found |  -  |
-**422** | Unprocessable |  -  |
-**0** | Unexpected error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **attachments_upload**
-> CreateAttachmentResponse attachments_upload(reference_type, reference_id)
-
-Upload attachment
-
-Upload attachment
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import time
-import apideck
-from apideck.api import accounting_api
-from apideck.model.create_attachment_response import CreateAttachmentResponse
-from apideck.model.bad_request_response import BadRequestResponse
-from apideck.model.payment_required_response import PaymentRequiredResponse
-from apideck.model.unexpected_error_response import UnexpectedErrorResponse
-from apideck.model.attachment_reference_type import AttachmentReferenceType
-from apideck.model.unauthorized_response import UnauthorizedResponse
-from apideck.model.unprocessable_response import UnprocessableResponse
-from apideck.model.create_attachment_request import CreateAttachmentRequest
-from apideck.model.not_found_response import NotFoundResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://unify.apideck.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = apideck.Configuration(
-    host = "https://unify.apideck.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with apideck.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = accounting_api.AccountingApi(api_client)
-    reference_type = AttachmentReferenceType("invoice") # AttachmentReferenceType | The reference type of the document.
-    reference_id = "123456" # str | The reference id of the object to retrieve.
-    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
-    x_apideck_metadata =  # CreateAttachmentRequest | Metadata to attach to the attachment file (optional)
-    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
-    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
-    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-    body = open('/path/to/file', 'rb') # file_type |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Upload attachment
-        api_response = api_instance.attachments_upload(reference_type, reference_id)
-        pprint(api_response)
-    except apideck.ApiException as e:
-        print("Exception when calling AccountingApi->attachments_upload: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Upload attachment
-        api_response = api_instance.attachments_upload(reference_type, reference_id, raw=raw, x_apideck_metadata=x_apideck_metadata, consumer_id=consumer_id, app_id=app_id, service_id=service_id, body=body)
-        pprint(api_response)
-    except apideck.ApiException as e:
-        print("Exception when calling AccountingApi->attachments_upload: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **reference_type** | **AttachmentReferenceType**| The reference type of the document. |
- **reference_id** | **str**| The reference id of the object to retrieve. |
- **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
- **x_apideck_metadata** | **CreateAttachmentRequest**| Metadata to attach to the attachment file | [optional]
- **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
- **app_id** | **str**| The ID of your Unify application | [optional]
- **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
- **body** | **file_type**|  | [optional]
-
-### Return type
-
-[**CreateAttachmentResponse**](CreateAttachmentResponse.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Attachments |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |
