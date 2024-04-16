@@ -32,6 +32,7 @@ from apideck.model.get_product_response import GetProductResponse
 from apideck.model.get_products_response import GetProductsResponse
 from apideck.model.get_store_response import GetStoreResponse
 from apideck.model.not_found_response import NotFoundResponse
+from apideck.model.orders_sort import OrdersSort
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
@@ -244,6 +245,7 @@ class EcommerceApi(object):
                     'cursor',
                     'limit',
                     'filter',
+                    'sort',
                     'pass_through',
                     'fields',
                 ],
@@ -283,6 +285,8 @@ class EcommerceApi(object):
                         (int,),
                     'filter':
                         (EcommerceOrdersFilter,),
+                    'sort':
+                        (OrdersSort,),
                     'pass_through':
                         (PassThroughQuery,),
                     'fields':
@@ -296,6 +300,7 @@ class EcommerceApi(object):
                     'cursor': 'cursor',
                     'limit': 'limit',
                     'filter': 'filter',
+                    'sort': 'sort',
                     'pass_through': 'pass_through',
                     'fields': 'fields',
                 },
@@ -307,6 +312,7 @@ class EcommerceApi(object):
                     'cursor': 'query',
                     'limit': 'query',
                     'filter': 'query',
+                    'sort': 'query',
                     'pass_through': 'query',
                     'fields': 'query',
                 },
@@ -825,6 +831,7 @@ class EcommerceApi(object):
             cursor (str, none_type): Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.. [optional]
             limit (int): Number of results to return. Minimum 1, Maximum 200, Default 20. [optional] if omitted the server will use the default value of 20
             filter (EcommerceOrdersFilter): Apply filters. [optional]
+            sort (OrdersSort): Apply sorting. [optional]
             pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
             _return_http_data_only (bool): response data without head status

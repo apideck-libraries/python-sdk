@@ -1431,6 +1431,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [OrderRefunds](docs/models/OrderRefunds.md)
  - [OrderTenders](docs/models/OrderTenders.md)
  - [OrderType](docs/models/OrderType.md)
+ - [OrdersSort](docs/models/OrdersSort.md)
  - [Owner](docs/models/Owner.md)
  - [PaginationCoverage](docs/models/PaginationCoverage.md)
  - [PassThroughQuery](docs/models/PassThroughQuery.md)

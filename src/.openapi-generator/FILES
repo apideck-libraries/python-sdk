@@ -527,6 +527,7 @@ apideck/model/order_pickup_details_recipient.py
 apideck/model/order_refunds.py
 apideck/model/order_tenders.py
 apideck/model/order_type.py
+apideck/model/orders_sort.py
 apideck/model/owner.py
 apideck/model/pagination_coverage.py
 apideck/model/pass_through_query.py
@@ -1198,6 +1199,7 @@ docs/OrderPickupDetailsRecipient.md
 docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
+docs/OrdersSort.md
 docs/Owner.md
 docs/PaginationCoverage.md
 docs/PassThroughQuery.md
@@ -1876,6 +1878,7 @@ test/test_order_pickup_details_recipient.py
 test/test_order_refunds.py
 test/test_order_tenders.py
 test/test_order_type.py
+test/test_orders_sort.py
 test/test_owner.py
 test/test_pagination_coverage.py
 test/test_pass_through_query.py
