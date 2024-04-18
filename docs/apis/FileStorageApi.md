@@ -1705,6 +1705,7 @@ from apideck.api import file_storage_api
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.files_filter import FilesFilter
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.get_files_response import GetFilesResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
@@ -1744,6 +1745,11 @@ with apideck.ApiClient(configuration) as api_client:
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
     cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    filter = FilesFilter(
+        drive_id="1234",
+        folder_id="root",
+        shared=True,
+    ) # FilesFilter | Apply filters (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1757,7 +1763,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Search Files
-        api_response = api_instance.files_search(files_search, consumer_id=consumer_id, app_id=app_id, service_id=service_id, pass_through=pass_through, fields=fields, cursor=cursor, limit=limit)
+        api_response = api_instance.files_search(files_search, consumer_id=consumer_id, app_id=app_id, service_id=service_id, pass_through=pass_through, fields=fields, cursor=cursor, limit=limit, filter=filter)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling FileStorageApi->files_search: %s\n" % e)
@@ -1776,6 +1782,7 @@ Name | Type | Description  | Notes
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **filter** | **FilesFilter**| Apply filters | [optional]
 
 ### Return type
 
