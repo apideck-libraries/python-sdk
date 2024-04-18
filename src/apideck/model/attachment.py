@@ -81,6 +81,7 @@ class Attachment(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
+            'display_id': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'mime_type': (str, none_type,),  # noqa: E501
             'size': (int, none_type,),  # noqa: E501
@@ -99,6 +100,7 @@ class Attachment(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
+        'display_id': 'display_id',  # noqa: E501
         'name': 'name',  # noqa: E501
         'mime_type': 'mime_type',  # noqa: E501
         'size': 'size',  # noqa: E501
@@ -157,6 +159,7 @@ class Attachment(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            display_id (str, none_type): The display id of the file. [optional]  # noqa: E501
             name (str, none_type): The name of the file. [optional]  # noqa: E501
             mime_type (str, none_type): The MIME type of the file.. [optional]  # noqa: E501
             size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
@@ -248,6 +251,7 @@ class Attachment(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            display_id (str, none_type): The display id of the file. [optional]  # noqa: E501
             name (str, none_type): The name of the file. [optional]  # noqa: E501
             mime_type (str, none_type): The MIME type of the file.. [optional]  # noqa: E501
             size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
