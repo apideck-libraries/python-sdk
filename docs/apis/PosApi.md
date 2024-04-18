@@ -3586,8 +3586,8 @@ with apideck.ApiClient(configuration) as api_client:
     order = Order(
         idempotency_key=IdempotencyKey("random_string"),
         order_number="1F",
-        order_date=dateutil_parser('Fri Aug 12 00:00:00 UTC 2022').date(),
-        closed_date=dateutil_parser('Sat Aug 13 00:00:00 UTC 2022').date(),
+        order_date=dateutil_parser('Fri Aug 12 02:00:00 CEST 2022').date(),
+        closed_date=dateutil_parser('Sat Aug 13 02:00:00 CEST 2022').date(),
         reference_id="my-order-001",
         status="open",
         payment_status="open",
@@ -4259,8 +4259,8 @@ with apideck.ApiClient(configuration) as api_client:
     order = Order(
         idempotency_key=IdempotencyKey("random_string"),
         order_number="1F",
-        order_date=dateutil_parser('Fri Aug 12 00:00:00 UTC 2022').date(),
-        closed_date=dateutil_parser('Sat Aug 13 00:00:00 UTC 2022').date(),
+        order_date=dateutil_parser('Fri Aug 12 02:00:00 CEST 2022').date(),
+        closed_date=dateutil_parser('Sat Aug 13 02:00:00 CEST 2022').date(),
         reference_id="my-order-001",
         status="open",
         payment_status="open",
@@ -4614,8 +4614,8 @@ with apideck.ApiClient(configuration) as api_client:
     order = Order(
         idempotency_key=IdempotencyKey("random_string"),
         order_number="1F",
-        order_date=dateutil_parser('Fri Aug 12 00:00:00 UTC 2022').date(),
-        closed_date=dateutil_parser('Sat Aug 13 00:00:00 UTC 2022').date(),
+        order_date=dateutil_parser('Fri Aug 12 02:00:00 CEST 2022').date(),
+        closed_date=dateutil_parser('Sat Aug 13 02:00:00 CEST 2022').date(),
         reference_id="my-order-001",
         status="open",
         payment_status="open",

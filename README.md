@@ -188,8 +188,6 @@ from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
 from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
-from apideck.model.create_attachment_request import CreateAttachmentRequest
-from apideck.model.create_attachment_response import CreateAttachmentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
@@ -352,8 +350,6 @@ _AccountingApi_ | [**attachments_delete**](docs/apis/AccountingApi.md#attachment
 _AccountingApi_ | [**attachments_download**](docs/apis/AccountingApi.md#attachments_download) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment |
 
 _AccountingApi_ | [**attachments_one**](docs/apis/AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment |
-
-_AccountingApi_ | [**attachments_upload**](docs/apis/AccountingApi.md#attachments_upload) | **POST** /accounting/attachments/{reference_type}/{reference_id} | Upload attachment |
 
 _AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
 
@@ -1435,6 +1431,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [OrderRefunds](docs/models/OrderRefunds.md)
  - [OrderTenders](docs/models/OrderTenders.md)
  - [OrderType](docs/models/OrderType.md)
+ - [OrdersSort](docs/models/OrdersSort.md)
  - [Owner](docs/models/Owner.md)
  - [PaginationCoverage](docs/models/PaginationCoverage.md)
  - [PassThroughQuery](docs/models/PassThroughQuery.md)

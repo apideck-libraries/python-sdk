@@ -505,6 +505,7 @@ from apideck.model.order_pickup_details_recipient import OrderPickupDetailsRecip
 from apideck.model.order_refunds import OrderRefunds
 from apideck.model.order_tenders import OrderTenders
 from apideck.model.order_type import OrderType
+from apideck.model.orders_sort import OrdersSort
 from apideck.model.owner import Owner
 from apideck.model.pagination_coverage import PaginationCoverage
 from apideck.model.pass_through_query import PassThroughQuery
