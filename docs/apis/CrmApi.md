@@ -930,7 +930,7 @@ with apideck.ApiClient(configuration) as api_client:
         tags=Tags(["New"]),
         read_only=False,
         salutation="Mr",
-        birthday=dateutil_parser('Sat Aug 12 02:00:00 CEST 2000').date(),
+        birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
     ) # Company | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1482,7 +1482,7 @@ with apideck.ApiClient(configuration) as api_client:
         tags=Tags(["New"]),
         read_only=False,
         salutation="Mr",
-        birthday=dateutil_parser('Sat Aug 12 02:00:00 CEST 2000').date(),
+        birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
     ) # Company | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -3626,7 +3626,7 @@ with apideck.ApiClient(configuration) as api_client:
         monetary_amount=75000,
         currency=Currency("USD"),
         win_probability=40,
-        close_date=dateutil_parser('Fri Oct 30 01:00:00 CET 2020').date(),
+        close_date=dateutil_parser('Fri Oct 30 00:00:00 UTC 2020').date(),
         loss_reason_id="12345",
         loss_reason="No budget",
         won_reason_id="12345",
@@ -4112,7 +4112,7 @@ with apideck.ApiClient(configuration) as api_client:
         monetary_amount=75000,
         currency=Currency("USD"),
         win_probability=40,
-        close_date=dateutil_parser('Fri Oct 30 01:00:00 CET 2020').date(),
+        close_date=dateutil_parser('Fri Oct 30 00:00:00 UTC 2020').date(),
         loss_reason_id="12345",
         loss_reason="No budget",
         won_reason_id="12345",

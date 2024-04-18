@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**display_id** | **str, none_type** | The display id of the file | [optional] 
 **name** | **str, none_type** | The name of the file | [optional] 
 **mime_type** | **str, none_type** | The MIME type of the file. | [optional] 
 **size** | **int, none_type** | The size of the file in bytes | [optional] 
