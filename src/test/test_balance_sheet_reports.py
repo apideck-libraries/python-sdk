@@ -12,13 +12,15 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.balance_sheet_account import BalanceSheetAccount
+from apideck.model.currency import Currency
+globals()['BalanceSheetAccount'] = BalanceSheetAccount
+globals()['Currency'] = Currency
 from apideck.model.balance_sheet_reports import BalanceSheetReports
-globals()['BalanceSheetReports'] = BalanceSheetReports
-from apideck.model.balance_sheet import BalanceSheet
 
 
-class TestBalanceSheet(unittest.TestCase):
-    """BalanceSheet unit test stubs"""
+class TestBalanceSheetReports(unittest.TestCase):
+    """BalanceSheetReports unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,10 +28,10 @@ class TestBalanceSheet(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testBalanceSheet(self):
-        """Test BalanceSheet"""
+    def testBalanceSheetReports(self):
+        """Test BalanceSheetReports"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = BalanceSheet()  # noqa: E501
+        # model = BalanceSheetReports()  # noqa: E501
         pass
 
 
