@@ -12,11 +12,11 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.balance_sheet_assets_current_assets_accounts import BalanceSheetAssetsCurrentAssetsAccounts
+from apideck.model.balance_sheet_account_record import BalanceSheetAccountRecord
 
 
-class TestBalanceSheetAssetsCurrentAssetsAccounts(unittest.TestCase):
-    """BalanceSheetAssetsCurrentAssetsAccounts unit test stubs"""
+class TestBalanceSheetAccountRecord(unittest.TestCase):
+    """BalanceSheetAccountRecord unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestBalanceSheetAssetsCurrentAssetsAccounts(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testBalanceSheetAssetsCurrentAssetsAccounts(self):
-        """Test BalanceSheetAssetsCurrentAssetsAccounts"""
+    def testBalanceSheetAccountRecord(self):
+        """Test BalanceSheetAccountRecord"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = BalanceSheetAssetsCurrentAssetsAccounts()  # noqa: E501
+        # model = BalanceSheetAccountRecord()  # noqa: E501
         pass
 
 

@@ -30,12 +30,8 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from apideck.model.balance_sheet_assets import BalanceSheetAssets
-    from apideck.model.balance_sheet_equity import BalanceSheetEquity
-    from apideck.model.balance_sheet_liabilities import BalanceSheetLiabilities
-    globals()['BalanceSheetAssets'] = BalanceSheetAssets
-    globals()['BalanceSheetEquity'] = BalanceSheetEquity
-    globals()['BalanceSheetLiabilities'] = BalanceSheetLiabilities
+    from apideck.model.balance_sheet_reports import BalanceSheetReports
+    globals()['BalanceSheetReports'] = BalanceSheetReports
 
 
 class BalanceSheet(ModelNormal):
@@ -66,16 +62,6 @@ class BalanceSheet(ModelNormal):
     }
 
     validations = {
-        ('start_date',): {
-            'regex': {
-                'pattern': r'^\d{4}-\d{2}-\d{2}$',  # noqa: E501
-            },
-        },
-        ('end_date',): {
-            'regex': {
-                'pattern': r'^\d{4}-\d{2}-\d{2}$',  # noqa: E501
-            },
-        },
     }
 
     additional_properties_type = None
@@ -94,18 +80,7 @@ class BalanceSheet(ModelNormal):
         """
         lazy_import()
         return {
-            'report_name': (str,),  # noqa: E501
-            'start_date': (str,),  # noqa: E501
-            'assets': (BalanceSheetAssets,),  # noqa: E501
-            'liabilities': (BalanceSheetLiabilities,),  # noqa: E501
-            'equity': (BalanceSheetEquity,),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'end_date': (str,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
-            'updated_by': (str, none_type,),  # noqa: E501
-            'created_by': (str, none_type,),  # noqa: E501
-            'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_at': (datetime, none_type,),  # noqa: E501
+            'reports': ([BalanceSheetReports],),  # noqa: E501
         }
 
     @cached_property
@@ -114,42 +89,21 @@ class BalanceSheet(ModelNormal):
 
 
     attribute_map = {
-        'report_name': 'report_name',  # noqa: E501
-        'start_date': 'start_date',  # noqa: E501
-        'assets': 'assets',  # noqa: E501
-        'liabilities': 'liabilities',  # noqa: E501
-        'equity': 'equity',  # noqa: E501
-        'id': 'id',  # noqa: E501
-        'end_date': 'end_date',  # noqa: E501
-        'custom_mappings': 'custom_mappings',  # noqa: E501
-        'updated_by': 'updated_by',  # noqa: E501
-        'created_by': 'created_by',  # noqa: E501
-        'updated_at': 'updated_at',  # noqa: E501
-        'created_at': 'created_at',  # noqa: E501
+        'reports': 'reports',  # noqa: E501
     }
 
     read_only_vars = {
-        'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
-        'updated_by',  # noqa: E501
-        'created_by',  # noqa: E501
-        'updated_at',  # noqa: E501
-        'created_at',  # noqa: E501
     }
 
     _composed_schemas = {}
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, report_name, start_date, assets, liabilities, equity, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, reports, *args, **kwargs):  # noqa: E501
         """BalanceSheet - a model defined in OpenAPI
 
         Args:
-            report_name (str): The name of the report
-            start_date (str): The start date of the report
-            assets (BalanceSheetAssets):
-            liabilities (BalanceSheetLiabilities):
-            equity (BalanceSheetEquity):
+            reports ([BalanceSheetReports]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -182,13 +136,6 @@ class BalanceSheet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            end_date (str): The start date of the report. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
-            updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
-            created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
-            updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -216,11 +163,7 @@ class BalanceSheet(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.report_name = report_name
-        self.start_date = start_date
-        self.assets = assets
-        self.liabilities = liabilities
-        self.equity = equity
+        self.reports = reports
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -241,15 +184,11 @@ class BalanceSheet(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, report_name, start_date, assets, liabilities, equity, *args, **kwargs):  # noqa: E501
+    def __init__(self, reports, *args, **kwargs):  # noqa: E501
         """BalanceSheet - a model defined in OpenAPI
 
         Args:
-            report_name (str): The name of the report
-            start_date (str): The start date of the report
-            assets (BalanceSheetAssets):
-            liabilities (BalanceSheetLiabilities):
-            equity (BalanceSheetEquity):
+            reports ([BalanceSheetReports]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -282,13 +221,6 @@ class BalanceSheet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            end_date (str): The start date of the report. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
-            updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
-            created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
-            updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
-            created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -314,11 +246,7 @@ class BalanceSheet(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.report_name = report_name
-        self.start_date = start_date
-        self.assets = assets
-        self.liabilities = liabilities
-        self.equity = equity
+        self.reports = reports
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
