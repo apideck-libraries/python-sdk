@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The last update date of the contact. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The creation date of the contact. | [optional] [readonly] 
+**opportunity_ids** | **[str]** | The opportunity ids of the contact. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
