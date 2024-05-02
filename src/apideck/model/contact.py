@@ -144,6 +144,7 @@ class Contact(ModelNormal):
             'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
+            'opportunity_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -191,6 +192,7 @@ class Contact(ModelNormal):
         'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
+        'opportunity_ids': 'opportunity_ids',  # noqa: E501
     }
 
     read_only_vars = {
@@ -282,6 +284,7 @@ class Contact(ModelNormal):
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
             created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
+            opportunity_ids ([str]): The opportunity ids of the contact.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -405,6 +408,7 @@ class Contact(ModelNormal):
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
             created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
+            opportunity_ids ([str]): The opportunity ids of the contact.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
