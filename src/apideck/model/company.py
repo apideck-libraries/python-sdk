@@ -80,9 +80,6 @@ class Company(ModelNormal):
     }
 
     validations = {
-        ('name',): {
-            'min_length': 1,
-        },
     }
 
     additional_properties_type = None
@@ -101,7 +98,7 @@ class Company(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'interaction_count': (int, none_type,),  # noqa: E501
             'owner_id': (str, none_type,),  # noqa: E501
@@ -214,7 +211,7 @@ class Company(ModelNormal):
         """Company - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the company
+            name (str, none_type): Name of the company
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -339,7 +336,7 @@ class Company(ModelNormal):
         """Company - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the company
+            name (str, none_type): Name of the company
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
