@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Name of the company | 
+**name** | **str, none_type** | Name of the company | 
 **id** | **str** | Unique identifier for the company | [optional] [readonly] 
 **interaction_count** | **int, none_type** | Number of interactions | [optional] [readonly] 
 **owner_id** | **str, none_type** | Owner ID | [optional] 
