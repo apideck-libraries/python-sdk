@@ -77,6 +77,7 @@ class EcommerceOrdersFilter(ModelNormal):
         return {
             'email': (str,),  # noqa: E501
             'customer_id': (str,),  # noqa: E501
+            'updated_since': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -87,6 +88,7 @@ class EcommerceOrdersFilter(ModelNormal):
     attribute_map = {
         'email': 'email',  # noqa: E501
         'customer_id': 'customer_id',  # noqa: E501
+        'updated_since': 'updated_since',  # noqa: E501
     }
 
     read_only_vars = {
@@ -132,6 +134,7 @@ class EcommerceOrdersFilter(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             email (str): Customer email address to filter on. [optional]  # noqa: E501
             customer_id (str): Customer id to filter on. [optional]  # noqa: E501
+            updated_since (str): Minimum date the order was last modified. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -215,6 +218,7 @@ class EcommerceOrdersFilter(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             email (str): Customer email address to filter on. [optional]  # noqa: E501
             customer_id (str): Customer id to filter on. [optional]  # noqa: E501
+            updated_since (str): Minimum date the order was last modified. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
