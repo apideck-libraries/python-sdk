@@ -290,6 +290,7 @@ with apideck.ApiClient(configuration) as api_client:
     filter = EcommerceOrdersFilter(
         email="elon@musk.com",
         customer_id="123",
+        updated_since="2020-09-30T07:43:32.000Z",
     ) # EcommerceOrdersFilter | Apply filters (optional)
     sort = OrdersSort(
         by="created_at",
