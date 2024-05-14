@@ -86,6 +86,7 @@ class LinkedCustomer(ModelNormal):
             'display_name': (str, none_type,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
+            'email': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -99,6 +100,7 @@ class LinkedCustomer(ModelNormal):
         'display_name': 'display_name',  # noqa: E501
         'name': 'name',  # noqa: E501
         'company_name': 'company_name',  # noqa: E501
+        'email': 'email',  # noqa: E501
     }
 
     read_only_vars = {
@@ -149,6 +151,7 @@ class LinkedCustomer(ModelNormal):
             display_name (str, none_type): The display name of the customer.. [optional]  # noqa: E501
             name (str): The name of the customer. Deprecated, use display_name instead.. [optional]  # noqa: E501
             company_name (str, none_type): The company name of the customer.. [optional]  # noqa: E501
+            email (str): The email address of the customer.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,6 +238,7 @@ class LinkedCustomer(ModelNormal):
             display_name (str, none_type): The display name of the customer.. [optional]  # noqa: E501
             name (str): The name of the customer. Deprecated, use display_name instead.. [optional]  # noqa: E501
             company_name (str, none_type): The company name of the customer.. [optional]  # noqa: E501
+            email (str): The email address of the customer.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
