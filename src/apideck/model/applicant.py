@@ -93,7 +93,6 @@ class Applicant(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'position_id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
@@ -146,7 +145,6 @@ class Applicant(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
-        'position_id': 'position_id',  # noqa: E501
         'name': 'name',  # noqa: E501
         'first_name': 'first_name',  # noqa: E501
         'last_name': 'last_name',  # noqa: E501
@@ -248,7 +246,6 @@ class Applicant(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            position_id (str): The PositionId the applicant applied for.. [optional]  # noqa: E501
             name (str): The name of an applicant.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
@@ -374,7 +371,6 @@ class Applicant(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
-            position_id (str): The PositionId the applicant applied for.. [optional]  # noqa: E501
             name (str): The name of an applicant.. [optional]  # noqa: E501
             first_name (str, none_type): The first name of the person.. [optional]  # noqa: E501
             last_name (str, none_type): The last name of the person.. [optional]  # noqa: E501
