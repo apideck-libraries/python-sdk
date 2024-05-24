@@ -13,12 +13,14 @@ import unittest
 
 import apideck
 from apideck.model.address import Address
+from apideck.model.allocation import Allocation
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
 from apideck.model.invoice_line_item import InvoiceLineItem
 from apideck.model.linked_customer import LinkedCustomer
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 globals()['Address'] = Address
+globals()['Allocation'] = Allocation
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
 globals()['InvoiceLineItem'] = InvoiceLineItem

@@ -12,11 +12,11 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.payment_allocations import PaymentAllocations
+from apideck.model.allocation import Allocation
 
 
-class TestPaymentAllocations(unittest.TestCase):
-    """PaymentAllocations unit test stubs"""
+class TestAllocation(unittest.TestCase):
+    """Allocation unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestPaymentAllocations(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPaymentAllocations(self):
-        """Test PaymentAllocations"""
+    def testAllocation(self):
+        """Test Allocation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = PaymentAllocations()  # noqa: E501
+        # model = Allocation()  # noqa: E501
         pass
 
 

@@ -1621,7 +1621,12 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         allocations=[
-            None,
+            Allocation(
+                id="123456",
+                type="invoice",
+                amount=49.99,
+                allocation_id="123456",
+            ),
         ],
         note="Some notes about this credit note",
         terms="Some terms about this credit note",
@@ -2198,7 +2203,12 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         allocations=[
-            None,
+            Allocation(
+                id="123456",
+                type="invoice",
+                amount=49.99,
+                allocation_id="123456",
+            ),
         ],
         note="Some notes about this credit note",
         terms="Some terms about this credit note",
@@ -7211,10 +7221,11 @@ with apideck.ApiClient(configuration) as api_client:
         status="authorised",
         type="accounts_receivable",
         allocations=[
-            PaymentAllocations(
+            Allocation(
                 id="123456",
                 type="invoice",
                 amount=49.99,
+                allocation_id="123456",
             ),
         ],
         note="Some notes about this payment",
@@ -7728,10 +7739,11 @@ with apideck.ApiClient(configuration) as api_client:
         status="authorised",
         type="accounts_receivable",
         allocations=[
-            PaymentAllocations(
+            Allocation(
                 id="123456",
                 type="invoice",
                 amount=49.99,
+                allocation_id="123456",
             ),
         ],
         note="Some notes about this payment",

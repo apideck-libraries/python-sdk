@@ -31,12 +31,14 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.address import Address
+    from apideck.model.allocation import Allocation
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
     from apideck.model.invoice_line_item import InvoiceLineItem
     from apideck.model.linked_customer import LinkedCustomer
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
     globals()['Address'] = Address
+    globals()['Allocation'] = Allocation
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
     globals()['InvoiceLineItem'] = InvoiceLineItem
@@ -121,7 +123,7 @@ class CreditNote(ModelNormal):
             'type': (str,),  # noqa: E501
             'account': (LinkedLedgerAccount,),  # noqa: E501
             'line_items': ([InvoiceLineItem],),  # noqa: E501
-            'allocations': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'allocations': ([Allocation],),  # noqa: E501
             'note': (str, none_type,),  # noqa: E501
             'terms': (str, none_type,),  # noqa: E501
             'billing_address': (Address,),  # noqa: E501
@@ -244,7 +246,7 @@ class CreditNote(ModelNormal):
             type (str): Type of payment. [optional]  # noqa: E501
             account (LinkedLedgerAccount): [optional]  # noqa: E501
             line_items ([InvoiceLineItem]): [optional]  # noqa: E501
-            allocations ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            allocations ([Allocation]): [optional]  # noqa: E501
             note (str, none_type): Optional note to be associated with the credit note.. [optional]  # noqa: E501
             terms (str, none_type): Optional terms to be associated with the credit note.. [optional]  # noqa: E501
             billing_address (Address): [optional]  # noqa: E501
@@ -359,7 +361,7 @@ class CreditNote(ModelNormal):
             type (str): Type of payment. [optional]  # noqa: E501
             account (LinkedLedgerAccount): [optional]  # noqa: E501
             line_items ([InvoiceLineItem]): [optional]  # noqa: E501
-            allocations ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            allocations ([Allocation]): [optional]  # noqa: E501
             note (str, none_type): Optional note to be associated with the credit note.. [optional]  # noqa: E501
             terms (str, none_type): Optional terms to be associated with the credit note.. [optional]  # noqa: E501
             billing_address (Address): [optional]  # noqa: E501

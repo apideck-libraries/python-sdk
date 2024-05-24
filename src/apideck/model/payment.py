@@ -30,18 +30,18 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.allocation import Allocation
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
     from apideck.model.linked_customer import LinkedCustomer
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
     from apideck.model.linked_supplier import LinkedSupplier
-    from apideck.model.payment_allocations import PaymentAllocations
+    globals()['Allocation'] = Allocation
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
     globals()['LinkedCustomer'] = LinkedCustomer
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
     globals()['LinkedSupplier'] = LinkedSupplier
-    globals()['PaymentAllocations'] = PaymentAllocations
 
 
 class Payment(ModelNormal):
@@ -125,7 +125,7 @@ class Payment(ModelNormal):
             'reconciled': (bool,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'allocations': ([PaymentAllocations],),  # noqa: E501
+            'allocations': ([Allocation],),  # noqa: E501
             'note': (str, none_type,),  # noqa: E501
             'number': (str, none_type,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
@@ -245,7 +245,7 @@ class Payment(ModelNormal):
             reconciled (bool): Payment has been reconciled. [optional]  # noqa: E501
             status (str): Status of payment. [optional]  # noqa: E501
             type (str): Type of payment. [optional]  # noqa: E501
-            allocations ([PaymentAllocations]): [optional]  # noqa: E501
+            allocations ([Allocation]): [optional]  # noqa: E501
             note (str, none_type): Optional note to be associated with the payment.. [optional]  # noqa: E501
             number (str, none_type): Payment number.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
@@ -359,7 +359,7 @@ class Payment(ModelNormal):
             reconciled (bool): Payment has been reconciled. [optional]  # noqa: E501
             status (str): Status of payment. [optional]  # noqa: E501
             type (str): Type of payment. [optional]  # noqa: E501
-            allocations ([PaymentAllocations]): [optional]  # noqa: E501
+            allocations ([Allocation]): [optional]  # noqa: E501
             note (str, none_type): Optional note to be associated with the payment.. [optional]  # noqa: E501
             number (str, none_type): Payment number.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501

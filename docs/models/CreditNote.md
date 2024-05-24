@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **type** | **str** | Type of payment | [optional] 
 **account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **line_items** | [**[InvoiceLineItem]**](InvoiceLineItem.md) |  | [optional] 
-**allocations** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
+**allocations** | [**[Allocation]**](Allocation.md) |  | [optional] 
 **note** | **str, none_type** | Optional note to be associated with the credit note. | [optional] 
 **terms** | **str, none_type** | Optional terms to be associated with the credit note. | [optional] 
 **billing_address** | [**Address**](Address.md) |  | [optional] 

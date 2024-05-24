@@ -42,6 +42,7 @@ apideck/model/activities_sort.py
 apideck/model/activity.py
 apideck/model/activity_attendee.py
 apideck/model/address.py
+apideck/model/allocation.py
 apideck/model/api.py
 apideck/model/api_resource.py
 apideck/model/api_resource_coverage.py
@@ -526,7 +527,6 @@ apideck/model/owner.py
 apideck/model/pagination_coverage.py
 apideck/model/pass_through_query.py
 apideck/model/payment.py
-apideck/model/payment_allocations.py
 apideck/model/payment_card.py
 apideck/model/payment_frequency.py
 apideck/model/payment_required_response.py
@@ -700,6 +700,7 @@ docs/ActivitiesSort.md
 docs/Activity.md
 docs/ActivityAttendee.md
 docs/Address.md
+docs/Allocation.md
 docs/Api.md
 docs/ApiResource.md
 docs/ApiResourceCoverage.md
@@ -1192,7 +1193,6 @@ docs/Owner.md
 docs/PaginationCoverage.md
 docs/PassThroughQuery.md
 docs/Payment.md
-docs/PaymentAllocations.md
 docs/PaymentCard.md
 docs/PaymentFrequency.md
 docs/PaymentRequiredResponse.md
@@ -1373,6 +1373,7 @@ test/test_activities_sort.py
 test/test_activity.py
 test/test_activity_attendee.py
 test/test_address.py
+test/test_allocation.py
 test/test_api.py
 test/test_api_resource.py
 test/test_api_resource_coverage.py
@@ -1865,7 +1866,6 @@ test/test_owner.py
 test/test_pagination_coverage.py
 test/test_pass_through_query.py
 test/test_payment.py
-test/test_payment_allocations.py
 test/test_payment_card.py
 test/test_payment_frequency.py
 test/test_payment_required_response.py
