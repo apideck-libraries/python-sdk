@@ -17,6 +17,10 @@ Name | Type | Description | Notes
 **unit_price** | **str, none_type** | The unit price of the product or variant associated with the line item. | [optional] 
 **tax_rate** | **str, none_type** | The tax rate applied to the product or variant associated with the line item. | [optional] 
 **tax_amount** | **str, none_type** | The total tax amount applied to the product or variant associated with the line item. | [optional] 
+**is_refunded** | **bool, none_type** | Whether the line item has been refunded. | [optional] 
+**refunded_amount** | **str, none_type** | The amount of the line item that has been refunded. | [optional] 
+**refunded_quantity** | **str, none_type** | The quantity of the line item that has been refunded. | [optional] 
+**sub_total** | **str, none_type** | The sub total for the product(s) or variant associated with the line item, excluding taxes and discounts. | [optional] 
 **discounts** | [**[EcommerceDiscount]**](EcommerceDiscount.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

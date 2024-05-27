@@ -20,6 +20,7 @@ from apideck.model.activities_sort import ActivitiesSort
 from apideck.model.activity import Activity
 from apideck.model.activity_attendee import ActivityAttendee
 from apideck.model.address import Address
+from apideck.model.allocation import Allocation
 from apideck.model.api import Api
 from apideck.model.api_resource import ApiResource
 from apideck.model.api_resource_coverage import ApiResourceCoverage
@@ -504,7 +505,6 @@ from apideck.model.owner import Owner
 from apideck.model.pagination_coverage import PaginationCoverage
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
-from apideck.model.payment_allocations import PaymentAllocations
 from apideck.model.payment_card import PaymentCard
 from apideck.model.payment_frequency import PaymentFrequency
 from apideck.model.payment_required_response import PaymentRequiredResponse

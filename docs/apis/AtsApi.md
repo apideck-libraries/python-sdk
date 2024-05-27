@@ -64,7 +64,6 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ats_api.AtsApi(api_client)
     applicant = Applicant(
-        position_id="123",
         name="Elon Musk",
         first_name="Elon",
         last_name="Musk",
@@ -593,7 +592,6 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = ats_api.AtsApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     applicant = Applicant(
-        position_id="123",
         name="Elon Musk",
         first_name="Elon",
         last_name="Musk",

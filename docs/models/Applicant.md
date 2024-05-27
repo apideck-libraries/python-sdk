@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**position_id** | **str** | The PositionId the applicant applied for. | [optional] 
 **name** | **str** | The name of an applicant. | [optional] 
 **first_name** | **str, none_type** | The first name of the person. | [optional] 
 **last_name** | **str, none_type** | The last name of the person. | [optional] 

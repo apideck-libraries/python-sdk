@@ -1557,6 +1557,7 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             display_name="Windsurf Shop",
             name="Windsurf Shop",
+            email="boring@boring.com",
         ),
         company_id="12345",
         currency=Currency("USD"),
@@ -1620,7 +1621,12 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         allocations=[
-            None,
+            Allocation(
+                id="123456",
+                type="invoice",
+                amount=49.99,
+                allocation_id="123456",
+            ),
         ],
         note="Some notes about this credit note",
         terms="Some terms about this credit note",
@@ -2133,6 +2139,7 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             display_name="Windsurf Shop",
             name="Windsurf Shop",
+            email="boring@boring.com",
         ),
         company_id="12345",
         currency=Currency("USD"),
@@ -2196,7 +2203,12 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         allocations=[
-            None,
+            Allocation(
+                id="123456",
+                type="invoice",
+                amount=49.99,
+                allocation_id="123456",
+            ),
         ],
         note="Some notes about this credit note",
         terms="Some terms about this credit note",
@@ -4341,6 +4353,7 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             display_name="Windsurf Shop",
             name="Windsurf Shop",
+            email="boring@boring.com",
         ),
         company_id="12345",
         invoice_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
@@ -4942,6 +4955,7 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             display_name="Windsurf Shop",
             name="Windsurf Shop",
+            email="boring@boring.com",
         ),
         company_id="12345",
         invoice_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
@@ -5231,6 +5245,7 @@ with apideck.ApiClient(configuration) as api_client:
                     id="12345",
                     display_name="Windsurf Shop",
                     name="Windsurf Shop",
+                    email="boring@boring.com",
                 ),
                 supplier=LinkedSupplier(
                     id="12345",
@@ -5742,6 +5757,7 @@ with apideck.ApiClient(configuration) as api_client:
                     id="12345",
                     display_name="Windsurf Shop",
                     name="Windsurf Shop",
+                    email="boring@boring.com",
                 ),
                 supplier=LinkedSupplier(
                     id="12345",
@@ -7168,6 +7184,7 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             display_name="Windsurf Shop",
             name="Windsurf Shop",
+            email="boring@boring.com",
         ),
         supplier=LinkedSupplier(
             id="12345",
@@ -7204,10 +7221,11 @@ with apideck.ApiClient(configuration) as api_client:
         status="authorised",
         type="accounts_receivable",
         allocations=[
-            PaymentAllocations(
+            Allocation(
                 id="123456",
                 type="invoice",
                 amount=49.99,
+                allocation_id="123456",
             ),
         ],
         note="Some notes about this payment",
@@ -7684,6 +7702,7 @@ with apideck.ApiClient(configuration) as api_client:
             id="12345",
             display_name="Windsurf Shop",
             name="Windsurf Shop",
+            email="boring@boring.com",
         ),
         supplier=LinkedSupplier(
             id="12345",
@@ -7720,10 +7739,11 @@ with apideck.ApiClient(configuration) as api_client:
         status="authorised",
         type="accounts_receivable",
         allocations=[
-            PaymentAllocations(
+            Allocation(
                 id="123456",
                 type="invoice",
                 amount=49.99,
+                allocation_id="123456",
             ),
         ],
         note="Some notes about this payment",
