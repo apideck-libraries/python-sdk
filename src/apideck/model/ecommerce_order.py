@@ -118,9 +118,11 @@ class EcommerceOrder(ModelNormal):
             'discounts': ([EcommerceDiscount],),  # noqa: E501
             'sub_total': (str, none_type,),  # noqa: E501
             'shipping_cost': (str, none_type,),  # noqa: E501
+            'coupon_discount': (str, none_type,),  # noqa: E501
             'total_discount': (str, none_type,),  # noqa: E501
             'total_tax': (str, none_type,),  # noqa: E501
             'total_amount': (str, none_type,),  # noqa: E501
+            'refunded_amount': (str, none_type,),  # noqa: E501
             'status': (EcommerceOrderStatus,),  # noqa: E501
             'payment_status': (str, none_type,),  # noqa: E501
             'fulfillment_status': (str, none_type,),  # noqa: E501
@@ -148,9 +150,11 @@ class EcommerceOrder(ModelNormal):
         'discounts': 'discounts',  # noqa: E501
         'sub_total': 'sub_total',  # noqa: E501
         'shipping_cost': 'shipping_cost',  # noqa: E501
+        'coupon_discount': 'coupon_discount',  # noqa: E501
         'total_discount': 'total_discount',  # noqa: E501
         'total_tax': 'total_tax',  # noqa: E501
         'total_amount': 'total_amount',  # noqa: E501
+        'refunded_amount': 'refunded_amount',  # noqa: E501
         'status': 'status',  # noqa: E501
         'payment_status': 'payment_status',  # noqa: E501
         'fulfillment_status': 'fulfillment_status',  # noqa: E501
@@ -219,9 +223,11 @@ class EcommerceOrder(ModelNormal):
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
             sub_total (str, none_type): Sub-total amount, normally before tax.. [optional]  # noqa: E501
             shipping_cost (str, none_type): Shipping cost, if any.. [optional]  # noqa: E501
+            coupon_discount (str, none_type): Coupon discount, if any.. [optional]  # noqa: E501
             total_discount (str, none_type): Total discount, if any.. [optional]  # noqa: E501
             total_tax (str, none_type): Total tax, if any.. [optional]  # noqa: E501
             total_amount (str, none_type): Total amount due.. [optional]  # noqa: E501
+            refunded_amount (str, none_type): Refunded amount, if any.. [optional]  # noqa: E501
             status (EcommerceOrderStatus): [optional]  # noqa: E501
             payment_status (str, none_type): Current payment status of the order.. [optional]  # noqa: E501
             fulfillment_status (str, none_type): Current fulfillment status of the order.. [optional]  # noqa: E501
@@ -322,9 +328,11 @@ class EcommerceOrder(ModelNormal):
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
             sub_total (str, none_type): Sub-total amount, normally before tax.. [optional]  # noqa: E501
             shipping_cost (str, none_type): Shipping cost, if any.. [optional]  # noqa: E501
+            coupon_discount (str, none_type): Coupon discount, if any.. [optional]  # noqa: E501
             total_discount (str, none_type): Total discount, if any.. [optional]  # noqa: E501
             total_tax (str, none_type): Total tax, if any.. [optional]  # noqa: E501
             total_amount (str, none_type): Total amount due.. [optional]  # noqa: E501
+            refunded_amount (str, none_type): Refunded amount, if any.. [optional]  # noqa: E501
             status (EcommerceOrderStatus): [optional]  # noqa: E501
             payment_status (str, none_type): Current payment status of the order.. [optional]  # noqa: E501
             fulfillment_status (str, none_type): Current fulfillment status of the order.. [optional]  # noqa: E501
