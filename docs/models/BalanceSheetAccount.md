@@ -1,5 +1,6 @@
 # BalanceSheetAccount
 
+A balance sheet account represents the financial position of a company at a specific point in time.
 
 ## Properties
 Name | Type | Description | Notes

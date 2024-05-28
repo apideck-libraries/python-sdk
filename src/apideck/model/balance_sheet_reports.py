@@ -113,6 +113,7 @@ class BalanceSheetReports(ModelNormal):
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
+            'uncategorized_items': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
         }
 
     @cached_property
@@ -135,6 +136,7 @@ class BalanceSheetReports(ModelNormal):
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
+        'uncategorized_items': 'uncategorized_items',  # noqa: E501
     }
 
     read_only_vars = {
@@ -200,6 +202,7 @@ class BalanceSheetReports(ModelNormal):
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
+            uncategorized_items ([bool, date, datetime, dict, float, int, list, str, none_type]): Items that are not categorized in the balance sheet. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -301,6 +304,7 @@ class BalanceSheetReports(ModelNormal):
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
+            uncategorized_items ([bool, date, datetime, dict, float, int, list, str, none_type]): Items that are not categorized in the balance sheet. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
