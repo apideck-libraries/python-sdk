@@ -76,6 +76,7 @@ class BalanceSheetAccount(ModelNormal):
         """
         return {
             'account_id': (str,),  # noqa: E501
+            'code': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'value': (float,),  # noqa: E501
             'items': ([bool, date, datetime, dict, float, int, list, str, none_type], none_type,),  # noqa: E501
@@ -88,6 +89,7 @@ class BalanceSheetAccount(ModelNormal):
 
     attribute_map = {
         'account_id': 'account_id',  # noqa: E501
+        'code': 'code',  # noqa: E501
         'name': 'name',  # noqa: E501
         'value': 'value',  # noqa: E501
         'items': 'items',  # noqa: E501
@@ -136,6 +138,7 @@ class BalanceSheetAccount(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str): The unique identifier for the account.. [optional]  # noqa: E501
+            code (str): The code of the account.. [optional]  # noqa: E501
             name (str): Name of the report item. [optional]  # noqa: E501
             value (float): The value of the account.. [optional]  # noqa: E501
             items ([bool, date, datetime, dict, float, int, list, str, none_type], none_type): [optional]  # noqa: E501
@@ -221,6 +224,7 @@ class BalanceSheetAccount(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str): The unique identifier for the account.. [optional]  # noqa: E501
+            code (str): The code of the account.. [optional]  # noqa: E501
             name (str): Name of the report item. [optional]  # noqa: E501
             value (float): The value of the account.. [optional]  # noqa: E501
             items ([bool, date, datetime, dict, float, int, list, str, none_type], none_type): [optional]  # noqa: E501

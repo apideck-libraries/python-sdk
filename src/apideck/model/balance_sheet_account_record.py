@@ -76,6 +76,7 @@ class BalanceSheetAccountRecord(ModelNormal):
         """
         return {
             'account_id': (str,),  # noqa: E501
+            'code': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'value': (float,),  # noqa: E501
         }
@@ -87,6 +88,7 @@ class BalanceSheetAccountRecord(ModelNormal):
 
     attribute_map = {
         'account_id': 'account_id',  # noqa: E501
+        'code': 'code',  # noqa: E501
         'name': 'name',  # noqa: E501
         'value': 'value',  # noqa: E501
     }
@@ -134,6 +136,7 @@ class BalanceSheetAccountRecord(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str): The unique identifier for the account.. [optional]  # noqa: E501
+            code (str): The code of the account.. [optional]  # noqa: E501
             name (str): Name of the report item. [optional]  # noqa: E501
             value (float): The value of the account.. [optional]  # noqa: E501
         """
@@ -218,6 +221,7 @@ class BalanceSheetAccountRecord(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str): The unique identifier for the account.. [optional]  # noqa: E501
+            code (str): The code of the account.. [optional]  # noqa: E501
             name (str): Name of the report item. [optional]  # noqa: E501
             value (float): The value of the account.. [optional]  # noqa: E501
         """
