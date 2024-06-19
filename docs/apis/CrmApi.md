@@ -179,6 +179,19 @@ with apideck.ApiClient(configuration) as api_client:
                 status="accepted",
             ),
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Activity | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -712,6 +725,19 @@ with apideck.ApiClient(configuration) as api_client:
                 status="accepted",
             ),
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Activity | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -931,6 +957,19 @@ with apideck.ApiClient(configuration) as api_client:
         read_only=False,
         salutation="Mr",
         birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Company | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1483,6 +1522,19 @@ with apideck.ApiClient(configuration) as api_client:
         read_only=False,
         salutation="Mr",
         birthday=dateutil_parser('Sat Aug 12 00:00:00 UTC 2000').date(),
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Company | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1689,6 +1741,19 @@ with apideck.ApiClient(configuration) as api_client:
         opportunity_ids=[
             "opportunity_ids_example",
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Contact | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -2233,6 +2298,19 @@ with apideck.ApiClient(configuration) as api_client:
         opportunity_ids=[
             "opportunity_ids_example",
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Contact | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -2427,6 +2505,19 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         tags=Tags(["New"]),
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Lead | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -2957,6 +3048,19 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         tags=Tags(["New"]),
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Lead | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -3075,6 +3179,19 @@ with apideck.ApiClient(configuration) as api_client:
         opportunity_id="12345",
         lead_id="12345",
         active=True,
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Note | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -3515,6 +3632,19 @@ with apideck.ApiClient(configuration) as api_client:
         opportunity_id="12345",
         lead_id="12345",
         active=True,
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Note | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -3662,6 +3792,19 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         stage_last_changed_at=dateutil_parser('2020-09-30T07:43:32Z'),
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Opportunity | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -4148,6 +4291,19 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ],
         stage_last_changed_at=dateutil_parser('2020-09-30T07:43:32Z'),
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Opportunity | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -4273,6 +4429,19 @@ with apideck.ApiClient(configuration) as api_client:
                 display_order=1,
             ),
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Pipeline | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -4720,6 +4889,19 @@ with apideck.ApiClient(configuration) as api_client:
                 display_order=1,
             ),
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # Pipeline | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -4889,6 +5071,19 @@ with apideck.ApiClient(configuration) as api_client:
                 type="primary",
             ),
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # User | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -5380,6 +5575,19 @@ with apideck.ApiClient(configuration) as api_client:
                 type="primary",
             ),
         ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
     ) # User | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)

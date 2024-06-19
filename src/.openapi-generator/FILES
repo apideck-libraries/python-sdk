@@ -525,6 +525,7 @@ apideck/model/order_type.py
 apideck/model/orders_sort.py
 apideck/model/owner.py
 apideck/model/pagination_coverage.py
+apideck/model/pass_through_body.py
 apideck/model/pass_through_query.py
 apideck/model/payment.py
 apideck/model/payment_card.py
@@ -1191,6 +1192,7 @@ docs/OrderType.md
 docs/OrdersSort.md
 docs/Owner.md
 docs/PaginationCoverage.md
+docs/PassThroughBody.md
 docs/PassThroughQuery.md
 docs/Payment.md
 docs/PaymentCard.md
@@ -1864,6 +1866,7 @@ test/test_order_type.py
 test/test_orders_sort.py
 test/test_owner.py
 test/test_pagination_coverage.py
+test/test_pass_through_body.py
 test/test_pass_through_query.py
 test/test_payment.py
 test/test_payment_card.py

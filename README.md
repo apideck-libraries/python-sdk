@@ -1429,6 +1429,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [OrdersSort](docs/models/OrdersSort.md)
  - [Owner](docs/models/Owner.md)
  - [PaginationCoverage](docs/models/PaginationCoverage.md)
+ - [PassThroughBody](docs/models/PassThroughBody.md)
  - [PassThroughQuery](docs/models/PassThroughQuery.md)
  - [Payment](docs/models/Payment.md)
  - [PaymentCard](docs/models/PaymentCard.md)

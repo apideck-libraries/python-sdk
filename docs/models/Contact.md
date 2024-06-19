@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime, none_type** | The last update date of the contact. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The creation date of the contact. | [optional] [readonly] 
 **opportunity_ids** | **[str]** | The opportunity ids of the contact. | [optional] 
+**pass_through** | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

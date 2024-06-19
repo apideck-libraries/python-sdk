@@ -503,6 +503,7 @@ from apideck.model.order_type import OrderType
 from apideck.model.orders_sort import OrdersSort
 from apideck.model.owner import Owner
 from apideck.model.pagination_coverage import PaginationCoverage
+from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.pass_through_query import PassThroughQuery
 from apideck.model.payment import Payment
 from apideck.model.payment_card import PaymentCard

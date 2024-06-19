@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **created_by** | **str, none_type** | The user that created the note. | [optional] [readonly] 
 **updated_at** | **str, none_type** | The timestamp when the note was last updated | [optional] [readonly] 
 **created_at** | **str, none_type** | The timestamp when the note was created | [optional] [readonly] 
+**pass_through** | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

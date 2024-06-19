@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **created_by** | **str, none_type** | Created by user ID | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | Last updated date | [optional] [readonly] 
 **created_at** | **datetime, none_type** | Creation date | [optional] [readonly] 
+**pass_through** | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
