@@ -1607,6 +1607,7 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         line_items=[
             InvoiceLineItem(
+                id="12345",
                 row_id="12345",
                 code="120-C",
                 line_number=1,
@@ -2202,6 +2203,7 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         line_items=[
             InvoiceLineItem(
+                id="12345",
                 row_id="12345",
                 code="120-C",
                 line_number=1,
@@ -4511,6 +4513,7 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         line_items=[
             InvoiceLineItem(
+                id="12345",
                 row_id="12345",
                 code="120-C",
                 line_number=1,
@@ -5126,6 +5129,7 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         line_items=[
             InvoiceLineItem(
+                id="12345",
                 row_id="12345",
                 code="120-C",
                 line_number=1,
@@ -8282,6 +8286,7 @@ with apideck.ApiClient(configuration) as api_client:
         tax_inclusive=True,
         line_items=[
             InvoiceLineItem(
+                id="12345",
                 row_id="12345",
                 code="120-C",
                 line_number=1,
@@ -8871,6 +8876,7 @@ with apideck.ApiClient(configuration) as api_client:
         tax_inclusive=True,
         line_items=[
             InvoiceLineItem(
+                id="12345",
                 row_id="12345",
                 code="120-C",
                 line_number=1,

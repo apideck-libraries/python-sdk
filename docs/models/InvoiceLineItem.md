@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**id** | **str, none_type** | A unique identifier for an object. | [optional] 
 **row_id** | **str** | Row ID | [optional] 
 **code** | **str, none_type** | User defined item code | [optional] 
 **line_number** | **int, none_type** | Line number in the invoice | [optional] 

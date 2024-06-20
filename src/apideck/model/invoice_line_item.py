@@ -94,7 +94,7 @@ class InvoiceLineItem(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'row_id': (str,),  # noqa: E501
             'code': (str, none_type,),  # noqa: E501
             'line_number': (int, none_type,),  # noqa: E501
@@ -153,7 +153,6 @@ class InvoiceLineItem(ModelNormal):
     }
 
     read_only_vars = {
-        'id',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'created_at',  # noqa: E501
@@ -198,7 +197,7 @@ class InvoiceLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             row_id (str): Row ID. [optional]  # noqa: E501
             code (str, none_type): User defined item code. [optional]  # noqa: E501
             line_number (int, none_type): Line number in the invoice. [optional]  # noqa: E501
@@ -303,7 +302,7 @@ class InvoiceLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             row_id (str): Row ID. [optional]  # noqa: E501
             code (str, none_type): User defined item code. [optional]  # noqa: E501
             line_number (int, none_type): Line number in the invoice. [optional]  # noqa: E501
