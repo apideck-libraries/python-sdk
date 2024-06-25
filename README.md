@@ -972,6 +972,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [BalanceSheet](docs/models/BalanceSheet.md)
  - [BalanceSheetAccount](docs/models/BalanceSheetAccount.md)
  - [BalanceSheetAccountRecord](docs/models/BalanceSheetAccountRecord.md)
+ - [BalanceSheetAccounts](docs/models/BalanceSheetAccounts.md)
  - [BalanceSheetFilter](docs/models/BalanceSheetFilter.md)
  - [BalanceSheetReports](docs/models/BalanceSheetReports.md)
  - [BankAccount](docs/models/BankAccount.md)

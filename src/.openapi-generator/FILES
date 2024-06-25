@@ -68,6 +68,7 @@ apideck/model/bad_request_response.py
 apideck/model/balance_sheet.py
 apideck/model/balance_sheet_account.py
 apideck/model/balance_sheet_account_record.py
+apideck/model/balance_sheet_accounts.py
 apideck/model/balance_sheet_filter.py
 apideck/model/balance_sheet_reports.py
 apideck/model/bank_account.py
@@ -728,6 +729,7 @@ docs/BadRequestResponse.md
 docs/BalanceSheet.md
 docs/BalanceSheetAccount.md
 docs/BalanceSheetAccountRecord.md
+docs/BalanceSheetAccounts.md
 docs/BalanceSheetFilter.md
 docs/BalanceSheetReports.md
 docs/BankAccount.md
@@ -1402,6 +1404,7 @@ test/test_bad_request_response.py
 test/test_balance_sheet.py
 test/test_balance_sheet_account.py
 test/test_balance_sheet_account_record.py
+test/test_balance_sheet_accounts.py
 test/test_balance_sheet_filter.py
 test/test_balance_sheet_reports.py
 test/test_bank_account.py

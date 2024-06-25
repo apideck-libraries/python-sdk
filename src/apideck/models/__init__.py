@@ -46,6 +46,7 @@ from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet import BalanceSheet
 from apideck.model.balance_sheet_account import BalanceSheetAccount
 from apideck.model.balance_sheet_account_record import BalanceSheetAccountRecord
+from apideck.model.balance_sheet_accounts import BalanceSheetAccounts
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.balance_sheet_reports import BalanceSheetReports
 from apideck.model.bank_account import BankAccount
