@@ -70,6 +70,7 @@ class EmployeeEmploymentRole(ModelNormal):
             'PART_TIME': "part_time",
             'HOURLY': "hourly",
             'OTHER': "other",
+            'NOT_SPECIFIED': "not_specified",
         },
     }
 
