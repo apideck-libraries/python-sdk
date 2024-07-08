@@ -737,11 +737,11 @@ _HrisApi_ | [**time_off_requests_add**](docs/apis/HrisApi.md#time_off_requests_a
 
 _HrisApi_ | [**time_off_requests_all**](docs/apis/HrisApi.md#time_off_requests_all) | **GET** /hris/time-off-requests | List Time Off Requests |
 
-_HrisApi_ | [**time_off_requests_delete**](docs/apis/HrisApi.md#time_off_requests_delete) | **DELETE** /hris/time-off-requests/{id} | Delete Time Off Request |
+_HrisApi_ | [**time_off_requests_delete**](docs/apis/HrisApi.md#time_off_requests_delete) | **DELETE** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Delete Time Off Request |
 
-_HrisApi_ | [**time_off_requests_one**](docs/apis/HrisApi.md#time_off_requests_one) | **GET** /hris/time-off-requests/{id} | Get Time Off Request |
+_HrisApi_ | [**time_off_requests_one**](docs/apis/HrisApi.md#time_off_requests_one) | **GET** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Get Time Off Request |
 
-_HrisApi_ | [**time_off_requests_update**](docs/apis/HrisApi.md#time_off_requests_update) | **PATCH** /hris/time-off-requests/{id} | Update Time Off Request |
+_HrisApi_ | [**time_off_requests_update**](docs/apis/HrisApi.md#time_off_requests_update) | **PATCH** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Update Time Off Request |
 
 _IssueTrackingApi_ | [**collection_tags_all**](docs/apis/IssueTrackingApi.md#collection_tags_all) | **GET** /issue-tracking/collections/{collection_id}/tags | List Tags |
 

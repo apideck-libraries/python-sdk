@@ -1844,7 +1844,7 @@ class HrisApi(object):
                 'auth': [
                     'apiKey'
                 ],
-                'endpoint_path': '/hris/time-off-requests/{id}',
+                'endpoint_path': '/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}',
                 'operation_id': 'time_off_requests_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -1852,6 +1852,7 @@ class HrisApi(object):
             params_map={
                 'all': [
                     'id',
+                    'employee_id',
                     'consumer_id',
                     'app_id',
                     'service_id',
@@ -1859,6 +1860,7 @@ class HrisApi(object):
                 ],
                 'required': [
                     'id',
+                    'employee_id',
                 ],
                 'nullable': [
                 ],
@@ -1875,6 +1877,8 @@ class HrisApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
+                    'employee_id':
+                        (str,),
                     'consumer_id':
                         (str,),
                     'app_id':
@@ -1886,6 +1890,7 @@ class HrisApi(object):
                 },
                 'attribute_map': {
                     'id': 'id',
+                    'employee_id': 'employee_id',
                     'consumer_id': 'x-apideck-consumer-id',
                     'app_id': 'x-apideck-app-id',
                     'service_id': 'x-apideck-service-id',
@@ -1893,6 +1898,7 @@ class HrisApi(object):
                 },
                 'location_map': {
                     'id': 'path',
+                    'employee_id': 'path',
                     'consumer_id': 'header',
                     'app_id': 'header',
                     'service_id': 'header',
@@ -1915,7 +1921,7 @@ class HrisApi(object):
                 'auth': [
                     'apiKey'
                 ],
-                'endpoint_path': '/hris/time-off-requests/{id}',
+                'endpoint_path': '/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}',
                 'operation_id': 'time_off_requests_one',
                 'http_method': 'GET',
                 'servers': None,
@@ -1923,6 +1929,7 @@ class HrisApi(object):
             params_map={
                 'all': [
                     'id',
+                    'employee_id',
                     'consumer_id',
                     'app_id',
                     'service_id',
@@ -1931,6 +1938,7 @@ class HrisApi(object):
                 ],
                 'required': [
                     'id',
+                    'employee_id',
                 ],
                 'nullable': [
                     'fields',
@@ -1948,6 +1956,8 @@ class HrisApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
+                    'employee_id':
+                        (str,),
                     'consumer_id':
                         (str,),
                     'app_id':
@@ -1961,6 +1971,7 @@ class HrisApi(object):
                 },
                 'attribute_map': {
                     'id': 'id',
+                    'employee_id': 'employee_id',
                     'consumer_id': 'x-apideck-consumer-id',
                     'app_id': 'x-apideck-app-id',
                     'service_id': 'x-apideck-service-id',
@@ -1969,6 +1980,7 @@ class HrisApi(object):
                 },
                 'location_map': {
                     'id': 'path',
+                    'employee_id': 'path',
                     'consumer_id': 'header',
                     'app_id': 'header',
                     'service_id': 'header',
@@ -1992,7 +2004,7 @@ class HrisApi(object):
                 'auth': [
                     'apiKey'
                 ],
-                'endpoint_path': '/hris/time-off-requests/{id}',
+                'endpoint_path': '/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}',
                 'operation_id': 'time_off_requests_update',
                 'http_method': 'PATCH',
                 'servers': None,
@@ -2000,6 +2012,7 @@ class HrisApi(object):
             params_map={
                 'all': [
                     'id',
+                    'employee_id',
                     'time_off_request',
                     'consumer_id',
                     'app_id',
@@ -2008,6 +2021,7 @@ class HrisApi(object):
                 ],
                 'required': [
                     'id',
+                    'employee_id',
                     'time_off_request',
                 ],
                 'nullable': [
@@ -2025,6 +2039,8 @@ class HrisApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
+                    'employee_id':
+                        (str,),
                     'time_off_request':
                         (TimeOffRequest,),
                     'consumer_id':
@@ -2038,6 +2054,7 @@ class HrisApi(object):
                 },
                 'attribute_map': {
                     'id': 'id',
+                    'employee_id': 'employee_id',
                     'consumer_id': 'x-apideck-consumer-id',
                     'app_id': 'x-apideck-app-id',
                     'service_id': 'x-apideck-service-id',
@@ -2045,6 +2062,7 @@ class HrisApi(object):
                 },
                 'location_map': {
                     'id': 'path',
+                    'employee_id': 'path',
                     'time_off_request': 'body',
                     'consumer_id': 'header',
                     'app_id': 'header',
@@ -3896,6 +3914,7 @@ class HrisApi(object):
     def time_off_requests_delete(
         self,
         id,
+        employee_id,
         **kwargs
     ):
         """Delete Time Off Request  # noqa: E501
@@ -3904,11 +3923,12 @@ class HrisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.time_off_requests_delete(id, async_req=True)
+        >>> thread = api.time_off_requests_delete(id, employee_id, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (str): ID of the record you are acting upon.
+            employee_id (str): ID of the employee you are acting upon.
 
         Keyword Args:
             consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
@@ -3973,11 +3993,14 @@ class HrisApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
+        kwargs['employee_id'] = \
+            employee_id
         return self.time_off_requests_delete_endpoint.call_with_http_info(**kwargs)
 
     def time_off_requests_one(
         self,
         id,
+        employee_id,
         **kwargs
     ):
         """Get Time Off Request  # noqa: E501
@@ -3986,11 +4009,12 @@ class HrisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.time_off_requests_one(id, async_req=True)
+        >>> thread = api.time_off_requests_one(id, employee_id, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (str): ID of the record you are acting upon.
+            employee_id (str): ID of the employee you are acting upon.
 
         Keyword Args:
             consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
@@ -4056,11 +4080,14 @@ class HrisApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
+        kwargs['employee_id'] = \
+            employee_id
         return self.time_off_requests_one_endpoint.call_with_http_info(**kwargs)
 
     def time_off_requests_update(
         self,
         id,
+        employee_id,
         time_off_request,
         **kwargs
     ):
@@ -4070,11 +4097,12 @@ class HrisApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.time_off_requests_update(id, time_off_request, async_req=True)
+        >>> thread = api.time_off_requests_update(id, employee_id, time_off_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (str): ID of the record you are acting upon.
+            employee_id (str): ID of the employee you are acting upon.
             time_off_request (TimeOffRequest):
 
         Keyword Args:
@@ -4140,6 +4168,8 @@ class HrisApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
+        kwargs['employee_id'] = \
+            employee_id
         kwargs['time_off_request'] = \
             time_off_request
         return self.time_off_requests_update_endpoint.call_with_http_info(**kwargs)

@@ -26,9 +26,9 @@ Method | HTTP request | Description
 [**payrolls_one**](HrisApi.md#payrolls_one) | **GET** /hris/payrolls/{payroll_id} | Get Payroll
 [**time_off_requests_add**](HrisApi.md#time_off_requests_add) | **POST** /hris/time-off-requests | Create Time Off Request
 [**time_off_requests_all**](HrisApi.md#time_off_requests_all) | **GET** /hris/time-off-requests | List Time Off Requests
-[**time_off_requests_delete**](HrisApi.md#time_off_requests_delete) | **DELETE** /hris/time-off-requests/{id} | Delete Time Off Request
-[**time_off_requests_one**](HrisApi.md#time_off_requests_one) | **GET** /hris/time-off-requests/{id} | Get Time Off Request
-[**time_off_requests_update**](HrisApi.md#time_off_requests_update) | **PATCH** /hris/time-off-requests/{id} | Update Time Off Request
+[**time_off_requests_delete**](HrisApi.md#time_off_requests_delete) | **DELETE** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Delete Time Off Request
+[**time_off_requests_one**](HrisApi.md#time_off_requests_one) | **GET** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Get Time Off Request
+[**time_off_requests_update**](HrisApi.md#time_off_requests_update) | **PATCH** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Update Time Off Request
 
 
 # **companies_add**
@@ -2923,6 +2923,7 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        policy_type="sick",
     ) # TimeOffRequest | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -3101,7 +3102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **time_off_requests_delete**
-> DeleteTimeOffRequestResponse time_off_requests_delete(id)
+> DeleteTimeOffRequestResponse time_off_requests_delete(id, employee_id)
 
 Delete Time Off Request
 
@@ -3145,6 +3146,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
+    employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
@@ -3153,7 +3155,7 @@ with apideck.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete Time Off Request
-        api_response = api_instance.time_off_requests_delete(id)
+        api_response = api_instance.time_off_requests_delete(id, employee_id)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_delete: %s\n" % e)
@@ -3162,7 +3164,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Delete Time Off Request
-        api_response = api_instance.time_off_requests_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.time_off_requests_delete(id, employee_id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_delete: %s\n" % e)
@@ -3174,6 +3176,7 @@ with apideck.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of the record you are acting upon. |
+ **employee_id** | **str**| ID of the employee you are acting upon. |
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
@@ -3208,7 +3211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **time_off_requests_one**
-> GetTimeOffRequestResponse time_off_requests_one(id)
+> GetTimeOffRequestResponse time_off_requests_one(id, employee_id)
 
 Get Time Off Request
 
@@ -3252,6 +3255,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
+    employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
     service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
@@ -3261,7 +3265,7 @@ with apideck.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Time Off Request
-        api_response = api_instance.time_off_requests_one(id)
+        api_response = api_instance.time_off_requests_one(id, employee_id)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_one: %s\n" % e)
@@ -3270,7 +3274,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Time Off Request
-        api_response = api_instance.time_off_requests_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
+        api_response = api_instance.time_off_requests_one(id, employee_id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_one: %s\n" % e)
@@ -3282,6 +3286,7 @@ with apideck.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of the record you are acting upon. |
+ **employee_id** | **str**| ID of the employee you are acting upon. |
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
  **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
@@ -3317,7 +3322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **time_off_requests_update**
-> UpdateTimeOffRequestResponse time_off_requests_update(id, time_off_request)
+> UpdateTimeOffRequestResponse time_off_requests_update(id, employee_id, time_off_request)
 
 Update Time Off Request
 
@@ -3362,6 +3367,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
+    employee_id = "employee_id_example" # str | ID of the employee you are acting upon.
     time_off_request = TimeOffRequest(
         employee_id="12345",
         policy_id="12345",
@@ -3391,6 +3397,7 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        policy_type="sick",
     ) # TimeOffRequest | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -3400,7 +3407,7 @@ with apideck.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Time Off Request
-        api_response = api_instance.time_off_requests_update(id, time_off_request)
+        api_response = api_instance.time_off_requests_update(id, employee_id, time_off_request)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_update: %s\n" % e)
@@ -3409,7 +3416,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Update Time Off Request
-        api_response = api_instance.time_off_requests_update(id, time_off_request, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        api_response = api_instance.time_off_requests_update(id, employee_id, time_off_request, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling HrisApi->time_off_requests_update: %s\n" % e)
@@ -3421,6 +3428,7 @@ with apideck.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of the record you are acting upon. |
+ **employee_id** | **str**| ID of the employee you are acting upon. |
  **time_off_request** | [**TimeOffRequest**](TimeOffRequest.md)|  |
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]

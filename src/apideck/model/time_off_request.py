@@ -146,6 +146,7 @@ class TimeOffRequest(ModelNormal):
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'pass_through': (PassThroughBody,),  # noqa: E501
+            'policy_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -173,6 +174,7 @@ class TimeOffRequest(ModelNormal):
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'pass_through': 'pass_through',  # noqa: E501
+        'policy_type': 'policy_type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -241,6 +243,7 @@ class TimeOffRequest(ModelNormal):
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
+            policy_type (str): The policy type of the time off request. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -341,6 +344,7 @@ class TimeOffRequest(ModelNormal):
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
+            policy_type (str): The policy type of the time off request. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
