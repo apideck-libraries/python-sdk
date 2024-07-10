@@ -3042,6 +3042,7 @@ with apideck.ApiClient(configuration) as api_client:
     filter = TimeOffRequestsFilter(
         start_date="2022-04-08",
         end_date="2022-04-21",
+        updated_since="2020-09-30T07:43:32.000Z",
         employee_id="1234",
         time_off_request_status="",
     ) # TimeOffRequestsFilter | Apply filters (optional)

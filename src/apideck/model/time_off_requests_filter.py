@@ -95,6 +95,7 @@ class TimeOffRequestsFilter(ModelNormal):
         return {
             'start_date': (str,),  # noqa: E501
             'end_date': (str,),  # noqa: E501
+            'updated_since': (str,),  # noqa: E501
             'employee_id': (str,),  # noqa: E501
             'time_off_request_status': (str,),  # noqa: E501
         }
@@ -107,6 +108,7 @@ class TimeOffRequestsFilter(ModelNormal):
     attribute_map = {
         'start_date': 'start_date',  # noqa: E501
         'end_date': 'end_date',  # noqa: E501
+        'updated_since': 'updated_since',  # noqa: E501
         'employee_id': 'employee_id',  # noqa: E501
         'time_off_request_status': 'time_off_request_status',  # noqa: E501
     }
@@ -154,6 +156,7 @@ class TimeOffRequestsFilter(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             start_date (str): Start date. [optional]  # noqa: E501
             end_date (str): End date. [optional]  # noqa: E501
+            updated_since (str): Minimum date the time off request was last created or modified. [optional]  # noqa: E501
             employee_id (str): Employee ID. [optional]  # noqa: E501
             time_off_request_status (str): Time off request status to filter on. [optional]  # noqa: E501
         """
@@ -239,6 +242,7 @@ class TimeOffRequestsFilter(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             start_date (str): Start date. [optional]  # noqa: E501
             end_date (str): End date. [optional]  # noqa: E501
+            updated_since (str): Minimum date the time off request was last created or modified. [optional]  # noqa: E501
             employee_id (str): Employee ID. [optional]  # noqa: E501
             time_off_request_status (str): Time off request status to filter on. [optional]  # noqa: E501
         """
