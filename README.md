@@ -919,6 +919,8 @@ _VaultApi_ | [**logs_all**](docs/apis/VaultApi.md#logs_all) | **GET** /vault/log
 
 _VaultApi_ | [**sessions_create**](docs/apis/VaultApi.md#sessions_create) | **POST** /vault/sessions | Create Session |
 
+_VaultApi_ | [**validate_connection_state**](docs/apis/VaultApi.md#validate_connection_state) | **POST** /vault/connections/{unified_api}/{service_id}/validate | Validate Connection State |
+
 _WebhookApi_ | [**event_logs_all**](docs/apis/WebhookApi.md#event_logs_all) | **GET** /webhook/logs | List event logs |
 
 _WebhookApi_ | [**webhooks_add**](docs/apis/WebhookApi.md#webhooks_add) | **POST** /webhook/webhooks | Create webhook subscription |
@@ -1577,6 +1579,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UploadSession](docs/models/UploadSession.md)
  - [Url](docs/models/Url.md)
  - [User](docs/models/User.md)
+ - [ValidateConnectionStateResponse](docs/models/ValidateConnectionStateResponse.md)
+ - [ValidateConnectionStateResponseData](docs/models/ValidateConnectionStateResponseData.md)
  - [VaultEventType](docs/models/VaultEventType.md)
  - [VirtualWebhooks](docs/models/VirtualWebhooks.md)
  - [WalletDetails](docs/models/WalletDetails.md)

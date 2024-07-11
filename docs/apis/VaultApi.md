@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**custom_fields_all**](VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields
 [**logs_all**](VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs
 [**sessions_create**](VaultApi.md#sessions_create) | **POST** /vault/sessions | Create Session
+[**validate_connection_state**](VaultApi.md#validate_connection_state) | **POST** /vault/connections/{unified_api}/{service_id}/validate | Validate Connection State
 
 
 # **connection_settings_all**
@@ -1881,6 +1882,113 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Session created |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **validate_connection_state**
+> ValidateConnectionStateResponse validate_connection_state(service_id, unified_api)
+
+Validate Connection State
+
+This endpoint validates the current state of a given connection. This will perform different checks based on the connection auth type. For basic and apiKey auth types, the presence of required fields is checked. For connectors that implement OAuth2, this operation forces the refresh flow for an access token regardless of its expiry.  Note:   - Do not include any credentials in the request body. This operation does not persist changes, but only triggers the validation of connection state.   - If a refresh token flow was performed and successful, the new access token will then be used for subsequent API requests. 
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import vault_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.validate_connection_state_response import ValidateConnectionStateResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vault_api.VaultApi(api_client)
+    service_id = "pipedrive" # str | Service ID of the resource to return
+    unified_api = "crm" # str | Unified API
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    body = {} # dict |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Validate Connection State
+        api_response = api_instance.validate_connection_state(service_id, unified_api)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->validate_connection_state: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Validate Connection State
+        api_response = api_instance.validate_connection_state(service_id, unified_api, consumer_id=consumer_id, app_id=app_id, body=body)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->validate_connection_state: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_id** | **str**| Service ID of the resource to return |
+ **unified_api** | **str**| Unified API |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **body** | **dict**|  | [optional]
+
+### Return type
+
+[**ValidateConnectionStateResponse**](ValidateConnectionStateResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Connection access token refreshed |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |

@@ -651,6 +651,8 @@ from apideck.model.update_webhook_response import UpdateWebhookResponse
 from apideck.model.upload_session import UploadSession
 from apideck.model.url import Url
 from apideck.model.user import User
+from apideck.model.validate_connection_state_response import ValidateConnectionStateResponse
+from apideck.model.validate_connection_state_response_data import ValidateConnectionStateResponseData
 from apideck.model.vault_event_type import VaultEventType
 from apideck.model.virtual_webhooks import VirtualWebhooks
 from apideck.model.wallet_details import WalletDetails

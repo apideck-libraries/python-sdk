@@ -673,6 +673,8 @@ apideck/model/update_webhook_response.py
 apideck/model/upload_session.py
 apideck/model/url.py
 apideck/model/user.py
+apideck/model/validate_connection_state_response.py
+apideck/model/validate_connection_state_response_data.py
 apideck/model/vault_event_type.py
 apideck/model/virtual_webhooks.py
 apideck/model/wallet_details.py
@@ -1343,6 +1345,8 @@ docs/UpdateWebhookResponse.md
 docs/UploadSession.md
 docs/Url.md
 docs/User.md
+docs/ValidateConnectionStateResponse.md
+docs/ValidateConnectionStateResponseData.md
 docs/VaultApi.md
 docs/VaultEventType.md
 docs/VirtualWebhooks.md
@@ -2018,6 +2022,8 @@ test/test_update_webhook_response.py
 test/test_upload_session.py
 test/test_url.py
 test/test_user.py
+test/test_validate_connection_state_response.py
+test/test_validate_connection_state_response_data.py
 test/test_vault_api.py
 test/test_vault_event_type.py
 test/test_virtual_webhooks.py
