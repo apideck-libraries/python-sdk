@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **department_id** | **str, none_type** | Department id | [optional] 
 **item** | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 **tax_rate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
+**tracking_categories** | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 **ledger_account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 

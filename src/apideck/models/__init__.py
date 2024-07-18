@@ -156,6 +156,7 @@ from apideck.model.create_tax_rate_response import CreateTaxRateResponse
 from apideck.model.create_tender_response import CreateTenderResponse
 from apideck.model.create_ticket_response import CreateTicketResponse
 from apideck.model.create_time_off_request_response import CreateTimeOffRequestResponse
+from apideck.model.create_tracking_category_response import CreateTrackingCategoryResponse
 from apideck.model.create_upload_session_request import CreateUploadSessionRequest
 from apideck.model.create_upload_session_response import CreateUploadSessionResponse
 from apideck.model.create_user_response import CreateUserResponse
@@ -223,11 +224,13 @@ from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
 from apideck.model.delete_tender_response import DeleteTenderResponse
 from apideck.model.delete_ticket_response import DeleteTicketResponse
 from apideck.model.delete_time_off_request_response import DeleteTimeOffRequestResponse
+from apideck.model.delete_tracking_category_response import DeleteTrackingCategoryResponse
 from apideck.model.delete_upload_session_response import DeleteUploadSessionResponse
 from apideck.model.delete_user_response import DeleteUserResponse
 from apideck.model.delete_webhook_response import DeleteWebhookResponse
 from apideck.model.delivery_url import DeliveryUrl
 from apideck.model.department import Department
+from apideck.model.deprecated_linked_tracking_category import DeprecatedLinkedTrackingCategory
 from apideck.model.drive import Drive
 from apideck.model.drive_group import DriveGroup
 from apideck.model.drive_groups_filter import DriveGroupsFilter
@@ -412,6 +415,8 @@ from apideck.model.get_ticket_response import GetTicketResponse
 from apideck.model.get_tickets_response import GetTicketsResponse
 from apideck.model.get_time_off_request_response import GetTimeOffRequestResponse
 from apideck.model.get_time_off_requests_response import GetTimeOffRequestsResponse
+from apideck.model.get_tracking_categories_response import GetTrackingCategoriesResponse
+from apideck.model.get_tracking_category_response import GetTrackingCategoryResponse
 from apideck.model.get_upload_session_response import GetUploadSessionResponse
 from apideck.model.get_user_response import GetUserResponse
 from apideck.model.get_users_response import GetUsersResponse
@@ -467,6 +472,7 @@ from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_parent_customer import LinkedParentCustomer
 from apideck.model.linked_supplier import LinkedSupplier
 from apideck.model.linked_tax_rate import LinkedTaxRate
+from apideck.model.linked_tracking_categories import LinkedTrackingCategories
 from apideck.model.linked_tracking_category import LinkedTrackingCategory
 from apideck.model.links import Links
 from apideck.model.location import Location
@@ -581,6 +587,7 @@ from apideck.model.time_off_request_notes import TimeOffRequestNotes
 from apideck.model.time_off_requests_filter import TimeOffRequestsFilter
 from apideck.model.too_many_requests_response import TooManyRequestsResponse
 from apideck.model.too_many_requests_response_detail import TooManyRequestsResponseDetail
+from apideck.model.tracking_category import TrackingCategory
 from apideck.model.tracking_item import TrackingItem
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
@@ -644,6 +651,7 @@ from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
 from apideck.model.update_tender_response import UpdateTenderResponse
 from apideck.model.update_ticket_response import UpdateTicketResponse
 from apideck.model.update_time_off_request_response import UpdateTimeOffRequestResponse
+from apideck.model.update_tracking_category_response import UpdateTrackingCategoryResponse
 from apideck.model.update_upload_session_response import UpdateUploadSessionResponse
 from apideck.model.update_user_response import UpdateUserResponse
 from apideck.model.update_webhook_request import UpdateWebhookRequest

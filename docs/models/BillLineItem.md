@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **item** | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 **tax_rate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **ledger_account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+**tracking_categories** | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 

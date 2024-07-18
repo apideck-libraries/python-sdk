@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **terms** | **str, none_type** | Optional terms to be associated with the credit note. | [optional] 
 **billing_address** | [**Address**](Address.md) |  | [optional] 
 **shipping_address** | [**Address**](Address.md) |  | [optional] 
+**tracking_categories** | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
