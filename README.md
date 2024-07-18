@@ -200,6 +200,7 @@ from apideck.model.create_purchase_order_response import CreatePurchaseOrderResp
 from apideck.model.create_subsidiary_response import CreateSubsidiaryResponse
 from apideck.model.create_supplier_response import CreateSupplierResponse
 from apideck.model.create_tax_rate_response import CreateTaxRateResponse
+from apideck.model.create_tracking_category_response import CreateTrackingCategoryResponse
 from apideck.model.credit_note import CreditNote
 from apideck.model.credit_notes_filter import CreditNotesFilter
 from apideck.model.credit_notes_sort import CreditNotesSort
@@ -220,6 +221,7 @@ from apideck.model.delete_purchase_order_response import DeletePurchaseOrderResp
 from apideck.model.delete_subsidiary_response import DeleteSubsidiaryResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
+from apideck.model.delete_tracking_category_response import DeleteTrackingCategoryResponse
 from apideck.model.get_accounting_department_response import GetAccountingDepartmentResponse
 from apideck.model.get_accounting_departments_response import GetAccountingDepartmentsResponse
 from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
@@ -253,6 +255,8 @@ from apideck.model.get_supplier_response import GetSupplierResponse
 from apideck.model.get_suppliers_response import GetSuppliersResponse
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
 from apideck.model.get_tax_rates_response import GetTaxRatesResponse
+from apideck.model.get_tracking_categories_response import GetTrackingCategoriesResponse
+from apideck.model.get_tracking_category_response import GetTrackingCategoryResponse
 from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
@@ -280,6 +284,7 @@ from apideck.model.suppliers_filter import SuppliersFilter
 from apideck.model.suppliers_sort import SuppliersSort
 from apideck.model.tax_rate import TaxRate
 from apideck.model.tax_rates_filter import TaxRatesFilter
+from apideck.model.tracking_category import TrackingCategory
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
@@ -297,6 +302,7 @@ from apideck.model.update_purchase_order_response import UpdatePurchaseOrderResp
 from apideck.model.update_subsidiary_response import UpdateSubsidiaryResponse
 from apideck.model.update_supplier_response import UpdateSupplierResponse
 from apideck.model.update_tax_rate_response import UpdateTaxRateResponse
+from apideck.model.update_tracking_category_response import UpdateTrackingCategoryResponse
 # Defining the host is optional and defaults to https://unify.apideck.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = apideck.Configuration(
@@ -496,6 +502,16 @@ _AccountingApi_ | [**tax_rates_delete**](docs/apis/AccountingApi.md#tax_rates_de
 _AccountingApi_ | [**tax_rates_one**](docs/apis/AccountingApi.md#tax_rates_one) | **GET** /accounting/tax-rates/{id} | Get Tax Rate |
 
 _AccountingApi_ | [**tax_rates_update**](docs/apis/AccountingApi.md#tax_rates_update) | **PATCH** /accounting/tax-rates/{id} | Update Tax Rate |
+
+_AccountingApi_ | [**tracking_categories_add**](docs/apis/AccountingApi.md#tracking_categories_add) | **POST** /accounting/tracking-categories | Create Tracking Category |
+
+_AccountingApi_ | [**tracking_categories_all**](docs/apis/AccountingApi.md#tracking_categories_all) | **GET** /accounting/tracking-categories | List Tracking Categories |
+
+_AccountingApi_ | [**tracking_categories_delete**](docs/apis/AccountingApi.md#tracking_categories_delete) | **DELETE** /accounting/tracking-categories/{id} | Delete Tracking Category |
+
+_AccountingApi_ | [**tracking_categories_one**](docs/apis/AccountingApi.md#tracking_categories_one) | **GET** /accounting/tracking-categories/{id} | Get Tracking Category |
+
+_AccountingApi_ | [**tracking_categories_update**](docs/apis/AccountingApi.md#tracking_categories_update) | **PATCH** /accounting/tracking-categories/{id} | Update Tracking Category |
 
 _AtsApi_ | [**applicants_add**](docs/apis/AtsApi.md#applicants_add) | **POST** /ats/applicants | Create Applicant |
 
@@ -1084,6 +1100,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateTenderResponse](docs/models/CreateTenderResponse.md)
  - [CreateTicketResponse](docs/models/CreateTicketResponse.md)
  - [CreateTimeOffRequestResponse](docs/models/CreateTimeOffRequestResponse.md)
+ - [CreateTrackingCategoryResponse](docs/models/CreateTrackingCategoryResponse.md)
  - [CreateUploadSessionRequest](docs/models/CreateUploadSessionRequest.md)
  - [CreateUploadSessionResponse](docs/models/CreateUploadSessionResponse.md)
  - [CreateUserResponse](docs/models/CreateUserResponse.md)
@@ -1151,11 +1168,13 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteTenderResponse](docs/models/DeleteTenderResponse.md)
  - [DeleteTicketResponse](docs/models/DeleteTicketResponse.md)
  - [DeleteTimeOffRequestResponse](docs/models/DeleteTimeOffRequestResponse.md)
+ - [DeleteTrackingCategoryResponse](docs/models/DeleteTrackingCategoryResponse.md)
  - [DeleteUploadSessionResponse](docs/models/DeleteUploadSessionResponse.md)
  - [DeleteUserResponse](docs/models/DeleteUserResponse.md)
  - [DeleteWebhookResponse](docs/models/DeleteWebhookResponse.md)
  - [DeliveryUrl](docs/models/DeliveryUrl.md)
  - [Department](docs/models/Department.md)
+ - [DeprecatedLinkedTrackingCategory](docs/models/DeprecatedLinkedTrackingCategory.md)
  - [Drive](docs/models/Drive.md)
  - [DriveGroup](docs/models/DriveGroup.md)
  - [DriveGroupsFilter](docs/models/DriveGroupsFilter.md)
@@ -1340,6 +1359,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetTicketsResponse](docs/models/GetTicketsResponse.md)
  - [GetTimeOffRequestResponse](docs/models/GetTimeOffRequestResponse.md)
  - [GetTimeOffRequestsResponse](docs/models/GetTimeOffRequestsResponse.md)
+ - [GetTrackingCategoriesResponse](docs/models/GetTrackingCategoriesResponse.md)
+ - [GetTrackingCategoryResponse](docs/models/GetTrackingCategoryResponse.md)
  - [GetUploadSessionResponse](docs/models/GetUploadSessionResponse.md)
  - [GetUserResponse](docs/models/GetUserResponse.md)
  - [GetUsersResponse](docs/models/GetUsersResponse.md)
@@ -1395,6 +1416,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [LinkedParentCustomer](docs/models/LinkedParentCustomer.md)
  - [LinkedSupplier](docs/models/LinkedSupplier.md)
  - [LinkedTaxRate](docs/models/LinkedTaxRate.md)
+ - [LinkedTrackingCategories](docs/models/LinkedTrackingCategories.md)
  - [LinkedTrackingCategory](docs/models/LinkedTrackingCategory.md)
  - [Links](docs/models/Links.md)
  - [Location](docs/models/Location.md)
@@ -1509,6 +1531,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [TimeOffRequestsFilter](docs/models/TimeOffRequestsFilter.md)
  - [TooManyRequestsResponse](docs/models/TooManyRequestsResponse.md)
  - [TooManyRequestsResponseDetail](docs/models/TooManyRequestsResponseDetail.md)
+ - [TrackingCategory](docs/models/TrackingCategory.md)
  - [TrackingItem](docs/models/TrackingItem.md)
  - [UnauthorizedResponse](docs/models/UnauthorizedResponse.md)
  - [UnexpectedErrorResponse](docs/models/UnexpectedErrorResponse.md)
@@ -1572,6 +1595,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateTenderResponse](docs/models/UpdateTenderResponse.md)
  - [UpdateTicketResponse](docs/models/UpdateTicketResponse.md)
  - [UpdateTimeOffRequestResponse](docs/models/UpdateTimeOffRequestResponse.md)
+ - [UpdateTrackingCategoryResponse](docs/models/UpdateTrackingCategoryResponse.md)
  - [UpdateUploadSessionResponse](docs/models/UpdateUploadSessionResponse.md)
  - [UpdateUserResponse](docs/models/UpdateUserResponse.md)
  - [UpdateWebhookRequest](docs/models/UpdateWebhookRequest.md)

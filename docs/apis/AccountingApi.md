@@ -81,6 +81,11 @@ Method | HTTP request | Description
 [**tax_rates_delete**](AccountingApi.md#tax_rates_delete) | **DELETE** /accounting/tax-rates/{id} | Delete Tax Rate
 [**tax_rates_one**](AccountingApi.md#tax_rates_one) | **GET** /accounting/tax-rates/{id} | Get Tax Rate
 [**tax_rates_update**](AccountingApi.md#tax_rates_update) | **PATCH** /accounting/tax-rates/{id} | Update Tax Rate
+[**tracking_categories_add**](AccountingApi.md#tracking_categories_add) | **POST** /accounting/tracking-categories | Create Tracking Category
+[**tracking_categories_all**](AccountingApi.md#tracking_categories_all) | **GET** /accounting/tracking-categories | List Tracking Categories
+[**tracking_categories_delete**](AccountingApi.md#tracking_categories_delete) | **DELETE** /accounting/tracking-categories/{id} | Delete Tracking Category
+[**tracking_categories_one**](AccountingApi.md#tracking_categories_one) | **GET** /accounting/tracking-categories/{id} | Get Tracking Category
+[**tracking_categories_update**](AccountingApi.md#tracking_categories_update) | **PATCH** /accounting/tracking-categories/{id} | Update Tracking Category
 
 
 # **attachments_all**
@@ -758,6 +763,12 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 row_version="1-12345",
             ),
         ],
@@ -793,6 +804,12 @@ with apideck.ApiClient(configuration) as api_client:
             currency=Currency("USD"),
         ),
         discount_percentage=5.5,
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -1320,6 +1337,12 @@ with apideck.ApiClient(configuration) as api_client:
                     nominal_code="N091",
                     code="453",
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 row_version="1-12345",
             ),
         ],
@@ -1355,6 +1378,12 @@ with apideck.ApiClient(configuration) as api_client:
             currency=Currency("USD"),
         ),
         discount_percentage=5.5,
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -1631,6 +1660,12 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -1709,6 +1744,12 @@ with apideck.ApiClient(configuration) as api_client:
             notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         custom_fields=[
             CustomField(
                 id="2389328923893298",
@@ -2227,6 +2268,12 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -2305,6 +2352,12 @@ with apideck.ApiClient(configuration) as api_client:
             notes="Address notes or delivery instructions.",
             row_version="1-12345",
         ),
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         custom_fields=[
             CustomField(
                 id="2389328923893298",
@@ -3850,10 +3903,16 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
-        tracking_category=LinkedTrackingCategory(
+        tracking_category=DeprecatedLinkedTrackingCategory(
             id="123456",
             name="New York",
         ),
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         active=True,
         row_version="1-12345",
         pass_through=PassThroughBody([
@@ -4350,10 +4409,16 @@ with apideck.ApiClient(configuration) as api_client:
             nominal_code="N091",
             code="453",
         ),
-        tracking_category=LinkedTrackingCategory(
+        tracking_category=DeprecatedLinkedTrackingCategory(
             id="123456",
             name="New York",
         ),
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         active=True,
         row_version="1-12345",
         pass_through=PassThroughBody([
@@ -4507,10 +4572,16 @@ with apideck.ApiClient(configuration) as api_client:
         balance=27500,
         deposit=0,
         customer_memo="Thank you for your business and have a great day!",
-        tracking_category=LinkedTrackingCategory(
+        tracking_category=DeprecatedLinkedTrackingCategory(
             id="123456",
             name="New York",
         ),
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         line_items=[
             InvoiceLineItem(
                 id="12345",
@@ -4537,6 +4608,12 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -5123,10 +5200,16 @@ with apideck.ApiClient(configuration) as api_client:
         balance=27500,
         deposit=0,
         customer_memo="Thank you for your business and have a great day!",
-        tracking_category=LinkedTrackingCategory(
+        tracking_category=DeprecatedLinkedTrackingCategory(
             id="123456",
             name="New York",
         ),
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         line_items=[
             InvoiceLineItem(
                 id="12345",
@@ -5153,6 +5236,12 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -5392,10 +5481,16 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
-                tracking_category=LinkedTrackingCategory(
+                tracking_category=DeprecatedLinkedTrackingCategory(
                     id="123456",
                     name="New York",
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -5445,6 +5540,12 @@ with apideck.ApiClient(configuration) as api_client:
         tax_type="sales",
         tax_code="1234",
         number="OIT00546",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -5917,10 +6018,16 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
-                tracking_category=LinkedTrackingCategory(
+                tracking_category=DeprecatedLinkedTrackingCategory(
                     id="123456",
                     name="New York",
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -5970,6 +6077,12 @@ with apideck.ApiClient(configuration) as api_client:
         tax_type="sales",
         tax_code="1234",
         number="OIT00546",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -7468,6 +7581,12 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         note="Some notes about this payment",
         number="Some notes about this payment",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         custom_fields=[
             CustomField(
                 id="2389328923893298",
@@ -7999,6 +8118,12 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         note="Some notes about this payment",
         number="Some notes about this payment",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         custom_fields=[
             CustomField(
                 id="2389328923893298",
@@ -8310,6 +8435,12 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -8378,6 +8509,12 @@ with apideck.ApiClient(configuration) as api_client:
         tax_code="1234",
         channel="email",
         memo="Thank you for the partnership and have a great day!",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -8900,6 +9037,12 @@ with apideck.ApiClient(configuration) as api_client:
                     id="123456",
                     rate=10,
                 ),
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
                 ledger_account=LinkedLedgerAccount(
                     id="123456",
                     nominal_code="N091",
@@ -8968,6 +9111,12 @@ with apideck.ApiClient(configuration) as api_client:
         tax_code="1234",
         channel="email",
         memo="Thank you for the partnership and have a great day!",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -10989,6 +11138,582 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | TaxRate updated |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **tracking_categories_add**
+> CreateTrackingCategoryResponse tracking_categories_add(tracking_category)
+
+Create Tracking Category
+
+Create Tracking Category
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.create_tracking_category_response import CreateTrackingCategoryResponse
+from apideck.model.tracking_category import TrackingCategory
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    tracking_category = TrackingCategory(
+        parent_id="12345",
+        name="Department",
+        status="active",
+        row_version="1-12345",
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # TrackingCategory | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create Tracking Category
+        api_response = api_instance.tracking_categories_add(tracking_category)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create Tracking Category
+        api_response = api_instance.tracking_categories_add(tracking_category, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tracking_category** | [**TrackingCategory**](TrackingCategory.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreateTrackingCategoryResponse**](CreateTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Tracking category created |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **tracking_categories_all**
+> GetTrackingCategoriesResponse tracking_categories_all()
+
+List Tracking Categories
+
+List Tracking Categories
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.get_tracking_categories_response import GetTrackingCategoriesResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List Tracking Categories
+        api_response = api_instance.tracking_categories_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetTrackingCategoriesResponse**](GetTrackingCategoriesResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Tracking categories |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **tracking_categories_delete**
+> DeleteTrackingCategoryResponse tracking_categories_delete(id)
+
+Delete Tracking Category
+
+Delete Tracking Category
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.delete_tracking_category_response import DeleteTrackingCategoryResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete Tracking Category
+        api_response = api_instance.tracking_categories_delete(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete Tracking Category
+        api_response = api_instance.tracking_categories_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeleteTrackingCategoryResponse**](DeleteTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Tracking category deleted |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **tracking_categories_one**
+> GetTrackingCategoryResponse tracking_categories_one(id)
+
+Get Tracking Category
+
+Get Tracking Category
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.get_tracking_category_response import GetTrackingCategoryResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Tracking Category
+        api_response = api_instance.tracking_categories_one(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Tracking Category
+        api_response = api_instance.tracking_categories_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetTrackingCategoryResponse**](GetTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Tracking category |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **tracking_categories_update**
+> UpdateTrackingCategoryResponse tracking_categories_update(id, tracking_category)
+
+Update Tracking Category
+
+Update Tracking Category
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.tracking_category import TrackingCategory
+from apideck.model.update_tracking_category_response import UpdateTrackingCategoryResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    tracking_category = TrackingCategory(
+        parent_id="12345",
+        name="Department",
+        status="active",
+        row_version="1-12345",
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # TrackingCategory | 
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update Tracking Category
+        api_response = api_instance.tracking_categories_update(id, tracking_category)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update Tracking Category
+        api_response = api_instance.tracking_categories_update(id, tracking_category, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->tracking_categories_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **tracking_category** | [**TrackingCategory**](TrackingCategory.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateTrackingCategoryResponse**](UpdateTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Tracking category updated |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |
