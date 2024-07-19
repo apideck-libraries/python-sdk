@@ -1372,6 +1372,7 @@ class HrisApi(object):
                     'raw',
                     'fields',
                     'filter',
+                    'pass_through',
                 ],
                 'required': [
                     'id',
@@ -1404,6 +1405,8 @@ class HrisApi(object):
                         (str, none_type,),
                     'filter':
                         (EmployeesOneFilter,),
+                    'pass_through':
+                        (PassThroughQuery,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -1413,6 +1416,7 @@ class HrisApi(object):
                     'raw': 'raw',
                     'fields': 'fields',
                     'filter': 'filter',
+                    'pass_through': 'pass_through',
                 },
                 'location_map': {
                     'id': 'path',
@@ -1422,6 +1426,7 @@ class HrisApi(object):
                     'raw': 'query',
                     'fields': 'query',
                     'filter': 'query',
+                    'pass_through': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -3438,6 +3443,7 @@ class HrisApi(object):
             raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
             filter (EmployeesOneFilter): Apply filters. [optional]
+            pass_through (PassThroughQuery): Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
