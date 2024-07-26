@@ -121,7 +121,7 @@ class Employee(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'first_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
             'middle_name': (str, none_type,),  # noqa: E501
@@ -264,7 +264,6 @@ class Employee(ModelNormal):
     }
 
     read_only_vars = {
-        'id',  # noqa: E501
         'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
@@ -280,7 +279,7 @@ class Employee(ModelNormal):
         """Employee - a model defined in OpenAPI
 
         Args:
-            id (str): A unique identifier for an object.
+            id (str, none_type): A unique identifier for an object.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -426,8 +425,11 @@ class Employee(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, *args, **kwargs):  # noqa: E501
         """Employee - a model defined in OpenAPI
+
+        Args:
+            id (str, none_type): A unique identifier for an object.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -550,6 +552,7 @@ class Employee(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

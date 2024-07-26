@@ -1678,6 +1678,7 @@ with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hris_api.HrisApi(api_client)
     employee = Employee(
+        id="12345",
         first_name="Elon",
         last_name="Musk",
         middle_name="D.",
@@ -2354,6 +2355,7 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = hris_api.HrisApi(api_client)
     id = "id_example" # str | ID of the record you are acting upon.
     employee = Employee(
+        id="12345",
         first_name="Elon",
         last_name="Musk",
         middle_name="D.",
