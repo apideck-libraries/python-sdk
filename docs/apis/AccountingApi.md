@@ -11195,6 +11195,7 @@ with apideck.ApiClient(configuration) as api_client:
     tracking_category = TrackingCategory(
         parent_id="12345",
         name="Department",
+        code="100",
         status="active",
         row_version="1-12345",
         pass_through=PassThroughBody([
@@ -11644,6 +11645,7 @@ with apideck.ApiClient(configuration) as api_client:
     tracking_category = TrackingCategory(
         parent_id="12345",
         name="Department",
+        code="100",
         status="active",
         row_version="1-12345",
         pass_through=PassThroughBody([
