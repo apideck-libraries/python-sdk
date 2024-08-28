@@ -80,6 +80,7 @@ class LedgerAccount(ModelNormal):
             'OTHER_INCOME': "other_income",
             'OTHER_EXPENSE': "other_expense",
             'COSTS_OF_SALES': "costs_of_sales",
+            'OTHER': "other",
         },
         ('type',): {
             'ACCOUNTS_RECEIVABLE': "accounts_receivable",

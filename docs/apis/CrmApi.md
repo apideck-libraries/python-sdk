@@ -313,6 +313,7 @@ with apideck.ApiClient(configuration) as api_client:
         owner_id="1234",
         contact_id="1234",
         updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+        type="Task",
     ) # ActivitiesFilter | Apply filters (optional)
     sort = ActivitiesSort(
         by="created_at",
@@ -2424,6 +2425,7 @@ with apideck.ApiClient(configuration) as api_client:
         name="Elon Musk",
         company_name="Spacex",
         owner_id="54321",
+        owner_name="John Doe",
         company_id="2",
         lead_id="2",
         lead_source="Cold Call",
@@ -2967,6 +2969,7 @@ with apideck.ApiClient(configuration) as api_client:
         name="Elon Musk",
         company_name="Spacex",
         owner_id="54321",
+        owner_name="John Doe",
         company_id="2",
         lead_id="2",
         lead_source="Cold Call",

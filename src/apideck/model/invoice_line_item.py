@@ -204,7 +204,7 @@ class InvoiceLineItem(ModelNormal):
             id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             row_id (str): Row ID. [optional]  # noqa: E501
             code (str, none_type): User defined item code. [optional]  # noqa: E501
-            line_number (int, none_type): Line number in the invoice. [optional]  # noqa: E501
+            line_number (int, none_type): Line number of the resource. [optional]  # noqa: E501
             description (str, none_type): User defined description. [optional]  # noqa: E501
             type (str, none_type): Item type. [optional]  # noqa: E501
             tax_amount (float, none_type): Tax amount. [optional]  # noqa: E501
@@ -310,7 +310,7 @@ class InvoiceLineItem(ModelNormal):
             id (str, none_type): A unique identifier for an object.. [optional]  # noqa: E501
             row_id (str): Row ID. [optional]  # noqa: E501
             code (str, none_type): User defined item code. [optional]  # noqa: E501
-            line_number (int, none_type): Line number in the invoice. [optional]  # noqa: E501
+            line_number (int, none_type): Line number of the resource. [optional]  # noqa: E501
             description (str, none_type): User defined description. [optional]  # noqa: E501
             type (str, none_type): Item type. [optional]  # noqa: E501
             tax_amount (float, none_type): Tax amount. [optional]  # noqa: E501

@@ -113,6 +113,7 @@ class Lead(ModelNormal):
             'company_name': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'owner_id': (str, none_type,),  # noqa: E501
+            'owner_name': (str, none_type,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
             'lead_id': (str, none_type,),  # noqa: E501
             'lead_source': (str, none_type,),  # noqa: E501
@@ -149,6 +150,7 @@ class Lead(ModelNormal):
         'company_name': 'company_name',  # noqa: E501
         'id': 'id',  # noqa: E501
         'owner_id': 'owner_id',  # noqa: E501
+        'owner_name': 'owner_name',  # noqa: E501
         'company_id': 'company_id',  # noqa: E501
         'lead_id': 'lead_id',  # noqa: E501
         'lead_source': 'lead_source',  # noqa: E501
@@ -226,6 +228,7 @@ class Lead(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): Unique identifier for the contact.. [optional]  # noqa: E501
             owner_id (str, none_type): The owner of the lead.. [optional]  # noqa: E501
+            owner_name (str, none_type): The name of the owner of the lead.. [optional]  # noqa: E501
             company_id (str, none_type): The company the lead is associated with.. [optional]  # noqa: E501
             lead_id (str, none_type): The identifier of the lead.. [optional]  # noqa: E501
             lead_source (str, none_type): The source of the lead.. [optional]  # noqa: E501
@@ -339,6 +342,7 @@ class Lead(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): Unique identifier for the contact.. [optional]  # noqa: E501
             owner_id (str, none_type): The owner of the lead.. [optional]  # noqa: E501
+            owner_name (str, none_type): The name of the owner of the lead.. [optional]  # noqa: E501
             company_id (str, none_type): The company the lead is associated with.. [optional]  # noqa: E501
             lead_id (str, none_type): The identifier of the lead.. [optional]  # noqa: E501
             lead_source (str, none_type): The source of the lead.. [optional]  # noqa: E501

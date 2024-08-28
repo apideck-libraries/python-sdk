@@ -102,6 +102,7 @@ class JournalEntry(ModelNormal):
             'tax_code': (str, none_type,),  # noqa: E501
             'number': (str, none_type,),  # noqa: E501
             'tracking_categories': (LinkedTrackingCategories,),  # noqa: E501
+            'accounting_period': (str, none_type,),  # noqa: E501
             'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -130,6 +131,7 @@ class JournalEntry(ModelNormal):
         'tax_code': 'tax_code',  # noqa: E501
         'number': 'number',  # noqa: E501
         'tracking_categories': 'tracking_categories',  # noqa: E501
+        'accounting_period': 'accounting_period',  # noqa: E501
         'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -199,6 +201,7 @@ class JournalEntry(ModelNormal):
             tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             number (str, none_type): Journal entry number.. [optional]  # noqa: E501
             tracking_categories (LinkedTrackingCategories): [optional]  # noqa: E501
+            accounting_period (str, none_type): Accounting period. [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -300,6 +303,7 @@ class JournalEntry(ModelNormal):
             tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             number (str, none_type): Journal entry number.. [optional]  # noqa: E501
             tracking_categories (LinkedTrackingCategories): [optional]  # noqa: E501
+            accounting_period (str, none_type): Accounting period. [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

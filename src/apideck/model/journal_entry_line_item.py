@@ -108,6 +108,7 @@ class JournalEntryLineItem(ModelNormal):
             'supplier': (LinkedSupplier,),  # noqa: E501
             'department_id': (str,),  # noqa: E501
             'location_id': (str,),  # noqa: E501
+            'line_number': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -130,6 +131,7 @@ class JournalEntryLineItem(ModelNormal):
         'supplier': 'supplier',  # noqa: E501
         'department_id': 'department_id',  # noqa: E501
         'location_id': 'location_id',  # noqa: E501
+        'line_number': 'line_number',  # noqa: E501
     }
 
     read_only_vars = {
@@ -192,6 +194,7 @@ class JournalEntryLineItem(ModelNormal):
             supplier (LinkedSupplier): [optional]  # noqa: E501
             department_id (str): A unique identifier for an object.. [optional]  # noqa: E501
             location_id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            line_number (int, none_type): Line number of the resource. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -291,6 +294,7 @@ class JournalEntryLineItem(ModelNormal):
             supplier (LinkedSupplier): [optional]  # noqa: E501
             department_id (str): A unique identifier for an object.. [optional]  # noqa: E501
             location_id (str): A unique identifier for an object.. [optional]  # noqa: E501
+            line_number (int, none_type): Line number of the resource. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -76,6 +76,7 @@ class PurchaseOrdersFilter(ModelNormal):
         """
         return {
             'updated_since': (datetime,),  # noqa: E501
+            'supplier_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -85,6 +86,7 @@ class PurchaseOrdersFilter(ModelNormal):
 
     attribute_map = {
         'updated_since': 'updated_since',  # noqa: E501
+        'supplier_id': 'supplier_id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -129,6 +131,7 @@ class PurchaseOrdersFilter(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             updated_since (datetime): [optional]  # noqa: E501
+            supplier_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -211,6 +214,7 @@ class PurchaseOrdersFilter(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             updated_since (datetime): [optional]  # noqa: E501
+            supplier_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
