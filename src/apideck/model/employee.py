@@ -422,8 +422,11 @@ class Employee(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, id, *args, **kwargs):  # noqa: E501
         """Employee - a model defined in OpenAPI
+
+        Args:
+            id (str, none_type): A unique identifier for an object.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -547,6 +550,7 @@ class Employee(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
