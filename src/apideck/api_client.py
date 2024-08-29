@@ -208,10 +208,14 @@ class ApiClient(object):
                 elif tup[0] == 'sort':
                     for key, value in tup[1].items():
                         new_list.append(('sort[' + key + ']', value))
+                # if the tuple's first element is 'pass_through',
+                elif tup[0] == 'pass_through':
+                    for key, value in tup[1].items():
+                        new_list.append(('pass_through[' + key + ']', value))
                 # if the tuple's first element is 'raw',
                 elif tup[0] == 'raw':
                   new_list.append((tup[0], str(tup[1]).lower()))
-                
+
                 # then simply append it to the new list
                 else:
                     new_list.append(tup)
