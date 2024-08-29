@@ -824,6 +824,7 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        accounting_period="01-24",
     ) # Bill | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
@@ -1398,6 +1399,7 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        accounting_period="01-24",
     ) # Bill | 
     consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -5532,6 +5534,7 @@ with apideck.ApiClient(configuration) as api_client:
                         row_version="1-12345",
                     ),
                 ),
+                line_number=1,
             ),
         ],
         memo="Thank you for your business and have a great day!",
@@ -5546,6 +5549,7 @@ with apideck.ApiClient(configuration) as api_client:
                 name="New York",
             ),
         ]),
+        accounting_period="01-24",
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -6069,6 +6073,7 @@ with apideck.ApiClient(configuration) as api_client:
                         row_version="1-12345",
                     ),
                 ),
+                line_number=1,
             ),
         ],
         memo="Thank you for your business and have a great day!",
@@ -6083,6 +6088,7 @@ with apideck.ApiClient(configuration) as api_client:
                 name="New York",
             ),
         ]),
+        accounting_period="01-24",
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -8648,6 +8654,7 @@ with apideck.ApiClient(configuration) as api_client:
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = PurchaseOrdersFilter(
         updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+        supplier_id="1234",
     ) # PurchaseOrdersFilter | Apply filters (optional)
     sort = PurchaseOrdersSort(
         by="updated_at",
@@ -11195,6 +11202,7 @@ with apideck.ApiClient(configuration) as api_client:
     tracking_category = TrackingCategory(
         parent_id="12345",
         name="Department",
+        code="100",
         status="active",
         row_version="1-12345",
         pass_through=PassThroughBody([
@@ -11644,6 +11652,7 @@ with apideck.ApiClient(configuration) as api_client:
     tracking_category = TrackingCategory(
         parent_id="12345",
         name="Department",
+        code="100",
         status="active",
         row_version="1-12345",
         pass_through=PassThroughBody([
