@@ -184,10 +184,12 @@ from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
+from apideck.model.bill_payment import BillPayment
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
 from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
+from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
@@ -210,6 +212,7 @@ from apideck.model.customers_sort import CustomersSort
 from apideck.model.delete_accounting_department_response import DeleteAccountingDepartmentResponse
 from apideck.model.delete_accounting_location_response import DeleteAccountingLocationResponse
 from apideck.model.delete_attachment_response import DeleteAttachmentResponse
+from apideck.model.delete_bill_payment_response import DeleteBillPaymentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
@@ -229,6 +232,8 @@ from apideck.model.get_accounting_locations_response import GetAccountingLocatio
 from apideck.model.get_attachment_response import GetAttachmentResponse
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
+from apideck.model.get_bill_payment_response import GetBillPaymentResponse
+from apideck.model.get_bill_payments_response import GetBillPaymentsResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
 from apideck.model.get_company_info_response import GetCompanyInfoResponse
@@ -290,6 +295,7 @@ from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.update_accounting_department_response import UpdateAccountingDepartmentResponse
 from apideck.model.update_accounting_location_response import UpdateAccountingLocationResponse
+from apideck.model.update_bill_payment_response import UpdateBillPaymentResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
@@ -358,6 +364,16 @@ _AccountingApi_ | [**attachments_download**](docs/apis/AccountingApi.md#attachme
 _AccountingApi_ | [**attachments_one**](docs/apis/AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment |
 
 _AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
+
+_AccountingApi_ | [**bill_payments_add**](docs/apis/AccountingApi.md#bill_payments_add) | **POST** /accounting/bill-payments | Create Bill Payment |
+
+_AccountingApi_ | [**bill_payments_all**](docs/apis/AccountingApi.md#bill_payments_all) | **GET** /accounting/bill-payments | List Bill Payments |
+
+_AccountingApi_ | [**bill_payments_delete**](docs/apis/AccountingApi.md#bill_payments_delete) | **DELETE** /accounting/bill-payments/{id} | Delete Bill Payment |
+
+_AccountingApi_ | [**bill_payments_one**](docs/apis/AccountingApi.md#bill_payments_one) | **GET** /accounting/bill-payments/{id} | Get Bill Payment |
+
+_AccountingApi_ | [**bill_payments_update**](docs/apis/AccountingApi.md#bill_payments_update) | **PATCH** /accounting/bill-payments/{id} | Update Bill Payment |
 
 _AccountingApi_ | [**bills_add**](docs/apis/AccountingApi.md#bills_add) | **POST** /accounting/bills | Create Bill |
 
@@ -997,6 +1013,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Benefit](docs/models/Benefit.md)
  - [Bill](docs/models/Bill.md)
  - [BillLineItem](docs/models/BillLineItem.md)
+ - [BillPayment](docs/models/BillPayment.md)
  - [BillsFilter](docs/models/BillsFilter.md)
  - [BillsSort](docs/models/BillsSort.md)
  - [Branch](docs/models/Branch.md)
@@ -1049,6 +1066,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
  - [CreateAttachmentRequest](docs/models/CreateAttachmentRequest.md)
  - [CreateAttachmentResponse](docs/models/CreateAttachmentResponse.md)
+ - [CreateBillPaymentResponse](docs/models/CreateBillPaymentResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
@@ -1124,6 +1142,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
  - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
  - [DeleteAttachmentResponse](docs/models/DeleteAttachmentResponse.md)
+ - [DeleteBillPaymentResponse](docs/models/DeleteBillPaymentResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
@@ -1174,6 +1193,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteWebhookResponse](docs/models/DeleteWebhookResponse.md)
  - [DeliveryUrl](docs/models/DeliveryUrl.md)
  - [Department](docs/models/Department.md)
+ - [DeprecatedLinkedSupplier](docs/models/DeprecatedLinkedSupplier.md)
  - [DeprecatedLinkedTrackingCategory](docs/models/DeprecatedLinkedTrackingCategory.md)
  - [Drive](docs/models/Drive.md)
  - [DriveGroup](docs/models/DriveGroup.md)
@@ -1241,6 +1261,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetAttachmentResponse](docs/models/GetAttachmentResponse.md)
  - [GetAttachmentsResponse](docs/models/GetAttachmentsResponse.md)
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
+ - [GetBillPaymentResponse](docs/models/GetBillPaymentResponse.md)
+ - [GetBillPaymentsResponse](docs/models/GetBillPaymentsResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
  - [GetBillsResponse](docs/models/GetBillsResponse.md)
  - [GetCollectionResponse](docs/models/GetCollectionResponse.md)
@@ -1460,6 +1482,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [PaymentCard](docs/models/PaymentCard.md)
  - [PaymentFrequency](docs/models/PaymentFrequency.md)
  - [PaymentRequiredResponse](docs/models/PaymentRequiredResponse.md)
+ - [PaymentStatus](docs/models/PaymentStatus.md)
+ - [PaymentType](docs/models/PaymentType.md)
  - [PaymentUnit](docs/models/PaymentUnit.md)
  - [PaymentsFilter](docs/models/PaymentsFilter.md)
  - [PaymentsSort](docs/models/PaymentsSort.md)
@@ -1545,6 +1569,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
  - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
  - [UpdateApplicationResponse](docs/models/UpdateApplicationResponse.md)
+ - [UpdateBillPaymentResponse](docs/models/UpdateBillPaymentResponse.md)
  - [UpdateBillResponse](docs/models/UpdateBillResponse.md)
  - [UpdateCommentResponse](docs/models/UpdateCommentResponse.md)
  - [UpdateCompanyResponse](docs/models/UpdateCompanyResponse.md)

@@ -53,6 +53,7 @@ from apideck.model.bank_account import BankAccount
 from apideck.model.benefit import Benefit
 from apideck.model.bill import Bill
 from apideck.model.bill_line_item import BillLineItem
+from apideck.model.bill_payment import BillPayment
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.branch import Branch
@@ -105,6 +106,7 @@ from apideck.model.create_applicant_response import CreateApplicantResponse
 from apideck.model.create_application_response import CreateApplicationResponse
 from apideck.model.create_attachment_request import CreateAttachmentRequest
 from apideck.model.create_attachment_response import CreateAttachmentResponse
+from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_comment_response import CreateCommentResponse
 from apideck.model.create_company_response import CreateCompanyResponse
@@ -180,6 +182,7 @@ from apideck.model.delete_activity_response import DeleteActivityResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
 from apideck.model.delete_application_response import DeleteApplicationResponse
 from apideck.model.delete_attachment_response import DeleteAttachmentResponse
+from apideck.model.delete_bill_payment_response import DeleteBillPaymentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_comment_response import DeleteCommentResponse
 from apideck.model.delete_company_response import DeleteCompanyResponse
@@ -230,6 +233,7 @@ from apideck.model.delete_user_response import DeleteUserResponse
 from apideck.model.delete_webhook_response import DeleteWebhookResponse
 from apideck.model.delivery_url import DeliveryUrl
 from apideck.model.department import Department
+from apideck.model.deprecated_linked_supplier import DeprecatedLinkedSupplier
 from apideck.model.deprecated_linked_tracking_category import DeprecatedLinkedTrackingCategory
 from apideck.model.drive import Drive
 from apideck.model.drive_group import DriveGroup
@@ -297,6 +301,8 @@ from apideck.model.get_applications_response import GetApplicationsResponse
 from apideck.model.get_attachment_response import GetAttachmentResponse
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
+from apideck.model.get_bill_payment_response import GetBillPaymentResponse
+from apideck.model.get_bill_payments_response import GetBillPaymentsResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
 from apideck.model.get_collection_response import GetCollectionResponse
@@ -516,6 +522,8 @@ from apideck.model.payment import Payment
 from apideck.model.payment_card import PaymentCard
 from apideck.model.payment_frequency import PaymentFrequency
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.payment_status import PaymentStatus
+from apideck.model.payment_type import PaymentType
 from apideck.model.payment_unit import PaymentUnit
 from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.payments_sort import PaymentsSort
@@ -601,6 +609,7 @@ from apideck.model.update_accounting_location_response import UpdateAccountingLo
 from apideck.model.update_activity_response import UpdateActivityResponse
 from apideck.model.update_applicant_response import UpdateApplicantResponse
 from apideck.model.update_application_response import UpdateApplicationResponse
+from apideck.model.update_bill_payment_response import UpdateBillPaymentResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_comment_response import UpdateCommentResponse
 from apideck.model.update_company_response import UpdateCompanyResponse
