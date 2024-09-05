@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **first_name** | **str** | First name of the lead to filter on | [optional] 
 **last_name** | **str** | Last name of the lead to filter on | [optional] 
 **email** | **str** | E-mail of the lead to filter on | [optional] 
+**phone_number** | **str** | Phone number of the lead to filter on | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

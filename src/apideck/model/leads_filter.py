@@ -79,6 +79,7 @@ class LeadsFilter(ModelNormal):
             'first_name': (str,),  # noqa: E501
             'last_name': (str,),  # noqa: E501
             'email': (str,),  # noqa: E501
+            'phone_number': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -91,6 +92,7 @@ class LeadsFilter(ModelNormal):
         'first_name': 'first_name',  # noqa: E501
         'last_name': 'last_name',  # noqa: E501
         'email': 'email',  # noqa: E501
+        'phone_number': 'phone_number',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,6 +140,7 @@ class LeadsFilter(ModelNormal):
             first_name (str): First name of the lead to filter on. [optional]  # noqa: E501
             last_name (str): Last name of the lead to filter on. [optional]  # noqa: E501
             email (str): E-mail of the lead to filter on. [optional]  # noqa: E501
+            phone_number (str): Phone number of the lead to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,6 +226,7 @@ class LeadsFilter(ModelNormal):
             first_name (str): First name of the lead to filter on. [optional]  # noqa: E501
             last_name (str): Last name of the lead to filter on. [optional]  # noqa: E501
             email (str): E-mail of the lead to filter on. [optional]  # noqa: E501
+            phone_number (str): Phone number of the lead to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

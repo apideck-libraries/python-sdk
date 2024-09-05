@@ -275,6 +275,7 @@ with apideck.ApiClient(configuration) as api_client:
         first_name="Elon",
         last_name="Musk",
         email="elon@tesla.com",
+        phone_number="1234567890",
     ) # LeadsFilter | Apply filters (optional)
     sort = LeadsSort(
         by="created_at",
