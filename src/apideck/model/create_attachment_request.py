@@ -82,6 +82,7 @@ class CreateAttachmentRequest(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'parent_folder_id': (str,),  # noqa: E501
             'pass_through': (PassThroughBody,),  # noqa: E501
         }
 
@@ -93,6 +94,7 @@ class CreateAttachmentRequest(ModelNormal):
     attribute_map = {
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'parent_folder_id': 'parent_folder_id',  # noqa: E501
         'pass_through': 'pass_through',  # noqa: E501
     }
 
@@ -141,6 +143,7 @@ class CreateAttachmentRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): Optional description of the file.. [optional]  # noqa: E501
+            parent_folder_id (str): The folder id where this attachment belong to. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
         """
 
@@ -228,6 +231,7 @@ class CreateAttachmentRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): Optional description of the file.. [optional]  # noqa: E501
+            parent_folder_id (str): The folder id where this attachment belong to. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
         """
 

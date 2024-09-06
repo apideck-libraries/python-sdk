@@ -89,6 +89,7 @@ class Attachment(ModelNormal):
             'size': (int, none_type,),  # noqa: E501
             'reference': (AttachmentReference,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'parent_folder_id': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -109,6 +110,7 @@ class Attachment(ModelNormal):
         'size': 'size',  # noqa: E501
         'reference': 'reference',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'parent_folder_id': 'parent_folder_id',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
@@ -169,6 +171,7 @@ class Attachment(ModelNormal):
             size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
             reference (AttachmentReference): [optional]  # noqa: E501
             description (str, none_type): Optional description of the file. [optional]  # noqa: E501
+            parent_folder_id (str, none_type): The folder id where this attachment belong to. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -262,6 +265,7 @@ class Attachment(ModelNormal):
             size (int, none_type): The size of the file in bytes. [optional]  # noqa: E501
             reference (AttachmentReference): [optional]  # noqa: E501
             description (str, none_type): Optional description of the file. [optional]  # noqa: E501
+            parent_folder_id (str, none_type): The folder id where this attachment belong to. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
