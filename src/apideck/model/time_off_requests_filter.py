@@ -98,6 +98,7 @@ class TimeOffRequestsFilter(ModelNormal):
             'updated_since': (str,),  # noqa: E501
             'employee_id': (str,),  # noqa: E501
             'time_off_request_status': (str,),  # noqa: E501
+            'company_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -111,6 +112,7 @@ class TimeOffRequestsFilter(ModelNormal):
         'updated_since': 'updated_since',  # noqa: E501
         'employee_id': 'employee_id',  # noqa: E501
         'time_off_request_status': 'time_off_request_status',  # noqa: E501
+        'company_id': 'company_id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +161,7 @@ class TimeOffRequestsFilter(ModelNormal):
             updated_since (str): Minimum date the time off request was last created or modified. [optional]  # noqa: E501
             employee_id (str): Employee ID. [optional]  # noqa: E501
             time_off_request_status (str): Time off request status to filter on. [optional]  # noqa: E501
+            company_id (str): Company ID. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,6 +248,7 @@ class TimeOffRequestsFilter(ModelNormal):
             updated_since (str): Minimum date the time off request was last created or modified. [optional]  # noqa: E501
             employee_id (str): Employee ID. [optional]  # noqa: E501
             time_off_request_status (str): Time off request status to filter on. [optional]  # noqa: E501
+            company_id (str): Company ID. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
