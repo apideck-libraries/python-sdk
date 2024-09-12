@@ -1782,7 +1782,7 @@ from apideck.model.create_session_response import CreateSessionResponse
 from apideck.model.session import Session
 from apideck.model.session_settings import SessionSettings
 from apideck.model.session_theme import SessionTheme
-from apideck.model.unified_api import UnifiedApiId
+from apideck.model.unified_api_id import UnifiedApiId
 from apideck.model.consumer import Consumer
 from apideck.model.consumer_metadata import ConsumerMetadata
 from apideck.model.unprocessable_response import UnprocessableResponse
