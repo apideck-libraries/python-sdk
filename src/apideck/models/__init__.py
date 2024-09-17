@@ -123,6 +123,7 @@ from apideck.model.create_drive_response import CreateDriveResponse
 from apideck.model.create_ecommerce_customer_response import CreateEcommerceCustomerResponse
 from apideck.model.create_ecommerce_order_response import CreateEcommerceOrderResponse
 from apideck.model.create_employee_response import CreateEmployeeResponse
+from apideck.model.create_expense_response import CreateExpenseResponse
 from apideck.model.create_file_request import CreateFileRequest
 from apideck.model.create_file_response import CreateFileResponse
 from apideck.model.create_folder_request import CreateFolderRequest
@@ -196,6 +197,7 @@ from apideck.model.delete_drive_response import DeleteDriveResponse
 from apideck.model.delete_ecommerce_customer_response import DeleteEcommerceCustomerResponse
 from apideck.model.delete_ecommerce_order_response import DeleteEcommerceOrderResponse
 from apideck.model.delete_employee_response import DeleteEmployeeResponse
+from apideck.model.delete_expense_response import DeleteExpenseResponse
 from apideck.model.delete_file_response import DeleteFileResponse
 from apideck.model.delete_folder_response import DeleteFolderResponse
 from apideck.model.delete_hris_company_response import DeleteHrisCompanyResponse
@@ -274,6 +276,8 @@ from apideck.model.execute_base_url import ExecuteBaseUrl
 from apideck.model.execute_webhook_event_request import ExecuteWebhookEventRequest
 from apideck.model.execute_webhook_events_request import ExecuteWebhookEventsRequest
 from apideck.model.execute_webhook_response import ExecuteWebhookResponse
+from apideck.model.expense import Expense
+from apideck.model.expense_line_item import ExpenseLineItem
 from apideck.model.file_storage_event_type import FileStorageEventType
 from apideck.model.file_type import FileType
 from apideck.model.files_filter import FilesFilter
@@ -349,6 +353,8 @@ from apideck.model.get_employee_payrolls_response import GetEmployeePayrollsResp
 from apideck.model.get_employee_response import GetEmployeeResponse
 from apideck.model.get_employee_schedules_response import GetEmployeeSchedulesResponse
 from apideck.model.get_employees_response import GetEmployeesResponse
+from apideck.model.get_expense_response import GetExpenseResponse
+from apideck.model.get_expenses_response import GetExpensesResponse
 from apideck.model.get_file_response import GetFileResponse
 from apideck.model.get_files_response import GetFilesResponse
 from apideck.model.get_folder_response import GetFolderResponse
@@ -627,6 +633,7 @@ from apideck.model.update_drive_response import UpdateDriveResponse
 from apideck.model.update_ecommerce_customer_response import UpdateEcommerceCustomerResponse
 from apideck.model.update_ecommerce_order_response import UpdateEcommerceOrderResponse
 from apideck.model.update_employee_response import UpdateEmployeeResponse
+from apideck.model.update_expense_response import UpdateExpenseResponse
 from apideck.model.update_file_request import UpdateFileRequest
 from apideck.model.update_file_response import UpdateFileResponse
 from apideck.model.update_folder_request import UpdateFolderRequest

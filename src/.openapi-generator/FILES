@@ -145,6 +145,7 @@ apideck/model/create_drive_response.py
 apideck/model/create_ecommerce_customer_response.py
 apideck/model/create_ecommerce_order_response.py
 apideck/model/create_employee_response.py
+apideck/model/create_expense_response.py
 apideck/model/create_file_request.py
 apideck/model/create_file_response.py
 apideck/model/create_folder_request.py
@@ -218,6 +219,7 @@ apideck/model/delete_drive_response.py
 apideck/model/delete_ecommerce_customer_response.py
 apideck/model/delete_ecommerce_order_response.py
 apideck/model/delete_employee_response.py
+apideck/model/delete_expense_response.py
 apideck/model/delete_file_response.py
 apideck/model/delete_folder_response.py
 apideck/model/delete_hris_company_response.py
@@ -296,6 +298,8 @@ apideck/model/execute_base_url.py
 apideck/model/execute_webhook_event_request.py
 apideck/model/execute_webhook_events_request.py
 apideck/model/execute_webhook_response.py
+apideck/model/expense.py
+apideck/model/expense_line_item.py
 apideck/model/file_storage_event_type.py
 apideck/model/file_type.py
 apideck/model/files_filter.py
@@ -371,6 +375,8 @@ apideck/model/get_employee_payrolls_response.py
 apideck/model/get_employee_response.py
 apideck/model/get_employee_schedules_response.py
 apideck/model/get_employees_response.py
+apideck/model/get_expense_response.py
+apideck/model/get_expenses_response.py
 apideck/model/get_file_response.py
 apideck/model/get_files_response.py
 apideck/model/get_folder_response.py
@@ -649,6 +655,7 @@ apideck/model/update_drive_response.py
 apideck/model/update_ecommerce_customer_response.py
 apideck/model/update_ecommerce_order_response.py
 apideck/model/update_employee_response.py
+apideck/model/update_expense_response.py
 apideck/model/update_file_request.py
 apideck/model/update_file_response.py
 apideck/model/update_folder_request.py
@@ -826,6 +833,7 @@ docs/CreateDriveResponse.md
 docs/CreateEcommerceCustomerResponse.md
 docs/CreateEcommerceOrderResponse.md
 docs/CreateEmployeeResponse.md
+docs/CreateExpenseResponse.md
 docs/CreateFileRequest.md
 docs/CreateFileResponse.md
 docs/CreateFolderRequest.md
@@ -900,6 +908,7 @@ docs/DeleteDriveResponse.md
 docs/DeleteEcommerceCustomerResponse.md
 docs/DeleteEcommerceOrderResponse.md
 docs/DeleteEmployeeResponse.md
+docs/DeleteExpenseResponse.md
 docs/DeleteFileResponse.md
 docs/DeleteFolderResponse.md
 docs/DeleteHrisCompanyResponse.md
@@ -979,6 +988,8 @@ docs/ExecuteBaseUrl.md
 docs/ExecuteWebhookEventRequest.md
 docs/ExecuteWebhookEventsRequest.md
 docs/ExecuteWebhookResponse.md
+docs/Expense.md
+docs/ExpenseLineItem.md
 docs/FileStorageApi.md
 docs/FileStorageEventType.md
 docs/FileType.md
@@ -1055,6 +1066,8 @@ docs/GetEmployeePayrollsResponse.md
 docs/GetEmployeeResponse.md
 docs/GetEmployeeSchedulesResponse.md
 docs/GetEmployeesResponse.md
+docs/GetExpenseResponse.md
+docs/GetExpensesResponse.md
 docs/GetFileResponse.md
 docs/GetFilesResponse.md
 docs/GetFolderResponse.md
@@ -1338,6 +1351,7 @@ docs/UpdateDriveResponse.md
 docs/UpdateEcommerceCustomerResponse.md
 docs/UpdateEcommerceOrderResponse.md
 docs/UpdateEmployeeResponse.md
+docs/UpdateExpenseResponse.md
 docs/UpdateFileRequest.md
 docs/UpdateFileResponse.md
 docs/UpdateFolderRequest.md
@@ -1520,6 +1534,7 @@ test/test_create_drive_response.py
 test/test_create_ecommerce_customer_response.py
 test/test_create_ecommerce_order_response.py
 test/test_create_employee_response.py
+test/test_create_expense_response.py
 test/test_create_file_request.py
 test/test_create_file_response.py
 test/test_create_folder_request.py
@@ -1594,6 +1609,7 @@ test/test_delete_drive_response.py
 test/test_delete_ecommerce_customer_response.py
 test/test_delete_ecommerce_order_response.py
 test/test_delete_employee_response.py
+test/test_delete_expense_response.py
 test/test_delete_file_response.py
 test/test_delete_folder_response.py
 test/test_delete_hris_company_response.py
@@ -1673,6 +1689,8 @@ test/test_execute_base_url.py
 test/test_execute_webhook_event_request.py
 test/test_execute_webhook_events_request.py
 test/test_execute_webhook_response.py
+test/test_expense.py
+test/test_expense_line_item.py
 test/test_file_storage_api.py
 test/test_file_storage_event_type.py
 test/test_file_type.py
@@ -1749,6 +1767,8 @@ test/test_get_employee_payrolls_response.py
 test/test_get_employee_response.py
 test/test_get_employee_schedules_response.py
 test/test_get_employees_response.py
+test/test_get_expense_response.py
+test/test_get_expenses_response.py
 test/test_get_file_response.py
 test/test_get_files_response.py
 test/test_get_folder_response.py
@@ -2032,6 +2052,7 @@ test/test_update_drive_response.py
 test/test_update_ecommerce_customer_response.py
 test/test_update_ecommerce_order_response.py
 test/test_update_employee_response.py
+test/test_update_expense_response.py
 test/test_update_file_request.py
 test/test_update_file_response.py
 test/test_update_folder_request.py
