@@ -77,6 +77,7 @@ class InvoicesFilter(ModelNormal):
         return {
             'updated_since': (datetime,),  # noqa: E501
             'created_since': (datetime,),  # noqa: E501
+            'number': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -87,6 +88,7 @@ class InvoicesFilter(ModelNormal):
     attribute_map = {
         'updated_since': 'updated_since',  # noqa: E501
         'created_since': 'created_since',  # noqa: E501
+        'number': 'number',  # noqa: E501
     }
 
     read_only_vars = {
@@ -132,6 +134,7 @@ class InvoicesFilter(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             updated_since (datetime): [optional]  # noqa: E501
             created_since (datetime): [optional]  # noqa: E501
+            number (str): Invoice number to search for. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -215,6 +218,7 @@ class InvoicesFilter(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             updated_since (datetime): [optional]  # noqa: E501
             created_since (datetime): [optional]  # noqa: E501
+            number (str): Invoice number to search for. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -5579,6 +5579,7 @@ with apideck.ApiClient(configuration) as api_client:
     filter = InvoicesFilter(
         updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
         created_since=dateutil_parser('2020-09-30T07:43:32Z'),
+        number="OIT00546",
     ) # InvoicesFilter | Apply filters (optional)
     sort = InvoicesSort(
         by="updated_at",
