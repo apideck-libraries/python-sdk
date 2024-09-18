@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **approval_date** | **str, none_type** | The date the request was approved | [optional] 
 **units** | **str, none_type** | The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;. | [optional] 
 **amount** | **float, none_type** | The amount of time off requested. | [optional] 
+**day_part** | **str, none_type** | The day part of the time off request. | [optional] 
 **notes** | [**TimeOffRequestNotes**](TimeOffRequestNotes.md) |  | [optional] 
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 

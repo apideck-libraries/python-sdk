@@ -2911,6 +2911,7 @@ with apideck.ApiClient(configuration) as api_client:
         approval_date="2022-03-21",
         units="hours",
         amount=3.5,
+        day_part="morning",
         notes=TimeOffRequestNotes(
             employee="Relaxing on the beach for a few hours.",
             manager="Enjoy!",
@@ -3387,6 +3388,7 @@ with apideck.ApiClient(configuration) as api_client:
         approval_date="2022-03-21",
         units="hours",
         amount=3.5,
+        day_part="morning",
         notes=TimeOffRequestNotes(
             employee="Relaxing on the beach for a few hours.",
             manager="Enjoy!",
