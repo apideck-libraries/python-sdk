@@ -53,6 +53,7 @@ from apideck.model.bank_account import BankAccount
 from apideck.model.benefit import Benefit
 from apideck.model.bill import Bill
 from apideck.model.bill_line_item import BillLineItem
+from apideck.model.bill_payment import BillPayment
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.branch import Branch
@@ -105,6 +106,7 @@ from apideck.model.create_applicant_response import CreateApplicantResponse
 from apideck.model.create_application_response import CreateApplicationResponse
 from apideck.model.create_attachment_request import CreateAttachmentRequest
 from apideck.model.create_attachment_response import CreateAttachmentResponse
+from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_comment_response import CreateCommentResponse
 from apideck.model.create_company_response import CreateCompanyResponse
@@ -121,6 +123,7 @@ from apideck.model.create_drive_response import CreateDriveResponse
 from apideck.model.create_ecommerce_customer_response import CreateEcommerceCustomerResponse
 from apideck.model.create_ecommerce_order_response import CreateEcommerceOrderResponse
 from apideck.model.create_employee_response import CreateEmployeeResponse
+from apideck.model.create_expense_response import CreateExpenseResponse
 from apideck.model.create_file_request import CreateFileRequest
 from apideck.model.create_file_response import CreateFileResponse
 from apideck.model.create_folder_request import CreateFolderRequest
@@ -180,6 +183,7 @@ from apideck.model.delete_activity_response import DeleteActivityResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
 from apideck.model.delete_application_response import DeleteApplicationResponse
 from apideck.model.delete_attachment_response import DeleteAttachmentResponse
+from apideck.model.delete_bill_payment_response import DeleteBillPaymentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_comment_response import DeleteCommentResponse
 from apideck.model.delete_company_response import DeleteCompanyResponse
@@ -193,6 +197,7 @@ from apideck.model.delete_drive_response import DeleteDriveResponse
 from apideck.model.delete_ecommerce_customer_response import DeleteEcommerceCustomerResponse
 from apideck.model.delete_ecommerce_order_response import DeleteEcommerceOrderResponse
 from apideck.model.delete_employee_response import DeleteEmployeeResponse
+from apideck.model.delete_expense_response import DeleteExpenseResponse
 from apideck.model.delete_file_response import DeleteFileResponse
 from apideck.model.delete_folder_response import DeleteFolderResponse
 from apideck.model.delete_hris_company_response import DeleteHrisCompanyResponse
@@ -230,6 +235,7 @@ from apideck.model.delete_user_response import DeleteUserResponse
 from apideck.model.delete_webhook_response import DeleteWebhookResponse
 from apideck.model.delivery_url import DeliveryUrl
 from apideck.model.department import Department
+from apideck.model.deprecated_linked_supplier import DeprecatedLinkedSupplier
 from apideck.model.deprecated_linked_tracking_category import DeprecatedLinkedTrackingCategory
 from apideck.model.drive import Drive
 from apideck.model.drive_group import DriveGroup
@@ -270,6 +276,8 @@ from apideck.model.execute_base_url import ExecuteBaseUrl
 from apideck.model.execute_webhook_event_request import ExecuteWebhookEventRequest
 from apideck.model.execute_webhook_events_request import ExecuteWebhookEventsRequest
 from apideck.model.execute_webhook_response import ExecuteWebhookResponse
+from apideck.model.expense import Expense
+from apideck.model.expense_line_item import ExpenseLineItem
 from apideck.model.file_storage_event_type import FileStorageEventType
 from apideck.model.file_type import FileType
 from apideck.model.files_filter import FilesFilter
@@ -297,6 +305,8 @@ from apideck.model.get_applications_response import GetApplicationsResponse
 from apideck.model.get_attachment_response import GetAttachmentResponse
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
+from apideck.model.get_bill_payment_response import GetBillPaymentResponse
+from apideck.model.get_bill_payments_response import GetBillPaymentsResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
 from apideck.model.get_collection_response import GetCollectionResponse
@@ -343,6 +353,8 @@ from apideck.model.get_employee_payrolls_response import GetEmployeePayrollsResp
 from apideck.model.get_employee_response import GetEmployeeResponse
 from apideck.model.get_employee_schedules_response import GetEmployeeSchedulesResponse
 from apideck.model.get_employees_response import GetEmployeesResponse
+from apideck.model.get_expense_response import GetExpenseResponse
+from apideck.model.get_expenses_response import GetExpensesResponse
 from apideck.model.get_file_response import GetFileResponse
 from apideck.model.get_files_response import GetFilesResponse
 from apideck.model.get_folder_response import GetFolderResponse
@@ -516,6 +528,8 @@ from apideck.model.payment import Payment
 from apideck.model.payment_card import PaymentCard
 from apideck.model.payment_frequency import PaymentFrequency
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.payment_status import PaymentStatus
+from apideck.model.payment_type import PaymentType
 from apideck.model.payment_unit import PaymentUnit
 from apideck.model.payments_filter import PaymentsFilter
 from apideck.model.payments_sort import PaymentsSort
@@ -601,6 +615,7 @@ from apideck.model.update_accounting_location_response import UpdateAccountingLo
 from apideck.model.update_activity_response import UpdateActivityResponse
 from apideck.model.update_applicant_response import UpdateApplicantResponse
 from apideck.model.update_application_response import UpdateApplicationResponse
+from apideck.model.update_bill_payment_response import UpdateBillPaymentResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_comment_response import UpdateCommentResponse
 from apideck.model.update_company_response import UpdateCompanyResponse
@@ -618,6 +633,7 @@ from apideck.model.update_drive_response import UpdateDriveResponse
 from apideck.model.update_ecommerce_customer_response import UpdateEcommerceCustomerResponse
 from apideck.model.update_ecommerce_order_response import UpdateEcommerceOrderResponse
 from apideck.model.update_employee_response import UpdateEmployeeResponse
+from apideck.model.update_expense_response import UpdateExpenseResponse
 from apideck.model.update_file_request import UpdateFileRequest
 from apideck.model.update_file_response import UpdateFileResponse
 from apideck.model.update_folder_request import UpdateFolderRequest

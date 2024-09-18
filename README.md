@@ -184,13 +184,16 @@ from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
 from apideck.model.bill import Bill
+from apideck.model.bill_payment import BillPayment
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
 from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
+from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
+from apideck.model.create_expense_response import CreateExpenseResponse
 from apideck.model.create_invoice_item_response import CreateInvoiceItemResponse
 from apideck.model.create_invoice_response import CreateInvoiceResponse
 from apideck.model.create_journal_entry_response import CreateJournalEntryResponse
@@ -210,9 +213,11 @@ from apideck.model.customers_sort import CustomersSort
 from apideck.model.delete_accounting_department_response import DeleteAccountingDepartmentResponse
 from apideck.model.delete_accounting_location_response import DeleteAccountingLocationResponse
 from apideck.model.delete_attachment_response import DeleteAttachmentResponse
+from apideck.model.delete_bill_payment_response import DeleteBillPaymentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
+from apideck.model.delete_expense_response import DeleteExpenseResponse
 from apideck.model.delete_invoice_response import DeleteInvoiceResponse
 from apideck.model.delete_journal_entry_response import DeleteJournalEntryResponse
 from apideck.model.delete_ledger_account_response import DeleteLedgerAccountResponse
@@ -222,6 +227,7 @@ from apideck.model.delete_subsidiary_response import DeleteSubsidiaryResponse
 from apideck.model.delete_supplier_response import DeleteSupplierResponse
 from apideck.model.delete_tax_rate_response import DeleteTaxRateResponse
 from apideck.model.delete_tracking_category_response import DeleteTrackingCategoryResponse
+from apideck.model.expense import Expense
 from apideck.model.get_accounting_department_response import GetAccountingDepartmentResponse
 from apideck.model.get_accounting_departments_response import GetAccountingDepartmentsResponse
 from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
@@ -229,6 +235,8 @@ from apideck.model.get_accounting_locations_response import GetAccountingLocatio
 from apideck.model.get_attachment_response import GetAttachmentResponse
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
+from apideck.model.get_bill_payment_response import GetBillPaymentResponse
+from apideck.model.get_bill_payments_response import GetBillPaymentsResponse
 from apideck.model.get_bill_response import GetBillResponse
 from apideck.model.get_bills_response import GetBillsResponse
 from apideck.model.get_company_info_response import GetCompanyInfoResponse
@@ -236,6 +244,8 @@ from apideck.model.get_credit_note_response import GetCreditNoteResponse
 from apideck.model.get_credit_notes_response import GetCreditNotesResponse
 from apideck.model.get_customer_response import GetCustomerResponse
 from apideck.model.get_customers_response import GetCustomersResponse
+from apideck.model.get_expense_response import GetExpenseResponse
+from apideck.model.get_expenses_response import GetExpensesResponse
 from apideck.model.get_invoice_item_response import GetInvoiceItemResponse
 from apideck.model.get_invoice_items_response import GetInvoiceItemsResponse
 from apideck.model.get_invoice_response import GetInvoiceResponse
@@ -290,9 +300,11 @@ from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.update_accounting_department_response import UpdateAccountingDepartmentResponse
 from apideck.model.update_accounting_location_response import UpdateAccountingLocationResponse
+from apideck.model.update_bill_payment_response import UpdateBillPaymentResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
+from apideck.model.update_expense_response import UpdateExpenseResponse
 from apideck.model.update_invoice_items_response import UpdateInvoiceItemsResponse
 from apideck.model.update_invoice_response import UpdateInvoiceResponse
 from apideck.model.update_journal_entry_response import UpdateJournalEntryResponse
@@ -359,6 +371,16 @@ _AccountingApi_ | [**attachments_one**](docs/apis/AccountingApi.md#attachments_o
 
 _AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
 
+_AccountingApi_ | [**bill_payments_add**](docs/apis/AccountingApi.md#bill_payments_add) | **POST** /accounting/bill-payments | Create Bill Payment |
+
+_AccountingApi_ | [**bill_payments_all**](docs/apis/AccountingApi.md#bill_payments_all) | **GET** /accounting/bill-payments | List Bill Payments |
+
+_AccountingApi_ | [**bill_payments_delete**](docs/apis/AccountingApi.md#bill_payments_delete) | **DELETE** /accounting/bill-payments/{id} | Delete Bill Payment |
+
+_AccountingApi_ | [**bill_payments_one**](docs/apis/AccountingApi.md#bill_payments_one) | **GET** /accounting/bill-payments/{id} | Get Bill Payment |
+
+_AccountingApi_ | [**bill_payments_update**](docs/apis/AccountingApi.md#bill_payments_update) | **PATCH** /accounting/bill-payments/{id} | Update Bill Payment |
+
 _AccountingApi_ | [**bills_add**](docs/apis/AccountingApi.md#bills_add) | **POST** /accounting/bills | Create Bill |
 
 _AccountingApi_ | [**bills_all**](docs/apis/AccountingApi.md#bills_all) | **GET** /accounting/bills | List Bills |
@@ -400,6 +422,16 @@ _AccountingApi_ | [**departments_delete**](docs/apis/AccountingApi.md#department
 _AccountingApi_ | [**departments_one**](docs/apis/AccountingApi.md#departments_one) | **GET** /accounting/departments/{id} | Get Department |
 
 _AccountingApi_ | [**departments_update**](docs/apis/AccountingApi.md#departments_update) | **PATCH** /accounting/departments/{id} | Update Department |
+
+_AccountingApi_ | [**expenses_add**](docs/apis/AccountingApi.md#expenses_add) | **POST** /accounting/expenses | Create Expense |
+
+_AccountingApi_ | [**expenses_all**](docs/apis/AccountingApi.md#expenses_all) | **GET** /accounting/expenses | List Expenses |
+
+_AccountingApi_ | [**expenses_delete**](docs/apis/AccountingApi.md#expenses_delete) | **DELETE** /accounting/expenses/{id} | Delete Expense |
+
+_AccountingApi_ | [**expenses_one**](docs/apis/AccountingApi.md#expenses_one) | **GET** /accounting/expenses/{id} | Get Expense |
+
+_AccountingApi_ | [**expenses_update**](docs/apis/AccountingApi.md#expenses_update) | **PATCH** /accounting/expenses/{id} | Update Expense |
 
 _AccountingApi_ | [**invoice_items_add**](docs/apis/AccountingApi.md#invoice_items_add) | **POST** /accounting/invoice-items | Create Invoice Item |
 
@@ -997,6 +1029,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Benefit](docs/models/Benefit.md)
  - [Bill](docs/models/Bill.md)
  - [BillLineItem](docs/models/BillLineItem.md)
+ - [BillPayment](docs/models/BillPayment.md)
  - [BillsFilter](docs/models/BillsFilter.md)
  - [BillsSort](docs/models/BillsSort.md)
  - [Branch](docs/models/Branch.md)
@@ -1049,6 +1082,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
  - [CreateAttachmentRequest](docs/models/CreateAttachmentRequest.md)
  - [CreateAttachmentResponse](docs/models/CreateAttachmentResponse.md)
+ - [CreateBillPaymentResponse](docs/models/CreateBillPaymentResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
@@ -1065,6 +1099,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateEcommerceCustomerResponse](docs/models/CreateEcommerceCustomerResponse.md)
  - [CreateEcommerceOrderResponse](docs/models/CreateEcommerceOrderResponse.md)
  - [CreateEmployeeResponse](docs/models/CreateEmployeeResponse.md)
+ - [CreateExpenseResponse](docs/models/CreateExpenseResponse.md)
  - [CreateFileRequest](docs/models/CreateFileRequest.md)
  - [CreateFileResponse](docs/models/CreateFileResponse.md)
  - [CreateFolderRequest](docs/models/CreateFolderRequest.md)
@@ -1124,6 +1159,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
  - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
  - [DeleteAttachmentResponse](docs/models/DeleteAttachmentResponse.md)
+ - [DeleteBillPaymentResponse](docs/models/DeleteBillPaymentResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
  - [DeleteCompanyResponse](docs/models/DeleteCompanyResponse.md)
@@ -1137,6 +1173,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteEcommerceCustomerResponse](docs/models/DeleteEcommerceCustomerResponse.md)
  - [DeleteEcommerceOrderResponse](docs/models/DeleteEcommerceOrderResponse.md)
  - [DeleteEmployeeResponse](docs/models/DeleteEmployeeResponse.md)
+ - [DeleteExpenseResponse](docs/models/DeleteExpenseResponse.md)
  - [DeleteFileResponse](docs/models/DeleteFileResponse.md)
  - [DeleteFolderResponse](docs/models/DeleteFolderResponse.md)
  - [DeleteHrisCompanyResponse](docs/models/DeleteHrisCompanyResponse.md)
@@ -1174,6 +1211,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteWebhookResponse](docs/models/DeleteWebhookResponse.md)
  - [DeliveryUrl](docs/models/DeliveryUrl.md)
  - [Department](docs/models/Department.md)
+ - [DeprecatedLinkedSupplier](docs/models/DeprecatedLinkedSupplier.md)
  - [DeprecatedLinkedTrackingCategory](docs/models/DeprecatedLinkedTrackingCategory.md)
  - [Drive](docs/models/Drive.md)
  - [DriveGroup](docs/models/DriveGroup.md)
@@ -1214,6 +1252,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ExecuteWebhookEventRequest](docs/models/ExecuteWebhookEventRequest.md)
  - [ExecuteWebhookEventsRequest](docs/models/ExecuteWebhookEventsRequest.md)
  - [ExecuteWebhookResponse](docs/models/ExecuteWebhookResponse.md)
+ - [Expense](docs/models/Expense.md)
+ - [ExpenseLineItem](docs/models/ExpenseLineItem.md)
  - [FileStorageEventType](docs/models/FileStorageEventType.md)
  - [FileType](docs/models/FileType.md)
  - [FilesFilter](docs/models/FilesFilter.md)
@@ -1241,6 +1281,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetAttachmentResponse](docs/models/GetAttachmentResponse.md)
  - [GetAttachmentsResponse](docs/models/GetAttachmentsResponse.md)
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
+ - [GetBillPaymentResponse](docs/models/GetBillPaymentResponse.md)
+ - [GetBillPaymentsResponse](docs/models/GetBillPaymentsResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
  - [GetBillsResponse](docs/models/GetBillsResponse.md)
  - [GetCollectionResponse](docs/models/GetCollectionResponse.md)
@@ -1287,6 +1329,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetEmployeeResponse](docs/models/GetEmployeeResponse.md)
  - [GetEmployeeSchedulesResponse](docs/models/GetEmployeeSchedulesResponse.md)
  - [GetEmployeesResponse](docs/models/GetEmployeesResponse.md)
+ - [GetExpenseResponse](docs/models/GetExpenseResponse.md)
+ - [GetExpensesResponse](docs/models/GetExpensesResponse.md)
  - [GetFileResponse](docs/models/GetFileResponse.md)
  - [GetFilesResponse](docs/models/GetFilesResponse.md)
  - [GetFolderResponse](docs/models/GetFolderResponse.md)
@@ -1460,6 +1504,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [PaymentCard](docs/models/PaymentCard.md)
  - [PaymentFrequency](docs/models/PaymentFrequency.md)
  - [PaymentRequiredResponse](docs/models/PaymentRequiredResponse.md)
+ - [PaymentStatus](docs/models/PaymentStatus.md)
+ - [PaymentType](docs/models/PaymentType.md)
  - [PaymentUnit](docs/models/PaymentUnit.md)
  - [PaymentsFilter](docs/models/PaymentsFilter.md)
  - [PaymentsSort](docs/models/PaymentsSort.md)
@@ -1545,6 +1591,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
  - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
  - [UpdateApplicationResponse](docs/models/UpdateApplicationResponse.md)
+ - [UpdateBillPaymentResponse](docs/models/UpdateBillPaymentResponse.md)
  - [UpdateBillResponse](docs/models/UpdateBillResponse.md)
  - [UpdateCommentResponse](docs/models/UpdateCommentResponse.md)
  - [UpdateCompanyResponse](docs/models/UpdateCompanyResponse.md)
@@ -1562,6 +1609,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateEcommerceCustomerResponse](docs/models/UpdateEcommerceCustomerResponse.md)
  - [UpdateEcommerceOrderResponse](docs/models/UpdateEcommerceOrderResponse.md)
  - [UpdateEmployeeResponse](docs/models/UpdateEmployeeResponse.md)
+ - [UpdateExpenseResponse](docs/models/UpdateExpenseResponse.md)
  - [UpdateFileRequest](docs/models/UpdateFileRequest.md)
  - [UpdateFileResponse](docs/models/UpdateFileResponse.md)
  - [UpdateFolderRequest](docs/models/UpdateFolderRequest.md)

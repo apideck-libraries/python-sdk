@@ -9,6 +9,11 @@ Method | HTTP request | Description
 [**attachments_download**](AccountingApi.md#attachments_download) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment
 [**attachments_one**](AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment
 [**balance_sheet_one**](AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet
+[**bill_payments_add**](AccountingApi.md#bill_payments_add) | **POST** /accounting/bill-payments | Create Bill Payment
+[**bill_payments_all**](AccountingApi.md#bill_payments_all) | **GET** /accounting/bill-payments | List Bill Payments
+[**bill_payments_delete**](AccountingApi.md#bill_payments_delete) | **DELETE** /accounting/bill-payments/{id} | Delete Bill Payment
+[**bill_payments_one**](AccountingApi.md#bill_payments_one) | **GET** /accounting/bill-payments/{id} | Get Bill Payment
+[**bill_payments_update**](AccountingApi.md#bill_payments_update) | **PATCH** /accounting/bill-payments/{id} | Update Bill Payment
 [**bills_add**](AccountingApi.md#bills_add) | **POST** /accounting/bills | Create Bill
 [**bills_all**](AccountingApi.md#bills_all) | **GET** /accounting/bills | List Bills
 [**bills_delete**](AccountingApi.md#bills_delete) | **DELETE** /accounting/bills/{id} | Delete Bill
@@ -30,6 +35,11 @@ Method | HTTP request | Description
 [**departments_delete**](AccountingApi.md#departments_delete) | **DELETE** /accounting/departments/{id} | Delete Department
 [**departments_one**](AccountingApi.md#departments_one) | **GET** /accounting/departments/{id} | Get Department
 [**departments_update**](AccountingApi.md#departments_update) | **PATCH** /accounting/departments/{id} | Update Department
+[**expenses_add**](AccountingApi.md#expenses_add) | **POST** /accounting/expenses | Create Expense
+[**expenses_all**](AccountingApi.md#expenses_all) | **GET** /accounting/expenses | List Expenses
+[**expenses_delete**](AccountingApi.md#expenses_delete) | **DELETE** /accounting/expenses/{id} | Delete Expense
+[**expenses_one**](AccountingApi.md#expenses_one) | **GET** /accounting/expenses/{id} | Get Expense
+[**expenses_update**](AccountingApi.md#expenses_update) | **PATCH** /accounting/expenses/{id} | Update Expense
 [**invoice_items_add**](AccountingApi.md#invoice_items_add) | **POST** /accounting/invoice-items | Create Invoice Item
 [**invoice_items_all**](AccountingApi.md#invoice_items_all) | **GET** /accounting/invoice-items | List Invoice Items
 [**invoice_items_delete**](AccountingApi.md#invoice_items_delete) | **DELETE** /accounting/invoice-items/{id} | Delete Invoice Item
@@ -638,6 +648,731 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | BalanceSheet |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bill_payments_add**
+> CreateBillPaymentResponse bill_payments_add(bill_payment)
+
+Create Bill Payment
+
+Create Bill Payment
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.bill_payment import BillPayment
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    bill_payment = BillPayment(
+        currency=Currency("USD"),
+        currency_rate=0.69,
+        total_amount=1000,
+        reference="123456",
+        payment_method="cash",
+        payment_method_reference="123456",
+        payment_method_id="12345",
+        account=LinkedLedgerAccount(
+            id="123456",
+            nominal_code="N091",
+            code="453",
+        ),
+        transaction_date=dateutil_parser('2021-05-01T12:00:00Z'),
+        supplier=LinkedSupplier(
+            id="12345",
+            display_name="Windsurf Shop",
+            address=Address(
+                id="123",
+                type="primary",
+                string="25 Spring Street, Blackburn, VIC 3130",
+                name="HQ US",
+                line1="Main street",
+                line2="apt #",
+                line3="Suite #",
+                line4="delivery instructions",
+                street_number="25",
+                city="San Francisco",
+                state="CA",
+                postal_code="94104",
+                country="US",
+                latitude="40.759211",
+                longitude="-73.984638",
+                county="Santa Clara",
+                contact_name="Elon Musk",
+                salutation="Mr",
+                phone_number="111-111-1111",
+                fax="122-111-1111",
+                email="elon@musk.com",
+                website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
+                row_version="1-12345",
+            ),
+        ),
+        company_id="12345",
+        reconciled=True,
+        status=PaymentStatus("authorised"),
+        type=PaymentType("accounts_receivable"),
+        allocations=[
+            Allocation(
+                id="123456",
+                type="invoice",
+                amount=49.99,
+                allocation_id="123456",
+            ),
+        ],
+        note="Some notes about this transaction",
+        number="123456",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
+        row_version="1-12345",
+        display_id="123456",
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # BillPayment | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create Bill Payment
+        api_response = api_instance.bill_payments_add(bill_payment)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create Bill Payment
+        api_response = api_instance.bill_payments_add(bill_payment, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bill_payment** | [**BillPayment**](BillPayment.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreateBillPaymentResponse**](CreateBillPaymentResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Bill Payment created |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bill_payments_all**
+> GetBillPaymentsResponse bill_payments_all()
+
+List Bill Payments
+
+List Bill Payments
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.payments_sort import PaymentsSort
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.get_bill_payments_response import GetBillPaymentsResponse
+from apideck.model.payments_filter import PaymentsFilter
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    filter = PaymentsFilter(
+        updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+    ) # PaymentsFilter | Apply filters (optional)
+    sort = PaymentsSort(
+        by="updated_at",
+        direction=SortDirection("asc"),
+    ) # PaymentsSort | Apply sorting (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List Bill Payments
+        api_response = api_instance.bill_payments_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **filter** | **PaymentsFilter**| Apply filters | [optional]
+ **sort** | **PaymentsSort**| Apply sorting | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetBillPaymentsResponse**](GetBillPaymentsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bill Payments |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bill_payments_delete**
+> DeleteBillPaymentResponse bill_payments_delete(id)
+
+Delete Bill Payment
+
+Delete Bill Payment
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.delete_bill_payment_response import DeleteBillPaymentResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete Bill Payment
+        api_response = api_instance.bill_payments_delete(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete Bill Payment
+        api_response = api_instance.bill_payments_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeleteBillPaymentResponse**](DeleteBillPaymentResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bill Payment deleted |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bill_payments_one**
+> GetBillPaymentResponse bill_payments_one(id)
+
+Get Bill Payment
+
+Get Bill Payment
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.get_bill_payment_response import GetBillPaymentResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Bill Payment
+        api_response = api_instance.bill_payments_one(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Bill Payment
+        api_response = api_instance.bill_payments_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetBillPaymentResponse**](GetBillPaymentResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bill Payment |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bill_payments_update**
+> UpdateBillPaymentResponse bill_payments_update(id, bill_payment)
+
+Update Bill Payment
+
+Update Bill Payment
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.update_bill_payment_response import UpdateBillPaymentResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.bill_payment import BillPayment
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    bill_payment = BillPayment(
+        currency=Currency("USD"),
+        currency_rate=0.69,
+        total_amount=1000,
+        reference="123456",
+        payment_method="cash",
+        payment_method_reference="123456",
+        payment_method_id="12345",
+        account=LinkedLedgerAccount(
+            id="123456",
+            nominal_code="N091",
+            code="453",
+        ),
+        transaction_date=dateutil_parser('2021-05-01T12:00:00Z'),
+        supplier=LinkedSupplier(
+            id="12345",
+            display_name="Windsurf Shop",
+            address=Address(
+                id="123",
+                type="primary",
+                string="25 Spring Street, Blackburn, VIC 3130",
+                name="HQ US",
+                line1="Main street",
+                line2="apt #",
+                line3="Suite #",
+                line4="delivery instructions",
+                street_number="25",
+                city="San Francisco",
+                state="CA",
+                postal_code="94104",
+                country="US",
+                latitude="40.759211",
+                longitude="-73.984638",
+                county="Santa Clara",
+                contact_name="Elon Musk",
+                salutation="Mr",
+                phone_number="111-111-1111",
+                fax="122-111-1111",
+                email="elon@musk.com",
+                website="https://elonmusk.com",
+                notes="Address notes or delivery instructions.",
+                row_version="1-12345",
+            ),
+        ),
+        company_id="12345",
+        reconciled=True,
+        status=PaymentStatus("authorised"),
+        type=PaymentType("accounts_receivable"),
+        allocations=[
+            Allocation(
+                id="123456",
+                type="invoice",
+                amount=49.99,
+                allocation_id="123456",
+            ),
+        ],
+        note="Some notes about this transaction",
+        number="123456",
+        tracking_categories=LinkedTrackingCategories([
+            LinkedTrackingCategory(
+                id="123456",
+                name="New York",
+            ),
+        ]),
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
+        row_version="1-12345",
+        display_id="123456",
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # BillPayment | 
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update Bill Payment
+        api_response = api_instance.bill_payments_update(id, bill_payment)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update Bill Payment
+        api_response = api_instance.bill_payments_update(id, bill_payment, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bill_payments_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **bill_payment** | [**BillPayment**](BillPayment.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateBillPaymentResponse**](UpdateBillPaymentResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bill Payment updated |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |
@@ -3815,6 +4550,659 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **expenses_add**
+> CreateExpenseResponse expenses_add(expense)
+
+Create Expense
+
+Create Expense
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.expense import Expense
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.create_expense_response import CreateExpenseResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    expense = Expense(
+        number="OIT00546",
+        transaction_date=dateutil_parser('2021-05-01T12:00:00Z'),
+        account_id="123456",
+        customer_id="12345",
+        supplier_id="12345",
+        company_id="12345",
+        department_id="12345",
+        currency=Currency("USD"),
+        currency_rate=0.69,
+        type="expense",
+        memo="For travel expenses incurred on 2024-05-15",
+        tax_rate=LinkedTaxRate(
+            id="123456",
+            rate=10,
+        ),
+        total_amount=275,
+        line_items=[
+            ExpenseLineItem(
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
+                account_id="123456",
+                customer_id="12345",
+                department_id="12345",
+                location_id="12345",
+                tax_rate=LinkedTaxRate(
+                    id="123456",
+                    rate=10,
+                ),
+                description="Travel US.",
+                total_amount=275,
+                billable=True,
+            ),
+        ],
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
+        row_version="1-12345",
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # Expense | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create Expense
+        api_response = api_instance.expenses_add(expense)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create Expense
+        api_response = api_instance.expenses_add(expense, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expense** | [**Expense**](Expense.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreateExpenseResponse**](CreateExpenseResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Expenses |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **expenses_all**
+> GetExpensesResponse expenses_all()
+
+List Expenses
+
+List Expenses
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.get_expenses_response import GetExpensesResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List Expenses
+        api_response = api_instance.expenses_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+
+### Return type
+
+[**GetExpensesResponse**](GetExpensesResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Expenses |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **expenses_delete**
+> DeleteExpenseResponse expenses_delete(id)
+
+Delete Expense
+
+Delete Expense
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.delete_expense_response import DeleteExpenseResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete Expense
+        api_response = api_instance.expenses_delete(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete Expense
+        api_response = api_instance.expenses_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeleteExpenseResponse**](DeleteExpenseResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Expenses |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **expenses_one**
+> GetExpenseResponse expenses_one(id)
+
+Get Expense
+
+Get Expense
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.get_expense_response import GetExpenseResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Expense
+        api_response = api_instance.expenses_one(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Expense
+        api_response = api_instance.expenses_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**GetExpenseResponse**](GetExpenseResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Expenses |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **expenses_update**
+> UpdateExpenseResponse expenses_update(id, expense)
+
+Update Expense
+
+Update Expense
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.expense import Expense
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.update_expense_response import UpdateExpenseResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    expense = Expense(
+        number="OIT00546",
+        transaction_date=dateutil_parser('2021-05-01T12:00:00Z'),
+        account_id="123456",
+        customer_id="12345",
+        supplier_id="12345",
+        company_id="12345",
+        department_id="12345",
+        currency=Currency("USD"),
+        currency_rate=0.69,
+        type="expense",
+        memo="For travel expenses incurred on 2024-05-15",
+        tax_rate=LinkedTaxRate(
+            id="123456",
+            rate=10,
+        ),
+        total_amount=275,
+        line_items=[
+            ExpenseLineItem(
+                tracking_categories=LinkedTrackingCategories([
+                    LinkedTrackingCategory(
+                        id="123456",
+                        name="New York",
+                    ),
+                ]),
+                account_id="123456",
+                customer_id="12345",
+                department_id="12345",
+                location_id="12345",
+                tax_rate=LinkedTaxRate(
+                    id="123456",
+                    rate=10,
+                ),
+                description="Travel US.",
+                total_amount=275,
+                billable=True,
+            ),
+        ],
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
+        row_version="1-12345",
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # Expense | 
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update Expense
+        api_response = api_instance.expenses_update(id, expense)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update Expense
+        api_response = api_instance.expenses_update(id, expense, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->expenses_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **expense** | [**Expense**](Expense.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateExpenseResponse**](UpdateExpenseResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Expenses |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **invoice_items_add**
 > CreateInvoiceItemResponse invoice_items_add(invoice_item)
 
@@ -4849,6 +6237,7 @@ with apideck.ApiClient(configuration) as api_client:
     filter = InvoicesFilter(
         updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
         created_since=dateutil_parser('2020-09-30T07:43:32Z'),
+        number="OIT00546",
     ) # InvoicesFilter | Apply filters (optional)
     sort = InvoicesSort(
         by="updated_at",
@@ -7524,11 +8913,11 @@ with apideck.ApiClient(configuration) as api_client:
     payment = Payment(
         currency=Currency("USD"),
         currency_rate=0.69,
-        total_amount=49.99,
+        total_amount=1000,
         reference="123456",
-        payment_method="Credit Card",
+        payment_method="cash",
         payment_method_reference="123456",
-        payment_method_id="123456",
+        payment_method_id="12345",
         accounts_receivable_account_type="Account",
         accounts_receivable_account_id="123456",
         account=LinkedLedgerAccount(
@@ -7543,8 +8932,7 @@ with apideck.ApiClient(configuration) as api_client:
             name="Windsurf Shop",
             email="boring@boring.com",
         ),
-        supplier=LinkedSupplier(
-            id="12345",
+        supplier=DeprecatedLinkedSupplier(
             display_name="Windsurf Shop",
             address=Address(
                 id="123",
@@ -7575,8 +8963,8 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         company_id="12345",
         reconciled=True,
-        status="authorised",
-        type="accounts_receivable",
+        status=PaymentStatus("authorised"),
+        type=PaymentType("accounts_receivable"),
         allocations=[
             Allocation(
                 id="123456",
@@ -7585,8 +8973,8 @@ with apideck.ApiClient(configuration) as api_client:
                 allocation_id="123456",
             ),
         ],
-        note="Some notes about this payment",
-        number="Some notes about this payment",
+        note="Some notes about this transaction",
+        number="123456",
         tracking_categories=LinkedTrackingCategories([
             LinkedTrackingCategory(
                 id="123456",
@@ -8061,11 +9449,11 @@ with apideck.ApiClient(configuration) as api_client:
     payment = Payment(
         currency=Currency("USD"),
         currency_rate=0.69,
-        total_amount=49.99,
+        total_amount=1000,
         reference="123456",
-        payment_method="Credit Card",
+        payment_method="cash",
         payment_method_reference="123456",
-        payment_method_id="123456",
+        payment_method_id="12345",
         accounts_receivable_account_type="Account",
         accounts_receivable_account_id="123456",
         account=LinkedLedgerAccount(
@@ -8080,8 +9468,7 @@ with apideck.ApiClient(configuration) as api_client:
             name="Windsurf Shop",
             email="boring@boring.com",
         ),
-        supplier=LinkedSupplier(
-            id="12345",
+        supplier=DeprecatedLinkedSupplier(
             display_name="Windsurf Shop",
             address=Address(
                 id="123",
@@ -8112,8 +9499,8 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         company_id="12345",
         reconciled=True,
-        status="authorised",
-        type="accounts_receivable",
+        status=PaymentStatus("authorised"),
+        type=PaymentType("accounts_receivable"),
         allocations=[
             Allocation(
                 id="123456",
@@ -8122,8 +9509,8 @@ with apideck.ApiClient(configuration) as api_client:
                 allocation_id="123456",
             ),
         ],
-        note="Some notes about this payment",
-        number="Some notes about this payment",
+        note="Some notes about this transaction",
+        number="123456",
         tracking_categories=LinkedTrackingCategories([
             LinkedTrackingCategory(
                 id="123456",
