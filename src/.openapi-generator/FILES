@@ -358,6 +358,7 @@ apideck/model/get_credit_note_response.py
 apideck/model/get_credit_notes_response.py
 apideck/model/get_custom_fields_response.py
 apideck/model/get_custom_mapping_response.py
+apideck/model/get_custom_mappings_response.py
 apideck/model/get_customer_response.py
 apideck/model/get_customers_response.py
 apideck/model/get_department_response.py
@@ -1049,6 +1050,7 @@ docs/GetCreditNoteResponse.md
 docs/GetCreditNotesResponse.md
 docs/GetCustomFieldsResponse.md
 docs/GetCustomMappingResponse.md
+docs/GetCustomMappingsResponse.md
 docs/GetCustomerResponse.md
 docs/GetCustomersResponse.md
 docs/GetDepartmentResponse.md
@@ -1750,6 +1752,7 @@ test/test_get_credit_note_response.py
 test/test_get_credit_notes_response.py
 test/test_get_custom_fields_response.py
 test/test_get_custom_mapping_response.py
+test/test_get_custom_mappings_response.py
 test/test_get_customer_response.py
 test/test_get_customers_response.py
 test/test_get_department_response.py

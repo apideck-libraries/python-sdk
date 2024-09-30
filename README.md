@@ -933,6 +933,8 @@ _SmsApi_ | [**messages_one**](docs/apis/SmsApi.md#messages_one) | **GET** /sms/m
 
 _SmsApi_ | [**messages_update**](docs/apis/SmsApi.md#messages_update) | **PATCH** /sms/messages/{id} | Update Message |
 
+_VaultApi_ | [**connection_custom_mappings_all**](docs/apis/VaultApi.md#connection_custom_mappings_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-mappings | List connection custom mappings |
+
 _VaultApi_ | [**connection_settings_all**](docs/apis/VaultApi.md#connection_settings_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/config | Get resource settings |
 
 _VaultApi_ | [**connection_settings_update**](docs/apis/VaultApi.md#connection_settings_update) | **PATCH** /vault/connections/{unified_api}/{service_id}/{resource}/config | Update settings |
@@ -962,6 +964,8 @@ _VaultApi_ | [**consumers_one**](docs/apis/VaultApi.md#consumers_one) | **GET** 
 _VaultApi_ | [**consumers_update**](docs/apis/VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer |
 
 _VaultApi_ | [**custom_fields_all**](docs/apis/VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields |
+
+_VaultApi_ | [**custom_mappings_all**](docs/apis/VaultApi.md#custom_mappings_all) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings |
 
 _VaultApi_ | [**logs_all**](docs/apis/VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs |
 
@@ -1312,6 +1316,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetCreditNotesResponse](docs/models/GetCreditNotesResponse.md)
  - [GetCustomFieldsResponse](docs/models/GetCustomFieldsResponse.md)
  - [GetCustomMappingResponse](docs/models/GetCustomMappingResponse.md)
+ - [GetCustomMappingsResponse](docs/models/GetCustomMappingsResponse.md)
  - [GetCustomerResponse](docs/models/GetCustomerResponse.md)
  - [GetCustomersResponse](docs/models/GetCustomersResponse.md)
  - [GetDepartmentResponse](docs/models/GetDepartmentResponse.md)

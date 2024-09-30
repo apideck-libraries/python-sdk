@@ -336,6 +336,7 @@ from apideck.model.get_credit_note_response import GetCreditNoteResponse
 from apideck.model.get_credit_notes_response import GetCreditNotesResponse
 from apideck.model.get_custom_fields_response import GetCustomFieldsResponse
 from apideck.model.get_custom_mapping_response import GetCustomMappingResponse
+from apideck.model.get_custom_mappings_response import GetCustomMappingsResponse
 from apideck.model.get_customer_response import GetCustomerResponse
 from apideck.model.get_customers_response import GetCustomersResponse
 from apideck.model.get_department_response import GetDepartmentResponse
