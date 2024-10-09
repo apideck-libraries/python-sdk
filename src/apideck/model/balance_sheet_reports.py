@@ -31,10 +31,8 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.balance_sheet_account import BalanceSheetAccount
-    from apideck.model.balance_sheet_accounts import BalanceSheetAccounts
     from apideck.model.currency import Currency
     globals()['BalanceSheetAccount'] = BalanceSheetAccount
-    globals()['BalanceSheetAccounts'] = BalanceSheetAccounts
     globals()['Currency'] = Currency
 
 
@@ -115,7 +113,7 @@ class BalanceSheetReports(ModelNormal):
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
-            'uncategorized_items': (BalanceSheetAccounts,),  # noqa: E501
+            'uncategorized_items': (BalanceSheetAccount,),  # noqa: E501
         }
 
     @cached_property
@@ -204,7 +202,7 @@ class BalanceSheetReports(ModelNormal):
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
-            uncategorized_items (BalanceSheetAccounts): [optional]  # noqa: E501
+            uncategorized_items (BalanceSheetAccount): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -306,7 +304,7 @@ class BalanceSheetReports(ModelNormal):
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
-            uncategorized_items (BalanceSheetAccounts): [optional]  # noqa: E501
+            uncategorized_items (BalanceSheetAccount): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

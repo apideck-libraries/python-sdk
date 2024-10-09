@@ -13,10 +13,8 @@ import unittest
 
 import apideck
 from apideck.model.balance_sheet_account import BalanceSheetAccount
-from apideck.model.balance_sheet_accounts import BalanceSheetAccounts
 from apideck.model.currency import Currency
 globals()['BalanceSheetAccount'] = BalanceSheetAccount
-globals()['BalanceSheetAccounts'] = BalanceSheetAccounts
 globals()['Currency'] = Currency
 from apideck.model.balance_sheet_reports import BalanceSheetReports
 
