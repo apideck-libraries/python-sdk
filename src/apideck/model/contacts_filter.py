@@ -81,6 +81,7 @@ class ContactsFilter(ModelNormal):
             'email': (str,),  # noqa: E501
             'phone_number': (str,),  # noqa: E501
             'company_id': (str,),  # noqa: E501
+            'owner_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -95,6 +96,7 @@ class ContactsFilter(ModelNormal):
         'email': 'email',  # noqa: E501
         'phone_number': 'phone_number',  # noqa: E501
         'company_id': 'company_id',  # noqa: E501
+        'owner_id': 'owner_id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,6 +146,7 @@ class ContactsFilter(ModelNormal):
             email (str): Email of the contact to filter on. [optional]  # noqa: E501
             phone_number (str): Phone number of the contact to filter on. [optional]  # noqa: E501
             company_id (str): Unique identifier for the associated company of the contact to filter on. [optional]  # noqa: E501
+            owner_id (str): Unique identifier for the owner of the contact to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,6 +234,7 @@ class ContactsFilter(ModelNormal):
             email (str): Email of the contact to filter on. [optional]  # noqa: E501
             phone_number (str): Phone number of the contact to filter on. [optional]  # noqa: E501
             company_id (str): Unique identifier for the associated company of the contact to filter on. [optional]  # noqa: E501
+            owner_id (str): Unique identifier for the owner of the contact to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
