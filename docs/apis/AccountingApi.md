@@ -705,7 +705,7 @@ with apideck.ApiClient(configuration) as api_client:
     bill_payment = BillPayment(
         currency=Currency("USD"),
         currency_rate=0.69,
-        total_amount=1000,
+        total_amount=49.99,
         reference="123456",
         payment_method="cash",
         payment_method_reference="123456",
@@ -749,11 +749,11 @@ with apideck.ApiClient(configuration) as api_client:
         company_id="12345",
         reconciled=True,
         status=PaymentStatus("authorised"),
-        type=PaymentType("accounts_receivable"),
+        type="accounts_payable",
         allocations=[
-            Allocation(
-                id="123456",
-                type="invoice",
+            BillPaymentAllocations(
+                id="12345",
+                type="bill",
                 amount=49.99,
                 allocation_id="123456",
             ),
@@ -1234,7 +1234,7 @@ with apideck.ApiClient(configuration) as api_client:
     bill_payment = BillPayment(
         currency=Currency("USD"),
         currency_rate=0.69,
-        total_amount=1000,
+        total_amount=49.99,
         reference="123456",
         payment_method="cash",
         payment_method_reference="123456",
@@ -1278,11 +1278,11 @@ with apideck.ApiClient(configuration) as api_client:
         company_id="12345",
         reconciled=True,
         status=PaymentStatus("authorised"),
-        type=PaymentType("accounts_receivable"),
+        type="accounts_payable",
         allocations=[
-            Allocation(
-                id="123456",
-                type="invoice",
+            BillPaymentAllocations(
+                id="12345",
+                type="bill",
                 amount=49.99,
                 allocation_id="123456",
             ),
@@ -8913,7 +8913,7 @@ with apideck.ApiClient(configuration) as api_client:
     payment = Payment(
         currency=Currency("USD"),
         currency_rate=0.69,
-        total_amount=1000,
+        total_amount=49.99,
         reference="123456",
         payment_method="cash",
         payment_method_reference="123456",
@@ -9449,7 +9449,7 @@ with apideck.ApiClient(configuration) as api_client:
     payment = Payment(
         currency=Currency("USD"),
         currency_rate=0.69,
-        total_amount=1000,
+        total_amount=49.99,
         reference="123456",
         payment_method="cash",
         payment_method_reference="123456",

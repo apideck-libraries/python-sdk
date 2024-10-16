@@ -12,7 +12,7 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.allocation import Allocation
+from apideck.model.bill_payment_allocations import BillPaymentAllocations
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
@@ -20,8 +20,7 @@ from apideck.model.linked_supplier import LinkedSupplier
 from apideck.model.linked_tracking_categories import LinkedTrackingCategories
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.payment_status import PaymentStatus
-from apideck.model.payment_type import PaymentType
-globals()['Allocation'] = Allocation
+globals()['BillPaymentAllocations'] = BillPaymentAllocations
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
@@ -29,7 +28,6 @@ globals()['LinkedSupplier'] = LinkedSupplier
 globals()['LinkedTrackingCategories'] = LinkedTrackingCategories
 globals()['PassThroughBody'] = PassThroughBody
 globals()['PaymentStatus'] = PaymentStatus
-globals()['PaymentType'] = PaymentType
 from apideck.model.bill_payment import BillPayment
 
 

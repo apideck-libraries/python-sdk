@@ -76,6 +76,7 @@ apideck/model/benefit.py
 apideck/model/bill.py
 apideck/model/bill_line_item.py
 apideck/model/bill_payment.py
+apideck/model/bill_payment_allocations.py
 apideck/model/bills_filter.py
 apideck/model/bills_sort.py
 apideck/model/branch.py
@@ -764,6 +765,7 @@ docs/Benefit.md
 docs/Bill.md
 docs/BillLineItem.md
 docs/BillPayment.md
+docs/BillPaymentAllocations.md
 docs/BillsFilter.md
 docs/BillsSort.md
 docs/Branch.md
@@ -1466,6 +1468,7 @@ test/test_benefit.py
 test/test_bill.py
 test/test_bill_line_item.py
 test/test_bill_payment.py
+test/test_bill_payment_allocations.py
 test/test_bills_filter.py
 test/test_bills_sort.py
 test/test_branch.py

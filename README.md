@@ -1034,6 +1034,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Bill](docs/models/Bill.md)
  - [BillLineItem](docs/models/BillLineItem.md)
  - [BillPayment](docs/models/BillPayment.md)
+ - [BillPaymentAllocations](docs/models/BillPaymentAllocations.md)
  - [BillsFilter](docs/models/BillsFilter.md)
  - [BillsSort](docs/models/BillsSort.md)
  - [Branch](docs/models/Branch.md)

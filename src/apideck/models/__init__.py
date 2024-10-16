@@ -54,6 +54,7 @@ from apideck.model.benefit import Benefit
 from apideck.model.bill import Bill
 from apideck.model.bill_line_item import BillLineItem
 from apideck.model.bill_payment import BillPayment
+from apideck.model.bill_payment_allocations import BillPaymentAllocations
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.branch import Branch
