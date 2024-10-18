@@ -1740,7 +1740,7 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         tags=Tags(["New"]),
         opportunity_ids=[
-            "opportunity_ids_example",
+            "12345",
         ],
         pass_through=PassThroughBody([
             {
@@ -2309,7 +2309,7 @@ with apideck.ApiClient(configuration) as api_client:
         ],
         tags=Tags(["New"]),
         opportunity_ids=[
-            "opportunity_ids_example",
+            "12345",
         ],
         pass_through=PassThroughBody([
             {
