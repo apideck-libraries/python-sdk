@@ -1,5 +1,6 @@
 # PayrollTotals
 
+The overview of the payroll totals.
 
 ## Properties
 Name | Type | Description | Notes

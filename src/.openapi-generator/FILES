@@ -703,6 +703,7 @@ apideck/model/validate_connection_state_response.py
 apideck/model/validate_connection_state_response_data.py
 apideck/model/vault_event_type.py
 apideck/model/virtual_webhooks.py
+apideck/model/virtual_webhooks_resources.py
 apideck/model/wallet_details.py
 apideck/model/webhook.py
 apideck/model/webhook_event.py
@@ -1402,6 +1403,7 @@ docs/ValidateConnectionStateResponseData.md
 docs/VaultApi.md
 docs/VaultEventType.md
 docs/VirtualWebhooks.md
+docs/VirtualWebhooksResources.md
 docs/WalletDetails.md
 docs/Webhook.md
 docs/WebhookApi.md
@@ -2105,6 +2107,7 @@ test/test_validate_connection_state_response_data.py
 test/test_vault_api.py
 test/test_vault_event_type.py
 test/test_virtual_webhooks.py
+test/test_virtual_webhooks_resources.py
 test/test_wallet_details.py
 test/test_webhook.py
 test/test_webhook_api.py

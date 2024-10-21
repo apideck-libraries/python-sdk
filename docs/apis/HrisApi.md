@@ -1793,7 +1793,7 @@ with apideck.ApiClient(configuration) as api_client:
                 currency=Currency("USD"),
                 flsa_status="exempt",
                 effective_date="2020-08-12",
-                payment_frequency=PaymentFrequency("year"),
+                payment_frequency=PaymentFrequency("monthly"),
             ),
         ],
         works_remote=True,
@@ -2470,7 +2470,7 @@ with apideck.ApiClient(configuration) as api_client:
                 currency=Currency("USD"),
                 flsa_status="exempt",
                 effective_date="2020-08-12",
-                payment_frequency=PaymentFrequency("year"),
+                payment_frequency=PaymentFrequency("monthly"),
             ),
         ],
         works_remote=True,
@@ -3050,7 +3050,7 @@ with apideck.ApiClient(configuration) as api_client:
         end_date="2022-04-21",
         updated_since="2020-09-30T07:43:32.000Z",
         employee_id="1234",
-        time_off_request_status="",
+        time_off_request_status="requested",
         company_id="1234",
     ) # TimeOffRequestsFilter | Apply filters (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)

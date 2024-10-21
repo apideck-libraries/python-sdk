@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **end_date** | **str, none_type** | The end date, inclusive, of the pay period. | 
 **company_id** | **str, none_type** | The unique identifier of the company. | [optional] 
 **processed_date** | **str, none_type** | The date the payroll was processed. | [optional] 
-**totals** | **PayrollTotals** |  | [optional] 
+**totals** | [**PayrollTotals**](PayrollTotals.md) |  | [optional] 
 **compensations** | [**[Compensation]**](Compensation.md) | An array of compensations for the payroll. | [optional] 
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 

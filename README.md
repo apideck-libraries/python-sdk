@@ -1661,6 +1661,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ValidateConnectionStateResponseData](docs/models/ValidateConnectionStateResponseData.md)
  - [VaultEventType](docs/models/VaultEventType.md)
  - [VirtualWebhooks](docs/models/VirtualWebhooks.md)
+ - [VirtualWebhooksResources](docs/models/VirtualWebhooksResources.md)
  - [WalletDetails](docs/models/WalletDetails.md)
  - [Webhook](docs/models/Webhook.md)
  - [WebhookEvent](docs/models/WebhookEvent.md)
@@ -1707,7 +1708,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
 
 ## Author
 
-
+support@apideck.com
 
 
 ## Notes for Large OpenAPI documents

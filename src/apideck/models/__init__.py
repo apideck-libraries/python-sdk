@@ -681,6 +681,7 @@ from apideck.model.validate_connection_state_response import ValidateConnectionS
 from apideck.model.validate_connection_state_response_data import ValidateConnectionStateResponseData
 from apideck.model.vault_event_type import VaultEventType
 from apideck.model.virtual_webhooks import VirtualWebhooks
+from apideck.model.virtual_webhooks_resources import VirtualWebhooksResources
 from apideck.model.wallet_details import WalletDetails
 from apideck.model.webhook import Webhook
 from apideck.model.webhook_event import WebhookEvent
