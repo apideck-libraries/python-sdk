@@ -7643,6 +7643,9 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         sub_account=False,
         last_reconciliation_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        subsidiaries=[
+            None,
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -8141,6 +8144,9 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         sub_account=False,
         last_reconciliation_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
+        subsidiaries=[
+            None,
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
