@@ -933,6 +933,8 @@ _SmsApi_ | [**messages_one**](docs/apis/SmsApi.md#messages_one) | **GET** /sms/m
 
 _SmsApi_ | [**messages_update**](docs/apis/SmsApi.md#messages_update) | **PATCH** /sms/messages/{id} | Update Message |
 
+_VaultApi_ | [**connection_custom_mappings_all**](docs/apis/VaultApi.md#connection_custom_mappings_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-mappings | List connection custom mappings |
+
 _VaultApi_ | [**connection_settings_all**](docs/apis/VaultApi.md#connection_settings_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/config | Get resource settings |
 
 _VaultApi_ | [**connection_settings_update**](docs/apis/VaultApi.md#connection_settings_update) | **PATCH** /vault/connections/{unified_api}/{service_id}/{resource}/config | Update settings |
@@ -962,6 +964,8 @@ _VaultApi_ | [**consumers_one**](docs/apis/VaultApi.md#consumers_one) | **GET** 
 _VaultApi_ | [**consumers_update**](docs/apis/VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer |
 
 _VaultApi_ | [**custom_fields_all**](docs/apis/VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields |
+
+_VaultApi_ | [**custom_mappings_all**](docs/apis/VaultApi.md#custom_mappings_all) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings |
 
 _VaultApi_ | [**logs_all**](docs/apis/VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs |
 
@@ -1023,13 +1027,18 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [BalanceSheetAccount](docs/models/BalanceSheetAccount.md)
  - [BalanceSheetAccountRecord](docs/models/BalanceSheetAccountRecord.md)
  - [BalanceSheetAccounts](docs/models/BalanceSheetAccounts.md)
+ - [BalanceSheetAssetsAccount](docs/models/BalanceSheetAssetsAccount.md)
+ - [BalanceSheetEquityAccount](docs/models/BalanceSheetEquityAccount.md)
  - [BalanceSheetFilter](docs/models/BalanceSheetFilter.md)
+ - [BalanceSheetLiabilitiesAccount](docs/models/BalanceSheetLiabilitiesAccount.md)
  - [BalanceSheetReports](docs/models/BalanceSheetReports.md)
+ - [BalanceSheetUncategorizedItemsAccount](docs/models/BalanceSheetUncategorizedItemsAccount.md)
  - [BankAccount](docs/models/BankAccount.md)
  - [Benefit](docs/models/Benefit.md)
  - [Bill](docs/models/Bill.md)
  - [BillLineItem](docs/models/BillLineItem.md)
  - [BillPayment](docs/models/BillPayment.md)
+ - [BillPaymentAllocations](docs/models/BillPaymentAllocations.md)
  - [BillsFilter](docs/models/BillsFilter.md)
  - [BillsSort](docs/models/BillsSort.md)
  - [Branch](docs/models/Branch.md)
@@ -1312,6 +1321,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetCreditNotesResponse](docs/models/GetCreditNotesResponse.md)
  - [GetCustomFieldsResponse](docs/models/GetCustomFieldsResponse.md)
  - [GetCustomMappingResponse](docs/models/GetCustomMappingResponse.md)
+ - [GetCustomMappingsResponse](docs/models/GetCustomMappingsResponse.md)
  - [GetCustomerResponse](docs/models/GetCustomerResponse.md)
  - [GetCustomersResponse](docs/models/GetCustomersResponse.md)
  - [GetDepartmentResponse](docs/models/GetDepartmentResponse.md)
@@ -1655,6 +1665,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [ValidateConnectionStateResponseData](docs/models/ValidateConnectionStateResponseData.md)
  - [VaultEventType](docs/models/VaultEventType.md)
  - [VirtualWebhooks](docs/models/VirtualWebhooks.md)
+ - [VirtualWebhooksResources](docs/models/VirtualWebhooksResources.md)
  - [WalletDetails](docs/models/WalletDetails.md)
  - [Webhook](docs/models/Webhook.md)
  - [WebhookEvent](docs/models/WebhookEvent.md)
@@ -1701,7 +1712,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
 
 ## Author
 
-
+support@apideck.com
 
 
 ## Notes for Large OpenAPI documents

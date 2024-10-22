@@ -4,6 +4,7 @@ All URIs are relative to *https://unify.apideck.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**connection_custom_mappings_all**](VaultApi.md#connection_custom_mappings_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-mappings | List connection custom mappings
 [**connection_settings_all**](VaultApi.md#connection_settings_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/config | Get resource settings
 [**connection_settings_update**](VaultApi.md#connection_settings_update) | **PATCH** /vault/connections/{unified_api}/{service_id}/{resource}/config | Update settings
 [**connections_all**](VaultApi.md#connections_all) | **GET** /vault/connections | Get all connections
@@ -19,10 +20,120 @@ Method | HTTP request | Description
 [**consumers_one**](VaultApi.md#consumers_one) | **GET** /vault/consumers/{consumer_id} | Get consumer
 [**consumers_update**](VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer
 [**custom_fields_all**](VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields
+[**custom_mappings_all**](VaultApi.md#custom_mappings_all) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings
 [**logs_all**](VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs
 [**sessions_create**](VaultApi.md#sessions_create) | **POST** /vault/sessions | Create Session
 [**validate_connection_state**](VaultApi.md#validate_connection_state) | **POST** /vault/connections/{unified_api}/{service_id}/validate | Validate Connection State
 
+
+# **connection_custom_mappings_all**
+> GetCustomMappingsResponse connection_custom_mappings_all(unified_api, service_id, resource)
+
+List connection custom mappings
+
+This endpoint returns a list of custom mappings for a connection.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import vault_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.get_custom_mappings_response import GetCustomMappingsResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vault_api.VaultApi(api_client)
+    unified_api = "crm" # str | Unified API
+    service_id = "pipedrive" # str | Service ID of the resource to return
+    resource = "leads" # str | Name of the resource (plural)
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    resource_id = "1234" # str | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List connection custom mappings
+        api_response = api_instance.connection_custom_mappings_all(unified_api, service_id, resource)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->connection_custom_mappings_all: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List connection custom mappings
+        api_response = api_instance.connection_custom_mappings_all(unified_api, service_id, resource, consumer_id=consumer_id, app_id=app_id, resource_id=resource_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->connection_custom_mappings_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unified_api** | **str**| Unified API |
+ **service_id** | **str**| Service ID of the resource to return |
+ **resource** | **str**| Name of the resource (plural) |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **resource_id** | **str**| This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. | [optional]
+
+### Return type
+
+[**GetCustomMappingsResponse**](GetCustomMappingsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom mapping |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **connection_settings_all**
 > GetConnectionResponse connection_settings_all(unified_api, service_id, resource)
@@ -1630,6 +1741,111 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetCustomFieldsResponse**](GetCustomFieldsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom mapping |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_mappings_all**
+> GetCustomMappingsResponse custom_mappings_all(unified_api, service_id)
+
+List custom mappings
+
+This endpoint returns a list of custom mappings.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import vault_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.get_custom_mappings_response import GetCustomMappingsResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vault_api.VaultApi(api_client)
+    unified_api = "crm" # str | Unified API
+    service_id = "pipedrive" # str | Service ID of the resource to return
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List custom mappings
+        api_response = api_instance.custom_mappings_all(unified_api, service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->custom_mappings_all: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List custom mappings
+        api_response = api_instance.custom_mappings_all(unified_api, service_id, consumer_id=consumer_id, app_id=app_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->custom_mappings_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unified_api** | **str**| Unified API |
+ **service_id** | **str**| Service ID of the resource to return |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+
+### Return type
+
+[**GetCustomMappingsResponse**](GetCustomMappingsResponse.md)
 
 ### Authorization
 

@@ -47,13 +47,18 @@ from apideck.model.balance_sheet import BalanceSheet
 from apideck.model.balance_sheet_account import BalanceSheetAccount
 from apideck.model.balance_sheet_account_record import BalanceSheetAccountRecord
 from apideck.model.balance_sheet_accounts import BalanceSheetAccounts
+from apideck.model.balance_sheet_assets_account import BalanceSheetAssetsAccount
+from apideck.model.balance_sheet_equity_account import BalanceSheetEquityAccount
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
+from apideck.model.balance_sheet_liabilities_account import BalanceSheetLiabilitiesAccount
 from apideck.model.balance_sheet_reports import BalanceSheetReports
+from apideck.model.balance_sheet_uncategorized_items_account import BalanceSheetUncategorizedItemsAccount
 from apideck.model.bank_account import BankAccount
 from apideck.model.benefit import Benefit
 from apideck.model.bill import Bill
 from apideck.model.bill_line_item import BillLineItem
 from apideck.model.bill_payment import BillPayment
+from apideck.model.bill_payment_allocations import BillPaymentAllocations
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.branch import Branch
@@ -336,6 +341,7 @@ from apideck.model.get_credit_note_response import GetCreditNoteResponse
 from apideck.model.get_credit_notes_response import GetCreditNotesResponse
 from apideck.model.get_custom_fields_response import GetCustomFieldsResponse
 from apideck.model.get_custom_mapping_response import GetCustomMappingResponse
+from apideck.model.get_custom_mappings_response import GetCustomMappingsResponse
 from apideck.model.get_customer_response import GetCustomerResponse
 from apideck.model.get_customers_response import GetCustomersResponse
 from apideck.model.get_department_response import GetDepartmentResponse
@@ -679,6 +685,7 @@ from apideck.model.validate_connection_state_response import ValidateConnectionS
 from apideck.model.validate_connection_state_response_data import ValidateConnectionStateResponseData
 from apideck.model.vault_event_type import VaultEventType
 from apideck.model.virtual_webhooks import VirtualWebhooks
+from apideck.model.virtual_webhooks_resources import VirtualWebhooksResources
 from apideck.model.wallet_details import WalletDetails
 from apideck.model.webhook import Webhook
 from apideck.model.webhook_event import WebhookEvent

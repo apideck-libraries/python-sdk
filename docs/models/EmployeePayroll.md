@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **employee_id** | **str, none_type** | ID of the employee | [optional] 
 **company_id** | **str, none_type** | The unique identifier of the company. | [optional] 
 **processed_date** | **str, none_type** | The date the payroll was processed. | [optional] 
-**totals** | **PayrollTotals** |  | [optional] 
+**totals** | [**PayrollTotals**](PayrollTotals.md) |  | [optional] 
 **compensations** | [**[Compensation]**](Compensation.md) | An array of compensations for the payroll. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
