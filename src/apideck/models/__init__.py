@@ -47,8 +47,12 @@ from apideck.model.balance_sheet import BalanceSheet
 from apideck.model.balance_sheet_account import BalanceSheetAccount
 from apideck.model.balance_sheet_account_record import BalanceSheetAccountRecord
 from apideck.model.balance_sheet_accounts import BalanceSheetAccounts
+from apideck.model.balance_sheet_assets_account import BalanceSheetAssetsAccount
+from apideck.model.balance_sheet_equity_account import BalanceSheetEquityAccount
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
+from apideck.model.balance_sheet_liabilities_account import BalanceSheetLiabilitiesAccount
 from apideck.model.balance_sheet_reports import BalanceSheetReports
+from apideck.model.balance_sheet_uncategorized_items_account import BalanceSheetUncategorizedItemsAccount
 from apideck.model.bank_account import BankAccount
 from apideck.model.benefit import Benefit
 from apideck.model.bill import Bill

@@ -13,9 +13,15 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.balance_sheet_account import BalanceSheetAccount
+from apideck.model.balance_sheet_assets_account import BalanceSheetAssetsAccount
+from apideck.model.balance_sheet_equity_account import BalanceSheetEquityAccount
+from apideck.model.balance_sheet_liabilities_account import BalanceSheetLiabilitiesAccount
+from apideck.model.balance_sheet_uncategorized_items_account import BalanceSheetUncategorizedItemsAccount
 from apideck.model.currency import Currency
-globals()['BalanceSheetAccount'] = BalanceSheetAccount
+globals()['BalanceSheetAssetsAccount'] = BalanceSheetAssetsAccount
+globals()['BalanceSheetEquityAccount'] = BalanceSheetEquityAccount
+globals()['BalanceSheetLiabilitiesAccount'] = BalanceSheetLiabilitiesAccount
+globals()['BalanceSheetUncategorizedItemsAccount'] = BalanceSheetUncategorizedItemsAccount
 globals()['Currency'] = Currency
 from apideck.model.balance_sheet_reports import BalanceSheetReports
 
