@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**consumers_delete**](VaultApi.md#consumers_delete) | **DELETE** /vault/consumers/{consumer_id} | Delete consumer
 [**consumers_one**](VaultApi.md#consumers_one) | **GET** /vault/consumers/{consumer_id} | Get consumer
 [**consumers_update**](VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer
+[**create_callback_state**](VaultApi.md#create_callback_state) | **POST** /vault/connections/{unified_api}/{service_id}/callback-state | Create Callback State
 [**custom_fields_all**](VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields
 [**custom_mappings_all**](VaultApi.md#custom_mappings_all) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings
 [**logs_all**](VaultApi.md#logs_all) | **GET** /vault/logs | Get all consumer request logs
@@ -1648,6 +1649,116 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Consumer updated |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **create_callback_state**
+> CreateCallbackStateResponse create_callback_state(service_id, unified_api, create_callback_state_data)
+
+Create Callback State
+
+This endpoint creates a callback state that can be used to issue requests to the callback endpoint. 
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import vault_api
+from apideck.model.create_callback_state_response import CreateCallbackStateResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.create_callback_state_data import CreateCallbackStateData
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vault_api.VaultApi(api_client)
+    service_id = "pipedrive" # str | Service ID of the resource to return
+    unified_api = "crm" # str | Unified API
+    create_callback_state_data = CreateCallbackStateData(
+        redirect_uri="https://example.com/callback",
+    ) # CreateCallbackStateData | Callback state data
+    consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create Callback State
+        api_response = api_instance.create_callback_state(service_id, unified_api, create_callback_state_data)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->create_callback_state: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create Callback State
+        api_response = api_instance.create_callback_state(service_id, unified_api, create_callback_state_data, consumer_id=consumer_id, app_id=app_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling VaultApi->create_callback_state: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_id** | **str**| Service ID of the resource to return |
+ **unified_api** | **str**| Unified API |
+ **create_callback_state_data** | [**CreateCallbackStateData**](CreateCallbackStateData.md)| Callback state data |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+
+### Return type
+
+[**CreateCallbackStateResponse**](CreateCallbackStateResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Callback state created |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |
