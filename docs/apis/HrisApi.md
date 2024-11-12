@@ -1758,6 +1758,7 @@ with apideck.ApiClient(configuration) as api_client:
                 hired_at=dateutil_parser('Wed Aug 12 00:00:00 UTC 2020').date(),
                 is_primary=True,
                 is_manager=True,
+                status="active",
                 location=Address(
                     id="123",
                     type="primary",
@@ -2435,6 +2436,7 @@ with apideck.ApiClient(configuration) as api_client:
                 hired_at=dateutil_parser('Wed Aug 12 00:00:00 UTC 2020').date(),
                 is_primary=True,
                 is_manager=True,
+                status="active",
                 location=Address(
                     id="123",
                     type="primary",

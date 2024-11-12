@@ -64,6 +64,12 @@ class EmployeeJob(ModelNormal):
     """
 
     allowed_values = {
+        ('status',): {
+            'None': None,
+            'ACTIVE': "active",
+            'INACTIVE': "inactive",
+            'OTHER': "other",
+        },
     }
 
     validations = {
@@ -104,6 +110,7 @@ class EmployeeJob(ModelNormal):
             'hired_at': (date, none_type,),  # noqa: E501
             'is_primary': (bool, none_type,),  # noqa: E501
             'is_manager': (bool, none_type,),  # noqa: E501
+            'status': (str, none_type,),  # noqa: E501
             'location': (Address,),  # noqa: E501
         }
 
@@ -125,6 +132,7 @@ class EmployeeJob(ModelNormal):
         'hired_at': 'hired_at',  # noqa: E501
         'is_primary': 'is_primary',  # noqa: E501
         'is_manager': 'is_manager',  # noqa: E501
+        'status': 'status',  # noqa: E501
         'location': 'location',  # noqa: E501
     }
 
@@ -183,6 +191,7 @@ class EmployeeJob(ModelNormal):
             hired_at (date, none_type): The date on which the employee was hired by the organization. [optional]  # noqa: E501
             is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
             is_manager (bool, none_type): Indicates whether this the employee has a manager role.. [optional]  # noqa: E501
+            status (str, none_type): Indicates the status of the job.. [optional]  # noqa: E501
             location (Address): [optional]  # noqa: E501
         """
 
@@ -277,6 +286,7 @@ class EmployeeJob(ModelNormal):
             hired_at (date, none_type): The date on which the employee was hired by the organization. [optional]  # noqa: E501
             is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
             is_manager (bool, none_type): Indicates whether this the employee has a manager role.. [optional]  # noqa: E501
+            status (str, none_type): Indicates the status of the job.. [optional]  # noqa: E501
             location (Address): [optional]  # noqa: E501
         """
 
