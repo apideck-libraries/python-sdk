@@ -963,6 +963,8 @@ _VaultApi_ | [**consumers_one**](docs/apis/VaultApi.md#consumers_one) | **GET** 
 
 _VaultApi_ | [**consumers_update**](docs/apis/VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer |
 
+_VaultApi_ | [**create_callback_state**](docs/apis/VaultApi.md#create_callback_state) | **POST** /vault/connections/{unified_api}/{service_id}/callback-state | Create Callback State |
+
 _VaultApi_ | [**custom_fields_all**](docs/apis/VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields |
 
 _VaultApi_ | [**custom_mappings_all**](docs/apis/VaultApi.md#custom_mappings_all) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings |
@@ -1093,6 +1095,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateAttachmentResponse](docs/models/CreateAttachmentResponse.md)
  - [CreateBillPaymentResponse](docs/models/CreateBillPaymentResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
+ - [CreateCallbackStateData](docs/models/CreateCallbackStateData.md)
+ - [CreateCallbackStateResponse](docs/models/CreateCallbackStateResponse.md)
+ - [CreateCallbackStateResponseData](docs/models/CreateCallbackStateResponseData.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
  - [CreateConnectionResponse](docs/models/CreateConnectionResponse.md)
