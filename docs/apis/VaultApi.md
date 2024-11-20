@@ -1659,7 +1659,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **create_callback_state**
-> CreateCallbackStateResponse create_callback_state(service_id, unified_api, create_callback_state_data)
+> CreateCallbackStateResponse create_callback_state(service_id, unified_api, create_callback_state)
 
 Create Callback State
 
@@ -1676,9 +1676,9 @@ from apideck.api import vault_api
 from apideck.model.create_callback_state_response import CreateCallbackStateResponse
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.create_callback_state import CreateCallbackState
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
-from apideck.model.create_callback_state_data import CreateCallbackStateData
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.not_found_response import NotFoundResponse
 from pprint import pprint
@@ -1705,16 +1705,16 @@ with apideck.ApiClient(configuration) as api_client:
     api_instance = vault_api.VaultApi(api_client)
     service_id = "pipedrive" # str | Service ID of the resource to return
     unified_api = "crm" # str | Unified API
-    create_callback_state_data = CreateCallbackStateData(
+    create_callback_state = CreateCallbackState(
         redirect_uri="https://example.com/callback",
-    ) # CreateCallbackStateData | Callback state data
+    ) # CreateCallbackState | Callback state data
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Create Callback State
-        api_response = api_instance.create_callback_state(service_id, unified_api, create_callback_state_data)
+        api_response = api_instance.create_callback_state(service_id, unified_api, create_callback_state)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling VaultApi->create_callback_state: %s\n" % e)
@@ -1723,7 +1723,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Create Callback State
-        api_response = api_instance.create_callback_state(service_id, unified_api, create_callback_state_data, consumer_id=consumer_id, app_id=app_id)
+        api_response = api_instance.create_callback_state(service_id, unified_api, create_callback_state, consumer_id=consumer_id, app_id=app_id)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling VaultApi->create_callback_state: %s\n" % e)
@@ -1736,7 +1736,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_id** | **str**| Service ID of the resource to return |
  **unified_api** | **str**| Unified API |
- **create_callback_state_data** | [**CreateCallbackStateData**](CreateCallbackStateData.md)| Callback state data |
+ **create_callback_state** | [**CreateCallbackState**](CreateCallbackState.md)| Callback state data |
  **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
  **app_id** | **str**| The ID of your Unify application | [optional]
 

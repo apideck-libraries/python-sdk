@@ -27,7 +27,7 @@ from apideck.model.connection import Connection
 from apideck.model.connection_import_data import ConnectionImportData
 from apideck.model.consumer import Consumer
 from apideck.model.consumer_request_counts_in_date_range_response import ConsumerRequestCountsInDateRangeResponse
-from apideck.model.create_callback_state_data import CreateCallbackStateData
+from apideck.model.create_callback_state import CreateCallbackState
 from apideck.model.create_callback_state_response import CreateCallbackStateResponse
 from apideck.model.create_connection_response import CreateConnectionResponse
 from apideck.model.create_consumer_response import CreateConsumerResponse
@@ -1095,14 +1095,14 @@ class VaultApi(object):
                 'all': [
                     'service_id',
                     'unified_api',
-                    'create_callback_state_data',
+                    'create_callback_state',
                     'consumer_id',
                     'app_id',
                 ],
                 'required': [
                     'service_id',
                     'unified_api',
-                    'create_callback_state_data',
+                    'create_callback_state',
                 ],
                 'nullable': [
                 ],
@@ -1121,8 +1121,8 @@ class VaultApi(object):
                         (str,),
                     'unified_api':
                         (str,),
-                    'create_callback_state_data':
-                        (CreateCallbackStateData,),
+                    'create_callback_state':
+                        (CreateCallbackState,),
                     'consumer_id':
                         (str,),
                     'app_id':
@@ -1137,7 +1137,7 @@ class VaultApi(object):
                 'location_map': {
                     'service_id': 'path',
                     'unified_api': 'path',
-                    'create_callback_state_data': 'body',
+                    'create_callback_state': 'body',
                     'consumer_id': 'header',
                     'app_id': 'header',
                 },
@@ -2771,7 +2771,7 @@ class VaultApi(object):
         self,
         service_id,
         unified_api,
-        create_callback_state_data,
+        create_callback_state,
         **kwargs
     ):
         """Create Callback State  # noqa: E501
@@ -2780,13 +2780,13 @@ class VaultApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_callback_state(service_id, unified_api, create_callback_state_data, async_req=True)
+        >>> thread = api.create_callback_state(service_id, unified_api, create_callback_state, async_req=True)
         >>> result = thread.get()
 
         Args:
             service_id (str): Service ID of the resource to return
             unified_api (str): Unified API
-            create_callback_state_data (CreateCallbackStateData): Callback state data
+            create_callback_state (CreateCallbackState): Callback state data
 
         Keyword Args:
             consumer_id (str): ID of the consumer which you want to get or push data from. [optional]
@@ -2851,8 +2851,8 @@ class VaultApi(object):
             service_id
         kwargs['unified_api'] = \
             unified_api
-        kwargs['create_callback_state_data'] = \
-            create_callback_state_data
+        kwargs['create_callback_state'] = \
+            create_callback_state
         return self.create_callback_state_endpoint.call_with_http_info(**kwargs)
 
     def custom_fields_all(

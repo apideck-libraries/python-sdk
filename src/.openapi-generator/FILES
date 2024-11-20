@@ -135,7 +135,7 @@ apideck/model/create_attachment_request.py
 apideck/model/create_attachment_response.py
 apideck/model/create_bill_payment_response.py
 apideck/model/create_bill_response.py
-apideck/model/create_callback_state_data.py
+apideck/model/create_callback_state.py
 apideck/model/create_callback_state_response.py
 apideck/model/create_callback_state_response_data.py
 apideck/model/create_comment_response.py
@@ -833,7 +833,7 @@ docs/CreateAttachmentRequest.md
 docs/CreateAttachmentResponse.md
 docs/CreateBillPaymentResponse.md
 docs/CreateBillResponse.md
-docs/CreateCallbackStateData.md
+docs/CreateCallbackState.md
 docs/CreateCallbackStateResponse.md
 docs/CreateCallbackStateResponseData.md
 docs/CreateCommentResponse.md
@@ -1544,7 +1544,7 @@ test/test_create_attachment_request.py
 test/test_create_attachment_response.py
 test/test_create_bill_payment_response.py
 test/test_create_bill_response.py
-test/test_create_callback_state_data.py
+test/test_create_callback_state.py
 test/test_create_callback_state_response.py
 test/test_create_callback_state_response_data.py
 test/test_create_comment_response.py

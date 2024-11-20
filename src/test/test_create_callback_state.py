@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.create_callback_state_data import CreateCallbackStateData
+from apideck.model.create_callback_state import CreateCallbackState
 
 
-class TestCreateCallbackStateData(unittest.TestCase):
-    """CreateCallbackStateData unit test stubs"""
+class TestCreateCallbackState(unittest.TestCase):
+    """CreateCallbackState unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestCreateCallbackStateData(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCreateCallbackStateData(self):
-        """Test CreateCallbackStateData"""
+    def testCreateCallbackState(self):
+        """Test CreateCallbackState"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = CreateCallbackStateData()  # noqa: E501
+        # model = CreateCallbackState()  # noqa: E501
         pass
 
 
