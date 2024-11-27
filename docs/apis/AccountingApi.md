@@ -604,6 +604,8 @@ with apideck.ApiClient(configuration) as api_client:
     filter = BalanceSheetFilter(
         start_date="2021-01-01",
         end_date="2021-12-31",
+        period_count=3,
+        period_type="month",
     ) # BalanceSheetFilter | Apply filters (optional)
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
 
