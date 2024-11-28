@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConnectionResponse**](GetConnectionResponse.md)
+[**GetConnectionResponse**](../models/GetConnectionResponse.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateConnectionResponse**](UpdateConnectionResponse.md)
+[**UpdateConnectionResponse**](../models/UpdateConnectionResponse.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConnectionsResponse**](GetConnectionsResponse.md)
+[**GetConnectionsResponse**](../models/GetConnectionsResponse.md)
 
 ### Authorization
 
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateConnectionResponse**](CreateConnectionResponse.md)
+[**CreateConnectionResponse**](../models/CreateConnectionResponse.md)
 
 ### Authorization
 
@@ -771,7 +771,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConnectionResponse**](GetConnectionResponse.md)
+[**GetConnectionResponse**](../models/GetConnectionResponse.md)
 
 ### Authorization
 
@@ -878,7 +878,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConnectionResponse**](GetConnectionResponse.md)
+[**GetConnectionResponse**](../models/GetConnectionResponse.md)
 
 ### Authorization
 
@@ -1009,7 +1009,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateConnectionResponse**](UpdateConnectionResponse.md)
+[**UpdateConnectionResponse**](../models/UpdateConnectionResponse.md)
 
 ### Authorization
 
@@ -1114,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConsumerRequestCountsInDateRangeResponse**](ConsumerRequestCountsInDateRangeResponse.md)
+[**ConsumerRequestCountsInDateRangeResponse**](../models/ConsumerRequestCountsInDateRangeResponse.md)
 
 ### Authorization
 
@@ -1224,7 +1224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateConsumerResponse**](CreateConsumerResponse.md)
+[**CreateConsumerResponse**](../models/CreateConsumerResponse.md)
 
 ### Authorization
 
@@ -1319,7 +1319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConsumersResponse**](GetConsumersResponse.md)
+[**GetConsumersResponse**](../models/GetConsumersResponse.md)
 
 ### Authorization
 
@@ -1420,7 +1420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteConsumerResponse**](DeleteConsumerResponse.md)
+[**DeleteConsumerResponse**](../models/DeleteConsumerResponse.md)
 
 ### Authorization
 
@@ -1521,7 +1521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConsumerResponse**](GetConsumerResponse.md)
+[**GetConsumerResponse**](../models/GetConsumerResponse.md)
 
 ### Authorization
 
@@ -1632,7 +1632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateConsumerResponse**](UpdateConsumerResponse.md)
+[**UpdateConsumerResponse**](../models/UpdateConsumerResponse.md)
 
 ### Authorization
 
@@ -1851,7 +1851,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetCustomFieldsResponse**](GetCustomFieldsResponse.md)
+[**GetCustomFieldsResponse**](../models/GetCustomFieldsResponse.md)
 
 ### Authorization
 
@@ -2060,7 +2060,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetLogsResponse**](GetLogsResponse.md)
+[**GetLogsResponse**](../models/GetLogsResponse.md)
 
 ### Authorization
 
@@ -2107,6 +2107,11 @@ from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
 from apideck.model.create_session_response import CreateSessionResponse
 from apideck.model.session import Session
+from apideck.model.session_settings import SessionSettings
+from apideck.model.session_theme import SessionTheme
+from apideck.model.unified_api_id import UnifiedApiId
+from apideck.model.consumer import Consumer
+from apideck.model.consumer_metadata import ConsumerMetadata
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.not_found_response import NotFoundResponse
 from pprint import pprint
@@ -2192,7 +2197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateSessionResponse**](CreateSessionResponse.md)
+[**CreateSessionResponse**](../models/CreateSessionResponse.md)
 
 ### Authorization
 
@@ -2299,7 +2304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ValidateConnectionStateResponse**](ValidateConnectionStateResponse.md)
+[**ValidateConnectionStateResponse**](../models/ValidateConnectionStateResponse.md)
 
 ### Authorization
 
