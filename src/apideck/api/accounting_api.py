@@ -115,6 +115,7 @@ from apideck.model.get_tracking_categories_response import GetTrackingCategories
 from apideck.model.get_tracking_category_response import GetTrackingCategoryResponse
 from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
+from apideck.model.invoice_item_filter import InvoiceItemFilter
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
 from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
@@ -3297,6 +3298,7 @@ class AccountingApi(object):
                     'service_id',
                     'raw',
                     'fields',
+                    'filter',
                 ],
                 'required': [
                     'id',
@@ -3327,6 +3329,8 @@ class AccountingApi(object):
                         (bool,),
                     'fields':
                         (str, none_type,),
+                    'filter':
+                        (InvoiceItemFilter,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -3335,6 +3339,7 @@ class AccountingApi(object):
                     'service_id': 'x-apideck-service-id',
                     'raw': 'raw',
                     'fields': 'fields',
+                    'filter': 'filter',
                 },
                 'location_map': {
                     'id': 'path',
@@ -3343,6 +3348,7 @@ class AccountingApi(object):
                     'service_id': 'header',
                     'raw': 'query',
                     'fields': 'query',
+                    'filter': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -10737,6 +10743,7 @@ class AccountingApi(object):
             service_id (str): Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API.. [optional]
             raw (bool): Include raw response. Mostly used for debugging purposes. [optional] if omitted the server will use the default value of False
             fields (str, none_type): The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded.. [optional]
+            filter (InvoiceItemFilter): Apply filters. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

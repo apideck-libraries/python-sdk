@@ -455,6 +455,7 @@ from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_item_asset_account import InvoiceItemAssetAccount
 from apideck.model.invoice_item_expense_account import InvoiceItemExpenseAccount
+from apideck.model.invoice_item_filter import InvoiceItemFilter
 from apideck.model.invoice_item_income_account import InvoiceItemIncomeAccount
 from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
 from apideck.model.invoice_items_filter import InvoiceItemsFilter

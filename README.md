@@ -269,6 +269,7 @@ from apideck.model.get_tracking_categories_response import GetTrackingCategories
 from apideck.model.get_tracking_category_response import GetTrackingCategoryResponse
 from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
+from apideck.model.invoice_item_filter import InvoiceItemFilter
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
 from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
@@ -1437,6 +1438,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [InvoiceItem](docs/models/InvoiceItem.md)
  - [InvoiceItemAssetAccount](docs/models/InvoiceItemAssetAccount.md)
  - [InvoiceItemExpenseAccount](docs/models/InvoiceItemExpenseAccount.md)
+ - [InvoiceItemFilter](docs/models/InvoiceItemFilter.md)
  - [InvoiceItemIncomeAccount](docs/models/InvoiceItemIncomeAccount.md)
  - [InvoiceItemSalesDetails](docs/models/InvoiceItemSalesDetails.md)
  - [InvoiceItemsFilter](docs/models/InvoiceItemsFilter.md)
