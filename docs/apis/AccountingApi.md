@@ -11330,6 +11330,7 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        subsidiary_id="12345",
     ) # Supplier | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
@@ -11884,6 +11885,7 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        subsidiary_id="12345",
     ) # Supplier | 
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -12023,6 +12025,9 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        subsidiaries=[
+            None,
+        ],
     ) # TaxRate | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
@@ -12493,6 +12498,9 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        subsidiaries=[
+            None,
+        ],
     ) # TaxRate | 
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
@@ -12621,6 +12629,9 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        subsidiaries=[
+            None,
+        ],
     ) # TrackingCategory | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
@@ -13071,6 +13082,9 @@ with apideck.ApiClient(configuration) as api_client:
                 ],
             },
         ]),
+        subsidiaries=[
+            None,
+        ],
     ) # TrackingCategory | 
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
     app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)

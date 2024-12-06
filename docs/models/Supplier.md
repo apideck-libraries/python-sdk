@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **pass_through** | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
+**subsidiary_id** | **str** | The subsidiary the supplier belongs to. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
