@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **hired_at** | **date, none_type** | The date on which the employee was hired by the organization | [optional] 
 **is_primary** | **bool, none_type** | Indicates whether this the employee&#39;s primary job. | [optional] 
 **is_manager** | **bool, none_type** | Indicates whether this the employee has a manager role. | [optional] 
+**status** | **str, none_type** | Indicates the status of the job. | [optional] 
 **location** | [**Address**](Address.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

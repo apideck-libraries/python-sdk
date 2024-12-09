@@ -269,6 +269,7 @@ from apideck.model.get_tracking_categories_response import GetTrackingCategories
 from apideck.model.get_tracking_category_response import GetTrackingCategoryResponse
 from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
+from apideck.model.invoice_item_filter import InvoiceItemFilter
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
 from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
@@ -340,9 +341,9 @@ with apideck.ApiClient(configuration) as api_client:
     reference_type = AttachmentReferenceType("invoice") # AttachmentReferenceType | The reference type of the document.
 reference_id = "123456" # str | The reference id of the object to retrieve.
 raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) (default to False)
-x_apideck_consumer_id = "x-apideck-consumer-id_example" # str | ID of the consumer which you want to get or push data from (optional)
+x_apideck_consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
 x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
-x_apideck_service_id = "x-apideck-service-id_example" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+x_apideck_service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
 limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) (default to 20)
 fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
@@ -963,6 +964,8 @@ _VaultApi_ | [**consumers_one**](docs/apis/VaultApi.md#consumers_one) | **GET** 
 
 _VaultApi_ | [**consumers_update**](docs/apis/VaultApi.md#consumers_update) | **PATCH** /vault/consumers/{consumer_id} | Update consumer |
 
+_VaultApi_ | [**create_callback_state**](docs/apis/VaultApi.md#create_callback_state) | **POST** /vault/connections/{unified_api}/{service_id}/callback-state | Create Callback State |
+
 _VaultApi_ | [**custom_fields_all**](docs/apis/VaultApi.md#custom_fields_all) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields |
 
 _VaultApi_ | [**custom_mappings_all**](docs/apis/VaultApi.md#custom_mappings_all) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings |
@@ -1093,6 +1096,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateAttachmentResponse](docs/models/CreateAttachmentResponse.md)
  - [CreateBillPaymentResponse](docs/models/CreateBillPaymentResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
+ - [CreateCallbackState](docs/models/CreateCallbackState.md)
+ - [CreateCallbackStateResponse](docs/models/CreateCallbackStateResponse.md)
+ - [CreateCallbackStateResponseData](docs/models/CreateCallbackStateResponseData.md)
  - [CreateCommentResponse](docs/models/CreateCommentResponse.md)
  - [CreateCompanyResponse](docs/models/CreateCompanyResponse.md)
  - [CreateConnectionResponse](docs/models/CreateConnectionResponse.md)
@@ -1432,6 +1438,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [InvoiceItem](docs/models/InvoiceItem.md)
  - [InvoiceItemAssetAccount](docs/models/InvoiceItemAssetAccount.md)
  - [InvoiceItemExpenseAccount](docs/models/InvoiceItemExpenseAccount.md)
+ - [InvoiceItemFilter](docs/models/InvoiceItemFilter.md)
  - [InvoiceItemIncomeAccount](docs/models/InvoiceItemIncomeAccount.md)
  - [InvoiceItemSalesDetails](docs/models/InvoiceItemSalesDetails.md)
  - [InvoiceItemsFilter](docs/models/InvoiceItemsFilter.md)
