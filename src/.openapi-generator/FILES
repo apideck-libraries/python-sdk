@@ -135,7 +135,7 @@ apideck/model/create_attachment_request.py
 apideck/model/create_attachment_response.py
 apideck/model/create_bill_payment_response.py
 apideck/model/create_bill_response.py
-apideck/model/create_callback_state_data.py
+apideck/model/create_callback_state.py
 apideck/model/create_callback_state_response.py
 apideck/model/create_callback_state_response_data.py
 apideck/model/create_comment_response.py
@@ -477,6 +477,7 @@ apideck/model/invoice.py
 apideck/model/invoice_item.py
 apideck/model/invoice_item_asset_account.py
 apideck/model/invoice_item_expense_account.py
+apideck/model/invoice_item_filter.py
 apideck/model/invoice_item_income_account.py
 apideck/model/invoice_item_sales_details.py
 apideck/model/invoice_items_filter.py
@@ -833,7 +834,7 @@ docs/CreateAttachmentRequest.md
 docs/CreateAttachmentResponse.md
 docs/CreateBillPaymentResponse.md
 docs/CreateBillResponse.md
-docs/CreateCallbackStateData.md
+docs/CreateCallbackState.md
 docs/CreateCallbackStateResponse.md
 docs/CreateCallbackStateResponseData.md
 docs/CreateCommentResponse.md
@@ -1179,6 +1180,7 @@ docs/Invoice.md
 docs/InvoiceItem.md
 docs/InvoiceItemAssetAccount.md
 docs/InvoiceItemExpenseAccount.md
+docs/InvoiceItemFilter.md
 docs/InvoiceItemIncomeAccount.md
 docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
@@ -1544,7 +1546,7 @@ test/test_create_attachment_request.py
 test/test_create_attachment_response.py
 test/test_create_bill_payment_response.py
 test/test_create_bill_response.py
-test/test_create_callback_state_data.py
+test/test_create_callback_state.py
 test/test_create_callback_state_response.py
 test/test_create_callback_state_response_data.py
 test/test_create_comment_response.py
@@ -1890,6 +1892,7 @@ test/test_invoice.py
 test/test_invoice_item.py
 test/test_invoice_item_asset_account.py
 test/test_invoice_item_expense_account.py
+test/test_invoice_item_filter.py
 test/test_invoice_item_income_account.py
 test/test_invoice_item_sales_details.py
 test/test_invoice_items_filter.py

@@ -113,7 +113,7 @@ from apideck.model.create_attachment_request import CreateAttachmentRequest
 from apideck.model.create_attachment_response import CreateAttachmentResponse
 from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
 from apideck.model.create_bill_response import CreateBillResponse
-from apideck.model.create_callback_state_data import CreateCallbackStateData
+from apideck.model.create_callback_state import CreateCallbackState
 from apideck.model.create_callback_state_response import CreateCallbackStateResponse
 from apideck.model.create_callback_state_response_data import CreateCallbackStateResponseData
 from apideck.model.create_comment_response import CreateCommentResponse
@@ -455,6 +455,7 @@ from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_item_asset_account import InvoiceItemAssetAccount
 from apideck.model.invoice_item_expense_account import InvoiceItemExpenseAccount
+from apideck.model.invoice_item_filter import InvoiceItemFilter
 from apideck.model.invoice_item_income_account import InvoiceItemIncomeAccount
 from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
