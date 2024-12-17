@@ -180,6 +180,7 @@ from apideck.model.accounting_department import AccountingDepartment
 from apideck.model.accounting_departments_filter import AccountingDepartmentsFilter
 from apideck.model.accounting_location import AccountingLocation
 from apideck.model.accounting_locations_filter import AccountingLocationsFilter
+from apideck.model.aged_report_filter import AgedReportFilter
 from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
@@ -232,6 +233,8 @@ from apideck.model.get_accounting_department_response import GetAccountingDepart
 from apideck.model.get_accounting_departments_response import GetAccountingDepartmentsResponse
 from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
 from apideck.model.get_accounting_locations_response import GetAccountingLocationsResponse
+from apideck.model.get_aged_creditors_response import GetAgedCreditorsResponse
+from apideck.model.get_aged_debtors_response import GetAgedDebtorsResponse
 from apideck.model.get_attachment_response import GetAttachmentResponse
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
@@ -338,22 +341,25 @@ configuration.api_key['apiKey'] = 'YOUR_API_KEY'
 with apideck.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounting_api.AccountingApi(api_client)
-    reference_type = AttachmentReferenceType("invoice") # AttachmentReferenceType | The reference type of the document.
-reference_id = "123456" # str | The reference id of the object to retrieve.
-raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) (default to False)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) (default to False)
 x_apideck_consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
 x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
 x_apideck_service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
-cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
-limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) (default to 20)
+filter = AgedReportFilter(
+        customer_id="123abc",
+        report_as_of_date="2024-01-01",
+        period_count=3,
+        period_length=30,
+    ) # AgedReportFilter | Apply filters (optional)
+pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
 fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
     try:
-        # List Attachments
-        api_response = api_instance.attachments_all(reference_type, reference_id, raw=raw, x_apideck_consumer_id=x_apideck_consumer_id, x_apideck_app_id=x_apideck_app_id, x_apideck_service_id=x_apideck_service_id, cursor=cursor, limit=limit, fields=fields)
+        # Get Aged Creditors
+        api_response = api_instance.aged_creditors_one(raw=raw, x_apideck_consumer_id=x_apideck_consumer_id, x_apideck_app_id=x_apideck_app_id, x_apideck_service_id=x_apideck_service_id, filter=filter, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
-        print("Exception when calling AccountingApi->attachments_all: %s\n" % e)
+        print("Exception when calling AccountingApi->aged_creditors_one: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -362,7 +368,11 @@ All URIs are relative to _https://unify.apideck.com_
 
 | Class                                                             | Method                                                                         | HTTP request                | Description |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------- | ----------- |
-| _AccountingApi_ | [**attachments_all**](docs/apis/AccountingApi.md#attachments_all) | **GET** /accounting/attachments/{reference_type}/{reference_id} | List Attachments |
+| _AccountingApi_ | [**aged_creditors_one**](docs/apis/AccountingApi.md#aged_creditors_one) | **GET** /accounting/aged-creditors | Get Aged Creditors |
+
+_AccountingApi_ | [**aged_debtors_one**](docs/apis/AccountingApi.md#aged_debtors_one) | **GET** /accounting/aged-debtors | Get Aged Debtors |
+
+_AccountingApi_ | [**attachments_all**](docs/apis/AccountingApi.md#attachments_all) | **GET** /accounting/attachments/{reference_type}/{reference_id} | List Attachments |
 
 _AccountingApi_ | [**attachments_delete**](docs/apis/AccountingApi.md#attachments_delete) | **DELETE** /accounting/attachments/{reference_type}/{reference_id}/{id} | Delete Attachment |
 
@@ -1003,6 +1013,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [Activity](docs/models/Activity.md)
  - [ActivityAttendee](docs/models/ActivityAttendee.md)
  - [Address](docs/models/Address.md)
+ - [AgedCreditors](docs/models/AgedCreditors.md)
+ - [AgedDebtors](docs/models/AgedDebtors.md)
+ - [AgedReportFilter](docs/models/AgedReportFilter.md)
  - [Allocation](docs/models/Allocation.md)
  - [Api](docs/models/Api.md)
  - [ApiResource](docs/models/ApiResource.md)
@@ -1026,6 +1039,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [AttachmentReferenceType](docs/models/AttachmentReferenceType.md)
  - [AuthType](docs/models/AuthType.md)
  - [BadRequestResponse](docs/models/BadRequestResponse.md)
+ - [BalanceByPeriod](docs/models/BalanceByPeriod.md)
+ - [BalanceByTransaction](docs/models/BalanceByTransaction.md)
  - [BalanceSheet](docs/models/BalanceSheet.md)
  - [BalanceSheetAccount](docs/models/BalanceSheetAccount.md)
  - [BalanceSheetAccountRecord](docs/models/BalanceSheetAccountRecord.md)
@@ -1285,6 +1300,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetAccountingLocationsResponse](docs/models/GetAccountingLocationsResponse.md)
  - [GetActivitiesResponse](docs/models/GetActivitiesResponse.md)
  - [GetActivityResponse](docs/models/GetActivityResponse.md)
+ - [GetAgedCreditorsResponse](docs/models/GetAgedCreditorsResponse.md)
+ - [GetAgedDebtorsResponse](docs/models/GetAgedDebtorsResponse.md)
  - [GetApiResourceCoverageResponse](docs/models/GetApiResourceCoverageResponse.md)
  - [GetApiResourceResponse](docs/models/GetApiResourceResponse.md)
  - [GetApiResponse](docs/models/GetApiResponse.md)
@@ -1513,6 +1530,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [OrderTenders](docs/models/OrderTenders.md)
  - [OrderType](docs/models/OrderType.md)
  - [OrdersSort](docs/models/OrdersSort.md)
+ - [OutstandingBalance](docs/models/OutstandingBalance.md)
+ - [OutstandingBalanceByCurrency](docs/models/OutstandingBalanceByCurrency.md)
  - [Owner](docs/models/Owner.md)
  - [PaginationCoverage](docs/models/PaginationCoverage.md)
  - [PassThroughBody](docs/models/PassThroughBody.md)

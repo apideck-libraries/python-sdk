@@ -42,6 +42,9 @@ apideck/model/activities_sort.py
 apideck/model/activity.py
 apideck/model/activity_attendee.py
 apideck/model/address.py
+apideck/model/aged_creditors.py
+apideck/model/aged_debtors.py
+apideck/model/aged_report_filter.py
 apideck/model/allocation.py
 apideck/model/api.py
 apideck/model/api_resource.py
@@ -65,6 +68,8 @@ apideck/model/attachment_reference.py
 apideck/model/attachment_reference_type.py
 apideck/model/auth_type.py
 apideck/model/bad_request_response.py
+apideck/model/balance_by_period.py
+apideck/model/balance_by_transaction.py
 apideck/model/balance_sheet.py
 apideck/model/balance_sheet_account.py
 apideck/model/balance_sheet_account_record.py
@@ -324,6 +329,8 @@ apideck/model/get_accounting_location_response.py
 apideck/model/get_accounting_locations_response.py
 apideck/model/get_activities_response.py
 apideck/model/get_activity_response.py
+apideck/model/get_aged_creditors_response.py
+apideck/model/get_aged_debtors_response.py
 apideck/model/get_api_resource_coverage_response.py
 apideck/model/get_api_resource_response.py
 apideck/model/get_api_response.py
@@ -552,6 +559,8 @@ apideck/model/order_refunds.py
 apideck/model/order_tenders.py
 apideck/model/order_type.py
 apideck/model/orders_sort.py
+apideck/model/outstanding_balance.py
+apideck/model/outstanding_balance_by_currency.py
 apideck/model/owner.py
 apideck/model/pagination_coverage.py
 apideck/model/pass_through_body.py
@@ -739,6 +748,9 @@ docs/ActivitiesSort.md
 docs/Activity.md
 docs/ActivityAttendee.md
 docs/Address.md
+docs/AgedCreditors.md
+docs/AgedDebtors.md
+docs/AgedReportFilter.md
 docs/Allocation.md
 docs/Api.md
 docs/ApiResource.md
@@ -763,6 +775,8 @@ docs/AttachmentReference.md
 docs/AttachmentReferenceType.md
 docs/AuthType.md
 docs/BadRequestResponse.md
+docs/BalanceByPeriod.md
+docs/BalanceByTransaction.md
 docs/BalanceSheet.md
 docs/BalanceSheetAccount.md
 docs/BalanceSheetAccountRecord.md
@@ -1026,6 +1040,8 @@ docs/GetAccountingLocationResponse.md
 docs/GetAccountingLocationsResponse.md
 docs/GetActivitiesResponse.md
 docs/GetActivityResponse.md
+docs/GetAgedCreditorsResponse.md
+docs/GetAgedDebtorsResponse.md
 docs/GetApiResourceCoverageResponse.md
 docs/GetApiResourceResponse.md
 docs/GetApiResponse.md
@@ -1257,6 +1273,8 @@ docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
 docs/OrdersSort.md
+docs/OutstandingBalance.md
+docs/OutstandingBalanceByCurrency.md
 docs/Owner.md
 docs/PaginationCoverage.md
 docs/PassThroughBody.md
@@ -1451,6 +1469,9 @@ test/test_activities_sort.py
 test/test_activity.py
 test/test_activity_attendee.py
 test/test_address.py
+test/test_aged_creditors.py
+test/test_aged_debtors.py
+test/test_aged_report_filter.py
 test/test_allocation.py
 test/test_api.py
 test/test_api_resource.py
@@ -1475,6 +1496,8 @@ test/test_attachment_reference.py
 test/test_attachment_reference_type.py
 test/test_auth_type.py
 test/test_bad_request_response.py
+test/test_balance_by_period.py
+test/test_balance_by_transaction.py
 test/test_balance_sheet.py
 test/test_balance_sheet_account.py
 test/test_balance_sheet_account_record.py
@@ -1738,6 +1761,8 @@ test/test_get_accounting_location_response.py
 test/test_get_accounting_locations_response.py
 test/test_get_activities_response.py
 test/test_get_activity_response.py
+test/test_get_aged_creditors_response.py
+test/test_get_aged_debtors_response.py
 test/test_get_api_resource_coverage_response.py
 test/test_get_api_resource_response.py
 test/test_get_api_response.py
@@ -1969,6 +1994,8 @@ test/test_order_refunds.py
 test/test_order_tenders.py
 test/test_order_type.py
 test/test_orders_sort.py
+test/test_outstanding_balance.py
+test/test_outstanding_balance_by_currency.py
 test/test_owner.py
 test/test_pagination_coverage.py
 test/test_pass_through_body.py
