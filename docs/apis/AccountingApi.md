@@ -4,6 +4,8 @@ All URIs are relative to *https://unify.apideck.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**aged_creditors_one**](AccountingApi.md#aged_creditors_one) | **GET** /accounting/aged-creditors | Get Aged Creditors
+[**aged_debtors_one**](AccountingApi.md#aged_debtors_one) | **GET** /accounting/aged-debtors | Get Aged Debtors
 [**attachments_all**](AccountingApi.md#attachments_all) | **GET** /accounting/attachments/{reference_type}/{reference_id} | List Attachments
 [**attachments_delete**](AccountingApi.md#attachments_delete) | **DELETE** /accounting/attachments/{reference_type}/{reference_id}/{id} | Delete Attachment
 [**attachments_download**](AccountingApi.md#attachments_download) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment
@@ -97,6 +99,226 @@ Method | HTTP request | Description
 [**tracking_categories_one**](AccountingApi.md#tracking_categories_one) | **GET** /accounting/tracking-categories/{id} | Get Tracking Category
 [**tracking_categories_update**](AccountingApi.md#tracking_categories_update) | **PATCH** /accounting/tracking-categories/{id} | Update Tracking Category
 
+
+# **aged_creditors_one**
+> GetAgedCreditorsResponse aged_creditors_one()
+
+Get Aged Creditors
+
+Get Aged Creditors
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.aged_report_filter import AgedReportFilter
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.get_aged_creditors_response import GetAgedCreditorsResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    filter = AgedReportFilter(
+        customer_id="123abc",
+        report_as_of_date="2024-01-01",
+        period_count=3,
+        period_length=30,
+    ) # AgedReportFilter | Apply filters (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Aged Creditors
+        api_response = api_instance.aged_creditors_one(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, pass_through=pass_through, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->aged_creditors_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **filter** | **AgedReportFilter**| Apply filters | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetAgedCreditorsResponse**](GetAgedCreditorsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Aged Creditors |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **aged_debtors_one**
+> GetAgedDebtorsResponse aged_debtors_one()
+
+Get Aged Debtors
+
+Get Aged Debtors
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.aged_report_filter import AgedReportFilter
+from apideck.model.get_aged_debtors_response import GetAgedDebtorsResponse
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    filter = AgedReportFilter(
+        customer_id="123abc",
+        report_as_of_date="2024-01-01",
+        period_count=3,
+        period_length=30,
+    ) # AgedReportFilter | Apply filters (optional)
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Aged Debtors
+        api_response = api_instance.aged_debtors_one(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, filter=filter, pass_through=pass_through, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->aged_debtors_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **filter** | **AgedReportFilter**| Apply filters | [optional]
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetAgedDebtorsResponse**](GetAgedDebtorsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Aged Debtors |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **attachments_all**
 > GetAttachmentsResponse attachments_all(reference_type, reference_id)

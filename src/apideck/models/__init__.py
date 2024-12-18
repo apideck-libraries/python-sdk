@@ -20,6 +20,9 @@ from apideck.model.activities_sort import ActivitiesSort
 from apideck.model.activity import Activity
 from apideck.model.activity_attendee import ActivityAttendee
 from apideck.model.address import Address
+from apideck.model.aged_creditors import AgedCreditors
+from apideck.model.aged_debtors import AgedDebtors
+from apideck.model.aged_report_filter import AgedReportFilter
 from apideck.model.allocation import Allocation
 from apideck.model.api import Api
 from apideck.model.api_resource import ApiResource
@@ -43,6 +46,8 @@ from apideck.model.attachment_reference import AttachmentReference
 from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.auth_type import AuthType
 from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.balance_by_period import BalanceByPeriod
+from apideck.model.balance_by_transaction import BalanceByTransaction
 from apideck.model.balance_sheet import BalanceSheet
 from apideck.model.balance_sheet_account import BalanceSheetAccount
 from apideck.model.balance_sheet_account_record import BalanceSheetAccountRecord
@@ -302,6 +307,8 @@ from apideck.model.get_accounting_location_response import GetAccountingLocation
 from apideck.model.get_accounting_locations_response import GetAccountingLocationsResponse
 from apideck.model.get_activities_response import GetActivitiesResponse
 from apideck.model.get_activity_response import GetActivityResponse
+from apideck.model.get_aged_creditors_response import GetAgedCreditorsResponse
+from apideck.model.get_aged_debtors_response import GetAgedDebtorsResponse
 from apideck.model.get_api_resource_coverage_response import GetApiResourceCoverageResponse
 from apideck.model.get_api_resource_response import GetApiResourceResponse
 from apideck.model.get_api_response import GetApiResponse
@@ -530,6 +537,8 @@ from apideck.model.order_refunds import OrderRefunds
 from apideck.model.order_tenders import OrderTenders
 from apideck.model.order_type import OrderType
 from apideck.model.orders_sort import OrdersSort
+from apideck.model.outstanding_balance import OutstandingBalance
+from apideck.model.outstanding_balance_by_currency import OutstandingBalanceByCurrency
 from apideck.model.owner import Owner
 from apideck.model.pagination_coverage import PaginationCoverage
 from apideck.model.pass_through_body import PassThroughBody
