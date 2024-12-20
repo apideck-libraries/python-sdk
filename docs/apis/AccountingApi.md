@@ -3548,6 +3548,14 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -4108,6 +4116,14 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -12250,6 +12266,14 @@ with apideck.ApiClient(configuration) as api_client:
         subsidiaries=[
             None,
         ],
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
     ) # TaxRate | 
     raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
@@ -12722,6 +12746,14 @@ with apideck.ApiClient(configuration) as api_client:
         ]),
         subsidiaries=[
             None,
+        ],
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
         ],
     ) # TaxRate | 
     consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)

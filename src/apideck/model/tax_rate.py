@@ -31,7 +31,9 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.custom_field import CustomField
     from apideck.model.pass_through_body import PassThroughBody
+    globals()['CustomField'] = CustomField
     globals()['PassThroughBody'] = PassThroughBody
 
 
@@ -111,6 +113,7 @@ class TaxRate(ModelNormal):
             'created_at': (datetime, none_type,),  # noqa: E501
             'pass_through': (PassThroughBody,),  # noqa: E501
             'subsidiaries': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'custom_fields': ([CustomField],),  # noqa: E501
         }
 
     @cached_property
@@ -140,6 +143,7 @@ class TaxRate(ModelNormal):
         'created_at': 'created_at',  # noqa: E501
         'pass_through': 'pass_through',  # noqa: E501
         'subsidiaries': 'subsidiaries',  # noqa: E501
+        'custom_fields': 'custom_fields',  # noqa: E501
     }
 
     read_only_vars = {
@@ -209,6 +213,7 @@ class TaxRate(ModelNormal):
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
             subsidiaries ([bool, date, datetime, dict, float, int, list, str, none_type]): The subsidiaries this belongs to.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -311,6 +316,7 @@ class TaxRate(ModelNormal):
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
             subsidiaries ([bool, date, datetime, dict, float, int, list, str, none_type]): The subsidiaries this belongs to.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

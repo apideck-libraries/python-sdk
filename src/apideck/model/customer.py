@@ -34,6 +34,7 @@ def lazy_import():
     from apideck.model.address import Address
     from apideck.model.bank_account import BankAccount
     from apideck.model.currency import Currency
+    from apideck.model.custom_field import CustomField
     from apideck.model.email import Email
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
     from apideck.model.linked_parent_customer import LinkedParentCustomer
@@ -44,6 +45,7 @@ def lazy_import():
     globals()['Address'] = Address
     globals()['BankAccount'] = BankAccount
     globals()['Currency'] = Currency
+    globals()['CustomField'] = CustomField
     globals()['Email'] = Email
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
     globals()['LinkedParentCustomer'] = LinkedParentCustomer
@@ -134,6 +136,7 @@ class Customer(ModelNormal):
             'status': (str, none_type,),  # noqa: E501
             'payment_method': (str, none_type,),  # noqa: E501
             'channel': (str, none_type,),  # noqa: E501
+            'custom_fields': ([CustomField],),  # noqa: E501
             'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -176,6 +179,7 @@ class Customer(ModelNormal):
         'status': 'status',  # noqa: E501
         'payment_method': 'payment_method',  # noqa: E501
         'channel': 'channel',  # noqa: E501
+        'custom_fields': 'custom_fields',  # noqa: E501
         'custom_mappings': 'custom_mappings',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -262,6 +266,7 @@ class Customer(ModelNormal):
             status (str, none_type): Customer status. [optional]  # noqa: E501
             payment_method (str, none_type): Payment method used for the transaction, such as cash, credit card, bank transfer, or check. [optional]  # noqa: E501
             channel (str, none_type): The channel through which the transaction is processed.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -377,6 +382,7 @@ class Customer(ModelNormal):
             status (str, none_type): Customer status. [optional]  # noqa: E501
             payment_method (str, none_type): Payment method used for the transaction, such as cash, credit card, bank transfer, or check. [optional]  # noqa: E501
             channel (str, none_type): The channel through which the transaction is processed.. [optional]  # noqa: E501
+            custom_fields ([CustomField]): [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

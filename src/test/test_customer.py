@@ -16,6 +16,7 @@ import apideck
 from apideck.model.address import Address
 from apideck.model.bank_account import BankAccount
 from apideck.model.currency import Currency
+from apideck.model.custom_field import CustomField
 from apideck.model.email import Email
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_parent_customer import LinkedParentCustomer
@@ -26,6 +27,7 @@ from apideck.model.website import Website
 globals()['Address'] = Address
 globals()['BankAccount'] = BankAccount
 globals()['Currency'] = Currency
+globals()['CustomField'] = CustomField
 globals()['Email'] = Email
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
 globals()['LinkedParentCustomer'] = LinkedParentCustomer
