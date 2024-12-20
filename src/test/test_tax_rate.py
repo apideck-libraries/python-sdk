@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_field import CustomField
 from apideck.model.pass_through_body import PassThroughBody
+globals()['CustomField'] = CustomField
 globals()['PassThroughBody'] = PassThroughBody
 from apideck.model.tax_rate import TaxRate
 

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **status** | **str, none_type** | Customer status | [optional] 
 **payment_method** | **str, none_type** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 **channel** | **str, none_type** | The channel through which the transaction is processed. | [optional] 
+**custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 

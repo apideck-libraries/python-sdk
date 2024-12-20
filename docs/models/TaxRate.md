@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **pass_through** | [**PassThroughBody**](PassThroughBody.md) |  | [optional] 
 **subsidiaries** | **[bool, date, datetime, dict, float, int, list, str, none_type]** | The subsidiaries this belongs to. | [optional] 
+**custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
