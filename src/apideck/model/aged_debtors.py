@@ -31,8 +31,8 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from apideck.model.outstanding_balance import OutstandingBalance
-    globals()['OutstandingBalance'] = OutstandingBalance
+    from apideck.model.outstanding_balance_by_customer import OutstandingBalanceByCustomer
+    globals()['OutstandingBalanceByCustomer'] = OutstandingBalanceByCustomer
 
 
 class AgedDebtors(ModelNormal):
@@ -85,7 +85,7 @@ class AgedDebtors(ModelNormal):
             'report_as_of_date': (date,),  # noqa: E501
             'period_count': (int,),  # noqa: E501
             'period_length': (int,),  # noqa: E501
-            'outstanding_balances': ([OutstandingBalance],),  # noqa: E501
+            'outstanding_balances': ([OutstandingBalanceByCustomer],),  # noqa: E501
         }
 
     @cached_property
@@ -146,7 +146,7 @@ class AgedDebtors(ModelNormal):
             report_as_of_date (date): The cutoff date for transactions included in the report.. [optional]  # noqa: E501
             period_count (int): Number of aging periods shown in the report.. [optional] if omitted the server will use the default value of 4  # noqa: E501
             period_length (int): Length of each aging period in days.. [optional] if omitted the server will use the default value of 30  # noqa: E501
-            outstanding_balances ([OutstandingBalance]): [optional]  # noqa: E501
+            outstanding_balances ([OutstandingBalanceByCustomer]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,7 +232,7 @@ class AgedDebtors(ModelNormal):
             report_as_of_date (date): The cutoff date for transactions included in the report.. [optional]  # noqa: E501
             period_count (int): Number of aging periods shown in the report.. [optional] if omitted the server will use the default value of 4  # noqa: E501
             period_length (int): Length of each aging period in days.. [optional] if omitted the server will use the default value of 30  # noqa: E501
-            outstanding_balances ([OutstandingBalance]): [optional]  # noqa: E501
+            outstanding_balances ([OutstandingBalanceByCustomer]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -347,6 +347,7 @@ x_apideck_app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of y
 x_apideck_service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 filter = AgedReportFilter(
         customer_id="123abc",
+        supplier_id="123abc",
         report_as_of_date="2024-01-01",
         period_count=3,
         period_length=30,
@@ -1530,8 +1531,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [OrderTenders](docs/models/OrderTenders.md)
  - [OrderType](docs/models/OrderType.md)
  - [OrdersSort](docs/models/OrdersSort.md)
- - [OutstandingBalance](docs/models/OutstandingBalance.md)
  - [OutstandingBalanceByCurrency](docs/models/OutstandingBalanceByCurrency.md)
+ - [OutstandingBalanceByCustomer](docs/models/OutstandingBalanceByCustomer.md)
+ - [OutstandingBalanceBySupplier](docs/models/OutstandingBalanceBySupplier.md)
  - [Owner](docs/models/Owner.md)
  - [PaginationCoverage](docs/models/PaginationCoverage.md)
  - [PassThroughBody](docs/models/PassThroughBody.md)

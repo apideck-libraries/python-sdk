@@ -85,6 +85,7 @@ class AgedReportFilter(ModelNormal):
         """
         return {
             'customer_id': (str,),  # noqa: E501
+            'supplier_id': (str,),  # noqa: E501
             'report_as_of_date': (str,),  # noqa: E501
             'period_count': (int,),  # noqa: E501
             'period_length': (int,),  # noqa: E501
@@ -97,6 +98,7 @@ class AgedReportFilter(ModelNormal):
 
     attribute_map = {
         'customer_id': 'customer_id',  # noqa: E501
+        'supplier_id': 'supplier_id',  # noqa: E501
         'report_as_of_date': 'report_as_of_date',  # noqa: E501
         'period_count': 'period_count',  # noqa: E501
         'period_length': 'period_length',  # noqa: E501
@@ -144,6 +146,7 @@ class AgedReportFilter(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             customer_id (str): Filter by customer id. [optional]  # noqa: E501
+            supplier_id (str): Filter by supplier id. [optional]  # noqa: E501
             report_as_of_date (str): The cutoff date for considering transactions. [optional]  # noqa: E501
             period_count (int): Number of periods to split the aged creditors report into. [optional]  # noqa: E501
             period_length (int): Length of each period in days. [optional]  # noqa: E501
@@ -229,6 +232,7 @@ class AgedReportFilter(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             customer_id (str): Filter by customer id. [optional]  # noqa: E501
+            supplier_id (str): Filter by supplier id. [optional]  # noqa: E501
             report_as_of_date (str): The cutoff date for considering transactions. [optional]  # noqa: E501
             period_count (int): Number of periods to split the aged creditors report into. [optional]  # noqa: E501
             period_length (int): Length of each period in days. [optional]  # noqa: E501

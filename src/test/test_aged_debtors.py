@@ -13,8 +13,8 @@ import sys
 import unittest
 
 import apideck
-from apideck.model.outstanding_balance import OutstandingBalance
-globals()['OutstandingBalance'] = OutstandingBalance
+from apideck.model.outstanding_balance_by_customer import OutstandingBalanceByCustomer
+globals()['OutstandingBalanceByCustomer'] = OutstandingBalanceByCustomer
 from apideck.model.aged_debtors import AgedDebtors
 
 

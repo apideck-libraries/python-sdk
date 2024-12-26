@@ -81,8 +81,8 @@ class BalanceByPeriod(ModelNormal):
         """
         lazy_import()
         return {
-            'start_date': (date,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
+            'start_date': (date, none_type,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
             'total_amount': (float,),  # noqa: E501
             'balances_by_transaction': ([BalanceByTransaction],),  # noqa: E501
         }
@@ -140,8 +140,8 @@ class BalanceByPeriod(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (date): Start date of the period.. [optional]  # noqa: E501
-            end_date (date): End date of the period.. [optional]  # noqa: E501
+            start_date (date, none_type): The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified `end_date` are included.. [optional]  # noqa: E501
+            end_date (date, none_type): The ending date of the period. If not provided, it represents an open-ended period starting from the `start_date`, typically capturing future-dated transactions that are not yet aged.. [optional]  # noqa: E501
             total_amount (float): Total amount of the period.. [optional]  # noqa: E501
             balances_by_transaction ([BalanceByTransaction]): [optional]  # noqa: E501
         """
@@ -225,8 +225,8 @@ class BalanceByPeriod(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (date): Start date of the period.. [optional]  # noqa: E501
-            end_date (date): End date of the period.. [optional]  # noqa: E501
+            start_date (date, none_type): The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified `end_date` are included.. [optional]  # noqa: E501
+            end_date (date, none_type): The ending date of the period. If not provided, it represents an open-ended period starting from the `start_date`, typically capturing future-dated transactions that are not yet aged.. [optional]  # noqa: E501
             total_amount (float): Total amount of the period.. [optional]  # noqa: E501
             balances_by_transaction ([BalanceByTransaction]): [optional]  # noqa: E501
         """
