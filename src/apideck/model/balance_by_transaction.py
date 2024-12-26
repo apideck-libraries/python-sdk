@@ -61,7 +61,7 @@ class BalanceByTransaction(ModelNormal):
             'CREDIT_NOTE': "credit_note",
             'BILL': "bill",
             'PAYMENT': "payment",
-            'BILL-PAYMENT': "bill-payment",
+            'BILL_PAYMENT': "bill_payment",
         },
     }
 
@@ -89,6 +89,7 @@ class BalanceByTransaction(ModelNormal):
             'due_date': (date,),  # noqa: E501
             'original_amount': (float,),  # noqa: E501
             'outstanding_balance': (float,),  # noqa: E501
+            'transaction_number': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -103,6 +104,7 @@ class BalanceByTransaction(ModelNormal):
         'due_date': 'due_date',  # noqa: E501
         'original_amount': 'original_amount',  # noqa: E501
         'outstanding_balance': 'outstanding_balance',  # noqa: E501
+        'transaction_number': 'transaction_number',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,6 +154,7 @@ class BalanceByTransaction(ModelNormal):
             due_date (date): Due date of the transaction.. [optional]  # noqa: E501
             original_amount (float): Original amount of the transaction.. [optional]  # noqa: E501
             outstanding_balance (float): Outstanding balance of the transaction.. [optional]  # noqa: E501
+            transaction_number (str): Transaction number of the transaction.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,6 +242,7 @@ class BalanceByTransaction(ModelNormal):
             due_date (date): Due date of the transaction.. [optional]  # noqa: E501
             original_amount (float): Original amount of the transaction.. [optional]  # noqa: E501
             outstanding_balance (float): Outstanding balance of the transaction.. [optional]  # noqa: E501
+            transaction_number (str): Transaction number of the transaction.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

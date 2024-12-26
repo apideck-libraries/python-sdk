@@ -84,6 +84,7 @@ class OutstandingBalanceByCurrency(ModelNormal):
         lazy_import()
         return {
             'currency': (Currency,),  # noqa: E501
+            'total_amount': (float,),  # noqa: E501
             'balances_by_period': ([BalanceByPeriod],),  # noqa: E501
         }
 
@@ -94,6 +95,7 @@ class OutstandingBalanceByCurrency(ModelNormal):
 
     attribute_map = {
         'currency': 'currency',  # noqa: E501
+        'total_amount': 'total_amount',  # noqa: E501
         'balances_by_period': 'balances_by_period',  # noqa: E501
     }
 
@@ -139,6 +141,7 @@ class OutstandingBalanceByCurrency(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             currency (Currency): [optional]  # noqa: E501
+            total_amount (float): Total amount of the outstanding balance.. [optional]  # noqa: E501
             balances_by_period ([BalanceByPeriod]): [optional]  # noqa: E501
         """
 
@@ -222,6 +225,7 @@ class OutstandingBalanceByCurrency(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             currency (Currency): [optional]  # noqa: E501
+            total_amount (float): Total amount of the outstanding balance.. [optional]  # noqa: E501
             balances_by_period ([BalanceByPeriod]): [optional]  # noqa: E501
         """
 

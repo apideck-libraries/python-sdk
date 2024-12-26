@@ -15,11 +15,11 @@ import unittest
 import apideck
 from apideck.model.outstanding_balance_by_currency import OutstandingBalanceByCurrency
 globals()['OutstandingBalanceByCurrency'] = OutstandingBalanceByCurrency
-from apideck.model.outstanding_balance import OutstandingBalance
+from apideck.model.outstanding_balance_by_customer import OutstandingBalanceByCustomer
 
 
-class TestOutstandingBalance(unittest.TestCase):
-    """OutstandingBalance unit test stubs"""
+class TestOutstandingBalanceByCustomer(unittest.TestCase):
+    """OutstandingBalanceByCustomer unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,10 +27,10 @@ class TestOutstandingBalance(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testOutstandingBalance(self):
-        """Test OutstandingBalance"""
+    def testOutstandingBalanceByCustomer(self):
+        """Test OutstandingBalanceByCustomer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = OutstandingBalance()  # noqa: E501
+        # model = OutstandingBalanceByCustomer()  # noqa: E501
         pass
 
 

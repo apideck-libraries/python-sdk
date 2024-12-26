@@ -152,6 +152,7 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     filter = AgedReportFilter(
         customer_id="123abc",
+        supplier_id="123abc",
         report_as_of_date="2024-01-01",
         period_count=3,
         period_length=30,
@@ -262,6 +263,7 @@ with apideck.ApiClient(configuration) as api_client:
     service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
     filter = AgedReportFilter(
         customer_id="123abc",
+        supplier_id="123abc",
         report_as_of_date="2024-01-01",
         period_count=3,
         period_length=30,
