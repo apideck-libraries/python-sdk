@@ -1772,6 +1772,14 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ]),
         row_version="1-12345",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         pass_through=PassThroughBody([
             {
                 service_id="service_id_example",
@@ -2347,6 +2355,14 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ]),
         row_version="1-12345",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         pass_through=PassThroughBody([
             {
                 service_id="service_id_example",
@@ -7896,6 +7912,14 @@ with apideck.ApiClient(configuration) as api_client:
         subsidiaries=[
             None,
         ],
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -8396,6 +8420,14 @@ with apideck.ApiClient(configuration) as api_client:
         last_reconciliation_date=dateutil_parser('Wed Sep 30 00:00:00 UTC 2020').date(),
         subsidiaries=[
             None,
+        ],
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
         ],
         row_version="1-12345",
         pass_through=PassThroughBody([
@@ -11556,6 +11588,14 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -12111,6 +12151,14 @@ with apideck.ApiClient(configuration) as api_client:
         status="active",
         payment_method="cash",
         channel="email",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
