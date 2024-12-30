@@ -15,12 +15,14 @@ import unittest
 import apideck
 from apideck.model.bank_account import BankAccount
 from apideck.model.currency import Currency
+from apideck.model.custom_field import CustomField
 from apideck.model.ledger_account_categories import LedgerAccountCategories
 from apideck.model.ledger_account_parent_account import LedgerAccountParentAccount
 from apideck.model.linked_tax_rate import LinkedTaxRate
 from apideck.model.pass_through_body import PassThroughBody
 globals()['BankAccount'] = BankAccount
 globals()['Currency'] = Currency
+globals()['CustomField'] = CustomField
 globals()['LedgerAccountCategories'] = LedgerAccountCategories
 globals()['LedgerAccountParentAccount'] = LedgerAccountParentAccount
 globals()['LinkedTaxRate'] = LinkedTaxRate
