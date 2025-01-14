@@ -7206,6 +7206,14 @@ with apideck.ApiClient(configuration) as api_client:
         ]),
         accounting_period="01-24",
         row_version="1-12345",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         pass_through=PassThroughBody([
             {
                 service_id="service_id_example",
@@ -7745,6 +7753,14 @@ with apideck.ApiClient(configuration) as api_client:
         ]),
         accounting_period="01-24",
         row_version="1-12345",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         pass_through=PassThroughBody([
             {
                 service_id="service_id_example",
