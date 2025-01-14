@@ -127,7 +127,7 @@ class PurchaseOrder(ModelNormal):
             'discount_percentage': (float, none_type,),  # noqa: E501
             'bank_account': (BankAccount,),  # noqa: E501
             'accounting_by_row': (bool, none_type,),  # noqa: E501
-            'due_date': (date,),  # noqa: E501
+            'due_date': (date, none_type,),  # noqa: E501
             'payment_method': (str, none_type,),  # noqa: E501
             'tax_code': (str, none_type,),  # noqa: E501
             'channel': (str, none_type,),  # noqa: E501
@@ -257,7 +257,7 @@ class PurchaseOrder(ModelNormal):
             discount_percentage (float, none_type): Discount percentage applied to this transaction.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
-            due_date (date): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
+            due_date (date, none_type): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
             payment_method (str, none_type): Payment method used for the transaction, such as cash, credit card, bank transfer, or check. [optional]  # noqa: E501
             tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             channel (str, none_type): The channel through which the transaction is processed.. [optional]  # noqa: E501
@@ -374,7 +374,7 @@ class PurchaseOrder(ModelNormal):
             discount_percentage (float, none_type): Discount percentage applied to this transaction.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
-            due_date (date): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
+            due_date (date, none_type): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
             payment_method (str, none_type): Payment method used for the transaction, such as cash, credit card, bank transfer, or check. [optional]  # noqa: E501
             tax_code (str, none_type): Applicable tax id/code override if tax is not supplied on a line item basis.. [optional]  # noqa: E501
             channel (str, none_type): The channel through which the transaction is processed.. [optional]  # noqa: E501

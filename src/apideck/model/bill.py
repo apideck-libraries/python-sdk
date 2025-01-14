@@ -114,8 +114,8 @@ class Bill(ModelNormal):
             'currency': (Currency,),  # noqa: E501
             'currency_rate': (float, none_type,),  # noqa: E501
             'tax_inclusive': (bool, none_type,),  # noqa: E501
-            'bill_date': (date,),  # noqa: E501
-            'due_date': (date,),  # noqa: E501
+            'bill_date': (date, none_type,),  # noqa: E501
+            'due_date': (date, none_type,),  # noqa: E501
             'paid_date': (date, none_type,),  # noqa: E501
             'po_number': (str, none_type,),  # noqa: E501
             'reference': (str, none_type,),  # noqa: E501
@@ -252,8 +252,8 @@ class Bill(ModelNormal):
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             tax_inclusive (bool, none_type): Amounts are including tax. [optional]  # noqa: E501
-            bill_date (date): Date bill was issued - YYYY-MM-DD.. [optional]  # noqa: E501
-            due_date (date): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
+            bill_date (date, none_type): Date bill was issued - YYYY-MM-DD.. [optional]  # noqa: E501
+            due_date (date, none_type): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
             paid_date (date, none_type): The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.. [optional]  # noqa: E501
             po_number (str, none_type): A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.. [optional]  # noqa: E501
             reference (str, none_type): Optional bill reference.. [optional]  # noqa: E501
@@ -373,8 +373,8 @@ class Bill(ModelNormal):
             currency (Currency): [optional]  # noqa: E501
             currency_rate (float, none_type): Currency Exchange Rate at the time entity was recorded/generated.. [optional]  # noqa: E501
             tax_inclusive (bool, none_type): Amounts are including tax. [optional]  # noqa: E501
-            bill_date (date): Date bill was issued - YYYY-MM-DD.. [optional]  # noqa: E501
-            due_date (date): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
+            bill_date (date, none_type): Date bill was issued - YYYY-MM-DD.. [optional]  # noqa: E501
+            due_date (date, none_type): The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.. [optional]  # noqa: E501
             paid_date (date, none_type): The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.. [optional]  # noqa: E501
             po_number (str, none_type): A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.. [optional]  # noqa: E501
             reference (str, none_type): Optional bill reference.. [optional]  # noqa: E501
