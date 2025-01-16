@@ -2,7 +2,6 @@
 
 > ⚠️ **DEPRECATION NOTICE**: This SDK is deprecated and will be archived on May 31, 2025. Please transition to the [new SDK](https://github.com/apideck-libraries/sdk-python) before this date. After May 31, 2025, this repository will be archived and will no longer receive any updates. To support you during this transition please refer to our [migration guide](https://developers.apideck.com/guides/sdk-migration).
 
-
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
