@@ -53,7 +53,9 @@ class PaymentStatus(ModelSimple):
 
     allowed_values = {
         ('value',): {
+            'DRAFT': "draft",
             'AUTHORISED': "authorised",
+            'REJECTED': "rejected",
             'PAID': "paid",
             'VOIDED': "voided",
             'DELETED': "deleted",
@@ -108,10 +110,10 @@ class PaymentStatus(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Status of payment., must be one of ["authorised", "paid", "voided", "deleted", ]  # noqa: E501
+            args[0] (str): Status of payment., must be one of ["draft", "authorised", "rejected", "paid", "voided", "deleted", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Status of payment., must be one of ["authorised", "paid", "voided", "deleted", ]  # noqa: E501
+            value (str): Status of payment., must be one of ["draft", "authorised", "rejected", "paid", "voided", "deleted", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -198,10 +200,10 @@ class PaymentStatus(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Status of payment., must be one of ["authorised", "paid", "voided", "deleted", ]  # noqa: E501
+            args[0] (str): Status of payment., must be one of ["draft", "authorised", "rejected", "paid", "voided", "deleted", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Status of payment., must be one of ["authorised", "paid", "voided", "deleted", ]  # noqa: E501
+            value (str): Status of payment., must be one of ["draft", "authorised", "rejected", "paid", "voided", "deleted", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
