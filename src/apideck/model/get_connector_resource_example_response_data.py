@@ -94,6 +94,7 @@ class GetConnectorResourceExampleResponseData(ModelNormal):
             'service_id': (str,),  # noqa: E501
             'resource': (LinkedConnectorResource,),  # noqa: E501
             'example_response': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'workflow_examples': ({str: (dict,)},),  # noqa: E501
         }
 
     @cached_property
@@ -106,6 +107,7 @@ class GetConnectorResourceExampleResponseData(ModelNormal):
         'service_id': 'service_id',  # noqa: E501
         'resource': 'resource',  # noqa: E501
         'example_response': 'example_response',  # noqa: E501
+        'workflow_examples': 'workflow_examples',  # noqa: E501
     }
 
     read_only_vars = {
@@ -153,6 +155,7 @@ class GetConnectorResourceExampleResponseData(ModelNormal):
             service_id (str): Service provider identifier. [optional]  # noqa: E501
             resource (LinkedConnectorResource): [optional]  # noqa: E501
             example_response ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            workflow_examples ({str: (dict,)}): If the resource has a workflow, this will contain the example response for each step. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,6 +241,7 @@ class GetConnectorResourceExampleResponseData(ModelNormal):
             service_id (str): Service provider identifier. [optional]  # noqa: E501
             resource (LinkedConnectorResource): [optional]  # noqa: E501
             example_response ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            workflow_examples ({str: (dict,)}): If the resource has a workflow, this will contain the example response for each step. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
