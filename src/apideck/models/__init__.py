@@ -259,6 +259,7 @@ from apideck.model.ecommerce_customer import EcommerceCustomer
 from apideck.model.ecommerce_customer_addresses import EcommerceCustomerAddresses
 from apideck.model.ecommerce_customers_filter import EcommerceCustomersFilter
 from apideck.model.ecommerce_discount import EcommerceDiscount
+from apideck.model.ecommerce_event_type import EcommerceEventType
 from apideck.model.ecommerce_order import EcommerceOrder
 from apideck.model.ecommerce_order_line_item import EcommerceOrderLineItem
 from apideck.model.ecommerce_order_status import EcommerceOrderStatus
@@ -466,6 +467,7 @@ from apideck.model.invoice_item_filter import InvoiceItemFilter
 from apideck.model.invoice_item_income_account import InvoiceItemIncomeAccount
 from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
+from apideck.model.invoice_items_sort import InvoiceItemsSort
 from apideck.model.invoice_line_item import InvoiceLineItem
 from apideck.model.invoice_response import InvoiceResponse
 from apideck.model.invoices_filter import InvoicesFilter
