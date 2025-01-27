@@ -281,6 +281,7 @@ apideck/model/ecommerce_customer.py
 apideck/model/ecommerce_customer_addresses.py
 apideck/model/ecommerce_customers_filter.py
 apideck/model/ecommerce_discount.py
+apideck/model/ecommerce_event_type.py
 apideck/model/ecommerce_order.py
 apideck/model/ecommerce_order_line_item.py
 apideck/model/ecommerce_order_status.py
@@ -488,6 +489,7 @@ apideck/model/invoice_item_filter.py
 apideck/model/invoice_item_income_account.py
 apideck/model/invoice_item_sales_details.py
 apideck/model/invoice_items_filter.py
+apideck/model/invoice_items_sort.py
 apideck/model/invoice_line_item.py
 apideck/model/invoice_response.py
 apideck/model/invoices_filter.py
@@ -992,6 +994,7 @@ docs/EcommerceCustomer.md
 docs/EcommerceCustomerAddresses.md
 docs/EcommerceCustomersFilter.md
 docs/EcommerceDiscount.md
+docs/EcommerceEventType.md
 docs/EcommerceOrder.md
 docs/EcommerceOrderLineItem.md
 docs/EcommerceOrderStatus.md
@@ -1201,6 +1204,7 @@ docs/InvoiceItemFilter.md
 docs/InvoiceItemIncomeAccount.md
 docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
+docs/InvoiceItemsSort.md
 docs/InvoiceLineItem.md
 docs/InvoiceResponse.md
 docs/InvoicesFilter.md
@@ -1714,6 +1718,7 @@ test/test_ecommerce_customer.py
 test/test_ecommerce_customer_addresses.py
 test/test_ecommerce_customers_filter.py
 test/test_ecommerce_discount.py
+test/test_ecommerce_event_type.py
 test/test_ecommerce_order.py
 test/test_ecommerce_order_line_item.py
 test/test_ecommerce_order_status.py
@@ -1923,6 +1928,7 @@ test/test_invoice_item_filter.py
 test/test_invoice_item_income_account.py
 test/test_invoice_item_sales_details.py
 test/test_invoice_items_filter.py
+test/test_invoice_items_sort.py
 test/test_invoice_line_item.py
 test/test_invoice_response.py
 test/test_invoices_filter.py

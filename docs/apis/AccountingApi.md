@@ -5663,6 +5663,7 @@ from apideck.model.payment_required_response import PaymentRequiredResponse
 from apideck.model.get_invoice_items_response import GetInvoiceItemsResponse
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.invoice_items_sort import InvoiceItemsSort
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.not_found_response import NotFoundResponse
 from pprint import pprint
@@ -5697,6 +5698,10 @@ with apideck.ApiClient(configuration) as api_client:
         name="Widgets Large",
         type="service",
     ) # InvoiceItemsFilter | Apply filters (optional)
+    sort = InvoiceItemsSort(
+        by="updated_at",
+        direction=SortDirection("asc"),
+    ) # InvoiceItemsSort | Apply sorting (optional)
     pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
     fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
 
@@ -5704,7 +5709,7 @@ with apideck.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Invoice Items
-        api_response = api_instance.invoice_items_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, pass_through=pass_through, fields=fields)
+        api_response = api_instance.invoice_items_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, filter=filter, sort=sort, pass_through=pass_through, fields=fields)
         pprint(api_response)
     except apideck.ApiException as e:
         print("Exception when calling AccountingApi->invoice_items_all: %s\n" % e)
@@ -5722,6 +5727,7 @@ Name | Type | Description  | Notes
  **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
  **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
  **filter** | **InvoiceItemsFilter**| Apply filters | [optional]
+ **sort** | **InvoiceItemsSort**| Apply sorting | [optional]
  **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
  **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
 

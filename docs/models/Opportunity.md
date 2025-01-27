@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** | The title or name of the opportunity. | 
-**primary_contact_id** | **str, none_type** | The unique identifier of the primary contact associated with the opportunity. | 
 **id** | **str** | A unique identifier for the opportunity. | [optional] [readonly] 
+**primary_contact_id** | **str, none_type** | The unique identifier of the primary contact associated with the opportunity. | [optional] 
 **description** | **str, none_type** | A description of the opportunity. | [optional] 
 **type** | **str, none_type** | The type of the opportunity | [optional] 
 **monetary_amount** | **float, none_type** | The monetary value associated with the opportunity | [optional] 

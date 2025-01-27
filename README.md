@@ -276,6 +276,7 @@ from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.invoice_item_filter import InvoiceItemFilter
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
+from apideck.model.invoice_items_sort import InvoiceItemsSort
 from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
 from apideck.model.journal_entries_filter import JournalEntriesFilter
@@ -1255,6 +1256,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [EcommerceCustomerAddresses](docs/models/EcommerceCustomerAddresses.md)
  - [EcommerceCustomersFilter](docs/models/EcommerceCustomersFilter.md)
  - [EcommerceDiscount](docs/models/EcommerceDiscount.md)
+ - [EcommerceEventType](docs/models/EcommerceEventType.md)
  - [EcommerceOrder](docs/models/EcommerceOrder.md)
  - [EcommerceOrderLineItem](docs/models/EcommerceOrderLineItem.md)
  - [EcommerceOrderStatus](docs/models/EcommerceOrderStatus.md)
@@ -1462,6 +1464,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [InvoiceItemIncomeAccount](docs/models/InvoiceItemIncomeAccount.md)
  - [InvoiceItemSalesDetails](docs/models/InvoiceItemSalesDetails.md)
  - [InvoiceItemsFilter](docs/models/InvoiceItemsFilter.md)
+ - [InvoiceItemsSort](docs/models/InvoiceItemsSort.md)
  - [InvoiceLineItem](docs/models/InvoiceLineItem.md)
  - [InvoiceResponse](docs/models/InvoiceResponse.md)
  - [InvoicesFilter](docs/models/InvoicesFilter.md)
