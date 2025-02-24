@@ -34,9 +34,11 @@ def lazy_import():
     from apideck.model.api_resource import ApiResource
     from apideck.model.links import Links
     from apideck.model.meta import Meta
+    from apideck.model.raw import Raw
     globals()['ApiResource'] = ApiResource
     globals()['Links'] = Links
     globals()['Meta'] = Meta
+    globals()['Raw'] = Raw
 
 
 class GetApiResourceResponse(ModelNormal):
@@ -95,6 +97,7 @@ class GetApiResourceResponse(ModelNormal):
             'status_code': (int,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'data': (ApiResource,),  # noqa: E501
+            'raw': (Raw,),  # noqa: E501
             'meta': (Meta,),  # noqa: E501
             'links': (Links,),  # noqa: E501
         }
@@ -108,6 +111,7 @@ class GetApiResourceResponse(ModelNormal):
         'status_code': 'status_code',  # noqa: E501
         'status': 'status',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'raw': '_raw',  # noqa: E501
         'meta': 'meta',  # noqa: E501
         'links': 'links',  # noqa: E501
     }
@@ -158,6 +162,7 @@ class GetApiResourceResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
             meta (Meta): [optional]  # noqa: E501
             links (Links): [optional]  # noqa: E501
         """
@@ -249,6 +254,7 @@ class GetApiResourceResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
             meta (Meta): [optional]  # noqa: E501
             links (Links): [optional]  # noqa: E501
         """

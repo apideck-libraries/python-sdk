@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
 from apideck.model.pipeline import Pipeline
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Meta'] = Meta
 globals()['Pipeline'] = Pipeline
+globals()['Raw'] = Raw
 from apideck.model.get_pipelines_response import GetPipelinesResponse
 
 

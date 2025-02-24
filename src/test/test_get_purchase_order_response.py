@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.purchase_order import PurchaseOrder
+from apideck.model.raw import Raw
 globals()['PurchaseOrder'] = PurchaseOrder
+globals()['Raw'] = Raw
 from apideck.model.get_purchase_order_response import GetPurchaseOrderResponse
 
 

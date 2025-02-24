@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 from apideck.model.shared_link import SharedLink
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 globals()['SharedLink'] = SharedLink
 from apideck.model.get_shared_links_response import GetSharedLinksResponse
 

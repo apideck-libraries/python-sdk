@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
 from apideck.model.note import Note
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Meta'] = Meta
 globals()['Note'] = Note
+globals()['Raw'] = Raw
 from apideck.model.get_notes_response import GetNotesResponse
 
 

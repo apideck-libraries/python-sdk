@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.tracking_category import TrackingCategory
+globals()['Raw'] = Raw
 globals()['TrackingCategory'] = TrackingCategory
 from apideck.model.get_tracking_category_response import GetTrackingCategoryResponse
 

@@ -16,9 +16,11 @@ import apideck
 from apideck.model.invoice_item import InvoiceItem
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['InvoiceItem'] = InvoiceItem
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_invoice_items_response import GetInvoiceItemsResponse
 
 

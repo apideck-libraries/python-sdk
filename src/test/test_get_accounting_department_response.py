@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.accounting_department import AccountingDepartment
+from apideck.model.raw import Raw
 globals()['AccountingDepartment'] = AccountingDepartment
+globals()['Raw'] = Raw
 from apideck.model.get_accounting_department_response import GetAccountingDepartmentResponse
 
 

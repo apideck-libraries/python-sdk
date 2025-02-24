@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.time_off_request import TimeOffRequest
+globals()['Raw'] = Raw
 globals()['TimeOffRequest'] = TimeOffRequest
 from apideck.model.get_time_off_request_response import GetTimeOffRequestResponse
 

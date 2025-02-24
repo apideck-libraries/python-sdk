@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.ecommerce_order import EcommerceOrder
+from apideck.model.raw import Raw
 globals()['EcommerceOrder'] = EcommerceOrder
+globals()['Raw'] = Raw
 from apideck.model.get_ecommerce_order_response import GetEcommerceOrderResponse
 
 

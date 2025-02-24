@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.aged_creditors import AgedCreditors
+from apideck.model.raw import Raw
 globals()['AgedCreditors'] = AgedCreditors
+globals()['Raw'] = Raw
 from apideck.model.get_aged_creditors_response import GetAgedCreditorsResponse
 
 

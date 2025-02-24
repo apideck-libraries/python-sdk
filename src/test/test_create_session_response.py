@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.create_session_response_data import CreateSessionResponseData
+from apideck.model.raw import Raw
 globals()['CreateSessionResponseData'] = CreateSessionResponseData
+globals()['Raw'] = Raw
 from apideck.model.create_session_response import CreateSessionResponse
 
 

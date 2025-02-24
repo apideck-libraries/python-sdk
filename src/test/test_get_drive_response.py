@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.drive import Drive
+from apideck.model.raw import Raw
 globals()['Drive'] = Drive
+globals()['Raw'] = Raw
 from apideck.model.get_drive_response import GetDriveResponse
 
 

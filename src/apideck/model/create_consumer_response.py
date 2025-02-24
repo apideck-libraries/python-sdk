@@ -32,7 +32,9 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.consumer import Consumer
+    from apideck.model.raw import Raw
     globals()['Consumer'] = Consumer
+    globals()['Raw'] = Raw
 
 
 class CreateConsumerResponse(ModelNormal):
@@ -91,6 +93,7 @@ class CreateConsumerResponse(ModelNormal):
             'status_code': (int,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'data': (Consumer,),  # noqa: E501
+            'raw': (Raw,),  # noqa: E501
         }
 
     @cached_property
@@ -102,6 +105,7 @@ class CreateConsumerResponse(ModelNormal):
         'status_code': 'status_code',  # noqa: E501
         'status': 'status',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'raw': '_raw',  # noqa: E501
     }
 
     read_only_vars = {
@@ -150,6 +154,7 @@ class CreateConsumerResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,6 +244,7 @@ class CreateConsumerResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

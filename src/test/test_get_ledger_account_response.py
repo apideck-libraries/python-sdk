@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.ledger_account import LedgerAccount
+from apideck.model.raw import Raw
 globals()['LedgerAccount'] = LedgerAccount
+globals()['Raw'] = Raw
 from apideck.model.get_ledger_account_response import GetLedgerAccountResponse
 
 

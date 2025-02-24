@@ -16,9 +16,11 @@ import apideck
 from apideck.model.ecommerce_order import EcommerceOrder
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['EcommerceOrder'] = EcommerceOrder
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_ecommerce_orders_response import GetEcommerceOrdersResponse
 
 

@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.collection_user import CollectionUser
+from apideck.model.raw import Raw
 globals()['CollectionUser'] = CollectionUser
+globals()['Raw'] = Raw
 from apideck.model.get_collection_user_response import GetCollectionUserResponse
 
 

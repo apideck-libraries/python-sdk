@@ -16,9 +16,11 @@ import apideck
 from apideck.model.attachment import Attachment
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Attachment'] = Attachment
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 
 

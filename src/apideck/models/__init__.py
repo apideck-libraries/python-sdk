@@ -582,6 +582,7 @@ from apideck.model.profit_and_loss_section import ProfitAndLossSection
 from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
 from apideck.model.purchase_orders_sort import PurchaseOrdersSort
+from apideck.model.raw import Raw
 from apideck.model.request_count_allocation import RequestCountAllocation
 from apideck.model.request_rate import RequestRate
 from apideck.model.resolve_webhook_event_request import ResolveWebhookEventRequest

@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.get_connector_resource_example_response_data import GetConnectorResourceExampleResponseData
+from apideck.model.raw import Raw
 globals()['GetConnectorResourceExampleResponseData'] = GetConnectorResourceExampleResponseData
+globals()['Raw'] = Raw
 from apideck.model.get_connector_resource_example_response import GetConnectorResourceExampleResponse
 
 

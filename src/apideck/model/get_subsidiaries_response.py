@@ -33,9 +33,11 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.links import Links
     from apideck.model.meta import Meta
+    from apideck.model.raw import Raw
     from apideck.model.subsidiary import Subsidiary
     globals()['Links'] = Links
     globals()['Meta'] = Meta
+    globals()['Raw'] = Raw
     globals()['Subsidiary'] = Subsidiary
 
 
@@ -100,6 +102,7 @@ class GetSubsidiariesResponse(ModelNormal):
             'data': ([Subsidiary],),  # noqa: E501
             'meta': (Meta,),  # noqa: E501
             'links': (Links,),  # noqa: E501
+            'raw': (Raw,),  # noqa: E501
         }
 
     @cached_property
@@ -116,6 +119,7 @@ class GetSubsidiariesResponse(ModelNormal):
         'data': 'data',  # noqa: E501
         'meta': 'meta',  # noqa: E501
         'links': 'links',  # noqa: E501
+        'raw': '_raw',  # noqa: E501
     }
 
     read_only_vars = {
@@ -169,6 +173,7 @@ class GetSubsidiariesResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             meta (Meta): [optional]  # noqa: E501
             links (Links): [optional]  # noqa: E501
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -266,6 +271,7 @@ class GetSubsidiariesResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             meta (Meta): [optional]  # noqa: E501
             links (Links): [optional]  # noqa: E501
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

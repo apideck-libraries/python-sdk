@@ -16,9 +16,11 @@ import apideck
 from apideck.model.collection_ticket_comment import CollectionTicketComment
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['CollectionTicketComment'] = CollectionTicketComment
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_comments_response import GetCommentsResponse
 
 

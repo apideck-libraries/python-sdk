@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.location import Location
+from apideck.model.raw import Raw
 globals()['Location'] = Location
+globals()['Raw'] = Raw
 from apideck.model.get_location_response import GetLocationResponse
 
 

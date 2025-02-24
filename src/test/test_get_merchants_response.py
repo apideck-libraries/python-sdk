@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.merchant import Merchant
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Merchant'] = Merchant
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_merchants_response import GetMerchantsResponse
 
 

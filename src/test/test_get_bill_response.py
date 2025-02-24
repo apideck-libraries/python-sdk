@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.bill import Bill
+from apideck.model.raw import Raw
 globals()['Bill'] = Bill
+globals()['Raw'] = Raw
 from apideck.model.get_bill_response import GetBillResponse
 
 

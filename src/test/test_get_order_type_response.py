@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.order_type import OrderType
+from apideck.model.raw import Raw
 globals()['OrderType'] = OrderType
+globals()['Raw'] = Raw
 from apideck.model.get_order_type_response import GetOrderTypeResponse
 
 

@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 from apideck.model.tracking_category import TrackingCategory
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 globals()['TrackingCategory'] = TrackingCategory
 from apideck.model.get_tracking_categories_response import GetTrackingCategoriesResponse
 

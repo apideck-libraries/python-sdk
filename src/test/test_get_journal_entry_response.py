@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.journal_entry import JournalEntry
+from apideck.model.raw import Raw
 globals()['JournalEntry'] = JournalEntry
+globals()['Raw'] = Raw
 from apideck.model.get_journal_entry_response import GetJournalEntryResponse
 
 

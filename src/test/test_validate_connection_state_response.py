@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.validate_connection_state_response_data import ValidateConnectionStateResponseData
+globals()['Raw'] = Raw
 globals()['ValidateConnectionStateResponseData'] = ValidateConnectionStateResponseData
 from apideck.model.validate_connection_state_response import ValidateConnectionStateResponse
 

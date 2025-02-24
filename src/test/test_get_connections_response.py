@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.connection import Connection
+from apideck.model.raw import Raw
 globals()['Connection'] = Connection
+globals()['Raw'] = Raw
 from apideck.model.get_connections_response import GetConnectionsResponse
 
 

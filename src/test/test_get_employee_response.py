@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.employee import Employee
+from apideck.model.raw import Raw
 globals()['Employee'] = Employee
+globals()['Raw'] = Raw
 from apideck.model.get_employee_response import GetEmployeeResponse
 
 

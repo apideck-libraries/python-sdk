@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
 from apideck.model.opportunity import Opportunity
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Meta'] = Meta
 globals()['Opportunity'] = Opportunity
+globals()['Raw'] = Raw
 from apideck.model.get_opportunities_response import GetOpportunitiesResponse
 
 

@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.item import Item
+from apideck.model.raw import Raw
 globals()['Item'] = Item
+globals()['Raw'] = Raw
 from apideck.model.get_item_response import GetItemResponse
 
 

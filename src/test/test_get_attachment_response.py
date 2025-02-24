@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.attachment import Attachment
+from apideck.model.raw import Raw
 globals()['Attachment'] = Attachment
+globals()['Raw'] = Raw
 from apideck.model.get_attachment_response import GetAttachmentResponse
 
 

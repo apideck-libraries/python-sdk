@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.supplier import Supplier
+globals()['Raw'] = Raw
 globals()['Supplier'] = Supplier
 from apideck.model.get_supplier_response import GetSupplierResponse
 

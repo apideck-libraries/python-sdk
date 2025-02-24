@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.accounting_location import AccountingLocation
+from apideck.model.raw import Raw
 globals()['AccountingLocation'] = AccountingLocation
+globals()['Raw'] = Raw
 from apideck.model.get_accounting_location_response import GetAccountingLocationResponse
 
 

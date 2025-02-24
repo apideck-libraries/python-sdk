@@ -16,9 +16,11 @@ import apideck
 from apideck.model.drive import Drive
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Drive'] = Drive
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_drives_response import GetDrivesResponse
 
 

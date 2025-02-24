@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.collection_ticket_comment import CollectionTicketComment
+from apideck.model.raw import Raw
 globals()['CollectionTicketComment'] = CollectionTicketComment
+globals()['Raw'] = Raw
 from apideck.model.get_comment_response import GetCommentResponse
 
 

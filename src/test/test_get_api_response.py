@@ -16,9 +16,11 @@ import apideck
 from apideck.model.api import Api
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Api'] = Api
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_api_response import GetApiResponse
 
 

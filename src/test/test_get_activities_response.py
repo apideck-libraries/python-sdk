@@ -16,9 +16,11 @@ import apideck
 from apideck.model.activity import Activity
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Activity'] = Activity
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_activities_response import GetActivitiesResponse
 
 

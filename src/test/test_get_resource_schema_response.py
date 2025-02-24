@@ -13,6 +13,8 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
+globals()['Raw'] = Raw
 from apideck.model.get_resource_schema_response import GetResourceSchemaResponse
 
 

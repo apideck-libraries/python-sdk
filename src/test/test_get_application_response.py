@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.application import Application
+from apideck.model.raw import Raw
 globals()['Application'] = Application
+globals()['Raw'] = Raw
 from apideck.model.get_application_response import GetApplicationResponse
 
 

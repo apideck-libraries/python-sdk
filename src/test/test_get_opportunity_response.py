@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.opportunity import Opportunity
+from apideck.model.raw import Raw
 globals()['Opportunity'] = Opportunity
+globals()['Raw'] = Raw
 from apideck.model.get_opportunity_response import GetOpportunityResponse
 
 

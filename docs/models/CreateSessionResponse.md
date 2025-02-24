@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **status_code** | **int** | HTTP Response Status Code | 
 **status** | **str** | HTTP Response Status | 
 **data** | [**CreateSessionResponseData**](CreateSessionResponseData.md) |  | 
+**raw** | [**Raw**](Raw.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

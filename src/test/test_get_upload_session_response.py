@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.upload_session import UploadSession
+globals()['Raw'] = Raw
 globals()['UploadSession'] = UploadSession
 from apideck.model.get_upload_session_response import GetUploadSessionResponse
 

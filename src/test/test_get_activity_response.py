@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.activity import Activity
+from apideck.model.raw import Raw
 globals()['Activity'] = Activity
+globals()['Raw'] = Raw
 from apideck.model.get_activity_response import GetActivityResponse
 
 

@@ -16,9 +16,11 @@ import apideck
 from apideck.model.lead import Lead
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Lead'] = Lead
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_leads_response import GetLeadsResponse
 
 

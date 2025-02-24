@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.payment import Payment
+from apideck.model.raw import Raw
 globals()['Payment'] = Payment
+globals()['Raw'] = Raw
 from apideck.model.get_payment_response import GetPaymentResponse
 
 

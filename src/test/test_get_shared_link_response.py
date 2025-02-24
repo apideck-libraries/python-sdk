@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.shared_link import SharedLink
+globals()['Raw'] = Raw
 globals()['SharedLink'] = SharedLink
 from apideck.model.get_shared_link_response import GetSharedLinkResponse
 

@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
 from apideck.model.order_type import OrderType
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Meta'] = Meta
 globals()['OrderType'] = OrderType
+globals()['Raw'] = Raw
 from apideck.model.get_order_types_response import GetOrderTypesResponse
 
 

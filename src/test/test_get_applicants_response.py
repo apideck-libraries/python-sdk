@@ -16,9 +16,11 @@ import apideck
 from apideck.model.applicant import Applicant
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Applicant'] = Applicant
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_applicants_response import GetApplicantsResponse
 
 

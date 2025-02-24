@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.drive_group import DriveGroup
+from apideck.model.raw import Raw
 globals()['DriveGroup'] = DriveGroup
+globals()['Raw'] = Raw
 from apideck.model.get_drive_group_response import GetDriveGroupResponse
 
 

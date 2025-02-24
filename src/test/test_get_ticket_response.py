@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.ticket import Ticket
+globals()['Raw'] = Raw
 globals()['Ticket'] = Ticket
 from apideck.model.get_ticket_response import GetTicketResponse
 

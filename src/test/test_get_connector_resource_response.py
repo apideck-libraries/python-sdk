@@ -16,9 +16,11 @@ import apideck
 from apideck.model.connector_resource import ConnectorResource
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['ConnectorResource'] = ConnectorResource
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_connector_resource_response import GetConnectorResourceResponse
 
 

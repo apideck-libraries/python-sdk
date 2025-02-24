@@ -16,9 +16,11 @@ import apideck
 from apideck.model.department import Department
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Department'] = Department
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_departments_response import GetDepartmentsResponse
 
 
