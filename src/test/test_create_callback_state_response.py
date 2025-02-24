@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.create_callback_state_response_data import CreateCallbackStateResponseData
+from apideck.model.raw import Raw
 globals()['CreateCallbackStateResponseData'] = CreateCallbackStateResponseData
+globals()['Raw'] = Raw
 from apideck.model.create_callback_state_response import CreateCallbackStateResponse
 
 

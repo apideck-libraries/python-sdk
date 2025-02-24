@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.merchant import Merchant
+from apideck.model.raw import Raw
 globals()['Merchant'] = Merchant
+globals()['Raw'] = Raw
 from apideck.model.get_merchant_response import GetMerchantResponse
 
 

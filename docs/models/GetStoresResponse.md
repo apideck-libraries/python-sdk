@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **resource** | **str** | Unified API resource name | 
 **operation** | **str** | Operation performed | 
 **data** | [**[EcommerceStore]**](EcommerceStore.md) |  | 
+**raw** | [**Raw**](Raw.md) |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 **links** | [**Links**](Links.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

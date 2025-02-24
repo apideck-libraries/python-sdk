@@ -16,9 +16,11 @@ import apideck
 from apideck.model.expense import Expense
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Expense'] = Expense
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_expenses_response import GetExpensesResponse
 
 

@@ -16,9 +16,11 @@ import apideck
 from apideck.model.get_consumers_response_data import GetConsumersResponseData
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['GetConsumersResponseData'] = GetConsumersResponseData
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_consumers_response import GetConsumersResponse
 
 

@@ -16,9 +16,11 @@ import apideck
 from apideck.model.accounting_location import AccountingLocation
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['AccountingLocation'] = AccountingLocation
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_accounting_locations_response import GetAccountingLocationsResponse
 
 

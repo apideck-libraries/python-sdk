@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.profit_and_loss import ProfitAndLoss
+from apideck.model.raw import Raw
 globals()['ProfitAndLoss'] = ProfitAndLoss
+globals()['Raw'] = Raw
 from apideck.model.get_profit_and_loss_response import GetProfitAndLossResponse
 
 

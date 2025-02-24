@@ -16,9 +16,11 @@ import apideck
 from apideck.model.contact import Contact
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Contact'] = Contact
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_contacts_response import GetContactsResponse
 
 

@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.department import Department
+from apideck.model.raw import Raw
 globals()['Department'] = Department
+globals()['Raw'] = Raw
 from apideck.model.get_department_response import GetDepartmentResponse
 
 

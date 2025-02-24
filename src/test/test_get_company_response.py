@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.company import Company
+from apideck.model.raw import Raw
 globals()['Company'] = Company
+globals()['Raw'] = Raw
 from apideck.model.get_company_response import GetCompanyResponse
 
 

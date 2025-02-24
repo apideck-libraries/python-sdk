@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.custom_mapping import CustomMapping
+from apideck.model.raw import Raw
 globals()['CustomMapping'] = CustomMapping
+globals()['Raw'] = Raw
 from apideck.model.create_custom_mapping_response import CreateCustomMappingResponse
 
 

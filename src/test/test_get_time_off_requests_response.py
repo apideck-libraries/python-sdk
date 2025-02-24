@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 from apideck.model.time_off_request import TimeOffRequest
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 globals()['TimeOffRequest'] = TimeOffRequest
 from apideck.model.get_time_off_requests_response import GetTimeOffRequestsResponse
 

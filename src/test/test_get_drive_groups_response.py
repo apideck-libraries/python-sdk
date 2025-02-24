@@ -16,9 +16,11 @@ import apideck
 from apideck.model.drive_group import DriveGroup
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['DriveGroup'] = DriveGroup
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_drive_groups_response import GetDriveGroupsResponse
 
 

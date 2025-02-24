@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.lead import Lead
+from apideck.model.raw import Raw
 globals()['Lead'] = Lead
+globals()['Raw'] = Raw
 from apideck.model.get_lead_response import GetLeadResponse
 
 

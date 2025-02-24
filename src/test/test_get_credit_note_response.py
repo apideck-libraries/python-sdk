@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.credit_note import CreditNote
+from apideck.model.raw import Raw
 globals()['CreditNote'] = CreditNote
+globals()['Raw'] = Raw
 from apideck.model.get_credit_note_response import GetCreditNoteResponse
 
 

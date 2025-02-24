@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.expense import Expense
+from apideck.model.raw import Raw
 globals()['Expense'] = Expense
+globals()['Raw'] = Raw
 from apideck.model.get_expense_response import GetExpenseResponse
 
 

@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.log import Log
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Log'] = Log
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_logs_response import GetLogsResponse
 
 

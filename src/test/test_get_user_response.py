@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.user import User
+globals()['Raw'] = Raw
 globals()['User'] = User
 from apideck.model.get_user_response import GetUserResponse
 

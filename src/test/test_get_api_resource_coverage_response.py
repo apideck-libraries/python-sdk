@@ -16,9 +16,11 @@ import apideck
 from apideck.model.api_resource_coverage import ApiResourceCoverage
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['ApiResourceCoverage'] = ApiResourceCoverage
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_api_resource_coverage_response import GetApiResourceCoverageResponse
 
 

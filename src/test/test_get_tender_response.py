@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.tender import Tender
+globals()['Raw'] = Raw
 globals()['Tender'] = Tender
 from apideck.model.get_tender_response import GetTenderResponse
 

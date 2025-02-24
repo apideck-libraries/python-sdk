@@ -16,9 +16,11 @@ import apideck
 from apideck.model.bill import Bill
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Bill'] = Bill
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_bills_response import GetBillsResponse
 
 

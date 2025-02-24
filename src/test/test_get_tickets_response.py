@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 from apideck.model.ticket import Ticket
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 globals()['Ticket'] = Ticket
 from apideck.model.get_tickets_response import GetTicketsResponse
 

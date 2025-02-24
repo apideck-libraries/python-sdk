@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.location import Location
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Location'] = Location
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_locations_response import GetLocationsResponse
 
 

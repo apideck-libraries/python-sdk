@@ -32,7 +32,9 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.aged_debtors import AgedDebtors
+    from apideck.model.raw import Raw
     globals()['AgedDebtors'] = AgedDebtors
+    globals()['Raw'] = Raw
 
 
 class GetAgedDebtorsResponse(ModelNormal):
@@ -94,6 +96,7 @@ class GetAgedDebtorsResponse(ModelNormal):
             'resource': (str,),  # noqa: E501
             'operation': (str,),  # noqa: E501
             'data': (AgedDebtors,),  # noqa: E501
+            'raw': (Raw,),  # noqa: E501
         }
 
     @cached_property
@@ -108,6 +111,7 @@ class GetAgedDebtorsResponse(ModelNormal):
         'resource': 'resource',  # noqa: E501
         'operation': 'operation',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'raw': '_raw',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +163,7 @@ class GetAgedDebtorsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,6 +259,7 @@ class GetAgedDebtorsResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.webhook import Webhook
+globals()['Raw'] = Raw
 globals()['Webhook'] = Webhook
 from apideck.model.delete_webhook_response import DeleteWebhookResponse
 

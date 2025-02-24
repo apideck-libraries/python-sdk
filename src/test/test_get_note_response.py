@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.note import Note
+from apideck.model.raw import Raw
 globals()['Note'] = Note
+globals()['Raw'] = Raw
 from apideck.model.get_note_response import GetNoteResponse
 
 

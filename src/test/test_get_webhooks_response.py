@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 from apideck.model.webhook import Webhook
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 globals()['Webhook'] = Webhook
 from apideck.model.get_webhooks_response import GetWebhooksResponse
 

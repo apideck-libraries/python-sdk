@@ -16,9 +16,11 @@ import apideck
 from apideck.model.collection_user import CollectionUser
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['CollectionUser'] = CollectionUser
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_collection_users_response import GetCollectionUsersResponse
 
 

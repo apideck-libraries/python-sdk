@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.invoice_response import InvoiceResponse
+from apideck.model.raw import Raw
 globals()['InvoiceResponse'] = InvoiceResponse
+globals()['Raw'] = Raw
 from apideck.model.delete_invoice_response import DeleteInvoiceResponse
 
 

@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 from apideck.model.unified_file import UnifiedFile
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 globals()['UnifiedFile'] = UnifiedFile
 from apideck.model.get_files_response import GetFilesResponse
 

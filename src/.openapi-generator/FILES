@@ -604,6 +604,7 @@ apideck/model/profit_and_loss_section.py
 apideck/model/purchase_order.py
 apideck/model/purchase_orders_filter.py
 apideck/model/purchase_orders_sort.py
+apideck/model/raw.py
 apideck/model/request_count_allocation.py
 apideck/model/request_rate.py
 apideck/model/resolve_webhook_event_request.py
@@ -1322,6 +1323,7 @@ docs/ProfitAndLossSection.md
 docs/PurchaseOrder.md
 docs/PurchaseOrdersFilter.md
 docs/PurchaseOrdersSort.md
+docs/Raw.md
 docs/RequestCountAllocation.md
 docs/RequestRate.md
 docs/ResolveWebhookEventRequest.md
@@ -2046,6 +2048,7 @@ test/test_profit_and_loss_section.py
 test/test_purchase_order.py
 test/test_purchase_orders_filter.py
 test/test_purchase_orders_sort.py
+test/test_raw.py
 test/test_request_count_allocation.py
 test/test_request_rate.py
 test/test_resolve_webhook_event_request.py

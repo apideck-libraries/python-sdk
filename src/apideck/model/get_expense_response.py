@@ -32,7 +32,9 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.expense import Expense
+    from apideck.model.raw import Raw
     globals()['Expense'] = Expense
+    globals()['Raw'] = Raw
 
 
 class GetExpenseResponse(ModelNormal):
@@ -94,6 +96,7 @@ class GetExpenseResponse(ModelNormal):
             'resource': (str,),  # noqa: E501
             'operation': (str,),  # noqa: E501
             'data': (Expense,),  # noqa: E501
+            'raw': (Raw,),  # noqa: E501
         }
 
     @cached_property
@@ -108,6 +111,7 @@ class GetExpenseResponse(ModelNormal):
         'resource': 'resource',  # noqa: E501
         'operation': 'operation',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'raw': '_raw',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +163,7 @@ class GetExpenseResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,6 +259,7 @@ class GetExpenseResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

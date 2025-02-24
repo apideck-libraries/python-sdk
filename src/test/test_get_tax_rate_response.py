@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.tax_rate import TaxRate
+globals()['Raw'] = Raw
 globals()['TaxRate'] = TaxRate
 from apideck.model.get_tax_rate_response import GetTaxRateResponse
 

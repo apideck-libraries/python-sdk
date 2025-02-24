@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.message import Message
+from apideck.model.raw import Raw
 globals()['Message'] = Message
+globals()['Raw'] = Raw
 from apideck.model.get_message_response import GetMessageResponse
 
 

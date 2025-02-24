@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.unified_id import UnifiedId
+globals()['Raw'] = Raw
 globals()['UnifiedId'] = UnifiedId
 from apideck.model.create_journal_entry_response import CreateJournalEntryResponse
 

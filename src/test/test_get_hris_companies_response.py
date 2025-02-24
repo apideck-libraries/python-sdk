@@ -16,9 +16,11 @@ import apideck
 from apideck.model.hris_company import HrisCompany
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['HrisCompany'] = HrisCompany
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_hris_companies_response import GetHrisCompaniesResponse
 
 

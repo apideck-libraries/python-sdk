@@ -16,9 +16,11 @@ import apideck
 from apideck.model.ledger_account import LedgerAccount
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['LedgerAccount'] = LedgerAccount
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_ledger_accounts_response import GetLedgerAccountsResponse
 
 

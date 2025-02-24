@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.unified_file import UnifiedFile
+globals()['Raw'] = Raw
 globals()['UnifiedFile'] = UnifiedFile
 from apideck.model.get_file_response import GetFileResponse
 

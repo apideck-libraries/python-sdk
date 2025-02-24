@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.modifier import Modifier
+from apideck.model.raw import Raw
 globals()['Modifier'] = Modifier
+globals()['Raw'] = Raw
 from apideck.model.get_modifier_response import GetModifierResponse
 
 

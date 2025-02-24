@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
 from apideck.model.modifier import Modifier
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Meta'] = Meta
 globals()['Modifier'] = Modifier
+globals()['Raw'] = Raw
 from apideck.model.get_modifiers_response import GetModifiersResponse
 
 

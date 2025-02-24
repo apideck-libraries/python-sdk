@@ -16,9 +16,11 @@ import apideck
 from apideck.model.customer import Customer
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Customer'] = Customer
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_customers_response import GetCustomersResponse
 
 

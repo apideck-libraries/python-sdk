@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.subsidiary import Subsidiary
+globals()['Raw'] = Raw
 globals()['Subsidiary'] = Subsidiary
 from apideck.model.get_subsidiary_response import GetSubsidiaryResponse
 

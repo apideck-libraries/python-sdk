@@ -34,9 +34,11 @@ def lazy_import():
     from apideck.model.links import Links
     from apideck.model.log import Log
     from apideck.model.meta import Meta
+    from apideck.model.raw import Raw
     globals()['Links'] = Links
     globals()['Log'] = Log
     globals()['Meta'] = Meta
+    globals()['Raw'] = Raw
 
 
 class GetLogsResponse(ModelNormal):
@@ -97,6 +99,7 @@ class GetLogsResponse(ModelNormal):
             'data': ([Log],),  # noqa: E501
             'meta': (Meta,),  # noqa: E501
             'links': (Links,),  # noqa: E501
+            'raw': (Raw,),  # noqa: E501
         }
 
     @cached_property
@@ -110,6 +113,7 @@ class GetLogsResponse(ModelNormal):
         'data': 'data',  # noqa: E501
         'meta': 'meta',  # noqa: E501
         'links': 'links',  # noqa: E501
+        'raw': '_raw',  # noqa: E501
     }
 
     read_only_vars = {
@@ -160,6 +164,7 @@ class GetLogsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             meta (Meta): [optional]  # noqa: E501
             links (Links): [optional]  # noqa: E501
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,6 +256,7 @@ class GetLogsResponse(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             meta (Meta): [optional]  # noqa: E501
             links (Links): [optional]  # noqa: E501
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

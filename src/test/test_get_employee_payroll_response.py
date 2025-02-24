@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.employee_payroll import EmployeePayroll
+from apideck.model.raw import Raw
 globals()['EmployeePayroll'] = EmployeePayroll
+globals()['Raw'] = Raw
 from apideck.model.get_employee_payroll_response import GetEmployeePayrollResponse
 
 

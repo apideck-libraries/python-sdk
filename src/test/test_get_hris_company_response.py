@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.hris_company import HrisCompany
+from apideck.model.raw import Raw
 globals()['HrisCompany'] = HrisCompany
+globals()['Raw'] = Raw
 from apideck.model.get_hris_company_response import GetHrisCompanyResponse
 
 

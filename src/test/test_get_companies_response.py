@@ -16,9 +16,11 @@ import apideck
 from apideck.model.company import Company
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 globals()['Company'] = Company
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 from apideck.model.get_companies_response import GetCompaniesResponse
 
 

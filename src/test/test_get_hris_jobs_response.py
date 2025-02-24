@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.hris_jobs import HrisJobs
+from apideck.model.raw import Raw
 globals()['HrisJobs'] = HrisJobs
+globals()['Raw'] = Raw
 from apideck.model.get_hris_jobs_response import GetHrisJobsResponse
 
 

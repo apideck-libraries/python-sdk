@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.pipeline import Pipeline
+from apideck.model.raw import Raw
 globals()['Pipeline'] = Pipeline
+globals()['Raw'] = Raw
 from apideck.model.get_pipeline_response import GetPipelineResponse
 
 

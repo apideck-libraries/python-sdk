@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.consumer_request_counts_in_date_range_response_data import ConsumerRequestCountsInDateRangeResponseData
+from apideck.model.raw import Raw
 globals()['ConsumerRequestCountsInDateRangeResponseData'] = ConsumerRequestCountsInDateRangeResponseData
+globals()['Raw'] = Raw
 from apideck.model.consumer_request_counts_in_date_range_response import ConsumerRequestCountsInDateRangeResponse
 
 

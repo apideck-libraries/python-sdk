@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.folder import Folder
+from apideck.model.raw import Raw
 globals()['Folder'] = Folder
+globals()['Raw'] = Raw
 from apideck.model.get_folder_response import GetFolderResponse
 
 

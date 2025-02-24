@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.consumer import Consumer
+from apideck.model.raw import Raw
 globals()['Consumer'] = Consumer
+globals()['Raw'] = Raw
 from apideck.model.get_consumer_response import GetConsumerResponse
 
 

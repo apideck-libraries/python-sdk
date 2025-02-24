@@ -16,9 +16,11 @@ import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
 from apideck.model.payment import Payment
+from apideck.model.raw import Raw
 globals()['Links'] = Links
 globals()['Meta'] = Meta
 globals()['Payment'] = Payment
+globals()['Raw'] = Raw
 from apideck.model.get_payments_response import GetPaymentsResponse
 
 

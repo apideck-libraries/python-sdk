@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.custom_field_finder import CustomFieldFinder
+from apideck.model.raw import Raw
 globals()['CustomFieldFinder'] = CustomFieldFinder
+globals()['Raw'] = Raw
 from apideck.model.get_custom_fields_response import GetCustomFieldsResponse
 
 

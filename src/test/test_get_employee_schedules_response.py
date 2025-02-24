@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.employee_schedules import EmployeeSchedules
+from apideck.model.raw import Raw
 globals()['EmployeeSchedules'] = EmployeeSchedules
+globals()['Raw'] = Raw
 from apideck.model.get_employee_schedules_response import GetEmployeeSchedulesResponse
 
 

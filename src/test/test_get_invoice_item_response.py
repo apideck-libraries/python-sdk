@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.invoice_item import InvoiceItem
+from apideck.model.raw import Raw
 globals()['InvoiceItem'] = InvoiceItem
+globals()['Raw'] = Raw
 from apideck.model.get_invoice_item_response import GetInvoiceItemResponse
 
 

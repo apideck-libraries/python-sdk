@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.links import Links
 from apideck.model.meta import Meta
+from apideck.model.raw import Raw
 from apideck.model.tax_rate import TaxRate
 globals()['Links'] = Links
 globals()['Meta'] = Meta
+globals()['Raw'] = Raw
 globals()['TaxRate'] = TaxRate
 from apideck.model.get_tax_rates_response import GetTaxRatesResponse
 

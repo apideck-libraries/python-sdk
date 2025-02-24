@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.contact import Contact
+from apideck.model.raw import Raw
 globals()['Contact'] = Contact
+globals()['Raw'] = Raw
 from apideck.model.get_contact_response import GetContactResponse
 
 

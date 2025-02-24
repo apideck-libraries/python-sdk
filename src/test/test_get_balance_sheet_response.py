@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.balance_sheet import BalanceSheet
+from apideck.model.raw import Raw
 globals()['BalanceSheet'] = BalanceSheet
+globals()['Raw'] = Raw
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
 
 

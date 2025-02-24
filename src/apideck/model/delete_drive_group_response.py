@@ -31,7 +31,9 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.raw import Raw
     from apideck.model.unified_id import UnifiedId
+    globals()['Raw'] = Raw
     globals()['UnifiedId'] = UnifiedId
 
 
@@ -94,6 +96,7 @@ class DeleteDriveGroupResponse(ModelNormal):
             'resource': (str,),  # noqa: E501
             'operation': (str,),  # noqa: E501
             'data': (UnifiedId,),  # noqa: E501
+            'raw': (Raw,),  # noqa: E501
         }
 
     @cached_property
@@ -108,6 +111,7 @@ class DeleteDriveGroupResponse(ModelNormal):
         'resource': 'resource',  # noqa: E501
         'operation': 'operation',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'raw': '_raw',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +163,7 @@ class DeleteDriveGroupResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,6 +259,7 @@ class DeleteDriveGroupResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            raw (Raw): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

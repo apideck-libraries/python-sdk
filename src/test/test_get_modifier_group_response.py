@@ -14,7 +14,9 @@ import unittest
 
 import apideck
 from apideck.model.modifier_group import ModifierGroup
+from apideck.model.raw import Raw
 globals()['ModifierGroup'] = ModifierGroup
+globals()['Raw'] = Raw
 from apideck.model.get_modifier_group_response import GetModifierGroupResponse
 
 

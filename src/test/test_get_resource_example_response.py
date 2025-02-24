@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.raw import Raw
 from apideck.model.resource_example import ResourceExample
+globals()['Raw'] = Raw
 globals()['ResourceExample'] = ResourceExample
 from apideck.model.get_resource_example_response import GetResourceExampleResponse
 
