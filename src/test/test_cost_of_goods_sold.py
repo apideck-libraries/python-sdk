@@ -17,11 +17,11 @@ from apideck.model.profit_and_loss_records import ProfitAndLossRecords
 from apideck.model.profit_and_loss_type import ProfitAndLossType
 globals()['ProfitAndLossRecords'] = ProfitAndLossRecords
 globals()['ProfitAndLossType'] = ProfitAndLossType
-from apideck.model.profit_and_loss_section import ProfitAndLossSection
+from apideck.model.cost_of_goods_sold import CostOfGoodsSold
 
 
-class TestProfitAndLossSection(unittest.TestCase):
-    """ProfitAndLossSection unit test stubs"""
+class TestCostOfGoodsSold(unittest.TestCase):
+    """CostOfGoodsSold unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestProfitAndLossSection(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testProfitAndLossSection(self):
-        """Test ProfitAndLossSection"""
+    def testCostOfGoodsSold(self):
+        """Test CostOfGoodsSold"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ProfitAndLossSection()  # noqa: E501
+        # model = CostOfGoodsSold()  # noqa: E501
         pass
 
 

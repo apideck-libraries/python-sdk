@@ -108,6 +108,7 @@ from apideck.model.contact import Contact
 from apideck.model.contacts_filter import ContactsFilter
 from apideck.model.contacts_sort import ContactsSort
 from apideck.model.copy_folder_request import CopyFolderRequest
+from apideck.model.cost_of_goods_sold import CostOfGoodsSold
 from apideck.model.country import Country
 from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
 from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
@@ -292,6 +293,7 @@ from apideck.model.execute_webhook_events_request import ExecuteWebhookEventsReq
 from apideck.model.execute_webhook_response import ExecuteWebhookResponse
 from apideck.model.expense import Expense
 from apideck.model.expense_line_item import ExpenseLineItem
+from apideck.model.expenses import Expenses
 from apideck.model.file_storage_event_type import FileStorageEventType
 from apideck.model.file_type import FileType
 from apideck.model.files_filter import FilesFilter
@@ -458,6 +460,7 @@ from apideck.model.hris_job import HrisJob
 from apideck.model.hris_job_location import HrisJobLocation
 from apideck.model.hris_jobs import HrisJobs
 from apideck.model.idempotency_key import IdempotencyKey
+from apideck.model.income import Income
 from apideck.model.integration_state import IntegrationState
 from apideck.model.invoice import Invoice
 from apideck.model.invoice_item import InvoiceItem
@@ -539,6 +542,8 @@ from apideck.model.order_refunds import OrderRefunds
 from apideck.model.order_tenders import OrderTenders
 from apideck.model.order_type import OrderType
 from apideck.model.orders_sort import OrdersSort
+from apideck.model.other_expenses import OtherExpenses
+from apideck.model.other_income import OtherIncome
 from apideck.model.outstanding_balance_by_currency import OutstandingBalanceByCurrency
 from apideck.model.outstanding_balance_by_customer import OutstandingBalanceByCustomer
 from apideck.model.outstanding_balance_by_supplier import OutstandingBalanceBySupplier
@@ -570,15 +575,12 @@ from apideck.model.pos_payment_external_details import PosPaymentExternalDetails
 from apideck.model.price import Price
 from apideck.model.probation_period import ProbationPeriod
 from apideck.model.profit_and_loss import ProfitAndLoss
-from apideck.model.profit_and_loss_expenses import ProfitAndLossExpenses
 from apideck.model.profit_and_loss_filter import ProfitAndLossFilter
-from apideck.model.profit_and_loss_gross_profit import ProfitAndLossGrossProfit
-from apideck.model.profit_and_loss_income import ProfitAndLossIncome
-from apideck.model.profit_and_loss_net_income import ProfitAndLossNetIncome
-from apideck.model.profit_and_loss_net_operating_income import ProfitAndLossNetOperatingIncome
+from apideck.model.profit_and_loss_indicator import ProfitAndLossIndicator
 from apideck.model.profit_and_loss_record import ProfitAndLossRecord
 from apideck.model.profit_and_loss_records import ProfitAndLossRecords
 from apideck.model.profit_and_loss_section import ProfitAndLossSection
+from apideck.model.profit_and_loss_type import ProfitAndLossType
 from apideck.model.purchase_order import PurchaseOrder
 from apideck.model.purchase_orders_filter import PurchaseOrdersFilter
 from apideck.model.purchase_orders_sort import PurchaseOrdersSort
@@ -627,6 +629,7 @@ from apideck.model.too_many_requests_response_detail import TooManyRequestsRespo
 from apideck.model.tracking_category import TrackingCategory
 from apideck.model.tracking_item import TrackingItem
 from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.uncategorized_accounts import UncategorizedAccounts
 from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unified_api_id import UnifiedApiId
 from apideck.model.unified_file import UnifiedFile
