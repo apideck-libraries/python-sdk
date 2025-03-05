@@ -130,6 +130,7 @@ apideck/model/contact.py
 apideck/model/contacts_filter.py
 apideck/model/contacts_sort.py
 apideck/model/copy_folder_request.py
+apideck/model/cost_of_goods_sold.py
 apideck/model/country.py
 apideck/model/create_accounting_department_response.py
 apideck/model/create_accounting_location_response.py
@@ -314,6 +315,7 @@ apideck/model/execute_webhook_events_request.py
 apideck/model/execute_webhook_response.py
 apideck/model/expense.py
 apideck/model/expense_line_item.py
+apideck/model/expenses.py
 apideck/model/file_storage_event_type.py
 apideck/model/file_type.py
 apideck/model/files_filter.py
@@ -480,6 +482,7 @@ apideck/model/hris_job.py
 apideck/model/hris_job_location.py
 apideck/model/hris_jobs.py
 apideck/model/idempotency_key.py
+apideck/model/income.py
 apideck/model/integration_state.py
 apideck/model/invoice.py
 apideck/model/invoice_item.py
@@ -561,6 +564,8 @@ apideck/model/order_refunds.py
 apideck/model/order_tenders.py
 apideck/model/order_type.py
 apideck/model/orders_sort.py
+apideck/model/other_expenses.py
+apideck/model/other_income.py
 apideck/model/outstanding_balance_by_currency.py
 apideck/model/outstanding_balance_by_customer.py
 apideck/model/outstanding_balance_by_supplier.py
@@ -592,15 +597,12 @@ apideck/model/pos_payment_external_details.py
 apideck/model/price.py
 apideck/model/probation_period.py
 apideck/model/profit_and_loss.py
-apideck/model/profit_and_loss_expenses.py
 apideck/model/profit_and_loss_filter.py
-apideck/model/profit_and_loss_gross_profit.py
-apideck/model/profit_and_loss_income.py
-apideck/model/profit_and_loss_net_income.py
-apideck/model/profit_and_loss_net_operating_income.py
+apideck/model/profit_and_loss_indicator.py
 apideck/model/profit_and_loss_record.py
 apideck/model/profit_and_loss_records.py
 apideck/model/profit_and_loss_section.py
+apideck/model/profit_and_loss_type.py
 apideck/model/purchase_order.py
 apideck/model/purchase_orders_filter.py
 apideck/model/purchase_orders_sort.py
@@ -649,6 +651,7 @@ apideck/model/too_many_requests_response_detail.py
 apideck/model/tracking_category.py
 apideck/model/tracking_item.py
 apideck/model/unauthorized_response.py
+apideck/model/uncategorized_accounts.py
 apideck/model/unexpected_error_response.py
 apideck/model/unified_api_id.py
 apideck/model/unified_file.py
@@ -842,6 +845,7 @@ docs/Contact.md
 docs/ContactsFilter.md
 docs/ContactsSort.md
 docs/CopyFolderRequest.md
+docs/CostOfGoodsSold.md
 docs/Country.md
 docs/CreateAccountingDepartmentResponse.md
 docs/CreateAccountingLocationResponse.md
@@ -1028,6 +1032,7 @@ docs/ExecuteWebhookEventsRequest.md
 docs/ExecuteWebhookResponse.md
 docs/Expense.md
 docs/ExpenseLineItem.md
+docs/Expenses.md
 docs/FileStorageApi.md
 docs/FileStorageEventType.md
 docs/FileType.md
@@ -1196,6 +1201,7 @@ docs/HrisJob.md
 docs/HrisJobLocation.md
 docs/HrisJobs.md
 docs/IdempotencyKey.md
+docs/Income.md
 docs/IntegrationState.md
 docs/Invoice.md
 docs/InvoiceItem.md
@@ -1279,6 +1285,8 @@ docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
 docs/OrdersSort.md
+docs/OtherExpenses.md
+docs/OtherIncome.md
 docs/OutstandingBalanceByCurrency.md
 docs/OutstandingBalanceByCustomer.md
 docs/OutstandingBalanceBySupplier.md
@@ -1311,15 +1319,12 @@ docs/PosPaymentExternalDetails.md
 docs/Price.md
 docs/ProbationPeriod.md
 docs/ProfitAndLoss.md
-docs/ProfitAndLossExpenses.md
 docs/ProfitAndLossFilter.md
-docs/ProfitAndLossGrossProfit.md
-docs/ProfitAndLossIncome.md
-docs/ProfitAndLossNetIncome.md
-docs/ProfitAndLossNetOperatingIncome.md
+docs/ProfitAndLossIndicator.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossRecords.md
 docs/ProfitAndLossSection.md
+docs/ProfitAndLossType.md
 docs/PurchaseOrder.md
 docs/PurchaseOrdersFilter.md
 docs/PurchaseOrdersSort.md
@@ -1369,6 +1374,7 @@ docs/TooManyRequestsResponseDetail.md
 docs/TrackingCategory.md
 docs/TrackingItem.md
 docs/UnauthorizedResponse.md
+docs/UncategorizedAccounts.md
 docs/UnexpectedErrorResponse.md
 docs/UnifiedApiId.md
 docs/UnifiedFile.md
@@ -1567,6 +1573,7 @@ test/test_contact.py
 test/test_contacts_filter.py
 test/test_contacts_sort.py
 test/test_copy_folder_request.py
+test/test_cost_of_goods_sold.py
 test/test_country.py
 test/test_create_accounting_department_response.py
 test/test_create_accounting_location_response.py
@@ -1753,6 +1760,7 @@ test/test_execute_webhook_events_request.py
 test/test_execute_webhook_response.py
 test/test_expense.py
 test/test_expense_line_item.py
+test/test_expenses.py
 test/test_file_storage_api.py
 test/test_file_storage_event_type.py
 test/test_file_type.py
@@ -1921,6 +1929,7 @@ test/test_hris_job.py
 test/test_hris_job_location.py
 test/test_hris_jobs.py
 test/test_idempotency_key.py
+test/test_income.py
 test/test_integration_state.py
 test/test_invoice.py
 test/test_invoice_item.py
@@ -2004,6 +2013,8 @@ test/test_order_refunds.py
 test/test_order_tenders.py
 test/test_order_type.py
 test/test_orders_sort.py
+test/test_other_expenses.py
+test/test_other_income.py
 test/test_outstanding_balance_by_currency.py
 test/test_outstanding_balance_by_customer.py
 test/test_outstanding_balance_by_supplier.py
@@ -2036,15 +2047,12 @@ test/test_pos_payment_external_details.py
 test/test_price.py
 test/test_probation_period.py
 test/test_profit_and_loss.py
-test/test_profit_and_loss_expenses.py
 test/test_profit_and_loss_filter.py
-test/test_profit_and_loss_gross_profit.py
-test/test_profit_and_loss_income.py
-test/test_profit_and_loss_net_income.py
-test/test_profit_and_loss_net_operating_income.py
+test/test_profit_and_loss_indicator.py
 test/test_profit_and_loss_record.py
 test/test_profit_and_loss_records.py
 test/test_profit_and_loss_section.py
+test/test_profit_and_loss_type.py
 test/test_purchase_order.py
 test/test_purchase_orders_filter.py
 test/test_purchase_orders_sort.py
@@ -2094,6 +2102,7 @@ test/test_too_many_requests_response_detail.py
 test/test_tracking_category.py
 test/test_tracking_item.py
 test/test_unauthorized_response.py
+test/test_uncategorized_accounts.py
 test/test_unexpected_error_response.py
 test/test_unified_api_id.py
 test/test_unified_file.py

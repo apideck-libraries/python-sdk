@@ -31,16 +31,22 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from apideck.model.profit_and_loss_expenses import ProfitAndLossExpenses
-    from apideck.model.profit_and_loss_gross_profit import ProfitAndLossGrossProfit
-    from apideck.model.profit_and_loss_income import ProfitAndLossIncome
-    from apideck.model.profit_and_loss_net_income import ProfitAndLossNetIncome
-    from apideck.model.profit_and_loss_net_operating_income import ProfitAndLossNetOperatingIncome
-    globals()['ProfitAndLossExpenses'] = ProfitAndLossExpenses
-    globals()['ProfitAndLossGrossProfit'] = ProfitAndLossGrossProfit
-    globals()['ProfitAndLossIncome'] = ProfitAndLossIncome
-    globals()['ProfitAndLossNetIncome'] = ProfitAndLossNetIncome
-    globals()['ProfitAndLossNetOperatingIncome'] = ProfitAndLossNetOperatingIncome
+    from apideck.model.cost_of_goods_sold import CostOfGoodsSold
+    from apideck.model.currency import Currency
+    from apideck.model.expenses import Expenses
+    from apideck.model.income import Income
+    from apideck.model.other_expenses import OtherExpenses
+    from apideck.model.other_income import OtherIncome
+    from apideck.model.profit_and_loss_indicator import ProfitAndLossIndicator
+    from apideck.model.uncategorized_accounts import UncategorizedAccounts
+    globals()['CostOfGoodsSold'] = CostOfGoodsSold
+    globals()['Currency'] = Currency
+    globals()['Expenses'] = Expenses
+    globals()['Income'] = Income
+    globals()['OtherExpenses'] = OtherExpenses
+    globals()['OtherIncome'] = OtherIncome
+    globals()['ProfitAndLossIndicator'] = ProfitAndLossIndicator
+    globals()['UncategorizedAccounts'] = UncategorizedAccounts
 
 
 class ProfitAndLoss(ModelNormal):
@@ -100,16 +106,19 @@ class ProfitAndLoss(ModelNormal):
         lazy_import()
         return {
             'report_name': (str,),  # noqa: E501
-            'currency': (str,),  # noqa: E501
-            'income': (ProfitAndLossIncome,),  # noqa: E501
-            'expenses': (ProfitAndLossExpenses,),  # noqa: E501
+            'currency': (Currency,),  # noqa: E501
+            'income': (Income,),  # noqa: E501
+            'expenses': (Expenses,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'start_date': (str,),  # noqa: E501
             'end_date': (str,),  # noqa: E501
-            'customer_id': (str,),  # noqa: E501
-            'net_income': (ProfitAndLossNetIncome,),  # noqa: E501
-            'net_operating_income': (ProfitAndLossNetOperatingIncome,),  # noqa: E501
-            'gross_profit': (ProfitAndLossGrossProfit,),  # noqa: E501
+            'cost_of_goods_sold': (CostOfGoodsSold,),  # noqa: E501
+            'other_income': (OtherIncome,),  # noqa: E501
+            'other_expenses': (OtherExpenses,),  # noqa: E501
+            'uncategorized_accounts': (UncategorizedAccounts,),  # noqa: E501
+            'gross_profit': (ProfitAndLossIndicator,),  # noqa: E501
+            'net_operating_income': (ProfitAndLossIndicator,),  # noqa: E501
+            'net_income': (ProfitAndLossIndicator,),  # noqa: E501
             'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
@@ -126,10 +135,13 @@ class ProfitAndLoss(ModelNormal):
         'id': 'id',  # noqa: E501
         'start_date': 'start_date',  # noqa: E501
         'end_date': 'end_date',  # noqa: E501
-        'customer_id': 'customer_id',  # noqa: E501
-        'net_income': 'net_income',  # noqa: E501
-        'net_operating_income': 'net_operating_income',  # noqa: E501
+        'cost_of_goods_sold': 'cost_of_goods_sold',  # noqa: E501
+        'other_income': 'other_income',  # noqa: E501
+        'other_expenses': 'other_expenses',  # noqa: E501
+        'uncategorized_accounts': 'uncategorized_accounts',  # noqa: E501
         'gross_profit': 'gross_profit',  # noqa: E501
+        'net_operating_income': 'net_operating_income',  # noqa: E501
+        'net_income': 'net_income',  # noqa: E501
         'custom_mappings': 'custom_mappings',  # noqa: E501
     }
 
@@ -147,9 +159,9 @@ class ProfitAndLoss(ModelNormal):
 
         Args:
             report_name (str): The name of the report
-            currency (str):
-            income (ProfitAndLossIncome):
-            expenses (ProfitAndLossExpenses):
+            currency (Currency):
+            income (Income):
+            expenses (Expenses):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -184,11 +196,14 @@ class ProfitAndLoss(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             start_date (str): The start date of the report. [optional]  # noqa: E501
-            end_date (str): The start date of the report. [optional]  # noqa: E501
-            customer_id (str): Customer id. [optional]  # noqa: E501
-            net_income (ProfitAndLossNetIncome): [optional]  # noqa: E501
-            net_operating_income (ProfitAndLossNetOperatingIncome): [optional]  # noqa: E501
-            gross_profit (ProfitAndLossGrossProfit): [optional]  # noqa: E501
+            end_date (str): The end date of the report. [optional]  # noqa: E501
+            cost_of_goods_sold (CostOfGoodsSold): [optional]  # noqa: E501
+            other_income (OtherIncome): [optional]  # noqa: E501
+            other_expenses (OtherExpenses): [optional]  # noqa: E501
+            uncategorized_accounts (UncategorizedAccounts): [optional]  # noqa: E501
+            gross_profit (ProfitAndLossIndicator): [optional]  # noqa: E501
+            net_operating_income (ProfitAndLossIndicator): [optional]  # noqa: E501
+            net_income (ProfitAndLossIndicator): [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
@@ -246,9 +261,9 @@ class ProfitAndLoss(ModelNormal):
 
         Args:
             report_name (str): The name of the report
-            currency (str):
-            income (ProfitAndLossIncome):
-            expenses (ProfitAndLossExpenses):
+            currency (Currency):
+            income (Income):
+            expenses (Expenses):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -283,11 +298,14 @@ class ProfitAndLoss(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str): A unique identifier for an object.. [optional]  # noqa: E501
             start_date (str): The start date of the report. [optional]  # noqa: E501
-            end_date (str): The start date of the report. [optional]  # noqa: E501
-            customer_id (str): Customer id. [optional]  # noqa: E501
-            net_income (ProfitAndLossNetIncome): [optional]  # noqa: E501
-            net_operating_income (ProfitAndLossNetOperatingIncome): [optional]  # noqa: E501
-            gross_profit (ProfitAndLossGrossProfit): [optional]  # noqa: E501
+            end_date (str): The end date of the report. [optional]  # noqa: E501
+            cost_of_goods_sold (CostOfGoodsSold): [optional]  # noqa: E501
+            other_income (OtherIncome): [optional]  # noqa: E501
+            other_expenses (OtherExpenses): [optional]  # noqa: E501
+            uncategorized_accounts (UncategorizedAccounts): [optional]  # noqa: E501
+            gross_profit (ProfitAndLossIndicator): [optional]  # noqa: E501
+            net_operating_income (ProfitAndLossIndicator): [optional]  # noqa: E501
+            net_income (ProfitAndLossIndicator): [optional]  # noqa: E501
             custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
         """
 
