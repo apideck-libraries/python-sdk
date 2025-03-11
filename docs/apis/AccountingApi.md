@@ -1765,6 +1765,7 @@ with apideck.ApiClient(configuration) as api_client:
             currency=Currency("USD"),
         ),
         discount_percentage=5.5,
+        source_document_url="https://www.invoicesolution.com/bill/123456",
         tracking_categories=LinkedTrackingCategories([
             LinkedTrackingCategory(
                 id="123456",
@@ -2348,6 +2349,7 @@ with apideck.ApiClient(configuration) as api_client:
             currency=Currency("USD"),
         ),
         discount_percentage=5.5,
+        source_document_url="https://www.invoicesolution.com/bill/123456",
         tracking_categories=LinkedTrackingCategories([
             LinkedTrackingCategory(
                 id="123456",
