@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **net_operating_income** | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
 **net_income** | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**customer** | **str** | The customer id | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

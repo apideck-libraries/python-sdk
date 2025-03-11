@@ -5,7 +5,7 @@ The accounts not categorized in the other sections
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **float, none_type** | The total amount of the transaction | 
+**total** | **float, none_type** | The aggregated total of all accounts within this category. | 
 **records** | [**ProfitAndLossRecords**](ProfitAndLossRecords.md) |  | 
 **id** | **str** | A unique identifier for an object. | [optional] [readonly] 
 **code** | **str** | The account code of the account | [optional] [readonly] 
