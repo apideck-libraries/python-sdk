@@ -3714,6 +3714,7 @@ with apideck.ApiClient(configuration) as api_client:
         email="elon@spacex.com",
         status="active",
         updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+        supplier_id="123",
     ) # CustomersFilter | Apply filters (optional)
     sort = CustomersSort(
         by="updated_at",
