@@ -136,6 +136,7 @@ class Bill(ModelNormal):
             'accounting_by_row': (bool, none_type,),  # noqa: E501
             'bank_account': (BankAccount,),  # noqa: E501
             'discount_percentage': (float, none_type,),  # noqa: E501
+            'source_document_url': (str, none_type,),  # noqa: E501
             'tracking_categories': (LinkedTrackingCategories,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -184,6 +185,7 @@ class Bill(ModelNormal):
         'accounting_by_row': 'accounting_by_row',  # noqa: E501
         'bank_account': 'bank_account',  # noqa: E501
         'discount_percentage': 'discount_percentage',  # noqa: E501
+        'source_document_url': 'source_document_url',  # noqa: E501
         'tracking_categories': 'tracking_categories',  # noqa: E501
         'updated_by': 'updated_by',  # noqa: E501
         'created_by': 'created_by',  # noqa: E501
@@ -274,6 +276,7 @@ class Bill(ModelNormal):
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
             discount_percentage (float, none_type): Discount percentage applied to this transaction.. [optional]  # noqa: E501
+            source_document_url (str, none_type): URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.. [optional]  # noqa: E501
             tracking_categories (LinkedTrackingCategories): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -395,6 +398,7 @@ class Bill(ModelNormal):
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
             discount_percentage (float, none_type): Discount percentage applied to this transaction.. [optional]  # noqa: E501
+            source_document_url (str, none_type): URL link to a source document - shown as 'Go to [appName]' in the downstream app. Currently only supported for Xero.. [optional]  # noqa: E501
             tracking_categories (LinkedTrackingCategories): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
