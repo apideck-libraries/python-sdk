@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **employment_status** | **str** | Employment status to filter on | [optional] 
 **employee_number** | **str** | Employee number to filter on | [optional] 
 **department_id** | **str** | ID of the department to filter on | [optional] 
+**city** | **str** | City to filter on | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
