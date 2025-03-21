@@ -56,6 +56,9 @@ class SimpleFormFieldOption(ModelNormal):
     """
 
     allowed_values = {
+        ('option_type',): {
+            'SIMPLE': "simple",
+        },
     }
 
     validations = {
@@ -83,6 +86,7 @@ class SimpleFormFieldOption(ModelNormal):
         """
         return {
             'label': (str,),  # noqa: E501
+            'option_type': (str,),  # noqa: E501
             'value': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
@@ -93,6 +97,7 @@ class SimpleFormFieldOption(ModelNormal):
 
     attribute_map = {
         'label': 'label',  # noqa: E501
+        'option_type': 'option_type',  # noqa: E501
         'value': 'value',  # noqa: E501
     }
 
@@ -103,10 +108,14 @@ class SimpleFormFieldOption(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, label, *args, **kwargs):  # noqa: E501
         """SimpleFormFieldOption - a model defined in OpenAPI
 
+        Args:
+            label (str):
+
         Keyword Args:
+            option_type (str): defaults to "simple", must be one of ["simple", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -137,10 +146,10 @@ class SimpleFormFieldOption(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            label (str): [optional]  # noqa: E501
             value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
+        option_type = kwargs.get('option_type', "simple")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -166,6 +175,8 @@ class SimpleFormFieldOption(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.label = label
+        self.option_type = option_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -186,10 +197,14 @@ class SimpleFormFieldOption(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, label, *args, **kwargs):  # noqa: E501
         """SimpleFormFieldOption - a model defined in OpenAPI
 
+        Args:
+            label (str):
+
         Keyword Args:
+            option_type (str): defaults to "simple", must be one of ["simple", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -220,10 +235,10 @@ class SimpleFormFieldOption(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            label (str): [optional]  # noqa: E501
             value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
+        option_type = kwargs.get('option_type', "simple")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -247,6 +262,8 @@ class SimpleFormFieldOption(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.label = label
+        self.option_type = option_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

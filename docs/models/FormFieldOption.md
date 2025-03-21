@@ -4,9 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**label** | **str** |  | [optional] 
+**option_type** | **str** |  | defaults to "group"
 **value** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **id** | **str** |  | [optional] 
+**label** | **str** |  | [optional] 
 **options** | [**[SimpleFormFieldOption]**](SimpleFormFieldOption.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
