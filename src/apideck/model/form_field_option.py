@@ -62,6 +62,9 @@ class FormFieldOption(ModelComposed):
     """
 
     allowed_values = {
+        ('option_type',): {
+            'GROUP': "group",
+        },
     }
 
     validations = {
@@ -90,21 +93,31 @@ class FormFieldOption(ModelComposed):
         """
         lazy_import()
         return {
-            'label': (str,),  # noqa: E501
+            'option_type': (str,),  # noqa: E501
             'value': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
+            'label': (str,),  # noqa: E501
             'options': ([SimpleFormFieldOption],),  # noqa: E501
         }
 
     @cached_property
     def discriminator():
-        return None
-
+        lazy_import()
+        val = {
+            'FormFieldOptionGroup': FormFieldOptionGroup,
+            'SimpleFormFieldOption': SimpleFormFieldOption,
+            'group': FormFieldOptionGroup,
+            'simple': SimpleFormFieldOption,
+        }
+        if not val:
+            return None
+        return {'option_type': val}
 
     attribute_map = {
-        'label': 'label',  # noqa: E501
+        'option_type': 'option_type',  # noqa: E501
         'value': 'value',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'label': 'label',  # noqa: E501
         'options': 'options',  # noqa: E501
     }
 
@@ -117,6 +130,7 @@ class FormFieldOption(ModelComposed):
         """FormFieldOption - a model defined in OpenAPI
 
         Keyword Args:
+            option_type (str): defaults to "group", must be one of ["group", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -147,12 +161,13 @@ class FormFieldOption(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            label (str): [optional]  # noqa: E501
             value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
+            label (str): [optional]  # noqa: E501
             options ([SimpleFormFieldOption]): [optional]  # noqa: E501
         """
 
+        option_type = kwargs.get('option_type', "group")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -220,6 +235,7 @@ class FormFieldOption(ModelComposed):
         """FormFieldOption - a model defined in OpenAPI
 
         Keyword Args:
+            option_type (str): defaults to "group", must be one of ["group", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -250,12 +266,13 @@ class FormFieldOption(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            label (str): [optional]  # noqa: E501
             value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
+            label (str): [optional]  # noqa: E501
             options ([SimpleFormFieldOption]): [optional]  # noqa: E501
         """
 
+        option_type = kwargs.get('option_type', "group")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -317,11 +334,11 @@ class FormFieldOption(ModelComposed):
         lazy_import()
         return {
           'anyOf': [
-              FormFieldOptionGroup,
-              SimpleFormFieldOption,
           ],
           'allOf': [
           ],
           'oneOf': [
+              FormFieldOptionGroup,
+              SimpleFormFieldOption,
           ],
         }

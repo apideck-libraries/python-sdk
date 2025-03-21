@@ -60,6 +60,9 @@ class FormFieldOptionGroup(ModelNormal):
     """
 
     allowed_values = {
+        ('option_type',): {
+            'GROUP': "group",
+        },
     }
 
     validations = {
@@ -88,9 +91,10 @@ class FormFieldOptionGroup(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
             'label': (str,),  # noqa: E501
             'options': ([SimpleFormFieldOption],),  # noqa: E501
+            'option_type': (str,),  # noqa: E501
+            'id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -99,9 +103,10 @@ class FormFieldOptionGroup(ModelNormal):
 
 
     attribute_map = {
-        'id': 'id',  # noqa: E501
         'label': 'label',  # noqa: E501
         'options': 'options',  # noqa: E501
+        'option_type': 'option_type',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -111,10 +116,15 @@ class FormFieldOptionGroup(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, label, options, *args, **kwargs):  # noqa: E501
         """FormFieldOptionGroup - a model defined in OpenAPI
 
+        Args:
+            label (str):
+            options ([SimpleFormFieldOption]):
+
         Keyword Args:
+            option_type (str): defaults to "group", must be one of ["group", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -146,10 +156,9 @@ class FormFieldOptionGroup(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
-            label (str): [optional]  # noqa: E501
-            options ([SimpleFormFieldOption]): [optional]  # noqa: E501
         """
 
+        option_type = kwargs.get('option_type', "group")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -175,6 +184,9 @@ class FormFieldOptionGroup(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.label = label
+        self.options = options
+        self.option_type = option_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -195,10 +207,15 @@ class FormFieldOptionGroup(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, label, options, *args, **kwargs):  # noqa: E501
         """FormFieldOptionGroup - a model defined in OpenAPI
 
+        Args:
+            label (str):
+            options ([SimpleFormFieldOption]):
+
         Keyword Args:
+            option_type (str): defaults to "group", must be one of ["group", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -230,10 +247,9 @@ class FormFieldOptionGroup(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): [optional]  # noqa: E501
-            label (str): [optional]  # noqa: E501
-            options ([SimpleFormFieldOption]): [optional]  # noqa: E501
         """
 
+        option_type = kwargs.get('option_type', "group")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -257,6 +273,9 @@ class FormFieldOptionGroup(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.label = label
+        self.options = options
+        self.option_type = option_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
