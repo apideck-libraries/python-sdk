@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str, none_type** | A unique identifier for an object. | [optional] 
+**downstream_id** | **str, none_type** | The third-party API ID of original entity | [optional] [readonly] 
 **first_name** | **str, none_type** | The first name of the person. | [optional] 
 **last_name** | **str, none_type** | The last name of the person. | [optional] 
 **middle_name** | **str, none_type** | Middle name of the person. | [optional] 
