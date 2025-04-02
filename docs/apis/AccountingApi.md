@@ -1708,8 +1708,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -2292,8 +2292,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -2630,8 +2630,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -3238,8 +3238,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -4886,6 +4886,7 @@ with apideck.ApiClient(configuration) as api_client:
                 customer_id="12345",
                 department_id="12345",
                 location_id="12345",
+                subsidiary_id="12345",
                 tax_rate=LinkedTaxRate(
                     id="123456",
                     rate=10,
@@ -5371,6 +5372,7 @@ with apideck.ApiClient(configuration) as api_client:
                 customer_id="12345",
                 department_id="12345",
                 location_id="12345",
+                subsidiary_id="12345",
                 tax_rate=LinkedTaxRate(
                     id="123456",
                     rate=10,
@@ -5567,6 +5569,10 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ]),
         active=True,
+        department_id="12345",
+        location_id="12345",
+        subsidiary_id="12345",
+        tax_schedule_id="123456",
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -6085,6 +6091,10 @@ with apideck.ApiClient(configuration) as api_client:
             ),
         ]),
         active=True,
+        department_id="12345",
+        location_id="12345",
+        subsidiary_id="12345",
+        tax_schedule_id="123456",
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -6262,8 +6272,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -6891,8 +6901,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -7198,6 +7208,8 @@ with apideck.ApiClient(configuration) as api_client:
                         row_version="1-12345",
                     ),
                 ),
+                department_id="12345",
+                location_id="12345",
                 line_number=1,
             ),
         ],
@@ -7745,6 +7757,8 @@ with apideck.ApiClient(configuration) as api_client:
                         row_version="1-12345",
                     ),
                 ),
+                department_id="12345",
+                location_id="12345",
                 line_number=1,
             ),
         ],
@@ -10130,8 +10144,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -10221,6 +10235,14 @@ with apideck.ApiClient(configuration) as api_client:
                 name="New York",
             ),
         ]),
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -10733,8 +10755,8 @@ with apideck.ApiClient(configuration) as api_client:
                 unit_of_measure="pc.",
                 discount_percentage=0.01,
                 discount_amount=19.99,
-                location_id="1234",
-                department_id="1234",
+                location_id="12345",
+                department_id="12345",
                 item=LinkedInvoiceItem(
                     id="12344",
                     code="120-C",
@@ -10824,6 +10846,14 @@ with apideck.ApiClient(configuration) as api_client:
                 name="New York",
             ),
         ]),
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
         row_version="1-12345",
         pass_through=PassThroughBody([
             {

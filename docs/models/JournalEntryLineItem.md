@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **tracking_categories** | [**LinkedTrackingCategories**](LinkedTrackingCategories.md) |  | [optional] 
 **customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 **supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
-**department_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
-**location_id** | **str** | A unique identifier for an object. | [optional] [readonly] 
+**department_id** | **str, none_type** | The ID of the department | [optional] 
+**location_id** | **str, none_type** | The ID of the location | [optional] 
 **line_number** | **int, none_type** | Line number of the resource | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
