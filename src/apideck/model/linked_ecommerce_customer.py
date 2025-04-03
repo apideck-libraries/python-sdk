@@ -88,8 +88,8 @@ class LinkedEcommerceCustomer(ModelNormal):
             'first_name': (str, none_type,),  # noqa: E501
             'last_name': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
-            'phone_numbers': ([PhoneNumber],),  # noqa: E501
-            'emails': ([Email],),  # noqa: E501
+            'phone_numbers': ([PhoneNumber], none_type,),  # noqa: E501
+            'emails': ([Email], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -114,11 +114,8 @@ class LinkedEcommerceCustomer(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """LinkedEcommerceCustomer - a model defined in OpenAPI
-
-        Args:
-            id (str, none_type): The ID of the customer this entity is linked to.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -151,12 +148,13 @@ class LinkedEcommerceCustomer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str, none_type): The ID of the customer this entity is linked to.. [optional]  # noqa: E501
             name (str, none_type): Full name of the customer. [optional]  # noqa: E501
             first_name (str, none_type): First name of the customer. [optional]  # noqa: E501
             last_name (str, none_type): Last name of the customer. [optional]  # noqa: E501
             company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
-            phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            emails ([Email]): [optional]  # noqa: E501
+            phone_numbers ([PhoneNumber], none_type): [optional]  # noqa: E501
+            emails ([Email], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -184,7 +182,6 @@ class LinkedEcommerceCustomer(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -205,11 +202,8 @@ class LinkedEcommerceCustomer(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """LinkedEcommerceCustomer - a model defined in OpenAPI
-
-        Args:
-            id (str, none_type): The ID of the customer this entity is linked to.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -242,12 +236,13 @@ class LinkedEcommerceCustomer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str, none_type): The ID of the customer this entity is linked to.. [optional]  # noqa: E501
             name (str, none_type): Full name of the customer. [optional]  # noqa: E501
             first_name (str, none_type): First name of the customer. [optional]  # noqa: E501
             last_name (str, none_type): Last name of the customer. [optional]  # noqa: E501
             company_name (str, none_type): Company name of the customer. [optional]  # noqa: E501
-            phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            emails ([Email]): [optional]  # noqa: E501
+            phone_numbers ([PhoneNumber], none_type): [optional]  # noqa: E501
+            emails ([Email], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -273,7 +268,6 @@ class LinkedEcommerceCustomer(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
