@@ -6359,6 +6359,13 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         template_id="123456",
         source_document_url="https://www.invoicesolution.com/invoice/123456",
+        payment_allocations=[
+            InvoicePaymentAllocations(
+                id="123456",
+                allocated_amount=1000,
+                date=dateutil_parser('2020-09-30T07:43:32Z'),
+            ),
+        ],
         payment_method="cash",
         channel="email",
         language="EN",
@@ -6988,6 +6995,13 @@ with apideck.ApiClient(configuration) as api_client:
         ),
         template_id="123456",
         source_document_url="https://www.invoicesolution.com/invoice/123456",
+        payment_allocations=[
+            InvoicePaymentAllocations(
+                id="123456",
+                allocated_amount=1000,
+                date=dateutil_parser('2020-09-30T07:43:32Z'),
+            ),
+        ],
         payment_method="cash",
         channel="email",
         language="EN",

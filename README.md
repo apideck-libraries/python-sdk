@@ -1469,6 +1469,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [InvoiceItemsFilter](docs/models/InvoiceItemsFilter.md)
  - [InvoiceItemsSort](docs/models/InvoiceItemsSort.md)
  - [InvoiceLineItem](docs/models/InvoiceLineItem.md)
+ - [InvoicePaymentAllocations](docs/models/InvoicePaymentAllocations.md)
  - [InvoiceResponse](docs/models/InvoiceResponse.md)
  - [InvoicesFilter](docs/models/InvoicesFilter.md)
  - [InvoicesSort](docs/models/InvoicesSort.md)

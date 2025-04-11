@@ -472,6 +472,7 @@ from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
 from apideck.model.invoice_items_filter import InvoiceItemsFilter
 from apideck.model.invoice_items_sort import InvoiceItemsSort
 from apideck.model.invoice_line_item import InvoiceLineItem
+from apideck.model.invoice_payment_allocations import InvoicePaymentAllocations
 from apideck.model.invoice_response import InvoiceResponse
 from apideck.model.invoices_filter import InvoicesFilter
 from apideck.model.invoices_sort import InvoicesSort
