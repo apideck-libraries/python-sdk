@@ -494,6 +494,7 @@ apideck/model/invoice_item_sales_details.py
 apideck/model/invoice_items_filter.py
 apideck/model/invoice_items_sort.py
 apideck/model/invoice_line_item.py
+apideck/model/invoice_payment_allocations.py
 apideck/model/invoice_response.py
 apideck/model/invoices_filter.py
 apideck/model/invoices_sort.py
@@ -1213,6 +1214,7 @@ docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
 docs/InvoiceItemsSort.md
 docs/InvoiceLineItem.md
+docs/InvoicePaymentAllocations.md
 docs/InvoiceResponse.md
 docs/InvoicesFilter.md
 docs/InvoicesSort.md
@@ -1941,6 +1943,7 @@ test/test_invoice_item_sales_details.py
 test/test_invoice_items_filter.py
 test/test_invoice_items_sort.py
 test/test_invoice_line_item.py
+test/test_invoice_payment_allocations.py
 test/test_invoice_response.py
 test/test_invoices_filter.py
 test/test_invoices_sort.py
