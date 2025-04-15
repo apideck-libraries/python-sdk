@@ -4277,6 +4277,7 @@ with apideck.ApiClient(configuration) as api_client:
                 name="SpaceX",
             ),
         ],
+        code="123",
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
@@ -4733,6 +4734,7 @@ with apideck.ApiClient(configuration) as api_client:
                 name="SpaceX",
             ),
         ],
+        code="123",
         row_version="1-12345",
         pass_through=PassThroughBody([
             {
