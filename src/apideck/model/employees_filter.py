@@ -92,6 +92,7 @@ class EmployeesFilter(ModelNormal):
             'employee_number': (str,),  # noqa: E501
             'department_id': (str,),  # noqa: E501
             'city': (str,),  # noqa: E501
+            'country': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -110,6 +111,7 @@ class EmployeesFilter(ModelNormal):
         'employee_number': 'employee_number',  # noqa: E501
         'department_id': 'department_id',  # noqa: E501
         'city': 'city',  # noqa: E501
+        'country': 'country',  # noqa: E501
     }
 
     read_only_vars = {
@@ -163,6 +165,7 @@ class EmployeesFilter(ModelNormal):
             employee_number (str): Employee number to filter on. [optional]  # noqa: E501
             department_id (str): ID of the department to filter on. [optional]  # noqa: E501
             city (str): City to filter on. [optional]  # noqa: E501
+            country (str): Country to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,6 +257,7 @@ class EmployeesFilter(ModelNormal):
             employee_number (str): Employee number to filter on. [optional]  # noqa: E501
             department_id (str): ID of the department to filter on. [optional]  # noqa: E501
             city (str): City to filter on. [optional]  # noqa: E501
+            country (str): Country to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

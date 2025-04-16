@@ -2024,6 +2024,7 @@ with apideck.ApiClient(configuration) as api_client:
         employee_number="123456-AB",
         department_id="1234",
         city="San Francisco",
+        country="US",
     ) # EmployeesFilter | Apply filters (optional)
     sort = EmployeesSort(
         by="created_at",
