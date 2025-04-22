@@ -3193,6 +3193,7 @@ with apideck.ApiClient(configuration) as api_client:
         contact_id="12345",
         company_id="12345",
         opportunity_id="12345",
+        activity_id="12345",
         lead_id="12345",
         active=True,
         pass_through=PassThroughBody([
@@ -3646,6 +3647,7 @@ with apideck.ApiClient(configuration) as api_client:
         contact_id="12345",
         company_id="12345",
         opportunity_id="12345",
+        activity_id="12345",
         lead_id="12345",
         active=True,
         pass_through=PassThroughBody([
