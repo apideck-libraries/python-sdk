@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **contact_id** | **str, none_type** | The contact that is related to the note. | [optional] 
 **company_id** | **str, none_type** | The company that is related to the note. | [optional] 
 **opportunity_id** | **str, none_type** | The opportunity that is related to the note. | [optional] 
+**activity_id** | **str, none_type** | The activity that is related to the note. | [optional] 
 **lead_id** | **str, none_type** | The lead that is related to the note. | [optional] 
 **active** | **bool, none_type** | Whether the Note is active or not. | [optional] 
 **custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
