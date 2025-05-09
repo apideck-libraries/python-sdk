@@ -90,7 +90,6 @@ class EcommerceOrderLineItem(ModelNormal):
         return {
             'name': (str, none_type,),  # noqa: E501
             'quantity': (str, none_type,),  # noqa: E501
-            'total_amount': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'product_id': (str, none_type,),  # noqa: E501
             'variant_id': (str, none_type,),  # noqa: E501
@@ -104,6 +103,7 @@ class EcommerceOrderLineItem(ModelNormal):
             'refunded_amount': (str, none_type,),  # noqa: E501
             'refunded_quantity': (str, none_type,),  # noqa: E501
             'sub_total': (str, none_type,),  # noqa: E501
+            'total_amount': (str, none_type,),  # noqa: E501
             'discounts': ([EcommerceDiscount],),  # noqa: E501
         }
 
@@ -115,7 +115,6 @@ class EcommerceOrderLineItem(ModelNormal):
     attribute_map = {
         'name': 'name',  # noqa: E501
         'quantity': 'quantity',  # noqa: E501
-        'total_amount': 'total_amount',  # noqa: E501
         'id': 'id',  # noqa: E501
         'product_id': 'product_id',  # noqa: E501
         'variant_id': 'variant_id',  # noqa: E501
@@ -129,6 +128,7 @@ class EcommerceOrderLineItem(ModelNormal):
         'refunded_amount': 'refunded_amount',  # noqa: E501
         'refunded_quantity': 'refunded_quantity',  # noqa: E501
         'sub_total': 'sub_total',  # noqa: E501
+        'total_amount': 'total_amount',  # noqa: E501
         'discounts': 'discounts',  # noqa: E501
     }
 
@@ -140,13 +140,12 @@ class EcommerceOrderLineItem(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, quantity, total_amount, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, quantity, *args, **kwargs):  # noqa: E501
         """EcommerceOrderLineItem - a model defined in OpenAPI
 
         Args:
             name (str, none_type): The name of the product or variant associated with the line item.
             quantity (str, none_type): The quantity of the product or variant associated with the line item.
-            total_amount (str, none_type): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -192,6 +191,7 @@ class EcommerceOrderLineItem(ModelNormal):
             refunded_amount (str, none_type): The amount of the line item that has been refunded.. [optional]  # noqa: E501
             refunded_quantity (str, none_type): The quantity of the line item that has been refunded.. [optional]  # noqa: E501
             sub_total (str, none_type): The sub total for the product(s) or variant associated with the line item, excluding taxes and discounts.. [optional]  # noqa: E501
+            total_amount (str, none_type): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.. [optional]  # noqa: E501
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
         """
 
@@ -222,7 +222,6 @@ class EcommerceOrderLineItem(ModelNormal):
 
         self.name = name
         self.quantity = quantity
-        self.total_amount = total_amount
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -243,13 +242,12 @@ class EcommerceOrderLineItem(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, quantity, total_amount, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, quantity, *args, **kwargs):  # noqa: E501
         """EcommerceOrderLineItem - a model defined in OpenAPI
 
         Args:
             name (str, none_type): The name of the product or variant associated with the line item.
             quantity (str, none_type): The quantity of the product or variant associated with the line item.
-            total_amount (str, none_type): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -295,6 +293,7 @@ class EcommerceOrderLineItem(ModelNormal):
             refunded_amount (str, none_type): The amount of the line item that has been refunded.. [optional]  # noqa: E501
             refunded_quantity (str, none_type): The quantity of the line item that has been refunded.. [optional]  # noqa: E501
             sub_total (str, none_type): The sub total for the product(s) or variant associated with the line item, excluding taxes and discounts.. [optional]  # noqa: E501
+            total_amount (str, none_type): The total amount for the product(s) or variant associated with the line item, including taxes and discounts.. [optional]  # noqa: E501
             discounts ([EcommerceDiscount]): [optional]  # noqa: E501
         """
 
@@ -323,7 +322,6 @@ class EcommerceOrderLineItem(ModelNormal):
 
         self.name = name
         self.quantity = quantity
-        self.total_amount = total_amount
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
