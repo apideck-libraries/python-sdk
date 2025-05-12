@@ -59,6 +59,9 @@ from apideck.model.balance_sheet_liabilities_account import BalanceSheetLiabilit
 from apideck.model.balance_sheet_reports import BalanceSheetReports
 from apideck.model.balance_sheet_uncategorized_items_account import BalanceSheetUncategorizedItemsAccount
 from apideck.model.bank_account import BankAccount
+from apideck.model.bank_feed_account import BankFeedAccount
+from apideck.model.bank_feed_statement import BankFeedStatement
+from apideck.model.bank_feed_statement_transactions import BankFeedStatementTransactions
 from apideck.model.benefit import Benefit
 from apideck.model.bill import Bill
 from apideck.model.bill_line_item import BillLineItem
@@ -117,6 +120,8 @@ from apideck.model.create_applicant_response import CreateApplicantResponse
 from apideck.model.create_application_response import CreateApplicationResponse
 from apideck.model.create_attachment_request import CreateAttachmentRequest
 from apideck.model.create_attachment_response import CreateAttachmentResponse
+from apideck.model.create_bank_feed_account_response import CreateBankFeedAccountResponse
+from apideck.model.create_bank_feed_statement_response import CreateBankFeedStatementResponse
 from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_callback_state import CreateCallbackState
@@ -182,6 +187,7 @@ from apideck.model.create_webhook_response import CreateWebhookResponse
 from apideck.model.credit_note import CreditNote
 from apideck.model.credit_notes_filter import CreditNotesFilter
 from apideck.model.credit_notes_sort import CreditNotesSort
+from apideck.model.credit_or_debit import CreditOrDebit
 from apideck.model.crm_event_type import CrmEventType
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
@@ -197,6 +203,8 @@ from apideck.model.delete_activity_response import DeleteActivityResponse
 from apideck.model.delete_applicant_response import DeleteApplicantResponse
 from apideck.model.delete_application_response import DeleteApplicationResponse
 from apideck.model.delete_attachment_response import DeleteAttachmentResponse
+from apideck.model.delete_bank_feed_account_response import DeleteBankFeedAccountResponse
+from apideck.model.delete_bank_feed_statement_response import DeleteBankFeedStatementResponse
 from apideck.model.delete_bill_payment_response import DeleteBillPaymentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_comment_response import DeleteCommentResponse
@@ -323,6 +331,10 @@ from apideck.model.get_applications_response import GetApplicationsResponse
 from apideck.model.get_attachment_response import GetAttachmentResponse
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
+from apideck.model.get_bank_feed_account_response import GetBankFeedAccountResponse
+from apideck.model.get_bank_feed_accounts_response import GetBankFeedAccountsResponse
+from apideck.model.get_bank_feed_statement_response import GetBankFeedStatementResponse
+from apideck.model.get_bank_feed_statements_response import GetBankFeedStatementsResponse
 from apideck.model.get_bill_payment_response import GetBillPaymentResponse
 from apideck.model.get_bill_payments_response import GetBillPaymentsResponse
 from apideck.model.get_bill_response import GetBillResponse
@@ -642,6 +654,8 @@ from apideck.model.update_accounting_location_response import UpdateAccountingLo
 from apideck.model.update_activity_response import UpdateActivityResponse
 from apideck.model.update_applicant_response import UpdateApplicantResponse
 from apideck.model.update_application_response import UpdateApplicationResponse
+from apideck.model.update_bank_feed_account_response import UpdateBankFeedAccountResponse
+from apideck.model.update_bank_feed_statement_response import UpdateBankFeedStatementResponse
 from apideck.model.update_bill_payment_response import UpdateBillPaymentResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_comment_response import UpdateCommentResponse

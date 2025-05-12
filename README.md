@@ -186,12 +186,16 @@ from apideck.model.aged_report_filter import AgedReportFilter
 from apideck.model.attachment_reference_type import AttachmentReferenceType
 from apideck.model.bad_request_response import BadRequestResponse
 from apideck.model.balance_sheet_filter import BalanceSheetFilter
+from apideck.model.bank_feed_account import BankFeedAccount
+from apideck.model.bank_feed_statement import BankFeedStatement
 from apideck.model.bill import Bill
 from apideck.model.bill_payment import BillPayment
 from apideck.model.bills_filter import BillsFilter
 from apideck.model.bills_sort import BillsSort
 from apideck.model.create_accounting_department_response import CreateAccountingDepartmentResponse
 from apideck.model.create_accounting_location_response import CreateAccountingLocationResponse
+from apideck.model.create_bank_feed_account_response import CreateBankFeedAccountResponse
+from apideck.model.create_bank_feed_statement_response import CreateBankFeedStatementResponse
 from apideck.model.create_bill_payment_response import CreateBillPaymentResponse
 from apideck.model.create_bill_response import CreateBillResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
@@ -216,6 +220,8 @@ from apideck.model.customers_sort import CustomersSort
 from apideck.model.delete_accounting_department_response import DeleteAccountingDepartmentResponse
 from apideck.model.delete_accounting_location_response import DeleteAccountingLocationResponse
 from apideck.model.delete_attachment_response import DeleteAttachmentResponse
+from apideck.model.delete_bank_feed_account_response import DeleteBankFeedAccountResponse
+from apideck.model.delete_bank_feed_statement_response import DeleteBankFeedStatementResponse
 from apideck.model.delete_bill_payment_response import DeleteBillPaymentResponse
 from apideck.model.delete_bill_response import DeleteBillResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
@@ -240,6 +246,10 @@ from apideck.model.get_aged_debtors_response import GetAgedDebtorsResponse
 from apideck.model.get_attachment_response import GetAttachmentResponse
 from apideck.model.get_attachments_response import GetAttachmentsResponse
 from apideck.model.get_balance_sheet_response import GetBalanceSheetResponse
+from apideck.model.get_bank_feed_account_response import GetBankFeedAccountResponse
+from apideck.model.get_bank_feed_accounts_response import GetBankFeedAccountsResponse
+from apideck.model.get_bank_feed_statement_response import GetBankFeedStatementResponse
+from apideck.model.get_bank_feed_statements_response import GetBankFeedStatementsResponse
 from apideck.model.get_bill_payment_response import GetBillPaymentResponse
 from apideck.model.get_bill_payments_response import GetBillPaymentsResponse
 from apideck.model.get_bill_response import GetBillResponse
@@ -307,6 +317,8 @@ from apideck.model.unexpected_error_response import UnexpectedErrorResponse
 from apideck.model.unprocessable_response import UnprocessableResponse
 from apideck.model.update_accounting_department_response import UpdateAccountingDepartmentResponse
 from apideck.model.update_accounting_location_response import UpdateAccountingLocationResponse
+from apideck.model.update_bank_feed_account_response import UpdateBankFeedAccountResponse
+from apideck.model.update_bank_feed_statement_response import UpdateBankFeedStatementResponse
 from apideck.model.update_bill_payment_response import UpdateBillPaymentResponse
 from apideck.model.update_bill_response import UpdateBillResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
@@ -385,6 +397,26 @@ _AccountingApi_ | [**attachments_download**](docs/apis/AccountingApi.md#attachme
 _AccountingApi_ | [**attachments_one**](docs/apis/AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment |
 
 _AccountingApi_ | [**balance_sheet_one**](docs/apis/AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet |
+
+_AccountingApi_ | [**bank_feed_accounts_add**](docs/apis/AccountingApi.md#bank_feed_accounts_add) | **POST** /accounting/bank-feed-accounts | Create Bank Feed Account |
+
+_AccountingApi_ | [**bank_feed_accounts_all**](docs/apis/AccountingApi.md#bank_feed_accounts_all) | **GET** /accounting/bank-feed-accounts | List Bank Feed Accounts |
+
+_AccountingApi_ | [**bank_feed_accounts_delete**](docs/apis/AccountingApi.md#bank_feed_accounts_delete) | **DELETE** /accounting/bank-feed-accounts/{id} | Delete Bank Feed Account |
+
+_AccountingApi_ | [**bank_feed_accounts_one**](docs/apis/AccountingApi.md#bank_feed_accounts_one) | **GET** /accounting/bank-feed-accounts/{id} | Get Bank Feed Account |
+
+_AccountingApi_ | [**bank_feed_accounts_update**](docs/apis/AccountingApi.md#bank_feed_accounts_update) | **PATCH** /accounting/bank-feed-accounts/{id} | Update Bank Feed Account |
+
+_AccountingApi_ | [**bank_feed_statements_add**](docs/apis/AccountingApi.md#bank_feed_statements_add) | **POST** /accounting/bank-feed-statements | Create Bank Feed Statement |
+
+_AccountingApi_ | [**bank_feed_statements_all**](docs/apis/AccountingApi.md#bank_feed_statements_all) | **GET** /accounting/bank-feed-statements | List Bank Feed Statements |
+
+_AccountingApi_ | [**bank_feed_statements_delete**](docs/apis/AccountingApi.md#bank_feed_statements_delete) | **DELETE** /accounting/bank-feed-statements/{id} | Delete Bank Feed Statement |
+
+_AccountingApi_ | [**bank_feed_statements_one**](docs/apis/AccountingApi.md#bank_feed_statements_one) | **GET** /accounting/bank-feed-statements/{id} | Get Bank Feed Statement |
+
+_AccountingApi_ | [**bank_feed_statements_update**](docs/apis/AccountingApi.md#bank_feed_statements_update) | **PATCH** /accounting/bank-feed-statements/{id} | Update Bank Feed Statement |
 
 _AccountingApi_ | [**bill_payments_add**](docs/apis/AccountingApi.md#bill_payments_add) | **POST** /accounting/bill-payments | Create Bill Payment |
 
@@ -1056,6 +1088,9 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [BalanceSheetReports](docs/models/BalanceSheetReports.md)
  - [BalanceSheetUncategorizedItemsAccount](docs/models/BalanceSheetUncategorizedItemsAccount.md)
  - [BankAccount](docs/models/BankAccount.md)
+ - [BankFeedAccount](docs/models/BankFeedAccount.md)
+ - [BankFeedStatement](docs/models/BankFeedStatement.md)
+ - [BankFeedStatementTransactions](docs/models/BankFeedStatementTransactions.md)
  - [Benefit](docs/models/Benefit.md)
  - [Bill](docs/models/Bill.md)
  - [BillLineItem](docs/models/BillLineItem.md)
@@ -1114,6 +1149,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateApplicationResponse](docs/models/CreateApplicationResponse.md)
  - [CreateAttachmentRequest](docs/models/CreateAttachmentRequest.md)
  - [CreateAttachmentResponse](docs/models/CreateAttachmentResponse.md)
+ - [CreateBankFeedAccountResponse](docs/models/CreateBankFeedAccountResponse.md)
+ - [CreateBankFeedStatementResponse](docs/models/CreateBankFeedStatementResponse.md)
  - [CreateBillPaymentResponse](docs/models/CreateBillPaymentResponse.md)
  - [CreateBillResponse](docs/models/CreateBillResponse.md)
  - [CreateCallbackState](docs/models/CreateCallbackState.md)
@@ -1179,6 +1216,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreditNote](docs/models/CreditNote.md)
  - [CreditNotesFilter](docs/models/CreditNotesFilter.md)
  - [CreditNotesSort](docs/models/CreditNotesSort.md)
+ - [CreditOrDebit](docs/models/CreditOrDebit.md)
  - [CrmEventType](docs/models/CrmEventType.md)
  - [Currency](docs/models/Currency.md)
  - [CustomField](docs/models/CustomField.md)
@@ -1194,6 +1232,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteApplicantResponse](docs/models/DeleteApplicantResponse.md)
  - [DeleteApplicationResponse](docs/models/DeleteApplicationResponse.md)
  - [DeleteAttachmentResponse](docs/models/DeleteAttachmentResponse.md)
+ - [DeleteBankFeedAccountResponse](docs/models/DeleteBankFeedAccountResponse.md)
+ - [DeleteBankFeedStatementResponse](docs/models/DeleteBankFeedStatementResponse.md)
  - [DeleteBillPaymentResponse](docs/models/DeleteBillPaymentResponse.md)
  - [DeleteBillResponse](docs/models/DeleteBillResponse.md)
  - [DeleteCommentResponse](docs/models/DeleteCommentResponse.md)
@@ -1320,6 +1360,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetAttachmentResponse](docs/models/GetAttachmentResponse.md)
  - [GetAttachmentsResponse](docs/models/GetAttachmentsResponse.md)
  - [GetBalanceSheetResponse](docs/models/GetBalanceSheetResponse.md)
+ - [GetBankFeedAccountResponse](docs/models/GetBankFeedAccountResponse.md)
+ - [GetBankFeedAccountsResponse](docs/models/GetBankFeedAccountsResponse.md)
+ - [GetBankFeedStatementResponse](docs/models/GetBankFeedStatementResponse.md)
+ - [GetBankFeedStatementsResponse](docs/models/GetBankFeedStatementsResponse.md)
  - [GetBillPaymentResponse](docs/models/GetBillPaymentResponse.md)
  - [GetBillPaymentsResponse](docs/models/GetBillPaymentsResponse.md)
  - [GetBillResponse](docs/models/GetBillResponse.md)
@@ -1639,6 +1683,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateActivityResponse](docs/models/UpdateActivityResponse.md)
  - [UpdateApplicantResponse](docs/models/UpdateApplicantResponse.md)
  - [UpdateApplicationResponse](docs/models/UpdateApplicationResponse.md)
+ - [UpdateBankFeedAccountResponse](docs/models/UpdateBankFeedAccountResponse.md)
+ - [UpdateBankFeedStatementResponse](docs/models/UpdateBankFeedStatementResponse.md)
  - [UpdateBillPaymentResponse](docs/models/UpdateBillPaymentResponse.md)
  - [UpdateBillResponse](docs/models/UpdateBillResponse.md)
  - [UpdateCommentResponse](docs/models/UpdateCommentResponse.md)
