@@ -73,6 +73,76 @@ class TestAccountingApi(unittest.TestCase):
         """
         pass
 
+    def test_bank_feed_accounts_add(self):
+        """Test case for bank_feed_accounts_add
+
+        Create Bank Feed Account  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_accounts_all(self):
+        """Test case for bank_feed_accounts_all
+
+        List Bank Feed Accounts  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_accounts_delete(self):
+        """Test case for bank_feed_accounts_delete
+
+        Delete Bank Feed Account  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_accounts_one(self):
+        """Test case for bank_feed_accounts_one
+
+        Get Bank Feed Account  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_accounts_update(self):
+        """Test case for bank_feed_accounts_update
+
+        Update Bank Feed Account  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_statements_add(self):
+        """Test case for bank_feed_statements_add
+
+        Create Bank Feed Statement  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_statements_all(self):
+        """Test case for bank_feed_statements_all
+
+        List Bank Feed Statements  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_statements_delete(self):
+        """Test case for bank_feed_statements_delete
+
+        Delete Bank Feed Statement  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_statements_one(self):
+        """Test case for bank_feed_statements_one
+
+        Get Bank Feed Statement  # noqa: E501
+        """
+        pass
+
+    def test_bank_feed_statements_update(self):
+        """Test case for bank_feed_statements_update
+
+        Update Bank Feed Statement  # noqa: E501
+        """
+        pass
+
     def test_bill_payments_add(self):
         """Test case for bill_payments_add
 

@@ -11,6 +11,16 @@ Method | HTTP request | Description
 [**attachments_download**](AccountingApi.md#attachments_download) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment
 [**attachments_one**](AccountingApi.md#attachments_one) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment
 [**balance_sheet_one**](AccountingApi.md#balance_sheet_one) | **GET** /accounting/balance-sheet | Get BalanceSheet
+[**bank_feed_accounts_add**](AccountingApi.md#bank_feed_accounts_add) | **POST** /accounting/bank-feed-accounts | Create Bank Feed Account
+[**bank_feed_accounts_all**](AccountingApi.md#bank_feed_accounts_all) | **GET** /accounting/bank-feed-accounts | List Bank Feed Accounts
+[**bank_feed_accounts_delete**](AccountingApi.md#bank_feed_accounts_delete) | **DELETE** /accounting/bank-feed-accounts/{id} | Delete Bank Feed Account
+[**bank_feed_accounts_one**](AccountingApi.md#bank_feed_accounts_one) | **GET** /accounting/bank-feed-accounts/{id} | Get Bank Feed Account
+[**bank_feed_accounts_update**](AccountingApi.md#bank_feed_accounts_update) | **PATCH** /accounting/bank-feed-accounts/{id} | Update Bank Feed Account
+[**bank_feed_statements_add**](AccountingApi.md#bank_feed_statements_add) | **POST** /accounting/bank-feed-statements | Create Bank Feed Statement
+[**bank_feed_statements_all**](AccountingApi.md#bank_feed_statements_all) | **GET** /accounting/bank-feed-statements | List Bank Feed Statements
+[**bank_feed_statements_delete**](AccountingApi.md#bank_feed_statements_delete) | **DELETE** /accounting/bank-feed-statements/{id} | Delete Bank Feed Statement
+[**bank_feed_statements_one**](AccountingApi.md#bank_feed_statements_one) | **GET** /accounting/bank-feed-statements/{id} | Get Bank Feed Statement
+[**bank_feed_statements_update**](AccountingApi.md#bank_feed_statements_update) | **PATCH** /accounting/bank-feed-statements/{id} | Update Bank Feed Statement
 [**bill_payments_add**](AccountingApi.md#bill_payments_add) | **POST** /accounting/bill-payments | Create Bill Payment
 [**bill_payments_all**](AccountingApi.md#bill_payments_all) | **GET** /accounting/bill-payments | List Bill Payments
 [**bill_payments_delete**](AccountingApi.md#bill_payments_delete) | **DELETE** /accounting/bill-payments/{id} | Delete Bill Payment
@@ -874,6 +884,1162 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | BalanceSheet |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_accounts_add**
+> CreateBankFeedAccountResponse bank_feed_accounts_add(bank_feed_account)
+
+Create Bank Feed Account
+
+Create Bank Feed Account
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.create_bank_feed_account_response import CreateBankFeedAccountResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.bank_feed_account import BankFeedAccount
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    bank_feed_account = BankFeedAccount(
+        bank_account_type="bank",
+        source_account_id="src_456",
+        target_account_id="tgt_789",
+        target_account_name="Main Company Checking",
+        target_account_number="NL91ABNA0417164300",
+        currency=Currency("USD"),
+        feed_status="pending",
+        country="US",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
+    ) # BankFeedAccount | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_add(bank_feed_account)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_add(bank_feed_account, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bank_feed_account** | [**BankFeedAccount**](BankFeedAccount.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreateBankFeedAccountResponse**](CreateBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Bank Feed Accounts |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_accounts_all**
+> GetBankFeedAccountsResponse bank_feed_accounts_all()
+
+List Bank Feed Accounts
+
+List Bank Feed Accounts
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.get_bank_feed_accounts_response import GetBankFeedAccountsResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List Bank Feed Accounts
+        api_response = api_instance.bank_feed_accounts_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetBankFeedAccountsResponse**](GetBankFeedAccountsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Accounts |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_accounts_delete**
+> DeleteBankFeedAccountResponse bank_feed_accounts_delete(id)
+
+Delete Bank Feed Account
+
+Delete Bank Feed Account
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.delete_bank_feed_account_response import DeleteBankFeedAccountResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_delete(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeleteBankFeedAccountResponse**](DeleteBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Accounts |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_accounts_one**
+> GetBankFeedAccountResponse bank_feed_accounts_one(id)
+
+Get Bank Feed Account
+
+Get Bank Feed Account
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.get_bank_feed_account_response import GetBankFeedAccountResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_one(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetBankFeedAccountResponse**](GetBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Accounts |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_accounts_update**
+> UpdateBankFeedAccountResponse bank_feed_accounts_update(id, bank_feed_account)
+
+Update Bank Feed Account
+
+Update Bank Feed Account
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.update_bank_feed_account_response import UpdateBankFeedAccountResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.bank_feed_account import BankFeedAccount
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    bank_feed_account = BankFeedAccount(
+        bank_account_type="bank",
+        source_account_id="src_456",
+        target_account_id="tgt_789",
+        target_account_name="Main Company Checking",
+        target_account_number="NL91ABNA0417164300",
+        currency=Currency("USD"),
+        feed_status="pending",
+        country="US",
+        custom_fields=[
+            CustomField(
+                id="2389328923893298",
+                name="employee_level",
+                description="Employee Level",
+                value=None,
+            ),
+        ],
+    ) # BankFeedAccount | 
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_update(id, bank_feed_account)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update Bank Feed Account
+        api_response = api_instance.bank_feed_accounts_update(id, bank_feed_account, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_accounts_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **bank_feed_account** | [**BankFeedAccount**](BankFeedAccount.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateBankFeedAccountResponse**](UpdateBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Accounts |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_statements_add**
+> CreateBankFeedStatementResponse bank_feed_statements_add(bank_feed_statement)
+
+Create Bank Feed Statement
+
+Create Bank Feed Statement
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.create_bank_feed_statement_response import CreateBankFeedStatementResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.bank_feed_statement import BankFeedStatement
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    bank_feed_statement = BankFeedStatement(
+        bank_feed_account_id="acc_456",
+        status="pending",
+        start_date=dateutil_parser('2021-05-01T12:00:00Z'),
+        end_date=dateutil_parser('2025-01-31T12:00:00Z'),
+        start_balance=10500.25,
+        start_balance_credit_or_debit=CreditOrDebit("debit"),
+        end_balance=9800.5,
+        end_balance_credit_or_debit=CreditOrDebit("debit"),
+        transactions=[
+            BankFeedStatementTransactions(
+                posted_date=dateutil_parser('2025-01-15T12:00:00Z'),
+                description="Payment received from ACME Corp",
+                amount=250,
+                credit_or_debit=CreditOrDebit("debit"),
+                source_transaction_id="txn_987",
+                counterparty="ACME Corp",
+                reference="INV-2025-01",
+                transaction_type="payment",
+            ),
+        ],
+    ) # BankFeedStatement | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_add(bank_feed_statement)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_add(bank_feed_statement, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bank_feed_statement** | [**BankFeedStatement**](BankFeedStatement.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreateBankFeedStatementResponse**](CreateBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Bank Feed Statements |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_statements_all**
+> GetBankFeedStatementsResponse bank_feed_statements_all()
+
+List Bank Feed Statements
+
+List Bank Feed Statements
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.get_bank_feed_statements_response import GetBankFeedStatementsResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List Bank Feed Statements
+        api_response = api_instance.bank_feed_statements_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetBankFeedStatementsResponse**](GetBankFeedStatementsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Statements |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_statements_delete**
+> DeleteBankFeedStatementResponse bank_feed_statements_delete(id)
+
+Delete Bank Feed Statement
+
+Delete Bank Feed Statement
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.delete_bank_feed_statement_response import DeleteBankFeedStatementResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_delete(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeleteBankFeedStatementResponse**](DeleteBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Statements |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_statements_one**
+> GetBankFeedStatementResponse bank_feed_statements_one(id)
+
+Get Bank Feed Statement
+
+Get Bank Feed Statement
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.get_bank_feed_statement_response import GetBankFeedStatementResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_one(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetBankFeedStatementResponse**](GetBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Statements |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **bank_feed_statements_update**
+> UpdateBankFeedStatementResponse bank_feed_statements_update(id, bank_feed_statement)
+
+Update Bank Feed Statement
+
+Update Bank Feed Statement
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import accounting_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.update_bank_feed_statement_response import UpdateBankFeedStatementResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.bank_feed_statement import BankFeedStatement
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounting_api.AccountingApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    bank_feed_statement = BankFeedStatement(
+        bank_feed_account_id="acc_456",
+        status="pending",
+        start_date=dateutil_parser('2021-05-01T12:00:00Z'),
+        end_date=dateutil_parser('2025-01-31T12:00:00Z'),
+        start_balance=10500.25,
+        start_balance_credit_or_debit=CreditOrDebit("debit"),
+        end_balance=9800.5,
+        end_balance_credit_or_debit=CreditOrDebit("debit"),
+        transactions=[
+            BankFeedStatementTransactions(
+                posted_date=dateutil_parser('2025-01-15T12:00:00Z'),
+                description="Payment received from ACME Corp",
+                amount=250,
+                credit_or_debit=CreditOrDebit("debit"),
+                source_transaction_id="txn_987",
+                counterparty="ACME Corp",
+                reference="INV-2025-01",
+                transaction_type="payment",
+            ),
+        ],
+    ) # BankFeedStatement | 
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_update(id, bank_feed_statement)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update Bank Feed Statement
+        api_response = api_instance.bank_feed_statements_update(id, bank_feed_statement, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling AccountingApi->bank_feed_statements_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **bank_feed_statement** | [**BankFeedStatement**](BankFeedStatement.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateBankFeedStatementResponse**](UpdateBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Bank Feed Statements |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |
