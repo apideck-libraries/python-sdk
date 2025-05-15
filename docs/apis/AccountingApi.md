@@ -2299,6 +2299,7 @@ with apideck.ApiClient(configuration) as api_client:
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = PaymentsFilter(
         updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+        invoice_id="123",
     ) # PaymentsFilter | Apply filters (optional)
     sort = PaymentsSort(
         by="updated_at",
@@ -10631,6 +10632,7 @@ with apideck.ApiClient(configuration) as api_client:
     limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
     filter = PaymentsFilter(
         updated_since=dateutil_parser('2020-09-30T07:43:32Z'),
+        invoice_id="123",
     ) # PaymentsFilter | Apply filters (optional)
     sort = PaymentsSort(
         by="updated_at",
