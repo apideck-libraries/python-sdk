@@ -124,6 +124,8 @@ class Expense(ModelNormal):
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
+            'updated_by': (str, none_type,),  # noqa: E501
+            'created_by': (str, none_type,),  # noqa: E501
             'pass_through': (PassThroughBody,),  # noqa: E501
         }
 
@@ -154,6 +156,8 @@ class Expense(ModelNormal):
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'row_version': 'row_version',  # noqa: E501
+        'updated_by': 'updated_by',  # noqa: E501
+        'created_by': 'created_by',  # noqa: E501
         'pass_through': 'pass_through',  # noqa: E501
     }
 
@@ -162,6 +166,8 @@ class Expense(ModelNormal):
         'custom_mappings',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
+        'updated_by',  # noqa: E501
+        'created_by',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -225,6 +231,8 @@ class Expense(ModelNormal):
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
+            updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
+            created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
         """
 
@@ -333,6 +341,8 @@ class Expense(ModelNormal):
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
+            updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
+            created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
         """
 

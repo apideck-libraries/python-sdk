@@ -6063,6 +6063,7 @@ with apideck.ApiClient(configuration) as api_client:
                 description="Travel US.",
                 total_amount=275,
                 billable=True,
+                line_number=1,
             ),
         ],
         custom_fields=[
@@ -6549,6 +6550,7 @@ with apideck.ApiClient(configuration) as api_client:
                 description="Travel US.",
                 total_amount=275,
                 billable=True,
+                line_number=1,
             ),
         ],
         custom_fields=[
