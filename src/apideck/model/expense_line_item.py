@@ -94,6 +94,7 @@ class ExpenseLineItem(ModelNormal):
             'tax_rate': (LinkedTaxRate,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'billable': (bool,),  # noqa: E501
+            'line_number': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -113,6 +114,7 @@ class ExpenseLineItem(ModelNormal):
         'tax_rate': 'tax_rate',  # noqa: E501
         'description': 'description',  # noqa: E501
         'billable': 'billable',  # noqa: E501
+        'line_number': 'line_number',  # noqa: E501
     }
 
     read_only_vars = {
@@ -170,6 +172,7 @@ class ExpenseLineItem(ModelNormal):
             tax_rate (LinkedTaxRate): [optional]  # noqa: E501
             description (str, none_type): The expense line item description. [optional]  # noqa: E501
             billable (bool): Boolean that indicates if the line item is billable or not.. [optional]  # noqa: E501
+            line_number (int, none_type): Line number of the resource. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -265,6 +268,7 @@ class ExpenseLineItem(ModelNormal):
             tax_rate (LinkedTaxRate): [optional]  # noqa: E501
             description (str, none_type): The expense line item description. [optional]  # noqa: E501
             billable (bool): Boolean that indicates if the line item is billable or not.. [optional]  # noqa: E501
+            line_number (int, none_type): Line number of the resource. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
