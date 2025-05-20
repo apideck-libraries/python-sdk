@@ -108,8 +108,8 @@ class Lead(ModelNormal):
         lazy_import()
         return {
             'name': (str,),  # noqa: E501
-            'company_name': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
             'owner_id': (str, none_type,),  # noqa: E501
             'owner_name': (str, none_type,),  # noqa: E501
             'company_id': (str, none_type,),  # noqa: E501
@@ -145,8 +145,8 @@ class Lead(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
-        'company_name': 'company_name',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'company_name': 'company_name',  # noqa: E501
         'owner_id': 'owner_id',  # noqa: E501
         'owner_name': 'owner_name',  # noqa: E501
         'company_id': 'company_id',  # noqa: E501
@@ -186,12 +186,11 @@ class Lead(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, company_name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, *args, **kwargs):  # noqa: E501
         """Lead - a model defined in OpenAPI
 
         Args:
             name (str): Full name of the lead.
-            company_name (str, none_type): The name of the company the lead is associated with.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -225,6 +224,7 @@ class Lead(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): Unique identifier for the contact.. [optional]  # noqa: E501
+            company_name (str, none_type): The name of the company the lead is associated with.. [optional]  # noqa: E501
             owner_id (str, none_type): The owner of the lead.. [optional]  # noqa: E501
             owner_name (str, none_type): The name of the owner of the lead.. [optional]  # noqa: E501
             company_id (str, none_type): The company the lead is associated with.. [optional]  # noqa: E501
@@ -279,7 +279,6 @@ class Lead(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.company_name = company_name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -300,12 +299,11 @@ class Lead(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, company_name, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, *args, **kwargs):  # noqa: E501
         """Lead - a model defined in OpenAPI
 
         Args:
             name (str): Full name of the lead.
-            company_name (str, none_type): The name of the company the lead is associated with.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -339,6 +337,7 @@ class Lead(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str): Unique identifier for the contact.. [optional]  # noqa: E501
+            company_name (str, none_type): The name of the company the lead is associated with.. [optional]  # noqa: E501
             owner_id (str, none_type): The owner of the lead.. [optional]  # noqa: E501
             owner_name (str, none_type): The name of the owner of the lead.. [optional]  # noqa: E501
             company_id (str, none_type): The company the lead is associated with.. [optional]  # noqa: E501
@@ -391,7 +390,6 @@ class Lead(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.company_name = company_name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

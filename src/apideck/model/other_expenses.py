@@ -90,12 +90,12 @@ class OtherExpenses(ModelNormal):
         """
         lazy_import()
         return {
-            'total': (float, none_type,),  # noqa: E501
             'records': (ProfitAndLossRecords,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'code': (str,),  # noqa: E501
             'title': (str,),  # noqa: E501
             'type': (ProfitAndLossType,),  # noqa: E501
+            'total': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -104,12 +104,12 @@ class OtherExpenses(ModelNormal):
 
 
     attribute_map = {
-        'total': 'total',  # noqa: E501
         'records': 'records',  # noqa: E501
         'id': 'id',  # noqa: E501
         'code': 'code',  # noqa: E501
         'title': 'title',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'total': 'total',  # noqa: E501
     }
 
     read_only_vars = {
@@ -122,11 +122,10 @@ class OtherExpenses(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, total, records, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, records, *args, **kwargs):  # noqa: E501
         """OtherExpenses - a model defined in OpenAPI
 
         Args:
-            total (float, none_type): The aggregated total of all accounts within this category.
             records (ProfitAndLossRecords):
 
         Keyword Args:
@@ -164,6 +163,7 @@ class OtherExpenses(ModelNormal):
             code (str): The account code of the account. [optional]  # noqa: E501
             title (str): The name of the account.. [optional]  # noqa: E501
             type (ProfitAndLossType): [optional]  # noqa: E501
+            total (float, none_type): The aggregated total of all accounts within this category.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -191,7 +191,6 @@ class OtherExpenses(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.total = total
         self.records = records
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -213,11 +212,10 @@ class OtherExpenses(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, total, records, *args, **kwargs):  # noqa: E501
+    def __init__(self, records, *args, **kwargs):  # noqa: E501
         """OtherExpenses - a model defined in OpenAPI
 
         Args:
-            total (float, none_type): The aggregated total of all accounts within this category.
             records (ProfitAndLossRecords):
 
         Keyword Args:
@@ -255,6 +253,7 @@ class OtherExpenses(ModelNormal):
             code (str): The account code of the account. [optional]  # noqa: E501
             title (str): The name of the account.. [optional]  # noqa: E501
             type (ProfitAndLossType): [optional]  # noqa: E501
+            total (float, none_type): The aggregated total of all accounts within this category.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -280,7 +279,6 @@ class OtherExpenses(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.total = total
         self.records = records
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
