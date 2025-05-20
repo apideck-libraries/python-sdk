@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Full name of the lead. | 
-**company_name** | **str, none_type** | The name of the company the lead is associated with. | 
 **id** | **str** | Unique identifier for the contact. | [optional] [readonly] 
+**company_name** | **str, none_type** | The name of the company the lead is associated with. | [optional] 
 **owner_id** | **str, none_type** | The owner of the lead. | [optional] 
 **owner_name** | **str, none_type** | The name of the owner of the lead. | [optional] 
 **company_id** | **str, none_type** | The company the lead is associated with. | [optional] 
