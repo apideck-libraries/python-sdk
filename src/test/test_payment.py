@@ -16,6 +16,7 @@ import apideck
 from apideck.model.allocation import Allocation
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.deprecated_linked_supplier import DeprecatedLinkedSupplier
 from apideck.model.linked_customer import LinkedCustomer
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
@@ -26,6 +27,7 @@ from apideck.model.payment_type import PaymentType
 globals()['Allocation'] = Allocation
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['DeprecatedLinkedSupplier'] = DeprecatedLinkedSupplier
 globals()['LinkedCustomer'] = LinkedCustomer
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount

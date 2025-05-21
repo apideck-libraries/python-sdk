@@ -14,8 +14,10 @@ import unittest
 
 import apideck
 from apideck.model.application_stage import ApplicationStage
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
 globals()['ApplicationStage'] = ApplicationStage
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 from apideck.model.application import Application
 

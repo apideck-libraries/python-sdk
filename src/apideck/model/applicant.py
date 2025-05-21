@@ -35,6 +35,7 @@ def lazy_import():
     from apideck.model.applicant_social_links import ApplicantSocialLinks
     from apideck.model.applicant_websites import ApplicantWebsites
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.email import Email
     from apideck.model.pass_through_body import PassThroughBody
     from apideck.model.phone_number import PhoneNumber
@@ -43,6 +44,7 @@ def lazy_import():
     globals()['ApplicantSocialLinks'] = ApplicantSocialLinks
     globals()['ApplicantWebsites'] = ApplicantWebsites
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['Email'] = Email
     globals()['PassThroughBody'] = PassThroughBody
     globals()['PhoneNumber'] = PhoneNumber
@@ -131,7 +133,7 @@ class Applicant(ModelNormal):
             'cv_url': (str,),  # noqa: E501
             'record_url': (str, none_type,),  # noqa: E501
             'rejected_at': (datetime, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
             'deleted_by': (str, none_type,),  # noqa: E501
             'deleted_at': (datetime, none_type,),  # noqa: E501
@@ -203,7 +205,6 @@ class Applicant(ModelNormal):
         'sourced_by',  # noqa: E501
         'cv_url',  # noqa: E501
         'rejected_at',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'deleted_by',  # noqa: E501
         'deleted_at',  # noqa: E501
         'updated_by',  # noqa: E501
@@ -286,7 +287,7 @@ class Applicant(ModelNormal):
             cv_url (str): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
             rejected_at (datetime, none_type): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             deleted_by (str, none_type): The user who deleted the object.. [optional]  # noqa: E501
             deleted_at (datetime, none_type): The time at which the object was deleted.. [optional]  # noqa: E501
@@ -412,7 +413,7 @@ class Applicant(ModelNormal):
             cv_url (str): [optional]  # noqa: E501
             record_url (str, none_type): [optional]  # noqa: E501
             rejected_at (datetime, none_type): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             deleted_by (str, none_type): The user who deleted the object.. [optional]  # noqa: E501
             deleted_at (datetime, none_type): The time at which the object was deleted.. [optional]  # noqa: E501

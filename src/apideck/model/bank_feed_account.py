@@ -33,8 +33,10 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
 
 
 class BankFeedAccount(ModelNormal):
@@ -105,7 +107,7 @@ class BankFeedAccount(ModelNormal):
             'feed_status': (str,),  # noqa: E501
             'country': (str, none_type,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
@@ -137,7 +139,6 @@ class BankFeedAccount(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'created_at',  # noqa: E501
         'updated_at',  # noqa: E501
         'updated_by',  # noqa: E501
@@ -194,7 +195,7 @@ class BankFeedAccount(ModelNormal):
             feed_status (str): Current status of the bank feed.. [optional]  # noqa: E501
             country (str, none_type): Country code according to ISO 3166-1 alpha-2.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -290,7 +291,7 @@ class BankFeedAccount(ModelNormal):
             feed_status (str): Current status of the bank feed.. [optional]  # noqa: E501
             country (str, none_type): Country code according to ISO 3166-1 alpha-2.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

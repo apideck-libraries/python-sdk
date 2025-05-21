@@ -18,6 +18,7 @@ from apideck.model.bank_account import BankAccount
 from apideck.model.company_row_type import CompanyRowType
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.email import Email
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.phone_number import PhoneNumber
@@ -29,6 +30,7 @@ globals()['BankAccount'] = BankAccount
 globals()['CompanyRowType'] = CompanyRowType
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['Email'] = Email
 globals()['PassThroughBody'] = PassThroughBody
 globals()['PhoneNumber'] = PhoneNumber

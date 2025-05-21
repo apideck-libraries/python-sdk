@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.address import Address
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
 globals()['Address'] = Address
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 from apideck.model.location import Location
 

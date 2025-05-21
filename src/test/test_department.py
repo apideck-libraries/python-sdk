@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 from apideck.model.department import Department
 

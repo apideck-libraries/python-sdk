@@ -14,11 +14,13 @@ import unittest
 
 import apideck
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.ecommerce_customer_addresses import EcommerceCustomerAddresses
 from apideck.model.email import Email
 from apideck.model.linked_ecommerce_order import LinkedEcommerceOrder
 from apideck.model.phone_number import PhoneNumber
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['EcommerceCustomerAddresses'] = EcommerceCustomerAddresses
 globals()['Email'] = Email
 globals()['LinkedEcommerceOrder'] = LinkedEcommerceOrder

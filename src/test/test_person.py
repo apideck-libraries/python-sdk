@@ -13,7 +13,9 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.gender import Gender
+globals()['CustomMappings'] = CustomMappings
 globals()['Gender'] = Gender
 from apideck.model.person import Person
 

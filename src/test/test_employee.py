@@ -17,6 +17,7 @@ from apideck.model.address import Address
 from apideck.model.bank_account import BankAccount
 from apideck.model.country import Country
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.email import Email
 from apideck.model.employee_compensation import EmployeeCompensation
 from apideck.model.employee_employment_role import EmployeeEmploymentRole
@@ -35,6 +36,7 @@ globals()['Address'] = Address
 globals()['BankAccount'] = BankAccount
 globals()['Country'] = Country
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['Email'] = Email
 globals()['EmployeeCompensation'] = EmployeeCompensation
 globals()['EmployeeEmploymentRole'] = EmployeeEmploymentRole

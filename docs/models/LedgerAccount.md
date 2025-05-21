@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **sub_accounts** | **[bool, date, datetime, dict, float, int, list, str, none_type]** | The sub accounts of the account. | [optional] [readonly] 
 **last_reconciliation_date** | **date, none_type** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
 **subsidiaries** | **[bool, date, datetime, dict, float, int, list, str, none_type]** | The subsidiaries the account belongs to. | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 

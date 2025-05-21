@@ -33,11 +33,13 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.expense_line_item import ExpenseLineItem
     from apideck.model.linked_tax_rate import LinkedTaxRate
     from apideck.model.pass_through_body import PassThroughBody
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['ExpenseLineItem'] = ExpenseLineItem
     globals()['LinkedTaxRate'] = LinkedTaxRate
     globals()['PassThroughBody'] = PassThroughBody
@@ -120,7 +122,7 @@ class Expense(ModelNormal):
             'tax_rate': (LinkedTaxRate,),  # noqa: E501
             'total_amount': (float, none_type,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
@@ -163,7 +165,6 @@ class Expense(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
         'updated_by',  # noqa: E501
@@ -227,7 +228,7 @@ class Expense(ModelNormal):
             tax_rate (LinkedTaxRate): [optional]  # noqa: E501
             total_amount (float, none_type): The total amount of the expense line item.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
@@ -337,7 +338,7 @@ class Expense(ModelNormal):
             tax_rate (LinkedTaxRate): [optional]  # noqa: E501
             total_amount (float, none_type): The total amount of the expense line item.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501

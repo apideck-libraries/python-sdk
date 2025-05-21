@@ -31,10 +31,12 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.ecommerce_product_categories import EcommerceProductCategories
     from apideck.model.ecommerce_product_images import EcommerceProductImages
     from apideck.model.ecommerce_product_options import EcommerceProductOptions
     from apideck.model.ecommerce_product_variants import EcommerceProductVariants
+    globals()['CustomMappings'] = CustomMappings
     globals()['EcommerceProductCategories'] = EcommerceProductCategories
     globals()['EcommerceProductImages'] = EcommerceProductImages
     globals()['EcommerceProductOptions'] = EcommerceProductOptions
@@ -106,7 +108,7 @@ class EcommerceProduct(ModelNormal):
             'variants': ([EcommerceProductVariants],),  # noqa: E501
             'tags': ([str, none_type],),  # noqa: E501
             'categories': ([EcommerceProductCategories],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
@@ -138,7 +140,6 @@ class EcommerceProduct(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'created_at',  # noqa: E501
         'updated_at',  # noqa: E501
     }
@@ -197,7 +198,7 @@ class EcommerceProduct(ModelNormal):
             variants ([EcommerceProductVariants]): [optional]  # noqa: E501
             tags ([str, none_type]): An array of tags for the product, used for organization and searching.. [optional]  # noqa: E501
             categories ([EcommerceProductCategories]): An array of categories for the product, used for organization and searching.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
@@ -295,7 +296,7 @@ class EcommerceProduct(ModelNormal):
             variants ([EcommerceProductVariants]): [optional]  # noqa: E501
             tags ([str, none_type]): An array of tags for the product, used for organization and searching.. [optional]  # noqa: E501
             categories ([EcommerceProductCategories]): An array of categories for the product, used for organization and searching.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """

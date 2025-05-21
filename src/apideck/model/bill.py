@@ -35,6 +35,7 @@ def lazy_import():
     from apideck.model.bill_line_item import BillLineItem
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
     from apideck.model.linked_supplier import LinkedSupplier
     from apideck.model.linked_tracking_categories import LinkedTrackingCategories
@@ -43,6 +44,7 @@ def lazy_import():
     globals()['BillLineItem'] = BillLineItem
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
     globals()['LinkedSupplier'] = LinkedSupplier
     globals()['LinkedTrackingCategories'] = LinkedTrackingCategories
@@ -144,7 +146,7 @@ class Bill(ModelNormal):
             'created_at': (datetime, none_type,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'pass_through': (PassThroughBody,),  # noqa: E501
             'accounting_period': (str, none_type,),  # noqa: E501
         }
@@ -205,7 +207,6 @@ class Bill(ModelNormal):
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
-        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -284,7 +285,7 @@ class Bill(ModelNormal):
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
             accounting_period (str, none_type): Accounting period. [optional]  # noqa: E501
         """
@@ -406,7 +407,7 @@ class Bill(ModelNormal):
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
             accounting_period (str, none_type): Accounting period. [optional]  # noqa: E501
         """

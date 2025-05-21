@@ -32,10 +32,12 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.address import Address
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.email import Email
     from apideck.model.pass_through_body import PassThroughBody
     from apideck.model.phone_number import PhoneNumber
     globals()['Address'] = Address
+    globals()['CustomMappings'] = CustomMappings
     globals()['Email'] = Email
     globals()['PassThroughBody'] = PassThroughBody
     globals()['PhoneNumber'] = PhoneNumber
@@ -112,7 +114,7 @@ class User(ModelNormal):
             'password': (str, none_type,),  # noqa: E501
             'addresses': ([Address],),  # noqa: E501
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
             'pass_through': (PassThroughBody,),  # noqa: E501
@@ -150,7 +152,6 @@ class User(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
     }
@@ -213,7 +214,7 @@ class User(ModelNormal):
             password (str, none_type): The password of the user. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the user was last updated.. [optional]  # noqa: E501
             created_at (str, none_type): The date and time when the user was created.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
@@ -319,7 +320,7 @@ class User(ModelNormal):
             password (str, none_type): The password of the user. [optional]  # noqa: E501
             addresses ([Address]): [optional]  # noqa: E501
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the user was last updated.. [optional]  # noqa: E501
             created_at (str, none_type): The date and time when the user was created.. [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501

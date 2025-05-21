@@ -34,6 +34,7 @@ def lazy_import():
     from apideck.model.bank_account import BankAccount
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.ledger_account_categories import LedgerAccountCategories
     from apideck.model.ledger_account_parent_account import LedgerAccountParentAccount
     from apideck.model.linked_tax_rate import LinkedTaxRate
@@ -41,6 +42,7 @@ def lazy_import():
     globals()['BankAccount'] = BankAccount
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['LedgerAccountCategories'] = LedgerAccountCategories
     globals()['LedgerAccountParentAccount'] = LedgerAccountParentAccount
     globals()['LinkedTaxRate'] = LinkedTaxRate
@@ -160,7 +162,7 @@ class LedgerAccount(ModelNormal):
             'sub_accounts': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'last_reconciliation_date': (date, none_type,),  # noqa: E501
             'subsidiaries': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
@@ -216,7 +218,6 @@ class LedgerAccount(ModelNormal):
         'id',  # noqa: E501
         'categories',  # noqa: E501
         'sub_accounts',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -287,7 +288,7 @@ class LedgerAccount(ModelNormal):
             sub_accounts ([bool, date, datetime, dict, float, int, list, str, none_type]): The sub accounts of the account.. [optional]  # noqa: E501
             last_reconciliation_date (date, none_type): Reconciliation Date means the last calendar day of each Reconciliation Period.. [optional]  # noqa: E501
             subsidiaries ([bool, date, datetime, dict, float, int, list, str, none_type]): The subsidiaries the account belongs to.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -402,7 +403,7 @@ class LedgerAccount(ModelNormal):
             sub_accounts ([bool, date, datetime, dict, float, int, list, str, none_type]): The sub accounts of the account.. [optional]  # noqa: E501
             last_reconciliation_date (date, none_type): Reconciliation Date means the last calendar day of each Reconciliation Period.. [optional]  # noqa: E501
             subsidiaries ([bool, date, datetime, dict, float, int, list, str, none_type]): The subsidiaries the account belongs to.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

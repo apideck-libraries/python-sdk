@@ -17,6 +17,7 @@ from apideck.model.bank_account import BankAccount
 from apideck.model.bill_line_item import BillLineItem
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_supplier import LinkedSupplier
 from apideck.model.linked_tracking_categories import LinkedTrackingCategories
@@ -25,6 +26,7 @@ globals()['BankAccount'] = BankAccount
 globals()['BillLineItem'] = BillLineItem
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
 globals()['LinkedSupplier'] = LinkedSupplier
 globals()['LinkedTrackingCategories'] = LinkedTrackingCategories

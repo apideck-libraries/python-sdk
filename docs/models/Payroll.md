@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **processed_date** | **str, none_type** | The date the payroll was processed. | [optional] 
 **totals** | [**PayrollTotals**](PayrollTotals.md) |  | [optional] 
 **compensations** | [**[Compensation]**](Compensation.md) | An array of compensations for the payroll. | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

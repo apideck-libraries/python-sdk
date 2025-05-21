@@ -36,6 +36,7 @@ def lazy_import():
     from apideck.model.company_row_type import CompanyRowType
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.email import Email
     from apideck.model.pass_through_body import PassThroughBody
     from apideck.model.phone_number import PhoneNumber
@@ -47,6 +48,7 @@ def lazy_import():
     globals()['CompanyRowType'] = CompanyRowType
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['Email'] = Email
     globals()['PassThroughBody'] = PassThroughBody
     globals()['PhoneNumber'] = PhoneNumber
@@ -137,7 +139,7 @@ class Company(ModelNormal):
             'deleted': (bool,),  # noqa: E501
             'salutation': (str, none_type,),  # noqa: E501
             'birthday': (date, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -201,7 +203,6 @@ class Company(ModelNormal):
         'parent_id',  # noqa: E501
         'last_activity_at',  # noqa: E501
         'deleted',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -284,7 +285,7 @@ class Company(ModelNormal):
             deleted (bool): Whether the company is deleted or not. [optional]  # noqa: E501
             salutation (str, none_type): A formal salutation for the person. For example, 'Mr', 'Mrs'. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): Updated by user ID. [optional]  # noqa: E501
             created_by (str, none_type): Created by user ID. [optional]  # noqa: E501
             updated_at (datetime, none_type): Last updated date. [optional]  # noqa: E501
@@ -410,7 +411,7 @@ class Company(ModelNormal):
             deleted (bool): Whether the company is deleted or not. [optional]  # noqa: E501
             salutation (str, none_type): A formal salutation for the person. For example, 'Mr', 'Mrs'. [optional]  # noqa: E501
             birthday (date, none_type): The date of birth of the person.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): Updated by user ID. [optional]  # noqa: E501
             created_by (str, none_type): Created by user ID. [optional]  # noqa: E501
             updated_at (datetime, none_type): Last updated date. [optional]  # noqa: E501

@@ -32,6 +32,7 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.currency import Currency
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.ecommerce_address import EcommerceAddress
     from apideck.model.ecommerce_discount import EcommerceDiscount
     from apideck.model.ecommerce_order_line_item import EcommerceOrderLineItem
@@ -39,6 +40,7 @@ def lazy_import():
     from apideck.model.linked_ecommerce_customer import LinkedEcommerceCustomer
     from apideck.model.tracking_item import TrackingItem
     globals()['Currency'] = Currency
+    globals()['CustomMappings'] = CustomMappings
     globals()['EcommerceAddress'] = EcommerceAddress
     globals()['EcommerceDiscount'] = EcommerceDiscount
     globals()['EcommerceOrderLineItem'] = EcommerceOrderLineItem
@@ -134,7 +136,7 @@ class EcommerceOrder(ModelNormal):
             'tracking': ([TrackingItem],),  # noqa: E501
             'line_items': ([EcommerceOrderLineItem],),  # noqa: E501
             'note': (str, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
@@ -173,7 +175,6 @@ class EcommerceOrder(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'created_at',  # noqa: E501
         'updated_at',  # noqa: E501
     }
@@ -239,7 +240,7 @@ class EcommerceOrder(ModelNormal):
             tracking ([TrackingItem]): [optional]  # noqa: E501
             line_items ([EcommerceOrderLineItem]): [optional]  # noqa: E501
             note (str, none_type): Note for the order.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
@@ -344,7 +345,7 @@ class EcommerceOrder(ModelNormal):
             tracking ([TrackingItem]): [optional]  # noqa: E501
             line_items ([EcommerceOrderLineItem]): [optional]  # noqa: E501
             note (str, none_type): Note for the order.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """

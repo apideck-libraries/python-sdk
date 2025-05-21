@@ -35,6 +35,7 @@ def lazy_import():
     from apideck.model.bank_account import BankAccount
     from apideck.model.country import Country
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.email import Email
     from apideck.model.employee_compensation import EmployeeCompensation
     from apideck.model.employee_employment_role import EmployeeEmploymentRole
@@ -53,6 +54,7 @@ def lazy_import():
     globals()['BankAccount'] = BankAccount
     globals()['Country'] = Country
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['Email'] = Email
     globals()['EmployeeCompensation'] = EmployeeCompensation
     globals()['EmployeeEmploymentRole'] = EmployeeEmploymentRole
@@ -181,7 +183,7 @@ class Employee(ModelNormal):
             'food_allergies': ([str], none_type,),  # noqa: E501
             'probation_period': (ProbationPeriod,),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'deleted': (bool, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
@@ -268,7 +270,6 @@ class Employee(ModelNormal):
 
     read_only_vars = {
         'downstream_id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -372,7 +373,7 @@ class Employee(ModelNormal):
             food_allergies ([str], none_type): Indicate the employee's food allergies.. [optional]  # noqa: E501
             probation_period (ProbationPeriod): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -520,7 +521,7 @@ class Employee(ModelNormal):
             food_allergies ([str], none_type): Indicate the employee's food allergies.. [optional]  # noqa: E501
             probation_period (ProbationPeriod): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             deleted (bool, none_type): Flag to indicate if the object is deleted.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

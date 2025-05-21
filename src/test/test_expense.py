@@ -15,11 +15,13 @@ import unittest
 import apideck
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.expense_line_item import ExpenseLineItem
 from apideck.model.linked_tax_rate import LinkedTaxRate
 from apideck.model.pass_through_body import PassThroughBody
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['ExpenseLineItem'] = ExpenseLineItem
 globals()['LinkedTaxRate'] = LinkedTaxRate
 globals()['PassThroughBody'] = PassThroughBody

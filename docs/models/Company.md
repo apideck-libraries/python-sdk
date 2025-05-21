@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **deleted** | **bool** | Whether the company is deleted or not | [optional] [readonly] 
 **salutation** | **str, none_type** | A formal salutation for the person. For example, &#39;Mr&#39;, &#39;Mrs&#39; | [optional] 
 **birthday** | **date, none_type** | The date of birth of the person. | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **updated_by** | **str, none_type** | Updated by user ID | [optional] [readonly] 
 **created_by** | **str, none_type** | Created by user ID | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | Last updated date | [optional] [readonly] 

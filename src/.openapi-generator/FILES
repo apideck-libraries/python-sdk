@@ -215,6 +215,7 @@ apideck/model/currency.py
 apideck/model/custom_field.py
 apideck/model/custom_field_finder.py
 apideck/model/custom_mapping.py
+apideck/model/custom_mappings.py
 apideck/model/customer.py
 apideck/model/customers_filter.py
 apideck/model/customers_sort.py
@@ -946,6 +947,7 @@ docs/Currency.md
 docs/CustomField.md
 docs/CustomFieldFinder.md
 docs/CustomMapping.md
+docs/CustomMappings.md
 docs/Customer.md
 docs/CustomersFilter.md
 docs/CustomersSort.md
@@ -1689,6 +1691,7 @@ test/test_currency.py
 test/test_custom_field.py
 test/test_custom_field_finder.py
 test/test_custom_mapping.py
+test/test_custom_mappings.py
 test/test_customer.py
 test/test_customers_filter.py
 test/test_customers_sort.py

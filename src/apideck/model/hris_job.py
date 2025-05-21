@@ -31,8 +31,10 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.employment_status import EmploymentStatus
     from apideck.model.hris_job_location import HrisJobLocation
+    globals()['CustomMappings'] = CustomMappings
     globals()['EmploymentStatus'] = EmploymentStatus
     globals()['HrisJobLocation'] = HrisJobLocation
 
@@ -99,7 +101,7 @@ class HrisJob(ModelNormal):
             'department': (str, none_type,),  # noqa: E501
             'is_primary': (bool, none_type,),  # noqa: E501
             'location': (HrisJobLocation,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
         }
 
     @cached_property
@@ -122,7 +124,6 @@ class HrisJob(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -172,7 +173,7 @@ class HrisJob(ModelNormal):
             department (str, none_type): Department name. [optional]  # noqa: E501
             is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
             location (HrisJobLocation): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,7 +264,7 @@ class HrisJob(ModelNormal):
             department (str, none_type): Department name. [optional]  # noqa: E501
             is_primary (bool, none_type): Indicates whether this the employee's primary job.. [optional]  # noqa: E501
             location (HrisJobLocation): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

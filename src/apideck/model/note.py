@@ -31,7 +31,9 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.pass_through_body import PassThroughBody
+    globals()['CustomMappings'] = CustomMappings
     globals()['PassThroughBody'] = PassThroughBody
 
 
@@ -91,7 +93,7 @@ class Note(ModelNormal):
             'activity_id': (str, none_type,),  # noqa: E501
             'lead_id': (str, none_type,),  # noqa: E501
             'active': (bool, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
@@ -125,7 +127,6 @@ class Note(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -180,7 +181,7 @@ class Note(ModelNormal):
             activity_id (str, none_type): The activity that is related to the note.. [optional]  # noqa: E501
             lead_id (str, none_type): The lead that is related to the note.. [optional]  # noqa: E501
             active (bool, none_type): Whether the Note is active or not.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user that last updated the note.. [optional]  # noqa: E501
             created_by (str, none_type): The user that created the note.. [optional]  # noqa: E501
             updated_at (str, none_type): The timestamp when the note was last updated. [optional]  # noqa: E501
@@ -277,7 +278,7 @@ class Note(ModelNormal):
             activity_id (str, none_type): The activity that is related to the note.. [optional]  # noqa: E501
             lead_id (str, none_type): The lead that is related to the note.. [optional]  # noqa: E501
             active (bool, none_type): Whether the Note is active or not.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user that last updated the note.. [optional]  # noqa: E501
             created_by (str, none_type): The user that created the note.. [optional]  # noqa: E501
             updated_at (str, none_type): The timestamp when the note was last updated. [optional]  # noqa: E501

@@ -15,6 +15,7 @@ import unittest
 import apideck
 from apideck.model.cost_of_goods_sold import CostOfGoodsSold
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.expenses import Expenses
 from apideck.model.income import Income
 from apideck.model.other_expenses import OtherExpenses
@@ -23,6 +24,7 @@ from apideck.model.profit_and_loss_indicator import ProfitAndLossIndicator
 from apideck.model.uncategorized_accounts import UncategorizedAccounts
 globals()['CostOfGoodsSold'] = CostOfGoodsSold
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['Expenses'] = Expenses
 globals()['Income'] = Income
 globals()['OtherExpenses'] = OtherExpenses

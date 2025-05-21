@@ -33,9 +33,11 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.assignee import Assignee
     from apideck.model.collection_tag import CollectionTag
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.pass_through_body import PassThroughBody
     globals()['Assignee'] = Assignee
     globals()['CollectionTag'] = CollectionTag
+    globals()['CustomMappings'] = CustomMappings
     globals()['PassThroughBody'] = PassThroughBody
 
 
@@ -107,7 +109,7 @@ class Ticket(ModelNormal):
             'due_date': (datetime, none_type,),  # noqa: E501
             'completed_at': (datetime, none_type,),  # noqa: E501
             'tags': ([CollectionTag],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'pass_through': (PassThroughBody,),  # noqa: E501
         }
 
@@ -143,7 +145,6 @@ class Ticket(ModelNormal):
         'created_at',  # noqa: E501
         'created_by',  # noqa: E501
         'completed_at',  # noqa: E501
-        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -201,7 +202,7 @@ class Ticket(ModelNormal):
             due_date (datetime, none_type): Due date of the ticket. [optional]  # noqa: E501
             completed_at (datetime, none_type): When the ticket was completed. [optional]  # noqa: E501
             tags ([CollectionTag]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
         """
 
@@ -299,7 +300,7 @@ class Ticket(ModelNormal):
             due_date (datetime, none_type): Due date of the ticket. [optional]  # noqa: E501
             completed_at (datetime, none_type): When the ticket was completed. [optional]  # noqa: E501
             tags ([CollectionTag]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             pass_through (PassThroughBody): [optional]  # noqa: E501
         """
 

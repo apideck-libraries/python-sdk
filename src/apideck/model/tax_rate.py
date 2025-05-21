@@ -32,8 +32,10 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.pass_through_body import PassThroughBody
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['PassThroughBody'] = PassThroughBody
 
 
@@ -105,7 +107,7 @@ class TaxRate(ModelNormal):
             'report_tax_type': (str, none_type,),  # noqa: E501
             'original_tax_rate_id': (str, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -147,7 +149,6 @@ class TaxRate(ModelNormal):
     }
 
     read_only_vars = {
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -205,7 +206,7 @@ class TaxRate(ModelNormal):
             report_tax_type (str, none_type): Report Tax type to aggregate tax collected or paid for reporting purposes. [optional]  # noqa: E501
             original_tax_rate_id (str, none_type): ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities.. [optional]  # noqa: E501
             status (str, none_type): Tax rate status. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -308,7 +309,7 @@ class TaxRate(ModelNormal):
             report_tax_type (str, none_type): Report Tax type to aggregate tax collected or paid for reporting purposes. [optional]  # noqa: E501
             original_tax_rate_id (str, none_type): ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities.. [optional]  # noqa: E501
             status (str, none_type): Tax rate status. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

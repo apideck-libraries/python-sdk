@@ -14,9 +14,11 @@ import unittest
 
 import apideck
 from apideck.model.address import Address
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.subsidiary_reference import SubsidiaryReference
 globals()['Address'] = Address
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 globals()['SubsidiaryReference'] = SubsidiaryReference
 from apideck.model.accounting_location import AccountingLocation

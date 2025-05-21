@@ -14,6 +14,7 @@ import unittest
 
 import apideck
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.ecommerce_address import EcommerceAddress
 from apideck.model.ecommerce_discount import EcommerceDiscount
 from apideck.model.ecommerce_order_line_item import EcommerceOrderLineItem
@@ -21,6 +22,7 @@ from apideck.model.ecommerce_order_status import EcommerceOrderStatus
 from apideck.model.linked_ecommerce_customer import LinkedEcommerceCustomer
 from apideck.model.tracking_item import TrackingItem
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['EcommerceAddress'] = EcommerceAddress
 globals()['EcommerceDiscount'] = EcommerceDiscount
 globals()['EcommerceOrderLineItem'] = EcommerceOrderLineItem

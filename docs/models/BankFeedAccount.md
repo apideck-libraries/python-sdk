@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **feed_status** | **str** | Current status of the bank feed. | [optional] 
 **country** | **str, none_type** | Country code according to ISO 3166-1 alpha-2. | [optional] 
 **custom_fields** | [**[CustomField]**](CustomField.md) |  | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 

@@ -15,10 +15,12 @@ import unittest
 import apideck
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.tags import Tags
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 globals()['Tags'] = Tags
 from apideck.model.opportunity import Opportunity

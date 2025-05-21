@@ -15,6 +15,7 @@ import unittest
 import apideck
 from apideck.model.cash_details import CashDetails
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.idempotency_key import IdempotencyKey
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.pos_bank_account import PosBankAccount
@@ -24,6 +25,7 @@ from apideck.model.service_charges import ServiceCharges
 from apideck.model.wallet_details import WalletDetails
 globals()['CashDetails'] = CashDetails
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['IdempotencyKey'] = IdempotencyKey
 globals()['PassThroughBody'] = PassThroughBody
 globals()['PosBankAccount'] = PosBankAccount

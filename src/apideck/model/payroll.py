@@ -32,8 +32,10 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.compensation import Compensation
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.payroll_totals import PayrollTotals
     globals()['Compensation'] = Compensation
+    globals()['CustomMappings'] = CustomMappings
     globals()['PayrollTotals'] = PayrollTotals
 
 
@@ -112,7 +114,7 @@ class Payroll(ModelNormal):
             'processed_date': (str, none_type,),  # noqa: E501
             'totals': (PayrollTotals,),  # noqa: E501
             'compensations': ([Compensation],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
         }
 
     @cached_property
@@ -135,7 +137,6 @@ class Payroll(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -187,7 +188,7 @@ class Payroll(ModelNormal):
             processed_date (str, none_type): The date the payroll was processed.. [optional]  # noqa: E501
             totals (PayrollTotals): [optional]  # noqa: E501
             compensations ([Compensation]): An array of compensations for the payroll.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -283,7 +284,7 @@ class Payroll(ModelNormal):
             processed_date (str, none_type): The date the payroll was processed.. [optional]  # noqa: E501
             totals (PayrollTotals): [optional]  # noqa: E501
             compensations ([Compensation]): An array of compensations for the payroll.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

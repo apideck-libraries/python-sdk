@@ -31,11 +31,13 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.deprecated_linked_tracking_category import DeprecatedLinkedTrackingCategory
     from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
     from apideck.model.linked_ledger_account import LinkedLedgerAccount
     from apideck.model.linked_tracking_categories import LinkedTrackingCategories
     from apideck.model.pass_through_body import PassThroughBody
+    globals()['CustomMappings'] = CustomMappings
     globals()['DeprecatedLinkedTrackingCategory'] = DeprecatedLinkedTrackingCategory
     globals()['InvoiceItemSalesDetails'] = InvoiceItemSalesDetails
     globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
@@ -121,7 +123,7 @@ class InvoiceItem(ModelNormal):
             'location_id': (str, none_type,),  # noqa: E501
             'subsidiary_id': (str, none_type,),  # noqa: E501
             'tax_schedule_id': (str, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -171,7 +173,6 @@ class InvoiceItem(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -240,7 +241,7 @@ class InvoiceItem(ModelNormal):
             location_id (str, none_type): The ID of the location. [optional]  # noqa: E501
             subsidiary_id (str, none_type): The ID of the subsidiary. [optional]  # noqa: E501
             tax_schedule_id (str, none_type): The ID of the tax schedule. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -352,7 +353,7 @@ class InvoiceItem(ModelNormal):
             location_id (str, none_type): The ID of the location. [optional]  # noqa: E501
             subsidiary_id (str, none_type): The ID of the subsidiary. [optional]  # noqa: E501
             tax_schedule_id (str, none_type): The ID of the tax schedule. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

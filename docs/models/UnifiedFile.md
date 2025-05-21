@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **permissions** | [**UnifiedFilePermissions**](UnifiedFilePermissions.md) |  | [optional] 
 **exportable** | **bool** | Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper. | [optional] 
 **export_formats** | **[str], none_type** | The available file formats when exporting this file. | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
