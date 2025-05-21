@@ -14,8 +14,10 @@ import unittest
 
 import apideck
 from apideck.model.compensation import Compensation
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.payroll_totals import PayrollTotals
 globals()['Compensation'] = Compensation
+globals()['CustomMappings'] = CustomMappings
 globals()['PayrollTotals'] = PayrollTotals
 from apideck.model.payroll import Payroll
 

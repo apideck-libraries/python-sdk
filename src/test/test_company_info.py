@@ -15,11 +15,13 @@ import unittest
 import apideck
 from apideck.model.address import Address
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.email import Email
 from apideck.model.phone_number import PhoneNumber
 from apideck.model.tax_rate import TaxRate
 globals()['Address'] = Address
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['Email'] = Email
 globals()['PhoneNumber'] = PhoneNumber
 globals()['TaxRate'] = TaxRate

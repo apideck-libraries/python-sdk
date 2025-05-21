@@ -14,14 +14,10 @@ import unittest
 
 import apideck
 from apideck.model.custom_mappings import CustomMappings
-from apideck.model.pass_through_body import PassThroughBody
-globals()['CustomMappings'] = CustomMappings
-globals()['PassThroughBody'] = PassThroughBody
-from apideck.model.note import Note
 
 
-class TestNote(unittest.TestCase):
-    """Note unit test stubs"""
+class TestCustomMappings(unittest.TestCase):
+    """CustomMappings unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +25,10 @@ class TestNote(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testNote(self):
-        """Test Note"""
+    def testCustomMappings(self):
+        """Test CustomMappings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = Note()  # noqa: E501
+        # model = CustomMappings()  # noqa: E501
         pass
 
 

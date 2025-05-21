@@ -63,7 +63,7 @@ Name | Type | Description | Notes
 **food_allergies** | **[str], none_type** | Indicate the employee&#39;s food allergies. | [optional] 
 **probation_period** | [**ProbationPeriod**](ProbationPeriod.md) |  | [optional] 
 **tags** | [**Tags**](Tags.md) |  | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **deleted** | **bool, none_type** | Flag to indicate if the object is deleted. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 

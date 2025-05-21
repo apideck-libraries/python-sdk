@@ -34,10 +34,12 @@ def lazy_import():
     from apideck.model.activity_attendee import ActivityAttendee
     from apideck.model.address import Address
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.pass_through_body import PassThroughBody
     globals()['ActivityAttendee'] = ActivityAttendee
     globals()['Address'] = Address
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['PassThroughBody'] = PassThroughBody
 
 
@@ -153,7 +155,7 @@ class Activity(ModelNormal):
             'video_conference_id': (str, none_type,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'attendees': ([ActivityAttendee],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (str, none_type,),  # noqa: E501
@@ -225,7 +227,6 @@ class Activity(ModelNormal):
         'id',  # noqa: E501
         'downstream_id',  # noqa: E501
         'duration_minutes',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -318,7 +319,7 @@ class Activity(ModelNormal):
             video_conference_id (str, none_type): The ID of the video conference. [optional]  # noqa: E501
             custom_fields ([CustomField]): Custom fields of the activity. [optional]  # noqa: E501
             attendees ([ActivityAttendee]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the activity. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the activity. [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the activity was last updated. [optional]  # noqa: E501
@@ -454,7 +455,7 @@ class Activity(ModelNormal):
             video_conference_id (str, none_type): The ID of the video conference. [optional]  # noqa: E501
             custom_fields ([CustomField]): Custom fields of the activity. [optional]  # noqa: E501
             attendees ([ActivityAttendee]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the activity. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the activity. [optional]  # noqa: E501
             updated_at (str, none_type): The date and time when the activity was last updated. [optional]  # noqa: E501

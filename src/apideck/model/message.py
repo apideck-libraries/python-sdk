@@ -31,9 +31,11 @@ from apideck.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.error import Error
     from apideck.model.pass_through_body import PassThroughBody
     from apideck.model.price import Price
+    globals()['CustomMappings'] = CustomMappings
     globals()['Error'] = Error
     globals()['PassThroughBody'] = PassThroughBody
     globals()['Price'] = Price
@@ -130,7 +132,7 @@ class Message(ModelNormal):
             'price': (Price,),  # noqa: E501
             'error': (Error,),  # noqa: E501
             'messaging_service_id': (str,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -176,7 +178,6 @@ class Message(ModelNormal):
         'direction',  # noqa: E501
         'status',  # noqa: E501
         'sent_at',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -240,7 +241,7 @@ class Message(ModelNormal):
             price (Price): [optional]  # noqa: E501
             error (Error): [optional]  # noqa: E501
             messaging_service_id (str): The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -349,7 +350,7 @@ class Message(ModelNormal):
             price (Price): [optional]  # noqa: E501
             error (Error): [optional]  # noqa: E501
             messaging_service_id (str): The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

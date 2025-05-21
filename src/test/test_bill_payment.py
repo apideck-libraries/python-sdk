@@ -16,6 +16,7 @@ import apideck
 from apideck.model.bill_payment_allocations import BillPaymentAllocations
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_supplier import LinkedSupplier
 from apideck.model.linked_tracking_categories import LinkedTrackingCategories
@@ -24,6 +25,7 @@ from apideck.model.payment_status import PaymentStatus
 globals()['BillPaymentAllocations'] = BillPaymentAllocations
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount
 globals()['LinkedSupplier'] = LinkedSupplier
 globals()['LinkedTrackingCategories'] = LinkedTrackingCategories

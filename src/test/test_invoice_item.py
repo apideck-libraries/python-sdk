@@ -13,11 +13,13 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.deprecated_linked_tracking_category import DeprecatedLinkedTrackingCategory
 from apideck.model.invoice_item_sales_details import InvoiceItemSalesDetails
 from apideck.model.linked_ledger_account import LinkedLedgerAccount
 from apideck.model.linked_tracking_categories import LinkedTrackingCategories
 from apideck.model.pass_through_body import PassThroughBody
+globals()['CustomMappings'] = CustomMappings
 globals()['DeprecatedLinkedTrackingCategory'] = DeprecatedLinkedTrackingCategory
 globals()['InvoiceItemSalesDetails'] = InvoiceItemSalesDetails
 globals()['LinkedLedgerAccount'] = LinkedLedgerAccount

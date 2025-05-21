@@ -13,10 +13,12 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.ecommerce_product_categories import EcommerceProductCategories
 from apideck.model.ecommerce_product_images import EcommerceProductImages
 from apideck.model.ecommerce_product_options import EcommerceProductOptions
 from apideck.model.ecommerce_product_variants import EcommerceProductVariants
+globals()['CustomMappings'] = CustomMappings
 globals()['EcommerceProductCategories'] = EcommerceProductCategories
 globals()['EcommerceProductImages'] = EcommerceProductImages
 globals()['EcommerceProductOptions'] = EcommerceProductOptions

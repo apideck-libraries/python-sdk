@@ -1222,6 +1222,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CustomField](docs/models/CustomField.md)
  - [CustomFieldFinder](docs/models/CustomFieldFinder.md)
  - [CustomMapping](docs/models/CustomMapping.md)
+ - [CustomMappings](docs/models/CustomMappings.md)
  - [Customer](docs/models/Customer.md)
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [CustomersSort](docs/models/CustomersSort.md)

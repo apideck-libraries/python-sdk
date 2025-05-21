@@ -32,6 +32,7 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.currency import Currency
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.idempotency_key import IdempotencyKey
     from apideck.model.order_customers import OrderCustomers
     from apideck.model.order_discounts import OrderDiscounts
@@ -43,6 +44,7 @@ def lazy_import():
     from apideck.model.pass_through_body import PassThroughBody
     from apideck.model.service_charges import ServiceCharges
     globals()['Currency'] = Currency
+    globals()['CustomMappings'] = CustomMappings
     globals()['IdempotencyKey'] = IdempotencyKey
     globals()['OrderCustomers'] = OrderCustomers
     globals()['OrderDiscounts'] = OrderDiscounts
@@ -167,7 +169,7 @@ class Order(ModelNormal):
             'source': (str, none_type,),  # noqa: E501
             'voided': (bool,),  # noqa: E501
             'voided_at': (datetime,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -232,7 +234,6 @@ class Order(ModelNormal):
         'id',  # noqa: E501
         'source',  # noqa: E501
         'voided_at',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -316,7 +317,7 @@ class Order(ModelNormal):
             source (str, none_type): Source of order. Indicates the way that the order was placed.. [optional]  # noqa: E501
             voided (bool): [optional]  # noqa: E501
             voided_at (datetime): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             version (str, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -445,7 +446,7 @@ class Order(ModelNormal):
             source (str, none_type): Source of order. Indicates the way that the order was placed.. [optional]  # noqa: E501
             voided (bool): [optional]  # noqa: E501
             voided_at (datetime): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             version (str, none_type): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

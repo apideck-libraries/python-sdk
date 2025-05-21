@@ -13,8 +13,10 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.linked_folder import LinkedFolder
 from apideck.model.owner import Owner
+globals()['CustomMappings'] = CustomMappings
 globals()['LinkedFolder'] = LinkedFolder
 globals()['Owner'] = Owner
 from apideck.model.folder import Folder

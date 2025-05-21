@@ -36,11 +36,13 @@ def lazy_import():
     from apideck.model.balance_sheet_liabilities_account import BalanceSheetLiabilitiesAccount
     from apideck.model.balance_sheet_uncategorized_items_account import BalanceSheetUncategorizedItemsAccount
     from apideck.model.currency import Currency
+    from apideck.model.custom_mappings import CustomMappings
     globals()['BalanceSheetAssetsAccount'] = BalanceSheetAssetsAccount
     globals()['BalanceSheetEquityAccount'] = BalanceSheetEquityAccount
     globals()['BalanceSheetLiabilitiesAccount'] = BalanceSheetLiabilitiesAccount
     globals()['BalanceSheetUncategorizedItemsAccount'] = BalanceSheetUncategorizedItemsAccount
     globals()['Currency'] = Currency
+    globals()['CustomMappings'] = CustomMappings
 
 
 class BalanceSheetReports(ModelNormal):
@@ -115,7 +117,7 @@ class BalanceSheetReports(ModelNormal):
             'start_date': (str,),  # noqa: E501
             'currency': (Currency,),  # noqa: E501
             'net_assets': (float,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
@@ -148,7 +150,6 @@ class BalanceSheetReports(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -204,7 +205,7 @@ class BalanceSheetReports(ModelNormal):
             start_date (str): The start date of the report. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             net_assets (float): The net assets of the balance sheet. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
@@ -306,7 +307,7 @@ class BalanceSheetReports(ModelNormal):
             start_date (str): The start date of the report. [optional]  # noqa: E501
             currency (Currency): [optional]  # noqa: E501
             net_assets (float): The net assets of the balance sheet. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501

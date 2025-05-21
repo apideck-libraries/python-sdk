@@ -193,6 +193,7 @@ from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
 from apideck.model.custom_field_finder import CustomFieldFinder
 from apideck.model.custom_mapping import CustomMapping
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.customers_sort import CustomersSort

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **start_date** | **str** | The start date of the report | [optional] 
 **currency** | [**Currency**](Currency.md) |  | [optional] 
 **net_assets** | **float** | The net assets of the balance sheet | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 

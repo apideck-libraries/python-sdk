@@ -17,6 +17,7 @@ from apideck.model.address import Address
 from apideck.model.applicant_social_links import ApplicantSocialLinks
 from apideck.model.applicant_websites import ApplicantWebsites
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.email import Email
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.phone_number import PhoneNumber
@@ -25,6 +26,7 @@ globals()['Address'] = Address
 globals()['ApplicantSocialLinks'] = ApplicantSocialLinks
 globals()['ApplicantWebsites'] = ApplicantWebsites
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['Email'] = Email
 globals()['PassThroughBody'] = PassThroughBody
 globals()['PhoneNumber'] = PhoneNumber

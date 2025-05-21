@@ -16,10 +16,12 @@ import apideck
 from apideck.model.activity_attendee import ActivityAttendee
 from apideck.model.address import Address
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
 globals()['ActivityAttendee'] = ActivityAttendee
 globals()['Address'] = Address
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 from apideck.model.activity import Activity
 

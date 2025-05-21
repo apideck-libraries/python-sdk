@@ -33,6 +33,7 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.address import Address
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.email import Email
     from apideck.model.pass_through_body import PassThroughBody
     from apideck.model.phone_number import PhoneNumber
@@ -41,6 +42,7 @@ def lazy_import():
     from apideck.model.website import Website
     globals()['Address'] = Address
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['Email'] = Email
     globals()['PassThroughBody'] = PassThroughBody
     globals()['PhoneNumber'] = PhoneNumber
@@ -139,12 +141,12 @@ class Contact(ModelNormal):
             'phone_numbers': ([PhoneNumber],),  # noqa: E501
             'emails': ([Email],),  # noqa: E501
             'email_domain': (str, none_type,),  # noqa: E501
-            'custom_fields': ([CustomField],),  # noqa: E501
+            'custom_fields': ([CustomField], none_type,),  # noqa: E501
             'tags': (Tags,),  # noqa: E501
             'first_call_at': (datetime, none_type,),  # noqa: E501
             'first_email_at': (datetime, none_type,),  # noqa: E501
             'last_activity_at': (datetime, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'opportunity_ids': ([str],),  # noqa: E501
@@ -205,7 +207,6 @@ class Contact(ModelNormal):
         'first_call_at',  # noqa: E501
         'first_email_at',  # noqa: E501
         'last_activity_at',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
     }
@@ -281,12 +282,12 @@ class Contact(ModelNormal):
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
             email_domain (str, none_type): [optional]  # noqa: E501
-            custom_fields ([CustomField]): [optional]  # noqa: E501
+            custom_fields ([CustomField], none_type): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             first_call_at (datetime, none_type): The first call date of the contact.. [optional]  # noqa: E501
             first_email_at (datetime, none_type): The first email date of the contact.. [optional]  # noqa: E501
             last_activity_at (datetime, none_type): The last activity date of the contact.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
             created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
             opportunity_ids ([str]): The opportunity ids of the contact.. [optional]  # noqa: E501
@@ -406,12 +407,12 @@ class Contact(ModelNormal):
             phone_numbers ([PhoneNumber]): [optional]  # noqa: E501
             emails ([Email]): [optional]  # noqa: E501
             email_domain (str, none_type): [optional]  # noqa: E501
-            custom_fields ([CustomField]): [optional]  # noqa: E501
+            custom_fields ([CustomField], none_type): [optional]  # noqa: E501
             tags (Tags): [optional]  # noqa: E501
             first_call_at (datetime, none_type): The first call date of the contact.. [optional]  # noqa: E501
             first_email_at (datetime, none_type): The first email date of the contact.. [optional]  # noqa: E501
             last_activity_at (datetime, none_type): The last activity date of the contact.. [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             updated_at (datetime, none_type): The last update date of the contact.. [optional]  # noqa: E501
             created_at (datetime, none_type): The creation date of the contact.. [optional]  # noqa: E501
             opportunity_ids ([str]): The opportunity ids of the contact.. [optional]  # noqa: E501

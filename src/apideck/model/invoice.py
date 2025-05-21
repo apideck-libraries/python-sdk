@@ -35,6 +35,7 @@ def lazy_import():
     from apideck.model.bank_account import BankAccount
     from apideck.model.currency import Currency
     from apideck.model.custom_field import CustomField
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.deprecated_linked_tracking_category import DeprecatedLinkedTrackingCategory
     from apideck.model.invoice_line_item import InvoiceLineItem
     from apideck.model.invoice_payment_allocations import InvoicePaymentAllocations
@@ -46,6 +47,7 @@ def lazy_import():
     globals()['BankAccount'] = BankAccount
     globals()['Currency'] = Currency
     globals()['CustomField'] = CustomField
+    globals()['CustomMappings'] = CustomMappings
     globals()['DeprecatedLinkedTrackingCategory'] = DeprecatedLinkedTrackingCategory
     globals()['InvoiceLineItem'] = InvoiceLineItem
     globals()['InvoicePaymentAllocations'] = InvoicePaymentAllocations
@@ -160,7 +162,7 @@ class Invoice(ModelNormal):
             'accounting_by_row': (bool, none_type,),  # noqa: E501
             'bank_account': (BankAccount,),  # noqa: E501
             'ledger_account': (LinkedLedgerAccount,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'custom_fields': ([CustomField],),  # noqa: E501
             'row_version': (str, none_type,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
@@ -228,7 +230,6 @@ class Invoice(ModelNormal):
     read_only_vars = {
         'id',  # noqa: E501
         'downstream_id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
         'updated_at',  # noqa: E501
@@ -312,7 +313,7 @@ class Invoice(ModelNormal):
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
             ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
@@ -440,7 +441,7 @@ class Invoice(ModelNormal):
             accounting_by_row (bool, none_type): Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.. [optional]  # noqa: E501
             bank_account (BankAccount): [optional]  # noqa: E501
             ledger_account (LinkedLedgerAccount): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             custom_fields ([CustomField]): [optional]  # noqa: E501
             row_version (str, none_type): A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.. [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501

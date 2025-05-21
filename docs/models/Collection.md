@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **type** | **str, none_type** | The collections&#39;s type | [optional] 
 **name** | **str, none_type** | Name of the collection | [optional] 
 **description** | **str, none_type** | Description of the collection | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 

@@ -33,12 +33,14 @@ from apideck.exceptions import ApiAttributeError
 def lazy_import():
     from apideck.model.address import Address
     from apideck.model.currency import Currency
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.email import Email
     from apideck.model.pass_through_body import PassThroughBody
     from apideck.model.phone_number import PhoneNumber
     from apideck.model.website import Website
     globals()['Address'] = Address
     globals()['Currency'] = Currency
+    globals()['CustomMappings'] = CustomMappings
     globals()['Email'] = Email
     globals()['PassThroughBody'] = PassThroughBody
     globals()['PhoneNumber'] = PhoneNumber
@@ -121,7 +123,7 @@ class HrisCompany(ModelNormal):
             'emails': ([Email],),  # noqa: E501
             'websites': ([Website],),  # noqa: E501
             'debtor_id': (str, none_type,),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'deleted': (bool,),  # noqa: E501
             'updated_by': (str, none_type,),  # noqa: E501
             'created_by': (str, none_type,),  # noqa: E501
@@ -159,7 +161,6 @@ class HrisCompany(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'deleted',  # noqa: E501
         'updated_by',  # noqa: E501
         'created_by',  # noqa: E501
@@ -219,7 +220,7 @@ class HrisCompany(ModelNormal):
             emails ([Email]): [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             debtor_id (str, none_type): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             deleted (bool): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501
@@ -322,7 +323,7 @@ class HrisCompany(ModelNormal):
             emails ([Email]): [optional]  # noqa: E501
             websites ([Website]): [optional]  # noqa: E501
             debtor_id (str, none_type): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             deleted (bool): [optional]  # noqa: E501
             updated_by (str, none_type): The user who last updated the object.. [optional]  # noqa: E501
             created_by (str, none_type): The user who created the object.. [optional]  # noqa: E501

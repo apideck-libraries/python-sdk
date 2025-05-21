@@ -15,8 +15,10 @@ import unittest
 import apideck
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 from apideck.model.bank_feed_account import BankFeedAccount
 
 

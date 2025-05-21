@@ -14,9 +14,11 @@ import unittest
 
 import apideck
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.idempotency_key import IdempotencyKey
 from apideck.model.pass_through_body import PassThroughBody
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['IdempotencyKey'] = IdempotencyKey
 globals()['PassThroughBody'] = PassThroughBody
 from apideck.model.modifier import Modifier

@@ -32,11 +32,13 @@ from apideck.exceptions import ApiAttributeError
 
 def lazy_import():
     from apideck.model.currency import Currency
+    from apideck.model.custom_mappings import CustomMappings
     from apideck.model.ecommerce_customer_addresses import EcommerceCustomerAddresses
     from apideck.model.email import Email
     from apideck.model.linked_ecommerce_order import LinkedEcommerceOrder
     from apideck.model.phone_number import PhoneNumber
     globals()['Currency'] = Currency
+    globals()['CustomMappings'] = CustomMappings
     globals()['EcommerceCustomerAddresses'] = EcommerceCustomerAddresses
     globals()['Email'] = Email
     globals()['LinkedEcommerceOrder'] = LinkedEcommerceOrder
@@ -105,7 +107,7 @@ class EcommerceCustomer(ModelNormal):
             'phone_numbers': ([PhoneNumber], none_type,),  # noqa: E501
             'addresses': ([EcommerceCustomerAddresses],),  # noqa: E501
             'orders': ([LinkedEcommerceOrder],),  # noqa: E501
-            'custom_mappings': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'custom_mappings': (CustomMappings,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
@@ -134,7 +136,6 @@ class EcommerceCustomer(ModelNormal):
 
     read_only_vars = {
         'id',  # noqa: E501
-        'custom_mappings',  # noqa: E501
         'created_at',  # noqa: E501
         'updated_at',  # noqa: E501
     }
@@ -190,7 +191,7 @@ class EcommerceCustomer(ModelNormal):
             phone_numbers ([PhoneNumber], none_type): An array of phone numbers for the customer.. [optional]  # noqa: E501
             addresses ([EcommerceCustomerAddresses]): An array of addresses for the customer.. [optional]  # noqa: E501
             orders ([LinkedEcommerceOrder]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """
@@ -285,7 +286,7 @@ class EcommerceCustomer(ModelNormal):
             phone_numbers ([PhoneNumber], none_type): An array of phone numbers for the customer.. [optional]  # noqa: E501
             addresses ([EcommerceCustomerAddresses]): An array of addresses for the customer.. [optional]  # noqa: E501
             orders ([LinkedEcommerceOrder]): [optional]  # noqa: E501
-            custom_mappings ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): When custom mappings are configured on the resource, the result is included here.. [optional]  # noqa: E501
+            custom_mappings (CustomMappings): [optional]  # noqa: E501
             created_at (datetime, none_type): The date and time when the object was created.. [optional]  # noqa: E501
             updated_at (datetime, none_type): The date and time when the object was last updated.. [optional]  # noqa: E501
         """

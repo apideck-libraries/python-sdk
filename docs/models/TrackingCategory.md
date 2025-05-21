@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | The name of the tracking category. | [optional] 
 **code** | **str, none_type** | The code of the tracking category. | [optional] 
 **status** | **str** | Based on the status some functionality is enabled or disabled. | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **row_version** | **str, none_type** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 

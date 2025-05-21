@@ -13,8 +13,10 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.time_off_request_notes import TimeOffRequestNotes
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 globals()['TimeOffRequestNotes'] = TimeOffRequestNotes
 from apideck.model.time_off_request import TimeOffRequest

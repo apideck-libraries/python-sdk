@@ -18,11 +18,13 @@ from apideck.model.balance_sheet_equity_account import BalanceSheetEquityAccount
 from apideck.model.balance_sheet_liabilities_account import BalanceSheetLiabilitiesAccount
 from apideck.model.balance_sheet_uncategorized_items_account import BalanceSheetUncategorizedItemsAccount
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 globals()['BalanceSheetAssetsAccount'] = BalanceSheetAssetsAccount
 globals()['BalanceSheetEquityAccount'] = BalanceSheetEquityAccount
 globals()['BalanceSheetLiabilitiesAccount'] = BalanceSheetLiabilitiesAccount
 globals()['BalanceSheetUncategorizedItemsAccount'] = BalanceSheetUncategorizedItemsAccount
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 from apideck.model.balance_sheet_reports import BalanceSheetReports
 
 

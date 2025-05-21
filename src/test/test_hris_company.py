@@ -15,12 +15,14 @@ import unittest
 import apideck
 from apideck.model.address import Address
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.email import Email
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.phone_number import PhoneNumber
 from apideck.model.website import Website
 globals()['Address'] = Address
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['Email'] = Email
 globals()['PassThroughBody'] = PassThroughBody
 globals()['PhoneNumber'] = PhoneNumber

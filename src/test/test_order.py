@@ -14,6 +14,7 @@ import unittest
 
 import apideck
 from apideck.model.currency import Currency
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.idempotency_key import IdempotencyKey
 from apideck.model.order_customers import OrderCustomers
 from apideck.model.order_discounts import OrderDiscounts
@@ -25,6 +26,7 @@ from apideck.model.order_tenders import OrderTenders
 from apideck.model.pass_through_body import PassThroughBody
 from apideck.model.service_charges import ServiceCharges
 globals()['Currency'] = Currency
+globals()['CustomMappings'] = CustomMappings
 globals()['IdempotencyKey'] = IdempotencyKey
 globals()['OrderCustomers'] = OrderCustomers
 globals()['OrderDiscounts'] = OrderDiscounts

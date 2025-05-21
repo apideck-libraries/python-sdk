@@ -13,8 +13,10 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.employment_status import EmploymentStatus
 from apideck.model.hris_job_location import HrisJobLocation
+globals()['CustomMappings'] = CustomMappings
 globals()['EmploymentStatus'] = EmploymentStatus
 globals()['HrisJobLocation'] = HrisJobLocation
 from apideck.model.hris_job import HrisJob

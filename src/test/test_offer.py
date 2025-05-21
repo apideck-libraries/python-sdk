@@ -13,6 +13,8 @@ import sys
 import unittest
 
 import apideck
+from apideck.model.custom_mappings import CustomMappings
+globals()['CustomMappings'] = CustomMappings
 from apideck.model.offer import Offer
 
 

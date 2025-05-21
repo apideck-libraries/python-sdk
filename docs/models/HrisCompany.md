@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **emails** | [**[Email]**](Email.md) |  | [optional] 
 **websites** | [**[Website]**](Website.md) |  | [optional] 
 **debtor_id** | **str, none_type** |  | [optional] 
-**custom_mappings** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **deleted** | **bool** |  | [optional] [readonly] 
 **updated_by** | **str, none_type** | The user who last updated the object. | [optional] [readonly] 
 **created_by** | **str, none_type** | The user who created the object. | [optional] [readonly] 

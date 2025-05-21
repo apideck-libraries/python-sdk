@@ -15,9 +15,11 @@ import unittest
 import apideck
 from apideck.model.assignee import Assignee
 from apideck.model.collection_tag import CollectionTag
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.pass_through_body import PassThroughBody
 globals()['Assignee'] = Assignee
 globals()['CollectionTag'] = CollectionTag
+globals()['CustomMappings'] = CustomMappings
 globals()['PassThroughBody'] = PassThroughBody
 from apideck.model.ticket import Ticket
 

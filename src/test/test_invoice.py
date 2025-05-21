@@ -17,6 +17,7 @@ from apideck.model.address import Address
 from apideck.model.bank_account import BankAccount
 from apideck.model.currency import Currency
 from apideck.model.custom_field import CustomField
+from apideck.model.custom_mappings import CustomMappings
 from apideck.model.deprecated_linked_tracking_category import DeprecatedLinkedTrackingCategory
 from apideck.model.invoice_line_item import InvoiceLineItem
 from apideck.model.invoice_payment_allocations import InvoicePaymentAllocations
@@ -28,6 +29,7 @@ globals()['Address'] = Address
 globals()['BankAccount'] = BankAccount
 globals()['Currency'] = Currency
 globals()['CustomField'] = CustomField
+globals()['CustomMappings'] = CustomMappings
 globals()['DeprecatedLinkedTrackingCategory'] = DeprecatedLinkedTrackingCategory
 globals()['InvoiceLineItem'] = InvoiceLineItem
 globals()['InvoicePaymentAllocations'] = InvoicePaymentAllocations
