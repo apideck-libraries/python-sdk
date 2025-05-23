@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **tracking** | [**[TrackingItem]**](TrackingItem.md) |  | [optional] 
 **line_items** | [**[EcommerceOrderLineItem]**](EcommerceOrderLineItem.md) |  | [optional] 
 **note** | **str, none_type** | Note for the order. | [optional] 
+**refunds** | [**[EcommerceOrderRefund]**](EcommerceOrderRefund.md) |  | [optional] 
 **custom_mappings** | [**CustomMappings**](CustomMappings.md) |  | [optional] 
 **created_at** | **datetime, none_type** | The date and time when the object was created. | [optional] [readonly] 
 **updated_at** | **datetime, none_type** | The date and time when the object was last updated. | [optional] [readonly] 
