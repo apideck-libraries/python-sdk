@@ -294,6 +294,7 @@ apideck/model/ecommerce_discount.py
 apideck/model/ecommerce_event_type.py
 apideck/model/ecommerce_order.py
 apideck/model/ecommerce_order_line_item.py
+apideck/model/ecommerce_order_refund.py
 apideck/model/ecommerce_order_status.py
 apideck/model/ecommerce_orders_filter.py
 apideck/model/ecommerce_product.py
@@ -1027,6 +1028,7 @@ docs/EcommerceDiscount.md
 docs/EcommerceEventType.md
 docs/EcommerceOrder.md
 docs/EcommerceOrderLineItem.md
+docs/EcommerceOrderRefund.md
 docs/EcommerceOrderStatus.md
 docs/EcommerceOrdersFilter.md
 docs/EcommerceProduct.md
@@ -1771,6 +1773,7 @@ test/test_ecommerce_discount.py
 test/test_ecommerce_event_type.py
 test/test_ecommerce_order.py
 test/test_ecommerce_order_line_item.py
+test/test_ecommerce_order_refund.py
 test/test_ecommerce_order_status.py
 test/test_ecommerce_orders_filter.py
 test/test_ecommerce_product.py

@@ -1301,6 +1301,7 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [EcommerceEventType](docs/models/EcommerceEventType.md)
  - [EcommerceOrder](docs/models/EcommerceOrder.md)
  - [EcommerceOrderLineItem](docs/models/EcommerceOrderLineItem.md)
+ - [EcommerceOrderRefund](docs/models/EcommerceOrderRefund.md)
  - [EcommerceOrderStatus](docs/models/EcommerceOrderStatus.md)
  - [EcommerceOrdersFilter](docs/models/EcommerceOrdersFilter.md)
  - [EcommerceProduct](docs/models/EcommerceProduct.md)

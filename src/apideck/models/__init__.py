@@ -272,6 +272,7 @@ from apideck.model.ecommerce_discount import EcommerceDiscount
 from apideck.model.ecommerce_event_type import EcommerceEventType
 from apideck.model.ecommerce_order import EcommerceOrder
 from apideck.model.ecommerce_order_line_item import EcommerceOrderLineItem
+from apideck.model.ecommerce_order_refund import EcommerceOrderRefund
 from apideck.model.ecommerce_order_status import EcommerceOrderStatus
 from apideck.model.ecommerce_orders_filter import EcommerceOrdersFilter
 from apideck.model.ecommerce_product import EcommerceProduct
