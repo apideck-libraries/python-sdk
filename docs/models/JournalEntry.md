@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **currency** | [**Currency**](Currency.md) |  | [optional] 
 **company_id** | **str, none_type** | The company or subsidiary id the transaction belongs to | [optional] 
 **line_items** | [**[JournalEntryLineItem]**](JournalEntryLineItem.md) | Requires a minimum of 2 line items that sum to 0 | [optional] 
+**status** | **str, none_type** | Journal entry status | [optional] 
 **memo** | **str, none_type** | Reference for the journal entry. | [optional] 
 **posted_at** | **datetime** | This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated. | [optional] 
 **journal_symbol** | **str, none_type** | Journal symbol of the entry. For example IND for indirect costs | [optional] 
