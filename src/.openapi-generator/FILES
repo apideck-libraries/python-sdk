@@ -157,6 +157,8 @@ apideck/model/create_contact_response.py
 apideck/model/create_credit_note_response.py
 apideck/model/create_custom_mapping_request.py
 apideck/model/create_custom_mapping_response.py
+apideck/model/create_custom_object_response.py
+apideck/model/create_custom_object_schema_response.py
 apideck/model/create_customer_response.py
 apideck/model/create_department_response.py
 apideck/model/create_drive_group_response.py
@@ -216,6 +218,13 @@ apideck/model/custom_field.py
 apideck/model/custom_field_finder.py
 apideck/model/custom_mapping.py
 apideck/model/custom_mappings.py
+apideck/model/custom_object.py
+apideck/model/custom_object_fields.py
+apideck/model/custom_object_schema.py
+apideck/model/custom_object_schema_fields.py
+apideck/model/custom_object_schema_options.py
+apideck/model/custom_object_schemas_sort.py
+apideck/model/custom_objects_sort.py
 apideck/model/customer.py
 apideck/model/customers_filter.py
 apideck/model/customers_sort.py
@@ -235,6 +244,8 @@ apideck/model/delete_company_response.py
 apideck/model/delete_consumer_response.py
 apideck/model/delete_contact_response.py
 apideck/model/delete_credit_note_response.py
+apideck/model/delete_custom_object_response.py
+apideck/model/delete_custom_object_schema_response.py
 apideck/model/delete_customer_response.py
 apideck/model/delete_department_response.py
 apideck/model/delete_drive_group_response.py
@@ -391,6 +402,10 @@ apideck/model/get_credit_notes_response.py
 apideck/model/get_custom_fields_response.py
 apideck/model/get_custom_mapping_response.py
 apideck/model/get_custom_mappings_response.py
+apideck/model/get_custom_object_response.py
+apideck/model/get_custom_object_schema_response.py
+apideck/model/get_custom_object_schemas_response.py
+apideck/model/get_custom_objects_response.py
 apideck/model/get_customer_response.py
 apideck/model/get_customers_response.py
 apideck/model/get_department_response.py
@@ -691,6 +706,8 @@ apideck/model/update_contact_response.py
 apideck/model/update_credit_note_response.py
 apideck/model/update_custom_mapping_request.py
 apideck/model/update_custom_mapping_response.py
+apideck/model/update_custom_object_response.py
+apideck/model/update_custom_object_schema_response.py
 apideck/model/update_customer_response.py
 apideck/model/update_department_response.py
 apideck/model/update_drive_group_response.py
@@ -889,6 +906,8 @@ docs/CreateContactResponse.md
 docs/CreateCreditNoteResponse.md
 docs/CreateCustomMappingRequest.md
 docs/CreateCustomMappingResponse.md
+docs/CreateCustomObjectResponse.md
+docs/CreateCustomObjectSchemaResponse.md
 docs/CreateCustomerResponse.md
 docs/CreateDepartmentResponse.md
 docs/CreateDriveGroupResponse.md
@@ -949,6 +968,13 @@ docs/CustomField.md
 docs/CustomFieldFinder.md
 docs/CustomMapping.md
 docs/CustomMappings.md
+docs/CustomObject.md
+docs/CustomObjectFields.md
+docs/CustomObjectSchema.md
+docs/CustomObjectSchemaFields.md
+docs/CustomObjectSchemaOptions.md
+docs/CustomObjectSchemasSort.md
+docs/CustomObjectsSort.md
 docs/Customer.md
 docs/CustomersFilter.md
 docs/CustomersSort.md
@@ -968,6 +994,8 @@ docs/DeleteCompanyResponse.md
 docs/DeleteConsumerResponse.md
 docs/DeleteContactResponse.md
 docs/DeleteCreditNoteResponse.md
+docs/DeleteCustomObjectResponse.md
+docs/DeleteCustomObjectSchemaResponse.md
 docs/DeleteCustomerResponse.md
 docs/DeleteDepartmentResponse.md
 docs/DeleteDriveGroupResponse.md
@@ -1126,6 +1154,10 @@ docs/GetCreditNotesResponse.md
 docs/GetCustomFieldsResponse.md
 docs/GetCustomMappingResponse.md
 docs/GetCustomMappingsResponse.md
+docs/GetCustomObjectResponse.md
+docs/GetCustomObjectSchemaResponse.md
+docs/GetCustomObjectSchemasResponse.md
+docs/GetCustomObjectsResponse.md
 docs/GetCustomerResponse.md
 docs/GetCustomersResponse.md
 docs/GetDepartmentResponse.md
@@ -1431,6 +1463,8 @@ docs/UpdateContactResponse.md
 docs/UpdateCreditNoteResponse.md
 docs/UpdateCustomMappingRequest.md
 docs/UpdateCustomMappingResponse.md
+docs/UpdateCustomObjectResponse.md
+docs/UpdateCustomObjectSchemaResponse.md
 docs/UpdateCustomerResponse.md
 docs/UpdateDepartmentResponse.md
 docs/UpdateDriveGroupResponse.md
@@ -1634,6 +1668,8 @@ test/test_create_contact_response.py
 test/test_create_credit_note_response.py
 test/test_create_custom_mapping_request.py
 test/test_create_custom_mapping_response.py
+test/test_create_custom_object_response.py
+test/test_create_custom_object_schema_response.py
 test/test_create_customer_response.py
 test/test_create_department_response.py
 test/test_create_drive_group_response.py
@@ -1694,6 +1730,13 @@ test/test_custom_field.py
 test/test_custom_field_finder.py
 test/test_custom_mapping.py
 test/test_custom_mappings.py
+test/test_custom_object.py
+test/test_custom_object_fields.py
+test/test_custom_object_schema.py
+test/test_custom_object_schema_fields.py
+test/test_custom_object_schema_options.py
+test/test_custom_object_schemas_sort.py
+test/test_custom_objects_sort.py
 test/test_customer.py
 test/test_customers_filter.py
 test/test_customers_sort.py
@@ -1713,6 +1756,8 @@ test/test_delete_company_response.py
 test/test_delete_consumer_response.py
 test/test_delete_contact_response.py
 test/test_delete_credit_note_response.py
+test/test_delete_custom_object_response.py
+test/test_delete_custom_object_schema_response.py
 test/test_delete_customer_response.py
 test/test_delete_department_response.py
 test/test_delete_drive_group_response.py
@@ -1871,6 +1916,10 @@ test/test_get_credit_notes_response.py
 test/test_get_custom_fields_response.py
 test/test_get_custom_mapping_response.py
 test/test_get_custom_mappings_response.py
+test/test_get_custom_object_response.py
+test/test_get_custom_object_schema_response.py
+test/test_get_custom_object_schemas_response.py
+test/test_get_custom_objects_response.py
 test/test_get_customer_response.py
 test/test_get_customers_response.py
 test/test_get_department_response.py
@@ -2176,6 +2225,8 @@ test/test_update_contact_response.py
 test/test_update_credit_note_response.py
 test/test_update_custom_mapping_request.py
 test/test_update_custom_mapping_response.py
+test/test_update_custom_object_response.py
+test/test_update_custom_object_schema_response.py
 test/test_update_customer_response.py
 test/test_update_department_response.py
 test/test_update_drive_group_response.py

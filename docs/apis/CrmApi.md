@@ -19,6 +19,16 @@ Method | HTTP request | Description
 [**contacts_delete**](CrmApi.md#contacts_delete) | **DELETE** /crm/contacts/{id} | Delete contact
 [**contacts_one**](CrmApi.md#contacts_one) | **GET** /crm/contacts/{id} | Get contact
 [**contacts_update**](CrmApi.md#contacts_update) | **PATCH** /crm/contacts/{id} | Update contact
+[**custom_object_schemas_add**](CrmApi.md#custom_object_schemas_add) | **POST** /crm/custom-object-schemas | Create custom object schema
+[**custom_object_schemas_all**](CrmApi.md#custom_object_schemas_all) | **GET** /crm/custom-object-schemas | List custom object schemas
+[**custom_object_schemas_delete**](CrmApi.md#custom_object_schemas_delete) | **DELETE** /crm/custom-object-schemas/{id} | Delete custom object schema
+[**custom_object_schemas_one**](CrmApi.md#custom_object_schemas_one) | **GET** /crm/custom-object-schemas/{id} | Get custom object schema
+[**custom_object_schemas_update**](CrmApi.md#custom_object_schemas_update) | **PATCH** /crm/custom-object-schemas/{id} | Update custom object schema
+[**custom_objects_add**](CrmApi.md#custom_objects_add) | **POST** /crm/custom-objects/{object_id} | Create custom object
+[**custom_objects_all**](CrmApi.md#custom_objects_all) | **GET** /crm/custom-objects/{object_id} | List custom objects
+[**custom_objects_delete**](CrmApi.md#custom_objects_delete) | **DELETE** /crm/custom-objects/{object_id}/{id} | Delete custom object
+[**custom_objects_one**](CrmApi.md#custom_objects_one) | **GET** /crm/custom-objects/{object_id}/{id} | Get custom object
+[**custom_objects_update**](CrmApi.md#custom_objects_update) | **PATCH** /crm/custom-objects/{object_id}/{id} | Update custom object
 [**leads_add**](CrmApi.md#leads_add) | **POST** /crm/leads | Create lead
 [**leads_all**](CrmApi.md#leads_all) | **GET** /crm/leads | List leads
 [**leads_delete**](CrmApi.md#leads_delete) | **DELETE** /crm/leads/{id} | Delete lead
@@ -2379,6 +2389,1208 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Contact updated |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_object_schemas_add**
+> CreateCustomObjectSchemaResponse custom_object_schemas_add(custom_object_schema)
+
+Create custom object schema
+
+Create custom object schema
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.create_custom_object_schema_response import CreateCustomObjectSchemaResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.custom_object_schema import CustomObjectSchema
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    custom_object_schema = CustomObjectSchema(
+        name="project",
+        description="This schema defines a project custom object",
+        fields=[
+            CustomObjectSchemaFields(
+                id="field_123",
+                name="project_name",
+                description="Name of the project",
+                type="string",
+                required=True,
+                options=[
+                    CustomObjectSchemaOptions(
+                        value="option1",
+                        label="Option 1",
+                    ),
+                ],
+                default_value="New Project",
+            ),
+        ],
+        visible=True,
+        active=True,
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # CustomObjectSchema | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create custom object schema
+        api_response = api_instance.custom_object_schemas_add(custom_object_schema)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create custom object schema
+        api_response = api_instance.custom_object_schemas_add(custom_object_schema, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **custom_object_schema** | [**CustomObjectSchema**](CustomObjectSchema.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreateCustomObjectSchemaResponse**](CreateCustomObjectSchemaResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Custom object schema created |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_object_schemas_all**
+> GetCustomObjectSchemasResponse custom_object_schemas_all()
+
+List custom object schemas
+
+List custom object schemas
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.get_custom_object_schemas_response import GetCustomObjectSchemasResponse
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List custom object schemas
+        api_response = api_instance.custom_object_schemas_all(raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+
+### Return type
+
+[**GetCustomObjectSchemasResponse**](GetCustomObjectSchemasResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom object schemas |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_object_schemas_delete**
+> DeleteCustomObjectSchemaResponse custom_object_schemas_delete(id)
+
+Delete custom object schema
+
+Delete custom object schema
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.delete_custom_object_schema_response import DeleteCustomObjectSchemaResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete custom object schema
+        api_response = api_instance.custom_object_schemas_delete(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete custom object schema
+        api_response = api_instance.custom_object_schemas_delete(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeleteCustomObjectSchemaResponse**](DeleteCustomObjectSchemaResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom object schema deleted |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_object_schemas_one**
+> GetCustomObjectSchemaResponse custom_object_schemas_one(id)
+
+Get custom object schema
+
+Get custom object schema
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.get_custom_object_schema_response import GetCustomObjectSchemaResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get custom object schema
+        api_response = api_instance.custom_object_schemas_one(id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get custom object schema
+        api_response = api_instance.custom_object_schemas_one(id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**GetCustomObjectSchemaResponse**](GetCustomObjectSchemaResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom object schema |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_object_schemas_update**
+> UpdateCustomObjectSchemaResponse custom_object_schemas_update(id, custom_object_schema)
+
+Update custom object schema
+
+Update custom object schema
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.update_custom_object_schema_response import UpdateCustomObjectSchemaResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.custom_object_schema import CustomObjectSchema
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    custom_object_schema = CustomObjectSchema(
+        name="project",
+        description="This schema defines a project custom object",
+        fields=[
+            CustomObjectSchemaFields(
+                id="field_123",
+                name="project_name",
+                description="Name of the project",
+                type="string",
+                required=True,
+                options=[
+                    CustomObjectSchemaOptions(
+                        value="option1",
+                        label="Option 1",
+                    ),
+                ],
+                default_value="New Project",
+            ),
+        ],
+        visible=True,
+        active=True,
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # CustomObjectSchema | 
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update custom object schema
+        api_response = api_instance.custom_object_schemas_update(id, custom_object_schema)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update custom object schema
+        api_response = api_instance.custom_object_schemas_update(id, custom_object_schema, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_object_schemas_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **custom_object_schema** | [**CustomObjectSchema**](CustomObjectSchema.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateCustomObjectSchemaResponse**](UpdateCustomObjectSchemaResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom object schema updated |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_objects_add**
+> CreateCustomObjectResponse custom_objects_add(object_id, custom_object)
+
+Create custom object
+
+Create custom object
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.create_custom_object_response import CreateCustomObjectResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.custom_object import CustomObject
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    object_id = "object_id_example" # str | The id of the custom object to query
+    custom_object = CustomObject(
+        name="project",
+        fields=[
+            CustomObjectFields(
+                name="name",
+                value="string",
+            ),
+        ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # CustomObject | 
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Create custom object
+        api_response = api_instance.custom_objects_add(object_id, custom_object)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_add: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Create custom object
+        api_response = api_instance.custom_objects_add(object_id, custom_object, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_add: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **object_id** | **str**| The id of the custom object to query |
+ **custom_object** | [**CustomObject**](CustomObject.md)|  |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+
+### Return type
+
+[**CreateCustomObjectResponse**](CreateCustomObjectResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Custom object created |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_objects_all**
+> GetCustomObjectsResponse custom_objects_all(object_id)
+
+List custom objects
+
+List custom objects
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.pass_through_query import PassThroughQuery
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.get_custom_objects_response import GetCustomObjectsResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    object_id = "object_id_example" # str | The id of the custom object to query
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    cursor = "cursor_example" # str, none_type | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)
+    limit = 20 # int | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional) if omitted the server will use the default value of 20
+    pass_through = PassThroughQuery() # PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional)
+    fields = "id,updated_at" # str, none_type | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # List custom objects
+        api_response = api_instance.custom_objects_all(object_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_all: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # List custom objects
+        api_response = api_instance.custom_objects_all(object_id, raw=raw, consumer_id=consumer_id, app_id=app_id, service_id=service_id, cursor=cursor, limit=limit, pass_through=pass_through, fields=fields)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **object_id** | **str**| The id of the custom object to query |
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **cursor** | **str, none_type**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional]
+ **limit** | **int**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] if omitted the server will use the default value of 20
+ **pass_through** | **PassThroughQuery**| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional]
+ **fields** | **str, none_type**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional]
+
+### Return type
+
+[**GetCustomObjectsResponse**](GetCustomObjectsResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom objects |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_objects_delete**
+> DeleteCustomObjectResponse custom_objects_delete(id, object_id)
+
+Delete custom object
+
+Delete custom object
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.delete_custom_object_response import DeleteCustomObjectResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    object_id = "object_id_example" # str | The id of the custom object to query
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Delete custom object
+        api_response = api_instance.custom_objects_delete(id, object_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_delete: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Delete custom object
+        api_response = api_instance.custom_objects_delete(id, object_id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **object_id** | **str**| The id of the custom object to query |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**DeleteCustomObjectResponse**](DeleteCustomObjectResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom object deleted |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_objects_one**
+> GetCustomObjectResponse custom_objects_one(id, object_id)
+
+Get custom object
+
+Get custom object
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.get_custom_object_response import GetCustomObjectResponse
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    object_id = "object_id_example" # str | The id of the custom object to query
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get custom object
+        api_response = api_instance.custom_objects_one(id, object_id)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_one: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get custom object
+        api_response = api_instance.custom_objects_one(id, object_id, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_one: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **object_id** | **str**| The id of the custom object to query |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**GetCustomObjectResponse**](GetCustomObjectResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom object |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**404** | The specified resource was not found |  -  |
+**422** | Unprocessable |  -  |
+**0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **custom_objects_update**
+> UpdateCustomObjectResponse custom_objects_update(id, object_id, custom_object)
+
+Update custom object
+
+Update custom object
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import time
+import apideck
+from apideck.api import crm_api
+from apideck.model.update_custom_object_response import UpdateCustomObjectResponse
+from apideck.model.bad_request_response import BadRequestResponse
+from apideck.model.payment_required_response import PaymentRequiredResponse
+from apideck.model.unexpected_error_response import UnexpectedErrorResponse
+from apideck.model.unauthorized_response import UnauthorizedResponse
+from apideck.model.custom_object import CustomObject
+from apideck.model.unprocessable_response import UnprocessableResponse
+from apideck.model.not_found_response import NotFoundResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://unify.apideck.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apideck.Configuration(
+    host = "https://unify.apideck.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apideck.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = crm_api.CrmApi(api_client)
+    id = "id_example" # str | ID of the record you are acting upon.
+    object_id = "object_id_example" # str | The id of the custom object to query
+    custom_object = CustomObject(
+        name="project",
+        fields=[
+            CustomObjectFields(
+                name="name",
+                value="string",
+            ),
+        ],
+        pass_through=PassThroughBody([
+            {
+                service_id="service_id_example",
+                operation_id="operation_id_example",
+                extend_object={},
+                extend_paths=[
+                    {
+                        path="$.nested.property",
+                        value=None,
+                    },
+                ],
+            },
+        ]),
+    ) # CustomObject | 
+    consumer_id = "test-consumer" # str | ID of the consumer which you want to get or push data from (optional)
+    app_id = "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX" # str | The ID of your Unify application (optional)
+    service_id = "salesforce" # str | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+    raw = False # bool | Include raw response. Mostly used for debugging purposes (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update custom object
+        api_response = api_instance.custom_objects_update(id, object_id, custom_object)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_update: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Update custom object
+        api_response = api_instance.custom_objects_update(id, object_id, custom_object, consumer_id=consumer_id, app_id=app_id, service_id=service_id, raw=raw)
+        pprint(api_response)
+    except apideck.ApiException as e:
+        print("Exception when calling CrmApi->custom_objects_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the record you are acting upon. |
+ **object_id** | **str**| The id of the custom object to query |
+ **custom_object** | [**CustomObject**](CustomObject.md)|  |
+ **consumer_id** | **str**| ID of the consumer which you want to get or push data from | [optional]
+ **app_id** | **str**| The ID of your Unify application | [optional]
+ **service_id** | **str**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional]
+ **raw** | **bool**| Include raw response. Mostly used for debugging purposes | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+[**UpdateCustomObjectResponse**](UpdateCustomObjectResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Custom object updated |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **402** | Payment Required |  -  |

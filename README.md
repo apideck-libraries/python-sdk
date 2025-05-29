@@ -662,6 +662,26 @@ _CrmApi_ | [**contacts_one**](docs/apis/CrmApi.md#contacts_one) | **GET** /crm/c
 
 _CrmApi_ | [**contacts_update**](docs/apis/CrmApi.md#contacts_update) | **PATCH** /crm/contacts/{id} | Update contact |
 
+_CrmApi_ | [**custom_object_schemas_add**](docs/apis/CrmApi.md#custom_object_schemas_add) | **POST** /crm/custom-object-schemas | Create custom object schema |
+
+_CrmApi_ | [**custom_object_schemas_all**](docs/apis/CrmApi.md#custom_object_schemas_all) | **GET** /crm/custom-object-schemas | List custom object schemas |
+
+_CrmApi_ | [**custom_object_schemas_delete**](docs/apis/CrmApi.md#custom_object_schemas_delete) | **DELETE** /crm/custom-object-schemas/{id} | Delete custom object schema |
+
+_CrmApi_ | [**custom_object_schemas_one**](docs/apis/CrmApi.md#custom_object_schemas_one) | **GET** /crm/custom-object-schemas/{id} | Get custom object schema |
+
+_CrmApi_ | [**custom_object_schemas_update**](docs/apis/CrmApi.md#custom_object_schemas_update) | **PATCH** /crm/custom-object-schemas/{id} | Update custom object schema |
+
+_CrmApi_ | [**custom_objects_add**](docs/apis/CrmApi.md#custom_objects_add) | **POST** /crm/custom-objects/{object_id} | Create custom object |
+
+_CrmApi_ | [**custom_objects_all**](docs/apis/CrmApi.md#custom_objects_all) | **GET** /crm/custom-objects/{object_id} | List custom objects |
+
+_CrmApi_ | [**custom_objects_delete**](docs/apis/CrmApi.md#custom_objects_delete) | **DELETE** /crm/custom-objects/{object_id}/{id} | Delete custom object |
+
+_CrmApi_ | [**custom_objects_one**](docs/apis/CrmApi.md#custom_objects_one) | **GET** /crm/custom-objects/{object_id}/{id} | Get custom object |
+
+_CrmApi_ | [**custom_objects_update**](docs/apis/CrmApi.md#custom_objects_update) | **PATCH** /crm/custom-objects/{object_id}/{id} | Update custom object |
+
 _CrmApi_ | [**leads_add**](docs/apis/CrmApi.md#leads_add) | **POST** /crm/leads | Create lead |
 
 _CrmApi_ | [**leads_all**](docs/apis/CrmApi.md#leads_all) | **GET** /crm/leads | List leads |
@@ -1164,6 +1184,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CreateCreditNoteResponse](docs/models/CreateCreditNoteResponse.md)
  - [CreateCustomMappingRequest](docs/models/CreateCustomMappingRequest.md)
  - [CreateCustomMappingResponse](docs/models/CreateCustomMappingResponse.md)
+ - [CreateCustomObjectResponse](docs/models/CreateCustomObjectResponse.md)
+ - [CreateCustomObjectSchemaResponse](docs/models/CreateCustomObjectSchemaResponse.md)
  - [CreateCustomerResponse](docs/models/CreateCustomerResponse.md)
  - [CreateDepartmentResponse](docs/models/CreateDepartmentResponse.md)
  - [CreateDriveGroupResponse](docs/models/CreateDriveGroupResponse.md)
@@ -1223,6 +1245,13 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [CustomFieldFinder](docs/models/CustomFieldFinder.md)
  - [CustomMapping](docs/models/CustomMapping.md)
  - [CustomMappings](docs/models/CustomMappings.md)
+ - [CustomObject](docs/models/CustomObject.md)
+ - [CustomObjectFields](docs/models/CustomObjectFields.md)
+ - [CustomObjectSchema](docs/models/CustomObjectSchema.md)
+ - [CustomObjectSchemaFields](docs/models/CustomObjectSchemaFields.md)
+ - [CustomObjectSchemaOptions](docs/models/CustomObjectSchemaOptions.md)
+ - [CustomObjectSchemasSort](docs/models/CustomObjectSchemasSort.md)
+ - [CustomObjectsSort](docs/models/CustomObjectsSort.md)
  - [Customer](docs/models/Customer.md)
  - [CustomersFilter](docs/models/CustomersFilter.md)
  - [CustomersSort](docs/models/CustomersSort.md)
@@ -1242,6 +1271,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [DeleteConsumerResponse](docs/models/DeleteConsumerResponse.md)
  - [DeleteContactResponse](docs/models/DeleteContactResponse.md)
  - [DeleteCreditNoteResponse](docs/models/DeleteCreditNoteResponse.md)
+ - [DeleteCustomObjectResponse](docs/models/DeleteCustomObjectResponse.md)
+ - [DeleteCustomObjectSchemaResponse](docs/models/DeleteCustomObjectSchemaResponse.md)
  - [DeleteCustomerResponse](docs/models/DeleteCustomerResponse.md)
  - [DeleteDepartmentResponse](docs/models/DeleteDepartmentResponse.md)
  - [DeleteDriveGroupResponse](docs/models/DeleteDriveGroupResponse.md)
@@ -1398,6 +1429,10 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [GetCustomFieldsResponse](docs/models/GetCustomFieldsResponse.md)
  - [GetCustomMappingResponse](docs/models/GetCustomMappingResponse.md)
  - [GetCustomMappingsResponse](docs/models/GetCustomMappingsResponse.md)
+ - [GetCustomObjectResponse](docs/models/GetCustomObjectResponse.md)
+ - [GetCustomObjectSchemaResponse](docs/models/GetCustomObjectSchemaResponse.md)
+ - [GetCustomObjectSchemasResponse](docs/models/GetCustomObjectSchemasResponse.md)
+ - [GetCustomObjectsResponse](docs/models/GetCustomObjectsResponse.md)
  - [GetCustomerResponse](docs/models/GetCustomerResponse.md)
  - [GetCustomersResponse](docs/models/GetCustomersResponse.md)
  - [GetDepartmentResponse](docs/models/GetDepartmentResponse.md)
@@ -1698,6 +1733,8 @@ _WebhookApi_ | [**webhooks_update**](docs/apis/WebhookApi.md#webhooks_update) | 
  - [UpdateCreditNoteResponse](docs/models/UpdateCreditNoteResponse.md)
  - [UpdateCustomMappingRequest](docs/models/UpdateCustomMappingRequest.md)
  - [UpdateCustomMappingResponse](docs/models/UpdateCustomMappingResponse.md)
+ - [UpdateCustomObjectResponse](docs/models/UpdateCustomObjectResponse.md)
+ - [UpdateCustomObjectSchemaResponse](docs/models/UpdateCustomObjectSchemaResponse.md)
  - [UpdateCustomerResponse](docs/models/UpdateCustomerResponse.md)
  - [UpdateDepartmentResponse](docs/models/UpdateDepartmentResponse.md)
  - [UpdateDriveGroupResponse](docs/models/UpdateDriveGroupResponse.md)

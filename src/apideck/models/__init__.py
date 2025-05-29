@@ -135,6 +135,8 @@ from apideck.model.create_contact_response import CreateContactResponse
 from apideck.model.create_credit_note_response import CreateCreditNoteResponse
 from apideck.model.create_custom_mapping_request import CreateCustomMappingRequest
 from apideck.model.create_custom_mapping_response import CreateCustomMappingResponse
+from apideck.model.create_custom_object_response import CreateCustomObjectResponse
+from apideck.model.create_custom_object_schema_response import CreateCustomObjectSchemaResponse
 from apideck.model.create_customer_response import CreateCustomerResponse
 from apideck.model.create_department_response import CreateDepartmentResponse
 from apideck.model.create_drive_group_response import CreateDriveGroupResponse
@@ -194,6 +196,13 @@ from apideck.model.custom_field import CustomField
 from apideck.model.custom_field_finder import CustomFieldFinder
 from apideck.model.custom_mapping import CustomMapping
 from apideck.model.custom_mappings import CustomMappings
+from apideck.model.custom_object import CustomObject
+from apideck.model.custom_object_fields import CustomObjectFields
+from apideck.model.custom_object_schema import CustomObjectSchema
+from apideck.model.custom_object_schema_fields import CustomObjectSchemaFields
+from apideck.model.custom_object_schema_options import CustomObjectSchemaOptions
+from apideck.model.custom_object_schemas_sort import CustomObjectSchemasSort
+from apideck.model.custom_objects_sort import CustomObjectsSort
 from apideck.model.customer import Customer
 from apideck.model.customers_filter import CustomersFilter
 from apideck.model.customers_sort import CustomersSort
@@ -213,6 +222,8 @@ from apideck.model.delete_company_response import DeleteCompanyResponse
 from apideck.model.delete_consumer_response import DeleteConsumerResponse
 from apideck.model.delete_contact_response import DeleteContactResponse
 from apideck.model.delete_credit_note_response import DeleteCreditNoteResponse
+from apideck.model.delete_custom_object_response import DeleteCustomObjectResponse
+from apideck.model.delete_custom_object_schema_response import DeleteCustomObjectSchemaResponse
 from apideck.model.delete_customer_response import DeleteCustomerResponse
 from apideck.model.delete_department_response import DeleteDepartmentResponse
 from apideck.model.delete_drive_group_response import DeleteDriveGroupResponse
@@ -369,6 +380,10 @@ from apideck.model.get_credit_notes_response import GetCreditNotesResponse
 from apideck.model.get_custom_fields_response import GetCustomFieldsResponse
 from apideck.model.get_custom_mapping_response import GetCustomMappingResponse
 from apideck.model.get_custom_mappings_response import GetCustomMappingsResponse
+from apideck.model.get_custom_object_response import GetCustomObjectResponse
+from apideck.model.get_custom_object_schema_response import GetCustomObjectSchemaResponse
+from apideck.model.get_custom_object_schemas_response import GetCustomObjectSchemasResponse
+from apideck.model.get_custom_objects_response import GetCustomObjectsResponse
 from apideck.model.get_customer_response import GetCustomerResponse
 from apideck.model.get_customers_response import GetCustomersResponse
 from apideck.model.get_department_response import GetDepartmentResponse
@@ -669,6 +684,8 @@ from apideck.model.update_contact_response import UpdateContactResponse
 from apideck.model.update_credit_note_response import UpdateCreditNoteResponse
 from apideck.model.update_custom_mapping_request import UpdateCustomMappingRequest
 from apideck.model.update_custom_mapping_response import UpdateCustomMappingResponse
+from apideck.model.update_custom_object_response import UpdateCustomObjectResponse
+from apideck.model.update_custom_object_schema_response import UpdateCustomObjectSchemaResponse
 from apideck.model.update_customer_response import UpdateCustomerResponse
 from apideck.model.update_department_response import UpdateDepartmentResponse
 from apideck.model.update_drive_group_response import UpdateDriveGroupResponse
